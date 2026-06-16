@@ -15,6 +15,14 @@
       "pass": "",
       "role": "admin",
       "createdAt": "2026-06-16T19:56:48.735Z"
+    },
+    {
+      "id": 1781642897872,
+      "name": "Frz",
+      "email": "frz@gmail.com",
+      "pass": "frz@gmail.com",
+      "role": "user",
+      "createdAt": "2026-06-16T20:48:17.873Z"
     }
   ],
   "orders": [],
@@ -52,6 +60,8 @@
       "file": null
     }
   ],
-  "emailList": [],
-  "updatedAt": "2026-06-16T19:56:51.844Z"
+  "emailList": [
+    "frz@gmail.com"
+  ],
+  "updatedAt": "2026-06-16T20:48:19.404Z"
 }
