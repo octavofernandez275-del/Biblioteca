@@ -1,0 +1,57 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "name": "Admin",
+      "email": "admin@bdi.com",
+      "pass": "admin123",
+      "role": "admin",
+      "createdAt": "2026-06-16T19:56:48.723Z"
+    },
+    {
+      "id": 2,
+      "name": "Octavio",
+      "email": "octavofernandez275@gmail.com",
+      "pass": "",
+      "role": "admin",
+      "createdAt": "2026-06-16T19:56:48.735Z"
+    }
+  ],
+  "orders": [],
+  "products": [
+    {
+      "id": 1,
+      "name": "Cuentos Ilustrados Pack",
+      "cat": "infantil",
+      "price": "$4.99",
+      "desc": "5 cuentos con ilustraciones",
+      "file": null
+    },
+    {
+      "id": 2,
+      "name": "Libros para Colorear",
+      "cat": "infantil",
+      "price": "$3.99",
+      "desc": "Más de 40 páginas",
+      "file": null
+    },
+    {
+      "id": 3,
+      "name": "Guía Redes Sociales 2025",
+      "cat": "ebooks",
+      "price": "$7.99",
+      "desc": "Instagram TikTok YouTube",
+      "file": null
+    },
+    {
+      "id": 4,
+      "name": "500 Prompts de IA",
+      "cat": "ebooks",
+      "price": "$6.99",
+      "desc": "ChatGPT Claude Gemini",
+      "file": null
+    }
+  ],
+  "emailList": [],
+  "updatedAt": "2026-06-16T19:56:51.844Z"
+}
