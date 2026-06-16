@@ -33,7 +33,8 @@
       "cat": "infantil",
       "price": "$4.99",
       "desc": "5 cuentos con ilustraciones",
-      "file": null
+      "file": null,
+      "pdfUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/pdfs/cuentos_ilustrados_pack.pdf?token=CFYBYZUFQE7I34PDQV6X55LKGHPRU"
     },
     {
       "id": 2,
@@ -63,5 +64,5 @@
   "emailList": [
     "frz@gmail.com"
   ],
-  "updatedAt": "2026-06-16T20:48:19.404Z"
+  "updatedAt": "2026-06-16T23:40:16.513Z"
 }
