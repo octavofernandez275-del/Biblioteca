@@ -59,10 +59,26 @@
       "price": "$6.99",
       "desc": "ChatGPT Claude Gemini",
       "file": null
+    },
+    {
+      "id": 1781653653985,
+      "name": "101 Dálmatas cuento ilustrado",
+      "price": "$1,99",
+      "cat": "infantil",
+      "desc": "Conoce el espectacular maravillosoa y atrapante historia de esta familia perruna",
+      "author": "Walt Disney",
+      "genre": "",
+      "age": "",
+      "temas": [],
+      "tags": [],
+      "nivel": "",
+      "idioma": "",
+      "pdfName": "101 Dalmatas (Disney Walt) (z-library.sk, 1lib.sk, z-lib.sk).pdf",
+      "file": "101 Dalmatas (Disney Walt) (z-library.sk, 1lib.sk, z-lib.sk).pdf"
     }
   ],
   "emailList": [
     "frz@gmail.com"
   ],
-  "updatedAt": "2026-06-16T23:40:16.513Z"
+  "updatedAt": "2026-06-16T23:47:35.588Z"
 }
