@@ -1,0 +1,3654 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Biblioteca Digital Inteligente</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+  <script src="https://www.paypal.com/sdk/js?client-id=AVq2isgw7GINeKgZIswrFuVu8Hu1ir-ByxmP226Cw3MoUj96kgaRGHDSM13ti2fC4j5gnoa73OZ_IAnO&currency=USD"></script>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --black: #0A0A0A;
+      --white: #FFFFFF;
+      --accent: #6C47FF;
+      --accent-light: #8B6EFF;
+      --accent-glow: rgba(108,71,255,0.25);
+      --night: #100E1F;
+      --surface: #13111F;
+      --surface2: #1C1A2E;
+      --muted: #888;
+      --muted2: #555;
+      --gray-light: #F5F5F7;
+      --gray-mid: #E0E0E0;
+      --green: #22C55E;
+      --red: #EF4444;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--black);
+      color: var(--white);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    /* ── UTILITIES ── */
+    .container { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
+    .badge {
+      display: inline-block;
+      background: var(--accent-glow);
+      border: 1px solid var(--accent);
+      color: var(--accent-light);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      padding: 5px 14px;
+      border-radius: 100px;
+      margin-bottom: 20px;
+    }
+    .section-label {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 16px;
+    }
+
+    /* ── BUTTONS ── */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-family: 'Inter', sans-serif;
+      font-weight: 700;
+      font-size: 15px;
+      border: none;
+      border-radius: 12px;
+      cursor: pointer;
+      transition: all .2s ease;
+      text-decoration: none;
+      white-space: nowrap;
+    }
+    .btn-primary {
+      background: var(--accent);
+      color: #fff;
+      padding: 16px 32px;
+      box-shadow: 0 0 0 0 var(--accent-glow);
+    }
+    .btn-primary:hover {
+      background: var(--accent-light);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 32px var(--accent-glow);
+    }
+    .btn-ghost {
+      background: transparent;
+      color: var(--white);
+      padding: 14px 28px;
+      border: 1.5px solid rgba(255,255,255,.2);
+    }
+    .btn-ghost:hover {
+      border-color: var(--accent);
+      color: var(--accent-light);
+    }
+    .btn-outline-accent {
+      background: transparent;
+      color: var(--accent-light);
+      padding: 14px 28px;
+      border: 1.5px solid var(--accent);
+    }
+    .btn-outline-accent:hover {
+      background: var(--accent);
+      color: #fff;
+    }
+    .btn-lg { font-size: 17px; padding: 20px 42px; border-radius: 14px; }
+    .btn-full { width: 100%; justify-content: center; }
+
+    /* ── NAVBAR ── */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 1000;
+      background: rgba(10,10,10,.85);
+      backdrop-filter: blur(20px);
+      border-bottom: 1px solid rgba(255,255,255,.06);
+      padding: 0 24px;
+      height: 64px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .nav-logo {
+      font-weight: 800;
+      font-size: 16px;
+      letter-spacing: -.02em;
+      color: var(--white);
+      text-decoration: none;
+    }
+    .nav-logo span { color: var(--accent); }
+    .nav-actions { display: flex; align-items: center; gap: 12px; }
+    .nav-link {
+      color: var(--muted);
+      font-size: 14px;
+      font-weight: 500;
+      text-decoration: none;
+      cursor: pointer;
+      transition: color .2s;
+    }
+    .nav-link:hover { color: var(--white); }
+    .nav-btn-login {
+      background: rgba(255,255,255,.08);
+      border: 1px solid rgba(255,255,255,.12);
+      color: var(--white);
+      padding: 8px 18px;
+      border-radius: 8px;
+      font-size: 13px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all .2s;
+    }
+    .nav-btn-login:hover { background: rgba(255,255,255,.14); }
+    .nav-btn-cta {
+      background: var(--accent);
+      color: #fff;
+      padding: 8px 18px;
+      border-radius: 8px;
+      font-size: 13px;
+      font-weight: 700;
+      cursor: pointer;
+      border: none;
+      transition: all .2s;
+    }
+    .nav-btn-cta:hover { background: var(--accent-light); }
+
+    /* ── HERO ── */
+    #hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      padding: 120px 24px 64px;
+      background: radial-gradient(ellipse 70% 60% at 60% 40%, rgba(108,71,255,.18) 0%, transparent 70%),
+                  var(--black);
+      position: relative;
+      overflow: hidden;
+    }
+    @media (max-width: 768px) {
+      #hero { padding: 100px 24px 48px; min-height: auto; }
+    }
+    #hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: url("data:image/svg+xml,%3Csvg width='60' height='60' xmlns='http://www.w3.org/2000/svg'%3E%3Cdefs%3E%3Cpattern id='g' width='60' height='60' patternUnits='userSpaceOnUse'%3E%3Ccircle cx='1' cy='1' r='1' fill='rgba(255,255,255,0.025)'/%3E%3C/pattern%3E%3C/defs%3E%3Crect width='100%25' height='100%25' fill='url(%23g)'/%3E%3C/svg%3E");
+      pointer-events: none;
+    }
+    .hero-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 64px;
+      align-items: center;
+      width: 100%;
+    }
+    .hero-eyebrow {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 24px;
+    }
+    .hero-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--green); animation: pulse 2s infinite; }
+    @keyframes pulse { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:.6;transform:scale(1.3)} }
+    .hero-eyebrow-text { font-size: 12px; font-weight: 600; color: var(--green); letter-spacing: .08em; text-transform: uppercase; }
+    .hero-h1 {
+      font-size: clamp(32px, 5vw, 58px);
+      font-weight: 900;
+      line-height: 1.08;
+      letter-spacing: -.03em;
+      margin-bottom: 24px;
+    }
+    .hero-h1 em { font-style: normal; color: var(--accent-light); }
+    .hero-sub {
+      font-size: 18px;
+      color: rgba(255,255,255,.6);
+      max-width: 480px;
+      margin-bottom: 40px;
+      line-height: 1.7;
+    }
+    .hero-actions { display: flex; gap: 14px; flex-wrap: wrap; }
+    .hero-stats {
+      display: flex;
+      gap: 32px;
+      margin-top: 48px;
+      padding-top: 32px;
+      border-top: 1px solid rgba(255,255,255,.08);
+    }
+    .hero-stat-num { font-size: 22px; font-weight: 800; }
+    .hero-stat-label { font-size: 12px; color: var(--muted); margin-top: 2px; }
+
+    /* Mockup visual */
+    .hero-visual {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .mockup-stack {
+      position: relative;
+      width: 320px;
+      height: 400px;
+    }
+    .mockup-card {
+      position: absolute;
+      border-radius: 16px;
+      background: linear-gradient(135deg, var(--surface2) 0%, var(--surface) 100%);
+      border: 1px solid rgba(255,255,255,.1);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      box-shadow: 0 24px 60px rgba(0,0,0,.6);
+    }
+    .mockup-card .mc-icon { font-size: 40px; }
+    .mockup-card .mc-title { font-size: 13px; font-weight: 700; text-align: center; padding: 0 16px; }
+    .mockup-card .mc-tag {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      padding: 4px 10px;
+      border-radius: 100px;
+    }
+    .mc1 { width: 200px; height: 240px; top: 20px; left: 20px; transform: rotate(-8deg); }
+    .mc2 { width: 220px; height: 260px; top: 60px; left: 80px; transform: rotate(3deg); animation: float 4s ease-in-out infinite; }
+    .mc3 { width: 190px; height: 230px; top: 10px; left: 130px; transform: rotate(-4deg); animation: float 5s ease-in-out infinite reverse; }
+    @keyframes float { 0%,100%{transform:rotate(3deg) translateY(0)} 50%{transform:rotate(3deg) translateY(-14px)} }
+    .mc1 .mc-tag { background: rgba(34,197,94,.2); color: #86EFAC; }
+    .mc2 .mc-tag { background: rgba(108,71,255,.3); color: var(--accent-light); }
+    .mc3 .mc-tag { background: rgba(251,191,36,.2); color: #FDE68A; }
+
+    /* ── SECTION BASE ── */
+    section { padding: 100px 0; }
+    section.light { background: var(--gray-light); color: var(--black); }
+    section.dark { background: var(--night); }
+    .section-header { text-align: center; max-width: 640px; margin: 0 auto 64px; }
+    .section-header h2 { font-size: clamp(26px, 4vw, 42px); font-weight: 900; letter-spacing: -.03em; line-height: 1.15; margin-bottom: 16px; }
+    .section-header p { font-size: 17px; opacity: .65; }
+    section.light .section-header p { opacity: .6; }
+
+    /* ── BENEFITS ROW ── */
+    .benefits-row {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+      margin-bottom: 48px;
+    }
+    .benefit-card {
+      background: var(--surface);
+      border: 1px solid rgba(255,255,255,.07);
+      border-radius: 16px;
+      padding: 28px 24px;
+    }
+    section.light .benefit-card { background: #fff; border-color: var(--gray-mid); }
+    .benefit-icon { font-size: 28px; margin-bottom: 12px; }
+    .benefit-title { font-size: 15px; font-weight: 700; margin-bottom: 6px; }
+    section.light .benefit-title { color: var(--black); }
+    .benefit-desc { font-size: 13px; opacity: .55; }
+
+    /* ── PRODUCT GRID ── */
+    .products-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+      margin-bottom: 48px;
+    }
+    .product-card {
+      background: var(--surface2);
+      border: 1px solid rgba(255,255,255,.08);
+      border-radius: 16px;
+      padding: 28px 24px;
+      transition: all .25s;
+      cursor: pointer;
+      position: relative;
+      overflow: hidden;
+    }
+    .product-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 3px;
+      background: var(--accent);
+      opacity: 0;
+      transition: opacity .25s;
+    }
+    .product-card:hover { transform: translateY(-4px); border-color: rgba(108,71,255,.4); box-shadow: 0 12px 40px rgba(108,71,255,.15); }
+    .product-card:hover::before { opacity: 1; }
+    section.light .product-card { background: #fff; border-color: var(--gray-mid); }
+    .pc-emoji { font-size: 36px; margin-bottom: 16px; }
+    .pc-title { font-size: 16px; font-weight: 700; margin-bottom: 8px; }
+    section.light .pc-title { color: var(--black); }
+    .pc-desc { font-size: 13px; opacity: .55; margin-bottom: 16px; }
+    .pc-price { font-size: 20px; font-weight: 800; color: var(--accent-light); }
+    .pc-price-old { font-size: 13px; text-decoration: line-through; opacity: .4; margin-left: 6px; }
+    .section-cta { text-align: center; }
+
+    /* ── PRICING ── */
+    #pricing { background: var(--black); }
+    .pricing-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 24px;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    .pricing-card {
+      background: var(--surface);
+      border: 1px solid rgba(255,255,255,.1);
+      border-radius: 20px;
+      padding: 40px 36px;
+      position: relative;
+      transition: all .25s;
+    }
+    .pricing-card.featured {
+      border-color: var(--accent);
+      background: linear-gradient(135deg, #1A1433 0%, var(--surface) 100%);
+      box-shadow: 0 0 60px rgba(108,71,255,.2);
+      transform: scale(1.03);
+    }
+    .pricing-badge {
+      position: absolute;
+      top: -14px; left: 50%;
+      transform: translateX(-50%);
+      background: var(--accent);
+      color: #fff;
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      padding: 6px 18px;
+      border-radius: 100px;
+      white-space: nowrap;
+    }
+    .pc-plan { font-size: 12px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); margin-bottom: 12px; }
+    .pc-plan-name { font-size: 24px; font-weight: 800; margin-bottom: 8px; }
+    .pc-desc-plan { font-size: 14px; color: var(--muted); margin-bottom: 28px; }
+    .pc-price-main { font-size: 48px; font-weight: 900; letter-spacing: -.04em; margin-bottom: 4px; }
+    .pc-price-main sub { font-size: 22px; font-weight: 600; vertical-align: top; margin-top: 10px; }
+    .pc-old-price { font-size: 18px; text-decoration: line-through; color: var(--muted2); margin-bottom: 28px; }
+    .pc-features { list-style: none; margin-bottom: 32px; display: flex; flex-direction: column; gap: 12px; }
+    .pc-features li { font-size: 14px; display: flex; align-items: center; gap: 10px; }
+    .pc-features li::before { content: '✓'; color: var(--green); font-weight: 800; flex-shrink: 0; }
+    .pc-features li.no::before { content: '✕'; color: var(--muted2); }
+    .pc-features li.no { opacity: .5; }
+
+    /* ── TRUST / GUARANTEE ── */
+    #trust { background: var(--night); }
+    .trust-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 24px;
+      margin-bottom: 64px;
+    }
+    .trust-item {
+      text-align: center;
+      padding: 32px 24px;
+      background: var(--surface);
+      border: 1px solid rgba(255,255,255,.06);
+      border-radius: 16px;
+    }
+    .trust-icon { font-size: 36px; margin-bottom: 14px; }
+    .trust-title { font-size: 15px; font-weight: 700; margin-bottom: 6px; }
+    .trust-desc { font-size: 13px; color: var(--muted); }
+
+    /* ── FAQ ── */
+    #faq { background: var(--black); }
+    .faq-list { max-width: 720px; margin: 0 auto; display: flex; flex-direction: column; gap: 12px; }
+    .faq-item {
+      background: var(--surface);
+      border: 1px solid rgba(255,255,255,.07);
+      border-radius: 14px;
+      overflow: hidden;
+    }
+    .faq-question {
+      padding: 22px 24px;
+      font-size: 16px;
+      font-weight: 600;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      user-select: none;
+      gap: 16px;
+    }
+    .faq-question:hover { color: var(--accent-light); }
+    .faq-chevron { transition: transform .25s; font-size: 18px; flex-shrink: 0; }
+    .faq-item.open .faq-chevron { transform: rotate(180deg); }
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height .3s ease;
+      color: rgba(255,255,255,.6);
+      font-size: 15px;
+      line-height: 1.7;
+    }
+    .faq-item.open .faq-answer { max-height: 200px; }
+    .faq-answer-inner { padding: 0 24px 22px; }
+
+    /* ── CTA FINAL ── */
+    #cta-final {
+      background: linear-gradient(135deg, #100825 0%, #1A1240 50%, var(--night) 100%);
+      padding: 120px 24px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    #cta-final::before {
+      content: '';
+      position: absolute;
+      width: 600px; height: 600px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(108,71,255,.2) 0%, transparent 70%);
+      top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+      pointer-events: none;
+    }
+    .cta-final-inner { position: relative; z-index: 1; }
+    .cta-final-inner h2 { font-size: clamp(32px, 5vw, 56px); font-weight: 900; letter-spacing: -.04em; margin-bottom: 20px; line-height: 1.1; }
+    .cta-final-inner p { font-size: 18px; opacity: .6; max-width: 500px; margin: 0 auto 40px; }
+    .cta-final-inner .cta-actions { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--black);
+      border-top: 1px solid rgba(255,255,255,.06);
+      padding: 48px 24px;
+      text-align: center;
+    }
+    .footer-logo { font-weight: 900; font-size: 18px; letter-spacing: -.02em; margin-bottom: 20px; }
+    .footer-logo span { color: var(--accent); }
+    .footer-links { display: flex; justify-content: center; gap: 28px; flex-wrap: wrap; margin-bottom: 24px; }
+    .footer-links a { color: var(--muted); font-size: 13px; text-decoration: none; }
+    .footer-links a:hover { color: var(--white); }
+    .footer-copy { font-size: 12px; color: var(--muted2); }
+
+    /* ── MODAL OVERLAY ── */
+    .modal-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,.8);
+      backdrop-filter: blur(12px);
+      z-index: 2000;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+    }
+    .modal-overlay.active { display: flex; }
+    .modal-box {
+      background: var(--surface);
+      border: 1px solid rgba(255,255,255,.12);
+      border-radius: 24px;
+      padding: 48px 40px;
+      width: 100%;
+      max-width: 420px;
+      position: relative;
+      animation: modalIn .25s ease;
+    }
+    @keyframes modalIn { from{opacity:0;transform:scale(.95) translateY(10px)} to{opacity:1;transform:scale(1) translateY(0)} }
+    .modal-close {
+      position: absolute;
+      top: 16px; right: 20px;
+      background: none;
+      border: none;
+      color: var(--muted);
+      font-size: 24px;
+      cursor: pointer;
+      line-height: 1;
+    }
+    .modal-close:hover { color: var(--white); }
+    .modal-title { font-size: 24px; font-weight: 800; margin-bottom: 8px; letter-spacing: -.02em; }
+    .modal-sub { font-size: 14px; color: var(--muted); margin-bottom: 32px; }
+    .modal-tabs { display: flex; gap: 0; background: rgba(255,255,255,.06); border-radius: 10px; padding: 4px; margin-bottom: 28px; }
+    .modal-tab {
+      flex: 1;
+      text-align: center;
+      padding: 10px;
+      font-size: 14px;
+      font-weight: 600;
+      cursor: pointer;
+      border-radius: 8px;
+      transition: all .2s;
+      color: var(--muted);
+    }
+    .modal-tab.active { background: var(--accent); color: #fff; }
+    .form-group { margin-bottom: 16px; }
+    .form-label { font-size: 12px; font-weight: 600; color: var(--muted); letter-spacing: .06em; text-transform: uppercase; margin-bottom: 6px; display: block; }
+    .form-input {
+      width: 100%;
+      background: rgba(255,255,255,.06);
+      border: 1px solid rgba(255,255,255,.1);
+      border-radius: 10px;
+      padding: 13px 16px;
+      font-size: 15px;
+      color: var(--white);
+      font-family: 'Inter', sans-serif;
+      outline: none;
+      transition: border-color .2s;
+    }
+    .form-input::placeholder { color: var(--muted2); }
+    .form-input:focus { border-color: var(--accent); }
+    .form-error { color: var(--red); font-size: 12px; margin-top: 4px; }
+    .form-success { color: var(--green); font-size: 13px; margin-top: 4px; }
+    .forgot-link { font-size: 12px; color: var(--accent-light); cursor: pointer; text-align: right; display: block; margin-top: 4px; }
+    .forgot-link:hover { text-decoration: underline; }
+    .divider { display: flex; align-items: center; gap: 12px; margin: 20px 0; }
+    .divider-line { flex: 1; height: 1px; background: rgba(255,255,255,.1); }
+    .divider-text { font-size: 12px; color: var(--muted); }
+
+    /* ── ADMIN PANEL ── */
+    #admin-panel {
+      display: none;
+      min-height: 100vh;
+      background: var(--black);
+    }
+    #admin-panel.active { display: block; }
+    .admin-header {
+      background: var(--surface);
+      border-bottom: 1px solid rgba(255,255,255,.08);
+      padding: 0 32px;
+      height: 64px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .admin-logo { font-weight: 800; font-size: 16px; }
+    .admin-logo span { color: var(--accent); }
+    .admin-badge { background: rgba(239,68,68,.2); color: #FCA5A5; font-size: 11px; font-weight: 700; padding: 3px 10px; border-radius: 100px; letter-spacing: .08em; text-transform: uppercase; margin-left: 10px; }
+    .admin-user-info { display: flex; align-items: center; gap: 12px; }
+    .admin-avatar { width: 34px; height: 34px; border-radius: 50%; background: var(--accent); display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 14px; }
+    .admin-layout { display: grid; grid-template-columns: 220px 1fr; min-height: calc(100vh - 64px); }
+    .admin-sidebar {
+      background: var(--surface);
+      border-right: 1px solid rgba(255,255,255,.06);
+      padding: 24px 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+    .admin-nav-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 12px 14px;
+      border-radius: 10px;
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--muted);
+      cursor: pointer;
+      transition: all .2s;
+    }
+    .admin-nav-item:hover { background: rgba(255,255,255,.06); color: var(--white); }
+    .admin-nav-item.active { background: rgba(108,71,255,.2); color: var(--accent-light); }
+    .admin-content { padding: 40px 32px; overflow-y: auto; }
+    .admin-section-title { font-size: 22px; font-weight: 800; margin-bottom: 8px; }
+    .admin-section-sub { font-size: 14px; color: var(--muted); margin-bottom: 32px; }
+    .admin-stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 16px; margin-bottom: 32px; }
+    .admin-stat {
+      background: var(--surface);
+      border: 1px solid rgba(255,255,255,.07);
+      border-radius: 14px;
+      padding: 24px 20px;
+    }
+    .admin-stat-label { font-size: 12px; font-weight: 600; color: var(--muted); letter-spacing: .08em; text-transform: uppercase; margin-bottom: 8px; }
+    .admin-stat-value { font-size: 32px; font-weight: 900; }
+    .admin-table { width: 100%; border-collapse: collapse; }
+    .admin-table th { font-size: 11px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); padding: 12px 16px; text-align: left; border-bottom: 1px solid rgba(255,255,255,.06); }
+    .admin-table td { padding: 16px; font-size: 14px; border-bottom: 1px solid rgba(255,255,255,.04); }
+    .admin-table tr:hover td { background: rgba(255,255,255,.03); }
+    .role-badge { font-size: 10px; font-weight: 700; padding: 3px 10px; border-radius: 100px; letter-spacing: .08em; text-transform: uppercase; }
+    .role-admin { background: rgba(239,68,68,.2); color: #FCA5A5; }
+    .role-user { background: rgba(108,71,255,.2); color: var(--accent-light); }
+    .status-badge { font-size: 10px; font-weight: 700; padding: 3px 10px; border-radius: 100px; letter-spacing: .08em; text-transform: uppercase; }
+    .status-ok { background: rgba(34,197,94,.2); color: #86EFAC; }
+    .status-pending { background: rgba(251,191,36,.2); color: #FDE68A; }
+    .admin-form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    .admin-panel-section { display: none; }
+    .admin-panel-section.active { display: block; }
+
+    /* ── USER PANEL ── */
+    #user-panel {
+      display: none;
+      min-height: 100vh;
+      background: var(--black);
+    }
+    #user-panel.active { display: block; }
+    .user-header {
+      background: var(--surface);
+      border-bottom: 1px solid rgba(255,255,255,.08);
+      padding: 0 32px;
+      height: 64px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .user-content { max-width: 900px; margin: 0 auto; padding: 48px 24px; }
+    .user-greeting { font-size: 28px; font-weight: 800; letter-spacing: -.02em; margin-bottom: 8px; }
+    .user-greeting span { color: var(--accent-light); }
+    .user-sub { font-size: 15px; color: var(--muted); margin-bottom: 40px; }
+    .user-purchases { display: grid; gap: 16px; }
+    .purchase-card {
+      background: var(--surface);
+      border: 1px solid rgba(255,255,255,.08);
+      border-radius: 16px;
+      padding: 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+    .purchase-info { flex: 1; }
+    .purchase-title { font-size: 16px; font-weight: 700; margin-bottom: 4px; }
+    .purchase-date { font-size: 12px; color: var(--muted); }
+
+    /* ── CART ── */
+    .cart-btn {
+      position: fixed;
+      bottom: 88px; right: 20px;
+      background: var(--accent);
+      color: #fff;
+      width: 50px; height: 50px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 20px;
+      cursor: pointer;
+      box-shadow: 0 8px 24px rgba(108,71,255,.5);
+      z-index: 900;
+      border: none;
+      transition: all .2s;
+    }
+    .cart-btn:hover { transform: scale(1.08); }
+    .cart-count {
+      position: absolute;
+      top: -4px; right: -4px;
+      background: var(--red);
+      color: #fff;
+      font-size: 10px;
+      font-weight: 800;
+      width: 18px; height: 18px;
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .cart-panel {
+      position: fixed;
+      right: 0; top: 0; bottom: 0;
+      width: 360px;
+      background: var(--surface);
+      border-left: 1px solid rgba(255,255,255,.1);
+      z-index: 1500;
+      padding: 32px 24px;
+      transform: translateX(100%);
+      transition: transform .3s ease;
+      overflow-y: auto;
+    }
+    .cart-panel.open { transform: translateX(0); }
+    .cart-panel-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 28px; }
+    .cart-panel-title { font-size: 20px; font-weight: 800; }
+    .cart-items { display: flex; flex-direction: column; gap: 12px; margin-bottom: 24px; }
+    .cart-item { background: var(--surface2); border-radius: 12px; padding: 16px; display: flex; justify-content: space-between; align-items: center; gap: 12px; }
+    .cart-item-name { font-size: 14px; font-weight: 600; }
+    .cart-item-price { font-size: 15px; font-weight: 800; color: var(--accent-light); white-space: nowrap; }
+    .cart-item-remove { background: none; border: none; color: var(--muted); cursor: pointer; font-size: 18px; padding: 0; }
+    .cart-total { border-top: 1px solid rgba(255,255,255,.08); padding-top: 20px; display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; }
+    .cart-total-label { font-size: 14px; font-weight: 600; color: var(--muted); }
+    .cart-total-value { font-size: 24px; font-weight: 900; }
+    .cart-empty { text-align: center; padding: 60px 0; color: var(--muted); font-size: 15px; }
+
+    /* ── CATALOG MODAL ── */
+    #catalog-modal {
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,.88);
+      backdrop-filter: blur(16px);
+      z-index: 2500;
+      display: none;
+      align-items: flex-start;
+      justify-content: center;
+      padding: 24px;
+      overflow-y: auto;
+    }
+    #catalog-modal.active { display: flex; }
+    .catalog-modal-box {
+      background: var(--surface);
+      border: 1px solid rgba(255,255,255,.12);
+      border-radius: 24px;
+      width: 100%;
+      max-width: 1000px;
+      margin: auto;
+      padding: 40px 36px;
+      position: relative;
+      animation: modalIn .25s ease;
+    }
+    .catalog-modal-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 28px;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+    .catalog-modal-title { font-size: 24px; font-weight: 800; letter-spacing: -.02em; }
+    .catalog-search {
+      flex: 1;
+      min-width: 180px;
+      max-width: 300px;
+      background: rgba(255,255,255,.06);
+      border: 1px solid rgba(255,255,255,.1);
+      border-radius: 10px;
+      padding: 10px 16px;
+      font-size: 14px;
+      color: var(--white);
+      font-family: 'Inter', sans-serif;
+      outline: none;
+    }
+    .catalog-search:focus { border-color: var(--accent); }
+    .catalog-search::placeholder { color: var(--muted2); }
+    .catalog-filter-bar { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 28px; }
+    .cat-filter-btn {
+      background: rgba(255,255,255,.06);
+      border: 1px solid rgba(255,255,255,.12);
+      color: var(--muted);
+      font-size: 12px;
+      font-weight: 700;
+      padding: 6px 16px;
+      border-radius: 100px;
+      cursor: pointer;
+      letter-spacing: .06em;
+      transition: all .2s;
+      font-family: 'Inter', sans-serif;
+    }
+    .cat-filter-btn:hover { border-color: var(--accent); color: var(--accent-light); }
+    .cat-filter-btn.active { background: rgba(108,71,255,.25); border-color: var(--accent); color: var(--accent-light); }
+    #catalog-modal-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 16px; }
+
+    /* ── BESTSELLER / NEW BADGES ── */
+    .bestseller-badge {
+      position: absolute;
+      top: 12px; right: 12px;
+      background: linear-gradient(135deg, #F59E0B, #EF4444);
+      color: #fff;
+      font-size: 9px;
+      font-weight: 800;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      padding: 3px 10px;
+      border-radius: 100px;
+      z-index: 2;
+    }
+    .new-badge {
+      position: absolute;
+      top: 12px; left: 12px;
+      background: linear-gradient(135deg, #22C55E, #16A34A);
+      color: #fff;
+      font-size: 9px;
+      font-weight: 800;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      padding: 3px 10px;
+      border-radius: 100px;
+      z-index: 2;
+    }
+
+    /* ── WISHLIST ── */
+    .wishlist-btn {
+      background: rgba(255,255,255,.08);
+      border: 1.5px solid rgba(255,255,255,.15);
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 16px;
+      line-height: 1;
+      padding: 6px 8px;
+      transition: all .2s;
+      color: var(--muted);
+    }
+    .wishlist-btn:hover { transform: scale(1.15); border-color: #EF4444; color: #EF4444; }
+    .wishlist-btn.wishlisted { color: #EF4444; border-color: #EF4444; background: rgba(239,68,68,.12); }
+
+    /* ── NEW ARRIVALS CAROUSEL ── */
+    #new-arrivals { background: var(--night); overflow: hidden; }
+    .arrivals-track {
+      display: flex;
+      gap: 16px;
+      overflow-x: auto;
+      padding-bottom: 12px;
+      scroll-snap-type: x mandatory;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: thin;
+      scrollbar-color: rgba(108,71,255,.4) transparent;
+    }
+    .arrivals-track::-webkit-scrollbar { height: 4px; }
+    .arrivals-track::-webkit-scrollbar-track { background: transparent; }
+    .arrivals-track::-webkit-scrollbar-thumb { background: rgba(108,71,255,.4); border-radius: 100px; }
+    .arrival-card {
+      flex: 0 0 200px;
+      scroll-snap-align: start;
+      background: var(--surface2);
+      border: 1px solid rgba(255,255,255,.08);
+      border-radius: 14px;
+      padding: 20px 16px;
+      cursor: pointer;
+      transition: all .25s;
+      position: relative;
+    }
+    .arrival-card:hover { border-color: rgba(108,71,255,.4); transform: translateY(-3px); }
+
+    /* ── PDF PREVIEW MODAL ── */
+    #preview-modal {
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,.92);
+      backdrop-filter: blur(20px);
+      z-index: 3500;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+    }
+    #preview-modal.active { display: flex; }
+    .preview-box {
+      background: var(--surface);
+      border: 1px solid rgba(255,255,255,.12);
+      border-radius: 20px;
+      padding: 32px;
+      width: 100%;
+      max-width: 520px;
+      animation: modalIn .25s ease;
+      text-align: center;
+      position: relative;
+    }
+    .preview-cover {
+      width: 100%;
+      max-height: 280px;
+      object-fit: contain;
+      border-radius: 12px;
+      margin-bottom: 20px;
+      border: 1px solid rgba(255,255,255,.08);
+    }
+
+    /* ── TOAST ── */
+    #toast {
+      position: fixed;
+      bottom: 90px; right: 24px;
+      background: var(--surface2);
+      border: 1px solid rgba(255,255,255,.12);
+      border-radius: 12px;
+      padding: 14px 20px;
+      font-size: 14px;
+      font-weight: 600;
+      z-index: 3000;
+      opacity: 0;
+      transform: translateY(8px);
+      transition: all .3s ease;
+      pointer-events: none;
+      max-width: 280px;
+    }
+    #toast.show { opacity: 1; transform: translateY(0); }
+    #toast.success { border-color: var(--green); color: var(--green); }
+    #toast.error { border-color: var(--red); color: var(--red); }
+
+    /* ── HAMBURGER MENU ── */
+    .nav-hamburger {
+      display: none;
+      background: none;
+      border: 1px solid rgba(255,255,255,.15);
+      border-radius: 8px;
+      color: var(--white);
+      font-size: 20px;
+      padding: 6px 10px;
+      cursor: pointer;
+      line-height: 1;
+    }
+    .nav-mobile-menu {
+      display: none;
+      position: fixed;
+      top: 64px; left: 0; right: 0;
+      background: rgba(10,10,10,.97);
+      backdrop-filter: blur(20px);
+      border-bottom: 1px solid rgba(255,255,255,.08);
+      padding: 20px 24px;
+      z-index: 999;
+      flex-direction: column;
+      gap: 4px;
+    }
+    .nav-mobile-menu.open { display: flex; }
+    .nav-mobile-item {
+      padding: 14px 16px;
+      font-size: 16px;
+      font-weight: 500;
+      color: var(--muted);
+      border-radius: 10px;
+      cursor: pointer;
+      transition: all .2s;
+    }
+    .nav-mobile-item:hover { background: rgba(255,255,255,.06); color: var(--white); }
+    .nav-mobile-item.accent { color: var(--accent-light); font-weight: 700; }
+    .nav-mobile-divider { height: 1px; background: rgba(255,255,255,.07); margin: 8px 0; }
+    .nav-mobile-btns { display: flex; gap: 10px; margin-top: 8px; }
+
+    /* ── ARRIVALS FADE EDGE ── */
+    .arrivals-wrapper {
+      position: relative;
+    }
+    .arrivals-wrapper::after {
+      content: '';
+      position: absolute;
+      top: 0; right: 0;
+      width: 60px; height: calc(100% - 12px);
+      background: linear-gradient(to right, transparent, var(--night));
+      pointer-events: none;
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 768px) {
+      .hero-inner { grid-template-columns: 1fr; gap: 48px; }
+      .hero-visual { order: -1; }
+      .mockup-stack { width: 260px; height: 320px; }
+      .mc1 { width: 160px; height: 190px; }
+      .mc2 { width: 180px; height: 210px; top: 50px; left: 60px; }
+      .mc3 { width: 155px; height: 185px; top: 8px; left: 100px; }
+      .admin-layout { grid-template-columns: 1fr; }
+      .admin-sidebar {
+        position: fixed;
+        top: 0; left: 0;
+        height: 100vh;
+        width: 240px;
+        z-index: 999;
+        transform: translateX(-100%);
+        transition: transform .25s ease;
+        overflow-y: auto;
+      }
+      .admin-sidebar.open { transform: translateX(0); }
+      #admin-burger { display: inline-block !important; }
+      .pricing-card.featured { transform: none; }
+      .cart-panel { width: 100%; }
+      .admin-form-grid { grid-template-columns: 1fr; }
+
+      /* Hide desktop nav links on mobile */
+      .nav-actions .nav-link,
+      .nav-actions .nav-btn-login,
+      .nav-actions .nav-btn-cta { display: none; }
+      .nav-hamburger { display: block; }
+
+      /* Section spacing mobile */
+      section { padding: 64px 0; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- LANDING PAGE -->
+<div id="landing">
+
+  <!-- NAVBAR -->
+  <nav>
+    <a class="nav-logo" href="#hero">Biblioteca<span>Digital</span></a>
+    <div class="nav-actions">
+      <span class="nav-link" onclick="scrollTo('#infantil')">Infantil</span>
+      <span class="nav-link" onclick="scrollTo('#rentable')">eBooks</span>
+      <span class="nav-link" onclick="scrollTo('#pricing')">Precios</span>
+      <span class="nav-link" onclick="openCatalogModal()" style="color:var(--accent-light);font-weight:600;">📚 Catálogo</span>
+      <button class="nav-btn-login" onclick="openModal('login')">Acceder</button>
+      <button class="nav-btn-login" onclick="showAdminCheck()" style="background:rgba(108,71,255,.2);border-color:rgba(108,71,255,.4);color:var(--accent-light);" title="Panel Admin">⚙️ Admin</button>
+      <button class="nav-btn-cta" onclick="scrollTo('#pricing')">Comprar ahora</button>
+      <button class="nav-hamburger" id="nav-hamburger" onclick="toggleMobileMenu()">☰</button>
+    </div>
+  </nav>
+
+  <!-- MOBILE MENU -->
+  <div class="nav-mobile-menu" id="nav-mobile-menu">
+    <div class="nav-mobile-item" onclick="scrollTo('#infantil');toggleMobileMenu()">📚 Infantil</div>
+    <div class="nav-mobile-item" onclick="scrollTo('#rentable');toggleMobileMenu()">💡 eBooks</div>
+    <div class="nav-mobile-item" onclick="scrollTo('#pricing');toggleMobileMenu()">💰 Precios</div>
+    <div class="nav-mobile-item accent" onclick="openCatalogModal();toggleMobileMenu()">📖 Ver Catálogo completo</div>
+    <div class="nav-mobile-divider"></div>
+    <div class="nav-mobile-btns">
+      <button class="btn btn-ghost" style="flex:1;padding:12px;" onclick="openModal('login');toggleMobileMenu()">Acceder</button>
+      <button class="btn btn-primary" style="flex:1;padding:12px;" onclick="scrollTo('#pricing');toggleMobileMenu()">Comprar →</button>
+    </div>
+  </div>
+
+  <!-- HERO -->
+  <section id="hero">
+    <div class="hero-inner">
+      <div class="hero-text">
+        <div class="hero-eyebrow">
+          <div class="hero-dot"></div>
+          <span class="hero-eyebrow-text">+500 lectores activos</span>
+        </div>
+        <h1 class="hero-h1">
+          Aprendé, creá y<br/>
+          <em>generá ingresos</em><br/>
+          con libros digitales
+        </h1>
+        <p class="hero-sub">Libros infantiles educativos + eBooks prácticos de negocios, redes sociales e inteligencia artificial — en un solo lugar.</p>
+        <div class="hero-actions">
+          <button class="btn btn-primary btn-lg" onclick="openCatalogModal()">
+            Acceso inmediato →
+          </button>
+          <button class="btn btn-ghost btn-lg" onclick="openCatalogModal()">
+            Ver catálogo
+          </button>
+        </div>
+        <div class="hero-stats">
+          <div>
+            <div class="hero-stat-num">50+</div>
+            <div class="hero-stat-label">Títulos disponibles</div>
+          </div>
+          <div>
+            <div class="hero-stat-num">PDF</div>
+            <div class="hero-stat-label">Acceso inmediato</div>
+          </div>
+          <div>
+            <div class="hero-stat-num">30 días</div>
+            <div class="hero-stat-label">Garantía total</div>
+          </div>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <div class="mockup-stack">
+          <div class="mockup-card mc1">
+            <div class="mc-icon">🐰</div>
+            <div class="mc-title">Luna la Conejita Valiente</div>
+            <span class="mc-tag">INFANTIL</span>
+          </div>
+          <div class="mockup-card mc2">
+            <div class="mc-icon">🤖</div>
+            <div class="mc-title">Prompts de IA para Negocios</div>
+            <span class="mc-tag">IA & NEGOCIOS</span>
+          </div>
+          <div class="mockup-card mc3">
+            <div class="mc-icon">📈</div>
+            <div class="mc-title">Ingresos con Redes Sociales</div>
+            <span class="mc-tag">RENTABILIDAD</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- RECIÉN AGREGADOS -->
+  <section id="new-arrivals">
+    <div class="container">
+      <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:32px;flex-wrap:wrap;gap:12px;">
+        <div>
+          <div class="section-label" style="color:var(--muted)">✨ Novedades</div>
+          <h2 style="font-size:clamp(22px,3vw,32px);font-weight:900;letter-spacing:-.02em;">Recién agregados</h2>
+        </div>
+        <button class="btn btn-ghost" style="padding:10px 22px;font-size:13px;" onclick="openCatalogModal()">Ver todo el catálogo →</button>
+      </div>
+      <div class="arrivals-wrapper">
+        <div class="arrivals-track" id="arrivals-track"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECCIÓN INFANTIL -->
+  <section id="infantil" class="light">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-label">📚 Colección infantil</div>
+        <h2>Libros infantiles educativos</h2>
+        <p>Contenido diseñado para estimular la creatividad, la lectura y los valores en niños de 3 a 10 años.</p>
+      </div>
+      <div class="benefits-row">
+        <div class="benefit-card">
+          <div class="benefit-icon">🎨</div>
+          <div class="benefit-title" style="color:#0A0A0A">Estimulación creativa</div>
+          <div class="benefit-desc">Actividades que desarrollan la imaginación y la expresión artística de los chicos.</div>
+        </div>
+        <div class="benefit-card">
+          <div class="benefit-icon">📖</div>
+          <div class="benefit-title" style="color:#0A0A0A">Hábito lector</div>
+          <div class="benefit-desc">Historias atractivas que despiertan el amor por los libros desde pequeños.</div>
+        </div>
+        <div class="benefit-card">
+          <div class="benefit-icon">💛</div>
+          <div class="benefit-title" style="color:#0A0A0A">Valores y emociones</div>
+          <div class="benefit-desc">Cuentos con mensajes positivos sobre amistad, valentía y empatía.</div>
+        </div>
+        <div class="benefit-card">
+          <div class="benefit-icon">📵</div>
+          <div class="benefit-title" style="color:#0A0A0A">Sin pantallas</div>
+          <div class="benefit-desc">Entretenimiento sano e imprimible, ideal para desconectar de los dispositivos.</div>
+        </div>
+      </div>
+      <div class="products-grid" id="landing-grid-infantil"></div>
+      <div class="section-cta">
+        <button class="btn btn-primary" onclick="openCatalogModal('infantil')">Ver todos los libros infantiles →</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- MID CTA -->
+  <section style="background:var(--accent);padding:48px 24px;text-align:center;">
+    <div class="container">
+      <p style="font-size:20px;font-weight:800;margin-bottom:16px;letter-spacing:-.02em;">¿Ya decidiste? Accedé a todo el catálogo por un único pago</p>
+      <button class="btn" style="background:#fff;color:var(--accent);font-size:16px;padding:16px 36px;border-radius:12px;" onclick="scrollTo('#pricing')">Ver oferta del pack completo →</button>
+    </div>
+  </section>
+
+  <!-- SECCIÓN RENTABLE -->
+  <section id="rentable" class="dark">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-label" style="color:var(--muted)">💡 eBooks prácticos</div>
+        <h2>Aprendé habilidades que generan ingresos</h2>
+        <p>Guías actualizadas para monetizar tus conocimientos, dominar las redes sociales y usar la IA a tu favor.</p>
+      </div>
+      <div class="benefits-row">
+        <div class="benefit-card">
+          <div class="benefit-icon">💰</div>
+          <div class="benefit-title">Dinero online</div>
+          <div class="benefit-desc">Estrategias reales y probadas para generar ingresos desde casa.</div>
+        </div>
+        <div class="benefit-card">
+          <div class="benefit-icon">📲</div>
+          <div class="benefit-title">Redes sociales</div>
+          <div class="benefit-desc">Aprende a crear contenido que crece, engancha y convierte seguidores en clientes.</div>
+        </div>
+        <div class="benefit-card">
+          <div class="benefit-icon">🤖</div>
+          <div class="benefit-title">Inteligencia artificial</div>
+          <div class="benefit-desc">Domina los prompts y herramientas de IA para multiplicar tu productividad.</div>
+        </div>
+        <div class="benefit-card">
+          <div class="benefit-icon">⚡</div>
+          <div class="benefit-title">Productividad</div>
+          <div class="benefit-desc">Sistemas y hábitos para lograr más en menos tiempo y con menos estrés.</div>
+        </div>
+      </div>
+      <div class="products-grid" id="landing-grid-ebooks"></div>
+      <div class="section-cta">
+        <button class="btn btn-primary" onclick="openCatalogModal('ebooks')">Ver todos los eBooks →</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRICING -->
+  <section id="pricing">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-label">💎 Oferta especial</div>
+        <h2>Un pago único. Acceso para siempre.</h2>
+        <p>Sin suscripciones ni costos ocultos. Pagás una vez y el catálogo es tuyo.</p>
+      </div>
+      <div class="pricing-grid">
+        <div class="pricing-card">
+          <div class="pc-plan">Plan</div>
+          <div class="pc-plan-name">Infantil</div>
+          <div class="pc-desc-plan">Todo el contenido para niños</div>
+          <div class="pc-price-main"><sub>$</sub>9.99</div>
+          <div class="pc-old-price">Antes $29.99</div>
+          <ul class="pc-features">
+            <li>Todos los cuentos ilustrados</li>
+            <li>Libros para colorear completos</li>
+            <li>Actividades imprimibles</li>
+            <li>Clásicos adaptados</li>
+            <li class="no">eBooks de ingresos</li>
+            <li class="no">Prompts de IA</li>
+          </ul>
+          <button class="btn btn-outline-accent btn-full" onclick="buyNow('Plan Infantil','$9.99')">Comprar Plan Infantil</button>
+        </div>
+        <div class="pricing-card featured">
+          <div class="pricing-badge">⚡ MEJOR OPCIÓN</div>
+          <div class="pc-plan">Plan</div>
+          <div class="pc-plan-name">Pack Completo</div>
+          <div class="pc-desc-plan">TODO el catálogo — infantil + eBooks</div>
+          <div class="pc-price-main"><sub>$</sub>19.99</div>
+          <div class="pc-old-price">Antes $79.99 — Ahorrás $60</div>
+          <ul class="pc-features">
+            <li>Todo el contenido infantil</li>
+            <li>Todos los eBooks de ingresos</li>
+            <li>500 Prompts de IA incluidos</li>
+            <li>Actualizaciones de por vida</li>
+            <li>Soporte prioritario</li>
+            <li>Nuevos títulos automáticos</li>
+          </ul>
+          <button class="btn btn-primary btn-full btn-lg" onclick="buyNow('Pack Completo','$19.99')">
+            Comprar ahora — $19.99
+          </button>
+          <p style="font-size:12px;color:var(--muted);text-align:center;margin-top:12px;">💳 PayPal · Tarjeta · Transferencia</p>
+        </div>
+        <div class="pricing-card">
+          <div class="pc-plan">Plan</div>
+          <div class="pc-plan-name">eBooks Pro</div>
+          <div class="pc-desc-plan">Solo eBooks de ingresos e IA</div>
+          <div class="pc-price-main"><sub>$</sub>14.99</div>
+          <div class="pc-old-price">Antes $49.99</div>
+          <ul class="pc-features">
+            <li>Guía Redes Sociales 2025</li>
+            <li>Negocios Digitales completo</li>
+            <li>500 Prompts de IA</li>
+            <li>Sistema de Productividad</li>
+            <li class="no">Contenido infantil</li>
+            <li class="no">Nuevos títulos automáticos</li>
+          </ul>
+          <button class="btn btn-outline-accent btn-full" onclick="buyNow('Plan eBooks Pro','$14.99')">Comprar Plan eBooks Pro</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TRUST -->
+  <section id="trust" class="dark">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-label" style="color:var(--muted)">✅ Por qué confiar</div>
+        <h2>Contenido práctico, actualizado y fácil de aplicar</h2>
+      </div>
+      <div class="trust-grid">
+        <div class="trust-item">
+          <div class="trust-icon">📩</div>
+          <div class="trust-title">Entrega automática</div>
+          <div class="trust-desc">Recibís el PDF por email en menos de 5 minutos después del pago.</div>
+        </div>
+        <div class="trust-item">
+          <div class="trust-icon">🔒</div>
+          <div class="trust-title">Pago 100% seguro</div>
+          <div class="trust-desc">Procesamos pagos con cifrado SSL y plataformas de confianza.</div>
+        </div>
+        <div class="trust-item">
+          <div class="trust-icon">♻️</div>
+          <div class="trust-title">Re-descarga ilimitada</div>
+          <div class="trust-desc">Accedé a tus compras desde tu panel de usuario cuando quieras.</div>
+        </div>
+        <div class="trust-item">
+          <div class="trust-icon">💰</div>
+          <div class="trust-title">Garantía 30 días</div>
+          <div class="trust-desc">Si no quedás conforme, te devolvemos el dinero sin preguntas.</div>
+        </div>
+      </div>
+      <div style="background:linear-gradient(135deg,rgba(108,71,255,.15),rgba(108,71,255,.05));border:1px solid rgba(108,71,255,.3);border-radius:20px;padding:40px;text-align:center;max-width:640px;margin:0 auto;">
+        <div style="font-size:48px;margin-bottom:16px;">🛡️</div>
+        <h3 style="font-size:22px;font-weight:800;margin-bottom:12px;">Garantía de devolución de 30 días</h3>
+        <p style="color:rgba(255,255,255,.6);font-size:15px;line-height:1.7;">Si por cualquier motivo no quedás satisfecho con tu compra, contactanos dentro de los 30 días y te devolvemos el 100% de tu dinero. Sin burocracia, sin letra chica.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- MID CTA 2 -->
+  <section style="background:var(--black);padding:64px 24px;text-align:center;border-top:1px solid rgba(255,255,255,.05)">
+    <div class="container">
+      <h3 style="font-size:26px;font-weight:800;margin-bottom:16px;letter-spacing:-.02em;">Más de 500 personas ya accedieron al catálogo</h3>
+      <p style="color:var(--muted);margin-bottom:28px;">Unite hoy y empezá a aprender y generar ingresos.</p>
+      <button class="btn btn-primary btn-lg" onclick="scrollTo('#pricing')">Quiero acceder ahora →</button>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-label">❓ Preguntas frecuentes</div>
+        <h2>Todo lo que necesitás saber</h2>
+      </div>
+      <div class="faq-list">
+        <div class="faq-item">
+          <div class="faq-question" onclick="toggleFaq(this)">
+            ¿Cómo accedo a los libros después de comprar?
+            <span class="faq-chevron">⌄</span>
+          </div>
+          <div class="faq-answer"><div class="faq-answer-inner">Inmediatamente después de confirmar el pago, recibís un email con el enlace de descarga directa. También podés acceder desde el panel de usuario en cualquier momento, donde encontrás el historial completo de tus compras.</div></div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question" onclick="toggleFaq(this)">
+            ¿En qué formato están los libros?
+            <span class="faq-chevron">⌄</span>
+          </div>
+          <div class="faq-answer"><div class="faq-answer-inner">Todos los productos se entregan en formato PDF de alta calidad. Los podés leer en cualquier dispositivo: celular, tablet, computadora o imprimirlos en casa. No necesitás ningún software especial.</div></div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question" onclick="toggleFaq(this)">
+            ¿Es compatible con celular y tablet?
+            <span class="faq-chevron">⌄</span>
+          </div>
+          <div class="faq-answer"><div class="faq-answer-inner">Sí, completamente. Los archivos PDF son compatibles con Android, iPhone, iPad y cualquier computadora. Solo necesitás un lector de PDF estándar (Adobe Reader, el lector nativo del celular, etc.) que ya tenés instalado.</div></div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question" onclick="toggleFaq(this)">
+            ¿Se actualiza el contenido?
+            <span class="faq-chevron">⌄</span>
+          </div>
+          <div class="faq-answer"><div class="faq-answer-inner">Los compradores del Pack Completo reciben automáticamente todas las actualizaciones y nuevos títulos que se agreguen al catálogo, sin costo adicional. Es una compra única con beneficios de por vida.</div></div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question" onclick="toggleFaq(this)">
+            ¿Cómo funciona la garantía de devolución?
+            <span class="faq-chevron">⌄</span>
+          </div>
+          <div class="faq-answer"><div class="faq-answer-inner">Si dentro de los primeros 30 días no quedás satisfecho, escribinos a soporte y procesamos el reembolso completo. Sin preguntas incómodas ni demoras. Tu tranquilidad es nuestra prioridad.</div></div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question" onclick="toggleFaq(this)">
+            ¿Qué métodos de pago aceptan?
+            <span class="faq-chevron">⌄</span>
+          </div>
+          <div class="faq-answer"><div class="faq-answer-inner">Aceptamos PayPal, tarjetas de crédito y débito internacionales, y transferencia bancaria según disponibilidad. Todos los pagos se procesan de forma segura con cifrado SSL.</div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA FINAL -->
+  <section id="cta-final">
+    <div class="cta-final-inner container">
+      <div class="badge">🎯 Empezá hoy</div>
+      <h2>Tu biblioteca digital<br/>te está esperando</h2>
+      <p>Un solo pago. Acceso de por vida. Descarga inmediata.</p>
+      <div class="cta-actions">
+        <button class="btn btn-primary btn-lg" onclick="buyNow('Pack Completo','$19.99')">Acceder ahora — $19.99</button>
+        <button class="btn btn-ghost btn-lg" onclick="scrollTo('#faq')">Tengo preguntas</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-logo">Biblioteca<span>Digital</span> Inteligente</div>
+    <div class="footer-links">
+      <a href="#" onclick="openInfoModal('terminos')">Términos y condiciones</a>
+      <a href="#" onclick="openInfoModal('privacidad')">Privacidad</a>
+      <a href="#" onclick="openInfoModal('soporte')">Soporte</a>
+      <a href="#" onclick="openModal('login')">Mi cuenta</a>
+
+    </div>
+    <div class="footer-copy">© 2025 Biblioteca Digital Inteligente. Todos los derechos reservados.</div>
+  </footer>
+
+  <!-- CART BUTTON -->
+  <button class="cart-btn" onclick="toggleCart()" title="Ver carrito">
+    🛒
+    <span class="cart-count" id="cart-count" style="display:none">0</span>
+  </button>
+
+</div><!-- /landing -->
+
+<!-- CATALOG MODAL -->
+<div id="catalog-modal" onclick="e=>{ if(e.target===this) closeCatalogModal(); }">
+  <div class="catalog-modal-box">
+    <button class="modal-close" onclick="closeCatalogModal()" style="top:16px;right:20px;">×</button>
+    <div class="catalog-modal-header">
+      <div class="catalog-modal-title">📚 Catálogo completo</div>
+      <input class="catalog-search" id="catalog-search-input" type="text" placeholder="🔍 Buscar título..." oninput="filterCatalogModal()">
+    </div>
+    <div class="catalog-filter-bar" id="catalog-modal-filters"></div>
+    <div id="catalog-modal-grid"></div>
+  </div>
+</div>
+
+<!-- PAYPAL MODAL -->
+<div id="paypal-modal" style="position:fixed;inset:0;background:rgba(0,0,0,.88);backdrop-filter:blur(16px);z-index:4000;display:none;align-items:center;justify-content:center;padding:24px;" onclick="if(event.target===this)closePayPalModal()">
+  <div style="background:var(--surface);border:1px solid rgba(255,255,255,.12);border-radius:24px;padding:40px 32px;width:100%;max-width:420px;position:relative;animation:modalIn .25s ease;">
+    <button class="modal-close" onclick="closePayPalModal()">×</button>
+    <div style="text-align:center;margin-bottom:24px;">
+      <div style="font-size:32px;margin-bottom:8px;">💳</div>
+      <div style="font-size:20px;font-weight:800;margin-bottom:4px;" id="paypal-modal-title"></div>
+      <div style="font-size:28px;font-weight:900;color:var(--accent-light);" id="paypal-modal-price"></div>
+    </div>
+    <div style="background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:12px;padding:16px;margin-bottom:20px;font-size:13px;color:var(--muted);text-align:center;">
+      🔒 Pago 100% seguro procesado por PayPal
+    </div>
+    <div id="paypal-button-container"></div>
+  </div>
+</div>
+
+<!-- PDF PREVIEW MODAL -->
+<div id="preview-modal">
+  <div class="preview-box">
+    <button class="modal-close" onclick="closePreview()">×</button>
+    <div id="preview-content"></div>
+    <div style="display:flex;gap:10px;justify-content:center;margin-top:20px;flex-wrap:wrap;">
+      <button class="btn btn-primary" id="preview-buy-btn" style="padding:12px 28px;font-size:14px;">Comprar ahora →</button>
+      <button class="btn btn-ghost" onclick="closePreview()" style="padding:12px 20px;font-size:14px;">Cerrar</button>
+    </div>
+  </div>
+</div>
+
+<!-- CART PANEL -->
+<div class="cart-panel" id="cart-panel">
+  <div class="cart-panel-header">
+    <span class="cart-panel-title">🛒 Tu carrito</span>
+    <button class="modal-close" onclick="toggleCart()">×</button>
+  </div>
+  <div class="cart-items" id="cart-items-list"></div>
+  <div class="cart-empty" id="cart-empty" style="display:none">Tu carrito está vacío</div>
+  <div class="cart-total" id="cart-total-row" style="display:none">
+    <span class="cart-total-label">Total</span>
+    <span class="cart-total-value" id="cart-total-value">$0.00</span>
+  </div>
+  <button class="btn btn-primary btn-full" id="cart-checkout-btn" style="display:none" onclick="checkoutCart()">
+    Pagar ahora →
+  </button>
+</div>
+
+<!-- MODAL AUTH -->
+<div class="modal-overlay" id="auth-modal">
+  <div class="modal-box">
+    <button class="modal-close" onclick="closeModal()">×</button>
+    <div class="modal-title">Bienvenido</div>
+    <div class="modal-sub">Accedé a tu biblioteca digital</div>
+    <div class="modal-tabs">
+      <div class="modal-tab active" id="tab-login" onclick="switchTab('login')">Iniciar sesión</div>
+      <div class="modal-tab" id="tab-register" onclick="switchTab('register')">Registrarse</div>
+    </div>
+
+    <!-- LOGIN FORM -->
+    <div id="form-login">
+      <div class="form-group">
+        <label class="form-label">Email</label>
+        <input type="email" class="form-input" id="login-email" placeholder="tu@email.com" oninput="checkAdminEmail(this.value)" />
+      </div>
+      <div class="form-group" id="pass-group">
+        <label class="form-label">Contraseña</label>
+        <input type="password" class="form-input" id="login-pass" placeholder="Tu contraseña" />
+        <span class="forgot-link" onclick="showForgot()">¿Olvidaste tu contraseña?</span>
+      </div>
+      <div id="login-error" class="form-error" style="display:none"></div>
+      <button class="btn btn-primary btn-full" style="margin-top:8px" onclick="doLogin()">Iniciar sesión</button>
+    </div>
+
+    <!-- REGISTER FORM -->
+    <div id="form-register" style="display:none">
+      <div class="form-group">
+        <label class="form-label">Nombre</label>
+        <input type="text" class="form-input" id="reg-name" placeholder="Tu nombre" />
+      </div>
+      <div class="form-group">
+        <label class="form-label">Email</label>
+        <input type="email" class="form-input" id="reg-email" placeholder="tu@email.com" />
+      </div>
+      <div class="form-group">
+        <label class="form-label">Contraseña</label>
+        <input type="password" class="form-input" id="reg-pass" placeholder="Mínimo 6 caracteres" />
+      </div>
+      <div id="reg-error" class="form-error" style="display:none"></div>
+      <div id="reg-success" class="form-success" style="display:none"></div>
+      <button class="btn btn-primary btn-full" style="margin-top:8px" onclick="doRegister()">Crear cuenta gratis</button>
+      <p style="font-size:11px;color:var(--muted);text-align:center;margin-top:12px;">Al registrarte aceptás nuestros Términos y Política de Privacidad.</p>
+    </div>
+
+    <!-- FORGOT PASSWORD -->
+    <div id="form-forgot" style="display:none">
+      <div class="form-group">
+        <label class="form-label">Tu email registrado</label>
+        <input type="email" class="form-input" id="forgot-email" placeholder="tu@email.com" />
+      </div>
+      <div id="forgot-msg" class="form-success" style="display:none"></div>
+      <button class="btn btn-primary btn-full" style="margin-top:8px" onclick="doForgot()">Enviar enlace de recuperación</button>
+      <div class="divider"><div class="divider-line"></div><div class="divider-text">o</div><div class="divider-line"></div></div>
+      <button class="btn btn-ghost btn-full" onclick="switchTab('login')">Volver al login</button>
+    </div>
+  </div>
+</div>
+
+<!-- ADMIN PANEL -->
+<div id="admin-panel">
+  <div class="admin-header">
+    <div style="display:flex;align-items:center;gap:10px">
+      <button id="admin-burger" onclick="toggleAdminSidebar()" style="display:none;background:none;border:none;color:var(--white);font-size:22px;cursor:pointer;padding:4px 8px;">☰</button>
+      <span class="admin-logo">Biblioteca<span>Digital</span></span>
+      <span class="admin-badge">Admin Panel</span>
+    </div>
+    <div class="admin-user-info">
+      <span style="font-size:13px;color:var(--muted)" id="admin-user-label"></span>
+      <div class="admin-avatar" id="admin-avatar-initial">A</div>
+      <button class="nav-btn-login" onclick="doLogout()">Salir</button>
+    </div>
+  </div>
+  <div class="admin-layout">
+    <div id="admin-sidebar-overlay" onclick="toggleAdminSidebar()" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:998;"></div>
+    <div class="admin-sidebar" id="admin-sidebar">
+      <div class="admin-nav-item active" onclick="showAdminSection('dashboard',this)">📊 Dashboard</div>
+      <div class="admin-nav-item" onclick="showAdminSection('metrics',this)">📈 Métricas</div>
+      <div class="admin-nav-item" onclick="showAdminSection('products',this)">📦 Productos</div>
+      <div class="admin-nav-item" onclick="showAdminSection('catalog',this)">🖼️ Catálogo</div>
+      <div class="admin-nav-item" onclick="showAdminSection('editor',this)">✏️ Editor web</div>
+      <div class="admin-nav-item" onclick="showAdminSection('storage',this)">☁️ GitHub Storage</div>
+      <div class="admin-nav-item" onclick="showAdminSection('orders',this)">🧾 Pedidos</div>
+      <div class="admin-nav-item" onclick="showAdminSection('users',this)">👥 Usuarios</div>
+      <div class="admin-nav-item" onclick="showAdminSection('emails',this)">📧 Emails</div>
+      <div style="margin-top:auto;">
+        <div class="admin-nav-item" onclick="doLogout()">🚪 Cerrar sesión</div>
+      </div>
+    </div>
+    <div class="admin-content">
+
+      <!-- DASHBOARD -->
+      <div class="admin-panel-section active" id="section-dashboard">
+        <div class="admin-section-title">Dashboard</div>
+        <div class="admin-section-sub">Resumen de actividad de la plataforma</div>
+        <div class="admin-stats">
+          <div class="admin-stat">
+            <div class="admin-stat-label">Usuarios registrados</div>
+            <div class="admin-stat-value" id="stat-users">—</div>
+          </div>
+          <div class="admin-stat">
+            <div class="admin-stat-label">Pedidos totales</div>
+            <div class="admin-stat-value" id="stat-orders">—</div>
+          </div>
+          <div class="admin-stat">
+            <div class="admin-stat-label">Ingresos totales</div>
+            <div class="admin-stat-value" id="stat-revenue">—</div>
+          </div>
+          <div class="admin-stat">
+            <div class="admin-stat-label">Productos activos</div>
+            <div class="admin-stat-value" id="stat-products">—</div>
+          </div>
+        </div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-bottom:28px;">
+          <div style="background:var(--surface);border:1px solid rgba(255,255,255,.08);border-radius:16px;padding:24px;">
+            <div style="font-size:12px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.1em;margin-bottom:16px;">📈 Ingresos por producto</div>
+            <canvas id="chart-revenue-by-product" height="200"></canvas>
+          </div>
+          <div style="background:var(--surface);border:1px solid rgba(255,255,255,.08);border-radius:16px;padding:24px;">
+            <div style="font-size:12px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.1em;margin-bottom:16px;">🗂️ Ventas por categoría</div>
+            <canvas id="chart-sales-by-cat" height="200"></canvas>
+          </div>
+        </div>
+        <h3 style="font-size:16px;font-weight:700;margin-bottom:16px;">Últimas compras</h3>
+        <table class="admin-table" id="recent-orders-table">
+          <thead><tr><th>Usuario</th><th>Producto</th><th>Precio</th><th>Estado</th></tr></thead>
+          <tbody id="recent-orders-body"></tbody>
+        </table>
+      </div>
+
+      <!-- MÉTRICAS -->
+      <div class="admin-panel-section" id="section-metrics">
+        <div class="admin-section-title">Métricas</div>
+        <div class="admin-section-sub">Análisis completo de ventas, usuarios y productos</div>
+
+        <!-- KPI ROW -->
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:14px;margin-bottom:28px;" id="metrics-kpis"></div>
+
+        <!-- CHARTS ROW 1 -->
+        <div style="display:grid;grid-template-columns:2fr 1fr;gap:20px;margin-bottom:20px;">
+          <div style="background:var(--surface);border:1px solid rgba(255,255,255,.08);border-radius:16px;padding:24px;">
+            <div style="font-size:12px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.1em;margin-bottom:16px;">📅 Ventas por día (últimos 30 días)</div>
+            <canvas id="chart-sales-timeline" height="120"></canvas>
+          </div>
+          <div style="background:var(--surface);border:1px solid rgba(255,255,255,.08);border-radius:16px;padding:24px;">
+            <div style="font-size:12px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.1em;margin-bottom:16px;">🏆 Top productos</div>
+            <div id="metrics-top-products"></div>
+          </div>
+        </div>
+
+        <!-- CHARTS ROW 2 -->
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-bottom:20px;">
+          <div style="background:var(--surface);border:1px solid rgba(255,255,255,.08);border-radius:16px;padding:24px;">
+            <div style="font-size:12px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.1em;margin-bottom:16px;">👥 Usuarios nuevos por día</div>
+            <canvas id="chart-users-timeline" height="160"></canvas>
+          </div>
+          <div style="background:var(--surface);border:1px solid rgba(255,255,255,.08);border-radius:16px;padding:24px;">
+            <div style="font-size:12px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.1em;margin-bottom:16px;">📚 Distribución por categoría</div>
+            <canvas id="chart-cat-donut" height="160"></canvas>
+          </div>
+        </div>
+
+        <!-- FULL ORDERS TABLE -->
+        <div style="background:var(--surface);border:1px solid rgba(255,255,255,.08);border-radius:16px;padding:24px;">
+          <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:16px;">
+            <div style="font-size:12px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.1em;">📋 Todas las ventas</div>
+            <button class="btn btn-outline-accent" style="padding:8px 16px;font-size:12px;" onclick="exportCSV()">⬇ Exportar CSV</button>
+          </div>
+          <table class="admin-table">
+            <thead><tr><th>Fecha</th><th>Usuario</th><th>Producto</th><th>Categoría</th><th>Monto</th><th>Estado</th></tr></thead>
+            <tbody id="metrics-orders-body"></tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- GITHUB STORAGE -->
+      <div class="admin-panel-section" id="section-storage">
+        <div class="admin-section-title">☁️ GitHub Storage</div>
+        <div class="admin-section-sub">Guardá PDFs y carátulas en tu repositorio de GitHub. Los archivos quedan disponibles para siempre.</div>
+
+        <!-- CONFIG -->
+        <div style="background:var(--surface);border:1px solid rgba(255,255,255,.08);border-radius:16px;padding:28px;margin-bottom:24px;">
+          <div style="font-size:13px;font-weight:700;color:var(--accent-light);text-transform:uppercase;letter-spacing:.08em;margin-bottom:20px;">🔧 Configuración del repositorio</div>
+          <div class="admin-form-grid" style="margin-bottom:16px;">
+            <div class="form-group">
+              <label class="form-label">Usuario de GitHub</label>
+              <input type="text" class="form-input" id="gh-user" placeholder="tu-usuario" value="octavofernandez275-del" />
+            </div>
+            <div class="form-group">
+              <label class="form-label">Nombre del repositorio</label>
+              <input type="text" class="form-input" id="gh-repo" placeholder="biblioteca-digital" value="biblioteca" />
+            </div>
+          </div>
+          <div class="form-group" style="margin-bottom:16px;">
+            <label class="form-label">Token de acceso personal (Fine-grained, permiso Contents: read & write)</label>
+            <input type="password" class="form-input" id="gh-token" placeholder="github_pat_..." />
+            <div style="font-size:11px;color:var(--muted);margin-top:6px;">Generalo en github.com → Settings → Developer settings → Personal access tokens → Fine-grained</div>
+          </div>
+          <div style="display:flex;gap:12px;">
+            <button class="btn btn-primary" style="padding:10px 24px;font-size:13px;" onclick="saveGithubConfig()">Guardar configuración</button>
+            <button class="btn btn-ghost" style="padding:10px 24px;font-size:13px;" onclick="testGithubConnection()">Probar conexión</button>
+          </div>
+          <div id="gh-status" style="margin-top:14px;font-size:13px;display:none;padding:10px 14px;border-radius:8px;"></div>
+        </div>
+
+        <!-- UPLOAD FILES -->
+        <div style="background:var(--surface);border:1px solid rgba(255,255,255,.08);border-radius:16px;padding:28px;margin-bottom:24px;">
+          <div style="font-size:13px;font-weight:700;color:var(--accent-light);text-transform:uppercase;letter-spacing:.08em;margin-bottom:20px;">📤 Subir archivos a GitHub</div>
+          <div class="admin-form-grid" style="margin-bottom:16px;">
+            <div class="form-group">
+              <label class="form-label">Producto asociado</label>
+              <select class="form-input" id="gh-prod-select"></select>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Tipo de archivo</label>
+              <select class="form-input" id="gh-file-type">
+                <option value="pdf">📄 PDF del libro</option>
+                <option value="cover">🖼️ Carátula</option>
+              </select>
+            </div>
+          </div>
+          <div style="border:2px dashed rgba(255,255,255,.15);border-radius:12px;padding:28px;text-align:center;cursor:pointer;transition:all .2s;margin-bottom:16px;"
+            id="gh-drop-zone"
+            onclick="document.getElementById('gh-file-input').click()"
+            onmouseover="this.style.borderColor='var(--accent)';this.style.background='rgba(108,71,255,.06)'"
+            onmouseout="this.style.borderColor='rgba(255,255,255,.15)';this.style.background=''"
+            ondragover="event.preventDefault();this.style.borderColor='var(--accent)'"
+            ondrop="handleGhDrop(event)">
+            <div style="font-size:36px;margin-bottom:10px" id="gh-drop-icon">☁️</div>
+            <div style="font-size:14px;font-weight:700;margin-bottom:6px">Arrastrá o elegí el archivo</div>
+            <div id="gh-drop-label" style="font-size:12px;color:var(--muted);margin-bottom:14px">PDF o imagen JPG/PNG</div>
+            <button type="button" onclick="event.stopPropagation();document.getElementById('gh-file-input').click()"
+              style="background:var(--accent);color:#fff;border:none;padding:10px 24px;border-radius:8px;font-size:13px;font-weight:700;cursor:pointer;">
+              Elegir archivo
+            </button>
+          </div>
+          <input type="file" id="gh-file-input" accept=".pdf,image/*" style="display:none" onchange="ghFileSelected(this)" />
+          <button class="btn btn-primary" style="padding:12px 32px;" onclick="uploadToGithub()" id="gh-upload-btn" disabled>
+            ☁️ Subir a GitHub
+          </button>
+          <div id="gh-upload-progress" style="display:none;margin-top:16px;">
+            <div style="background:rgba(255,255,255,.08);border-radius:100px;height:6px;overflow:hidden;">
+              <div id="gh-progress-bar" style="height:100%;background:var(--accent);width:0%;transition:width .4s;border-radius:100px;"></div>
+            </div>
+            <div id="gh-progress-label" style="font-size:12px;color:var(--muted);margin-top:8px;">Subiendo...</div>
+          </div>
+        </div>
+
+        <!-- FILES IN REPO -->
+        <div style="background:var(--surface);border:1px solid rgba(255,255,255,.08);border-radius:16px;padding:28px;">
+          <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:16px;">
+            <div style="font-size:13px;font-weight:700;color:var(--accent-light);text-transform:uppercase;letter-spacing:.08em;">📁 Archivos en el repositorio</div>
+            <button class="btn btn-ghost" style="padding:8px 16px;font-size:12px;" onclick="listGithubFiles()">🔄 Actualizar</button>
+          </div>
+          <div id="gh-files-list"><p style="color:var(--muted);font-size:13px;">Configurá el repo y hacé clic en Actualizar.</p></div>
+        </div>
+      </div>
+
+      <!-- PRODUCTS -->
+      <div class="admin-panel-section" id="section-products">
+        <div class="admin-section-title">Gestión de Productos</div>
+        <div class="admin-section-sub">Cargá PDFs, carátulas y el sistema clasificará automáticamente</div>
+
+        <!-- FORMULARIO NUEVO PRODUCTO -->
+        <div style="background:var(--surface);border:1px solid rgba(255,255,255,.08);border-radius:16px;padding:28px;margin-bottom:28px;">
+          <h3 style="font-size:16px;font-weight:700;margin-bottom:20px;">➕ Nuevo producto</h3>
+          <div class="admin-form-grid">
+            <div class="form-group">
+              <label class="form-label">Nombre del producto</label>
+              <input type="text" class="form-input" id="prod-name" placeholder="Ej: Guía de Redes Sociales 2025" oninput="autoClassify()" />
+            </div>
+            <div class="form-group">
+              <label class="form-label">Precio ($)</label>
+              <input type="text" class="form-input" id="prod-price" placeholder="Ej: 9.99" />
+            </div>
+            <div class="form-group">
+              <label class="form-label">Autor</label>
+              <input type="text" class="form-input" id="prod-author" placeholder="Nombre del autor" />
+            </div>
+            <div class="form-group">
+              <label class="form-label">Categoría</label>
+              <select class="form-input" id="prod-cat">
+                <option value="infantil">Infantil</option>
+                <option value="ebooks">eBooks</option>
+                <option value="pack">Pack completo</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Descripción</label>
+            <input type="text" class="form-input" id="prod-desc" placeholder="Descripción breve del producto" oninput="autoClassify()" />
+          </div>
+
+          <!-- AUTO-CLASIFICACIÓN -->
+          <div id="auto-tags-box" style="display:none;background:rgba(108,71,255,.1);border:1px solid rgba(108,71,255,.25);border-radius:12px;padding:16px;margin-bottom:16px;">
+            <div style="font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--accent-light);margin-bottom:10px;">🤖 Clasificación sugerida automáticamente</div>
+            <div style="display:flex;flex-wrap:wrap;gap:8px;" id="auto-tags-list"></div>
+            <p style="font-size:12px;color:var(--muted);margin-top:10px;">Podés modificar las etiquetas antes de guardar</p>
+          </div>
+
+          <div class="admin-form-grid" style="margin-bottom:16px;">
+            <div class="form-group">
+              <label class="form-label">Género / Tema</label>
+              <input type="text" class="form-input" id="prod-genre" placeholder="Ej: Aventura, Finanzas, IA..." />
+            </div>
+            <div class="form-group">
+              <label class="form-label">Edad sugerida</label>
+              <select class="form-input" id="prod-age">
+                <option value="">Sin especificar</option>
+                <option value="3-6">3 a 6 años</option>
+                <option value="6-10">6 a 10 años</option>
+                <option value="10+">10 años en adelante</option>
+                <option value="adultos">Adultos</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- SUBIDA DE ARCHIVOS -->
+          <div style="margin-bottom:20px;">
+            <div style="font-size:12px;font-weight:700;color:var(--accent-light);text-transform:uppercase;letter-spacing:.1em;margin-bottom:14px;">📁 Archivos del producto</div>
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;">
+
+              <!-- PDF UPLOAD -->
+              <div style="background:rgba(255,255,255,.03);border:2px dashed rgba(255,255,255,.15);border-radius:14px;padding:20px;text-align:center;transition:all .2s;cursor:pointer;"
+                id="pdf-drop"
+                onclick="document.getElementById('prod-pdf').click()"
+                onmouseover="this.style.borderColor='var(--accent)';this.style.background='rgba(108,71,255,.08)'"
+                onmouseout="this.style.borderColor=pendingPdfB64?'var(--green)':'rgba(255,255,255,.15)';this.style.background='rgba(255,255,255,.03)'"
+                ondragover="event.preventDefault();this.style.borderColor='var(--accent)'"
+                ondrop="handleDrop(event,'pdf')">
+                <div style="font-size:36px;margin-bottom:10px">📄</div>
+                <div style="font-size:14px;font-weight:700;color:var(--white);margin-bottom:6px">Subir PDF</div>
+                <div id="pdf-label" style="font-size:12px;color:var(--muted);margin-bottom:14px">Arrastrá el archivo aquí</div>
+                <button type="button" onclick="event.stopPropagation();document.getElementById('prod-pdf').click()"
+                  style="background:var(--accent);color:#fff;border:none;padding:9px 20px;border-radius:8px;font-size:13px;font-weight:700;cursor:pointer;width:100%;">
+                  Elegir archivo PDF
+                </button>
+              </div>
+              <input type="file" id="prod-pdf" accept=".pdf" style="display:none" onchange="handleFileSelect(this,'pdf')" />
+
+              <!-- COVER UPLOAD -->
+              <div style="background:rgba(255,255,255,.03);border:2px dashed rgba(255,255,255,.15);border-radius:14px;padding:20px;text-align:center;transition:all .2s;cursor:pointer;"
+                id="cover-drop"
+                onclick="document.getElementById('prod-cover').click()"
+                onmouseover="this.style.borderColor='var(--accent)';this.style.background='rgba(108,71,255,.08)'"
+                onmouseout="this.style.borderColor=pendingCoverB64?'var(--green)':'rgba(255,255,255,.15)';this.style.background='rgba(255,255,255,.03)'"
+                ondragover="event.preventDefault();this.style.borderColor='var(--accent)'"
+                ondrop="handleDrop(event,'cover')">
+                <img id="cover-preview" style="max-height:100px;border-radius:8px;display:none;margin:0 auto 10px;object-fit:cover;" />
+                <div id="cover-icon" style="font-size:36px;margin-bottom:10px">🖼️</div>
+                <div style="font-size:14px;font-weight:700;color:var(--white);margin-bottom:6px">Subir carátula</div>
+                <div id="cover-label" style="font-size:12px;color:var(--muted);margin-bottom:14px">JPG, PNG o WEBP</div>
+                <button type="button" onclick="event.stopPropagation();document.getElementById('prod-cover').click()"
+                  style="background:rgba(255,255,255,.1);color:#fff;border:1px solid rgba(255,255,255,.2);padding:9px 20px;border-radius:8px;font-size:13px;font-weight:700;cursor:pointer;width:100%;">
+                  Elegir imagen
+                </button>
+              </div>
+              <input type="file" id="prod-cover" accept="image/*" style="display:none" onchange="handleFileSelect(this,'cover')" />
+
+            </div>
+          </div>
+
+          <div style="display:flex;gap:12px;align-items:center;padding-top:8px;border-top:1px solid rgba(255,255,255,.06);margin-top:8px;">
+            <button class="btn btn-primary" style="padding:14px 36px;font-size:15px;" onclick="addProduct()">✅ Guardar producto</button>
+            <span style="font-size:12px;color:var(--muted)">El PDF y la carátula se guardan localmente en tu navegador</span>
+          </div>
+        </div>
+
+        <!-- TABLA DE PRODUCTOS -->
+        <table class="admin-table">
+          <thead><tr><th>Carátula</th><th>Nombre</th><th>Autor</th><th>Género</th><th>Cat.</th><th>Precio</th><th>PDF</th><th></th></tr></thead>
+          <tbody id="products-table-body"></tbody>
+        </table>
+      </div>
+
+      <!-- CATÁLOGO VISUAL -->
+      <div class="admin-panel-section" id="section-catalog">
+        <div class="admin-section-title">Catálogo Visual</div>
+        <div class="admin-section-sub">Vista previa de todos los productos con carátulas</div>
+        <div style="display:flex;gap:12px;flex-wrap:wrap;margin-bottom:24px;" id="catalog-filters"></div>
+        <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:20px;" id="catalog-grid"></div>
+      </div>
+
+      <!-- EDITOR WEB -->
+      <div class="admin-panel-section" id="section-editor">
+        <div class="admin-section-title">Editor de la Web</div>
+        <div class="admin-section-sub">Modificá textos, precios y contenido visible de la landing</div>
+
+        <div style="display:flex;flex-direction:column;gap:16px;">
+
+          <div style="background:var(--surface);border:1px solid rgba(255,255,255,.08);border-radius:16px;padding:24px;">
+            <div style="font-size:13px;font-weight:700;color:var(--accent-light);margin-bottom:16px;text-transform:uppercase;letter-spacing:.08em;">🦸 Hero principal</div>
+            <div class="form-group">
+              <label class="form-label">Título principal</label>
+              <input type="text" class="form-input" id="edit-hero-title" />
+            </div>
+            <div class="form-group">
+              <label class="form-label">Subtítulo</label>
+              <input type="text" class="form-input" id="edit-hero-sub" />
+            </div>
+            <div class="form-group">
+              <label class="form-label">Texto del contador (ej: +500 lectores activos)</label>
+              <input type="text" class="form-input" id="edit-hero-eyebrow" />
+            </div>
+            <button class="btn btn-primary" style="padding:10px 22px;font-size:13px" onclick="applyEdits()">Aplicar cambios</button>
+          </div>
+
+          <div style="background:var(--surface);border:1px solid rgba(255,255,255,.08);border-radius:16px;padding:24px;">
+            <div style="font-size:13px;font-weight:700;color:var(--accent-light);margin-bottom:16px;text-transform:uppercase;letter-spacing:.08em;">💎 Precios del pack</div>
+            <div class="admin-form-grid">
+              <div class="form-group">
+                <label class="form-label">Precio Pack Completo</label>
+                <input type="text" class="form-input" id="edit-price-pack" placeholder="19.99" />
+              </div>
+              <div class="form-group">
+                <label class="form-label">Precio Plan Infantil</label>
+                <input type="text" class="form-input" id="edit-price-infantil" placeholder="9.99" />
+              </div>
+              <div class="form-group">
+                <label class="form-label">Precio Plan eBooks Pro</label>
+                <input type="text" class="form-input" id="edit-price-ebooks" placeholder="14.99" />
+              </div>
+            </div>
+            <button class="btn btn-primary" style="padding:10px 22px;font-size:13px" onclick="applyEdits()">Aplicar cambios</button>
+          </div>
+
+          <div style="background:var(--surface);border:1px solid rgba(255,255,255,.08);border-radius:16px;padding:24px;">
+            <div style="font-size:13px;font-weight:700;color:var(--accent-light);margin-bottom:16px;text-transform:uppercase;letter-spacing:.08em;">🎨 Colores del sitio</div>
+            <div class="admin-form-grid">
+              <div class="form-group">
+                <label class="form-label">Color acento (botones)</label>
+                <div style="display:flex;gap:10px;align-items:center;">
+                  <input type="color" id="edit-color-accent" value="#6C47FF" style="width:48px;height:40px;border-radius:8px;border:none;cursor:pointer;background:none;" />
+                  <input type="text" class="form-input" id="edit-color-accent-hex" placeholder="#6C47FF" style="flex:1" />
+                </div>
+              </div>
+              <div class="form-group">
+                <label class="form-label">Fondo principal</label>
+                <div style="display:flex;gap:10px;align-items:center;">
+                  <input type="color" id="edit-color-bg" value="#0A0A0A" style="width:48px;height:40px;border-radius:8px;border:none;cursor:pointer;background:none;" />
+                  <input type="text" class="form-input" id="edit-color-bg-hex" placeholder="#0A0A0A" style="flex:1" />
+                </div>
+              </div>
+            </div>
+            <button class="btn btn-primary" style="padding:10px 22px;font-size:13px" onclick="applyColorEdits()">Aplicar colores</button>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- ORDERS -->
+      <div class="admin-panel-section" id="section-orders">
+        <div class="admin-section-title">Pedidos</div>
+        <div class="admin-section-sub">Historial completo de compras y estados</div>
+        <table class="admin-table">
+          <thead><tr><th>ID</th><th>Usuario</th><th>Producto</th><th>Monto</th><th>Estado</th><th>Fecha</th></tr></thead>
+          <tbody id="orders-table-body"></tbody>
+        </table>
+      </div>
+
+      <!-- USERS -->
+      <div class="admin-panel-section" id="section-users">
+        <div class="admin-section-title">Usuarios</div>
+        <div class="admin-section-sub">Gestión de usuarios y roles del sistema</div>
+        <table class="admin-table">
+          <thead><tr><th>Nombre</th><th>Email</th><th>Rol</th><th>Registro</th><th>Acciones</th></tr></thead>
+          <tbody id="users-table-body"></tbody>
+        </table>
+      </div>
+
+      <!-- EMAILS -->
+      <div class="admin-panel-section" id="section-emails">
+        <div class="admin-section-title">Sistema de Emails</div>
+        <div class="admin-section-sub">Configuración y reenvío de emails de entrega</div>
+        <div style="background:var(--surface);border:1px solid rgba(255,255,255,.08);border-radius:16px;padding:28px;margin-bottom:24px;">
+          <h3 style="font-size:16px;font-weight:700;margin-bottom:20px;">Reenviar PDF por email</h3>
+          <div class="admin-form-grid">
+            <div class="form-group">
+              <label class="form-label">Email del cliente</label>
+              <input type="email" class="form-input" id="resend-email" placeholder="cliente@email.com" />
+            </div>
+            <div class="form-group">
+              <label class="form-label">Producto</label>
+              <input type="text" class="form-input" id="resend-product" placeholder="Nombre del producto" />
+            </div>
+          </div>
+          <button class="btn btn-primary" onclick="adminResendPdf()">Reenviar PDF</button>
+        </div>
+        <div style="background:var(--surface);border:1px solid rgba(255,255,255,.08);border-radius:16px;padding:28px;">
+          <h3 style="font-size:16px;font-weight:700;margin-bottom:16px;">Base de datos de emails</h3>
+          <p style="color:var(--muted);font-size:14px;margin-bottom:16px;">Total de emails capturados: <strong id="email-count" style="color:var(--accent-light)">0</strong></p>
+          <button class="btn btn-outline-accent" onclick="exportEmailListCSV()">Exportar lista CSV</button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- USER PANEL -->
+<div id="user-panel">
+  <div class="user-header">
+    <span class="nav-logo">Biblioteca<span style="color:var(--accent)">Digital</span></span>
+    <div style="display:flex;align-items:center;gap:12px">
+      <span style="font-size:13px;color:var(--muted)" id="user-header-label"></span>
+      <button class="nav-btn-login" onclick="doLogout()">Salir</button>
+    </div>
+  </div>
+  <div class="user-content">
+    <div class="user-greeting">Hola, <span id="user-greeting-name">usuario</span> 👋</div>
+    <div class="user-sub">Accedé a todos tus productos descargados</div>
+    <div id="user-purchases-empty" style="text-align:center;padding:60px 0;color:var(--muted)">
+      <div style="font-size:48px;margin-bottom:16px">📦</div>
+      <p style="font-size:16px;margin-bottom:20px">Aún no realizaste ninguna compra</p>
+    </div>
+    <div class="user-purchases" id="user-purchases-list" style="display:none"></div>
+
+    <div style="margin-top:48px;">
+      <div style="font-size:20px;font-weight:800;margin-bottom:6px;">📚 Catálogo completo</div>
+      <div style="font-size:14px;color:var(--muted);margin-bottom:24px;">Descubrí todos los libros y eBooks disponibles</div>
+      <div id="catalog-filters-user" style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:20px;"></div>
+      <div class="products-grid" id="catalog-grid-user"></div>
+    </div>
+  </div>
+</div>
+
+<div id="toast">Mensaje</div>
+
+<script>
+  // ─── GITHUB CONFIG (definido temprano: lo usan saveDB/loadDB) ───
+  let ghConfig = JSON.parse(localStorage.getItem('bdi_gh') || 'null') || {
+    user: 'octavofernandez275-del', repo: 'biblioteca', token: ''
+  };
+
+  // ─── STATE ───────────────────────────────────────
+  const DB_KEY = 'bdi_db';
+  let db = JSON.parse(localStorage.getItem(DB_KEY) || 'null') || {
+    users: [
+      { id: 1, name: 'Admin', email: 'admin@bdi.com', pass: 'admin123', role: 'admin', createdAt: new Date().toISOString() },
+      { id: 2, name: 'Octavio', email: 'octavofernandez275@gmail.com', pass: '', role: 'admin', createdAt: new Date().toISOString() }
+    ],
+    orders: [],
+    products: [
+      { id: 1, name: 'Cuentos Ilustrados Pack', cat: 'infantil', price: '$4.99', desc: '5 cuentos con ilustraciones', file: null },
+      { id: 2, name: 'Libros para Colorear', cat: 'infantil', price: '$3.99', desc: 'Más de 40 páginas', file: null },
+      { id: 3, name: 'Guía Redes Sociales 2025', cat: 'ebooks', price: '$7.99', desc: 'Instagram TikTok YouTube', file: null },
+      { id: 4, name: '500 Prompts de IA', cat: 'ebooks', price: '$6.99', desc: 'ChatGPT Claude Gemini', file: null },
+    ],
+    emailList: []
+  };
+  let currentUser = null;
+  let cart = [];
+  let pendingProduct = null;
+
+  // ─── GITHUB-BACKED DATABASE ──────────────────────
+  // Toda la base de datos (usuarios, productos, ventas) vive en un archivo
+  // db.json dentro del repo de GitHub. Esto evita depender de Firebase/Firestore.
+  let _dbSha = null;        // hash del archivo db.json en GitHub (necesario para actualizar sin pisar)
+  let _dbSyncTimer = null;  // debounce para no spamear la API de GitHub
+  let _dbSyncing = false;
+
+  function saveDB() {
+    localStorage.setItem(DB_KEY, JSON.stringify(db));
+    // sync a GitHub con debounce de 1.5s para agrupar cambios rápidos
+    clearTimeout(_dbSyncTimer);
+    _dbSyncTimer = setTimeout(() => syncDBToGithub(), 1500);
+  }
+
+  async function syncDBToGithub() {
+    if (!ghConfig.token || !ghConfig.user || !ghConfig.repo) return;
+    if (_dbSyncing) { _dbSyncTimer = setTimeout(() => syncDBToGithub(), 1500); return; }
+    _dbSyncing = true;
+    try {
+      // strip heavy base64 fields - esos archivos viven en GitHub Storage (pdfs/, covers/), no en db.json
+      const cleanProducts = db.products.map(p => {
+        const { pdfData, coverData, ...rest } = p;
+        return rest;
+      });
+      const payload = { users: db.users, orders: db.orders, products: cleanProducts, emailList: db.emailList, updatedAt: new Date().toISOString() };
+      const content = btoa(unescape(encodeURIComponent(JSON.stringify(payload, null, 2))));
+
+      // obtener el sha actual si no lo tenemos (necesario para no pisar el archivo)
+      if (!_dbSha) {
+        try {
+          const check = await fetch(
+            `https://api.github.com/repos/${ghConfig.user}/${ghConfig.repo}/contents/db.json`,
+            { headers: { Authorization: `token ${ghConfig.token}`, Accept: 'application/vnd.github+json' } }
+          );
+          if (check.ok) { const d = await check.json(); _dbSha = d.sha; }
+        } catch (e) {}
+      }
+
+      const res = await fetch(
+        `https://api.github.com/repos/${ghConfig.user}/${ghConfig.repo}/contents/db.json`,
+        {
+          method: 'PUT',
+          headers: { Authorization: `token ${ghConfig.token}`, Accept: 'application/vnd.github+json', 'Content-Type': 'application/json' },
+          body: JSON.stringify({ message: 'Actualizar base de datos', content, ...(_dbSha ? { sha: _dbSha } : {}) })
+        }
+      );
+      if (res.ok) {
+        const data = await res.json();
+        _dbSha = data.content.sha; // guardamos el nuevo sha para la próxima escritura
+      } else if (res.status === 409 || res.status === 422) {
+        // conflicto de sha (alguien más escribió primero): refrescamos el sha y reintentamos una vez
+        _dbSha = null;
+        const check = await fetch(
+          `https://api.github.com/repos/${ghConfig.user}/${ghConfig.repo}/contents/db.json`,
+          { headers: { Authorization: `token ${ghConfig.token}`, Accept: 'application/vnd.github+json' } }
+        );
+        if (check.ok) { const d = await check.json(); _dbSha = d.sha; }
+      } else {
+        console.error('Error guardando db.json en GitHub:', await res.text());
+      }
+    } catch (e) {
+      console.error('Error de red guardando en GitHub:', e);
+    } finally {
+      _dbSyncing = false;
+    }
+  }
+
+  async function loadDB() {
+    if (!ghConfig.token || !ghConfig.user || !ghConfig.repo) {
+      renderLandingGrids();
+      return;
+    }
+    try {
+      const res = await fetch(
+        `https://api.github.com/repos/${ghConfig.user}/${ghConfig.repo}/contents/db.json`,
+        { headers: { Authorization: `token ${ghConfig.token}`, Accept: 'application/vnd.github+json' } }
+      );
+      if (res.ok) {
+        const data = await res.json();
+        _dbSha = data.sha;
+        const decoded = decodeURIComponent(escape(atob(data.content)));
+        const cloudDB = JSON.parse(decoded);
+        if (cloudDB.users)    db.users    = cloudDB.users;
+        if (cloudDB.orders)   db.orders   = cloudDB.orders;
+        if (cloudDB.products) db.products = cloudDB.products;
+        if (cloudDB.emailList) db.emailList = cloudDB.emailList;
+        localStorage.setItem(DB_KEY, JSON.stringify(db));
+        console.log('✅ Base de datos sincronizada desde GitHub');
+      } else if (res.status === 404) {
+        // primera vez: el archivo db.json no existe todavía, lo creamos con los datos locales
+        console.log('📦 Creando db.json en GitHub por primera vez...');
+        saveDB();
+      } else {
+        console.warn('No se pudo leer db.json de GitHub:', res.status);
+      }
+    } catch (e) {
+      console.error('Error cargando base de datos desde GitHub (usando datos locales):', e);
+    }
+    renderLandingGrids();
+    if (currentUser && currentUser.role === 'admin' && document.getElementById('admin-panel').classList.contains('active')) {
+      populateAdmin();
+    }
+  }
+
+  // Mantiene compatibilidad con el resto del código que llama a esta función al guardar un usuario
+  function saveUserToCloud(user) { saveDB(); }
+
+  // ─── SESSION ─────────────────────────────────────
+  function restoreSession() {
+    const s = sessionStorage.getItem('bdi_session');
+    if (s) { currentUser = JSON.parse(s); } // solo restaura el usuario, no redirige
+  }
+  function setSession(user) { currentUser = user; sessionStorage.setItem('bdi_session', JSON.stringify(user)); }
+  function clearSession() { currentUser = null; sessionStorage.removeItem('bdi_session'); }
+
+  // ─── VIEWS ───────────────────────────────────────
+  function showUserView() {
+    if (!currentUser) return;
+
+    document.getElementById('admin-panel').classList.remove('active');
+
+    if (currentUser.role === 'admin') {
+      document.getElementById('landing').style.display = 'none';
+      document.getElementById('admin-panel').classList.add('active');
+      populateAdmin();
+      setTimeout(() => {
+        const prodNav = document.querySelector('[onclick*="products"]');
+        if (prodNav) showAdminSection('products', prodNav);
+      }, 50);
+      return;
+    }
+
+    document.getElementById('landing').style.display = 'block';
+
+    const panel = document.getElementById('user-panel');
+    if (panel) panel.classList.remove('active');
+  }
+  function doLogout() {
+    clearSession();
+    document.getElementById('landing').style.display = 'block';
+    document.getElementById('admin-panel').classList.remove('active');
+    document.getElementById('user-panel').classList.remove('active');
+    showToast('Sesión cerrada', 'success');
+  }
+
+  // ─── AUTH MODAL ──────────────────────────────────
+  let currentModalTab = 'login';
+  function openModal(tab) { document.getElementById('auth-modal').classList.add('active'); switchTab(tab||'login'); }
+  function closeModal() { document.getElementById('auth-modal').classList.remove('active'); }
+  function switchTab(t) {
+    currentModalTab = t;
+    document.getElementById('form-login').style.display = t==='login'?'block':'none';
+    document.getElementById('form-register').style.display = t==='register'?'block':'none';
+    document.getElementById('form-forgot').style.display = t==='forgot'?'block':'none';
+    document.getElementById('tab-login').classList.toggle('active', t==='login');
+    document.getElementById('tab-register').classList.toggle('active', t==='register');
+    clearErrors();
+  }
+  function showForgot() { switchTab('forgot'); }
+  function clearErrors() {
+    ['login-error','reg-error','reg-success','forgot-msg'].forEach(id=>{ const el=document.getElementById(id); if(el){el.style.display='none';el.textContent='';} });
+  }
+  function showErr(id, msg) { const el=document.getElementById(id); el.textContent=msg; el.style.display='block'; }
+
+  const ADMIN_EMAILS = ['admin@bdi.com', 'octavofernandez275@gmail.com'];
+
+  function doLogin() {
+    const email = document.getElementById('login-email').value.trim().toLowerCase();
+    const pass = document.getElementById('login-pass').value;
+    const isAdmin = ADMIN_EMAILS.includes(email);
+    if (!email) return showErr('login-error', 'Ingresá tu email');
+    if (!isAdmin && !pass) return showErr('login-error', 'Ingresá tu contraseña');
+    const user = isAdmin
+      ? db.users.find(u => u.email === email)
+      : db.users.find(u => u.email === email && u.pass === pass);
+    if (!user) return showErr('login-error', 'Email o contraseña incorrectos');
+    setSession(user);
+    closeModal();
+    showToast(`¡Bienvenido, ${user.name}!`, 'success');
+    if (pendingProduct) { const p = pendingProduct; pendingProduct = null; setTimeout(() => proceedBuy(p), 300); return; }
+    showUserView();
+  }
+
+  function doRegister() {
+    const name = document.getElementById('reg-name').value.trim();
+    const email = document.getElementById('reg-email').value.trim().toLowerCase();
+    const pass = document.getElementById('reg-pass').value;
+    if (!name||!email||!pass) return showErr('reg-error','Completá todos los campos');
+    if (!/\S+@\S+\.\S+/.test(email)) return showErr('reg-error','Email inválido');
+    if (pass.length < 6) return showErr('reg-error','La contraseña debe tener al menos 6 caracteres');
+    const existing = db.users.find(u=>u.email===email);
+    if (existing) {
+      // Si ya existe pero sin contraseña (pre-cargado), le asignamos la contraseña
+      if (existing.pass === '') { existing.pass = pass; existing.name = name; saveDB(); saveUserToCloud(existing); showErr('reg-success','✅ Cuenta activada. Iniciando sesión...'); document.getElementById('reg-error').style.display='none'; setTimeout(()=>{ setSession(existing); closeModal(); showToast(`Bienvenido, ${name}!`,'success'); showUserView(); },1000); return; }
+      return showErr('reg-error','Ese email ya está registrado');
+    }
+    const role = ADMIN_EMAILS.includes(email) ? 'admin' : 'user';
+    const newUser = { id: Date.now(), name, email, pass, role, createdAt: new Date().toISOString() };
+    db.users.push(newUser);
+    if (!db.emailList.includes(email)) db.emailList.push(email);
+    saveDB();
+    saveUserToCloud(newUser);
+    showErr('reg-success','✅ Cuenta creada. Iniciando sesión...');
+    document.getElementById('reg-error').style.display='none';
+    setTimeout(()=>{ setSession(newUser); closeModal(); showToast(`Bienvenido, ${name}!`,'success'); showUserView(); },1000);
+  }
+
+  function doForgot() {
+    const email = document.getElementById('forgot-email').value.trim().toLowerCase();
+    if (!email) return;
+    const el = document.getElementById('forgot-msg');
+    el.textContent = `✅ Si ese email está registrado, recibirás un enlace de recuperación en minutos.`;
+    el.style.display = 'block';
+  }
+
+  // ─── CART ────────────────────────────────────────
+  function addToCart(name, price) {
+    if (cart.find(i=>i.name===name)) { showToast('Ya está en el carrito'); return; }
+    cart.push({name, price});
+    updateCartUI();
+    toggleCart(true);
+    showToast(`✅ ${name} agregado al carrito`, 'success');
+  }
+  function removeFromCart(idx) { cart.splice(idx,1); updateCartUI(); }
+  function updateCartUI() {
+    const count = cart.length;
+    const countEl = document.getElementById('cart-count');
+    if (count>0) { countEl.textContent=count; countEl.style.display='flex'; } else { countEl.style.display='none'; }
+    const list = document.getElementById('cart-items-list');
+    const empty = document.getElementById('cart-empty');
+    const totalRow = document.getElementById('cart-total-row');
+    const checkoutBtn = document.getElementById('cart-checkout-btn');
+    if (count===0) { list.innerHTML=''; empty.style.display='block'; totalRow.style.display='none'; checkoutBtn.style.display='none'; return; }
+    empty.style.display='none'; totalRow.style.display='flex'; checkoutBtn.style.display='flex';
+    list.innerHTML = cart.map((item,i)=>`
+      <div class="cart-item">
+        <div class="cart-item-name">${item.name}</div>
+        <div style="display:flex;align-items:center;gap:8px">
+          <span class="cart-item-price">${item.price}</span>
+          <button class="cart-item-remove" onclick="removeFromCart(${i})">×</button>
+        </div>
+      </div>`).join('');
+    const total = cart.reduce((s,i)=>s+parseFloat(i.price.replace('$','')),0);
+    document.getElementById('cart-total-value').textContent = `$${total.toFixed(2)}`;
+  }
+  function toggleCart(forceOpen) {
+    const panel = document.getElementById('cart-panel');
+    if (forceOpen===true) panel.classList.add('open');
+    else panel.classList.toggle('open');
+    updateCartUI();
+  }
+  function checkoutCart() {
+    if (!currentUser) { pendingProduct = {bulk: true}; toggleCart(); openModal('login'); return; }
+    if (!cart.length) return;
+    // Si hay un solo item, usamos buyNow directo
+    if (cart.length === 1) {
+      toggleCart();
+      openPayPalModal(cart[0].name, cart[0].price);
+      return;
+    }
+    // Si hay múltiples items, creamos un pack
+    const total = cart.reduce((s,i) => s + parseFloat(i.price.replace('$','')), 0).toFixed(2);
+    const names = cart.map(i=>i.name).join(' + ');
+    toggleCart();
+    openPayPalModal(names, `$${total}`);
+  }
+
+  // ─── BUY ─────────────────────────────────────────
+  function buyNow(name, price) {
+    if (!currentUser) { pendingProduct={name,price}; openModal('login'); return; }
+    openPayPalModal(name, price);
+  }
+  function proceedBuy(p) {
+    openPayPalModal(p.name, p.price);
+  }
+  function createOrder(user, productName, price) {
+    const order = { id: `ORD-${Date.now()}`, userId: user.id, userEmail: user.email, userName: user.name, product: productName, price, status: 'aprobado', date: new Date().toLocaleString('es') };
+    db.orders.push(order);
+    saveDB();
+    return order;
+  }
+
+  // ─── PAYPAL MODAL ─────────────────────────────────
+  let _paypalProductName = '';
+  let _paypalPrice = '';
+  let _paypalRendered = false;
+
+  function openPayPalModal(name, price) {
+    _paypalProductName = name;
+    _paypalPrice = price;
+    const amount = parseFloat(price.replace('$',''));
+    document.getElementById('paypal-modal-title').textContent = name;
+    document.getElementById('paypal-modal-price').textContent = price;
+    document.getElementById('paypal-modal').style.display = 'flex';
+    document.body.style.overflow = 'hidden';
+    const container = document.getElementById('paypal-button-container');
+    container.innerHTML = '';
+    _paypalRendered = false;
+
+    if (typeof paypal === 'undefined') {
+      container.innerHTML = '<p style="color:var(--red);font-size:13px;">⚠️ Error cargando PayPal. Recargá la página.</p>';
+      return;
+    }
+
+    paypal.Buttons({
+      style: { layout: 'vertical', color: 'blue', shape: 'rect', label: 'pay' },
+      createOrder: function(data, actions) {
+        return actions.order.create({
+          purchase_units: [{
+            description: name,
+            amount: { currency_code: 'USD', value: amount.toFixed(2) }
+          }]
+        });
+      },
+      onApprove: function(data, actions) {
+        return actions.order.capture().then(function(details) {
+          closePayPalModal();
+          onPaymentSuccess(details);
+        });
+      },
+      onError: function(err) {
+        showToast('❌ Error en el pago. Intentá de nuevo.', 'error');
+        console.error('PayPal error:', err);
+      },
+      onCancel: function() {
+        showToast('Pago cancelado.');
+      }
+    }).render('#paypal-button-container');
+  }
+
+  function closePayPalModal() {
+    document.getElementById('paypal-modal').style.display = 'none';
+    document.body.style.overflow = '';
+  }
+
+  function onPaymentSuccess(details) {
+    // Crear orden en la DB
+    const order = createOrder(currentUser, _paypalProductName, _paypalPrice);
+
+    // Limpiar carrito si había items
+    cart = [];
+    updateCartUI();
+
+    // Buscar el producto para obtener el link de descarga
+    const prod = db.products.find(p => p.name === _paypalProductName);
+    const downloadLink = prod?.pdfUrl || prod?.pdfData
+      ? (prod.pdfUrl || 'https://tu-sitio.com/panel')
+      : 'https://tu-sitio.com/panel';
+
+    // Mandar email con EmailJS
+    emailjs.init('tBSVcR5eGW2qNCUdN');
+    emailjs.send('service_e5bon2b', 'template_orzrk5g', {
+      email: currentUser.email,
+      customer_name: currentUser.name,
+      product_name: _paypalProductName,
+      amount: _paypalPrice,
+      download_link: downloadLink
+    }).then(() => {
+      showToast('🎉 ¡Pago confirmado! Revisá tu email.', 'success');
+    }).catch(() => {
+      showToast('✅ Pago confirmado. Email en camino...', 'success');
+    });
+
+    showToast('✅ ¡Compra exitosa! Revisá tu email.', 'success');
+    setTimeout(() => showUserView(), 1200);
+  }
+
+  // ─── ADMIN ───────────────────────────────────────
+  function populateAdmin() {
+    const u = currentUser;
+    document.getElementById('admin-user-label').textContent = u.email;
+    document.getElementById('admin-avatar-initial').textContent = u.name[0].toUpperCase();
+    document.getElementById('stat-users').textContent = db.users.length;
+    document.getElementById('stat-orders').textContent = db.orders.length;
+    const rev = db.orders.reduce((s,o)=>s+parseFloat((o.price||'0').replace('$','')),0);
+    document.getElementById('stat-revenue').textContent = `$${rev.toFixed(2)}`;
+    document.getElementById('stat-products').textContent = db.products.length;
+    document.getElementById('email-count').textContent = db.emailList.length;
+
+    // recent orders
+    const tbody = document.getElementById('recent-orders-body');
+    tbody.innerHTML = db.orders.slice(-5).reverse().map(o=>`
+      <tr><td>${o.userName}</td><td>${o.product}</td><td>${o.price}</td>
+      <td><span class="status-badge status-ok">${o.status}</span></td></tr>`).join('') || '<tr><td colspan="4" style="color:var(--muted);text-align:center">Sin pedidos aún</td></tr>';
+
+    // products table with covers, author, genre
+    document.getElementById('products-table-body').innerHTML = db.products.map(p=>`
+      <tr>
+        <td>${(p.coverUrl||p.coverData) ? `<img src="${p.coverUrl||p.coverData}" style="width:36px;height:48px;object-fit:cover;border-radius:4px;display:block;">` : '<span style="color:var(--muted2);font-size:18px">📖</span>'}</td>
+        <td style="font-weight:600">${p.name}</td>
+        <td style="color:var(--muted)">${p.author||'—'}</td>
+        <td>${p.genre ? `<span style="background:rgba(108,71,255,.2);color:var(--accent-light);font-size:10px;font-weight:700;padding:3px 8px;border-radius:100px;">${p.genre}</span>` : '—'}</td>
+        <td><span class="role-badge role-user">${p.cat}</span></td>
+        <td style="font-weight:700">${p.price}</td>
+        <td style="color:${(p.pdfUrl||p.pdfData)?'var(--green)':'var(--muted)'};">${(p.pdfUrl||p.pdfData)?'✅ Subido':'⚠️ Pendiente'}</td>
+        <td style="display:flex;gap:6px;flex-wrap:wrap">
+          ${(p.pdfUrl||p.pdfData)?`<button class="btn btn-ghost" style="padding:5px 10px;font-size:11px" onclick="downloadPdf(${p.id})">⬇ PDF</button>`:''}
+          <button class="btn btn-ghost" style="padding:5px 10px;font-size:11px;color:var(--red);border-color:rgba(239,68,68,.3)" onclick="deleteProduct(${p.id})">Eliminar</button>
+        </td>
+      </tr>`).join('');
+
+    // orders
+    document.getElementById('orders-table-body').innerHTML = db.orders.length ? db.orders.slice().reverse().map(o=>`
+      <tr><td style="font-size:11px;font-family:monospace">${o.id}</td><td>${o.userName}</td><td>${o.product}</td>
+      <td>${o.price}</td><td><span class="status-badge status-ok">${o.status}</span></td><td style="font-size:12px;color:var(--muted)">${o.date}</td></tr>`).join('') : '<tr><td colspan="6" style="color:var(--muted);text-align:center">Sin pedidos</td></tr>';
+
+    // users
+    document.getElementById('users-table-body').innerHTML = db.users.map(u=>`
+      <tr><td>${u.name}</td><td>${u.email}</td>
+      <td><span class="role-badge ${u.role==='admin'?'role-admin':'role-user'}">${u.role}</span></td>
+      <td style="font-size:12px;color:var(--muted)">${new Date(u.createdAt).toLocaleDateString('es')} ${new Date(u.createdAt).toLocaleTimeString('es',{hour:'2-digit',minute:'2-digit'})}</td>
+      <td>${u.role!=='admin'?`<button class="btn btn-ghost" style="padding:6px 12px;font-size:12px" onclick="promoteUser(${u.id})">Hacer admin</button>`:''}</td></tr>`).join('') || '<tr><td colspan="5" style="color:var(--muted);text-align:center">Sin usuarios registrados todavía</td></tr>';
+
+    // catalog visual
+    populateCatalog();
+    // prefill editor
+    prefillEditor();
+  }
+
+  function populateCatalog() {
+    const grid = document.getElementById('catalog-grid');
+    const filters = document.getElementById('catalog-filters');
+    if(!grid||!filters) return;
+    const cats = [...new Set(db.products.map(p=>p.cat))];
+    filters.innerHTML = `<button onclick="filterCatalog('',this)" style="background:rgba(108,71,255,.25);border:1px solid var(--accent);color:var(--accent-light);font-size:12px;font-weight:700;padding:6px 16px;border-radius:100px;cursor:pointer;letter-spacing:.06em">TODOS</button>` +
+      cats.map(c=>`<button onclick="filterCatalog('${c}',this)" style="background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);color:var(--muted);font-size:12px;font-weight:700;padding:6px 16px;border-radius:100px;cursor:pointer;letter-spacing:.06em;">${c.toUpperCase()}</button>`).join('');
+    renderCatalogCards(db.products);
+  }
+
+  function filterCatalog(cat, btn) {
+    document.querySelectorAll('#catalog-filters button').forEach(b => {
+      b.style.background='rgba(255,255,255,.06)'; b.style.borderColor='rgba(255,255,255,.12)'; b.style.color='var(--muted)';
+    });
+    btn.style.background='rgba(108,71,255,.25)'; btn.style.borderColor='var(--accent)'; btn.style.color='var(--accent-light)';
+    const filtered = cat ? db.products.filter(p=>p.cat===cat) : db.products;
+    renderCatalogCards(filtered);
+  }
+
+  function renderCatalogCards(products) {
+    const grid = document.getElementById('catalog-grid');
+    if(!grid) return;
+    if (!products.length) { grid.innerHTML='<p style="color:var(--muted);font-size:14px">No hay productos en esta categoría</p>'; return; }
+    grid.innerHTML = products.map(p=>`
+      <div style="background:var(--surface);border:1px solid rgba(255,255,255,.08);border-radius:14px;overflow:hidden;transition:transform .2s,border-color .2s;" onmouseover="this.style.transform='translateY(-4px)';this.style.borderColor='rgba(108,71,255,.4)'" onmouseout="this.style.transform='';this.style.borderColor='rgba(255,255,255,.08)'">
+        <div style="height:180px;background:linear-gradient(135deg,var(--surface2),var(--night));display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;">
+          ${(p.coverUrl||p.coverData) ? `<img src="${p.coverUrl||p.coverData}" style="width:100%;height:100%;object-fit:cover;">` : '<div style="font-size:48px;opacity:.4">📖</div>'}
+          <span style="position:absolute;bottom:8px;right:8px;background:rgba(0,0,0,.7);color:var(--accent-light);font-size:10px;font-weight:700;padding:3px 8px;border-radius:100px;letter-spacing:.06em">${p.cat.toUpperCase()}</span>
+        </div>
+        <div style="padding:14px;">
+          <div style="font-size:13px;font-weight:700;margin-bottom:4px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">${p.name}</div>
+          ${p.author ? `<div style="font-size:11px;color:var(--muted);margin-bottom:6px">${p.author}</div>` : ''}
+          ${p.genre ? `<span style="background:rgba(108,71,255,.2);color:var(--accent-light);font-size:10px;font-weight:700;padding:3px 8px;border-radius:100px;">${p.genre}</span>` : ''}
+          <div style="display:flex;align-items:center;justify-content:space-between;margin-top:10px;">
+            <span style="font-size:16px;font-weight:800;color:var(--accent-light)">${p.price}</span>
+            <span style="font-size:11px;color:${(p.pdfUrl||p.pdfData)?'var(--green)':'var(--muted)'}">${(p.pdfUrl||p.pdfData)?'✅ PDF':'⚠️ Sin PDF'}</span>
+          </div>
+        </div>
+      </div>`).join('');
+  }
+
+  function downloadPdf(id) {
+    const p = db.products.find(p=>p.id===id);
+    const url = p && (p.pdfUrl || p.pdfData);
+    if (!url) { showToast('Sin PDF cargado','error'); return; }
+    if (p.pdfUrl) {
+      window.open(p.pdfUrl, '_blank');
+    } else {
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = p.pdfName || p.name+'.pdf';
+      a.click();
+    }
+    showToast('📥 Descargando PDF...','success');
+  }
+
+  // ─── WEB EDITOR ──────────────────────────────────
+  function prefillEditor() {
+    try {
+      const h1 = document.querySelector('.hero-h1');
+      if (h1) document.getElementById('edit-hero-title').value = h1.innerText.replace(/\n/g,' ').trim();
+      const sub = document.querySelector('.hero-sub');
+      if (sub) document.getElementById('edit-hero-sub').value = sub.innerText.trim();
+      const eyebrow = document.querySelector('.hero-eyebrow-text');
+      if (eyebrow) document.getElementById('edit-hero-eyebrow').value = eyebrow.innerText.trim();
+    } catch(e){}
+  }
+
+  function applyEdits() {
+    const title = document.getElementById('edit-hero-title').value.trim();
+    const sub = document.getElementById('edit-hero-sub').value.trim();
+    const eyebrow = document.getElementById('edit-hero-eyebrow').value.trim();
+    if (title) { const el=document.querySelector('.hero-h1'); if(el) el.innerHTML=title; }
+    if (sub) { const el=document.querySelector('.hero-sub'); if(el) el.textContent=sub; }
+    if (eyebrow) { const el=document.querySelector('.hero-eyebrow-text'); if(el) el.textContent=eyebrow; }
+    const packPrice = document.getElementById('edit-price-pack').value.trim();
+    const infantilPrice = document.getElementById('edit-price-infantil').value.trim();
+    const ebooksPrice = document.getElementById('edit-price-ebooks').value.trim();
+    const mains = document.querySelectorAll('.pc-price-main');
+    if (infantilPrice && mains[0]) mains[0].innerHTML=`<sub>$</sub>${infantilPrice}`;
+    if (packPrice && mains[1]) { mains[1].innerHTML=`<sub>$</sub>${packPrice}`; const b=document.querySelector('[onclick*="Pack Completo"]'); if(b){b.textContent=`Comprar ahora — $${packPrice}`;b.setAttribute('onclick',`buyNow('Pack Completo','$${packPrice}')`);}  }
+    if (ebooksPrice && mains[2]) mains[2].innerHTML=`<sub>$</sub>${ebooksPrice}`;
+    showToast('✅ Cambios aplicados a la web','success');
+  }
+
+  function applyColorEdits() {
+    const accent = document.getElementById('edit-color-accent').value;
+    const bg = document.getElementById('edit-color-bg').value;
+    if (accent) { document.documentElement.style.setProperty('--accent', accent); document.getElementById('edit-color-accent-hex').value=accent; }
+    if (bg) { document.documentElement.style.setProperty('--black', bg); document.getElementById('edit-color-bg-hex').value=bg; }
+    showToast('🎨 Colores actualizados','success');
+  }
+
+  function showAdminSection(id, el) {
+    document.querySelectorAll('.admin-panel-section').forEach(s=>s.classList.remove('active'));
+    document.querySelectorAll('.admin-nav-item').forEach(i=>i.classList.remove('active'));
+    document.getElementById('section-'+id).classList.add('active');
+    el.classList.add('active');
+    populateAdmin();
+    if (id === 'metrics') renderMetrics();
+    if (id === 'storage') initGithubForm();
+    // En mobile, cerrar el menú lateral al elegir una sección
+    if (window.innerWidth <= 768) closeAdminSidebar();
+  }
+
+  function toggleAdminSidebar() {
+    const sidebar = document.getElementById('admin-sidebar');
+    const overlay = document.getElementById('admin-sidebar-overlay');
+    const isOpen = sidebar.classList.contains('open');
+    if (isOpen) { closeAdminSidebar(); }
+    else {
+      sidebar.classList.add('open');
+      overlay.style.display = 'block';
+    }
+  }
+
+  function closeAdminSidebar() {
+    document.getElementById('admin-sidebar').classList.remove('open');
+    document.getElementById('admin-sidebar-overlay').style.display = 'none';
+  }
+
+  // ─── FILE HANDLING ───────────────────────────────
+  let pendingPdfB64 = null;
+  let pendingCoverB64 = null;
+  let pendingPdfName = null;
+  let pendingPdfFile = null;
+  let pendingCoverFile = null;
+
+  function handleFileSelect(input, type) {
+    const file = input.files[0];
+    if (!file) return;
+    const reader = new FileReader();
+    if (type === 'pdf') {
+      pendingPdfFile = file;
+      reader.onload = e => {
+        pendingPdfB64 = e.target.result;
+        pendingPdfName = file.name;
+        document.getElementById('pdf-label').textContent = '✅ ' + file.name;
+        document.getElementById('pdf-drop').style.borderColor = 'var(--green)';
+        // Auto-classify when PDF is loaded
+        const name = document.getElementById('prod-name').value.trim();
+        const desc = document.getElementById('prod-desc').value.trim();
+        if (name || desc) aiClassify(name, desc, file.name);
+      };
+      reader.readAsDataURL(file);
+    } else if (type === 'cover') {
+      pendingCoverFile = file;
+      reader.onload = e => {
+        pendingCoverB64 = e.target.result;
+        const preview = document.getElementById('cover-preview');
+        preview.src = e.target.result;
+        preview.style.display = 'block';
+        document.getElementById('cover-icon').style.display = 'none';
+        document.getElementById('cover-label').textContent = '✅ ' + file.name;
+        document.getElementById('cover-drop').style.borderColor = 'var(--green)';
+      };
+      reader.readAsDataURL(file);
+    }
+  }
+
+  function handleDrop(event, type) {
+    event.preventDefault();
+    const file = event.dataTransfer.files[0];
+    if (!file) return;
+    if (type === 'pdf' && !file.name.endsWith('.pdf')) { showToast('Solo se aceptan archivos PDF','error'); return; }
+    if (type === 'cover' && !file.type.startsWith('image/')) { showToast('Solo se aceptan imágenes','error'); return; }
+    const fakeInput = { files: [file] };
+    handleFileSelect(fakeInput, type);
+  }
+
+  // ─── AI CLASSIFICATION ───────────────────────────
+  let classifyTimer = null;
+
+  function autoClassify() {
+    clearTimeout(classifyTimer);
+    classifyTimer = setTimeout(() => {
+      const name = document.getElementById('prod-name').value.trim();
+      const desc = document.getElementById('prod-desc').value.trim();
+      if (name.length < 3 && desc.length < 3) return;
+      aiClassify(name, desc, pendingPdfName);
+    }, 800);
+  }
+
+  async function aiClassify(name, desc, pdfName) {
+    const box = document.getElementById('auto-tags-box');
+    const list = document.getElementById('auto-tags-list');
+    box.style.display = 'block';
+    list.innerHTML = '<span style="color:var(--muted);font-size:13px">🤖 Analizando con IA...</span>';
+
+    const prompt = `Eres un clasificador de libros y ebooks digitales. Analiza este producto y devuelve SOLO un JSON con estos campos, sin texto extra ni backticks:
+{
+  "genero": "string (ej: Novela histórica, Autoayuda, Infantil, Tecnología, Negocios, Ficción, etc.)",
+  "temas": ["array", "de", "3-5", "temas"],
+  "autor_sugerido": "string o vacío si no hay info",
+  "edad": "string (ej: Adultos, 6-10 años, Adolescentes, Todas las edades)",
+  "idioma": "string",
+  "nivel": "string (Principiante, Intermedio, Avanzado, o vacío)",
+  "tags": ["array", "de", "3-6", "etiquetas", "cortas"]
+}
+
+Producto: ${name}
+Descripción: ${desc}
+Nombre del archivo: ${pdfName || 'no disponible'}`;
+
+    try {
+      const res = await fetch('https://api.anthropic.com/v1/messages', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          model: 'claude-sonnet-4-20250514',
+          max_tokens: 400,
+          messages: [{ role: 'user', content: prompt }]
+        })
+      });
+      const data = await res.json();
+      const raw = data.content?.[0]?.text || '{}';
+      let clean = raw.replace(/```json|```/g, '').trim();
+      const parsed = JSON.parse(clean);
+
+      // Apply suggestions to form fields
+      if (parsed.genero && !document.getElementById('prod-genre').value) {
+        document.getElementById('prod-genre').value = parsed.genero;
+      }
+      if (parsed.edad) {
+        const ageMap = { 'adultos': 'adultos', 'todas las edades': '', '3-6': '3-6', '6-10': '6-10', '10+': '10+', 'adolescentes': '10+' };
+        const key = Object.keys(ageMap).find(k => parsed.edad.toLowerCase().includes(k));
+        if (key) document.getElementById('prod-age').value = ageMap[key];
+      }
+      if (parsed.autor_sugerido && !document.getElementById('prod-author').value) {
+        document.getElementById('prod-author').value = parsed.autor_sugerido;
+      }
+
+      // Render tags
+      const allTags = [
+        { label: parsed.genero, color: '#6C47FF', bg: 'rgba(108,71,255,.2)' },
+        ...(parsed.temas||[]).map(t => ({ label: t, color: '#22C55E', bg: 'rgba(34,197,94,.15)' })),
+        ...(parsed.tags||[]).map(t => ({ label: t, color: '#F59E0B', bg: 'rgba(245,158,11,.15)' })),
+        parsed.nivel ? { label: parsed.nivel, color: '#60A5FA', bg: 'rgba(96,165,250,.15)' } : null,
+        parsed.idioma ? { label: '🌐 ' + parsed.idioma, color: '#A78BFA', bg: 'rgba(167,139,250,.15)' } : null,
+      ].filter(Boolean);
+
+      list.innerHTML = allTags.map(tag => `
+        <span style="display:inline-flex;align-items:center;gap:6px;background:${tag.bg};border:1px solid ${tag.color}40;color:${tag.color};font-size:11px;font-weight:700;letter-spacing:.06em;padding:5px 12px;border-radius:100px;cursor:pointer;text-transform:uppercase;"
+          onclick="toggleTag(this)" title="Clic para desmarcar">${tag.label}</span>
+      `).join('');
+
+      // Store parsed result for saving
+      window._lastClassification = parsed;
+
+    } catch (err) {
+      list.innerHTML = '<span style="color:var(--muted);font-size:12px">⚠️ No se pudo clasificar automáticamente. Completá los campos manualmente.</span>';
+    }
+  }
+
+  function toggleTag(el) {
+    const active = el.style.opacity !== '0.35';
+    el.style.opacity = active ? '0.35' : '1';
+    el.style.textDecoration = active ? 'line-through' : 'none';
+  }
+
+  // ─── ADD PRODUCT (IMPROVED) ──────────────────────
+  function addProduct() {
+    const name = document.getElementById('prod-name').value.trim();
+    const price = document.getElementById('prod-price').value.trim();
+    const cat = document.getElementById('prod-cat').value;
+    const desc = document.getElementById('prod-desc').value.trim();
+    const author = document.getElementById('prod-author').value.trim();
+    const genre = document.getElementById('prod-genre').value.trim();
+    const age = document.getElementById('prod-age').value;
+    if (!name || !price) { showToast('Completá nombre y precio', 'error'); return; }
+
+    const classification = window._lastClassification || {};
+    const p = {
+      id: Date.now(), name, price: `$${price}`, cat, desc, author,
+      genre, age,
+      temas: classification.temas || [],
+      tags: classification.tags || [],
+      nivel: classification.nivel || '',
+      idioma: classification.idioma || '',
+      pdfName: pendingPdfName || null,
+      pdfData: pendingPdfB64 || null,
+      coverData: pendingCoverB64 || null,
+      file: pendingPdfName || null
+    };
+    db.products.push(p);
+    saveDB();
+
+    const hadPdf = !!pendingPdfFile;
+    const hadCover = !!pendingCoverFile;
+
+    // Subir archivos a GitHub (async, no bloquea la UI)
+    const productId = p.id;
+    const safeName = (p.name || 'libro').replace(/[^a-z0-9]/gi, '_').toLowerCase();
+    if (pendingPdfFile) {
+      uploadFileToGithub(pendingPdfFile, 'pdf', `${productId}_${safeName}`).then(url => {
+        const prod = db.products.find(x => x.id === productId);
+        if (prod) { prod.pdfUrl = url; prod.pdfData = null; saveDB(); populateAdmin(); renderLandingGrids(); }
+      }).catch(err => {
+        console.error('Error subiendo PDF a GitHub:', err);
+        showToast('⚠️ No se pudo subir el PDF a GitHub (configurá ☁️ GitHub Storage)','error');
+      });
+    }
+    if (pendingCoverFile) {
+      uploadFileToGithub(pendingCoverFile, 'cover', `${productId}_${safeName}`).then(url => {
+        const prod = db.products.find(x => x.id === productId);
+        if (prod) { prod.coverUrl = url; prod.coverData = null; saveDB(); populateAdmin(); renderLandingGrids(); }
+      }).catch(err => {
+        console.error('Error subiendo carátula a GitHub:', err);
+        showToast('⚠️ No se pudo subir la carátula a GitHub (configurá ☁️ GitHub Storage)','error');
+      });
+    }
+
+    // Reset form
+    ['prod-name','prod-price','prod-desc','prod-author','prod-genre'].forEach(id => document.getElementById(id).value = '');
+    document.getElementById('prod-age').value = '';
+    document.getElementById('pdf-label').textContent = 'Arrastrá o hacé clic para subir PDF';
+    document.getElementById('pdf-drop').style.borderColor = 'rgba(255,255,255,.15)';
+    document.getElementById('cover-label').textContent = 'Arrastrá o hacé clic para subir carátula';
+    document.getElementById('cover-drop').style.borderColor = 'rgba(255,255,255,.15)';
+    document.getElementById('cover-preview').style.display = 'none';
+    document.getElementById('cover-icon').style.display = 'block';
+    document.getElementById('auto-tags-box').style.display = 'none';
+    document.getElementById('auto-tags-list').innerHTML = '';
+    pendingPdfB64 = null; pendingCoverB64 = null; pendingPdfName = null;
+    pendingPdfFile = null; pendingCoverFile = null;
+    window._lastClassification = null;
+    populateAdmin();
+    renderLandingGrids();
+    showToast(hadPdf || hadCover ? '✅ Producto guardado, subiendo archivos...' : '✅ Producto guardado correctamente', 'success');
+  }
+
+  function deleteProduct(id) {
+    if (!confirm('¿Eliminar este producto?')) return;
+    db.products = db.products.filter(p=>p.id!==id);
+    saveDB(); populateAdmin(); renderLandingGrids();
+    showToast('Producto eliminado');
+  }
+
+  function promoteUser(id) {
+    const u = db.users.find(u=>u.id===id);
+    if (!u) return;
+    u.role = 'admin';
+    saveDB(); saveUserToCloud(u); populateAdmin();
+    showToast(`✅ ${u.name} ahora es admin`,'success');
+  }
+
+  function showAdminCheck() {
+    if (currentUser?.role==='admin') { showUserView(); return; }
+    openModal('login');
+  }
+
+  // ─── USER PANEL ──────────────────────────────────
+  function populateUserPanel() {
+    const u = currentUser;
+    document.getElementById('user-greeting-name').textContent = u.name;
+    document.getElementById('user-header-label').textContent = u.email;
+    const orders = db.orders.filter(o=>o.userId===u.id);
+    const empty = document.getElementById('user-purchases-empty');
+    const list = document.getElementById('user-purchases-list');
+    if (!orders.length) { empty.style.display='block'; list.style.display='none'; }
+    else {
+      empty.style.display='none'; list.style.display='grid';
+      list.innerHTML = orders.map(o=>{
+        const prod = db.products.find(p => p.name === o.product);
+        const hasFile = prod && (prod.pdfUrl || prod.pdfData);
+        return `
+        <div class="purchase-card">
+          <div class="purchase-info">
+            <div class="purchase-title">📄 ${o.product}</div>
+            <div class="purchase-date">${o.date} · <span class="status-badge status-ok">${o.status}</span></div>
+          </div>
+          <button class="btn btn-outline-accent" style="padding:10px 20px;font-size:13px" onclick="${hasFile ? `downloadPdf(${prod.id})` : `showToast('⚠️ El PDF de este producto todavía no fue cargado','error')`}">Descargar PDF</button>
+        </div>`;
+      }).join('');
+    }
+    renderUserCatalog();
+  }
+
+  function renderUserCatalog() {
+    const grid = document.getElementById('catalog-grid-user');
+    const filters = document.getElementById('catalog-filters-user');
+    if (!grid || !filters) return;
+    const cats = [...new Set(db.products.map(p=>p.cat))];
+    filters.innerHTML = `<button onclick="filterUserCatalog('',this)" style="background:rgba(108,71,255,.25);border:1px solid var(--accent);color:var(--accent-light);font-size:12px;font-weight:700;padding:6px 16px;border-radius:100px;cursor:pointer;letter-spacing:.06em" id="filter-all-user">TODOS</button>` +
+      cats.map(c=>`<button onclick="filterUserCatalog('${c}',this)" style="background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);color:var(--muted);font-size:12px;font-weight:700;padding:6px 16px;border-radius:100px;cursor:pointer;letter-spacing:.06em;">${c.toUpperCase()}</button>`).join('');
+    renderUserCatalogCards(db.products);
+  }
+
+  function filterUserCatalog(cat, btn) {
+    document.querySelectorAll('#catalog-filters-user button').forEach(b => {
+      b.style.background='rgba(255,255,255,.06)'; b.style.borderColor='rgba(255,255,255,.12)'; b.style.color='var(--muted)';
+    });
+    btn.style.background='rgba(108,71,255,.25)'; btn.style.borderColor='var(--accent)'; btn.style.color='var(--accent-light)';
+    const filtered = cat ? db.products.filter(p=>p.cat===cat) : db.products;
+    renderUserCatalogCards(filtered);
+  }
+
+  function renderUserCatalogCards(products) {
+    const grid = document.getElementById('catalog-grid-user');
+    if (!grid) return;
+    if (!products.length) { grid.innerHTML = '<p style="color:var(--muted);font-size:14px">No hay productos en esta categoría</p>'; return; }
+    grid.innerHTML = products.map(p => {
+      const cover = p.coverUrl || p.coverData;
+      const alreadyOwned = db.orders.some(o => o.userId === currentUser?.id && o.product === p.name);
+      return `
+      <div class="product-card" onclick="${alreadyOwned ? `showToast('Ya tenés este producto','success')` : `addToCart('${p.name.replace(/'/g,"\\'")}','${p.price}')`}">
+        ${cover ? `<div style="height:160px;border-radius:10px;overflow:hidden;margin-bottom:14px;"><img src="${cover}" style="width:100%;height:100%;object-fit:cover;"></div>` : `<div class="pc-emoji">📖</div>`}
+        ${p.genre ? `<div style="display:inline-block;background:rgba(108,71,255,.12);color:var(--accent-light);font-size:10px;font-weight:700;padding:2px 8px;border-radius:100px;letter-spacing:.06em;margin-bottom:8px;">${p.genre}</div><br>` : ''}
+        <div class="pc-title">${p.name}</div>
+        ${p.author ? `<div style="font-size:11px;color:var(--muted);margin-bottom:6px;">${p.author}</div>` : ''}
+        <div class="pc-desc">${p.desc || ''}</div>
+        <div style="display:flex;align-items:center;gap:10px;margin-top:12px;">
+          <span class="pc-price">${p.price}</span>
+          ${alreadyOwned
+            ? `<span style="margin-left:auto;font-size:12px;color:var(--green);font-weight:700;">✅ Ya lo tenés</span>`
+            : `<button class="btn btn-primary" style="padding:8px 16px;font-size:12px;margin-left:auto;" onclick="event.stopPropagation();addToCart('${p.name.replace(/'/g,"\\'")}','${p.price}')">Agregar →</button>`}
+        </div>
+      </div>`;
+    }).join('');
+  }
+
+  // ─── HELPERS ─────────────────────────────────────
+  function scrollTo(sel) { document.querySelector(sel)?.scrollIntoView({behavior:'smooth'}); }
+
+  function toggleFaq(el) {
+    const item = el.closest('.faq-item');
+    const isOpen = item.classList.contains('open');
+    document.querySelectorAll('.faq-item').forEach(i=>i.classList.remove('open'));
+    if (!isOpen) item.classList.add('open');
+  }
+
+  let toastTimer;
+  function showToast(msg, type='') {
+    const t = document.getElementById('toast');
+    t.textContent = msg;
+    t.className = `show ${type}`;
+    clearTimeout(toastTimer);
+    toastTimer = setTimeout(()=>t.className='', 3000);
+  }
+
+  // close modal on overlay click
+  document.getElementById('auth-modal').addEventListener('click', function(e){ if(e.target===this) closeModal(); });
+
+  function checkAdminEmail(val) {
+    const isAdmin = ADMIN_EMAILS.includes(val.trim().toLowerCase());
+    document.getElementById('pass-group').style.display = isAdmin ? 'none' : 'block';
+  }
+
+  // ─── ACCESO SECRETO ADMIN (Ctrl + Shift + A) ──────
+  document.addEventListener('keydown', function(e) {
+    if (e.ctrlKey && e.shiftKey && e.key === 'A') {
+      e.preventDefault();
+      if (currentUser?.role === 'admin') { showUserView(); }
+      else { document.getElementById('auth-modal').classList.add('active'); switchTab('login'); }
+    }
+  });
+
+
+  // ─── RENDER LANDING GRIDS FROM DB ────────────────
+  const CAT_EMOJIS = {
+    infantil: ['🐾','🖍️','✏️','🐇','📚','🎨','🌟','🦁','🐘','🐢'],
+    ebooks:   ['📱','🚀','🧠','📋','💡','📊','🎯','⚡','💰','🔥'],
+    pack:     ['💎','📦','🎁','✨','🏆']
+  };
+  function getEmoji(p, idx) {
+    if (p.coverUrl || p.coverData) return null; // has real cover
+    const pool = CAT_EMOJIS[p.cat] || ['📄'];
+    return pool[idx % pool.length];
+  }
+
+  function makeLandingCard(p, idx, isLight) {
+    const titleColor = isLight ? 'color:#0A0A0A' : '';
+    const descColor  = isLight ? 'color:rgba(10,10,10,.55)' : '';
+    const emoji = getEmoji(p, idx);
+    const cover = p.coverUrl || p.coverData;
+    const coverHtml = cover
+      ? `<div style="height:160px;border-radius:10px;overflow:hidden;margin-bottom:14px;">
+           <img src="${cover}" style="width:100%;height:100%;object-fit:cover;">
+         </div>`
+      : `<div class="pc-emoji">${emoji}</div>`;
+    const genreTag = p.genre
+      ? `<div style="display:inline-block;background:rgba(108,71,255,.12);color:var(--accent-light);font-size:10px;font-weight:700;padding:2px 8px;border-radius:100px;letter-spacing:.06em;margin-bottom:8px;">${p.genre}</div><br>`
+      : '';
+    const authorLine = p.author
+      ? `<div style="font-size:11px;color:var(--muted);margin-bottom:6px;">${p.author}</div>`
+      : '';
+    return `
+      <div class="product-card" onclick="addToCart('${p.name.replace(/'/g,"\\'")}','${p.price}')">
+        ${coverHtml}
+        ${genreTag}
+        <div class="pc-title" style="${titleColor}">${p.name}</div>
+        ${authorLine}
+        <div class="pc-desc" style="${descColor}">${p.desc || ''}</div>
+        <div style="display:flex;align-items:center;gap:10px;margin-top:12px;">
+          <span class="pc-price">${p.price}</span>
+          <button class="btn btn-primary" style="padding:8px 16px;font-size:12px;margin-left:auto;"
+            onclick="event.stopPropagation();addToCart('${p.name.replace(/'/g,"\\'")}','${p.price}')">
+            Agregar →
+          </button>
+        </div>
+      </div>`;
+  }
+
+  function renderLandingGrids() {
+    const infantilEl = document.getElementById('landing-grid-infantil');
+    const ebooksEl   = document.getElementById('landing-grid-ebooks');
+    if (!infantilEl || !ebooksEl) return;
+
+    const infantil = db.products.filter(p => p.cat === 'infantil');
+    const ebooks   = db.products.filter(p => p.cat === 'ebooks' || p.cat === 'pack');
+
+    infantilEl.innerHTML = infantil.length
+      ? infantil.map((p,i) => makeLandingCard(p, i, true)).join('')
+      : `<div style="grid-column:1/-1;text-align:center;padding:40px;color:rgba(10,10,10,.4);font-size:14px;">
+           Aún no hay productos en esta categoría.
+         </div>`;
+
+    ebooksEl.innerHTML = ebooks.length
+      ? ebooks.map((p,i) => makeLandingCard(p, i, false)).join('')
+      : `<div style="grid-column:1/-1;text-align:center;padding:40px;color:var(--muted);font-size:14px;">
+           Aún no hay eBooks cargados.
+         </div>`;
+  }
+
+
+  // ─── GITHUB CONFIG (UI helpers) ──────────────────
+  let ghPendingFile = null;
+
+  function initGithubForm() {
+    const u = document.getElementById('gh-user');
+    const r = document.getElementById('gh-repo');
+    const t = document.getElementById('gh-token');
+    if (u) u.value = ghConfig.user || '';
+    if (r) r.value = ghConfig.repo || '';
+    if (t) t.value = ghConfig.token || '';
+    // populate product selector
+    const sel = document.getElementById('gh-prod-select');
+    if (sel) {
+      sel.innerHTML = db.products.map(p =>
+        `<option value="${p.id}">${p.name}</option>`
+      ).join('');
+    }
+  }
+
+  function saveGithubConfig() {
+    ghConfig.user  = document.getElementById('gh-user').value.trim();
+    ghConfig.repo  = document.getElementById('gh-repo').value.trim();
+    ghConfig.token = document.getElementById('gh-token').value.trim();
+    localStorage.setItem('bdi_gh', JSON.stringify(ghConfig));
+    showToast('✅ Configuración guardada', 'success');
+    loadDB(); // sincroniza la base de datos apenas se configura GitHub
+  }
+
+  async function testGithubConnection() {
+    saveGithubConfig();
+    const status = document.getElementById('gh-status');
+    status.style.display = 'block';
+    status.style.background = 'rgba(255,255,255,.05)';
+    status.style.color = 'var(--muted)';
+    status.textContent = '🔄 Conectando con GitHub...';
+    try {
+      const res = await fetch(
+        `https://api.github.com/repos/${ghConfig.user}/${ghConfig.repo}`,
+        { headers: { Authorization: `token ${ghConfig.token}`, Accept: 'application/vnd.github+json' } }
+      );
+      if (res.ok) {
+        const data = await res.json();
+        status.style.background = 'rgba(34,197,94,.12)';
+        status.style.color = '#86EFAC';
+        status.textContent = `✅ Conectado — ${data.full_name} (${data.private ? '🔒 privado' : '🌐 público'})`;
+      } else {
+        const err = await res.json();
+        status.style.background = 'rgba(239,68,68,.12)';
+        status.style.color = '#FCA5A5';
+        status.textContent = `❌ Error ${res.status}: ${err.message}`;
+      }
+    } catch(e) {
+      status.style.background = 'rgba(239,68,68,.12)';
+      status.style.color = '#FCA5A5';
+      status.textContent = '❌ No se pudo conectar. Revisá el token y el repo.';
+    }
+  }
+
+  function handleGhDrop(event) {
+    event.preventDefault();
+    const file = event.dataTransfer.files[0];
+    if (file) { ghPendingFile = file; updateGhDropZone(file); }
+  }
+
+  function ghFileSelected(input) {
+    if (input.files[0]) { ghPendingFile = input.files[0]; updateGhDropZone(input.files[0]); }
+  }
+
+  function updateGhDropZone(file) {
+    document.getElementById('gh-drop-icon').textContent = file.type === 'application/pdf' ? '📄' : '🖼️';
+    document.getElementById('gh-drop-label').textContent = '✅ ' + file.name;
+    document.getElementById('gh-drop-zone').style.borderColor = 'var(--green)';
+    document.getElementById('gh-upload-btn').disabled = false;
+  }
+
+  // ─── Helper genérico: sube un File a GitHub y devuelve la URL pública ───
+  async function uploadFileToGithub(file, type, baseName) {
+    if (!ghConfig.token) throw new Error('GitHub no configurado');
+    const ext  = file.name.split('.').pop();
+    const path = type === 'pdf' ? `pdfs/${baseName}.${ext}` : `covers/${baseName}.${ext}`;
+
+    const b64 = await new Promise((res, rej) => {
+      const r = new FileReader();
+      r.onload = e => res(e.target.result.split(',')[1]);
+      r.onerror = rej;
+      r.readAsDataURL(file);
+    });
+
+    // check if file exists (to get sha for update instead of duplicate)
+    let sha = null;
+    try {
+      const check = await fetch(
+        `https://api.github.com/repos/${ghConfig.user}/${ghConfig.repo}/contents/${path}`,
+        { headers: { Authorization: `token ${ghConfig.token}`, Accept: 'application/vnd.github+json' } }
+      );
+      if (check.ok) { const d = await check.json(); sha = d.sha; }
+    } catch(e) {}
+
+    const body = { message: `Upload ${type}: ${baseName}`, content: b64, ...(sha ? { sha } : {}) };
+
+    const res = await fetch(
+      `https://api.github.com/repos/${ghConfig.user}/${ghConfig.repo}/contents/${path}`,
+      {
+        method: 'PUT',
+        headers: {
+          Authorization: `token ${ghConfig.token}`,
+          Accept: 'application/vnd.github+json',
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(body)
+      }
+    );
+
+    if (!res.ok) {
+      const err = await res.json().catch(() => ({ message: 'Error desconocido' }));
+      throw new Error(err.message);
+    }
+    const data = await res.json();
+    return data.content.download_url;
+  }
+
+  async function uploadToGithub() {
+    if (!ghPendingFile) { showToast('Elegí un archivo primero', 'error'); return; }
+    if (!ghConfig.token) { showToast('Configurá el token de GitHub primero', 'error'); return; }
+
+    const prodId  = document.getElementById('gh-prod-select').value;
+    const type    = document.getElementById('gh-file-type').value;
+    const product = db.products.find(p => String(p.id) === String(prodId));
+    const safeName = (product?.name || 'archivo').replace(/[^a-z0-9]/gi, '_').toLowerCase();
+
+    const progress = document.getElementById('gh-upload-progress');
+    const bar      = document.getElementById('gh-progress-bar');
+    const label    = document.getElementById('gh-progress-label');
+    progress.style.display = 'block';
+    bar.style.width = '40%';
+    label.textContent = 'Subiendo a GitHub...';
+
+    try {
+      const url = await uploadFileToGithub(ghPendingFile, type, safeName);
+      bar.style.width = '100%';
+      label.textContent = '✅ Subido correctamente';
+      label.style.color = 'var(--green)';
+
+      if (product) {
+        if (type === 'pdf') { product.pdfUrl = url; product.pdfData = null; }
+        else { product.coverUrl = url; product.coverData = null; }
+        saveDB();
+        populateAdmin();
+        renderLandingGrids();
+      }
+      showToast('✅ Archivo subido a GitHub', 'success');
+      setTimeout(() => { progress.style.display = 'none'; bar.style.width = '0%'; label.style.color = ''; }, 3000);
+      listGithubFiles();
+    } catch (err) {
+      bar.style.width = '100%';
+      label.textContent = '❌ Error: ' + err.message;
+      label.style.color = 'var(--red)';
+    }
+  }
+
+  async function listGithubFiles() {
+    if (!ghConfig.token) { showToast('Configurá el token primero', 'error'); return; }
+    const container = document.getElementById('gh-files-list');
+    container.innerHTML = '<p style="color:var(--muted);font-size:13px;">🔄 Cargando...</p>';
+
+    const fetchFolder = async (folder) => {
+      const res = await fetch(
+        `https://api.github.com/repos/${ghConfig.user}/${ghConfig.repo}/contents/${folder}`,
+        { headers: { Authorization: `token ${ghConfig.token}`, Accept: 'application/vnd.github+json' } }
+      );
+      if (!res.ok) return [];
+      return await res.json();
+    };
+
+    try {
+      const [pdfs, covers] = await Promise.all([fetchFolder('pdfs'), fetchFolder('covers')]);
+      const all = [
+        ...(Array.isArray(pdfs)   ? pdfs.map(f   => ({...f, tipo:'📄 PDF'}))   : []),
+        ...(Array.isArray(covers) ? covers.map(f => ({...f, tipo:'🖼️ Carátula'})) : [])
+      ];
+      if (!all.length) { container.innerHTML = '<p style="color:var(--muted);font-size:13px;">No hay archivos todavía.</p>'; return; }
+      container.innerHTML = `
+        <table class="admin-table">
+          <thead><tr><th>Tipo</th><th>Archivo</th><th>Tamaño</th><th>URL</th></tr></thead>
+          <tbody>${all.map(f => `
+            <tr>
+              <td>${f.tipo}</td>
+              <td style="font-size:12px;font-family:monospace">${f.name}</td>
+              <td style="font-size:12px;color:var(--muted)">${(f.size/1024).toFixed(1)} KB</td>
+              <td><a href="${f.download_url}" target="_blank" style="color:var(--accent-light);font-size:12px;">Ver archivo ↗</a></td>
+            </tr>`).join('')}
+          </tbody>
+        </table>`;
+    } catch(e) {
+      container.innerHTML = '<p style="color:var(--red);font-size:13px;">❌ Error al leer el repositorio.</p>';
+    }
+  }
+
+  // ─── METRICS ─────────────────────────────────────
+  function renderMetrics() {
+    // KPIs
+    const orders  = db.orders;
+    const revenue = orders.reduce((s,o) => s + parseFloat((o.price||'0').replace('$','')), 0);
+    const avgOrder = orders.length ? revenue / orders.length : 0;
+    const topProd = (() => {
+      const counts = {};
+      orders.forEach(o => counts[o.product] = (counts[o.product]||0) + 1);
+      return Object.entries(counts).sort((a,b)=>b[1]-a[1])[0]?.[0] || '—';
+    })();
+
+    const kpis = [
+      { label: 'Ingresos totales',   value: `$${revenue.toFixed(2)}`,  icon: '💰', color: '#22C55E' },
+      { label: 'Ventas totales',     value: orders.length,             icon: '🧾', color: '#6C47FF' },
+      { label: 'Ticket promedio',    value: `$${avgOrder.toFixed(2)}`, icon: '📊', color: '#F59E0B' },
+      { label: 'Usuarios',           value: db.users.length,           icon: '👥', color: '#60A5FA' },
+      { label: 'Productos',          value: db.products.length,        icon: '📦', color: '#A78BFA' },
+      { label: 'Producto top',       value: topProd.length > 16 ? topProd.slice(0,14)+'…' : topProd, icon: '🏆', color: '#FB923C' },
+    ];
+    document.getElementById('metrics-kpis').innerHTML = kpis.map(k => `
+      <div style="background:var(--surface);border:1px solid rgba(255,255,255,.08);border-radius:14px;padding:20px 16px;">
+        <div style="font-size:24px;margin-bottom:8px">${k.icon}</div>
+        <div style="font-size:11px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.08em;margin-bottom:6px">${k.label}</div>
+        <div style="font-size:22px;font-weight:900;color:${k.color}">${k.value}</div>
+      </div>`).join('');
+
+    // top products list
+    const counts = {};
+    const revenue2 = {};
+    orders.forEach(o => {
+      counts[o.product]   = (counts[o.product]||0) + 1;
+      revenue2[o.product] = (revenue2[o.product]||0) + parseFloat((o.price||'0').replace('$',''));
+    });
+    const sorted = Object.entries(counts).sort((a,b)=>b[1]-a[1]).slice(0,5);
+    const maxCount = sorted[0]?.[1] || 1;
+    document.getElementById('metrics-top-products').innerHTML = sorted.length
+      ? sorted.map(([name, count]) => `
+          <div style="margin-bottom:14px;">
+            <div style="display:flex;justify-content:space-between;font-size:12px;margin-bottom:5px;">
+              <span style="font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:160px">${name}</span>
+              <span style="color:var(--accent-light);font-weight:700">${count} venta${count>1?'s':''} · $${revenue2[name].toFixed(2)}</span>
+            </div>
+            <div style="background:rgba(255,255,255,.08);border-radius:100px;height:5px;">
+              <div style="width:${(count/maxCount)*100}%;height:100%;background:var(--accent);border-radius:100px;transition:width .6s"></div>
+            </div>
+          </div>`)
+        .join('')
+      : '<p style="color:var(--muted);font-size:13px;">Sin ventas todavía.</p>';
+
+    // orders table
+    document.getElementById('metrics-orders-body').innerHTML = orders.length
+      ? orders.slice().reverse().map(o => {
+          const prod = db.products.find(p => p.name === o.product);
+          return `<tr>
+            <td style="font-size:12px;color:var(--muted)">${o.date}</td>
+            <td>${o.userName}</td>
+            <td>${o.product}</td>
+            <td>${prod ? `<span class="role-badge role-user">${prod.cat}</span>` : '—'}</td>
+            <td style="font-weight:700;color:#22C55E">${o.price}</td>
+            <td><span class="status-badge status-ok">${o.status}</span></td>
+          </tr>`;
+        }).join('')
+      : '<tr><td colspan="6" style="color:var(--muted);text-align:center;padding:32px">Sin ventas todavía</td></tr>';
+
+    // draw charts after DOM settles
+    setTimeout(drawMetricCharts, 100);
+  }
+
+  function drawMetricCharts() {
+    // helper: last N days labels
+    const lastNDays = (n) => {
+      const days = [];
+      for (let i = n-1; i >= 0; i--) {
+        const d = new Date(); d.setDate(d.getDate()-i);
+        days.push(d.toLocaleDateString('es',{day:'2-digit',month:'2-digit'}));
+      }
+      return days;
+    };
+
+    const toDateLabel = (dateStr) => {
+      try { return new Date(dateStr).toLocaleDateString('es',{day:'2-digit',month:'2-digit'}); }
+      catch(e){ return ''; }
+    };
+
+    const days30 = lastNDays(30);
+
+    // sales timeline
+    const salesByDay = {};
+    days30.forEach(d => salesByDay[d] = 0);
+    db.orders.forEach(o => {
+      const label = toDateLabel(o.date) || o.date?.slice(0,5);
+      if (salesByDay.hasOwnProperty(label)) salesByDay[label]++;
+    });
+
+    drawChart('chart-sales-timeline', 'bar', days30,
+      [{ label:'Ventas', data: days30.map(d=>salesByDay[d]||0), backgroundColor:'rgba(108,71,255,.7)', borderRadius:4 }]);
+
+    // users timeline
+    const usersByDay = {};
+    days30.forEach(d => usersByDay[d] = 0);
+    db.users.forEach(u => {
+      const label = toDateLabel(u.createdAt);
+      if (usersByDay.hasOwnProperty(label)) usersByDay[label]++;
+    });
+    drawChart('chart-users-timeline', 'bar', days30,
+      [{ label:'Nuevos usuarios', data: days30.map(d=>usersByDay[d]||0), backgroundColor:'rgba(96,165,250,.7)', borderRadius:4 }]);
+
+    // cat donut
+    const catCounts = {};
+    db.products.forEach(p => catCounts[p.cat] = (catCounts[p.cat]||0)+1);
+    const catLabels = Object.keys(catCounts);
+    const catColors = ['rgba(108,71,255,.8)','rgba(34,197,94,.8)','rgba(251,191,36,.8)','rgba(239,68,68,.8)'];
+    drawChart('chart-cat-donut', 'doughnut', catLabels,
+      [{ data: catLabels.map(c=>catCounts[c]), backgroundColor: catColors.slice(0,catLabels.length), borderWidth:0 }]);
+
+    // dashboard mini charts
+    const prodRevenue = {};
+    db.orders.forEach(o => prodRevenue[o.product] = (prodRevenue[o.product]||0) + parseFloat((o.price||'0').replace('$','')));
+    const topProds = Object.entries(prodRevenue).sort((a,b)=>b[1]-a[1]).slice(0,5);
+    if (topProds.length) {
+      drawChart('chart-revenue-by-product', 'bar', topProds.map(p=>p[0].slice(0,18)),
+        [{ label:'$', data: topProds.map(p=>p[1]), backgroundColor:'rgba(108,71,255,.75)', borderRadius:6 }]);
+    }
+    const catSales = {};
+    db.orders.forEach(o => {
+      const prod = db.products.find(p=>p.name===o.product);
+      const cat = prod?.cat || 'otros';
+      catSales[cat] = (catSales[cat]||0) + 1;
+    });
+    const csLabels = Object.keys(catSales);
+    if (csLabels.length) {
+      drawChart('chart-sales-by-cat', 'doughnut', csLabels,
+        [{ data: csLabels.map(c=>catSales[c]), backgroundColor:catColors.slice(0,csLabels.length), borderWidth:0 }]);
+    }
+  }
+
+  const _charts = {};
+  function drawChart(id, type, labels, datasets) {
+    const canvas = document.getElementById(id);
+    if (!canvas) return;
+    if (_charts[id]) { try { _charts[id].destroy(); } catch(e){} }
+    const isDark = type !== 'doughnut';
+    const ctx = canvas.getContext('2d');
+    _charts[id] = new Chart(ctx, {
+      type,
+      data: { labels, datasets },
+      options: {
+        responsive: true,
+        plugins: {
+          legend: { display: type==='doughnut', labels:{ color:'#888', font:{size:11} } }
+        },
+        scales: isDark ? {
+          x: { ticks:{ color:'#555', font:{size:10} }, grid:{ color:'rgba(255,255,255,.04)' } },
+          y: { ticks:{ color:'#555', font:{size:10} }, grid:{ color:'rgba(255,255,255,.04)' }, beginAtZero:true }
+        } : {}
+      }
+    });
+  }
+
+  function exportCSV() {
+    const rows = [['Fecha','Usuario','Email','Producto','Precio','Estado']];
+    db.orders.forEach(o => rows.push([o.date, o.userName, o.userEmail, o.product, o.price, o.status]));
+    const csv = rows.map(r => r.map(v => `"${v||''}"`).join(',')).join('\n');
+    const a = document.createElement('a');
+    a.href = 'data:text/csv;charset=utf-8,' + encodeURIComponent(csv);
+    a.download = `ventas_${new Date().toISOString().slice(0,10)}.csv`;
+    a.click();
+    showToast('📊 CSV exportado', 'success');
+  }
+
+  // ─── WISHLIST ─────────────────────────────────────
+  function getWishlist() {
+    if (!currentUser) return [];
+    return JSON.parse(localStorage.getItem(`bdi_wish_${currentUser.id}`) || '[]');
+  }
+  function saveWishlist(list) {
+    if (!currentUser) return;
+    localStorage.setItem(`bdi_wish_${currentUser.id}`, JSON.stringify(list));
+  }
+  function toggleWishlist(productName, btn) {
+    if (!currentUser) { openModal('login'); return; }
+    let wish = getWishlist();
+    const idx = wish.indexOf(productName);
+    if (idx === -1) {
+      wish.push(productName);
+      showToast('❤️ Agregado a tu lista de deseos', 'success');
+    } else {
+      wish.splice(idx, 1);
+      showToast('Quitado de tu lista de deseos');
+    }
+    saveWishlist(wish);
+    if (btn) btn.classList.toggle('wishlisted', wish.includes(productName));
+    // re-render si el modal está abierto
+    if (document.getElementById('catalog-modal').classList.contains('active')) renderCatalogModal(db.products);
+  }
+
+  // ─── BESTSELLER HELPERS ───────────────────────────
+  function getBestsellers() {
+    const counts = {};
+    db.orders.forEach(o => counts[o.product] = (counts[o.product]||0)+1);
+    const sorted = Object.entries(counts).sort((a,b)=>b[1]-a[1]);
+    return new Set(sorted.slice(0,3).map(e=>e[0]));
+  }
+  function getNewProducts() {
+    const sorted = [...db.products].sort((a,b) => (b.id||0) - (a.id||0));
+    return new Set(sorted.slice(0,5).map(p=>p.name));
+  }
+
+  // ─── CATALOG MODAL ────────────────────────────────
+  let _catalogFilter = '';
+  let _catalogSearch = '';
+  function openCatalogModal(filterCat) {
+    _catalogFilter = filterCat || '';
+    _catalogSearch = '';
+    const el = document.getElementById('catalog-modal');
+    el.classList.add('active');
+    const input = document.getElementById('catalog-search-input');
+    if (input) input.value = '';
+    renderCatalogModalFilters();
+    // apply pre-filter if any
+    if (filterCat) {
+      setTimeout(() => {
+        const btn = [...document.querySelectorAll('.cat-filter-btn')].find(b => b.textContent.toLowerCase().includes(filterCat.toLowerCase()));
+        if (btn) setCatalogFilter(filterCat, btn);
+        else applyModalFilters();
+      }, 50);
+    } else {
+      renderCatalogModal(db.products);
+    }
+    document.body.style.overflow = 'hidden';
+  }
+  function closeCatalogModal() {
+    document.getElementById('catalog-modal').classList.remove('active');
+    document.body.style.overflow = '';
+  }
+  document.getElementById('catalog-modal').addEventListener('click', function(e) {
+    if (e.target === this) closeCatalogModal();
+  });
+  function renderCatalogModalFilters() {
+    const cats = [...new Set(db.products.map(p=>p.cat))];
+    const bar = document.getElementById('catalog-modal-filters');
+    if (!bar) return;
+    bar.innerHTML = `<button class="cat-filter-btn active" onclick="setCatalogFilter('',this)">Todos</button>` +
+      cats.map(c => `<button class="cat-filter-btn" onclick="setCatalogFilter('${c}',this)">${c.charAt(0).toUpperCase()+c.slice(1)}</button>`).join('') +
+      `<button class="cat-filter-btn" onclick="setCatalogFilter('__wish__',this)">❤️ Mi lista</button>`;
+  }
+  function setCatalogFilter(cat, btn) {
+    _catalogFilter = cat;
+    document.querySelectorAll('.cat-filter-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    applyModalFilters();
+  }
+  function filterCatalogModal() {
+    _catalogSearch = document.getElementById('catalog-search-input').value.toLowerCase();
+    applyModalFilters();
+  }
+  function applyModalFilters() {
+    const wish = getWishlist();
+    let prods = db.products;
+    if (_catalogFilter === '__wish__') prods = prods.filter(p => wish.includes(p.name));
+    else if (_catalogFilter) prods = prods.filter(p => p.cat === _catalogFilter);
+    if (_catalogSearch) prods = prods.filter(p => p.name.toLowerCase().includes(_catalogSearch) || (p.desc||'').toLowerCase().includes(_catalogSearch));
+    renderCatalogModal(prods);
+  }
+  function renderCatalogModal(products) {
+    const grid = document.getElementById('catalog-modal-grid');
+    if (!grid) return;
+    const bestsellers = getBestsellers();
+    const newProds = getNewProducts();
+    const wish = getWishlist();
+    if (!products.length) {
+      grid.innerHTML = '<p style="color:var(--muted);text-align:center;padding:40px;grid-column:1/-1">No se encontraron productos.</p>';
+      return;
+    }
+    grid.innerHTML = products.map(p => {
+      const cover = p.coverUrl || p.coverData;
+      const isBest = bestsellers.has(p.name);
+      const isNew = newProds.has(p.name);
+      const isWished = wish.includes(p.name);
+      const coverHtml = cover
+        ? `<div style="height:140px;border-radius:10px;overflow:hidden;margin-bottom:12px;"><img src="${cover}" style="width:100%;height:100%;object-fit:cover;"></div>`
+        : `<div style="font-size:32px;margin-bottom:12px;text-align:center;">${CAT_EMOJIS[p.cat]?.[0]||'📄'}</div>`;
+      return `
+        <div class="product-card" style="position:relative;" onclick="openPreview(${p.id})">
+          ${isBest ? '<span class="bestseller-badge">🏆 Top</span>' : ''}
+          ${isNew && !isBest ? '<span class="new-badge">✨ Nuevo</span>' : ''}
+          ${coverHtml}
+          <div style="font-size:10px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.08em;margin-bottom:4px;">${p.cat}</div>
+          <div class="pc-title" style="font-size:14px;margin-bottom:6px;">${p.name}</div>
+          ${p.author ? `<div style="font-size:11px;color:var(--muted);margin-bottom:4px;">${p.author}</div>` : ''}
+          <div style="display:flex;align-items:center;justify-content:space-between;margin-top:10px;">
+            <span class="pc-price" style="font-size:17px;">${p.price}</span>
+            <div style="display:flex;gap:6px;align-items:center;">
+              <button class="wishlist-btn ${isWished?'wishlisted':''}" onclick="event.stopPropagation();toggleWishlist('${p.name.replace(/'/g,"\\'")}',this)" title="${isWished?'Quitar de lista':'Agregar a lista'}">
+                ${isWished?'❤️':'🤍'}
+              </button>
+              <button class="btn btn-primary" style="padding:6px 14px;font-size:11px;" onclick="event.stopPropagation();addToCart('${p.name.replace(/'/g,"\\'")}','${p.price}')">
+                + Carrito
+              </button>
+            </div>
+          </div>
+        </div>`;
+    }).join('');
+  }
+
+  // ─── PDF PREVIEW MODAL ────────────────────────────
+  function openPreview(productId) {
+    const p = db.products.find(x => x.id === productId);
+    if (!p) return;
+    const cover = p.coverUrl || p.coverData;
+    const content = document.getElementById('preview-content');
+    const buyBtn = document.getElementById('preview-buy-btn');
+    const alreadyOwned = currentUser && db.orders.some(o => o.userId === currentUser.id && o.product === p.name);
+    content.innerHTML = `
+      ${cover ? `<img src="${cover}" class="preview-cover" alt="Carátula de ${p.name}">` : `<div style="font-size:64px;margin-bottom:16px;">${CAT_EMOJIS[p.cat]?.[0]||'📄'}</div>`}
+      <div style="font-size:20px;font-weight:800;margin-bottom:6px;">${p.name}</div>
+      ${p.author ? `<div style="font-size:13px;color:var(--muted);margin-bottom:8px;">por ${p.author}</div>` : ''}
+      ${p.genre ? `<div style="display:inline-block;background:rgba(108,71,255,.15);color:var(--accent-light);font-size:11px;font-weight:700;padding:3px 12px;border-radius:100px;margin-bottom:12px;">${p.genre}</div>` : ''}
+      <div style="font-size:14px;color:rgba(255,255,255,.65);line-height:1.7;margin:12px 0;">${p.desc || 'Sin descripción disponible.'}</div>
+      <div style="font-size:28px;font-weight:900;color:var(--accent-light);margin-top:16px;">${p.price}</div>
+      ${alreadyOwned ? '<div style="color:var(--green);font-size:13px;font-weight:700;margin-top:8px;">✅ Ya compraste este producto</div>' : ''}
+    `;
+    if (alreadyOwned) {
+      buyBtn.textContent = 'Ya lo tenés ✓';
+      buyBtn.onclick = closePreview;
+      buyBtn.style.background = 'var(--green)';
+    } else {
+      buyBtn.textContent = 'Comprar ahora →';
+      buyBtn.style.background = '';
+      buyBtn.onclick = () => { addToCart(p.name, p.price); closePreview(); };
+    }
+    document.getElementById('preview-modal').classList.add('active');
+  }
+  function closePreview() {
+    document.getElementById('preview-modal').classList.remove('active');
+  }
+  document.getElementById('preview-modal').addEventListener('click', function(e) {
+    if (e.target === this) closePreview();
+  });
+
+  // ─── NEW ARRIVALS CAROUSEL ────────────────────────
+  function renderArrivalsCarousel() {
+    const track = document.getElementById('arrivals-track');
+    if (!track) return;
+    const bestsellers = getBestsellers();
+    const sorted = [...db.products].sort((a,b) => (b.id||0) - (a.id||0)).slice(0, 10);
+    if (!sorted.length) { track.parentElement.parentElement.style.display = 'none'; return; }
+    track.parentElement.parentElement.style.display = '';
+    track.innerHTML = sorted.map(p => {
+      const cover = p.coverUrl || p.coverData;
+      const isBest = bestsellers.has(p.name);
+      return `
+        <div class="arrival-card" onclick="openPreview(${p.id})">
+          ${isBest ? '<span class="bestseller-badge">🏆 Top</span>' : ''}
+          ${cover
+            ? `<div style="height:120px;border-radius:8px;overflow:hidden;margin-bottom:12px;"><img src="${cover}" style="width:100%;height:100%;object-fit:cover;"></div>`
+            : `<div style="font-size:36px;text-align:center;margin-bottom:12px;">${CAT_EMOJIS[p.cat]?.[0]||'📄'}</div>`}
+          <div style="font-size:10px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.08em;margin-bottom:4px;">${p.cat}</div>
+          <div style="font-size:13px;font-weight:700;margin-bottom:8px;line-height:1.3;">${p.name}</div>
+          <div style="font-size:15px;font-weight:800;color:var(--accent-light);">${p.price}</div>
+        </div>`;
+    }).join('');
+  }
+
+  // ─── ADMIN: REENVIAR PDF ──────────────────────────
+  function adminResendPdf() {
+    const email = document.getElementById('resend-email').value.trim();
+    const product = document.getElementById('resend-product').value.trim();
+    if (!email || !product) { showToast('⚠️ Completá email y producto', 'error'); return; }
+    const prod = db.products.find(p => p.name.toLowerCase().includes(product.toLowerCase()));
+    const downloadLink = prod?.pdfUrl || 'https://tu-sitio.com/panel';
+    const user = db.users.find(u => u.email.toLowerCase() === email.toLowerCase());
+    emailjs.init('tBSVcR5eGW2qNCUdN');
+    emailjs.send('service_e5bon2b', 'template_orzrk5g', {
+      email,
+      customer_name: user?.name || 'Cliente',
+      product_name: product,
+      amount: prod?.price || '—',
+      download_link: downloadLink
+    }).then(() => {
+      showToast('📧 Email reenviado correctamente', 'success');
+      document.getElementById('resend-email').value = '';
+      document.getElementById('resend-product').value = '';
+    }).catch(() => showToast('❌ Error enviando email', 'error'));
+  }
+
+  // ─── ADMIN: EXPORTAR EMAILS CSV ───────────────────
+  function exportEmailListCSV() {
+    const emails = db.emailList || [];
+    const users = db.users.filter(u => u.role !== 'admin');
+    const all = [...new Set([...emails, ...users.map(u => u.email)])];
+    if (!all.length) { showToast('No hay emails registrados aún', 'error'); return; }
+    const csv = 'Email\n' + all.join('\n');
+    const a = document.createElement('a');
+    a.href = 'data:text/csv;charset=utf-8,' + encodeURIComponent(csv);
+    a.download = `emails_biblioteca_${new Date().toISOString().slice(0,10)}.csv`;
+    a.click();
+    showToast(`📊 ${all.length} emails exportados`, 'success');
+  }
+
+  // ─── INFO MODAL (Términos, Privacidad, Soporte) ───
+  const _infoContent = {
+    terminos: {
+      title: '📋 Términos y condiciones',
+      body: `<p>Al realizar una compra en Biblioteca Digital Inteligente aceptás los siguientes términos:</p>
+      <ul style="margin:16px 0;padding-left:20px;display:flex;flex-direction:column;gap:10px;">
+        <li>Los productos digitales (PDFs) son de uso personal y no pueden redistribuirse.</li>
+        <li>La entrega es inmediata por email tras confirmar el pago.</li>
+        <li>Garantía de devolución de 30 días sin preguntas.</li>
+        <li>Los precios están expresados en dólares estadounidenses (USD).</li>
+        <li>Nos reservamos el derecho de actualizar estos términos en cualquier momento.</li>
+      </ul>
+      <p style="color:var(--muted);font-size:13px;">Para consultas: octavofernandez275@gmail.com</p>`
+    },
+    privacidad: {
+      title: '🔒 Política de privacidad',
+      body: `<p>Tu privacidad es importante para nosotros:</p>
+      <ul style="margin:16px 0;padding-left:20px;display:flex;flex-direction:column;gap:10px;">
+        <li>Solo recopilamos tu nombre y email para procesar tu compra y enviarte el PDF.</li>
+        <li>No compartimos tus datos con terceros.</li>
+        <li>Los pagos son procesados por PayPal con cifrado SSL. No almacenamos datos de tarjetas.</li>
+        <li>Podés solicitar la eliminación de tus datos en cualquier momento.</li>
+      </ul>
+      <p style="color:var(--muted);font-size:13px;">Para solicitudes: octavofernandez275@gmail.com</p>`
+    },
+    soporte: {
+      title: '💬 Soporte',
+      body: `<p>¿Necesitás ayuda? Estamos para vos:</p>
+      <div style="display:flex;flex-direction:column;gap:12px;margin-top:16px;">
+        <a href="mailto:octavofernandez275@gmail.com" style="display:flex;align-items:center;gap:12px;background:rgba(108,71,255,.1);border:1px solid rgba(108,71,255,.3);border-radius:12px;padding:16px;color:var(--accent-light);text-decoration:none;">
+          <span style="font-size:24px">📧</span>
+          <div><div style="font-weight:700">Email</div><div style="font-size:13px;opacity:.7">octavofernandez275@gmail.com</div></div>
+        </a>
+        <div style="background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.08);border-radius:12px;padding:16px;">
+          <div style="font-weight:700;margin-bottom:4px;">⏱️ Tiempo de respuesta</div>
+          <div style="font-size:13px;color:var(--muted)">Respondemos en menos de 24 horas hábiles.</div>
+        </div>
+        <div style="background:rgba(34,197,94,.08);border:1px solid rgba(34,197,94,.2);border-radius:12px;padding:16px;">
+          <div style="font-weight:700;margin-bottom:4px;color:#86EFAC;">✅ Garantía 30 días</div>
+          <div style="font-size:13px;color:var(--muted)">Si no quedás conforme, te devolvemos el 100% sin preguntas.</div>
+        </div>
+      </div>`
+    }
+  };
+  function openInfoModal(type) {
+    const info = _infoContent[type];
+    if (!info) return;
+    const existing = document.getElementById('info-modal');
+    if (existing) existing.remove();
+    const modal = document.createElement('div');
+    modal.id = 'info-modal';
+    modal.style.cssText = 'position:fixed;inset:0;background:rgba(0,0,0,.85);backdrop-filter:blur(14px);z-index:5000;display:flex;align-items:center;justify-content:center;padding:24px;';
+    modal.innerHTML = `
+      <div style="background:var(--surface);border:1px solid rgba(255,255,255,.12);border-radius:20px;padding:36px 32px;width:100%;max-width:480px;position:relative;animation:modalIn .25s ease;max-height:80vh;overflow-y:auto;">
+        <button onclick="document.getElementById('info-modal').remove()" style="position:absolute;top:14px;right:18px;background:none;border:none;color:var(--muted);font-size:24px;cursor:pointer;line-height:1;">×</button>
+        <div style="font-size:20px;font-weight:800;margin-bottom:20px;">${info.title}</div>
+        <div style="font-size:14px;color:rgba(255,255,255,.75);line-height:1.7;">${info.body}</div>
+        <button onclick="document.getElementById('info-modal').remove()" class="btn btn-ghost btn-full" style="margin-top:24px;padding:12px;">Cerrar</button>
+      </div>`;
+    modal.addEventListener('click', e => { if (e.target === modal) modal.remove(); });
+    document.body.appendChild(modal);
+  }
+
+  // ─── PATCH renderLandingGrids to also render carousel ─
+  const _origRenderGrids = renderLandingGrids;
+  renderLandingGrids = function() {
+    _origRenderGrids();
+    renderArrivalsCarousel();
+  };
+
+  // ─── PATCH makeLandingCard to add badges + wishlist ──
+  const _origMakeLandingCard = makeLandingCard;
+  makeLandingCard = function(p, idx, isLight) {
+    const base = _origMakeLandingCard(p, idx, isLight);
+    const bestsellers = getBestsellers();
+    const newProds = getNewProducts();
+    const isBest = bestsellers.has(p.name);
+    const isNew = newProds.has(p.name) && !isBest;
+    // inject badges into product-card div by wrapping
+    let result = base.replace('<div class="product-card"', `<div class="product-card" style="position:relative;"`);
+    if (isBest) result = result.replace('style="position:relative;"', 'style="position:relative;">  <span class="bestseller-badge">🏆 Top</span');
+    else if (isNew) result = result.replace('style="position:relative;"', 'style="position:relative;">  <span class="new-badge">✨ Nuevo</span');
+    // add onclick to open preview instead of just add to cart
+    result = result.replace(`onclick="addToCart('${p.name.replace(/'/g,"\\'")}','${p.price}')"`,
+      `onclick="openPreview(${p.id})"`);
+    return result;
+  };
+
+  // ─── MOBILE MENU TOGGLE ───────────────────────────
+  function toggleMobileMenu() {
+    const menu = document.getElementById('nav-mobile-menu');
+    const btn = document.getElementById('nav-hamburger');
+    menu.classList.toggle('open');
+    btn.textContent = menu.classList.contains('open') ? '✕' : '☰';
+  }
+  // Close mobile menu on scroll
+  window.addEventListener('scroll', () => {
+    const menu = document.getElementById('nav-mobile-menu');
+    if (menu && menu.classList.contains('open')) {
+      menu.classList.remove('open');
+      document.getElementById('nav-hamburger').textContent = '☰';
+    }
+  }, { passive: true });
+
+  // ─── INIT ─────────────────────────────────────────
+  restoreSession();
+  updateCartUI();
+  renderLandingGrids();
+  loadDB(); // sincroniza con GitHub (db.json) si ya está configurado
+</script>
+</body>
+</html>
