@@ -1972,10 +1972,9 @@
 <div id="toast">Mensaje</div>
 
 <script>
-  // ─── GITHUB CONFIG (definido temprano: lo usan saveDB/loadDB) ───
-  let ghConfig = JSON.parse(localStorage.getItem('bdi_gh') || 'null') || {
-    user: 'octavofernandez275-del', repo: 'biblioteca', token: ''
-  };
+  // ─── WORKER CONFIG ───────────────────────────────
+  const WORKER_URL = 'https://biblioteca-db.octavofernandez275.workers.dev';
+  let ghConfig = { user: 'octavofernandez275-del', repo: 'biblioteca', token: 'via-worker' };
 
   // ─── STATE ───────────────────────────────────────
   const DB_KEY = 'bdi_db';
@@ -2012,88 +2011,47 @@
   }
 
   async function syncDBToGithub() {
-    if (!ghConfig.token || !ghConfig.user || !ghConfig.repo) return;
     if (_dbSyncing) { _dbSyncTimer = setTimeout(() => syncDBToGithub(), 1500); return; }
     _dbSyncing = true;
     try {
-      // strip heavy base64 fields - esos archivos viven en GitHub Storage (pdfs/, covers/), no en db.json
       const cleanProducts = db.products.map(p => {
         const { pdfData, coverData, ...rest } = p;
         return rest;
       });
       const payload = { users: db.users, orders: db.orders, products: cleanProducts, emailList: db.emailList, updatedAt: new Date().toISOString() };
-      const content = btoa(unescape(encodeURIComponent(JSON.stringify(payload, null, 2))));
-
-      // obtener el sha actual si no lo tenemos (necesario para no pisar el archivo)
-      if (!_dbSha) {
-        try {
-          const check = await fetch(
-            `https://api.github.com/repos/${ghConfig.user}/${ghConfig.repo}/contents/db.json`,
-            { headers: { Authorization: `token ${ghConfig.token}`, Accept: 'application/vnd.github+json' } }
-          );
-          if (check.ok) { const d = await check.json(); _dbSha = d.sha; }
-        } catch (e) {}
-      }
-
-      const res = await fetch(
-        `https://api.github.com/repos/${ghConfig.user}/${ghConfig.repo}/contents/db.json`,
-        {
-          method: 'PUT',
-          headers: { Authorization: `token ${ghConfig.token}`, Accept: 'application/vnd.github+json', 'Content-Type': 'application/json' },
-          body: JSON.stringify({ message: 'Actualizar base de datos', content, ...(_dbSha ? { sha: _dbSha } : {}) })
-        }
-      );
+      const res = await fetch(`${WORKER_URL}/db`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ data: payload })
+      });
       if (res.ok) {
-        const data = await res.json();
-        _dbSha = data.content.sha; // guardamos el nuevo sha para la próxima escritura
-      } else if (res.status === 409 || res.status === 422) {
-        // conflicto de sha (alguien más escribió primero): refrescamos el sha y reintentamos una vez
-        _dbSha = null;
-        const check = await fetch(
-          `https://api.github.com/repos/${ghConfig.user}/${ghConfig.repo}/contents/db.json`,
-          { headers: { Authorization: `token ${ghConfig.token}`, Accept: 'application/vnd.github+json' } }
-        );
-        if (check.ok) { const d = await check.json(); _dbSha = d.sha; }
+        console.log('✅ Base de datos guardada en GitHub via Worker');
       } else {
-        console.error('Error guardando db.json en GitHub:', await res.text());
+        console.error('Error guardando via Worker:', await res.text());
       }
     } catch (e) {
-      console.error('Error de red guardando en GitHub:', e);
+      console.error('Error de red guardando via Worker:', e);
     } finally {
       _dbSyncing = false;
     }
   }
 
   async function loadDB() {
-    if (!ghConfig.token || !ghConfig.user || !ghConfig.repo) {
-      renderLandingGrids();
-      return;
-    }
     try {
-      const res = await fetch(
-        `https://api.github.com/repos/${ghConfig.user}/${ghConfig.repo}/contents/db.json`,
-        { headers: { Authorization: `token ${ghConfig.token}`, Accept: 'application/vnd.github+json' } }
-      );
+      const res = await fetch(`${WORKER_URL}/db`);
       if (res.ok) {
-        const data = await res.json();
-        _dbSha = data.sha;
-        const decoded = decodeURIComponent(escape(atob(data.content)));
-        const cloudDB = JSON.parse(decoded);
+        const cloudDB = await res.json();
         if (cloudDB.users)    db.users    = cloudDB.users;
         if (cloudDB.orders)   db.orders   = cloudDB.orders;
         if (cloudDB.products) db.products = cloudDB.products;
         if (cloudDB.emailList) db.emailList = cloudDB.emailList;
         localStorage.setItem(DB_KEY, JSON.stringify(db));
-        console.log('✅ Base de datos sincronizada desde GitHub');
-      } else if (res.status === 404) {
-        // primera vez: el archivo db.json no existe todavía, lo creamos con los datos locales
-        console.log('📦 Creando db.json en GitHub por primera vez...');
-        saveDB();
+        console.log('✅ Base de datos sincronizada desde Worker');
       } else {
-        console.warn('No se pudo leer db.json de GitHub:', res.status);
+        console.warn('No se pudo leer db desde Worker:', res.status);
       }
     } catch (e) {
-      console.error('Error cargando base de datos desde GitHub (usando datos locales):', e);
+      console.error('Error cargando base de datos via Worker:', e);
     }
     renderLandingGrids();
     if (currentUser && currentUser.role === 'admin' && document.getElementById('admin-panel').classList.contains('active')) {
