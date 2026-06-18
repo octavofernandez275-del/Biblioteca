@@ -1,0 +1,156 @@
+/**
+ * Worker "portero" para Biblioteca Digital.
+ * Guarda el token de GitHub oculto en el servidor (variable de entorno GITHUB_TOKEN)
+ * y expone dos rutas simples para que el sitio web lea y escriba db.json
+ * sin necesitar el token en el navegador de nadie.
+ *
+ * Configurar como variable de entorno secreta en Cloudflare:
+ *   GITHUB_TOKEN = tu token fine-grained con permiso Contents: Read and write
+ *
+ * Rutas:
+ *   GET  /db        -> devuelve el contenido actual de db.json
+ *   POST /db        -> recibe { data: {...} } y lo guarda en db.json
+ */
+
+const GH_USER = 'octavofernandez275-del';
+const GH_REPO = 'biblioteca';
+const GH_FILE = 'db.json';
+
+// Dominios permitidos a llamar este worker (ajustá si tu sitio tiene otro dominio)
+const ALLOWED_ORIGINS = ['*']; // '*' = cualquier origen. Podés restringirlo a tu dominio exacto.
+
+function corsHeaders(origin) {
+  return {
+    'Access-Control-Allow-Origin': ALLOWED_ORIGINS.includes('*') ? '*' : (ALLOWED_ORIGINS.includes(origin) ? origin : ''),
+    'Access-Control-Allow-Methods': 'GET, POST, OPTIONS',
+    'Access-Control-Allow-Headers': 'Content-Type',
+  };
+}
+
+async function githubGet(env) {
+  const res = await fetch(
+    `https://api.github.com/repos/${GH_USER}/${GH_REPO}/contents/${GH_FILE}`,
+    { headers: { Authorization: `token ${env.GITHUB_TOKEN}`, Accept: 'application/vnd.github+json', 'User-Agent': 'biblioteca-worker' } }
+  );
+  return res;
+}
+
+async function githubPut(env, contentObj, sha) {
+  const content = btoa(unescape(encodeURIComponent(JSON.stringify(contentObj, null, 2))));
+  const res = await fetch(
+    `https://api.github.com/repos/${GH_USER}/${GH_REPO}/contents/${GH_FILE}`,
+    {
+      method: 'PUT',
+      headers: {
+        Authorization: `token ${env.GITHUB_TOKEN}`,
+        Accept: 'application/vnd.github+json',
+        'Content-Type': 'application/json',
+        'User-Agent': 'biblioteca-worker',
+      },
+      body: JSON.stringify({
+        message: 'Actualizar base de datos',
+        content,
+        ...(sha ? { sha } : {}),
+      }),
+    }
+  );
+  return res;
+}
+
+export default {
+  async fetch(request, env) {
+    const url = new URL(request.url);
+    const origin = request.headers.get('Origin') || '';
+    const headers = corsHeaders(origin);
+
+    // Preflight CORS
+    if (request.method === 'OPTIONS') {
+      return new Response(null, { headers });
+    }
+
+    if (!env.GITHUB_TOKEN) {
+      return new Response(JSON.stringify({ error: 'GITHUB_TOKEN no configurado en el Worker' }), {
+        status: 500,
+        headers: { ...headers, 'Content-Type': 'application/json' },
+      });
+    }
+
+    // ── LEER db.json ──
+    if (url.pathname === '/db' && request.method === 'GET') {
+      try {
+        const res = await githubGet(env);
+        if (res.status === 404) {
+          return new Response(JSON.stringify({ users: [], orders: [], products: [], emailList: [] }), {
+            headers: { ...headers, 'Content-Type': 'application/json' },
+          });
+        }
+        if (!res.ok) {
+          const text = await res.text();
+          return new Response(JSON.stringify({ error: 'Error de GitHub', detail: text, status: res.status }), {
+            status: res.status,
+            headers: { ...headers, 'Content-Type': 'application/json' },
+          });
+        }
+        const data = await res.json();
+        const decoded = decodeURIComponent(escape(atob(data.content)));
+        return new Response(decoded, {
+          headers: { ...headers, 'Content-Type': 'application/json' },
+        });
+      } catch (e) {
+        return new Response(JSON.stringify({ error: 'Fallo al leer', detail: String(e) }), {
+          status: 502,
+          headers: { ...headers, 'Content-Type': 'application/json' },
+        });
+      }
+    }
+
+    // ── GUARDAR db.json ──
+    if (url.pathname === '/db' && request.method === 'POST') {
+      try {
+        const body = await request.json();
+        const newData = body.data;
+        if (!newData) {
+          return new Response(JSON.stringify({ error: 'Falta el campo data' }), {
+            status: 400,
+            headers: { ...headers, 'Content-Type': 'application/json' },
+          });
+        }
+
+        // Obtenemos el sha actual (necesario para no pisar cambios de otro)
+        const check = await githubGet(env);
+        const sha = check.ok ? (await check.json()).sha : undefined;
+
+        let putRes = await githubPut(env, newData, sha);
+
+        // Si hubo conflicto (alguien escribió justo antes), reintentamos una vez con el sha fresco
+        if (putRes.status === 409 || putRes.status === 422) {
+          const recheck = await githubGet(env);
+          const freshSha = recheck.ok ? (await recheck.json()).sha : undefined;
+          putRes = await githubPut(env, newData, freshSha);
+        }
+
+        if (!putRes.ok) {
+          const text = await putRes.text();
+          return new Response(JSON.stringify({ error: 'Error guardando en GitHub', detail: text, status: putRes.status }), {
+            status: putRes.status,
+            headers: { ...headers, 'Content-Type': 'application/json' },
+          });
+        }
+
+        return new Response(JSON.stringify({ ok: true }), {
+          headers: { ...headers, 'Content-Type': 'application/json' },
+        });
+      } catch (e) {
+        return new Response(JSON.stringify({ error: 'Fallo al guardar', detail: String(e) }), {
+          status: 502,
+          headers: { ...headers, 'Content-Type': 'application/json' },
+        });
+      }
+    }
+
+    return new Response(JSON.stringify({ error: 'Ruta no encontrada' }), {
+      status: 404,
+      headers: { ...headers, 'Content-Type': 'application/json' },
+    });
+  },
+};
