@@ -31,6 +31,14 @@
       "pass": "123456",
       "role": "user",
       "createdAt": "2026-06-17T10:31:56.161Z"
+    },
+    {
+      "id": 1781817105614,
+      "name": "Juan",
+      "email": "juan@test.com",
+      "pass": "juan1234",
+      "role": "user",
+      "createdAt": "2026-06-18T21:11:45.614Z"
     }
   ],
   "orders": [],
@@ -88,7 +96,8 @@
   ],
   "emailList": [
     "frz@gmail.com",
-    "frz1@gmail.com"
+    "frz1@gmail.com",
+    "juan@test.com"
   ],
-  "updatedAt": "2026-06-17T10:31:57.663Z"
+  "updatedAt": "2026-06-18T21:11:47.122Z"
 }
