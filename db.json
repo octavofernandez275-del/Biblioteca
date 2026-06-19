@@ -41,7 +41,18 @@
       "createdAt": "2026-06-18T21:11:45.614Z"
     }
   ],
-  "orders": [],
+  "orders": [
+    {
+      "id": "ORD-1781897356974",
+      "userId": 1781817105614,
+      "userEmail": "juan@test.com",
+      "userName": "Juan",
+      "product": "101 Dálmatas cuento ilustrado",
+      "price": "$1,99",
+      "status": "aprobado",
+      "date": "19/6/2026, 16:29:16"
+    }
+  ],
   "products": [
     {
       "id": 1,
@@ -99,5 +110,5 @@
     "frz1@gmail.com",
     "juan@test.com"
   ],
-  "updatedAt": "2026-06-18T21:11:47.122Z"
+  "updatedAt": "2026-06-19T19:29:18.550Z"
 }
