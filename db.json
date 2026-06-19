@@ -61,7 +61,7 @@
       "price": "$4.99",
       "desc": "5 cuentos con ilustraciones",
       "file": null,
-      "pdfUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/pdfs/cuentos_ilustrados_pack.pdf?token=CFYBYZUFQE7I34PDQV6X55LKGHPRU"
+      "pdfUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/pdfs/cuentos_ilustrados_pack.pdf"
     },
     {
       "id": 2,
@@ -103,6 +103,7 @@
       "pdfName": "101 Dalmatas (Disney Walt) (z-library.sk, 1lib.sk, z-lib.sk).pdf",
       "file": "101 Dalmatas (Disney Walt) (z-library.sk, 1lib.sk, z-lib.sk).pdf",
       "pdfUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/pdfs/1781653653985_101_d_lmatas_cuento_ilustrado.pdf"
+    }
   ],
   "emailList": [
     "frz@gmail.com",
