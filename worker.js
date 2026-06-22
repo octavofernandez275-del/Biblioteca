@@ -1,15 +1,9 @@
 /**
  * Worker "portero" para Biblioteca Digital.
- * Guarda el token de GitHub oculto en el servidor (variable de entorno GITHUB_TOKEN)
- * y expone dos rutas simples para que el sitio web lea y escriba db.json
- * sin necesitar el token en el navegador de nadie.
- *
- * Configurar como variable de entorno secreta en Cloudflare:
- *   GITHUB_TOKEN = tu token fine-grained con permiso Contents: Read and write
- *
  * Rutas:
- *   GET  /db        -> devuelve el contenido actual de db.json
- *   POST /db        -> recibe { data: {...} } y lo guarda en db.json
+ *   GET  /db        -> devuelve db.json desde GitHub
+ *   POST /db        -> guarda db.json en GitHub
+ *   POST /classify  -> clasifica un producto con Gemini AI
  */
 
 const GH_USER = 'octavofernandez275-del';
@@ -66,6 +60,65 @@ export default {
       return new Response(null, { headers });
     }
 
+    // ── CLASSIFY con Gemini ─────────────────────────────────────
+    if (url.pathname === '/classify' && request.method === 'POST') {
+      try {
+        if (!env.GEMINI_API_KEY) {
+          return new Response(JSON.stringify({ error: 'GEMINI_API_KEY no configurada' }), {
+            status: 500,
+            headers: { ...headers, 'Content-Type': 'application/json' },
+          });
+        }
+
+        const body = await request.json();
+        const { name, desc, pdfName } = body;
+
+        const prompt = `Eres un clasificador de libros y ebooks digitales. Analiza este producto y devuelve SOLO un JSON con estos campos, sin texto extra ni backticks:
+{
+  "genero": "string (ej: Novela histórica, Autoayuda, Infantil, Tecnología, Negocios, Ficción, etc.)",
+  "temas": ["array", "de", "3-5", "temas"],
+  "autor_sugerido": "string o vacío si no hay info",
+  "edad": "string (ej: Adultos, 6-10 años, Adolescentes, Todas las edades)",
+  "idioma": "string",
+  "nivel": "string (Principiante, Intermedio, Avanzado, o vacío)",
+  "tags": ["array", "de", "3-6", "etiquetas", "cortas"]
+}
+
+Producto: ${name || ''}
+Descripción: ${desc || ''}
+Nombre del archivo: ${pdfName || 'no disponible'}`;
+
+        const geminiRes = await fetch(
+          'https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent',
+          {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+              'x-goog-api-key': env.GEMINI_API_KEY,
+            },
+            body: JSON.stringify({
+              contents: [{ parts: [{ text: prompt }] }]
+            }),
+          }
+        );
+
+        const geminiData = await geminiRes.json();
+        const text = geminiData.candidates?.[0]?.content?.parts?.[0]?.text || '{}';
+        const clean = text.replace(/```json|```/g, '').trim();
+
+        return new Response(clean, {
+          headers: { ...headers, 'Content-Type': 'application/json' },
+        });
+
+      } catch (e) {
+        return new Response(JSON.stringify({ error: 'Error clasificando', detail: String(e) }), {
+          status: 502,
+          headers: { ...headers, 'Content-Type': 'application/json' },
+        });
+      }
+    }
+
+    // ── DB ──────────────────────────────────────────────────────
     if (!env.GITHUB_TOKEN) {
       return new Response(JSON.stringify({ error: 'GITHUB_TOKEN no configurado en el Worker' }), {
         status: 500,
