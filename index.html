@@ -5272,8 +5272,9 @@
         buyBtn.onclick = () => { addToCart(p.name, p.price); closePreview(); };
       }
       renderRelatedProducts(p);
-      renderPdfPreview(p);
       inner.style.opacity = '1';
+      // Defer PDF preview un tick para que el DOM esté listo (especialmente en móvil)
+      setTimeout(() => renderPdfPreview(p), 0);
       panel.classList.add('open');
       if (!wasOpen) panel.scrollIntoView({ behavior: 'smooth', block: 'start' });
     };
