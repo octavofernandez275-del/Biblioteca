@@ -184,6 +184,39 @@ extractMeta: ${extractMeta ? 'true — genera titulo_sugerido y descripcion_suge
       }
     }
 
+    // ── PDF PROXY (evita CORS de raw.githubusercontent.com) ──────
+    if (url.pathname === '/pdf-proxy' && request.method === 'GET') {
+      const pdfUrl = url.searchParams.get('url');
+      if (!pdfUrl) {
+        return new Response(JSON.stringify({ error: 'Falta parámetro url' }), {
+          status: 400, headers: { ...headers, 'Content-Type': 'application/json' },
+        });
+      }
+      try {
+        const pdfRes = await fetch(pdfUrl, {
+          headers: { 'User-Agent': 'biblioteca-worker' },
+        });
+        if (!pdfRes.ok) {
+          return new Response(JSON.stringify({ error: `Error al obtener PDF: ${pdfRes.status}` }), {
+            status: pdfRes.status, headers: { ...headers, 'Content-Type': 'application/json' },
+          });
+        }
+        const pdfBody = await pdfRes.arrayBuffer();
+        return new Response(pdfBody, {
+          status: 200,
+          headers: {
+            ...headers,
+            'Content-Type': 'application/pdf',
+            'Cache-Control': 'public, max-age=3600',
+          },
+        });
+      } catch (e) {
+        return new Response(JSON.stringify({ error: 'Error en proxy PDF', detail: String(e) }), {
+          status: 502, headers: { ...headers, 'Content-Type': 'application/json' },
+        });
+      }
+    }
+
     // ── DB ──────────────────────────────────────────────────────
     if (!env.GITHUB_TOKEN) {
       return new Response(JSON.stringify({ error: 'GITHUB_TOKEN no configurado en el Worker' }), {

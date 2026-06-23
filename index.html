@@ -5281,7 +5281,11 @@
     if (wasOpen) {
       // ya hay una ficha abierta: hacemos un crossfade fluido en vez de saltar de golpe
       inner.style.opacity = '0';
-      setTimeout(paint, 150);
+      setTimeout(() => {
+        paint();
+        // Hacer scroll al panel para que el usuario lo vea
+        panel.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }, 150);
     } else {
       paint();
     }
@@ -5352,7 +5356,9 @@
       if (pdfSrc.startsWith('data:')) {
         pdfData = { data: atob(pdfSrc.split(',')[1]) };
       } else {
-        pdfData = { url: pdfSrc };
+        // Pasar URLs externas (GitHub, etc.) por el proxy del Worker para evitar CORS
+        const proxied = `${WORKER_URL}/pdf-proxy?url=${encodeURIComponent(pdfSrc)}`;
+        pdfData = { url: proxied };
       }
 
       const pdf = await pdfjsLib.getDocument(pdfData).promise;
