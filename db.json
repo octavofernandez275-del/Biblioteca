@@ -65,15 +65,6 @@
   ],
   "products": [
     {
-      "id": 1,
-      "name": "Cuentos Ilustrados Pack",
-      "cat": "infantil",
-      "price": "$4.99",
-      "desc": "5 cuentos con ilustraciones",
-      "file": null,
-      "pdfUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/pdfs/cuentos_ilustrados_pack.pdf"
-    },
-    {
       "id": 2,
       "name": "Libros para Colorear",
       "cat": "infantil",
@@ -121,5 +112,5 @@
     "frz1@gmail.com",
     "juan@test.com"
   ],
-  "updatedAt": "2026-06-23T16:30:44.948Z"
+  "updatedAt": "2026-06-23T20:23:35.348Z"
 }
