@@ -9,6 +9,7 @@
   <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
   <script src="https://www.paypal.com/sdk/js?client-id=AVq2isgw7GINeKgZIswrFuVu8Hu1ir-ByxmP226Cw3MoUj96kgaRGHDSM13ti2fC4j5gnoa73OZ_IAnO&currency=USD"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -3958,15 +3959,42 @@
     const reader = new FileReader();
     if (type === 'pdf') {
       pendingPdfFile = file;
-      reader.onload = e => {
+      reader.onload = async e => {
         pendingPdfB64 = e.target.result;
         pendingPdfName = file.name;
         document.getElementById('pdf-label').textContent = '✅ ' + file.name;
         document.getElementById('pdf-drop').style.borderColor = 'var(--green)';
-        // Auto-classify when PDF is loaded
+
+        // 1️⃣ Extraer texto del PDF para generar título y descripción
+        const nameEl = document.getElementById('prod-name');
+        const descEl = document.getElementById('prod-desc');
+        try {
+          if (typeof pdfjsLib !== 'undefined') {
+            pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
+            const loadingTask = pdfjsLib.getDocument({ data: atob(pendingPdfB64.split(',')[1]) });
+            const pdf = await loadingTask.promise;
+            let text = '';
+            const pagesToRead = Math.min(pdf.numPages, 3);
+            for (let i = 1; i <= pagesToRead; i++) {
+              const page = await pdf.getPage(i);
+              const content = await page.getTextContent();
+              text += content.items.map(s => s.str).join(' ') + '\n';
+            }
+            // Usar IA para generar título y descripción desde el texto
+            if (text.trim().length > 50) {
+              await autoGenerateMeta(text.slice(0, 3000), file.name);
+            }
+          }
+        } catch(err) { console.warn('PDF text extraction failed:', err); }
+
+        // 2️⃣ Clasificar con IA usando el nombre/descripción generados
         const name = document.getElementById('prod-name').value.trim();
         const desc = document.getElementById('prod-desc').value.trim();
-        if (name || desc) aiClassify(name, desc, file.name);
+        if (name || desc) {
+          aiClassify(name, desc, file.name);
+          // 3️⃣ Buscar carátula automáticamente
+          if (name && !pendingCoverB64) searchAndSetCover(name);
+        }
       };
       reader.readAsDataURL(file);
     } else if (type === 'cover') {
@@ -3981,6 +4009,110 @@
         document.getElementById('cover-drop').style.borderColor = 'var(--green)';
       };
       reader.readAsDataURL(file);
+    }
+  }
+
+  // ─── AUTO-GENERAR TÍTULO Y DESCRIPCIÓN DESDE TEXTO DEL PDF ─────
+  async function autoGenerateMeta(pdfText, fileName) {
+    try {
+      const nameEl = document.getElementById('prod-name');
+      const descEl = document.getElementById('prod-desc');
+
+      // Mostrar estado
+      if (!nameEl.value) nameEl.placeholder = '🤖 Generando título...';
+      if (!descEl.value) descEl.placeholder = '🤖 Generando descripción...';
+
+      const res = await fetch(`${WORKER_URL}/classify`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          name: fileName.replace(/\.pdf$/i,'').replace(/[-_]/g,' '),
+          desc: pdfText.slice(0, 800),
+          pdfName: fileName,
+          extractMeta: true
+        })
+      });
+      const raw = await res.text();
+      const clean = raw.replace(/```json|```/g,'').trim();
+      const parsed = JSON.parse(clean);
+
+      // Completar solo si están vacíos
+      if (!nameEl.value && parsed.titulo_sugerido) {
+        nameEl.value = parsed.titulo_sugerido;
+        nameEl.style.borderColor = 'var(--accent)';
+        setTimeout(() => nameEl.style.borderColor = '', 2000);
+      }
+      if (!descEl.value && parsed.descripcion_sugerida) {
+        descEl.value = parsed.descripcion_sugerida;
+        descEl.style.borderColor = 'var(--accent)';
+        setTimeout(() => descEl.style.borderColor = '', 2000);
+      }
+      nameEl.placeholder = 'Ej: Guía de Redes Sociales 2025';
+      descEl.placeholder = 'Descripción breve del producto';
+    } catch(e) {
+      console.warn('autoGenerateMeta error:', e);
+    }
+  }
+
+  // ─── BUSCAR CARÁTULA AUTOMÁTICAMENTE ─────────────
+  async function searchAndSetCover(bookTitle) {
+    try {
+      document.getElementById('cover-label').textContent = '🔍 Buscando carátula...';
+      // Open Library API (sin CORS)
+      const q = encodeURIComponent(bookTitle.slice(0, 60));
+      const res = await fetch(`https://openlibrary.org/search.json?q=${q}&limit=5&fields=key,title,cover_i,author_name`);
+      if (!res.ok) throw new Error('OpenLibrary error');
+      const data = await res.json();
+      const book = data.docs?.find(d => d.cover_i);
+      if (book?.cover_i) {
+        const coverUrl = `https://covers.openlibrary.org/b/id/${book.cover_i}-L.jpg`;
+        // Descargar como base64
+        const imgRes = await fetch(coverUrl);
+        const blob = await imgRes.blob();
+        const b64 = await new Promise((res) => {
+          const r = new FileReader();
+          r.onload = e => res(e.target.result);
+          r.readAsDataURL(blob);
+        });
+        pendingCoverB64 = b64;
+        pendingCoverFile = new File([blob], 'cover.jpg', { type: 'image/jpeg' });
+        const preview = document.getElementById('cover-preview');
+        preview.src = b64;
+        preview.style.display = 'block';
+        document.getElementById('cover-icon').style.display = 'none';
+        document.getElementById('cover-label').textContent = `✅ Carátula encontrada — "${book.title}"`;
+        document.getElementById('cover-drop').style.borderColor = 'var(--accent)';
+        showToast('🖼️ Carátula encontrada automáticamente', 'success');
+        return;
+      }
+      // Fallback: Google Books
+      const gbRes = await fetch(`https://www.googleapis.com/books/v1/volumes?q=${q}&maxResults=5`);
+      const gbData = await gbRes.json();
+      const gbBook = gbData.items?.find(i => i.volumeInfo?.imageLinks?.thumbnail);
+      if (gbBook) {
+        let imgUrl = gbBook.volumeInfo.imageLinks.thumbnail.replace('http:', 'https:').replace('zoom=1','zoom=3');
+        const imgRes = await fetch(imgUrl);
+        const blob = await imgRes.blob();
+        const b64 = await new Promise((res) => {
+          const r = new FileReader();
+          r.onload = e => res(e.target.result);
+          r.readAsDataURL(blob);
+        });
+        pendingCoverB64 = b64;
+        pendingCoverFile = new File([blob], 'cover.jpg', { type: 'image/jpeg' });
+        const preview = document.getElementById('cover-preview');
+        preview.src = b64;
+        preview.style.display = 'block';
+        document.getElementById('cover-icon').style.display = 'none';
+        document.getElementById('cover-label').textContent = `✅ Carátula encontrada — "${gbBook.volumeInfo.title}"`;
+        document.getElementById('cover-drop').style.borderColor = 'var(--accent)';
+        showToast('🖼️ Carátula encontrada automáticamente', 'success');
+        return;
+      }
+      document.getElementById('cover-label').textContent = 'Sin carátula encontrada — subí una manualmente';
+    } catch(e) {
+      console.warn('Cover search error:', e);
+      document.getElementById('cover-label').textContent = 'Sin carátula encontrada — subí una manualmente';
     }
   }
 
@@ -4008,6 +4140,10 @@
   }
 
   async function aiClassify(name, desc, pdfName) {
+    // Si hay nombre y no hay carátula aún, buscar automáticamente
+    if (name && name.length > 4 && !pendingCoverB64) {
+      searchAndSetCover(name);
+    }
     const box = document.getElementById('auto-tags-box');
     const list = document.getElementById('auto-tags-list');
     box.style.display = 'block';
@@ -5134,6 +5270,11 @@
             </div>
           </div>
           <div id="preview-related"></div>
+          <div id="pdf-preview-section" style="display:none;margin-top:28px;padding-top:22px;border-top:1px solid rgba(255,255,255,.08);">
+            <div style="font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:14px;">👁️ Vista previa del libro</div>
+            <div id="pdf-preview-pages" style="display:flex;flex-direction:column;gap:12px;max-height:800px;overflow-y:auto;"></div>
+            <div id="pdf-preview-loading" style="color:var(--muted);font-size:13px;padding:16px 0;">⏳ Cargando vista previa...</div>
+          </div>
         </div>`;
       const buyBtn = document.getElementById('preview-buy-btn');
       if (alreadyOwned) {
@@ -5145,6 +5286,7 @@
         buyBtn.onclick = () => { addToCart(p.name, p.price); closePreview(); };
       }
       renderRelatedProducts(p);
+      renderPdfPreview(p);
       inner.style.opacity = '1';
       panel.classList.add('open');
       if (!wasOpen) panel.scrollIntoView({ behavior: 'smooth', block: 'start' });
@@ -5197,6 +5339,69 @@
   function closePreview() {
     const panel = document.getElementById('product-detail-panel');
     panel.classList.remove('open');
+  }
+
+  // ─── PDF PREVIEW (mínimo 5 páginas) ──────────────
+  async function renderPdfPreview(p) {
+    const section = document.getElementById('pdf-preview-section');
+    const pagesEl = document.getElementById('pdf-preview-pages');
+    const loadingEl = document.getElementById('pdf-preview-loading');
+    if (!section || !pagesEl) return;
+
+    const pdfSrc = p.pdfUrl || p.pdfData;
+    if (!pdfSrc) { section.style.display = 'none'; return; }
+
+    section.style.display = 'block';
+    pagesEl.innerHTML = '';
+    if (loadingEl) { loadingEl.style.display = 'block'; loadingEl.textContent = '⏳ Cargando vista previa...'; }
+
+    try {
+      if (typeof pdfjsLib === 'undefined') {
+        if (loadingEl) loadingEl.textContent = '⚠️ PDF.js no disponible';
+        return;
+      }
+      pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
+
+      let pdfData;
+      if (pdfSrc.startsWith('data:')) {
+        pdfData = { data: atob(pdfSrc.split(',')[1]) };
+      } else {
+        pdfData = { url: pdfSrc };
+      }
+
+      const pdf = await pdfjsLib.getDocument(pdfData).promise;
+      const totalPages = pdf.numPages;
+      const pagesToShow = Math.min(totalPages, 5);
+
+      if (loadingEl) loadingEl.textContent = `📄 ${totalPages} página${totalPages!==1?'s':''} — mostrando ${pagesToShow}`;
+
+      for (let i = 1; i <= pagesToShow; i++) {
+        const page = await pdf.getPage(i);
+        const viewport = page.getViewport({ scale: 1.2 });
+
+        const canvas = document.createElement('canvas');
+        canvas.width = viewport.width;
+        canvas.height = viewport.height;
+        canvas.style.cssText = 'width:100%;border-radius:10px;border:1px solid rgba(255,255,255,.08);display:block;';
+
+        const ctx = canvas.getContext('2d');
+        await page.render({ canvasContext: ctx, viewport }).promise;
+
+        const wrapper = document.createElement('div');
+        wrapper.style.cssText = 'position:relative;';
+        const badge = document.createElement('div');
+        badge.textContent = `Página ${i}`;
+        badge.style.cssText = 'position:absolute;top:8px;left:8px;background:rgba(0,0,0,.7);color:#fff;font-size:10px;font-weight:700;padding:3px 9px;border-radius:100px;letter-spacing:.06em;';
+        wrapper.appendChild(canvas);
+        wrapper.appendChild(badge);
+        pagesEl.appendChild(wrapper);
+      }
+
+      if (loadingEl) loadingEl.style.display = 'none';
+    } catch(err) {
+      console.warn('PDF preview error:', err);
+      if (loadingEl) loadingEl.textContent = '⚠️ No se pudo cargar la vista previa del PDF.';
+    }
   }
 
   // ─── NEW ARRIVALS CAROUSEL ────────────────────────

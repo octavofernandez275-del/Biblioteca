@@ -71,10 +71,12 @@ export default {
         }
 
         const body = await request.json();
-        const { name, desc, pdfName } = body;
+        const { name, desc, pdfName, extractMeta } = body;
 
         const prompt = `Eres un clasificador de libros y ebooks digitales. Analiza este producto y devuelve SOLO un JSON con estos campos, sin texto extra ni backticks:
 {
+  "titulo_sugerido": "string — título atractivo del libro. Solo si extractMeta=true y el nombre parece un archivo (con guiones/underscores). Si no, deja vacío.",
+  "descripcion_sugerida": "string — descripción de 1-2 oraciones. Solo si extractMeta=true. Si no, deja vacío.",
   "genero": "string (ej: Novela histórica, Autoayuda, Infantil, Tecnología, Negocios, Ficción, etc.)",
   "temas": ["array", "de", "3-5", "temas"],
   "autor_sugerido": "string o vacío si no hay info",
@@ -86,7 +88,8 @@ export default {
 
 Producto: ${name || ''}
 Descripción: ${desc || ''}
-Nombre del archivo: ${pdfName || 'no disponible'}`;
+Nombre del archivo: ${pdfName || 'no disponible'}
+extractMeta: ${extractMeta ? 'true — genera titulo_sugerido y descripcion_sugerida' : 'false — deja titulo_sugerido y descripcion_sugerida vacíos'}`;
 
         const geminiRes = await fetch(
           'https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent',
