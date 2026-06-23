@@ -3308,7 +3308,12 @@
   let _dbSyncing = false;
 
   function saveDB() {
-    localStorage.setItem(DB_KEY, JSON.stringify(db));
+    // Nunca guardar base64 de archivos en localStorage ni en GitHub
+    const cleanForStorage = { ...db, products: db.products.map(p => {
+      const { pdfData, coverData, ...rest } = p;
+      return rest;
+    })};
+    localStorage.setItem(DB_KEY, JSON.stringify(cleanForStorage));
     // sync a GitHub con debounce de 1.5s para agrupar cambios rápidos
     clearTimeout(_dbSyncTimer);
     _dbSyncTimer = setTimeout(() => syncDBToGithub(), 1500);
@@ -4220,9 +4225,10 @@
       nivel: classification.nivel || '',
       idioma: classification.idioma || '',
       pdfName: pendingPdfName || null,
-      pdfData: pendingPdfB64 || null,
-      coverData: pendingCoverB64 || null,
+      pdfUrl: null,
+      coverUrl: null,
       file: pendingPdfName || null
+      // pdfData y coverData nunca se guardan en db — se suben a GitHub directamente
     };
     db.products.push(p);
     saveDB();
@@ -4644,9 +4650,8 @@
 
   // ─── Helper genérico: sube un File a GitHub y devuelve la URL pública ───
   async function uploadFileToGithub(file, type, baseName) {
-    if (!ghConfig.token) throw new Error('GitHub no configurado');
     const ext  = file.name.split('.').pop();
-    const path = type === 'pdf' ? `pdfs/${baseName}.${ext}` : `covers/${baseName}.${ext}`;
+    const filePath = type === 'pdf' ? `pdfs/${baseName}.${ext}` : `covers/${baseName}.${ext}`;
 
     const b64 = await new Promise((res, rej) => {
       const r = new FileReader();
@@ -4655,37 +4660,18 @@
       r.readAsDataURL(file);
     });
 
-    // check if file exists (to get sha for update instead of duplicate)
-    let sha = null;
-    try {
-      const check = await fetch(
-        `https://api.github.com/repos/${ghConfig.user}/${ghConfig.repo}/contents/${path}`,
-        { headers: { Authorization: `token ${ghConfig.token}`, Accept: 'application/vnd.github+json' } }
-      );
-      if (check.ok) { const d = await check.json(); sha = d.sha; }
-    } catch(e) {}
-
-    const body = { message: `Upload ${type}: ${baseName}`, content: b64, ...(sha ? { sha } : {}) };
-
-    const res = await fetch(
-      `https://api.github.com/repos/${ghConfig.user}/${ghConfig.repo}/contents/${path}`,
-      {
-        method: 'PUT',
-        headers: {
-          Authorization: `token ${ghConfig.token}`,
-          Accept: 'application/vnd.github+json',
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(body)
-      }
-    );
+    const res = await fetch(`${WORKER_URL}/upload`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ path: filePath, content: b64 })
+    });
 
     if (!res.ok) {
-      const err = await res.json().catch(() => ({ message: 'Error desconocido' }));
-      throw new Error(err.message);
+      const err = await res.json().catch(() => ({ error: 'Error desconocido' }));
+      throw new Error(err.error || 'Error subiendo archivo');
     }
     const data = await res.json();
-    return data.content.download_url;
+    return data.url;
   }
 
   async function uploadToGithub() {

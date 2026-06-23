@@ -121,6 +121,69 @@ extractMeta: ${extractMeta ? 'true — genera titulo_sugerido y descripcion_suge
       }
     }
 
+    // ── UPLOAD archivo a GitHub ─────────────────────────────────
+    if (url.pathname === '/upload' && request.method === 'POST') {
+      try {
+        if (!env.GITHUB_TOKEN) {
+          return new Response(JSON.stringify({ error: 'GITHUB_TOKEN no configurado' }), {
+            status: 500, headers: { ...headers, 'Content-Type': 'application/json' },
+          });
+        }
+        const body = await request.json();
+        const { path, content } = body; // content = base64 puro, path = 'pdfs/xxx.pdf'
+        if (!path || !content) {
+          return new Response(JSON.stringify({ error: 'Faltan campos path o content' }), {
+            status: 400, headers: { ...headers, 'Content-Type': 'application/json' },
+          });
+        }
+
+        // Verificar si ya existe para obtener sha
+        let sha = null;
+        try {
+          const check = await fetch(
+            `https://api.github.com/repos/${GH_USER}/${GH_REPO}/contents/${path}`,
+            { headers: { Authorization: `token ${env.GITHUB_TOKEN}`, Accept: 'application/vnd.github+json', 'User-Agent': 'biblioteca-worker' } }
+          );
+          if (check.ok) { const d = await check.json(); sha = d.sha; }
+        } catch(e) {}
+
+        const putRes = await fetch(
+          `https://api.github.com/repos/${GH_USER}/${GH_REPO}/contents/${path}`,
+          {
+            method: 'PUT',
+            headers: {
+              Authorization: `token ${env.GITHUB_TOKEN}`,
+              Accept: 'application/vnd.github+json',
+              'Content-Type': 'application/json',
+              'User-Agent': 'biblioteca-worker',
+            },
+            body: JSON.stringify({
+              message: `Upload: ${path}`,
+              content,
+              ...(sha ? { sha } : {}),
+            }),
+          }
+        );
+
+        if (!putRes.ok) {
+          const text = await putRes.text();
+          return new Response(JSON.stringify({ error: 'Error subiendo archivo', detail: text }), {
+            status: putRes.status, headers: { ...headers, 'Content-Type': 'application/json' },
+          });
+        }
+
+        const data = await putRes.json();
+        return new Response(JSON.stringify({ ok: true, url: data.content.download_url }), {
+          headers: { ...headers, 'Content-Type': 'application/json' },
+        });
+
+      } catch (e) {
+        return new Response(JSON.stringify({ error: 'Fallo al subir archivo', detail: String(e) }), {
+          status: 502, headers: { ...headers, 'Content-Type': 'application/json' },
+        });
+      }
+    }
+
     // ── DB ──────────────────────────────────────────────────────
     if (!env.GITHUB_TOKEN) {
       return new Response(JSON.stringify({ error: 'GITHUB_TOKEN no configurado en el Worker' }), {
