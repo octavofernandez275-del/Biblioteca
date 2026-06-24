@@ -5273,10 +5273,18 @@
       }
       renderRelatedProducts(p);
       inner.style.opacity = '1';
-      // Defer PDF preview un tick para que el DOM esté listo (especialmente en móvil)
-      setTimeout(() => renderPdfPreview(p), 0);
       panel.classList.add('open');
       if (!wasOpen) panel.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      // Renderizar PDF y luego hacer scroll hasta la vista previa
+      setTimeout(() => {
+        renderPdfPreview(p);
+        setTimeout(() => {
+          const previewSection = document.getElementById('pdf-preview-section');
+          if (previewSection && previewSection.style.display !== 'none') {
+            previewSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          }
+        }, 300);
+      }, 0);
     };
 
     if (wasOpen) {
