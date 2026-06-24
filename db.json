@@ -79,6 +79,37 @@
       "price": "$6.99",
       "desc": "ChatGPT Claude Gemini",
       "file": null
+    },
+    {
+      "id": 1782260842909,
+      "name": "Aladin",
+      "price": "$1.50",
+      "cat": "infantil",
+      "desc": "",
+      "author": "Walt Disney Company",
+      "genre": "Cuentos clásicos",
+      "age": "6-10",
+      "temas": [
+        "Aventura",
+        "Magia",
+        "Oriente",
+        "Genios",
+        "Transformación"
+      ],
+      "tags": [
+        "Cuento",
+        "Clásico",
+        "Disney",
+        "Aventura",
+        "Magia",
+        "Infantil"
+      ],
+      "nivel": "Principiante",
+      "idioma": "Español",
+      "pdfName": "Aladdin (Disney Walt) (z-library.sk, 1lib.sk, z-lib.sk).pdf",
+      "pdfUrl": null,
+      "coverUrl": null,
+      "file": "Aladdin (Disney Walt) (z-library.sk, 1lib.sk, z-lib.sk).pdf"
     }
   ],
   "emailList": [
@@ -86,5 +117,5 @@
     "frz1@gmail.com",
     "juan@test.com"
   ],
-  "updatedAt": "2026-06-24T00:26:28.473Z"
+  "updatedAt": "2026-06-24T00:27:24.418Z"
 }
