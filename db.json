@@ -79,24 +79,6 @@
       "price": "$6.99",
       "desc": "ChatGPT Claude Gemini",
       "file": null
-    },
-    {
-      "id": 1782232241608,
-      "name": "Aladin",
-      "price": "$1,50",
-      "cat": "infantil",
-      "desc": "",
-      "author": "Walt Disney Company",
-      "genre": "",
-      "age": "",
-      "temas": [],
-      "tags": [],
-      "nivel": "",
-      "idioma": "",
-      "pdfName": "Aladdin (Disney Walt) (z-library.sk, 1lib.sk, z-lib.sk).pdf",
-      "pdfUrl": null,
-      "coverUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/covers/1782232241608_aladin.jpg",
-      "file": "Aladdin (Disney Walt) (z-library.sk, 1lib.sk, z-lib.sk).pdf"
     }
   ],
   "emailList": [
@@ -104,5 +86,5 @@
     "frz1@gmail.com",
     "juan@test.com"
   ],
-  "updatedAt": "2026-06-23T20:23:37.937Z"
+  "updatedAt": "2026-06-24T00:26:28.473Z"
 }
