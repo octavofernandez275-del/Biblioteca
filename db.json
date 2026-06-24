@@ -108,7 +108,7 @@
       "idioma": "Español",
       "pdfName": "Aladdin (Disney Walt) (z-library.sk, 1lib.sk, z-lib.sk).pdf",
       "pdfUrl": null,
-      "coverUrl": null,
+      "coverUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/covers/1782260842909_aladin.jpg",
       "file": "Aladdin (Disney Walt) (z-library.sk, 1lib.sk, z-lib.sk).pdf"
     }
   ],
@@ -117,5 +117,5 @@
     "frz1@gmail.com",
     "juan@test.com"
   ],
-  "updatedAt": "2026-06-24T00:27:24.418Z"
+  "updatedAt": "2026-06-24T00:27:26.673Z"
 }
