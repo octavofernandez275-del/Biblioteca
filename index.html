@@ -4,6 +4,12 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Biblioteca Digital Inteligente</title>
+  <meta name="theme-color" content="#5B5BD6" />
+  <meta name="mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="apple-mobile-web-app-title" content="Biblioteca Digital" />
+  <link rel="manifest" id="pwa-manifest-link" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
   <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
@@ -1826,6 +1832,7 @@
       </button>
       <button class="nav-btn-login" id="nav-auth-btn" onclick="openModal('login')">Iniciar sesión</button>
       <button class="nav-btn-cta" onclick="scrollToSection('#pricing')">Ver planes</button>
+      <button id="pwa-install-btn" onclick="installPWA()" title="Instalar app" style="display:none;align-items:center;gap:6px;background:rgba(91,91,214,.2);border:1px solid rgba(91,91,214,.4);color:var(--accent-light);font-size:12px;font-weight:700;padding:7px 14px;border-radius:100px;cursor:pointer;">📲 Instalar</button>
       <button class="nav-login-mobile" id="nav-auth-btn-mobile" onclick="openModal('login')">Iniciar sesión</button>
       <button class="nav-hamburger" id="nav-hamburger" onclick="toggleMobileMenu()">☰</button>
     </div>
@@ -2014,6 +2021,36 @@
       <div class="products-grid" id="landing-grid-ebooks"></div>
       <div class="section-cta">
         <button class="btn btn-primary" onclick="openCatalogModal('ebooks')">Ver todos los eBooks →</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- MÁS VENDIDOS -->
+  <section id="mas-vendidos" class="dark" style="padding:80px 0;">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-label">🏆 Los más elegidos</div>
+        <h2>Más vendidos</h2>
+        <p>Los libros que más personas eligieron en Biblioteca Digital.</p>
+      </div>
+      <div class="products-grid" id="landing-grid-bestsellers"></div>
+      <div class="section-cta">
+        <button class="btn btn-primary" onclick="openCatalogModal()">Ver catálogo completo →</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- NOVEDADES -->
+  <section id="novedades" class="dark" style="padding:80px 0;">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-label">✨ Recién llegados</div>
+        <h2>Novedades</h2>
+        <p>Los últimos libros agregados a nuestra biblioteca.</p>
+      </div>
+      <div class="products-grid" id="landing-grid-novedades"></div>
+      <div class="section-cta">
+        <button class="btn btn-primary" onclick="openCatalogModal()">Ver todo →</button>
       </div>
     </div>
   </section>
@@ -3465,16 +3502,44 @@
 
   const ADMIN_EMAILS = ['admin@bdi.com', 'octavofernandez275@gmail.com'];
 
+  // ── LOGIN CON LÍMITE DE INTENTOS ─────────────────
+  const _loginAttempts = {};
+  const LOGIN_MAX = 5;
+  const LOGIN_LOCKOUT_MS = 15 * 60 * 1000; // 15 minutos
+
   function doLogin() {
     const email = document.getElementById('login-email').value.trim().toLowerCase();
     const pass = document.getElementById('login-pass').value;
     const isAdmin = ADMIN_EMAILS.includes(email);
     if (!email) return showErr('login-error', 'Ingresá tu email');
     if (!isAdmin && !pass) return showErr('login-error', 'Ingresá tu contraseña');
+
+    // Verificar lockout
+    const att = _loginAttempts[email] || { count: 0, lockedUntil: 0 };
+    if (att.lockedUntil > Date.now()) {
+      const mins = Math.ceil((att.lockedUntil - Date.now()) / 60000);
+      return showErr('login-error', `Demasiados intentos fallidos. Intentá de nuevo en ${mins} minuto${mins !== 1 ? 's' : ''}.`);
+    }
+
     const user = isAdmin
       ? db.users.find(u => u.email === email)
       : db.users.find(u => u.email === email && u.pass === pass);
-    if (!user) return showErr('login-error', 'Email o contraseña incorrectos');
+
+    if (!user) {
+      att.count = (att.count || 0) + 1;
+      if (att.count >= LOGIN_MAX) {
+        att.lockedUntil = Date.now() + LOGIN_LOCKOUT_MS;
+        att.count = 0;
+        _loginAttempts[email] = att;
+        return showErr('login-error', `Demasiados intentos fallidos. Tu cuenta está bloqueada por 15 minutos.`);
+      }
+      const left = LOGIN_MAX - att.count;
+      _loginAttempts[email] = att;
+      return showErr('login-error', `Email o contraseña incorrectos. ${left} intento${left !== 1 ? 's' : ''} restante${left !== 1 ? 's' : ''}.`);
+    }
+
+    // Login exitoso — resetear intentos
+    delete _loginAttempts[email];
     setSession(user);
     closeModal();
     showToast(`¡Bienvenido, ${user.name}!`, 'success');
@@ -3667,52 +3732,75 @@
     document.body.style.overflow = '';
   }
 
+  let _successOrderId = null;
+
   function onPaymentSuccess(details) {
-    // Crear orden en la DB — se registra el precio FINAL realmente cobrado (con cupón si aplicó)
     const couponUsed = _activeCoupon ? _activeCoupon.code : null;
     if (_activeCoupon) { useCoupon(_activeCoupon.code); _activeCoupon = null; }
     const order = createOrder(currentUser, _paypalProductName, _paypalFinalPrice || _paypalPrice);
     if (couponUsed) order.couponCode = couponUsed;
+    _successOrderId = order.id;
 
-
-    // Limpiar carrito si había items
     cart = [];
     updateCartUI();
 
-    // Buscar el producto para obtener el link de descarga
+    // Email al usuario
     const prod = db.products.find(p => p.name === _paypalProductName);
-    const downloadLink = prod?.pdfUrl || prod?.pdfData
-      ? (prod.pdfUrl || 'https://tu-sitio.com/panel')
-      : 'https://tu-sitio.com/panel';
-
-    // Mandar email con EmailJS
+    const downloadLink = prod?.pdfUrl ? prod.pdfUrl : 'https://tu-sitio.com/panel';
     emailjs.init('tBSVcR5eGW2qNCUdN');
     emailjs.send('service_e5bon2b', 'template_orzrk5g', {
       email: currentUser.email,
       customer_name: currentUser.name,
       product_name: _paypalProductName,
-      amount: _paypalPrice,
+      amount: _paypalFinalPrice || _paypalPrice,
       download_link: downloadLink
-    }).then(() => {
-      showToast('🎉 ¡Pago confirmado! Revisá tu email.', 'success');
-    }).catch(() => {
-      showToast('✅ Pago confirmado. Email en camino...', 'success');
-    });
+    }).catch(() => {});
 
-    // Notificación al admin
+    // Email al admin
     const adminEmail = db.users.find(u => u.role === 'admin')?.email || ADMIN_EMAILS[0];
     if (adminEmail) {
       emailjs.send('service_e5bon2b', 'template_orzrk5g', {
         email: adminEmail,
         customer_name: 'Admin — Nueva venta',
         product_name: `${_paypalProductName} — comprado por ${currentUser.name} (${currentUser.email})`,
-        amount: _paypalPrice,
+        amount: _paypalFinalPrice || _paypalPrice,
         download_link: 'Panel de admin → Pedidos'
       }).catch(() => {});
     }
 
-    showToast('✅ ¡Compra exitosa! Revisá tu email.', 'success');
-    setTimeout(() => showUserView(), 1200);
+    // Mostrar página de éxito
+    showSuccessPage(prod, order);
+  }
+
+  function showSuccessPage(prod, order) {
+    const page = document.getElementById('success-page');
+    if (!page) { showUserView(); return; }
+
+    document.getElementById('success-product-name').textContent = prod?.name || _paypalProductName;
+    document.getElementById('success-product-author').textContent = prod?.author ? `por ${prod.author}` : '';
+    document.getElementById('success-product-price').textContent = order.price;
+
+    const coverEl = document.getElementById('success-cover');
+    const cover = prod?.coverUrl || prod?.coverData;
+    if (cover) coverEl.innerHTML = `<img src="${cover}" style="width:100%;height:100%;object-fit:cover;">`;
+    else coverEl.textContent = '📖';
+
+    page.style.display = 'block';
+    window.scrollTo(0, 0);
+    notifyNewSale(order);
+  }
+
+  async function successDownload() {
+    const prod = db.products.find(p => p.name === _paypalProductName);
+    if (!prod) { showToast('Producto no encontrado', 'error'); return; }
+    const order = db.orders.find(o => o.id === _successOrderId);
+    if (order) await downloadPdf(prod.id, order.id);
+    else await downloadPdf(prod.id);
+  }
+
+  function closeSuccessPage() {
+    const page = document.getElementById('success-page');
+    if (page) page.style.display = 'none';
   }
 
   // ─── ADMIN ───────────────────────────────────────
@@ -4552,24 +4640,36 @@
   }
 
   function renderLandingGrids() {
-    const infantilEl = document.getElementById('landing-grid-infantil');
-    const ebooksEl   = document.getElementById('landing-grid-ebooks');
-    if (!infantilEl || !ebooksEl) return;
+    const infantilEl     = document.getElementById('landing-grid-infantil');
+    const ebooksEl       = document.getElementById('landing-grid-ebooks');
+    const bestsellersEl  = document.getElementById('landing-grid-bestsellers');
+    const novedadesEl    = document.getElementById('landing-grid-novedades');
 
-    const infantil = db.products.filter(p => p.cat === 'infantil');
-    const ebooks   = db.products.filter(p => p.cat === 'ebooks' || p.cat === 'pack');
+    const infantil  = db.products.filter(p => p.cat === 'infantil');
+    const ebooks    = db.products.filter(p => p.cat === 'ebooks' || p.cat === 'pack');
+    const bestsellersNames = getBestsellers();
+    const newNames  = getNewProducts();
+    const bestsellers = db.products.filter(p => bestsellersNames.has(p.name));
+    const novedades   = db.products.filter(p => newNames.has(p.name));
 
-    infantilEl.innerHTML = infantil.length
-      ? infantil.map(makeCatalogCard).join('')
-      : `<div style="grid-column:1/-1;text-align:center;padding:40px;color:var(--muted);font-size:14px;">
-           Aún no hay productos en esta categoría.
-         </div>`;
+    const empty = txt => `<div style="grid-column:1/-1;text-align:center;padding:40px;color:var(--muted);font-size:14px;">${txt}</div>`;
 
-    ebooksEl.innerHTML = ebooks.length
-      ? ebooks.map(makeCatalogCard).join('')
-      : `<div style="grid-column:1/-1;text-align:center;padding:40px;color:var(--muted);font-size:14px;">
-           Aún no hay eBooks cargados.
-         </div>`;
+    if (infantilEl) infantilEl.innerHTML = infantil.length ? infantil.map(makeCatalogCard).join('') : empty('Aún no hay productos en esta categoría.');
+    if (ebooksEl)   ebooksEl.innerHTML   = ebooks.length   ? ebooks.map(makeCatalogCard).join('')   : empty('Aún no hay eBooks cargados.');
+
+    // Más vendidos: solo mostrar sección si hay ventas reales
+    const secBest = document.getElementById('mas-vendidos');
+    if (bestsellersEl) {
+      if (bestsellers.length) {
+        bestsellersEl.innerHTML = bestsellers.map(makeCatalogCard).join('');
+        if (secBest) secBest.style.display = '';
+      } else {
+        if (secBest) secBest.style.display = 'none';
+      }
+    }
+
+    // Novedades
+    if (novedadesEl) novedadesEl.innerHTML = novedades.length ? novedades.map(makeCatalogCard).join('') : empty('Próximamente nuevos títulos.');
   }
 
 
@@ -6239,13 +6339,93 @@
   applyModalFilters();
   renderHeroRecommendations();
   loadDB(); // sincroniza con GitHub (db.json) si ya está configurado
+
+  // ── PWA: generar ícono con canvas ────────────────
+  (function setupPWA() {
+    function makeIcon(size) {
+      const c = document.createElement('canvas');
+      c.width = c.height = size;
+      const ctx = c.getContext('2d');
+      const r = size * 0.18;
+      ctx.beginPath();
+      ctx.moveTo(r, 0); ctx.lineTo(size - r, 0);
+      ctx.quadraticCurveTo(size, 0, size, r);
+      ctx.lineTo(size, size - r);
+      ctx.quadraticCurveTo(size, size, size - r, size);
+      ctx.lineTo(r, size); ctx.quadraticCurveTo(0, size, 0, size - r);
+      ctx.lineTo(0, r); ctx.quadraticCurveTo(0, 0, r, 0);
+      const grad = ctx.createLinearGradient(0, 0, size, size);
+      grad.addColorStop(0, '#5B5BD6'); grad.addColorStop(1, '#7C7CF0');
+      ctx.fillStyle = grad; ctx.fill();
+      ctx.fillStyle = '#fff';
+      ctx.font = `bold ${size * 0.38}px serif`;
+      ctx.textAlign = 'center'; ctx.textBaseline = 'middle';
+      ctx.fillText('📚', size / 2, size / 2 + size * 0.04);
+      return c.toDataURL('image/png');
+    }
+    const icon192 = makeIcon(192);
+    const icon512 = makeIcon(512);
+    const manifest = {
+      name: 'Biblioteca Digital Inteligente',
+      short_name: 'Biblioteca',
+      start_url: '/',
+      display: 'standalone',
+      background_color: '#0F0F1A',
+      theme_color: '#5B5BD6',
+      icons: [
+        { src: icon192, sizes: '192x192', type: 'image/png' },
+        { src: icon512, sizes: '512x512', type: 'image/png' }
+      ]
+    };
+    const blob = new Blob([JSON.stringify(manifest)], { type: 'application/json' });
+    const link = document.getElementById('pwa-manifest-link');
+    if (link) link.href = URL.createObjectURL(blob);
+
+    // Apple touch icon
+    const appleLink = document.createElement('link');
+    appleLink.rel = 'apple-touch-icon'; appleLink.href = icon192;
+    document.head.appendChild(appleLink);
+  })();
+
+  // ── PWA: prompt de instalación ───────────────────
+  let _pwaInstallEvent = null;
+  window.addEventListener('beforeinstallprompt', e => {
+    e.preventDefault(); _pwaInstallEvent = e;
+    const btn = document.getElementById('pwa-install-btn');
+    if (btn) btn.style.display = 'flex';
+  });
+  window.addEventListener('appinstalled', () => {
+    const btn = document.getElementById('pwa-install-btn');
+    if (btn) btn.style.display = 'none';
+    showToast('✅ App instalada correctamente', 'success');
+  });
+  function installPWA() {
+    if (!_pwaInstallEvent) { showToast('Menú del navegador → "Agregar a pantalla de inicio"', 'info'); return; }
+    _pwaInstallEvent.prompt();
+    _pwaInstallEvent.userChoice.then(() => { _pwaInstallEvent = null; });
+  }
+</script>
+<script>
+  if ('serviceWorker' in navigator) {
+    const swCode = `
+      const CACHE='biblioteca-v1';
+      self.addEventListener('install',e=>e.waitUntil(caches.open(CACHE).then(c=>c.addAll(['/']))));
+      self.addEventListener('fetch',e=>{
+        if(e.request.method!=='GET')return;
+        e.respondWith(caches.match(e.request).then(cached=>cached||fetch(e.request).catch(()=>cached)));
+      });
+    `;
+    const blob = new Blob([swCode], { type: 'application/javascript' });
+    navigator.serviceWorker.register(URL.createObjectURL(blob)).catch(()=>{});
+  }
 </script>
 
 <!-- MODAL EDITAR PRODUCTO -->
-<div id="edit-product-modal" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,.88);backdrop-filter:blur(16px);z-index:5500;align-items:center;justify-content:center;padding:24px;" onclick="if(event.target===this)closeEditProduct()">
-  <div style="background:var(--surface);border:1px solid rgba(255,255,255,.12);border-radius:20px;padding:36px 32px;width:100%;max-width:600px;max-height:90vh;overflow-y:auto;position:relative;">
+<div id="edit-product-modal" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,.88);backdrop-filter:blur(16px);z-index:5500;align-items:flex-end;justify-content:center;padding:0;" onclick="if(event.target===this)closeEditProduct()">
+  <div style="background:var(--surface);border:1px solid rgba(255,255,255,.12);border-radius:20px 20px 0 0;padding:24px 20px 32px;width:100%;max-width:640px;max-height:92vh;overflow-y:auto;position:relative;">
+    <div style="width:40px;height:4px;background:rgba(255,255,255,.2);border-radius:2px;margin:0 auto 20px;"></div>
     <button onclick="closeEditProduct()" style="position:absolute;top:16px;right:20px;background:none;border:none;color:var(--muted);font-size:26px;cursor:pointer;line-height:1;">×</button>
-    <div style="font-size:18px;font-weight:800;margin-bottom:24px;">✏️ Editar producto</div>
+    <div style="font-size:18px;font-weight:800;margin-bottom:20px;">✏️ Editar producto</div>
     <input type="hidden" id="edit-prod-id" />
     <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:14px;">
       <div class="form-group"><label class="form-label">Nombre</label><input type="text" class="form-input" id="edit-prod-name" /></div>
@@ -6322,7 +6502,34 @@
 
 
 <!-- REVIEW MODAL -->
-<div id="review-modal" onclick="if(event.target.id==='review-modal')closeReviewModal()">
+<!-- PÁGINA DE DESCARGA POST-PAGO -->
+<div id="success-page" style="display:none;position:fixed;inset:0;background:var(--bg);z-index:9000;overflow-y:auto;">
+  <div style="min-height:100vh;display:flex;align-items:center;justify-content:center;padding:40px 24px;">
+    <div style="max-width:520px;width:100%;text-align:center;">
+      <div style="font-size:72px;margin-bottom:24px;">🎉</div>
+      <h1 style="font-size:clamp(26px,5vw,36px);font-weight:900;margin-bottom:12px;">¡Compra exitosa!</h1>
+      <p style="color:var(--muted);font-size:15px;margin-bottom:32px;">Gracias por tu compra. Tu libro ya está listo para descargar.</p>
+      <div id="success-product-card" style="background:var(--surface);border:1px solid rgba(255,255,255,.1);border-radius:20px;padding:24px;margin-bottom:28px;text-align:left;">
+        <div style="display:flex;gap:16px;align-items:center;">
+          <div id="success-cover" style="width:70px;height:95px;border-radius:10px;overflow:hidden;flex-shrink:0;background:var(--surface2);display:flex;align-items:center;justify-content:center;font-size:28px;">📖</div>
+          <div>
+            <div id="success-product-name" style="font-size:16px;font-weight:800;margin-bottom:4px;"></div>
+            <div id="success-product-author" style="font-size:13px;color:var(--muted);margin-bottom:8px;"></div>
+            <div id="success-product-price" style="font-size:20px;font-weight:900;color:var(--accent-light);"></div>
+          </div>
+        </div>
+      </div>
+      <button id="success-download-btn" onclick="successDownload()" style="width:100%;padding:16px;background:var(--accent);color:#fff;border:none;border-radius:14px;font-size:16px;font-weight:800;cursor:pointer;margin-bottom:12px;">
+        ⬇️ Descargar ahora
+      </button>
+      <div style="font-size:12px;color:var(--muted);margin-bottom:28px;">También te enviamos el link de descarga a tu email</div>
+      <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;">
+        <button onclick="closeSuccessPage()" style="background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.12);color:var(--white);padding:10px 22px;border-radius:100px;font-size:14px;font-weight:700;cursor:pointer;">Seguir comprando</button>
+        <button onclick="closeSuccessPage();showUserView();" style="background:rgba(91,91,214,.2);border:1px solid rgba(91,91,214,.4);color:var(--accent-light);padding:10px 22px;border-radius:100px;font-size:14px;font-weight:700;cursor:pointer;">Mis compras</button>
+      </div>
+    </div>
+  </div>
+</div>
   <div class="review-modal-inner">
     <button onclick="closeReviewModal()" style="position:absolute;top:14px;right:18px;background:none;border:none;color:var(--muted);font-size:26px;cursor:pointer;">×</button>
     <div style="font-size:18px;font-weight:800;margin-bottom:8px;">✍️ Dejar una reseña</div>
