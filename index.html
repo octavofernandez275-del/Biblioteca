@@ -1802,8 +1802,7 @@
       /* Hide desktop nav links on mobile */
       .nav-actions .nav-link,
       .nav-actions .nav-btn-login,
-      .nav-actions .nav-btn-cta,
-      .nav-actions .pwa-install-nav { display: none; }
+      .nav-actions .nav-btn-cta { display: none; }
       .nav-hamburger { display: block; }
       .nav-login-mobile { display: flex; }
 
@@ -1833,7 +1832,6 @@
       </button>
       <button class="nav-btn-login" id="nav-auth-btn" onclick="openModal('login')">Iniciar sesión</button>
       <button class="nav-btn-cta" onclick="scrollToSection('#pricing')">Ver planes</button>
-      <button id="pwa-install-btn" onclick="installPWA()" title="Instalar app" style="display:none;align-items:center;gap:6px;background:rgba(91,91,214,.2);border:1px solid rgba(91,91,214,.4);color:var(--accent-light);font-size:12px;font-weight:700;padding:7px 14px;border-radius:100px;cursor:pointer;" class="pwa-install-nav">📲 Instalar</button>
       <button class="nav-login-mobile" id="nav-auth-btn-mobile" onclick="openModal('login')">Iniciar sesión</button>
       <button class="nav-hamburger" id="nav-hamburger" onclick="toggleMobileMenu()">☰</button>
     </div>
@@ -1848,7 +1846,6 @@
     <div class="nav-mobile-divider"></div>
     <div class="nav-mobile-btns">
       <button class="btn btn-primary btn-full" style="padding:12px;" onclick="scrollToSection('#pricing');toggleMobileMenu()">Ver planes →</button>
-      <button id="pwa-install-btn-mobile" onclick="installPWA();toggleMobileMenu()" style="display:none;width:100%;padding:12px;background:rgba(91,91,214,.2);border:1px solid rgba(91,91,214,.4);color:var(--accent-light);font-size:14px;font-weight:700;border-radius:12px;cursor:pointer;margin-top:8px;">📲 Instalar app</button>
     </div>
   </div>
 
@@ -6393,17 +6390,12 @@
   let _pwaInstallEvent = null;
   window.addEventListener('beforeinstallprompt', e => {
     e.preventDefault(); _pwaInstallEvent = e;
-    // Mostrar en desktop (navbar) y en mobile (dentro del menú)
     const btn = document.getElementById('pwa-install-btn');
-    const btnM = document.getElementById('pwa-install-btn-mobile');
     if (btn) btn.style.display = 'flex';
-    if (btnM) btnM.style.display = 'block';
   });
   window.addEventListener('appinstalled', () => {
     const btn = document.getElementById('pwa-install-btn');
-    const btnM = document.getElementById('pwa-install-btn-mobile');
     if (btn) btn.style.display = 'none';
-    if (btnM) btnM.style.display = 'none';
     showToast('✅ App instalada correctamente', 'success');
   });
   function installPWA() {
