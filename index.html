@@ -1882,7 +1882,7 @@
           <div class="catalog-trust-icon">🔒</div>
           <div>
             <div class="catalog-trust-title">Pago seguro</div>
-            <div class="catalog-trust-sub">Checkout 100% confiable</div>
+            <div class="catalog-trust-sub">Pago 100% seguro</div>
           </div>
         </div>
         <div class="catalog-trust-item">
@@ -1905,11 +1905,11 @@
           <span class="hero-eyebrow-text">Biblioteca digital en español</span>
         </div>
         <h1 class="hero-h1">
-          Tu próxima lectura<br/>
-          está <em>a un clic</em><br/>
-          de distancia
+          Tu biblioteca digital<br/>
+          en español,<br/>
+          <em>lista para descargar</em>
         </h1>
-        <p class="hero-sub">Libros infantiles, eBooks, guías y mucho más — todo en un solo lugar, disponible para descargar en el momento.</p>
+        <p class="hero-sub">Libros infantiles, eBooks y guías en español — seleccionados con cuidado, disponibles al instante. Pagás una vez y el libro es tuyo para siempre.</p>
         <div class="hero-actions">
           <button class="btn btn-primary btn-lg" onclick="openCatalogModal()">
             Explorar catálogo
@@ -1930,7 +1930,7 @@
             <div class="hero-trust-icon">🔒</div>
             <div>
               <div class="hero-trust-title">Pago seguro</div>
-              <div class="hero-trust-sub">Checkout confiable</div>
+              <div class="hero-trust-sub">Pago seguro</div>
             </div>
           </div>
           <div class="hero-trust-item">
@@ -2508,8 +2508,8 @@
         </div>
         <div class="trust-item">
           <div class="trust-icon">♻️</div>
-          <div class="trust-title">Re-descarga libre</div>
-          <div class="trust-desc">Accedé a tus compras desde tu cuenta cuando lo necesités, sin límites.</div>
+          <div class="trust-title">Re-descarga incluida</div>
+          <div class="trust-desc">Accedé a tus compras desde tu cuenta. Cada producto incluye hasta 3 descargas.</div>
         </div>
         <div class="trust-item">
           <div class="trust-icon">💰</div>
@@ -2677,7 +2677,7 @@
   <div class="cart-empty" id="cart-empty" style="display:none">
     <div style="font-size:36px;margin-bottom:10px;">🛒</div>
     <div style="margin-bottom:18px;">Tu carrito está vacío</div>
-    <button class="btn btn-primary" style="padding:10px 22px;font-size:13px;" onclick="toggleCart();scrollTo('#catalog-modal')">Explorar catálogo</button>
+    <button class="btn btn-primary" style="padding:10px 22px;font-size:13px;" onclick="toggleCart();scrollToSection('#catalog-modal')">Explorar catálogo</button>
   </div>
   <div class="cart-total" id="cart-total-row" style="display:none">
     <span class="cart-total-label">Total</span>
@@ -3120,6 +3120,11 @@
       <div class="admin-panel-section" id="section-catalog">
         <div class="admin-section-title">Catálogo Visual</div>
         <div class="admin-section-sub">Vista previa de todos los productos con carátulas</div>
+        <div style="display:flex;gap:10px;flex-wrap:wrap;margin-bottom:16px;">
+          <button class="btn btn-ghost" style="font-size:13px;padding:9px 18px;" onclick="batchGenerateCovers()">🖼️ Generar portadas faltantes</button>
+          <button class="btn btn-ghost" style="font-size:13px;padding:9px 18px;" onclick="batchGenerateDescriptions()">✍️ Generar descripciones faltantes</button>
+        </div>
+        <div id="batch-progress" style="display:none;background:rgba(91,91,214,.1);border:1px solid rgba(91,91,214,.3);border-radius:12px;padding:14px 16px;margin-bottom:16px;font-size:13px;color:var(--accent-light);"></div>
         <div style="display:flex;gap:12px;flex-wrap:wrap;margin-bottom:24px;" id="catalog-filters"></div>
         <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:20px;" id="catalog-grid"></div>
       </div>
@@ -5076,7 +5081,7 @@
       if (btn) btn.classList.add('active');
       applyModalFilters();
     }, 30);
-    scrollTo('#catalog-modal');
+    scrollToSection('#catalog-modal');
   }
 
   // ─── BESTSELLER HELPERS ───────────────────────────
@@ -5138,7 +5143,7 @@
       if (input) input.value = keyword || '';
       applyModalFilters();
     }, 30);
-    scrollTo('#catalog-modal');
+    scrollToSection('#catalog-modal');
   }
   function heroSearch(value) {
     renderHeroRecommendations(value);
@@ -5171,7 +5176,7 @@
     } else {
       applyModalFilters();
     }
-    scrollTo('#catalog-modal');
+    scrollToSection('#catalog-modal');
   }
   function renderCatalogModalFilters() {
     const ALL_CATS = [
@@ -5360,6 +5365,7 @@
             <div id="pdf-preview-pages" style="display:flex;flex-direction:column;gap:12px;max-height:800px;overflow-y:auto;"></div>
             <div id="pdf-preview-loading" style="color:var(--muted);font-size:13px;padding:16px 0;">⏳ Cargando vista previa...</div>
           </div>
+          <div id="book-reviews-section" style="margin-top:28px;padding-top:22px;border-top:1px solid rgba(255,255,255,.08);"></div>
         </div>`;
       const buyBtn = document.getElementById('preview-buy-btn');
       if (alreadyOwned) {
@@ -5434,6 +5440,88 @@
         }).join('')}
       </div>`;
   }
+  async function batchGenerateCovers() {
+    const missing = db.products.filter(p => !p.coverUrl && !p.coverData);
+    if (!missing.length) { showToast('Todos los productos ya tienen portada ✅', 'success'); return; }
+    const prog = document.getElementById('batch-progress');
+    if (prog) prog.style.display = 'block';
+    let done = 0;
+    for (const p of missing) {
+      if (prog) prog.textContent = `🖼️ Buscando portada ${done + 1}/${missing.length}: ${p.name}`;
+      try {
+        const name = encodeURIComponent(p.name);
+        const author = p.author ? encodeURIComponent(p.author) : '';
+        let coverUrl = null;
+        const olRes = await fetch(`https://openlibrary.org/search.json?q=${name}${author?'+'+author:''}&limit=1`).catch(()=>null);
+        if (olRes?.ok) {
+          const olData = await olRes.json();
+          const coverId = olData.docs?.[0]?.cover_i;
+          if (coverId) coverUrl = `https://covers.openlibrary.org/b/id/${coverId}-L.jpg`;
+        }
+        if (!coverUrl) {
+          const gbRes = await fetch(`https://www.googleapis.com/books/v1/volumes?q=${name}${author?'+inauthor:'+author:''}&maxResults=1`).catch(()=>null);
+          if (gbRes?.ok) {
+            const gbData = await gbRes.json();
+            const thumb = gbData.items?.[0]?.volumeInfo?.imageLinks?.thumbnail;
+            if (thumb) coverUrl = thumb.replace('http://', 'https://').replace('&zoom=1','&zoom=3');
+          }
+        }
+        if (coverUrl) { p.coverUrl = coverUrl; done++; }
+      } catch(e) {}
+      await new Promise(r => setTimeout(r, 400));
+    }
+    saveDB(); populateAdmin(); renderLandingGrids();
+    if (prog) { prog.textContent = `✅ Portadas encontradas para ${done} de ${missing.length} productos.`; setTimeout(() => { prog.style.display = 'none'; }, 5000); }
+  }
+
+  async function batchGenerateDescriptions() {
+    const missing = db.products.filter(p => !p.desc || p.desc.trim().length < 10);
+    if (!missing.length) { showToast('Todos los productos ya tienen descripción ✅', 'success'); return; }
+    const prog = document.getElementById('batch-progress');
+    if (prog) prog.style.display = 'block';
+    let done = 0;
+    for (const p of missing) {
+      if (prog) prog.textContent = `✍️ Generando descripción ${done + 1}/${missing.length}: ${p.name}`;
+      try {
+        const res = await fetch(`${WORKER_URL}/classify`, {
+          method: 'POST', headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ name: p.name, desc: p.desc || '', pdfName: p.pdfName || '', extractMeta: true })
+        });
+        if (res.ok) {
+          const data = await res.json();
+          if (data.descripcion_sugerida) { p.desc = data.descripcion_sugerida; done++; }
+          if (data.autor_sugerido && !p.author) p.author = data.autor_sugerido;
+        }
+      } catch(e) {}
+      await new Promise(r => setTimeout(r, 600));
+    }
+    saveDB(); populateAdmin(); renderLandingGrids();
+    if (prog) { prog.textContent = `✅ Descripciones generadas para ${done} de ${missing.length} productos.`; setTimeout(() => { prog.style.display = 'none'; }, 5000); }
+  }
+
+  async function buscarPortadaManual() {
+    const name = document.getElementById('prod-name').value.trim();
+    if (!name) { showToast('Primero ingresá el título del libro', 'error'); return; }
+    await searchAndSetCover(name);
+  }
+
+  function openReviewModalForProduct(productName, productId) {
+    if (!currentUser) { openModal('login'); return; }
+    const sel = document.getElementById('review-product');
+    if (sel) { sel.innerHTML = `<option value="${productName}">${productName}</option>`; sel.value = productName; }
+    _reviewStars = 0;
+    if (typeof setReviewStar === 'function') setReviewStar(0);
+    const textEl = document.getElementById('review-text');
+    const charEl = document.getElementById('review-char-count');
+    const errEl  = document.getElementById('review-error');
+    if (textEl) textEl.value = '';
+    if (charEl) charEl.textContent = '0';
+    if (errEl)  errEl.style.display = 'none';
+    const modal = document.getElementById('review-modal');
+    if (modal) { modal.classList.add('open'); document.body.style.overflow = 'hidden'; }
+    if (textEl) textEl.oninput = () => { if (charEl) charEl.textContent = textEl.value.length; };
+  }
+
   function closePreview() {
     const panel = document.getElementById('product-detail-panel');
     panel.classList.remove('open');
@@ -6553,6 +6641,32 @@
 
     <div id="review-error" style="color:#FCA5A5;font-size:13px;margin-bottom:12px;display:none;"></div>
     <button class="btn btn-primary" style="width:100%;padding:14px;" onclick="submitReview()">Enviar reseña</button>
+  </div>
+</div>
+
+<!-- MODAL RESEÑAS -->
+<div id="review-modal" onclick="if(event.target.id==='review-modal')closeReviewModal()" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,.85);backdrop-filter:blur(16px);z-index:6000;align-items:flex-end;justify-content:center;">
+  <div class="review-modal-inner" style="background:var(--surface);border:1px solid rgba(255,255,255,.12);border-radius:20px 20px 0 0;padding:28px 24px 40px;width:100%;max-width:560px;position:relative;">
+    <div style="width:40px;height:4px;background:rgba(255,255,255,.2);border-radius:2px;margin:0 auto 20px;"></div>
+    <button onclick="closeReviewModal()" style="position:absolute;top:16px;right:20px;background:none;border:none;color:var(--muted);font-size:26px;cursor:pointer;">×</button>
+    <div style="font-size:18px;font-weight:800;margin-bottom:6px;">✍️ Dejar reseña</div>
+    <select id="review-product" style="display:none;"></select>
+    <div style="margin-bottom:16px;">
+      <div style="font-size:13px;color:var(--muted);margin-bottom:8px;">Tu puntuación</div>
+      <div style="display:flex;gap:8px;">
+        <span onclick="setReviewStar(1)" style="font-size:28px;cursor:pointer;transition:.15s" class="star-btn">☆</span>
+        <span onclick="setReviewStar(2)" style="font-size:28px;cursor:pointer;transition:.15s" class="star-btn">☆</span>
+        <span onclick="setReviewStar(3)" style="font-size:28px;cursor:pointer;transition:.15s" class="star-btn">☆</span>
+        <span onclick="setReviewStar(4)" style="font-size:28px;cursor:pointer;transition:.15s" class="star-btn">☆</span>
+        <span onclick="setReviewStar(5)" style="font-size:28px;cursor:pointer;transition:.15s" class="star-btn">☆</span>
+      </div>
+    </div>
+    <div style="margin-bottom:16px;">
+      <div style="font-size:13px;color:var(--muted);margin-bottom:6px;">Tu reseña <span style="float:right;"><span id="review-char-count">0</span>/300</span></div>
+      <textarea id="review-text" maxlength="300" placeholder="Contá qué te pareció el libro..." style="width:100%;min-height:100px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);border-radius:12px;padding:12px;color:#fff;font-size:14px;resize:vertical;font-family:inherit;"></textarea>
+    </div>
+    <div id="review-error" style="display:none;color:#EF4444;font-size:13px;margin-bottom:12px;"></div>
+    <button onclick="submitReview()" class="btn btn-primary btn-full" style="padding:13px;">Enviar reseña</button>
   </div>
 </div>
 
