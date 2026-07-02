@@ -283,7 +283,7 @@
       "name": "La bella durmiente",
       "price": "$0.80",
       "cat": "infantil",
-      "desc": "",
+      "desc": "Descubre el clásico cuento de hadas de una hermosa princesa que cae bajo un encantamiento y duerme por cien años. Solo un valiente príncipe podrá romper el hechizo con un beso de amor verdadero.",
       "author": "Walt Disney",
       "genre": "Cuento de hadas",
       "age": "",
@@ -316,5 +316,5 @@
     "juan@test.com",
     "octavio123@gamil.com"
   ],
-  "updatedAt": "2026-07-02T19:06:40.164Z"
+  "updatedAt": "2026-07-02T19:07:03.239Z"
 }
