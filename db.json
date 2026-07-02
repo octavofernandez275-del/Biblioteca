@@ -207,7 +207,7 @@
       "nivel": "",
       "idioma": "Español",
       "pdfName": "101 Dalmatas (Disney Walt) (z-library.sk, 1lib.sk, z-lib.sk).pdf",
-      "pdfUrl": null,
+      "pdfUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/pdfs/1782951899449_101_d_lmatas.pdf",
       "coverUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/covers/1782951899449_101_d_lmatas.jpg",
       "file": "101 Dalmatas (Disney Walt) (z-library.sk, 1lib.sk, z-lib.sk).pdf"
     }
@@ -218,5 +218,5 @@
     "juan@test.com",
     "octavio123@gamil.com"
   ],
-  "updatedAt": "2026-07-02T00:25:02.656Z"
+  "updatedAt": "2026-07-02T00:25:05.215Z"
 }
