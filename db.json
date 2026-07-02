@@ -306,7 +306,7 @@
       "idioma": "Español",
       "pdfName": "La Bella Durmiente Del Bosque (Disney Walt) (z-library.sk, 1lib.sk, z-lib.sk).pdf",
       "pdfUrl": null,
-      "coverUrl": null,
+      "coverUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/covers/1783019005618_la_bella_durmiente.jpg",
       "file": "La Bella Durmiente Del Bosque (Disney Walt) (z-library.sk, 1lib.sk, z-lib.sk).pdf"
     }
   ],
@@ -316,5 +316,5 @@
     "juan@test.com",
     "octavio123@gamil.com"
   ],
-  "updatedAt": "2026-07-02T19:03:27.128Z"
+  "updatedAt": "2026-07-02T19:03:28.779Z"
 }
