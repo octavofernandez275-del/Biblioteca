@@ -203,7 +203,7 @@
       "desc": "Ariel, una joven sirena, sueña con el mundo de los humanos. Para poder vivir en tierra, hace un pacto peligroso con la malvada bruja Úrsula.",
       "author": "Walt Disney Company",
       "genre": "Ficción infantil",
-      "age": "",
+      "age": "6-10",
       "temas": [
         "Cuentos de hadas",
         "Amor",
@@ -331,5 +331,5 @@
     "juan@test.com",
     "octavio123@gamil.com"
   ],
-  "updatedAt": "2026-07-02T21:54:29.451Z"
+  "updatedAt": "2026-07-02T21:55:36.670Z"
 }
