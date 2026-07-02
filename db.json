@@ -180,6 +180,36 @@
       "pdfUrl": null,
       "coverUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/covers/1782951715207_el_pr_ncipe_y_el_mendigo.jpg",
       "file": "El Principe Y El Mendigo (Disney Walt) (z-library.sk, 1lib.sk, z-lib.sk).pdf"
+    },
+    {
+      "id": 1782951899449,
+      "name": "101 Dálmatas",
+      "price": "$0.99",
+      "cat": "infantil",
+      "desc": "",
+      "author": "Walt Disney Company",
+      "genre": "Infantil",
+      "age": "6-10",
+      "temas": [
+        "Perros",
+        "Aventura",
+        "Familia",
+        "Rescate de animales",
+        "Amistad"
+      ],
+      "tags": [
+        "Disney",
+        "Perros",
+        "Cuento infantil",
+        "Clásico",
+        "Aventura"
+      ],
+      "nivel": "",
+      "idioma": "Español",
+      "pdfName": "101 Dalmatas (Disney Walt) (z-library.sk, 1lib.sk, z-lib.sk).pdf",
+      "pdfUrl": null,
+      "coverUrl": null,
+      "file": "101 Dalmatas (Disney Walt) (z-library.sk, 1lib.sk, z-lib.sk).pdf"
     }
   ],
   "emailList": [
@@ -188,5 +218,5 @@
     "juan@test.com",
     "octavio123@gamil.com"
   ],
-  "updatedAt": "2026-07-02T00:21:58.297Z"
+  "updatedAt": "2026-07-02T00:25:00.954Z"
 }
