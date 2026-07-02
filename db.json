@@ -292,6 +292,37 @@
       "pdfUrl": "",
       "coverUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/covers/1783019005618_la_bella_durmiente.jpg",
       "file": "La Bella Durmiente Del Bosque (Disney Walt) (z-library.sk, 1lib.sk, z-lib.sk).pdf"
+    },
+    {
+      "id": 1783029262599,
+      "name": "La Cenicienta",
+      "price": "$0.80",
+      "cat": "infantil",
+      "desc": "",
+      "author": "Adaptación de Walt Disney",
+      "genre": "Literatura Infantil",
+      "age": "",
+      "temas": [
+        "Magia",
+        "Princesas",
+        "Sueños",
+        "Transformación",
+        "Bien y mal"
+      ],
+      "tags": [
+        "Princesas",
+        "Magia",
+        "Clásico",
+        "Disney",
+        "Fantasía",
+        "Sueños"
+      ],
+      "nivel": "",
+      "idioma": "Español",
+      "pdfName": "La Cenicienta (Disney Walt) (z-library.sk, 1lib.sk, z-lib.sk).pdf",
+      "pdfUrl": null,
+      "coverUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/covers/1783029262599_la_cenicienta.jpg",
+      "file": "La Cenicienta (Disney Walt) (z-library.sk, 1lib.sk, z-lib.sk).pdf"
     }
   ],
   "emailList": [
@@ -300,5 +331,5 @@
     "juan@test.com",
     "octavio123@gamil.com"
   ],
-  "updatedAt": "2026-07-02T21:54:13.946Z"
+  "updatedAt": "2026-07-02T21:54:25.496Z"
 }
