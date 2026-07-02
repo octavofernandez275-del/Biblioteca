@@ -241,6 +241,24 @@
       "pdfUrl": "",
       "coverUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/covers/1782952112648_la_sirenita.jpg",
       "file": "La Sirenita (Disney Walt) (z-library.sk, 1lib.sk, z-lib.sk).pdf"
+    },
+    {
+      "id": 1782952667840,
+      "name": "La bella y la bestia",
+      "price": "$0.80",
+      "cat": "infantil",
+      "desc": "",
+      "author": "Walt Disney Company",
+      "genre": "",
+      "age": "",
+      "temas": [],
+      "tags": [],
+      "nivel": "",
+      "idioma": "",
+      "pdfName": "La Bella Y La Bestia (Disney Walt) (z-library.sk, 1lib.sk, z-lib.sk).pdf",
+      "pdfUrl": null,
+      "coverUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/covers/1782952667840_la_bella_y_la_bestia.jpg",
+      "file": "La Bella Y La Bestia (Disney Walt) (z-library.sk, 1lib.sk, z-lib.sk).pdf"
     }
   ],
   "emailList": [
@@ -249,5 +267,5 @@
     "juan@test.com",
     "octavio123@gamil.com"
   ],
-  "updatedAt": "2026-07-02T00:29:09.859Z"
+  "updatedAt": "2026-07-02T00:37:50.653Z"
 }
