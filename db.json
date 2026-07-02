@@ -73,14 +73,6 @@
   ],
   "products": [
     {
-      "id": 3,
-      "name": "Guía Redes Sociales 2025",
-      "cat": "ebooks",
-      "price": "$7.99",
-      "desc": "Instagram TikTok YouTube",
-      "file": null
-    },
-    {
       "id": 4,
       "name": "500 Prompts de IA",
       "cat": "ebooks",
@@ -316,5 +308,5 @@
     "juan@test.com",
     "octavio123@gamil.com"
   ],
-  "updatedAt": "2026-07-02T19:07:17.234Z"
+  "updatedAt": "2026-07-02T21:54:11.006Z"
 }
