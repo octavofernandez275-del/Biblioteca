@@ -277,6 +277,37 @@
       "pdfUrl": null,
       "coverUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/covers/1782952904197_bambi.jpg",
       "file": "Bambi (Disney Walt) (z-library.sk, 1lib.sk, z-lib.sk).pdf"
+    },
+    {
+      "id": 1783019005618,
+      "name": "La bella durmiente",
+      "price": "$0.80",
+      "cat": "infantil",
+      "desc": "",
+      "author": "Walt Disney",
+      "genre": "Cuento de hadas",
+      "age": "",
+      "temas": [
+        "Princesas",
+        "Magia",
+        "Maldiciones",
+        "Amor verdadero",
+        "Cuentos clásicos"
+      ],
+      "tags": [
+        "Cuento de hadas",
+        "Princesa",
+        "Magia",
+        "Clásico infantil",
+        "Disney",
+        "Fantasía"
+      ],
+      "nivel": "Principiante",
+      "idioma": "Español",
+      "pdfName": "La Bella Durmiente Del Bosque (Disney Walt) (z-library.sk, 1lib.sk, z-lib.sk).pdf",
+      "pdfUrl": null,
+      "coverUrl": null,
+      "file": "La Bella Durmiente Del Bosque (Disney Walt) (z-library.sk, 1lib.sk, z-lib.sk).pdf"
     }
   ],
   "emailList": [
@@ -285,5 +316,5 @@
     "juan@test.com",
     "octavio123@gamil.com"
   ],
-  "updatedAt": "2026-07-02T19:01:14.816Z"
+  "updatedAt": "2026-07-02T19:03:27.128Z"
 }
