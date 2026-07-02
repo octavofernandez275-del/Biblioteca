@@ -5913,12 +5913,12 @@
     }
 
   // ─── EDITAR PRODUCTO ─────────────────────────────
-  let _editCoverB64 = null, _editPdfB64 = null, _editPdfName = null;
+  let _editCoverB64 = null, _editPdfB64 = null, _editPdfName = null, _editCoverFile = null, _editPdfFile = null;
 
   function openEditProduct(id) {
     const p = db.products.find(p => p.id === id);
     if (!p) return;
-    _editCoverB64 = null; _editPdfB64 = null; _editPdfName = null;
+    _editCoverB64 = null; _editPdfB64 = null; _editPdfName = null; _editCoverFile = null; _editPdfFile = null;
     document.getElementById('edit-prod-id').value    = p.id;
     document.getElementById('edit-prod-name').value  = p.name || '';
     document.getElementById('edit-prod-price').value = (p.price || '').replace('$','');
@@ -5941,11 +5941,12 @@
   function closeEditProduct() {
     document.getElementById('edit-product-modal').style.display = 'none';
     document.body.style.overflow = '';
-    _editCoverB64 = null; _editPdfB64 = null; _editPdfName = null;
+    _editCoverB64 = null; _editPdfB64 = null; _editPdfName = null; _editCoverFile = null; _editPdfFile = null;
   }
 
   function editCoverSelected(input) {
     const file = input.files[0]; if (!file) return;
+    _editCoverFile = file;
     const reader = new FileReader();
     reader.onload = e => {
       _editCoverB64 = e.target.result;
@@ -5959,6 +5960,7 @@
 
   function editPdfSelected(input) {
     const file = input.files[0]; if (!file) return;
+    _editPdfFile = file;
     const reader = new FileReader();
     reader.onload = e => { _editPdfB64 = e.target.result; _editPdfName = file.name; document.getElementById('edit-pdf-status').innerHTML = `<span style="color:var(--green);font-weight:700;">✅ ${file.name} (nuevo)</span>`; };
     reader.readAsDataURL(file);
@@ -5979,13 +5981,35 @@
     p.genre  = document.getElementById('edit-prod-genre').value.trim();
     p.age    = document.getElementById('edit-prod-age').value;
     p.desc   = document.getElementById('edit-prod-desc').value.trim();
-    if (_editCoverB64) { p.coverData = _editCoverB64; p.coverUrl = ''; }
-    if (_editPdfB64)   { p.pdfData = _editPdfB64; p.pdfUrl = ''; p.pdfName = _editPdfName; }
     saveDB();
     populateAdmin();
     renderLandingGrids();
     closeEditProduct();
     showToast('✅ Producto actualizado correctamente', 'success');
+
+    // Subir a GitHub el PDF/carátula nuevos, si se seleccionaron
+    const safeName = (p.name || 'libro').replace(/[^a-z0-9]/gi, '_').toLowerCase();
+    if (_editPdfFile) {
+      showToast('⏳ Subiendo PDF a GitHub...', 'info');
+      uploadFileToGithub(_editPdfFile, 'pdf', `${p.id}_${safeName}`).then(url => {
+        p.pdfUrl = url; p.pdfData = null; p.pdfName = _editPdfName;
+        saveDB(); populateAdmin(); renderLandingGrids();
+        showToast('✅ PDF subido correctamente', 'success');
+      }).catch(err => {
+        console.error('Error subiendo PDF a GitHub:', err);
+        showToast('⚠️ No se pudo subir el PDF a GitHub', 'error');
+      });
+    }
+    if (_editCoverFile) {
+      uploadFileToGithub(_editCoverFile, 'cover', `${p.id}_${safeName}`).then(url => {
+        p.coverUrl = url; p.coverData = null;
+        saveDB(); populateAdmin(); renderLandingGrids();
+      }).catch(err => {
+        console.error('Error subiendo carátula a GitHub:', err);
+        showToast('⚠️ No se pudo subir la carátula a GitHub', 'error');
+      });
+    }
+    _editPdfFile = null; _editCoverFile = null;
   }
 
 
