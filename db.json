@@ -118,6 +118,37 @@
       "pdfUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/pdfs/1782260842909_aladin.pdf",
       "coverUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/covers/1782260842909_aladin.jpg",
       "file": "Aladdin (Disney Walt) (z-library.sk, 1lib.sk, z-lib.sk).pdf"
+    },
+    {
+      "id": 1782951404132,
+      "name": "Aladin: 2 el regreso de Yafar",
+      "price": "$0.80",
+      "cat": "infantil",
+      "desc": "",
+      "author": "Walt Disney Company",
+      "genre": "Literatura infantil",
+      "age": "6-10",
+      "temas": [
+        "Aventura",
+        "Fantasía",
+        "Magia",
+        "Disney",
+        "Historias infantiles"
+      ],
+      "tags": [
+        "Aladdin",
+        "Disney",
+        "Aventura",
+        "Cuentos infantiles",
+        "Magia",
+        "Yafar"
+      ],
+      "nivel": "",
+      "idioma": "Español",
+      "pdfName": "Aladdin 2 (Disney Walt) (z-library.sk, 1lib.sk, z-lib.sk).pdf",
+      "pdfUrl": null,
+      "coverUrl": null,
+      "file": "Aladdin 2 (Disney Walt) (z-library.sk, 1lib.sk, z-lib.sk).pdf"
     }
   ],
   "emailList": [
@@ -126,5 +157,5 @@
     "juan@test.com",
     "octavio123@gamil.com"
   ],
-  "updatedAt": "2026-06-26T12:17:15.369Z"
+  "updatedAt": "2026-07-02T00:16:45.636Z"
 }
