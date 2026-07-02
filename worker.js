@@ -73,7 +73,7 @@ export default {
         const body = await request.json();
         const { name, desc, pdfName, extractMeta } = body;
 
-        const prompt = `Eres un clasificador de libros y ebooks digitales. Analiza este producto y devuelve SOLO un JSON con estos campos, sin texto extra ni backticks:
+        const prompt = `Eres un clasificador de libros y ebooks digitales, y también redactor publicitario. Analiza este producto y devuelve SOLO un JSON con estos campos, sin texto extra ni backticks:
 {
   "titulo_sugerido": "string — título atractivo del libro. Solo si extractMeta=true y el nombre parece un archivo (con guiones/underscores). Si no, deja vacío.",
   "descripcion_sugerida": "string — descripción de 1-2 oraciones. Solo si extractMeta=true. Si no, deja vacío.",
@@ -83,13 +83,22 @@ export default {
   "edad": "string (ej: Adultos, 6-10 años, Adolescentes, Todas las edades)",
   "idioma": "string",
   "nivel": "string (Principiante, Intermedio, Avanzado, o vacío)",
-  "tags": ["array", "de", "3-6", "etiquetas", "cortas"]
+  "tags": ["array", "de", "3-6", "etiquetas", "cortas"],
+  "ad": {
+    "headline": "string — frase promocional corta y atractiva (máx 8 palabras)",
+    "subheadline": "string — complemento del titular (máx 12 palabras)",
+    "cta": "string — llamada a la acción breve, ej: 'Leer ahora', 'Descubrir'",
+    "banner_text": "string — texto corto para un banner/badge, ej: 'Nuevo ingreso en Programación'",
+    "instagram_caption": "string — texto promocional listo para redes sociales, con emojis, 2-4 líneas",
+    "hashtags": ["array", "de", "4-8", "hashtags", "sin", "espacios"]
+  }
 }
 
 Producto: ${name || ''}
 Descripción: ${desc || ''}
 Nombre del archivo: ${pdfName || 'no disponible'}
-extractMeta: ${extractMeta ? 'true — genera titulo_sugerido y descripcion_sugerida' : 'false — deja titulo_sugerido y descripcion_sugerida vacíos'}`;
+extractMeta: ${extractMeta ? 'true — genera titulo_sugerido y descripcion_sugerida' : 'false — deja titulo_sugerido y descripcion_sugerida vacíos'}
+El bloque "ad" se genera siempre, tenga o no extractMeta activado, basándote en el nombre/descripción disponibles.`;
 
         const geminiRes = await fetch(
           'https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent',
@@ -121,7 +130,8 @@ extractMeta: ${extractMeta ? 'true — genera titulo_sugerido y descripcion_suge
             error: 'Gemini no devolvió clasificación',
             detail: motivo,
             titulo_sugerido: '', descripcion_sugerida: '', genero: '',
-            temas: [], autor_sugerido: '', edad: '', idioma: '', nivel: '', tags: []
+            temas: [], autor_sugerido: '', edad: '', idioma: '', nivel: '', tags: [],
+            ad: { headline: '', subheadline: '', cta: '', banner_text: '', instagram_caption: '', hashtags: [] }
           }), {
             status: 200,
             headers: { ...headers, 'Content-Type': 'application/json' },
@@ -139,7 +149,8 @@ extractMeta: ${extractMeta ? 'true — genera titulo_sugerido y descripcion_suge
             error: 'Respuesta de Gemini no era JSON válido',
             detail: clean.slice(0, 300),
             titulo_sugerido: '', descripcion_sugerida: '', genero: '',
-            temas: [], autor_sugerido: '', edad: '', idioma: '', nivel: '', tags: []
+            temas: [], autor_sugerido: '', edad: '', idioma: '', nivel: '', tags: [],
+            ad: { headline: '', subheadline: '', cta: '', banner_text: '', instagram_caption: '', hashtags: [] }
           }), {
             status: 200,
             headers: { ...headers, 'Content-Type': 'application/json' },

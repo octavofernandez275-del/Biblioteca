@@ -3041,6 +3041,12 @@
             <p style="font-size:12px;color:var(--muted);margin-top:10px;">Podés modificar las etiquetas antes de guardar</p>
           </div>
 
+          <!-- PUBLICIDAD GENERADA POR IA -->
+          <div id="ad-preview-box" style="display:none;background:rgba(245,158,11,.08);border:1px solid rgba(245,158,11,.25);border-radius:12px;padding:16px;margin-bottom:16px;">
+            <div style="font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#F59E0B;margin-bottom:10px;">📣 Publicidad sugerida</div>
+            <div id="ad-preview-content" style="font-size:13px;line-height:1.5;"></div>
+          </div>
+
           <div class="admin-form-grid" style="margin-bottom:16px;">
             <div class="form-group">
               <label class="form-label">Género / Tema</label>
@@ -4287,12 +4293,41 @@
           onclick="toggleTag(this)" title="Clic para desmarcar">${tag.label}</span>
       `).join('');
 
+      // Render bloque de publicidad (ad) generado por la IA
+      renderAdPreview(parsed.ad);
+
       // Store parsed result for saving
       window._lastClassification = parsed;
 
     } catch (err) {
       list.innerHTML = '<span style="color:var(--muted);font-size:12px">⚠️ No se pudo clasificar automáticamente. Completá los campos manualmente.</span>';
     }
+  }
+
+  function renderAdPreview(ad) {
+    const box = document.getElementById('ad-preview-box');
+    const content = document.getElementById('ad-preview-content');
+    if (!ad || (!ad.headline && !ad.instagram_caption)) {
+      box.style.display = 'none';
+      return;
+    }
+    window._lastAd = ad;
+    box.style.display = 'block';
+    content.innerHTML = `
+      <div style="margin-bottom:8px;"><strong>${ad.headline || ''}</strong>${ad.subheadline ? ' — ' + ad.subheadline : ''}</div>
+      ${ad.banner_text ? `<div style="color:var(--muted);margin-bottom:8px;">🏷️ ${ad.banner_text}</div>` : ''}
+      ${ad.cta ? `<div style="margin-bottom:8px;">Botón: <span style="background:rgba(245,158,11,.2);padding:2px 10px;border-radius:100px;font-weight:600;">${ad.cta}</span></div>` : ''}
+      ${ad.instagram_caption ? `<div style="white-space:pre-wrap;background:rgba(255,255,255,.04);border-radius:8px;padding:10px;margin-bottom:8px;">${ad.instagram_caption}${ad.hashtags?.length ? '\n\n' + ad.hashtags.map(h => h.startsWith('#') ? h : '#'+h).join(' ') : ''}</div>` : ''}
+      <button type="button" class="btn-outline-accent" style="font-size:12px;padding:6px 14px;" onclick="copyAdCaption()">📋 Copiar texto para Instagram</button>
+    `;
+  }
+
+  function copyAdCaption() {
+    const ad = window._lastAd;
+    if (!ad) return;
+    const text = (ad.instagram_caption || '') + (ad.hashtags?.length ? '\n\n' + ad.hashtags.map(h => h.startsWith('#') ? h : '#'+h).join(' ') : '');
+    navigator.clipboard.writeText(text).then(() => showToast('Texto copiado al portapapeles ✅', 'success'))
+      .catch(() => showToast('No se pudo copiar', 'error'));
   }
 
   function toggleTag(el) {
@@ -4320,6 +4355,7 @@
       tags: classification.tags || [],
       nivel: classification.nivel || '',
       idioma: classification.idioma || '',
+      ad: classification.ad || null,
       pdfName: pendingPdfName || null,
       pdfUrl: null,
       coverUrl: null,
@@ -4364,6 +4400,8 @@
     document.getElementById('cover-preview').style.display = 'none';
     document.getElementById('cover-icon').style.display = 'block';
     document.getElementById('auto-tags-box').style.display = 'none';
+    document.getElementById('ad-preview-box').style.display = 'none';
+    window._lastAd = null;
     document.getElementById('auto-tags-list').innerHTML = '';
     pendingPdfB64 = null; pendingCoverB64 = null; pendingPdfName = null;
     pendingPdfFile = null; pendingCoverFile = null;
@@ -5496,6 +5534,7 @@
           if (data.error) console.error(`batchGenerateDescriptions: fallo en "${p.name}":`, data.error, data.detail);
           if (data.descripcion_sugerida) { p.desc = data.descripcion_sugerida; done++; }
           if (data.autor_sugerido && !p.author) p.author = data.autor_sugerido;
+          if (data.ad && !p.ad) p.ad = data.ad;
         }
       } catch(e) { console.error(`batchGenerateDescriptions: excepción en "${p.name}":`, e); }
       await new Promise(r => setTimeout(r, 600));
