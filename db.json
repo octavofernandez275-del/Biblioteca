@@ -146,7 +146,7 @@
       "nivel": "",
       "idioma": "Español",
       "pdfName": "Aladdin 2 (Disney Walt) (z-library.sk, 1lib.sk, z-lib.sk).pdf",
-      "pdfUrl": null,
+      "pdfUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/pdfs/1782951404132_aladin__2_el_regreso_de_yafar.pdf",
       "coverUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/covers/1782951404132_aladin__2_el_regreso_de_yafar.webp",
       "file": "Aladdin 2 (Disney Walt) (z-library.sk, 1lib.sk, z-lib.sk).pdf"
     }
@@ -157,5 +157,5 @@
     "juan@test.com",
     "octavio123@gamil.com"
   ],
-  "updatedAt": "2026-07-02T00:16:47.836Z"
+  "updatedAt": "2026-07-02T00:16:50.401Z"
 }
