@@ -106,10 +106,47 @@ extractMeta: ${extractMeta ? 'true — genera titulo_sugerido y descripcion_suge
         );
 
         const geminiData = await geminiRes.json();
-        const text = geminiData.candidates?.[0]?.content?.parts?.[0]?.text || '{}';
-        const clean = text.replace(/```json|```/g, '').trim();
 
-        return new Response(clean, {
+        // Si Gemini no devolvió texto (API key inválida, cuota agotada,
+        // respuesta bloqueada por safety, etc.) lo reportamos en vez de
+        // devolver un objeto vacío silenciosamente.
+        const rawText = geminiData.candidates?.[0]?.content?.parts?.[0]?.text;
+        if (!rawText) {
+          const motivo =
+            geminiData.error?.message ||
+            geminiData.promptFeedback?.blockReason ||
+            geminiData.candidates?.[0]?.finishReason ||
+            'Gemini no devolvió contenido';
+          return new Response(JSON.stringify({
+            error: 'Gemini no devolvió clasificación',
+            detail: motivo,
+            titulo_sugerido: '', descripcion_sugerida: '', genero: '',
+            temas: [], autor_sugerido: '', edad: '', idioma: '', nivel: '', tags: []
+          }), {
+            status: 200,
+            headers: { ...headers, 'Content-Type': 'application/json' },
+          });
+        }
+
+        const clean = rawText.replace(/```json|```/g, '').trim();
+
+        // Parseo seguro: si Gemini agregó texto fuera del JSON, no rompemos.
+        let parsed;
+        try {
+          parsed = JSON.parse(clean);
+        } catch (parseErr) {
+          return new Response(JSON.stringify({
+            error: 'Respuesta de Gemini no era JSON válido',
+            detail: clean.slice(0, 300),
+            titulo_sugerido: '', descripcion_sugerida: '', genero: '',
+            temas: [], autor_sugerido: '', edad: '', idioma: '', nivel: '', tags: []
+          }), {
+            status: 200,
+            headers: { ...headers, 'Content-Type': 'application/json' },
+          });
+        }
+
+        return new Response(JSON.stringify(parsed), {
           headers: { ...headers, 'Content-Type': 'application/json' },
         });
 

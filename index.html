@@ -4133,6 +4133,10 @@
       const clean = raw.replace(/```json|```/g,'').trim();
       const parsed = JSON.parse(clean);
 
+      if (parsed.error) {
+        console.error('autoGenerateMeta: el Worker reportó un error:', parsed.error, parsed.detail);
+      }
+
       // Completar solo si están vacíos
       if (!nameEl.value && parsed.titulo_sugerido) {
         nameEl.value = parsed.titulo_sugerido;
@@ -5489,10 +5493,11 @@
         });
         if (res.ok) {
           const data = await res.json();
+          if (data.error) console.error(`batchGenerateDescriptions: fallo en "${p.name}":`, data.error, data.detail);
           if (data.descripcion_sugerida) { p.desc = data.descripcion_sugerida; done++; }
           if (data.autor_sugerido && !p.author) p.author = data.autor_sugerido;
         }
-      } catch(e) {}
+      } catch(e) { console.error(`batchGenerateDescriptions: excepción en "${p.name}":`, e); }
       await new Promise(r => setTimeout(r, 600));
     }
     saveDB(); populateAdmin(); renderLandingGrids();
