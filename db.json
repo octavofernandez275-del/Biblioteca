@@ -73,14 +73,6 @@
   ],
   "products": [
     {
-      "id": 4,
-      "name": "500 Prompts de IA",
-      "cat": "ebooks",
-      "price": "$6.99",
-      "desc": "ChatGPT Claude Gemini",
-      "file": null
-    },
-    {
       "id": 1782260842909,
       "name": "Aladin",
       "price": "$1.50",
@@ -308,5 +300,5 @@
     "juan@test.com",
     "octavio123@gamil.com"
   ],
-  "updatedAt": "2026-07-02T21:54:11.006Z"
+  "updatedAt": "2026-07-02T21:54:13.946Z"
 }
