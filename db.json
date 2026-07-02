@@ -210,6 +210,37 @@
       "pdfUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/pdfs/1782951899449_101_d_lmatas.pdf",
       "coverUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/covers/1782951899449_101_d_lmatas.jpg",
       "file": "101 Dalmatas (Disney Walt) (z-library.sk, 1lib.sk, z-lib.sk).pdf"
+    },
+    {
+      "id": 1782952112648,
+      "name": "La Sirenita",
+      "price": "$0.80",
+      "cat": "infantil",
+      "desc": "",
+      "author": "Walt Disney Company",
+      "genre": "Ficción infantil",
+      "age": "",
+      "temas": [
+        "Cuentos de hadas",
+        "Amor",
+        "Sacrificio",
+        "Vida marina",
+        "Fantasía"
+      ],
+      "tags": [
+        "Princesas Disney",
+        "Aventura",
+        "Fantasía",
+        "Musical",
+        "Mar",
+        "Clásico"
+      ],
+      "nivel": "Principiante",
+      "idioma": "Español",
+      "pdfName": "La Sirenita (Disney Walt) (z-library.sk, 1lib.sk, z-lib.sk).pdf",
+      "pdfUrl": null,
+      "coverUrl": null,
+      "file": "La Sirenita (Disney Walt) (z-library.sk, 1lib.sk, z-lib.sk).pdf"
     }
   ],
   "emailList": [
@@ -218,5 +249,5 @@
     "juan@test.com",
     "octavio123@gamil.com"
   ],
-  "updatedAt": "2026-07-02T00:25:52.273Z"
+  "updatedAt": "2026-07-02T00:28:34.154Z"
 }
