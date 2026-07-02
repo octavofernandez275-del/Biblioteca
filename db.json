@@ -256,7 +256,7 @@
       "nivel": "",
       "idioma": "",
       "pdfName": "La Bella Y La Bestia (Disney Walt) (z-library.sk, 1lib.sk, z-lib.sk).pdf",
-      "pdfUrl": null,
+      "pdfUrl": "",
       "coverUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/covers/1782952667840_la_bella_y_la_bestia.jpg",
       "file": "La Bella Y La Bestia (Disney Walt) (z-library.sk, 1lib.sk, z-lib.sk).pdf"
     }
@@ -267,5 +267,5 @@
     "juan@test.com",
     "octavio123@gamil.com"
   ],
-  "updatedAt": "2026-07-02T00:38:21.674Z"
+  "updatedAt": "2026-07-02T00:38:46.560Z"
 }
