@@ -177,7 +177,7 @@
       "nivel": "",
       "idioma": "Español",
       "pdfName": "El Principe Y El Mendigo (Disney Walt) (z-library.sk, 1lib.sk, z-lib.sk).pdf",
-      "pdfUrl": null,
+      "pdfUrl": "",
       "coverUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/covers/1782951715207_el_pr_ncipe_y_el_mendigo.jpg",
       "file": "El Principe Y El Mendigo (Disney Walt) (z-library.sk, 1lib.sk, z-lib.sk).pdf"
     },
@@ -218,5 +218,5 @@
     "juan@test.com",
     "octavio123@gamil.com"
   ],
-  "updatedAt": "2026-07-02T00:25:05.215Z"
+  "updatedAt": "2026-07-02T00:25:52.273Z"
 }
