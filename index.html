@@ -5985,6 +5985,12 @@
     p.genre  = document.getElementById('edit-prod-genre').value.trim();
     p.age    = document.getElementById('edit-prod-age').value;
     p.desc   = document.getElementById('edit-prod-desc').value.trim();
+
+    // Guardar referencias ANTES de cerrar el modal (closeEditProduct las resetea a null)
+    const pendingPdf     = _editPdfFile;
+    const pendingPdfName = _editPdfName;
+    const pendingCover   = _editCoverFile;
+
     saveDB();
     populateAdmin();
     renderLandingGrids();
@@ -5993,10 +5999,10 @@
 
     // Subir a GitHub el PDF/carátula nuevos, si se seleccionaron
     const safeName = (p.name || 'libro').replace(/[^a-z0-9]/gi, '_').toLowerCase();
-    if (_editPdfFile) {
+    if (pendingPdf) {
       showToast('⏳ Subiendo PDF a GitHub...', 'info');
-      uploadFileToGithub(_editPdfFile, 'pdf', `${p.id}_${safeName}`).then(url => {
-        p.pdfUrl = url; p.pdfData = null; p.pdfName = _editPdfName;
+      uploadFileToGithub(pendingPdf, 'pdf', `${p.id}_${safeName}`).then(url => {
+        p.pdfUrl = url; p.pdfData = null; p.pdfName = pendingPdfName;
         saveDB(); populateAdmin(); renderLandingGrids();
         showToast('✅ PDF subido correctamente', 'success');
       }).catch(err => {
@@ -6004,8 +6010,8 @@
         showToast('⚠️ No se pudo subir el PDF a GitHub', 'error');
       });
     }
-    if (_editCoverFile) {
-      uploadFileToGithub(_editCoverFile, 'cover', `${p.id}_${safeName}`).then(url => {
+    if (pendingCover) {
+      uploadFileToGithub(pendingCover, 'cover', `${p.id}_${safeName}`).then(url => {
         p.coverUrl = url; p.coverData = null;
         saveDB(); populateAdmin(); renderLandingGrids();
       }).catch(err => {
@@ -6013,7 +6019,6 @@
         showToast('⚠️ No se pudo subir la carátula a GitHub', 'error');
       });
     }
-    _editPdfFile = null; _editCoverFile = null;
   }
 
 
