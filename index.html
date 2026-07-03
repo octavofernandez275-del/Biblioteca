@@ -6135,7 +6135,10 @@
 
   function setReviewStar(n) {
     _reviewStars = n;
-    document.querySelectorAll('#star-picker span').forEach((s,i) => s.classList.toggle('on', i < n));
+    document.querySelectorAll('#star-picker span').forEach((s,i) => {
+      s.classList.toggle('on', i < n);
+      s.textContent = i < n ? '★' : '☆';
+    });
   }
 
   function submitReview() {
@@ -6685,30 +6688,8 @@
     </div>
   </div>
 </div>
-  <div class="review-modal-inner">
-    <button onclick="closeReviewModal()" style="position:absolute;top:14px;right:18px;background:none;border:none;color:var(--muted);font-size:26px;cursor:pointer;">×</button>
-    <div style="font-size:18px;font-weight:800;margin-bottom:8px;">✍️ Dejar una reseña</div>
-    <div style="font-size:13px;color:var(--muted);margin-bottom:22px;">Solo usuarios con compras verificadas pueden dejar reseñas.</div>
-
-    <label class="form-label">Producto</label>
-    <select class="form-input" id="review-product" style="margin-bottom:16px;"></select>
-
-    <label class="form-label" style="display:block;margin-bottom:8px;">Calificación</label>
-    <div class="star-picker" id="star-picker">
-      <span onclick="setReviewStar(1)">★</span>
-      <span onclick="setReviewStar(2)">★</span>
-      <span onclick="setReviewStar(3)">★</span>
-      <span onclick="setReviewStar(4)">★</span>
-      <span onclick="setReviewStar(5)">★</span>
-    </div>
-
-    <label class="form-label">Tu reseña</label>
-    <textarea id="review-text" class="form-input" rows="4" maxlength="400"
-      placeholder="Contá tu experiencia con el producto..." style="resize:vertical;margin-bottom:6px;"></textarea>
-    <div style="font-size:11px;color:var(--muted);text-align:right;margin-bottom:20px;"><span id="review-char-count">0</span>/400</div>
-
-    <div id="review-error" style="color:#FCA5A5;font-size:13px;margin-bottom:12px;display:none;"></div>
-    <button class="btn btn-primary" style="width:100%;padding:14px;" onclick="submitReview()">Enviar reseña</button>
+  <div class="review-modal-inner" style="display:none">
+    <!-- (bloque duplicado eliminado) -->
   </div>
 </div>
 
@@ -6721,12 +6702,12 @@
     <select id="review-product" style="display:none;"></select>
     <div style="margin-bottom:16px;">
       <div style="font-size:13px;color:var(--muted);margin-bottom:8px;">Tu puntuación</div>
-      <div style="display:flex;gap:8px;">
-        <span onclick="setReviewStar(1)" style="font-size:28px;cursor:pointer;transition:.15s" class="star-btn">☆</span>
-        <span onclick="setReviewStar(2)" style="font-size:28px;cursor:pointer;transition:.15s" class="star-btn">☆</span>
-        <span onclick="setReviewStar(3)" style="font-size:28px;cursor:pointer;transition:.15s" class="star-btn">☆</span>
-        <span onclick="setReviewStar(4)" style="font-size:28px;cursor:pointer;transition:.15s" class="star-btn">☆</span>
-        <span onclick="setReviewStar(5)" style="font-size:28px;cursor:pointer;transition:.15s" class="star-btn">☆</span>
+      <div class="star-picker" id="star-picker">
+        <span onclick="setReviewStar(1)">☆</span>
+        <span onclick="setReviewStar(2)">☆</span>
+        <span onclick="setReviewStar(3)">☆</span>
+        <span onclick="setReviewStar(4)">☆</span>
+        <span onclick="setReviewStar(5)">☆</span>
       </div>
     </div>
     <div style="margin-bottom:16px;">
