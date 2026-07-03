@@ -2909,7 +2909,7 @@
             </div>
             <div class="form-group">
               <label class="form-label">Nombre del repositorio</label>
-              <input type="text" class="form-input" id="gh-repo" placeholder="biblioteca-digital" value="biblioteca" />
+              <input type="text" class="form-input" id="gh-repo" placeholder="Biblioteca" value="Biblioteca" />
             </div>
           </div>
           <div class="form-group" style="margin-bottom:16px;">
@@ -3322,7 +3322,7 @@
 <script>
   // ─── WORKER CONFIG ───────────────────────────────
   const WORKER_URL = 'https://biblioteca-db.octavofernandez275.workers.dev';
-  let ghConfig = { user: 'octavofernandez275-del', repo: 'biblioteca', token: 'via-worker' };
+  let ghConfig = { user: 'octavofernandez275-del', repo: 'Biblioteca', token: 'via-worker' };
   try {
     const savedGhConfig = localStorage.getItem('bdi_gh');
     if (savedGhConfig) Object.assign(ghConfig, JSON.parse(savedGhConfig));

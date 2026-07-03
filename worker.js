@@ -1,12 +1,9 @@
 /**
  * Worker "portero" para Biblioteca Digital.
  * Rutas:
- *   GET  /db             -> devuelve db.json desde GitHub
- *   POST /db             -> guarda db.json en GitHub
- *   POST /classify       -> clasifica un producto con Gemini AI
- *   POST /upload         -> sube archivos al repo en GitHub
- *   GET  /pdf-proxy      -> proxy para PDFs
- *   GET  /debug-github   -> prueba rápida de token/repo
+ *   GET  /db        -> devuelve db.json desde GitHub
+ *   POST /db        -> guarda db.json en GitHub
+ *   POST /classify  -> clasifica un producto con Gemini AI
  */
 
 const GH_USER = 'octavofernandez275-del';
@@ -17,37 +14,32 @@ const ALLOWED_ORIGINS = ['*'];
 
 function corsHeaders(origin) {
   return {
-    'Access-Control-Allow-Origin': ALLOWED_ORIGINS.includes('*')
-      ? '*'
-      : (ALLOWED_ORIGINS.includes(origin) ? origin : ''),
+    'Access-Control-Allow-Origin': ALLOWED_ORIGINS.includes('*') ? '*' : (ALLOWED_ORIGINS.includes(origin) ? origin : ''),
     'Access-Control-Allow-Methods': 'GET, POST, OPTIONS',
     'Access-Control-Allow-Headers': 'Content-Type',
   };
 }
 
-function ghHeaders(env, includeJson = false) {
-  return {
-    Authorization: `Bearer ${env.GITHUB_TOKEN}`,
-    Accept: 'application/vnd.github+json',
-    'User-Agent': 'biblioteca-worker',
-    ...(includeJson ? { 'Content-Type': 'application/json' } : {}),
-  };
-}
-
 async function githubGet(env) {
-  return fetch(
+  const res = await fetch(
     `https://api.github.com/repos/${GH_USER}/${GH_REPO}/contents/${GH_FILE}`,
-    { headers: ghHeaders(env) }
+    { headers: { Authorization: `token ${env.GITHUB_TOKEN}`, Accept: 'application/vnd.github+json', 'User-Agent': 'biblioteca-worker' } }
   );
+  return res;
 }
 
 async function githubPut(env, contentObj, sha) {
   const content = btoa(unescape(encodeURIComponent(JSON.stringify(contentObj, null, 2))));
-  return fetch(
+  const res = await fetch(
     `https://api.github.com/repos/${GH_USER}/${GH_REPO}/contents/${GH_FILE}`,
     {
       method: 'PUT',
-      headers: ghHeaders(env, true),
+      headers: {
+        Authorization: `token ${env.GITHUB_TOKEN}`,
+        Accept: 'application/vnd.github+json',
+        'Content-Type': 'application/json',
+        'User-Agent': 'biblioteca-worker',
+      },
       body: JSON.stringify({
         message: 'Actualizar base de datos',
         content,
@@ -55,6 +47,7 @@ async function githubPut(env, contentObj, sha) {
       }),
     }
   );
+  return res;
 }
 
 export default {
@@ -65,40 +58,6 @@ export default {
 
     if (request.method === 'OPTIONS') {
       return new Response(null, { headers });
-    }
-
-    // ── DEBUG GitHub token / repo ──────────────────────────────
-    if (url.pathname === '/debug-github' && request.method === 'GET') {
-      try {
-        if (!env.GITHUB_TOKEN) {
-          return new Response(JSON.stringify({
-            ok: false,
-            error: 'GITHUB_TOKEN no configurado'
-          }), {
-            status: 500,
-            headers: { ...headers, 'Content-Type': 'application/json' },
-          });
-        }
-
-        const res = await fetch(
-          `https://api.github.com/repos/${GH_USER}/${GH_REPO}`,
-          { headers: ghHeaders(env) }
-        );
-
-        const text = await res.text();
-        return new Response(text, {
-          status: res.status,
-          headers: { ...headers, 'Content-Type': 'application/json' },
-        });
-      } catch (e) {
-        return new Response(JSON.stringify({
-          ok: false,
-          error: String(e)
-        }), {
-          status: 500,
-          headers: { ...headers, 'Content-Type': 'application/json' },
-        });
-      }
     }
 
     // ── CLASSIFY con Gemini ─────────────────────────────────────
@@ -156,35 +115,23 @@ El bloque "ad" se genera siempre, tenga o no extractMeta activado, basándote en
         );
 
         const geminiData = await geminiRes.json();
-        const rawText = geminiData.candidates?.[0]?.content?.parts?.[0]?.text;
 
+        // Si Gemini no devolvió texto (API key inválida, cuota agotada,
+        // respuesta bloqueada por safety, etc.) lo reportamos en vez de
+        // devolver un objeto vacío silenciosamente.
+        const rawText = geminiData.candidates?.[0]?.content?.parts?.[0]?.text;
         if (!rawText) {
           const motivo =
             geminiData.error?.message ||
             geminiData.promptFeedback?.blockReason ||
             geminiData.candidates?.[0]?.finishReason ||
             'Gemini no devolvió contenido';
-
           return new Response(JSON.stringify({
             error: 'Gemini no devolvió clasificación',
             detail: motivo,
-            titulo_sugerido: '',
-            descripcion_sugerida: '',
-            genero: '',
-            temas: [],
-            autor_sugerido: '',
-            edad: '',
-            idioma: '',
-            nivel: '',
-            tags: [],
-            ad: {
-              headline: '',
-              subheadline: '',
-              cta: '',
-              banner_text: '',
-              instagram_caption: '',
-              hashtags: []
-            }
+            titulo_sugerido: '', descripcion_sugerida: '', genero: '',
+            temas: [], autor_sugerido: '', edad: '', idioma: '', nivel: '', tags: [],
+            ad: { headline: '', subheadline: '', cta: '', banner_text: '', instagram_caption: '', hashtags: [] }
           }), {
             status: 200,
             headers: { ...headers, 'Content-Type': 'application/json' },
@@ -193,30 +140,17 @@ El bloque "ad" se genera siempre, tenga o no extractMeta activado, basándote en
 
         const clean = rawText.replace(/```json|```/g, '').trim();
 
+        // Parseo seguro: si Gemini agregó texto fuera del JSON, no rompemos.
         let parsed;
         try {
           parsed = JSON.parse(clean);
-        } catch {
+        } catch (parseErr) {
           return new Response(JSON.stringify({
             error: 'Respuesta de Gemini no era JSON válido',
             detail: clean.slice(0, 300),
-            titulo_sugerido: '',
-            descripcion_sugerida: '',
-            genero: '',
-            temas: [],
-            autor_sugerido: '',
-            edad: '',
-            idioma: '',
-            nivel: '',
-            tags: [],
-            ad: {
-              headline: '',
-              subheadline: '',
-              cta: '',
-              banner_text: '',
-              instagram_caption: '',
-              hashtags: []
-            }
+            titulo_sugerido: '', descripcion_sugerida: '', genero: '',
+            temas: [], autor_sugerido: '', edad: '', idioma: '', nivel: '', tags: [],
+            ad: { headline: '', subheadline: '', cta: '', banner_text: '', instagram_caption: '', hashtags: [] }
           }), {
             status: 200,
             headers: { ...headers, 'Content-Type': 'application/json' },
@@ -228,10 +162,7 @@ El bloque "ad" se genera siempre, tenga o no extractMeta activado, basándote en
         });
 
       } catch (e) {
-        return new Response(JSON.stringify({
-          error: 'Error clasificando',
-          detail: String(e)
-        }), {
+        return new Response(JSON.stringify({ error: 'Error clasificando', detail: String(e) }), {
           status: 502,
           headers: { ...headers, 'Content-Type': 'application/json' },
         });
@@ -243,39 +174,37 @@ El bloque "ad" se genera siempre, tenga o no extractMeta activado, basándote en
       try {
         if (!env.GITHUB_TOKEN) {
           return new Response(JSON.stringify({ error: 'GITHUB_TOKEN no configurado' }), {
-            status: 500,
-            headers: { ...headers, 'Content-Type': 'application/json' },
+            status: 500, headers: { ...headers, 'Content-Type': 'application/json' },
           });
         }
-
         const body = await request.json();
-        const { path, content } = body; // content = base64 puro
-
+        const { path, content } = body; // content = base64 puro, path = 'pdfs/xxx.pdf'
         if (!path || !content) {
           return new Response(JSON.stringify({ error: 'Faltan campos path o content' }), {
-            status: 400,
-            headers: { ...headers, 'Content-Type': 'application/json' },
+            status: 400, headers: { ...headers, 'Content-Type': 'application/json' },
           });
         }
 
-        // Verificar si ya existe para obtener SHA
+        // Verificar si ya existe para obtener sha
         let sha = null;
         try {
           const check = await fetch(
             `https://api.github.com/repos/${GH_USER}/${GH_REPO}/contents/${path}`,
-            { headers: ghHeaders(env) }
+            { headers: { Authorization: `token ${env.GITHUB_TOKEN}`, Accept: 'application/vnd.github+json', 'User-Agent': 'biblioteca-worker' } }
           );
-          if (check.ok) {
-            const d = await check.json();
-            sha = d.sha;
-          }
-        } catch {}
+          if (check.ok) { const d = await check.json(); sha = d.sha; }
+        } catch(e) {}
 
         const putRes = await fetch(
           `https://api.github.com/repos/${GH_USER}/${GH_REPO}/contents/${path}`,
           {
             method: 'PUT',
-            headers: ghHeaders(env, true),
+            headers: {
+              Authorization: `token ${env.GITHUB_TOKEN}`,
+              Accept: 'application/vnd.github+json',
+              'Content-Type': 'application/json',
+              'User-Agent': 'biblioteca-worker',
+            },
             body: JSON.stringify({
               message: `Upload: ${path}`,
               content,
@@ -286,30 +215,19 @@ El bloque "ad" se genera siempre, tenga o no extractMeta activado, basándote en
 
         if (!putRes.ok) {
           const text = await putRes.text();
-          return new Response(JSON.stringify({
-            error: 'Error subiendo archivo',
-            detail: text
-          }), {
-            status: putRes.status,
-            headers: { ...headers, 'Content-Type': 'application/json' },
+          return new Response(JSON.stringify({ error: 'Error subiendo archivo', detail: text }), {
+            status: putRes.status, headers: { ...headers, 'Content-Type': 'application/json' },
           });
         }
 
         const data = await putRes.json();
-        return new Response(JSON.stringify({
-          ok: true,
-          url: data.content?.download_url || null
-        }), {
+        return new Response(JSON.stringify({ ok: true, url: data.content.download_url }), {
           headers: { ...headers, 'Content-Type': 'application/json' },
         });
 
       } catch (e) {
-        return new Response(JSON.stringify({
-          error: 'Fallo al subir archivo',
-          detail: String(e)
-        }), {
-          status: 502,
-          headers: { ...headers, 'Content-Type': 'application/json' },
+        return new Response(JSON.stringify({ error: 'Fallo al subir archivo', detail: String(e) }), {
+          status: 502, headers: { ...headers, 'Content-Type': 'application/json' },
         });
       }
     }
@@ -317,28 +235,20 @@ El bloque "ad" se genera siempre, tenga o no extractMeta activado, basándote en
     // ── PDF PROXY (evita CORS de raw.githubusercontent.com) ──────
     if (url.pathname === '/pdf-proxy' && request.method === 'GET') {
       const pdfUrl = url.searchParams.get('url');
-
       if (!pdfUrl) {
         return new Response(JSON.stringify({ error: 'Falta parámetro url' }), {
-          status: 400,
-          headers: { ...headers, 'Content-Type': 'application/json' },
+          status: 400, headers: { ...headers, 'Content-Type': 'application/json' },
         });
       }
-
       try {
         const pdfRes = await fetch(pdfUrl, {
           headers: { 'User-Agent': 'biblioteca-worker' },
         });
-
         if (!pdfRes.ok) {
-          return new Response(JSON.stringify({
-            error: `Error al obtener PDF: ${pdfRes.status}`
-          }), {
-            status: pdfRes.status,
-            headers: { ...headers, 'Content-Type': 'application/json' },
+          return new Response(JSON.stringify({ error: `Error al obtener PDF: ${pdfRes.status}` }), {
+            status: pdfRes.status, headers: { ...headers, 'Content-Type': 'application/json' },
           });
         }
-
         const pdfBody = await pdfRes.arrayBuffer();
         return new Response(pdfBody, {
           status: 200,
@@ -349,21 +259,15 @@ El bloque "ad" se genera siempre, tenga o no extractMeta activado, basándote en
           },
         });
       } catch (e) {
-        return new Response(JSON.stringify({
-          error: 'Error en proxy PDF',
-          detail: String(e)
-        }), {
-          status: 502,
-          headers: { ...headers, 'Content-Type': 'application/json' },
+        return new Response(JSON.stringify({ error: 'Error en proxy PDF', detail: String(e) }), {
+          status: 502, headers: { ...headers, 'Content-Type': 'application/json' },
         });
       }
     }
 
     // ── DB ──────────────────────────────────────────────────────
     if (!env.GITHUB_TOKEN) {
-      return new Response(JSON.stringify({
-        error: 'GITHUB_TOKEN no configurado en el Worker'
-      }), {
+      return new Response(JSON.stringify({ error: 'GITHUB_TOKEN no configurado en el Worker' }), {
         status: 500,
         headers: { ...headers, 'Content-Type': 'application/json' },
       });
@@ -372,41 +276,25 @@ El bloque "ad" se genera siempre, tenga o no extractMeta activado, basándote en
     if (url.pathname === '/db' && request.method === 'GET') {
       try {
         const res = await githubGet(env);
-
         if (res.status === 404) {
-          return new Response(JSON.stringify({
-            users: [],
-            orders: [],
-            products: [],
-            emailList: []
-          }), {
+          return new Response(JSON.stringify({ users: [], orders: [], products: [], emailList: [] }), {
             headers: { ...headers, 'Content-Type': 'application/json' },
           });
         }
-
         if (!res.ok) {
           const text = await res.text();
-          return new Response(JSON.stringify({
-            error: 'Error de GitHub',
-            detail: text,
-            status: res.status
-          }), {
+          return new Response(JSON.stringify({ error: 'Error de GitHub', detail: text, status: res.status }), {
             status: res.status,
             headers: { ...headers, 'Content-Type': 'application/json' },
           });
         }
-
         const data = await res.json();
         const decoded = decodeURIComponent(escape(atob(data.content)));
-
         return new Response(decoded, {
           headers: { ...headers, 'Content-Type': 'application/json' },
         });
       } catch (e) {
-        return new Response(JSON.stringify({
-          error: 'Fallo al leer',
-          detail: String(e)
-        }), {
+        return new Response(JSON.stringify({ error: 'Fallo al leer', detail: String(e) }), {
           status: 502,
           headers: { ...headers, 'Content-Type': 'application/json' },
         });
@@ -417,7 +305,6 @@ El bloque "ad" se genera siempre, tenga o no extractMeta activado, basándote en
       try {
         const body = await request.json();
         const newData = body.data;
-
         if (!newData) {
           return new Response(JSON.stringify({ error: 'Falta el campo data' }), {
             status: 400,
@@ -438,11 +325,7 @@ El bloque "ad" se genera siempre, tenga o no extractMeta activado, basándote en
 
         if (!putRes.ok) {
           const text = await putRes.text();
-          return new Response(JSON.stringify({
-            error: 'Error guardando en GitHub',
-            detail: text,
-            status: putRes.status
-          }), {
+          return new Response(JSON.stringify({ error: 'Error guardando en GitHub', detail: text, status: putRes.status }), {
             status: putRes.status,
             headers: { ...headers, 'Content-Type': 'application/json' },
           });
@@ -452,10 +335,7 @@ El bloque "ad" se genera siempre, tenga o no extractMeta activado, basándote en
           headers: { ...headers, 'Content-Type': 'application/json' },
         });
       } catch (e) {
-        return new Response(JSON.stringify({
-          error: 'Fallo al guardar',
-          detail: String(e)
-        }), {
+        return new Response(JSON.stringify({ error: 'Fallo al guardar', detail: String(e) }), {
           status: 502,
           headers: { ...headers, 'Content-Type': 'application/json' },
         });
