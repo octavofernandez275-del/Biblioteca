@@ -164,52 +164,6 @@
       "pdfUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/pdfs/1783029262599_la_cenicienta.pdf",
       "coverUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/covers/1783029262599_la_cenicienta.jpg",
       "file": "La Cenicienta (Disney Walt) (z-library.sk, 1lib.sk, z-lib.sk).pdf"
-    },
-    {
-      "id": 1783084465493,
-      "name": "El príncipe y el mendigo",
-      "price": "$0.99",
-      "cat": "infantil",
-      "desc": "",
-      "author": "Walt Disney Company",
-      "genre": "Ficción Clásica",
-      "age": "",
-      "temas": [
-        "Identidad",
-        "Justicia social",
-        "Aventura",
-        "Amistad",
-        "Realeza"
-      ],
-      "tags": [
-        "Clásico",
-        "Aventura",
-        "Disney",
-        "Realeza",
-        "Infantil",
-        "Identidad"
-      ],
-      "nivel": "",
-      "idioma": "Español",
-      "ad": {
-        "headline": "Un Clásico Disney Inolvidable",
-        "subheadline": "Una aventura de identidad, amistad y justicia para todas las edades.",
-        "cta": "Revive la Magia",
-        "banner_text": "Disney Clásico: Aventura",
-        "instagram_caption": "✨ ¡Un clásico Disney que no puedes perderte! ✨\nSumérgete en la increíble aventura del Príncipe y el Mendigo. Una historia de identidad, amistad y destinos entrelazados. ¿Quién eres realmente?\n#MagiaDisney",
-        "hashtags": [
-          "#ElPrincipeYElMendigo",
-          "#DisneyClasico",
-          "#AventuraJuvenil",
-          "#HistoriaInfantil",
-          "#WaltDisney",
-          "#Identidad"
-        ]
-      },
-      "pdfName": "El Principe Y El Mendigo (Disney Walt) (z-library.sk, 1lib.sk, z-lib.sk).pdf",
-      "pdfUrl": null,
-      "coverUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/covers/1783084465493_el_pr_ncipe_y_el_mendigo.jpg",
-      "file": "El Principe Y El Mendigo (Disney Walt) (z-library.sk, 1lib.sk, z-lib.sk).pdf"
     }
   ],
   "emailList": [
@@ -218,5 +172,5 @@
     "juan@test.com",
     "octavio123@gamil.com"
   ],
-  "updatedAt": "2026-07-03T13:48:44.143Z"
+  "updatedAt": "2026-07-03T13:49:00.855Z"
 }
