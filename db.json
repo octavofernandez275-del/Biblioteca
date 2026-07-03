@@ -164,53 +164,6 @@
       "pdfUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/pdfs/1783029262599_la_cenicienta.pdf",
       "coverUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/covers/1783029262599_la_cenicienta.jpg",
       "file": "La Cenicienta (Disney Walt) (z-library.sk, 1lib.sk, z-lib.sk).pdf"
-    },
-    {
-      "id": 1783087682493,
-      "name": "El principe y  el mendigo",
-      "price": "$0.99",
-      "cat": "infantil",
-      "desc": "",
-      "author": "Walt Disney Company",
-      "genre": "Ficción Infantil",
-      "age": "",
-      "temas": [
-        "Identidad",
-        "Justicia social",
-        "Aventura",
-        "Clases sociales",
-        "Amistad"
-      ],
-      "tags": [
-        "Clásico",
-        "Aventura",
-        "Infantil",
-        "Identidad",
-        "Disney",
-        "Historia"
-      ],
-      "nivel": "",
-      "idioma": "Español",
-      "ad": {
-        "headline": "Intercambio de identidades, un giro inesperado",
-        "subheadline": "Una historia atemporal de aventura, amistad y justicia social que cautiva.",
-        "cta": "Explorar ahora",
-        "banner_text": "Clásico Infantil Inolvidable",
-        "instagram_caption": "✨ ¡Revive un clásico eterno! ✨ ¿Qué pasaría si pudieras cambiar tu vida con solo un rostro diferente? 👑 Una aventura que te hará reflexionar sobre la identidad y la justicia. ¡No te lo pierdas!\n#ElPrincipeYElMendigo #ClasicosLiterarios #AventuraInfantil #Disney",
-        "hashtags": [
-          "ElPrincipeYElMendigo",
-          "Clasico",
-          "Aventura",
-          "Identidad",
-          "Justicia",
-          "DisneyAdaptacion",
-          "LecturaInfantil"
-        ]
-      },
-      "pdfName": "El Principe Y El Mendigo (Disney Walt) (z-library.sk, 1lib.sk, z-lib.sk).pdf",
-      "pdfUrl": null,
-      "coverUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/covers/1783087682493_el_principe_y__el_mendigo.jpg",
-      "file": "El Principe Y El Mendigo (Disney Walt) (z-library.sk, 1lib.sk, z-lib.sk).pdf"
     }
   ],
   "emailList": [
@@ -219,5 +172,5 @@
     "juan@test.com",
     "octavio123@gamil.com"
   ],
-  "updatedAt": "2026-07-03T14:14:01.888Z"
+  "updatedAt": "2026-07-03T14:14:15.603Z"
 }
