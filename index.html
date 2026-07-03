@@ -3323,6 +3323,10 @@
   // ─── WORKER CONFIG ───────────────────────────────
   const WORKER_URL = 'https://biblioteca-db.octavofernandez275.workers.dev';
   let ghConfig = { user: 'octavofernandez275-del', repo: 'biblioteca', token: 'via-worker' };
+  try {
+    const savedGhConfig = localStorage.getItem('bdi_gh');
+    if (savedGhConfig) Object.assign(ghConfig, JSON.parse(savedGhConfig));
+  } catch (e) { console.error('No se pudo cargar la configuración de GitHub guardada:', e); }
 
   // ─── STATE ───────────────────────────────────────
   const DB_KEY = 'bdi_db';
