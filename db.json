@@ -164,6 +164,52 @@
       "pdfUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/pdfs/1783029262599_la_cenicienta.pdf",
       "coverUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/covers/1783029262599_la_cenicienta.jpg",
       "file": "La Cenicienta (Disney Walt) (z-library.sk, 1lib.sk, z-lib.sk).pdf"
+    },
+    {
+      "id": 1783086607639,
+      "name": "Él príncipe y el mendigo",
+      "price": "$0.99",
+      "cat": "infantil",
+      "desc": "",
+      "author": "Walt Disney Company",
+      "genre": "Ficción Infantil",
+      "age": "6-10",
+      "temas": [
+        "Identidad",
+        "Justicia social",
+        "Aventura",
+        "Realeza",
+        "Empatía"
+      ],
+      "tags": [
+        "Clásico",
+        "Aventura",
+        "Identidad",
+        "Realeza",
+        "Justicia",
+        "Transformación"
+      ],
+      "nivel": "",
+      "idioma": "Español",
+      "ad": {
+        "headline": "Intercambio de identidades en la realeza",
+        "subheadline": "Una emocionante historia sobre justicia, riqueza y verdad.",
+        "cta": "Descubre la aventura",
+        "banner_text": "Clásico atemporal: Príncipe y Mendigo",
+        "instagram_caption": "Sumérgete en un clásico inolvidable. 👑✨ 'El Príncipe y el Mendigo' te invita a reflexionar sobre la identidad y la justicia social en una aventura épica. ¡No te lo pierdas!\n#LecturaImprescindible",
+        "hashtags": [
+          "#ElPrincipeYElMendigo",
+          "#ClasicoLiterario",
+          "#Aventura",
+          "#JusticiaSocial",
+          "#LibroRecomendado",
+          "#MarkTwain"
+        ]
+      },
+      "pdfName": "El Principe Y El Mendigo (Disney Walt) (z-library.sk, 1lib.sk, z-lib.sk).pdf",
+      "pdfUrl": null,
+      "coverUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/covers/1783086607639__l_pr_ncipe_y_el_mendigo.jpg",
+      "file": "El Principe Y El Mendigo (Disney Walt) (z-library.sk, 1lib.sk, z-lib.sk).pdf"
     }
   ],
   "emailList": [
@@ -172,5 +218,5 @@
     "juan@test.com",
     "octavio123@gamil.com"
   ],
-  "updatedAt": "2026-07-03T13:49:00.855Z"
+  "updatedAt": "2026-07-03T13:50:10.604Z"
 }
