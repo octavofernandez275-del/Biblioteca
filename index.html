@@ -2982,7 +2982,20 @@
         <div class="admin-section-title">Gestión de Productos</div>
         <div class="admin-section-sub">Cargá PDFs, carátulas y el sistema clasificará automáticamente</div>
 
-        <!-- FORMULARIO NUEVO PRODUCTO -->
+        <!-- SUBIDA MÚLTIPLE DE PDFs -->
+        <div style="background:var(--surface);border:1px solid rgba(91,91,214,.3);border-radius:16px;padding:28px;margin-bottom:28px;">
+          <h3 style="font-size:16px;font-weight:700;margin-bottom:6px;">📚 Subida múltiple de PDFs</h3>
+          <p style="font-size:13px;color:var(--muted);margin-bottom:18px;">Elegí varios PDFs a la vez. Por cada uno, la IA genera título, descripción, categoría y carátula automáticamente, y se sube todo a GitHub sin que tengas que repetir el proceso.</p>
+          <div style="background:rgba(255,255,255,.03);border:2px dashed rgba(91,91,214,.35);border-radius:14px;padding:24px;text-align:center;cursor:pointer;"
+            onclick="document.getElementById('bulk-pdf-input').click()">
+            <div style="font-size:36px;margin-bottom:10px">📚</div>
+            <div style="font-size:14px;font-weight:700;margin-bottom:6px;">Elegir varios PDFs</div>
+            <div style="font-size:12px;color:var(--muted);">Podés seleccionar tantos archivos como quieras de una vez</div>
+          </div>
+          <input type="file" id="bulk-pdf-input" accept=".pdf" multiple style="display:none" onchange="handleBulkPdfUpload(this)" />
+          <div id="bulk-upload-progress" style="display:none;margin-top:18px;"></div>
+        </div>
+
         <div style="background:var(--surface);border:1px solid rgba(255,255,255,.08);border-radius:16px;padding:28px;margin-bottom:28px;">
           <h3 style="font-size:16px;font-weight:700;margin-bottom:20px;">➕ Nuevo producto</h3>
           <div class="admin-form-grid">
@@ -3031,7 +3044,13 @@
 
           <div class="form-group">
             <label class="form-label">Descripción</label>
-            <input type="text" class="form-input" id="prod-desc" placeholder="Descripción breve del producto" oninput="autoClassify()" />
+            <div style="display:flex;gap:8px;">
+              <input type="text" class="form-input" id="prod-desc" placeholder="Descripción breve del producto" oninput="autoClassify()" style="flex:1;" />
+              <button type="button" onclick="generateDescriptionAI()" title="Generar descripción con IA"
+                style="background:rgba(91,91,214,.15);border:1px solid rgba(91,91,214,.35);color:var(--accent-light);padding:0 16px;border-radius:8px;font-size:13px;font-weight:700;cursor:pointer;white-space:nowrap;">
+                ✍️ Generar con IA
+              </button>
+            </div>
           </div>
 
           <!-- AUTO-CLASIFICACIÓN -->
@@ -3100,8 +3119,12 @@
                 <div style="font-size:14px;font-weight:700;color:var(--white);margin-bottom:6px">Subir carátula</div>
                 <div id="cover-label" style="font-size:12px;color:var(--muted);margin-bottom:14px">JPG, PNG o WEBP</div>
                 <button type="button" onclick="event.stopPropagation();document.getElementById('prod-cover').click()"
-                  style="background:rgba(255,255,255,.1);color:#fff;border:1px solid rgba(255,255,255,.2);padding:9px 20px;border-radius:8px;font-size:13px;font-weight:700;cursor:pointer;width:100%;">
+                  style="background:rgba(255,255,255,.1);color:#fff;border:1px solid rgba(255,255,255,.2);padding:9px 20px;border-radius:8px;font-size:13px;font-weight:700;cursor:pointer;width:100%;margin-bottom:8px;">
                   Elegir imagen
+                </button>
+                <button type="button" onclick="event.stopPropagation();generateCoverAI()"
+                  style="background:rgba(91,91,214,.15);border:1px solid rgba(91,91,214,.35);color:var(--accent-light);padding:9px 20px;border-radius:8px;font-size:13px;font-weight:700;cursor:pointer;width:100%;">
+                  🎨 Generar con IA
                 </button>
               </div>
               <input type="file" id="prod-cover" accept="image/*" style="display:none" onchange="handleFileSelect(this,'cover')" />
@@ -4099,8 +4122,6 @@
         const desc = document.getElementById('prod-desc').value.trim();
         if (name || desc) {
           aiClassify(name, desc, file.name);
-          // 3️⃣ Buscar carátula automáticamente
-          if (name && !pendingCoverB64) searchAndSetCover(name);
         }
       };
       reader.readAsDataURL(file);
@@ -4165,65 +4186,64 @@
     }
   }
 
-  // ─── BUSCAR CARÁTULA AUTOMÁTICAMENTE ─────────────
-  async function searchAndSetCover(bookTitle) {
+  // ─── GENERAR CARÁTULA CON IA (Gemini) ────────────
+  async function generateCoverAI() {
+    const name = document.getElementById('prod-name').value.trim();
+    if (!name) { showToast('Primero ingresá el nombre del producto', 'error'); return; }
+    const genre = document.getElementById('prod-genre').value.trim();
+    const desc = document.getElementById('prod-desc').value.trim();
+    const author = document.getElementById('prod-author').value.trim();
+
+    const label = document.getElementById('cover-label');
+    label.textContent = '🎨 Generando carátula con IA...';
     try {
-      document.getElementById('cover-label').textContent = '🔍 Buscando carátula...';
-      // Open Library API (sin CORS)
-      const q = encodeURIComponent(bookTitle.slice(0, 60));
-      const res = await fetch(`https://openlibrary.org/search.json?q=${q}&limit=5&fields=key,title,cover_i,author_name`);
-      if (!res.ok) throw new Error('OpenLibrary error');
+      const res = await fetch(`${WORKER_URL}/generate-cover`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ name, genre, desc, author })
+      });
       const data = await res.json();
-      const book = data.docs?.find(d => d.cover_i);
-      if (book?.cover_i) {
-        const coverUrl = `https://covers.openlibrary.org/b/id/${book.cover_i}-L.jpg`;
-        // Descargar como base64
-        const imgRes = await fetch(coverUrl);
-        const blob = await imgRes.blob();
-        const b64 = await new Promise((res) => {
-          const r = new FileReader();
-          r.onload = e => res(e.target.result);
-          r.readAsDataURL(blob);
-        });
-        pendingCoverB64 = b64;
-        pendingCoverFile = new File([blob], 'cover.jpg', { type: 'image/jpeg' });
-        const preview = document.getElementById('cover-preview');
-        preview.src = b64;
-        preview.style.display = 'block';
-        document.getElementById('cover-icon').style.display = 'none';
-        document.getElementById('cover-label').textContent = `✅ Carátula encontrada — "${book.title}"`;
-        document.getElementById('cover-drop').style.borderColor = 'var(--accent)';
-        showToast('🖼️ Carátula encontrada automáticamente', 'success');
+      if (data.error || !data.image) {
+        console.error('generateCoverAI error:', data.error, data.detail);
+        label.textContent = '⚠️ No se pudo generar la carátula';
+        showToast('⚠️ No se pudo generar la carátula con IA', 'error');
         return;
       }
-      // Fallback: Google Books
-      const gbRes = await fetch(`https://www.googleapis.com/books/v1/volumes?q=${q}&maxResults=5`);
-      const gbData = await gbRes.json();
-      const gbBook = gbData.items?.find(i => i.volumeInfo?.imageLinks?.thumbnail);
-      if (gbBook) {
-        let imgUrl = gbBook.volumeInfo.imageLinks.thumbnail.replace('http:', 'https:').replace('zoom=1','zoom=3');
-        const imgRes = await fetch(imgUrl);
-        const blob = await imgRes.blob();
-        const b64 = await new Promise((res) => {
-          const r = new FileReader();
-          r.onload = e => res(e.target.result);
-          r.readAsDataURL(blob);
-        });
-        pendingCoverB64 = b64;
-        pendingCoverFile = new File([blob], 'cover.jpg', { type: 'image/jpeg' });
-        const preview = document.getElementById('cover-preview');
-        preview.src = b64;
-        preview.style.display = 'block';
-        document.getElementById('cover-icon').style.display = 'none';
-        document.getElementById('cover-label').textContent = `✅ Carátula encontrada — "${gbBook.volumeInfo.title}"`;
-        document.getElementById('cover-drop').style.borderColor = 'var(--accent)';
-        showToast('🖼️ Carátula encontrada automáticamente', 'success');
-        return;
-      }
-      document.getElementById('cover-label').textContent = 'Sin carátula encontrada — subí una manualmente';
-    } catch(e) {
-      console.warn('Cover search error:', e);
-      document.getElementById('cover-label').textContent = 'Sin carátula encontrada — subí una manualmente';
+      pendingCoverB64 = data.image;
+      const blob = await (await fetch(data.image)).blob();
+      pendingCoverFile = new File([blob], 'cover-ai.png', { type: blob.type || 'image/png' });
+      const preview = document.getElementById('cover-preview');
+      preview.src = data.image;
+      preview.style.display = 'block';
+      document.getElementById('cover-icon').style.display = 'none';
+      label.textContent = '✅ Carátula generada con IA';
+      document.getElementById('cover-drop').style.borderColor = 'var(--accent)';
+      showToast('🎨 Carátula generada con IA', 'success');
+    } catch (e) {
+      console.error('generateCoverAI exception:', e);
+      label.textContent = '⚠️ Error generando carátula';
+      showToast('⚠️ Error generando carátula con IA', 'error');
+    }
+  }
+
+  // ─── GENERAR DESCRIPCIÓN CON IA (manual) ─────────
+  async function generateDescriptionAI() {
+    const name = document.getElementById('prod-name').value.trim();
+    if (!name) { showToast('Primero ingresá el nombre del producto', 'error'); return; }
+    const descEl = document.getElementById('prod-desc');
+    try {
+      const res = await fetch(`${WORKER_URL}/classify`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ name, desc: descEl.value.trim(), pdfName: pendingPdfName, extractMeta: true })
+      });
+      const data = await res.json();
+      if (data.error) { console.error('generateDescriptionAI error:', data.error, data.detail); showToast('⚠️ No se pudo generar la descripción', 'error'); return; }
+      if (data.descripcion_sugerida) { descEl.value = data.descripcion_sugerida; showToast('✍️ Descripción generada', 'success'); }
+      aiClassify(name, descEl.value.trim(), pendingPdfName);
+    } catch (e) {
+      console.error('generateDescriptionAI exception:', e);
+      showToast('⚠️ Error generando descripción', 'error');
     }
   }
 
@@ -4251,10 +4271,6 @@
   }
 
   async function aiClassify(name, desc, pdfName) {
-    // Si hay nombre y no hay carátula aún, buscar automáticamente
-    if (name && name.length > 4 && !pendingCoverB64) {
-      searchAndSetCover(name);
-    }
     const box = document.getElementById('auto-tags-box');
     const list = document.getElementById('auto-tags-list');
     box.style.display = 'block';
@@ -4341,6 +4357,124 @@
   }
 
   // ─── ADD PRODUCT (IMPROVED) ──────────────────────
+  // ─── SUBIDA MÚLTIPLE DE PDFs ──────────────────────
+  async function handleBulkPdfUpload(input) {
+    const files = Array.from(input.files || []);
+    if (!files.length) return;
+    const progress = document.getElementById('bulk-upload-progress');
+    progress.style.display = 'block';
+    progress.innerHTML = '';
+
+    const rowFor = (i, fileName) => {
+      const row = document.createElement('div');
+      row.id = `bulk-row-${i}`;
+      row.style.cssText = 'display:flex;justify-content:space-between;gap:12px;padding:10px 14px;background:rgba(255,255,255,.03);border-radius:8px;margin-bottom:6px;font-size:13px;';
+      row.innerHTML = `<span style="overflow:hidden;text-overflow:ellipsis;white-space:nowrap;max-width:70%;">${fileName}</span><span id="bulk-status-${i}" style="color:var(--muted);">⏳ En cola...</span>`;
+      progress.appendChild(row);
+      return row;
+    };
+    files.forEach((f, i) => rowFor(i, f.name));
+
+    let okCount = 0;
+    for (let i = 0; i < files.length; i++) {
+      const file = files[i];
+      const statusEl = document.getElementById(`bulk-status-${i}`);
+      try {
+        statusEl.textContent = '📖 Leyendo PDF...';
+        const rawName = file.name.replace(/\.pdf$/i, '').replace(/[_\-]+/g, ' ').trim();
+
+        // Extraer texto de las primeras páginas para dar contexto a la IA
+        let extractedText = '';
+        try {
+          const buf = await file.arrayBuffer();
+          if (typeof pdfjsLib !== 'undefined') {
+            pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
+            const pdf = await pdfjsLib.getDocument({ data: buf }).promise;
+            const maxPages = Math.min(pdf.numPages, 3);
+            for (let pg = 1; pg <= maxPages; pg++) {
+              const page = await pdf.getPage(pg);
+              const content = await page.getTextContent();
+              extractedText += content.items.map(it => it.str).join(' ') + ' ';
+              if (extractedText.length > 3000) break;
+            }
+          }
+        } catch (e) { console.warn('bulk: extracción de texto falló para', file.name, e); }
+
+        statusEl.textContent = '🤖 Clasificando con IA...';
+        const clasifRes = await fetch(`${WORKER_URL}/classify`, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ name: rawName, desc: extractedText.slice(0, 2000), pdfName: file.name, extractMeta: true })
+        });
+        const clasif = await clasifRes.json();
+        if (clasif.error) console.error(`bulk classify error (${file.name}):`, clasif.error, clasif.detail);
+
+        const finalName = clasif.titulo_sugerido || rawName;
+        const finalDesc = clasif.descripcion_sugerida || '';
+
+        const p = {
+          id: Date.now() + i,
+          name: finalName,
+          price: '$0.99',
+          cat: 'ebooks',
+          desc: finalDesc,
+          author: clasif.autor_sugerido || '',
+          genre: clasif.genero || '',
+          age: clasif.edad || '',
+          temas: clasif.temas || [],
+          tags: clasif.tags || [],
+          nivel: clasif.nivel || '',
+          idioma: clasif.idioma || '',
+          ad: clasif.ad || null,
+          pdfName: file.name,
+          pdfUrl: null,
+          coverUrl: null,
+          file: file.name
+        };
+
+        statusEl.textContent = '☁️ Subiendo PDF...';
+        const safeName = finalName.replace(/[^a-z0-9]/gi, '_').toLowerCase();
+        try {
+          p.pdfUrl = await uploadFileToGithub(file, 'pdf', `${p.id}_${safeName}`);
+        } catch (e) {
+          console.error(`bulk: fallo subiendo PDF (${file.name}):`, e);
+        }
+
+        statusEl.textContent = '🎨 Generando carátula...';
+        try {
+          const coverRes = await fetch(`${WORKER_URL}/generate-cover`, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ name: finalName, genre: p.genre, desc: finalDesc, author: p.author })
+          });
+          const coverData = await coverRes.json();
+          if (coverData.image) {
+            const blob = await (await fetch(coverData.image)).blob();
+            const coverFile = new File([blob], 'cover-ai.png', { type: blob.type || 'image/png' });
+            p.coverUrl = await uploadFileToGithub(coverFile, 'cover', `${p.id}_${safeName}`);
+          } else {
+            console.error(`bulk: no se generó carátula (${file.name}):`, coverData.error, coverData.detail);
+          }
+        } catch (e) { console.error(`bulk: fallo generando/subiendo carátula (${file.name}):`, e); }
+
+        db.products.push(p);
+        saveDB();
+        statusEl.innerHTML = '<span style="color:var(--green);">✅ Listo</span>';
+        okCount++;
+      } catch (e) {
+        console.error(`bulk: error procesando ${file.name}:`, e);
+        statusEl.innerHTML = '<span style="color:var(--red);">❌ Error — revisá la consola</span>';
+      }
+      // pequeña pausa entre archivos para no saturar la API de Gemini
+      await new Promise(r => setTimeout(r, 800));
+    }
+
+    populateAdmin();
+    renderLandingGrids();
+    showToast(`✅ Subida múltiple terminada — ${okCount} de ${files.length} productos creados`, 'success');
+    input.value = '';
+  }
+
   function addProduct() {
     const name = document.getElementById('prod-name').value.trim();
     const price = document.getElementById('prod-price').value.trim();
@@ -5548,9 +5682,8 @@
   }
 
   async function buscarPortadaManual() {
-    const name = document.getElementById('prod-name').value.trim();
-    if (!name) { showToast('Primero ingresá el título del libro', 'error'); return; }
-    await searchAndSetCover(name);
+    // (reemplazada por generateCoverAI — se mantiene por compatibilidad, redirige a la IA)
+    await generateCoverAI();
   }
 
   function openReviewModalForProduct(productName, productId) {

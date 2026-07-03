@@ -169,6 +169,71 @@ El bloque "ad" se genera siempre, tenga o no extractMeta activado, basándote en
       }
     }
 
+    // ── GENERAR CARÁTULA con Gemini (imagen) ────────────────────
+    if (url.pathname === '/generate-cover' && request.method === 'POST') {
+      try {
+        if (!env.GEMINI_API_KEY) {
+          return new Response(JSON.stringify({ error: 'GEMINI_API_KEY no configurada' }), {
+            status: 500,
+            headers: { ...headers, 'Content-Type': 'application/json' },
+          });
+        }
+
+        const body = await request.json();
+        const { name, genre, desc, author } = body;
+
+        const prompt = `Genera una imagen de portada de libro/ebook profesional, estilo ilustración digital atractiva para tienda online, formato vertical (proporción 2:3, tipo portada de libro).
+Título del libro: ${name || 'Sin título'}
+Género/tema: ${genre || 'General'}
+${desc ? `Sobre qué trata: ${desc}` : ''}
+${author ? `Autor: ${author}` : ''}
+No incluyas texto, títulos ni letras en la imagen — solo la ilustración/arte de portada. Estilo limpio, colores atractivos, composición centrada, apta para mostrarse como miniatura pequeña en una tienda digital.`;
+
+        const geminiRes = await fetch(
+          'https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-image:generateContent',
+          {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+              'x-goog-api-key': env.GEMINI_API_KEY,
+            },
+            body: JSON.stringify({
+              contents: [{ parts: [{ text: prompt }] }],
+              generationConfig: { responseModalities: ['TEXT', 'IMAGE'] }
+            }),
+          }
+        );
+
+        const geminiData = await geminiRes.json();
+        const parts = geminiData.candidates?.[0]?.content?.parts || [];
+        const imagePart = parts.find(p => p.inlineData || p.inline_data);
+        const inline = imagePart?.inlineData || imagePart?.inline_data;
+
+        if (!inline?.data) {
+          const motivo =
+            geminiData.error?.message ||
+            geminiData.promptFeedback?.blockReason ||
+            geminiData.candidates?.[0]?.finishReason ||
+            'Gemini no devolvió ninguna imagen';
+          return new Response(JSON.stringify({ error: 'No se pudo generar la carátula', detail: motivo }), {
+            status: 200,
+            headers: { ...headers, 'Content-Type': 'application/json' },
+          });
+        }
+
+        const mimeType = inline.mimeType || inline.mime_type || 'image/png';
+        return new Response(JSON.stringify({ image: `data:${mimeType};base64,${inline.data}` }), {
+          headers: { ...headers, 'Content-Type': 'application/json' },
+        });
+
+      } catch (e) {
+        return new Response(JSON.stringify({ error: 'Error generando carátula', detail: String(e) }), {
+          status: 502,
+          headers: { ...headers, 'Content-Type': 'application/json' },
+        });
+      }
+    }
+
     // ── UPLOAD archivo a GitHub ─────────────────────────────────
     if (url.pathname === '/upload' && request.method === 'POST') {
       try {
