@@ -1001,7 +1001,7 @@
       "desc": "Descubre el arte de cocinar con Delicias Enlatadas, un recetario imprescindible para quienes buscan sabor y facilidad en la cocina. Toni Monné y Juan Linares te guiarán para transformar ingredientes enlatados en platos sorprendentes y rápidos, ideales para cualquier ocasión.",
       "author": "Toni Monné, Juan Linares",
       "genre": "Cocina",
-      "age": "Adultos",
+      "age": "",
       "temas": [
         "Recetas fáciles",
         "Cocina rápida",
@@ -1316,5 +1316,5 @@
     "juan@test.com",
     "octavio123@gamil.com"
   ],
-  "updatedAt": "2026-07-04T19:39:39.585Z"
+  "updatedAt": "2026-07-04T19:40:46.666Z"
 }
