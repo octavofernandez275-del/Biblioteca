@@ -402,6 +402,99 @@
       "pdfUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/pdfs/1783193184176_casa_capitular_dune.pdf",
       "coverUrl": null,
       "file": "Casa Capitular Dune -- Herbert, Frank -- Dune 6, 1985 -- ePubLibre -- 7da42b72daf340d1624a0afcf8d5c88b -- Anna’s Archive.pdf"
+    },
+    {
+      "id": 1783193218093,
+      "name": "1984",
+      "price": "$0.99",
+      "cat": "ebooks",
+      "desc": "Sumérgete en un mundo opresivo donde el Gran Hermano te vigila constantemente. Winston Smith lucha por su libertad en una sociedad distópica controlada por un régimen totalitario.",
+      "author": "George Orwell",
+      "genre": "Novela Distópica",
+      "age": "Adultos",
+      "temas": [
+        "Totalitarismo",
+        "Vigilancia",
+        "Control social",
+        "Libertad",
+        "Rebelión"
+      ],
+      "tags": [
+        "Dystopia",
+        "Clásico",
+        "Orwell",
+        "Política",
+        "Sociedad",
+        "Vigilancia"
+      ],
+      "nivel": "",
+      "idioma": "Español",
+      "ad": {
+        "headline": "El Gran Hermano te observa",
+        "subheadline": "Una obra maestra que predijo la sociedad de la vigilancia.",
+        "cta": "Empezar a leer",
+        "banner_text": "Clásico Distópico Imprescindible",
+        "instagram_caption": "👁️‍🗨️ ¿Te atreves a desafiar al Gran Hermano? Sumérgete en la magistral distopía de George Orwell, '1984'. Una obra que te hará cuestionar la libertad y la verdad en un mundo bajo constante vigilancia. ¡Lectura imprescindible!",
+        "hashtags": [
+          "#1984",
+          "#GeorgeOrwell",
+          "#Distopia",
+          "#Clasico",
+          "#Novela",
+          "#Literatura"
+        ]
+      },
+      "pdfName": "1984.pdf",
+      "pdfUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/pdfs/1783193218093_1984.pdf",
+      "coverUrl": null,
+      "file": "1984.pdf"
+    },
+    {
+      "id": 1783193217963,
+      "name": "Dune: El Despertar de un Héroe",
+      "price": "$0.99",
+      "cat": "ebooks",
+      "desc": "Sumérgete en el vasto y peligroso mundo de Arrakis, donde Paul Atreides debe enfrentar su destino entre imperios, intrigas y el poder místico de la especia. Una epopeya de supervivencia, política y transformación que desafía los límites de la imaginación.",
+      "author": "Frank Herbert",
+      "genre": "Ciencia Ficción",
+      "age": "Adultos",
+      "temas": [
+        "Ciencia ficción",
+        "Política",
+        "Ecología",
+        "Religión",
+        "Supervivencia"
+      ],
+      "tags": [
+        "Ciencia ficción",
+        "Distopía",
+        "Aventura",
+        "Política espacial",
+        "Ecología",
+        "Futuro"
+      ],
+      "nivel": "Avanzado",
+      "idioma": "Español",
+      "ad": {
+        "headline": "Dune: Un Futuro Épico te Espera",
+        "subheadline": "Descubre el clásico que redefinió la ciencia ficción y la aventura galáctica.",
+        "cta": "Explora Arrakis",
+        "banner_text": "Dune: Clásico de Ciencia Ficción",
+        "instagram_caption": "🌌 Adéntrate en el universo de #Dune y vive una aventura sin igual en el desértico planeta Arrakis. Intrigas políticas, ecología profunda y un destino que cambiará el cosmos. ¡Imperdible! ✨ #CienciaFiccion",
+        "hashtags": [
+          "#Dune",
+          "#FrankHerbert",
+          "#CienciaFiccion",
+          "#Arrakis",
+          "#SagaDune",
+          "#LibrosRecomendados",
+          "#MuadDib"
+        ]
+      },
+      "pdfName": "DUNE -- Frank Herbert -- Dune 1, .pdf",
+      "pdfUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/pdfs/1783193217963_dune__el_despertar_de_un_h_roe.pdf",
+      "coverUrl": null,
+      "file": "DUNE -- Frank Herbert -- Dune 1, .pdf"
     }
   ],
   "emailList": [
@@ -410,5 +503,5 @@
     "juan@test.com",
     "octavio123@gamil.com"
   ],
-  "updatedAt": "2026-07-04T19:26:37.970Z"
+  "updatedAt": "2026-07-04T19:27:03.731Z"
 }
