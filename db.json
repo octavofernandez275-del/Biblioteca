@@ -1085,6 +1085,53 @@
       "pdfUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/pdfs/1783193889703_jugos_saludables_2021__m_s_de_50_recetas_de_jugos_naturales.pdf",
       "coverUrl": null,
       "file": "Jugos Saludables 2021_ Más de 50 Recetas de jugos naturales -- Barbara White -- 2021-05-06 -- Independently published -- isbn13 9798749496871 -- d8ac4fe400189a2f72ebe1f0d3c6da23 -- Anna’s Archive.pdf"
+    },
+    {
+      "id": 1783193911323,
+      "name": "Larousse Gastronomique en Español",
+      "price": "$0.99",
+      "cat": "ebooks",
+      "desc": "La edición española de la enciclopedia Larousse Gastronomique, asesorada por Joël Robuchon y prologada por Andoni Luis Aduriz, es una obra esencial para entender la evolución y los códigos de la cocina. Ofrece descripciones detalladas que contextualizan la elaboración de cada plato y producto.",
+      "author": "Larousse, Joël Robuchon, Andoni Luis Aduriz",
+      "genre": "Gastronomía y Cocina",
+      "age": "Adultos",
+      "temas": [
+        "Historia de la Cocina",
+        "Técnicas Culinarias",
+        "Recetas Internacionales",
+        "Productos Gastronómicos",
+        "Cultura Alimentaria"
+      ],
+      "tags": [
+        "Enciclopedia",
+        "Cocina Francesa",
+        "Recetas",
+        "Culinaria",
+        "Referencia",
+        "Robuchon"
+      ],
+      "nivel": "Avanzado",
+      "idioma": "Español",
+      "ad": {
+        "headline": "La Biblia de la Gastronomía",
+        "subheadline": "Domina técnicas, historia y recetas con esta edición definitiva.",
+        "cta": "Descubrir Gastronomía",
+        "banner_text": "Larousse Gastronomique Esencial",
+        "instagram_caption": "¡Sumérgete en el universo de la gastronomía 👨‍🍳📖 con el Larousse Gastronomique! Aprende de los grandes, desde técnicas esenciales hasta la historia culinaria más fascinante. ✨ Edición en español con la maestría de Joël Robuchon y Andoni Luis Aduriz. ¡Tu cocina no será la misma! #LarousseGastronomique #CocinaDeAutor",
+        "hashtags": [
+          "#LarousseGastronomique",
+          "#Gastronomia",
+          "#CocinaFrancesa",
+          "#RecetasProfesionales",
+          "#LibroDeCocina",
+          "#CulturaCulinaria",
+          "#Chefs"
+        ]
+      },
+      "pdfName": "larousse-gastronomique-en-espanol_copia.pdf",
+      "pdfUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/pdfs/1783193911323_larousse_gastronomique_en_espa_ol.pdf",
+      "coverUrl": null,
+      "file": "larousse-gastronomique-en-espanol_copia.pdf"
     }
   ],
   "emailList": [
@@ -1093,5 +1140,5 @@
     "juan@test.com",
     "octavio123@gamil.com"
   ],
-  "updatedAt": "2026-07-04T19:38:16.267Z"
+  "updatedAt": "2026-07-04T19:38:43.626Z"
 }
