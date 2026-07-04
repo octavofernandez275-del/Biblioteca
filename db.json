@@ -1230,6 +1230,58 @@
       "pdfUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/pdfs/1783193942340_recetas_para_embarazadas__spanish_edition____ver_nica_rico_mar__gustavo_romero_ram_rez___primera_edic___im_xico__d__f__2014___ediciones__larousse___isbn13_9786072109346___599370cdace2c9b70b358cfd599a50a2___anna_s_archive.pdf",
       "coverUrl": null,
       "file": "Recetas Para Embarazadas (spanish Edition) -- Verónica Rico Mar; Gustavo Romero Ramírez -- Primera edic...iMéxico, D_ F, 2014 -- Ediciones  Larousse -- isbn13 9786072109346 -- 599370cdace2c9b70b358cfd599a50a2 -- Anna’s Archive.pdf"
+    },
+    {
+      "id": 1783193953681,
+      "name": "Secretos DEL CARNICERO  Cómo seleccionar, cortar, preparar y   Arthur le Caisne   Hachette Book Group, New York, 2018   Black Dog &   isbn13 9780316415552   39b3090cad5c5d95e28764cbae2dde4e   Anna’s Archive",
+      "price": "$0.99",
+      "cat": "ebooks",
+      "desc": "",
+      "author": "",
+      "genre": "",
+      "age": "",
+      "temas": [],
+      "tags": [],
+      "nivel": "",
+      "idioma": "",
+      "ad": {
+        "headline": "",
+        "subheadline": "",
+        "cta": "",
+        "banner_text": "",
+        "instagram_caption": "",
+        "hashtags": []
+      },
+      "pdfName": "Secretos DEL CARNICERO_ Cómo seleccionar, cortar, preparar y -- Arthur le Caisne -- Hachette Book Group, New York, 2018 -- Black Dog & -- isbn13 9780316415552 -- 39b3090cad5c5d95e28764cbae2dde4e -- Anna’s Archive.pdf",
+      "pdfUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/pdfs/1783193953681_secretos_del_carnicero__c_mo_seleccionar__cortar__preparar_y___arthur_le_caisne___hachette_book_group__new_york__2018___black_dog_____isbn13_9780316415552___39b3090cad5c5d95e28764cbae2dde4e___anna_s_archive.pdf",
+      "coverUrl": null,
+      "file": "Secretos DEL CARNICERO_ Cómo seleccionar, cortar, preparar y -- Arthur le Caisne -- Hachette Book Group, New York, 2018 -- Black Dog & -- isbn13 9780316415552 -- 39b3090cad5c5d95e28764cbae2dde4e -- Anna’s Archive.pdf"
+    },
+    {
+      "id": 1783193943041,
+      "name": "El arte de la cocina francesa, vol 2   Julia Child   2, 1, 2014   DEBATE   c6be79e42949b81162cec8670186eb93   Anna’s Archive",
+      "price": "$0.99",
+      "cat": "ebooks",
+      "desc": "",
+      "author": "",
+      "genre": "",
+      "age": "",
+      "temas": [],
+      "tags": [],
+      "nivel": "",
+      "idioma": "",
+      "ad": {
+        "headline": "",
+        "subheadline": "",
+        "cta": "",
+        "banner_text": "",
+        "instagram_caption": "",
+        "hashtags": []
+      },
+      "pdfName": "El arte de la cocina francesa, vol_2 -- Julia Child -- 2, 1, 2014 -- DEBATE -- c6be79e42949b81162cec8670186eb93 -- Anna’s Archive.pdf",
+      "pdfUrl": null,
+      "coverUrl": null,
+      "file": "El arte de la cocina francesa, vol_2 -- Julia Child -- 2, 1, 2014 -- DEBATE -- c6be79e42949b81162cec8670186eb93 -- Anna’s Archive.pdf"
     }
   ],
   "emailList": [
@@ -1238,5 +1290,5 @@
     "juan@test.com",
     "octavio123@gamil.com"
   ],
-  "updatedAt": "2026-07-04T19:39:12.333Z"
+  "updatedAt": "2026-07-04T19:39:28.280Z"
 }
