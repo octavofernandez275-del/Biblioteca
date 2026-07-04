@@ -1141,7 +1141,7 @@
       "desc": "Sumérgete en el primer volumen del icónico manual de Julia Child para dominar la cocina francesa clásica. Aprende técnicas esenciales y recetas auténticas que han deleitado a generaciones de gourmets.",
       "author": "Julia Child",
       "genre": "Cocina",
-      "age": "Adultos",
+      "age": "",
       "temas": [
         "Cocina francesa",
         "Recetas clásicas",
@@ -1316,5 +1316,5 @@
     "juan@test.com",
     "octavio123@gamil.com"
   ],
-  "updatedAt": "2026-07-04T19:40:54.913Z"
+  "updatedAt": "2026-07-04T19:42:37.471Z"
 }
