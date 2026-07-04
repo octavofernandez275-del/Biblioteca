@@ -683,6 +683,54 @@
       "pdfUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/pdfs/1783193398935_herejes_de_dune.pdf",
       "coverUrl": null,
       "file": "Herejes de Dune -- Frank Herbert -- Dune 5, 1984 -- b0bf9e1ae14aa2dacbe0f2ddb6b14e3d -- Anna’s Archive.pdf"
+    },
+    {
+      "id": 1783193629174,
+      "name": "Fundación (Saga de la Fundación #1)",
+      "price": "$0.99",
+      "cat": "ebooks",
+      "desc": "En un futuro distante, el vasto Imperio Galáctico se tambalea al borde del colapso. El psicohistoriador Hari Seldon predice milenios de barbarie y emprende un ambicioso plan para mitigar el inevitable declive de la civilización.",
+      "author": "Isaac Asimov",
+      "genre": "Ciencia Ficción",
+      "age": "Adultos",
+      "temas": [
+        "Ciencia Ficción",
+        "Imperio Galáctico",
+        "Futuro Distópico",
+        "Psicohistoria",
+        "Colapso Civilizatorio"
+      ],
+      "tags": [
+        "Ciencia Ficción",
+        "Asimov",
+        "Saga",
+        "Imperio Galáctico",
+        "Distopía",
+        "Clásico"
+      ],
+      "nivel": "",
+      "idioma": "Español",
+      "ad": {
+        "headline": "El destino de la galaxia en tus manos.",
+        "subheadline": "Descubre la épica saga que redefinió la ciencia ficción.",
+        "cta": "Inicia la saga",
+        "banner_text": "Clásico Indispensable de la Ciencia Ficción",
+        "instagram_caption": "✨ Sumérgete en la épica de la Fundación de Isaac Asimov. \nConoce a Hari Seldon y su visión para salvar a la humanidad del colapso galáctico. \n¿Podrá la psicohistoria alterar el destino de un imperio milenario? \nUna obra maestra que no te puedes perder. 🚀",
+        "hashtags": [
+          "#Fundacion",
+          "#IsaacAsimov",
+          "#CienciaFiccion",
+          "#SagaDeLaFundacion",
+          "#Libros",
+          "#LecturaRecomendada",
+          "#ImperioGalactico",
+          "#Clasicos"
+        ]
+      },
+      "pdfName": "Fundación -- Isaac Asimov -- Saga de la Fundación - Ciclo de Trantor #1, 1951 -- ePubLibre -- 731023e13153a5268efdf4d4381508be -- Anna’s Archive.pdf",
+      "pdfUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/pdfs/1783193629174_fundaci_n__saga_de_la_fundaci_n__1_.pdf",
+      "coverUrl": null,
+      "file": "Fundación -- Isaac Asimov -- Saga de la Fundación - Ciclo de Trantor #1, 1951 -- ePubLibre -- 731023e13153a5268efdf4d4381508be -- Anna’s Archive.pdf"
     }
   ],
   "emailList": [
@@ -691,5 +739,5 @@
     "juan@test.com",
     "octavio123@gamil.com"
   ],
-  "updatedAt": "2026-07-04T19:30:06.454Z"
+  "updatedAt": "2026-07-04T19:33:55.490Z"
 }
