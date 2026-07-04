@@ -731,6 +731,100 @@
       "pdfUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/pdfs/1783193629174_fundaci_n__saga_de_la_fundaci_n__1_.pdf",
       "coverUrl": null,
       "file": "Fundación -- Isaac Asimov -- Saga de la Fundación - Ciclo de Trantor #1, 1951 -- ePubLibre -- 731023e13153a5268efdf4d4381508be -- Anna’s Archive.pdf"
+    },
+    {
+      "id": 1783193653535,
+      "name": "La Guerra de los Mundos",
+      "price": "$0.99",
+      "cat": "ebooks",
+      "desc": "En los albores del siglo XX, la humanidad ignora que mentes superiores de Marte observan la Tierra con intenciones hostiles. Prepárate para una invasión sin precedentes que cambiará para siempre el destino del planeta.",
+      "author": "H.G. Wells",
+      "genre": "Ciencia Ficción Clásica",
+      "age": "Jóvenes Adultos y Adultos",
+      "temas": [
+        "Invasión extraterrestre",
+        "Supervivencia",
+        "Primer contacto",
+        "Crítica social",
+        "Filosofía"
+      ],
+      "tags": [
+        "H.G. Wells",
+        "Invasión alienígena",
+        "Clásico",
+        "Ciencia ficción",
+        "Distopía",
+        "Novela"
+      ],
+      "nivel": "",
+      "idioma": "Español",
+      "ad": {
+        "headline": "La Tierra está bajo ataque.",
+        "subheadline": "Una obra maestra que predijo el temor a lo desconocido y definió un género.",
+        "cta": "Descubre la leyenda",
+        "banner_text": "Clásico Imprescindible de CF",
+        "instagram_caption": "🚨 La invasión alienígena que marcó un antes y un después. 👽 H.G. Wells nos sumerge en el pánico y la lucha por la supervivencia de la humanidad. Un clásico atemporal que sigue resonando hoy. ¿Estás listo para el primer contacto? #LaGuerraDeLosMundos",
+        "hashtags": [
+          "#LaGuerraDeLosMundos",
+          "#HGWells",
+          "#CienciaFiccion",
+          "#ClasicoLiterario",
+          "#InvasionExtraterrestre",
+          "#LecturaRecomendada",
+          "#Novela"
+        ]
+      },
+      "pdfName": "Herbert George Wells La Guerra de los Mundos_copia.pdf",
+      "pdfUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/pdfs/1783193653535_la_guerra_de_los_mundos.pdf",
+      "coverUrl": null,
+      "file": "Herbert George Wells La Guerra de los Mundos_copia.pdf"
+    },
+    {
+      "id": 1783193652912,
+      "name": "Hacia la Fundación",
+      "price": "$0.99",
+      "cat": "ebooks",
+      "desc": "Sumérgete en el universo de Isaac Asimov con esta precuela épica que desvela los orígenes de la Fundación. Sigue a Hari Seldon mientras desarrolla la psicohistoria y a personajes clave como el emperador Cleón I y la enigmática Eto Demerzel en el ocaso del Imperio Galáctico.",
+      "author": "Isaac Asimov",
+      "genre": "Ciencia Ficción",
+      "age": "Adultos",
+      "temas": [
+        "Psicohistoria",
+        "Imperios Galácticos",
+        "Predicción del futuro",
+        "Poder político",
+        "Destino de la humanidad"
+      ],
+      "tags": [
+        "Asimov",
+        "Fundación",
+        "Psicohistoria",
+        "Ciencia Ficción",
+        "Ópera Espacial",
+        "Clásico"
+      ],
+      "nivel": "",
+      "idioma": "Español",
+      "ad": {
+        "headline": "El origen épico de la Fundación",
+        "subheadline": "Descubre la psicohistoria y el destino del Imperio Galáctico.",
+        "cta": "Empezar la Saga",
+        "banner_text": "Precuela Esencial de Asimov",
+        "instagram_caption": "¿Listo para entender cómo comenzó todo? 🚀 'Hacia la Fundación' te sumerge en los orígenes de la psicohistoria de Hari Seldon y el destino de un imperio. Una obra maestra de Asimov que no puedes perderte. ¡Explora este universo! ✨",
+        "hashtags": [
+          "#HaciaLaFundacion",
+          "#IsaacAsimov",
+          "#CienciaFiccion",
+          "#Psicohistoria",
+          "#ImperioGalactico",
+          "#LecturaRecomendada",
+          "#SagaDeLaFundacion"
+        ]
+      },
+      "pdfName": "Hacia la Fundación -- Isaac Asimov -- 1993 -- 7c8be041670646cd4a4eaa1e95eafb64 -- Anna’s Archive.pdf",
+      "pdfUrl": null,
+      "coverUrl": null,
+      "file": "Hacia la Fundación -- Isaac Asimov -- 1993 -- 7c8be041670646cd4a4eaa1e95eafb64 -- Anna’s Archive.pdf"
     }
   ],
   "emailList": [
@@ -739,5 +833,5 @@
     "juan@test.com",
     "octavio123@gamil.com"
   ],
-  "updatedAt": "2026-07-04T19:33:55.490Z"
+  "updatedAt": "2026-07-04T19:34:19.426Z"
 }
