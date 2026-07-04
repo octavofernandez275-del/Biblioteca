@@ -589,6 +589,54 @@
       "pdfUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/pdfs/1783193366306_dune__el_cl_sico_que_redefini__la_ciencia_ficci_n.pdf",
       "coverUrl": null,
       "file": "DUNE -- Frank Herbert -- Dune 1, .pdf"
+    },
+    {
+      "id": 1783193383604,
+      "name": "El Mesías de Dune (Las Crónicas de Dune 2)",
+      "price": "$0.99",
+      "cat": "ebooks",
+      "desc": "Doce años después de la guerra santa, Paul Atreides enfrenta una compleja red de conspiraciones en Arrakis, un mundo desierto y cuna de conflictos universales. Perturbado por el culto a su persona, Paul debe lidiar con poderosos intereses económicos, políticos y religiosos que amenazan su legado y el destino del universo.",
+      "author": "Frank Herbert",
+      "genre": "Ciencia Ficción",
+      "age": "Adultos",
+      "temas": [
+        "Conspiración",
+        "Política intergaláctica",
+        "Mesianismo",
+        "Mundos distópicos",
+        "Aventura espacial"
+      ],
+      "tags": [
+        "Ciencia ficción",
+        "Dune",
+        "Saga espacial",
+        "Conspiración",
+        "Mesianismo",
+        "Aventura"
+      ],
+      "nivel": "",
+      "idioma": "Español",
+      "ad": {
+        "headline": "El Mesías de Dune: Intrigas Galácticas",
+        "subheadline": "Paul Atreides se enfrenta a conspiraciones que amenazan el destino del universo.",
+        "cta": "Descubre el Destino",
+        "banner_text": "Saga Dune: Intriga y Poder",
+        "instagram_caption": "¡La épica de Dune continúa! 🌌 El Mesías de Dune te sumerge en un Arrakis lleno de intrigas.\nPaul Atreides, el Kwisatz Haderach, debe enfrentar peligrosas conspiraciones que amenazan su legado.\n¿Estás listo para el desafío? Prepárate para una lectura inolvidable. ✨\nConsíguelo ahora y continúa la aventura.",
+        "hashtags": [
+          "#ElMesiasDeDune",
+          "#DuneSaga",
+          "#FrankHerbert",
+          "#CienciaFiccion",
+          "#PaulAtreides",
+          "#Arrakis",
+          "#LecturaImprescindible",
+          "#EpicaEspacial"
+        ]
+      },
+      "pdfName": "El mesías de Dune (Las crónicas de Dune 2) (Spanish Edition) -- Frank Herbert.pdf",
+      "pdfUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/pdfs/1783193383604_el_mes_as_de_dune__las_cr_nicas_de_dune_2_.pdf",
+      "coverUrl": null,
+      "file": "El mesías de Dune (Las crónicas de Dune 2) (Spanish Edition) -- Frank Herbert.pdf"
     }
   ],
   "emailList": [
@@ -597,5 +645,5 @@
     "juan@test.com",
     "octavio123@gamil.com"
   ],
-  "updatedAt": "2026-07-04T19:29:31.860Z"
+  "updatedAt": "2026-07-04T19:29:49.442Z"
 }
