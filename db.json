@@ -1236,6 +1236,32 @@
       "pdfUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/pdfs/1783193969173_sin_gluten___platos_f_ciles_y_sabrosos_para_el_cocinero___delivering_ibooks___design_barcelona___recetas_del_chef__new_york__2017___parragon_book___isbn13_9781474886987___0d1f3cccb61c6622f501b287033ad447___anna_s_archive.pdf",
       "coverUrl": null,
       "file": "Sin gluten _ platos fáciles y sabrosos para el cocinero -- Delivering Ibooks & Design Barcelona -- Recetas del chef, New York, 2017 -- Parragon Book -- isbn13 9781474886987 -- 0d1f3cccb61c6622f501b287033ad447 -- Anna’s Archive.pdf"
+    },
+    {
+      "id": 1783194372351,
+      "name": "El arte de la cocina francesa, vol 1   Julia Child   1, 1, 2016   DEBATE   89b12b14c6dcd846566508e0a98a2448   Anna’s Archive",
+      "price": "$0.99",
+      "cat": "ebooks",
+      "desc": "",
+      "author": "",
+      "genre": "",
+      "age": "",
+      "temas": [],
+      "tags": [],
+      "nivel": "",
+      "idioma": "",
+      "ad": {
+        "headline": "",
+        "subheadline": "",
+        "cta": "",
+        "banner_text": "",
+        "instagram_caption": "",
+        "hashtags": []
+      },
+      "pdfName": "El arte de la cocina francesa, vol_1 -- Julia Child -- 1, 1, 2016 -- DEBATE -- 89b12b14c6dcd846566508e0a98a2448 -- Anna’s Archive.pdf",
+      "pdfUrl": null,
+      "coverUrl": null,
+      "file": "El arte de la cocina francesa, vol_1 -- Julia Child -- 1, 1, 2016 -- DEBATE -- 89b12b14c6dcd846566508e0a98a2448 -- Anna’s Archive.pdf"
     }
   ],
   "emailList": [
@@ -1244,5 +1270,5 @@
     "juan@test.com",
     "octavio123@gamil.com"
   ],
-  "updatedAt": "2026-07-04T19:45:53.031Z"
+  "updatedAt": "2026-07-04T19:46:58.430Z"
 }
