@@ -966,6 +966,32 @@
       "pdfUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/pdfs/1783193804224_colecci_n_cl_sica_de_comida_italiana.pdf",
       "coverUrl": null,
       "file": "Colección clásica de comida italiana -- Unknown -- Lincolnwood, IL, Illinois, 2006 -- Lincolnwood, IL _ Publications International, Ltd_ -- isbn13 9781412723855 -- d6996972d07e6984317532bf6f73d604 -- Anna’s Archive.pdf"
+    },
+    {
+      "id": 1783193870060,
+      "name": "Happy Foods  Más de 100 recetas para estar siempre de buen   Wang Diggs, Karen   Alimentación, 1a ed, Barcelona, 2017   Amat editorial   isbn13 9788497359269   0f9be158d2a1a4abb8f154f23d2f8646   Anna’s Archive",
+      "price": "$0.99",
+      "cat": "ebooks",
+      "desc": "",
+      "author": "",
+      "genre": "",
+      "age": "",
+      "temas": [],
+      "tags": [],
+      "nivel": "",
+      "idioma": "",
+      "ad": {
+        "headline": "",
+        "subheadline": "",
+        "cta": "",
+        "banner_text": "",
+        "instagram_caption": "",
+        "hashtags": []
+      },
+      "pdfName": "Happy Foods_ Más de 100 recetas para estar siempre de buen -- Wang Diggs, Karen -- Alimentación, 1a ed, Barcelona, 2017 -- Amat editorial -- isbn13 9788497359269 -- 0f9be158d2a1a4abb8f154f23d2f8646 -- Anna’s Archive.pdf",
+      "pdfUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/pdfs/1783193870060_happy_foods__m_s_de_100_recetas_para_estar_siempre_de_buen___wang_diggs__karen___alimentaci_n__1a_ed__barcelona__2017___amat_editorial___isbn13_9788497359269___0f9be158d2a1a4abb8f154f23d2f8646___anna_s_archive.pdf",
+      "coverUrl": null,
+      "file": "Happy Foods_ Más de 100 recetas para estar siempre de buen -- Wang Diggs, Karen -- Alimentación, 1a ed, Barcelona, 2017 -- Amat editorial -- isbn13 9788497359269 -- 0f9be158d2a1a4abb8f154f23d2f8646 -- Anna’s Archive.pdf"
     }
   ],
   "emailList": [
@@ -974,5 +1000,5 @@
     "juan@test.com",
     "octavio123@gamil.com"
   ],
-  "updatedAt": "2026-07-04T19:37:29.456Z"
+  "updatedAt": "2026-07-04T19:38:01.304Z"
 }
