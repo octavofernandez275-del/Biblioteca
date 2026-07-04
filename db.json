@@ -920,6 +920,52 @@
       "pdfUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/pdfs/1783193692761_fahrenheit_451.pdf",
       "coverUrl": null,
       "file": "Fahrenheit_451_clean.pdf"
+    },
+    {
+      "id": 1783193804224,
+      "name": "Colección Clásica de Comida Italiana",
+      "price": "$0.99",
+      "cat": "ebooks",
+      "desc": "Sumérgete en el sabor auténtico de Italia con esta colección esencial de recetas clásicas. Descubre los secretos culinarios que han deleitado paladares por generaciones.",
+      "author": "",
+      "genre": "Gastronomía",
+      "age": "Todas las edades",
+      "temas": [
+        "Cocina italiana",
+        "Recetas clásicas",
+        "Preparación de alimentos",
+        "Cultura culinaria",
+        "Platos tradicionales"
+      ],
+      "tags": [
+        "Cocina italiana",
+        "Recetario",
+        "Gastronomía",
+        "Platos clásicos",
+        "Cocinar",
+        "PDF"
+      ],
+      "nivel": "Principiante",
+      "idioma": "Español",
+      "ad": {
+        "headline": "Sabor auténtico de Italia en tu mesa",
+        "subheadline": "Descubre recetas clásicas y transforma tus comidas diarias con pasión.",
+        "cta": "Empezar a cocinar",
+        "banner_text": "Recetas Italianas Clásicas",
+        "instagram_caption": "🇮🇹 ¡Amantes de la cocina italiana, esto es para ustedes! 🍝\nSumérgete en la tradición culinaria con nuestra colección de recetas clásicas. Prepara platos auténticos que deleitarán a todos. ¡Mangia che ti fa bene!\n👉 Disponible ahora.",
+        "hashtags": [
+          "#CocinaItaliana",
+          "#RecetasClasicas",
+          "#Gastronomia",
+          "#ComidaCasera",
+          "#ItaliaEnTuMesa",
+          "#LibroDeCocina"
+        ]
+      },
+      "pdfName": "Colección clásica de comida italiana -- Unknown -- Lincolnwood, IL, Illinois, 2006 -- Lincolnwood, IL _ Publications International, Ltd_ -- isbn13 9781412723855 -- d6996972d07e6984317532bf6f73d604 -- Anna’s Archive.pdf",
+      "pdfUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/pdfs/1783193804224_colecci_n_cl_sica_de_comida_italiana.pdf",
+      "coverUrl": null,
+      "file": "Colección clásica de comida italiana -- Unknown -- Lincolnwood, IL, Illinois, 2006 -- Lincolnwood, IL _ Publications International, Ltd_ -- isbn13 9781412723855 -- d6996972d07e6984317532bf6f73d604 -- Anna’s Archive.pdf"
     }
   ],
   "emailList": [
@@ -928,5 +974,5 @@
     "juan@test.com",
     "octavio123@gamil.com"
   ],
-  "updatedAt": "2026-07-04T19:37:22.320Z"
+  "updatedAt": "2026-07-04T19:37:29.456Z"
 }
