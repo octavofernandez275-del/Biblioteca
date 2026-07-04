@@ -872,6 +872,54 @@
       "pdfUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/pdfs/1783193676358_la_m_quina_del_tiempo.pdf",
       "coverUrl": null,
       "file": "Herbert George Wells La Máquina del Tiempo_copia.pdf"
+    },
+    {
+      "id": 1783193692761,
+      "name": "Fahrenheit 451",
+      "price": "$0.99",
+      "cat": "ebooks",
+      "desc": "En una sociedad futurista, Guy Montag es un bombero cuyo trabajo es quemar libros, considerados la fuente de todo sufrimiento. Esta novela distópica de Ray Bradbury es una advertencia profética sobre la censura, el conformismo y el poder destructivo de un Estado que controla el pensamiento.",
+      "author": "Ray Bradbury",
+      "genre": "Ciencia ficción distópica",
+      "age": "Adultos",
+      "temas": [
+        "Censura",
+        "Control social",
+        "Libertad de pensamiento",
+        "Tecnología y sociedad",
+        "Distopía"
+      ],
+      "tags": [
+        "Distopía",
+        "Bradbury",
+        "Censura",
+        "Futuro",
+        "Clásico",
+        "Rebelión"
+      ],
+      "nivel": "",
+      "idioma": "Español",
+      "ad": {
+        "headline": "El futuro donde los libros arden.",
+        "subheadline": "Descubre una profética distopía sobre la censura y la libertad de pensamiento.",
+        "cta": "Lee la verdad",
+        "banner_text": "Clásico distópico imperdible",
+        "instagram_caption": "En un mundo donde quemar libros es ley, ¿te atreverías a leer? 🔥 Fahrenheit 451 de Ray Bradbury es una obra maestra que te hará cuestionar todo. Una visión profética sobre la censura y el control social. ¡Imprescindible!\n",
+        "hashtags": [
+          "#Fahrenheit451",
+          "#RayBradbury",
+          "#Distopía",
+          "#CienciaFiccion",
+          "#LibrosProhibidos",
+          "#Censura",
+          "#LeerEsResistir",
+          "#ClásicoLiterario"
+        ]
+      },
+      "pdfName": "Fahrenheit_451_clean.pdf",
+      "pdfUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/pdfs/1783193692761_fahrenheit_451.pdf",
+      "coverUrl": null,
+      "file": "Fahrenheit_451_clean.pdf"
     }
   ],
   "emailList": [
@@ -880,5 +928,5 @@
     "juan@test.com",
     "octavio123@gamil.com"
   ],
-  "updatedAt": "2026-07-04T19:34:41.563Z"
+  "updatedAt": "2026-07-04T19:34:57.490Z"
 }
