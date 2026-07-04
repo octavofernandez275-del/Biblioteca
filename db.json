@@ -637,6 +637,52 @@
       "pdfUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/pdfs/1783193383604_el_mes_as_de_dune__las_cr_nicas_de_dune_2_.pdf",
       "coverUrl": null,
       "file": "El mesías de Dune (Las crónicas de Dune 2) (Spanish Edition) -- Frank Herbert.pdf"
+    },
+    {
+      "id": 1783193398935,
+      "name": "Herejes de Dune",
+      "price": "$0.99",
+      "cat": "ebooks",
+      "desc": "Tras la caída de Leto II, la humanidad se enfrenta a un nuevo y aterrador retorno de las fuerzas dispersas del universo. La Bene Gesserit debe unirse o perecer ante la amenaza de las Honoradas Matres en esta épica continuación de la saga Dune.",
+      "author": "Frank Herbert",
+      "genre": "Ciencia Ficción",
+      "age": "Adultos",
+      "temas": [
+        "Supervivencia intergaláctica",
+        "Órdenes secretas",
+        "Conflicto civilizacional",
+        "Estrategia militar",
+        "Conspiración"
+      ],
+      "tags": [
+        "Dune",
+        "Saga",
+        "Ciencia Ficción",
+        "Frank Herbert",
+        "Épica Espacial",
+        "Distopía"
+      ],
+      "nivel": "Avanzado",
+      "idioma": "Español",
+      "ad": {
+        "headline": "El destino de la humanidad pende de un hilo",
+        "subheadline": "La saga de Dune continúa con una amenaza que desafía todo el universo conocido.",
+        "cta": "Inicia tu viaje",
+        "banner_text": "Saga Dune 5: ¿Estás listo para el retorno?",
+        "instagram_caption": "¡La épica saga de Dune continúa con \"Herejes de Dune\"! 🪐 Frank Herbert nos sumerge en un universo post-Leto II, donde la humanidad debe enfrentar nuevas amenazas del pasado. ¿Podrán la Bene Gesserit y sus aliados detener el avance de las Honoradas Matres? ¡Un viaje intergaláctico lleno de intriga y estrategia te espera! ✨",
+        "hashtags": [
+          "#Dune",
+          "#HerejesDeDune",
+          "#FrankHerbert",
+          "#CienciaFiccion",
+          "#SagaEspacial",
+          "#Libros"
+        ]
+      },
+      "pdfName": "Herejes de Dune -- Frank Herbert -- Dune 5, 1984 -- b0bf9e1ae14aa2dacbe0f2ddb6b14e3d -- Anna’s Archive.pdf",
+      "pdfUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/pdfs/1783193398935_herejes_de_dune.pdf",
+      "coverUrl": null,
+      "file": "Herejes de Dune -- Frank Herbert -- Dune 5, 1984 -- b0bf9e1ae14aa2dacbe0f2ddb6b14e3d -- Anna’s Archive.pdf"
     }
   ],
   "emailList": [
@@ -645,5 +691,5 @@
     "juan@test.com",
     "octavio123@gamil.com"
   ],
-  "updatedAt": "2026-07-04T19:29:49.442Z"
+  "updatedAt": "2026-07-04T19:30:06.454Z"
 }
