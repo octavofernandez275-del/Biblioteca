@@ -307,6 +307,53 @@
       "pdfUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/pdfs/1783193179132_un_mundo_feliz.pdf",
       "coverUrl": null,
       "file": "Aldous HGuxley Un mundo Feliz_copia.pdf"
+    },
+    {
+      "id": 1783193183586,
+      "name": "Blancanieves y los Siete Enanitos: La Magia Clásica de Disney",
+      "price": "$0.99",
+      "cat": "ebooks",
+      "desc": "Sumérgete en el cuento clásico de Blancanieves, una joven princesa perseguida por su malvada madrastra, que encuentra refugio y amistad en el bosque junto a siete adorables enanitos. Una historia atemporal de magia, bondad y el triunfo del amor verdadero.",
+      "author": "Walt Disney Company",
+      "genre": "Cuentos de hadas",
+      "age": "Infantil",
+      "temas": [
+        "Magia",
+        "Amistad",
+        "Aventura",
+        "Bien y mal",
+        "Princesas"
+      ],
+      "tags": [
+        "Cuento clásico",
+        "Fantasía",
+        "Princesas Disney",
+        "Aventura infantil",
+        "Amistad",
+        "Magia"
+      ],
+      "nivel": "",
+      "idioma": "Español",
+      "ad": {
+        "headline": "La Magia Eterna de Blancanieves",
+        "subheadline": "Revive el encanto de este clásico cuento Disney con la princesa Blancanieves.",
+        "cta": "Descubre la historia",
+        "banner_text": "Cuento Clásico Disney Infantil",
+        "instagram_caption": "✨ ¡Sumérgete en la magia de un clásico eterno! 🍎 Blancanieves y los Siete Enanitos te esperan para una aventura inolvidable.\n\nPerfecta para toda la familia, esta historia de Disney te encantará. ¡Descárgala ahora!",
+        "hashtags": [
+          "#Blancanieves",
+          "#Disney",
+          "#CuentosDeHadas",
+          "#LiteraturaInfantil",
+          "#Magia",
+          "#PrincesasDisney",
+          "#CuentoClasico"
+        ]
+      },
+      "pdfName": "Blancanieves Y Los Siete Enanitos (Disney Walt) (z-library.sk, 1lib.sk, z-lib.sk).pdf",
+      "pdfUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/pdfs/1783193183586_blancanieves_y_los_siete_enanitos__la_magia_cl_sica_de_disney.pdf",
+      "coverUrl": null,
+      "file": "Blancanieves Y Los Siete Enanitos (Disney Walt) (z-library.sk, 1lib.sk, z-lib.sk).pdf"
     }
   ],
   "emailList": [
@@ -315,5 +362,5 @@
     "juan@test.com",
     "octavio123@gamil.com"
   ],
-  "updatedAt": "2026-07-04T19:26:23.923Z"
+  "updatedAt": "2026-07-04T19:26:30.598Z"
 }
