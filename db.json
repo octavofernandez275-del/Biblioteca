@@ -433,37 +433,38 @@
       "cat": "ebooks",
       "desc": "Sumérgete en un mundo opresivo donde el Gran Hermano te vigila constantemente. Winston Smith lucha por su libertad en una sociedad distópica controlada por un régimen totalitario.",
       "author": "George Orwell",
-      "genre": "Novela Distópica",
+      "genre": "Distopía",
       "age": "Adultos",
       "temas": [
-        "Totalitarismo",
         "Vigilancia",
-        "Control social",
+        "Totalitarismo",
         "Libertad",
-        "Rebelión"
+        "Resistencia",
+        "Control social"
       ],
       "tags": [
-        "Dystopia",
         "Clásico",
-        "Orwell",
+        "Distopía",
         "Política",
         "Sociedad",
-        "Vigilancia"
+        "Ficción",
+        "Rebelión"
       ],
       "nivel": "",
       "idioma": "Español",
       "ad": {
         "headline": "El Gran Hermano te observa",
-        "subheadline": "Una obra maestra que predijo la sociedad de la vigilancia.",
-        "cta": "Empezar a leer",
-        "banner_text": "Clásico Distópico Imprescindible",
-        "instagram_caption": "👁️‍🗨️ ¿Te atreves a desafiar al Gran Hermano? Sumérgete en la magistral distopía de George Orwell, '1984'. Una obra que te hará cuestionar la libertad y la verdad en un mundo bajo constante vigilancia. ¡Lectura imprescindible!",
+        "subheadline": "Descubre la distopía que te hará cuestionar toda la realidad.",
+        "cta": "Descubrir ahora",
+        "banner_text": "1984: Un Clásico Ineludible",
+        "instagram_caption": "Adéntrate en el icónico mundo de 1984 👁️. Una obra maestra distópica que te hará cuestionar la libertad y la vigilancia. ¿Te atreves a desafiar al Gran Hermano? 👇 #LibroRecomendado",
         "hashtags": [
           "#1984",
+          "#Distopía",
           "#GeorgeOrwell",
-          "#Distopia",
-          "#Clasico",
-          "#Novela",
+          "#ClásicoLiterario",
+          "#Vigilancia",
+          "#Libertad",
           "#Literatura"
         ]
       },
@@ -529,36 +530,36 @@
       "genre": "Ciencia Ficción",
       "age": "Adultos",
       "temas": [
-        "Liderazgo mesiánico",
-        "Ética y poder",
-        "Mitología",
+        "Poder",
+        "Mitos",
         "Ecología",
-        "Filosofía"
+        "Filosofía",
+        "Ética"
       ],
       "tags": [
-        "Ciencia Ficción",
+        "Ciencia ficción",
         "Dune",
-        "Leto Atreides II",
+        "Clásico",
+        "Saga",
         "Filosofía",
-        "Épica",
-        "Culto"
+        "Distopía"
       ],
       "nivel": "",
       "idioma": "Español",
       "ad": {
-        "headline": "El futuro de la humanidad pende de un hilo.",
-        "subheadline": "Sumérgete en la mente de Leto Atreides II, el Dios Emperador de Dune.",
-        "cta": "Descubrir la profecía",
-        "banner_text": "Dune: El Dios Emperador",
-        "instagram_caption": "Adéntrate en el universo de #Dune con 'Dios Emperador de Dune' 🚀. La cuarta entrega de la saga de Frank Herbert explora el poder, la ética y los mitos de la humanidad a través de Leto Atreides II. ¡Una lectura esencial! #CienciaFiccion #LibroDeCulto",
+        "headline": "Dune: El Dilema del Dios Emperador",
+        "subheadline": "Explora el destino de la humanidad frente al poder absoluto de un mesías.",
+        "cta": "Sumérgete ahora",
+        "banner_text": "Clásico de Ciencia Ficción",
+        "instagram_caption": "Adéntrate en 'Dios Emperador de Dune' de Frank Herbert. 🏜️\nLa épica continuación que desafía la humanidad, el poder y los mitos.\nUna obra maestra que te hará reflexionar. ¡No te la pierdas! ✨",
         "hashtags": [
-          "#DiosEmperadorDeDune",
           "#Dune",
+          "#DiosEmperador",
           "#FrankHerbert",
           "#CienciaFiccion",
           "#SagaDune",
-          "#LecturaRecomendada",
-          "#FiccionEspeculativa"
+          "#LibrosRecomendados",
+          "#ObraDeCulto"
         ]
       },
       "pdfName": "Dios Emperador de Dune -- Frank Herbert .pdf",
@@ -1319,5 +1320,5 @@
     "juan@test.com",
     "octavio123@gamil.com"
   ],
-  "updatedAt": "2026-07-04T23:12:16.619Z"
+  "updatedAt": "2026-07-04T23:12:34.001Z"
 }
