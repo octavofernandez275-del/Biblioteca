@@ -354,6 +354,54 @@
       "pdfUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/pdfs/1783193183586_blancanieves_y_los_siete_enanitos__la_magia_cl_sica_de_disney.pdf",
       "coverUrl": null,
       "file": "Blancanieves Y Los Siete Enanitos (Disney Walt) (z-library.sk, 1lib.sk, z-lib.sk).pdf"
+    },
+    {
+      "id": 1783193184176,
+      "name": "Casa Capitular Dune",
+      "price": "$0.99",
+      "cat": "ebooks",
+      "desc": "Las Honoradas Matres y la Bene Gesserit se enfrentan en una guerra galáctica por el dominio del universo. Mientras un ghola de Miles Teg es adiestrado y nuevos gusanos de arena emergen, el destino de la Casa Capitular y el legado de Dune están en juego.",
+      "author": "Frank Herbert",
+      "genre": "Ciencia ficción",
+      "age": "Adultos",
+      "temas": [
+        "Guerra intergaláctica",
+        "Poder y control",
+        "Evolución de especies",
+        "Clonación y memoria",
+        "Destino y legado"
+      ],
+      "tags": [
+        "Dune",
+        "Ciencia ficción",
+        "Space opera",
+        "Bene Gesserit",
+        "Honoradas Matres",
+        "Guerra galáctica"
+      ],
+      "nivel": "Intermedio",
+      "idioma": "Español",
+      "ad": {
+        "headline": "El destino del universo Dune en juego.",
+        "subheadline": "Únete a la lucha entre las Honoradas Matres y la Bene Gesserit.",
+        "cta": "Descubre el final",
+        "banner_text": "Dune 6: Guerra y Legado",
+        "instagram_caption": "✨ ¡El épico final de la saga Dune te espera!\nLas Honoradas Matres y la Bene Gesserit se enfrentan en una batalla por el control del universo. ¿Quién prevalecerá? 🚀\nSumérgete en intrigas galácticas, clones y el resurgimiento de los gusanos de arena. ¡Imprescindible!",
+        "hashtags": [
+          "#Dune",
+          "#CasaCapitular",
+          "#FrankHerbert",
+          "#CienciaFiccion",
+          "#SpaceOpera",
+          "#LecturaRecomendada",
+          "#BeneGesserit",
+          "#SagaDune"
+        ]
+      },
+      "pdfName": "Casa Capitular Dune -- Herbert, Frank -- Dune 6, 1985 -- ePubLibre -- 7da42b72daf340d1624a0afcf8d5c88b -- Anna’s Archive.pdf",
+      "pdfUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/pdfs/1783193184176_casa_capitular_dune.pdf",
+      "coverUrl": null,
+      "file": "Casa Capitular Dune -- Herbert, Frank -- Dune 6, 1985 -- ePubLibre -- 7da42b72daf340d1624a0afcf8d5c88b -- Anna’s Archive.pdf"
     }
   ],
   "emailList": [
@@ -362,5 +410,5 @@
     "juan@test.com",
     "octavio123@gamil.com"
   ],
-  "updatedAt": "2026-07-04T19:26:30.598Z"
+  "updatedAt": "2026-07-04T19:26:37.970Z"
 }
