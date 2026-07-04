@@ -1132,6 +1132,78 @@
       "pdfUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/pdfs/1783193911323_larousse_gastronomique_en_espa_ol.pdf",
       "coverUrl": null,
       "file": "larousse-gastronomique-en-espanol_copia.pdf"
+    },
+    {
+      "id": 1783193898610,
+      "name": "El Arte de la Cocina Francesa, Vol. 1",
+      "price": "$0.99",
+      "cat": "ebooks",
+      "desc": "Sumérgete en el primer volumen del icónico manual de Julia Child para dominar la cocina francesa clásica. Aprende técnicas esenciales y recetas auténticas que han deleitado a generaciones de gourmets.",
+      "author": "Julia Child",
+      "genre": "Cocina",
+      "age": "Adultos",
+      "temas": [
+        "Cocina francesa",
+        "Recetas clásicas",
+        "Técnicas culinarias",
+        "Gastronomía",
+        "Historia de la cocina"
+      ],
+      "tags": [
+        "Cocina",
+        "Francia",
+        "Recetario",
+        "Julia Child",
+        "Culinario",
+        "Clásicos"
+      ],
+      "nivel": "Intermedio",
+      "idioma": "Español",
+      "ad": {
+        "headline": "Domina la Cocina Francesa",
+        "subheadline": "Aprende las técnicas clásicas con la maestra Julia Child.",
+        "cta": "Cocina como un chef",
+        "banner_text": "Cocina Francesa Clásica",
+        "instagram_caption": "¡Sumérgete en el arte de la cocina francesa con Julia Child! 🧑‍🍳✨ Este primer volumen te guiará por las técnicas y recetas que definieron una era. ¡Un clásico imprescindible para todo amante de la buena mesa! 🇫🇷",
+        "hashtags": [
+          "#CocinaFrancesa",
+          "#JuliaChild",
+          "#RecetasClasicas",
+          "#Gastronomia",
+          "#ArteCulinario",
+          "#LibrosDeCocina"
+        ]
+      },
+      "pdfName": "El arte de la cocina francesa, vol_1 -- Julia Child -- 1, 1, 2016 -- DEBATE -- 89b12b14c6dcd846566508e0a98a2448 -- Anna’s Archive.pdf",
+      "pdfUrl": null,
+      "coverUrl": null,
+      "file": "El arte de la cocina francesa, vol_1 -- Julia Child -- 1, 1, 2016 -- DEBATE -- 89b12b14c6dcd846566508e0a98a2448 -- Anna’s Archive.pdf"
+    },
+    {
+      "id": 1783193925427,
+      "name": "Las mejores recetas de carne (Listas en 30 minutos) (Spanish   Almudena Sasiain Calle   Recetas listas en 30 minutos, Colonia, Alemania, 2016   NGV   isbn13 9783625006534   1d57dbcc32eef929933768d597ae5635   Anna’s Archive",
+      "price": "$0.99",
+      "cat": "ebooks",
+      "desc": "",
+      "author": "",
+      "genre": "",
+      "age": "",
+      "temas": [],
+      "tags": [],
+      "nivel": "",
+      "idioma": "",
+      "ad": {
+        "headline": "",
+        "subheadline": "",
+        "cta": "",
+        "banner_text": "",
+        "instagram_caption": "",
+        "hashtags": []
+      },
+      "pdfName": "Las mejores recetas de carne (Listas en 30 minutos) (Spanish -- Almudena Sasiain Calle -- Recetas listas en 30 minutos, Colonia, Alemania, 2016 -- NGV -- isbn13 9783625006534 -- 1d57dbcc32eef929933768d597ae5635 -- Anna’s Archive.pdf",
+      "pdfUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/pdfs/1783193925427_las_mejores_recetas_de_carne__listas_en_30_minutos___spanish___almudena_sasiain_calle___recetas_listas_en_30_minutos__colonia__alemania__2016___ngv___isbn13_9783625006534___1d57dbcc32eef929933768d597ae5635___anna_s_archive.pdf",
+      "coverUrl": null,
+      "file": "Las mejores recetas de carne (Listas en 30 minutos) (Spanish -- Almudena Sasiain Calle -- Recetas listas en 30 minutos, Colonia, Alemania, 2016 -- NGV -- isbn13 9783625006534 -- 1d57dbcc32eef929933768d597ae5635 -- Anna’s Archive.pdf"
     }
   ],
   "emailList": [
@@ -1140,5 +1212,5 @@
     "juan@test.com",
     "octavio123@gamil.com"
   ],
-  "updatedAt": "2026-07-04T19:38:43.626Z"
+  "updatedAt": "2026-07-04T19:39:00.898Z"
 }
