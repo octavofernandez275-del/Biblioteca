@@ -1258,32 +1258,6 @@
       "file": "Secretos DEL CARNICERO_ Cómo seleccionar, cortar, preparar y -- Arthur le Caisne -- Hachette Book Group, New York, 2018 -- Black Dog & -- isbn13 9780316415552 -- 39b3090cad5c5d95e28764cbae2dde4e -- Anna’s Archive.pdf"
     },
     {
-      "id": 1783193943041,
-      "name": "El arte de la cocina francesa, vol 2   Julia Child   2, 1, 2014   DEBATE   c6be79e42949b81162cec8670186eb93   Anna’s Archive",
-      "price": "$0.99",
-      "cat": "ebooks",
-      "desc": "",
-      "author": "",
-      "genre": "",
-      "age": "",
-      "temas": [],
-      "tags": [],
-      "nivel": "",
-      "idioma": "",
-      "ad": {
-        "headline": "",
-        "subheadline": "",
-        "cta": "",
-        "banner_text": "",
-        "instagram_caption": "",
-        "hashtags": []
-      },
-      "pdfName": "El arte de la cocina francesa, vol_2 -- Julia Child -- 2, 1, 2014 -- DEBATE -- c6be79e42949b81162cec8670186eb93 -- Anna’s Archive.pdf",
-      "pdfUrl": null,
-      "coverUrl": null,
-      "file": "El arte de la cocina francesa, vol_2 -- Julia Child -- 2, 1, 2014 -- DEBATE -- c6be79e42949b81162cec8670186eb93 -- Anna’s Archive.pdf"
-    },
-    {
       "id": 1783193969173,
       "name": "Sin gluten   platos fáciles y sabrosos para el cocinero   Delivering Ibooks & Design Barcelona   Recetas del chef, New York, 2017   Parragon Book   isbn13 9781474886987   0d1f3cccb61c6622f501b287033ad447   Anna’s Archive",
       "price": "$0.99",
@@ -1316,5 +1290,5 @@
     "juan@test.com",
     "octavio123@gamil.com"
   ],
-  "updatedAt": "2026-07-04T19:45:23.075Z"
+  "updatedAt": "2026-07-04T19:45:43.985Z"
 }
