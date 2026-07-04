@@ -992,6 +992,52 @@
       "pdfUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/pdfs/1783193870060_happy_foods__m_s_de_100_recetas_para_estar_siempre_de_buen___wang_diggs__karen___alimentaci_n__1a_ed__barcelona__2017___amat_editorial___isbn13_9788497359269___0f9be158d2a1a4abb8f154f23d2f8646___anna_s_archive.pdf",
       "coverUrl": null,
       "file": "Happy Foods_ Más de 100 recetas para estar siempre de buen -- Wang Diggs, Karen -- Alimentación, 1a ed, Barcelona, 2017 -- Amat editorial -- isbn13 9788497359269 -- 0f9be158d2a1a4abb8f154f23d2f8646 -- Anna’s Archive.pdf"
+    },
+    {
+      "id": 1783193877106,
+      "name": "Delicias Enlatadas: Recetas Sabrosas y Fáciles de Preparar",
+      "price": "$0.99",
+      "cat": "ebooks",
+      "desc": "Descubre el arte de cocinar con Delicias Enlatadas, un recetario imprescindible para quienes buscan sabor y facilidad en la cocina. Toni Monné y Juan Linares te guiarán para transformar ingredientes enlatados en platos sorprendentes y rápidos, ideales para cualquier ocasión.",
+      "author": "Toni Monné, Juan Linares",
+      "genre": "Cocina",
+      "age": "Adultos",
+      "temas": [
+        "Recetas fáciles",
+        "Cocina rápida",
+        "Alimentos enlatados",
+        "Gastronomía práctica",
+        "Culinaria creativa"
+      ],
+      "tags": [
+        "cocina",
+        "recetas",
+        "fácil",
+        "enlatados",
+        "rápido",
+        "delicioso"
+      ],
+      "nivel": "Principiante",
+      "idioma": "Español",
+      "ad": {
+        "headline": "Delicias Enlatadas: Cocina Fácil y Sabrosa",
+        "subheadline": "Transforma tus conservas en platos gourmet con recetas rápidas e infalibles.",
+        "cta": "Descubrir Recetas",
+        "banner_text": "Nuevas Recetas con Latas",
+        "instagram_caption": "¡Reinventa tu cocina con 'Delicias Enlatadas'! 🥫✨ Descubre recetas sabrosas y súper fáciles que convertirán tus conservas en platos estrella. ¡Cocinar nunca fue tan rápido y delicioso! 👩‍🍳👨‍🍳",
+        "hashtags": [
+          "#DeliciasEnlatadas",
+          "#CocinaFacil",
+          "#RecetasRapidas",
+          "#ComidaCasera",
+          "#EnlatadosGourmet",
+          "#LibroDeCocina"
+        ]
+      },
+      "pdfName": "Delicias enlatadas_ Recetas sabrosas y fáciles de preparar -- Toni Monné; Juan Linares -- Tapas' world,... ra edición_ octubre 2018, Barcelona, 2018 -- isbn13 9788497354486 -- f64bce84d82d3349207a217341f21428 -- Anna’s Archive.pdf",
+      "pdfUrl": null,
+      "coverUrl": null,
+      "file": "Delicias enlatadas_ Recetas sabrosas y fáciles de preparar -- Toni Monné; Juan Linares -- Tapas' world,... ra edición_ octubre 2018, Barcelona, 2018 -- isbn13 9788497354486 -- f64bce84d82d3349207a217341f21428 -- Anna’s Archive.pdf"
     }
   ],
   "emailList": [
@@ -1000,5 +1046,5 @@
     "juan@test.com",
     "octavio123@gamil.com"
   ],
-  "updatedAt": "2026-07-04T19:38:01.304Z"
+  "updatedAt": "2026-07-04T19:38:06.417Z"
 }
