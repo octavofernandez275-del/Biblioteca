@@ -495,6 +495,53 @@
       "pdfUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/pdfs/1783193217963_dune__el_despertar_de_un_h_roe.pdf",
       "coverUrl": null,
       "file": "DUNE -- Frank Herbert -- Dune 1, .pdf"
+    },
+    {
+      "id": 1783193350362,
+      "name": "Dios Emperador de Dune",
+      "price": "$0.99",
+      "cat": "ebooks",
+      "desc": "La cuarta entrega de la épica saga Dune explora la figura mesiánica de Leto Atreides II y los dilemas éticos de la humanidad frente a sus mitos y héroes. Una obra de culto que aborda ecología, poder y psicología de los mitos en un mundo fascinante.",
+      "author": "Frank Herbert",
+      "genre": "Ciencia Ficción",
+      "age": "Adultos",
+      "temas": [
+        "Liderazgo mesiánico",
+        "Ética y poder",
+        "Mitología",
+        "Ecología",
+        "Filosofía"
+      ],
+      "tags": [
+        "Ciencia Ficción",
+        "Dune",
+        "Leto Atreides II",
+        "Filosofía",
+        "Épica",
+        "Culto"
+      ],
+      "nivel": "",
+      "idioma": "Español",
+      "ad": {
+        "headline": "El futuro de la humanidad pende de un hilo.",
+        "subheadline": "Sumérgete en la mente de Leto Atreides II, el Dios Emperador de Dune.",
+        "cta": "Descubrir la profecía",
+        "banner_text": "Dune: El Dios Emperador",
+        "instagram_caption": "Adéntrate en el universo de #Dune con 'Dios Emperador de Dune' 🚀. La cuarta entrega de la saga de Frank Herbert explora el poder, la ética y los mitos de la humanidad a través de Leto Atreides II. ¡Una lectura esencial! #CienciaFiccion #LibroDeCulto",
+        "hashtags": [
+          "#DiosEmperadorDeDune",
+          "#Dune",
+          "#FrankHerbert",
+          "#CienciaFiccion",
+          "#SagaDune",
+          "#LecturaRecomendada",
+          "#FiccionEspeculativa"
+        ]
+      },
+      "pdfName": "Dios Emperador de Dune -- Frank Herbert .pdf",
+      "pdfUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/pdfs/1783193350362_dios_emperador_de_dune.pdf",
+      "coverUrl": null,
+      "file": "Dios Emperador de Dune -- Frank Herbert .pdf"
     }
   ],
   "emailList": [
@@ -503,5 +550,5 @@
     "juan@test.com",
     "octavio123@gamil.com"
   ],
-  "updatedAt": "2026-07-04T19:27:03.731Z"
+  "updatedAt": "2026-07-04T19:29:17.328Z"
 }
