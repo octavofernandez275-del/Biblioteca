@@ -542,6 +542,53 @@
       "pdfUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/pdfs/1783193350362_dios_emperador_de_dune.pdf",
       "coverUrl": null,
       "file": "Dios Emperador de Dune -- Frank Herbert .pdf"
+    },
+    {
+      "id": 1783193366306,
+      "name": "Dune: El Clásico que Redefinió la Ciencia Ficción",
+      "price": "$0.99",
+      "cat": "ebooks",
+      "desc": "Sumérgete en el épico universo de Arrakis, un planeta desértico clave para el destino del imperio. Acompaña a Paul Atreides en su viaje de autodescubrimiento y liderazgo, enfrentando intrigas políticas, batallas cósmicas y profecías milenarias.",
+      "author": "Frank Herbert",
+      "genre": "Ciencia Ficción",
+      "age": "Adultos y Jóvenes Adultos",
+      "temas": [
+        "Política",
+        "Ecología",
+        "Fantasía heroica",
+        "Religión",
+        "Supervivencia"
+      ],
+      "tags": [
+        "Dune",
+        "Arrakis",
+        "Paul Atreides",
+        "Saga",
+        "Clásico",
+        "Ficción Distópica"
+      ],
+      "nivel": "Intermedio/Avanzado",
+      "idioma": "Español",
+      "ad": {
+        "headline": "El Universo te Espera en Dune.",
+        "subheadline": "Descubre una epopeya intergaláctica de intriga, ecología y destino. ¡La leyenda comienza!",
+        "cta": "Explorar Arrakis",
+        "banner_text": "Clásico Imprescindible de Ciencia Ficción",
+        "instagram_caption": "🚀 ¡Sumérgete en el legendario universo de Dune! Frank Herbert te transporta a Arrakis, un planeta de intriga y profecías. ¿Estás listo para el viaje de Paul Atreides? 🏜️📚",
+        "hashtags": [
+          "#Dune",
+          "#FrankHerbert",
+          "#CienciaFiccion",
+          "#Arrakis",
+          "#PaulAtreides",
+          "#LibrosRecomendados",
+          "#FantasiaEpica"
+        ]
+      },
+      "pdfName": "DUNE -- Frank Herbert -- Dune 1, .pdf",
+      "pdfUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/pdfs/1783193366306_dune__el_cl_sico_que_redefini__la_ciencia_ficci_n.pdf",
+      "coverUrl": null,
+      "file": "DUNE -- Frank Herbert -- Dune 1, .pdf"
     }
   ],
   "emailList": [
@@ -550,5 +597,5 @@
     "juan@test.com",
     "octavio123@gamil.com"
   ],
-  "updatedAt": "2026-07-04T19:29:17.328Z"
+  "updatedAt": "2026-07-04T19:29:31.860Z"
 }
