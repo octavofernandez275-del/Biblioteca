@@ -291,40 +291,39 @@
       "cat": "ebooks",
       "desc": "En este prólogo, Aldous Huxley reflexiona sobre su icónica novela, explicando por qué ha decidido no revisarla a pesar de sus imperfecciones, prefiriendo preservar su visión original.",
       "author": "Aldous Huxley",
-      "genre": "Ciencia Ficción Distópica",
+      "genre": "Ficción Distópica",
       "age": "Adultos",
       "temas": [
         "Distopía",
+        "Crítica social",
+        "Literatura clásica",
         "Sociedad futurista",
-        "Control social",
-        "Libertad individual",
-        "Crítica social"
+        "Reflexión del autor"
       ],
       "tags": [
         "Distopía",
         "Clásico",
-        "Huxley",
-        "Futuro",
-        "Sociedad",
+        "Ciencia ficción",
+        "Crítica social",
+        "Aldous Huxley",
         "Filosofía"
       ],
       "nivel": "",
       "idioma": "Español",
       "ad": {
-        "headline": "El futuro que Huxley imaginó",
-        "subheadline": "Una crítica atemporal a la sociedad, la ciencia y la libertad.",
-        "cta": "Explorar ahora",
-        "banner_text": "Clásico Distópico Imprescindible",
-        "instagram_caption": "Sumérgete en la visión profética de Aldous Huxley. 🤯 Un Mundo Feliz sigue siendo escalofriantemente relevante hoy. ¿Estás listo para cuestionar la realidad?\n\n#UnMundoFeliz #AldousHuxley #Distopía",
+        "headline": "Huxley: La Mente Maestra",
+        "subheadline": "El prólogo esencial que desvela la visión original de 'Un Mundo Feliz'.",
+        "cta": "Descubrir ahora",
+        "banner_text": "Reflexiones del Creador Distópico",
+        "instagram_caption": "Sumérgete en la mente de Aldous Huxley. 🧠 En este prólogo esencial, el autor de 'Un Mundo Feliz' reflexiona sobre su obra maestra y la importancia de preservar su visión original. Un viaje intelectual imprescindible para entender una de las distopías más influyentes de la literatura. 👇",
         "hashtags": [
           "#UnMundoFeliz",
           "#AldousHuxley",
           "#Distopía",
-          "#Clásicos",
+          "#ClásicosLiterarios",
           "#CienciaFicción",
-          "#LibrosRecomendados",
           "#CríticaSocial",
-          "#Leer"
+          "#LibrosRecomendados"
         ]
       },
       "pdfName": "Aldous HGuxley Un mundo Feliz_copia.pdf",
@@ -1320,5 +1319,5 @@
     "juan@test.com",
     "octavio123@gamil.com"
   ],
-  "updatedAt": "2026-07-04T23:12:01.674Z"
+  "updatedAt": "2026-07-04T23:12:16.619Z"
 }
