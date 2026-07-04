@@ -822,7 +822,7 @@
         ]
       },
       "pdfName": "Hacia la Fundación -- Isaac Asimov -- 1993 -- 7c8be041670646cd4a4eaa1e95eafb64 -- Anna’s Archive.pdf",
-      "pdfUrl": null,
+      "pdfUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/pdfs/1783193652912_hacia_la_fundaci_n.pdf",
       "coverUrl": null,
       "file": "Hacia la Fundación -- Isaac Asimov -- 1993 -- 7c8be041670646cd4a4eaa1e95eafb64 -- Anna’s Archive.pdf"
     },
@@ -928,5 +928,5 @@
     "juan@test.com",
     "octavio123@gamil.com"
   ],
-  "updatedAt": "2026-07-04T19:37:17.863Z"
+  "updatedAt": "2026-07-04T19:37:22.320Z"
 }
