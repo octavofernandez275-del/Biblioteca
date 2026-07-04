@@ -825,6 +825,53 @@
       "pdfUrl": null,
       "coverUrl": null,
       "file": "Hacia la Fundación -- Isaac Asimov -- 1993 -- 7c8be041670646cd4a4eaa1e95eafb64 -- Anna’s Archive.pdf"
+    },
+    {
+      "id": 1783193676358,
+      "name": "La Máquina del Tiempo",
+      "price": "$0.99",
+      "cat": "ebooks",
+      "desc": "Únete al Viajero del Tiempo en un intrigante viaje conceptual que desafía la geometría y la percepción de la realidad. Esta obra maestra te hará cuestionar las bases de la existencia mientras exploras un futuro enigmático.",
+      "author": "H.G. Wells",
+      "genre": "Ciencia Ficción",
+      "age": "Adultos y Adolescentes",
+      "temas": [
+        "Viajes en el tiempo",
+        "Filosofía",
+        "Sociedad futura",
+        "Paradojas científicas",
+        "Existencia humana"
+      ],
+      "tags": [
+        "Clásico",
+        "Ciencia ficción",
+        "Distopía",
+        "Aventura",
+        "Futuro",
+        "Pensamiento crítico"
+      ],
+      "nivel": "",
+      "idioma": "Español",
+      "ad": {
+        "headline": "Viaja al futuro. Cuestiona el presente.",
+        "subheadline": "Descubre el clásico que definió los viajes en el tiempo para siempre.",
+        "cta": "Explorar ahora",
+        "banner_text": "Clásico de Ciencia Ficción Imprescindible",
+        "instagram_caption": "Prepárate para un viaje que desafía la imaginación y la lógica. 🚀 H.G. Wells te lleva a las profundidades del tiempo, ¿estás listo para lo que encontrarás? ✨ #LaMaquinaDelTiempo",
+        "hashtags": [
+          "#LaMaquinaDelTiempo",
+          "#HG Wells",
+          "#CienciaFiccion",
+          "#ClasicosLiterarios",
+          "#ViajesEnElTiempo",
+          "#LecturaRecomendada",
+          "#Distopía"
+        ]
+      },
+      "pdfName": "Herbert George Wells La Máquina del Tiempo_copia.pdf",
+      "pdfUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/pdfs/1783193676358_la_m_quina_del_tiempo.pdf",
+      "coverUrl": null,
+      "file": "Herbert George Wells La Máquina del Tiempo_copia.pdf"
     }
   ],
   "emailList": [
@@ -833,5 +880,5 @@
     "juan@test.com",
     "octavio123@gamil.com"
   ],
-  "updatedAt": "2026-07-04T19:34:19.426Z"
+  "updatedAt": "2026-07-04T19:34:41.563Z"
 }
