@@ -1204,6 +1204,32 @@
       "pdfUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/pdfs/1783193925427_las_mejores_recetas_de_carne__listas_en_30_minutos___spanish___almudena_sasiain_calle___recetas_listas_en_30_minutos__colonia__alemania__2016___ngv___isbn13_9783625006534___1d57dbcc32eef929933768d597ae5635___anna_s_archive.pdf",
       "coverUrl": null,
       "file": "Las mejores recetas de carne (Listas en 30 minutos) (Spanish -- Almudena Sasiain Calle -- Recetas listas en 30 minutos, Colonia, Alemania, 2016 -- NGV -- isbn13 9783625006534 -- 1d57dbcc32eef929933768d597ae5635 -- Anna’s Archive.pdf"
+    },
+    {
+      "id": 1783193942340,
+      "name": "Recetas Para Embarazadas (spanish Edition)   Verónica Rico Mar; Gustavo Romero Ramírez   Primera edic...iMéxico, D  F, 2014   Ediciones  Larousse   isbn13 9786072109346   599370cdace2c9b70b358cfd599a50a2   Anna’s Archive",
+      "price": "$0.99",
+      "cat": "ebooks",
+      "desc": "",
+      "author": "",
+      "genre": "",
+      "age": "",
+      "temas": [],
+      "tags": [],
+      "nivel": "",
+      "idioma": "",
+      "ad": {
+        "headline": "",
+        "subheadline": "",
+        "cta": "",
+        "banner_text": "",
+        "instagram_caption": "",
+        "hashtags": []
+      },
+      "pdfName": "Recetas Para Embarazadas (spanish Edition) -- Verónica Rico Mar; Gustavo Romero Ramírez -- Primera edic...iMéxico, D_ F, 2014 -- Ediciones  Larousse -- isbn13 9786072109346 -- 599370cdace2c9b70b358cfd599a50a2 -- Anna’s Archive.pdf",
+      "pdfUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/pdfs/1783193942340_recetas_para_embarazadas__spanish_edition____ver_nica_rico_mar__gustavo_romero_ram_rez___primera_edic___im_xico__d__f__2014___ediciones__larousse___isbn13_9786072109346___599370cdace2c9b70b358cfd599a50a2___anna_s_archive.pdf",
+      "coverUrl": null,
+      "file": "Recetas Para Embarazadas (spanish Edition) -- Verónica Rico Mar; Gustavo Romero Ramírez -- Primera edic...iMéxico, D_ F, 2014 -- Ediciones  Larousse -- isbn13 9786072109346 -- 599370cdace2c9b70b358cfd599a50a2 -- Anna’s Archive.pdf"
     }
   ],
   "emailList": [
@@ -1212,5 +1238,5 @@
     "juan@test.com",
     "octavio123@gamil.com"
   ],
-  "updatedAt": "2026-07-04T19:39:00.898Z"
+  "updatedAt": "2026-07-04T19:39:12.333Z"
 }
