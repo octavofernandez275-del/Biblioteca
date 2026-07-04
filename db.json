@@ -163,7 +163,15 @@
       "pdfName": "La Cenicienta (Disney Walt) (z-library.sk, 1lib.sk, z-lib.sk).pdf",
       "pdfUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/pdfs/1783029262599_la_cenicienta.pdf",
       "coverUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/covers/1783029262599_la_cenicienta.jpg",
-      "file": "La Cenicienta (Disney Walt) (z-library.sk, 1lib.sk, z-lib.sk).pdf"
+      "file": "La Cenicienta (Disney Walt) (z-library.sk, 1lib.sk, z-lib.sk).pdf",
+      "ad": {
+        "headline": "",
+        "subheadline": "",
+        "cta": "",
+        "banner_text": "",
+        "instagram_caption": "",
+        "hashtags": []
+      }
     },
     {
       "id": 1783113082970,
@@ -1296,5 +1304,5 @@
     "juan@test.com",
     "octavio123@gamil.com"
   ],
-  "updatedAt": "2026-07-04T19:48:34.000Z"
+  "updatedAt": "2026-07-04T19:48:52.168Z"
 }
