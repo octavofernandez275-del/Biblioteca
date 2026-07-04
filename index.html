@@ -3152,6 +3152,7 @@
         <div style="display:flex;gap:10px;flex-wrap:wrap;margin-bottom:16px;">
           <button class="btn btn-ghost" style="font-size:13px;padding:9px 18px;" onclick="batchGenerateCovers()">🖼️ Generar portadas faltantes</button>
           <button class="btn btn-ghost" style="font-size:13px;padding:9px 18px;" onclick="batchGenerateDescriptions()">✍️ Generar descripciones faltantes</button>
+          <button class="btn btn-ghost" style="font-size:13px;padding:9px 18px;" onclick="batchReclassifyAll()">🔄 Reclasificar toda la biblioteca</button>
         </div>
         <div id="batch-progress" style="display:none;background:rgba(91,91,214,.1);border:1px solid rgba(91,91,214,.3);border-radius:12px;padding:14px 16px;margin-bottom:16px;font-size:13px;color:var(--accent-light);"></div>
         <div style="display:flex;gap:12px;flex-wrap:wrap;margin-bottom:24px;" id="catalog-filters"></div>
@@ -5681,6 +5682,47 @@
     if (prog) { prog.textContent = `✅ Descripciones generadas para ${done} de ${missing.length} productos.`; setTimeout(() => { prog.style.display = 'none'; }, 5000); }
   }
 
+  async function batchReclassifyAll() {
+    if (!db.products.length) { showToast('No hay productos en la biblioteca', 'error'); return; }
+    const confirmMsg = `Esto va a reclasificar los ${db.products.length} productos de tu biblioteca con IA (género, temas, tags, nivel, idioma y publicidad). Puede tardar varios minutos y consume tu cuota de Gemini. ¿Continuar?`;
+    if (!confirm(confirmMsg)) return;
+
+    const prog = document.getElementById('batch-progress');
+    if (prog) prog.style.display = 'block';
+    let done = 0, failed = 0;
+    for (let i = 0; i < db.products.length; i++) {
+      const p = db.products[i];
+      if (prog) prog.textContent = `🔄 Reclasificando ${i + 1}/${db.products.length}: ${p.name}`;
+      try {
+        const res = await fetch(`${WORKER_URL}/classify`, {
+          method: 'POST', headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ name: p.name, desc: p.desc || '', pdfName: p.pdfName || '', extractMeta: !p.desc || p.desc.trim().length < 10 })
+        });
+        if (res.ok) {
+          const data = await res.json();
+          if (data.error) { console.error(`batchReclassifyAll: fallo en "${p.name}":`, data.error, data.detail); failed++; }
+          else {
+            if (data.genero) p.genre = data.genero;
+            if (data.temas?.length) p.temas = data.temas;
+            if (data.tags?.length) p.tags = data.tags;
+            if (data.nivel) p.nivel = data.nivel;
+            if (data.idioma) p.idioma = data.idioma;
+            if (data.ad) p.ad = data.ad;
+            if (!p.desc && data.descripcion_sugerida) p.desc = data.descripcion_sugerida;
+            if (!p.author && data.autor_sugerido) p.author = data.autor_sugerido;
+            done++;
+          }
+        } else { failed++; }
+      } catch (e) { console.error(`batchReclassifyAll: excepción en "${p.name}":`, e); failed++; }
+      // guardar progresivamente cada 5 productos por si se corta a mitad de camino
+      if (i % 5 === 0) saveDB();
+      await new Promise(r => setTimeout(r, 700));
+    }
+    saveDB(); populateAdmin(); renderLandingGrids();
+    if (prog) { prog.textContent = `✅ Reclasificación terminada — ${done} actualizados, ${failed} fallidos de ${db.products.length}.`; setTimeout(() => { prog.style.display = 'none'; }, 6000); }
+    showToast(`✅ Biblioteca reclasificada: ${done}/${db.products.length}`, 'success');
+  }
+
   async function buscarPortadaManual() {
     // (reemplazada por generateCoverAI — se mantiene por compatibilidad, redirige a la IA)
     await generateCoverAI();
@@ -6079,6 +6121,43 @@
     document.getElementById('edit-product-modal').style.display = 'none';
     document.body.style.overflow = '';
     _editCoverB64 = null; _editPdfB64 = null; _editPdfName = null; _editCoverFile = null; _editPdfFile = null;
+  }
+
+  async function generateCoverAIForEdit() {
+    const name = document.getElementById('edit-prod-name').value.trim();
+    if (!name) { showToast('El producto necesita un nombre primero', 'error'); return; }
+    const genre = document.getElementById('edit-prod-genre').value.trim();
+    const desc = document.getElementById('edit-prod-desc').value.trim();
+    const author = document.getElementById('edit-prod-author').value.trim();
+
+    const nameLabel = document.getElementById('edit-cover-name');
+    nameLabel.textContent = '🎨 Generando carátula con IA...';
+    try {
+      const res = await fetch(`${WORKER_URL}/generate-cover`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ name, genre, desc, author })
+      });
+      const data = await res.json();
+      if (data.error || !data.image) {
+        console.error('generateCoverAIForEdit error:', data.error, data.detail);
+        nameLabel.textContent = '⚠️ No se pudo generar la carátula';
+        showToast('⚠️ No se pudo generar la carátula con IA', 'error');
+        return;
+      }
+      _editCoverB64 = data.image;
+      const blob = await (await fetch(data.image)).blob();
+      _editCoverFile = new File([blob], 'cover-ai.png', { type: blob.type || 'image/png' });
+      const prevImg = document.getElementById('edit-cover-preview');
+      prevImg.src = data.image; prevImg.style.display = 'block';
+      document.getElementById('edit-cover-placeholder').style.display = 'none';
+      nameLabel.textContent = '✅ Carátula generada con IA (nueva)';
+      showToast('🎨 Carátula generada con IA', 'success');
+    } catch (e) {
+      console.error('generateCoverAIForEdit exception:', e);
+      nameLabel.textContent = '⚠️ Error generando carátula';
+      showToast('⚠️ Error generando carátula con IA', 'error');
+    }
   }
 
   function editCoverSelected(input) {
@@ -6780,7 +6859,10 @@
         <div id="edit-cover-placeholder" style="width:72px;height:96px;border-radius:8px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.08);display:flex;align-items:center;justify-content:center;font-size:28px;">📖</div>
         <div>
           <div style="font-size:13px;color:var(--muted);margin-bottom:10px;" id="edit-cover-name">Sin carátula</div>
-          <button type="button" class="btn btn-ghost" style="padding:8px 16px;font-size:12px;" onclick="document.getElementById('edit-cover-input').click()">Cambiar imagen</button>
+          <div style="display:flex;gap:8px;flex-wrap:wrap;">
+            <button type="button" class="btn btn-ghost" style="padding:8px 16px;font-size:12px;" onclick="document.getElementById('edit-cover-input').click()">Cambiar imagen</button>
+            <button type="button" style="padding:8px 16px;font-size:12px;background:rgba(91,91,214,.15);border:1px solid rgba(91,91,214,.35);color:var(--accent-light);border-radius:8px;font-weight:700;cursor:pointer;" onclick="generateCoverAIForEdit()">🎨 Generar con IA</button>
+          </div>
           <input type="file" id="edit-cover-input" accept="image/*" style="display:none" onchange="editCoverSelected(this)" />
         </div>
       </div>
