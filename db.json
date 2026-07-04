@@ -79,29 +79,45 @@
       "cat": "infantil",
       "desc": "La mágica historia de Aladdin, un joven humilde que descubre una lámpara maravillosa con un genio. Con la ayuda de sus amigos, deberá enfrentarse al malvado Jafar y conquistar el corazón de la Princesa Jasmine.",
       "author": "Walt Disney Company",
-      "genre": "Cuentos clásicos",
+      "genre": "Fantasía infantil",
       "age": "6-10",
       "temas": [
-        "Aventura",
         "Magia",
-        "Oriente",
-        "Genios",
-        "Transformación"
+        "Aventura",
+        "Amistad",
+        "Princesas",
+        "Bien contra el mal"
       ],
       "tags": [
-        "Cuento",
-        "Clásico",
-        "Disney",
+        "Aladdin",
+        "Genio",
+        "Princesa",
         "Aventura",
-        "Magia",
-        "Infantil"
+        "Disney",
+        "Cuentos"
       ],
       "nivel": "Principiante",
       "idioma": "Español",
       "pdfName": "Aladdin (Disney Walt) (z-library.sk, 1lib.sk, z-lib.sk).pdf",
       "pdfUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/pdfs/1782260842909_aladin.pdf",
       "coverUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/covers/1782260842909_aladin.jpg",
-      "file": "Aladdin (Disney Walt) (z-library.sk, 1lib.sk, z-lib.sk).pdf"
+      "file": "Aladdin (Disney Walt) (z-library.sk, 1lib.sk, z-lib.sk).pdf",
+      "ad": {
+        "headline": "Descubre la magia de Aladdin",
+        "subheadline": "Una aventura inolvidable con el Genio y la Princesa Jasmine.",
+        "cta": "¡Lee la historia!",
+        "banner_text": "Clásico Disney para niños",
+        "instagram_caption": "✨ ¡Vuela en la alfombra mágica con Aladdin! ✨\nEsta historia atemporal de magia y aventura te espera.\n¡Enfrenta a Jafar y vive un cuento de hadas con el Genio! 🧞‍♂️💖",
+        "hashtags": [
+          "#Aladdin",
+          "#Disney",
+          "#CuentosInfantiles",
+          "#Magia",
+          "#Aventura",
+          "#Genio",
+          "#PrincesaJasmine"
+        ]
+      }
     },
     {
       "id": 1782951404132,
@@ -1304,5 +1320,5 @@
     "juan@test.com",
     "octavio123@gamil.com"
   ],
-  "updatedAt": "2026-07-04T19:50:30.579Z"
+  "updatedAt": "2026-07-04T23:12:01.674Z"
 }
