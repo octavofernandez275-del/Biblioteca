@@ -1038,6 +1038,53 @@
       "pdfUrl": null,
       "coverUrl": null,
       "file": "Delicias enlatadas_ Recetas sabrosas y fáciles de preparar -- Toni Monné; Juan Linares -- Tapas' world,... ra edición_ octubre 2018, Barcelona, 2018 -- isbn13 9788497354486 -- f64bce84d82d3349207a217341f21428 -- Anna’s Archive.pdf"
+    },
+    {
+      "id": 1783193889703,
+      "name": "Jugos Saludables 2021: Más de 50 Recetas de Jugos Naturales",
+      "price": "$0.99",
+      "cat": "ebooks",
+      "desc": "Descubre el poder de los jugos naturales con esta guía esencial para principiantes. Con más de 50 recetas, aprenderás a aumentar tu energía, fortalecer la inmunidad y mejorar tu bienestar general de forma deliciosa.",
+      "author": "Barbara White",
+      "genre": "Salud y Bienestar",
+      "age": "Adultos",
+      "temas": [
+        "Jugos naturales",
+        "Recetas saludables",
+        "Nutrición",
+        "Bienestar",
+        "Inmunidad"
+      ],
+      "tags": [
+        "Jugos",
+        "Recetas",
+        "Saludable",
+        "Bienestar",
+        "Principiantes",
+        "Nutrición"
+      ],
+      "nivel": "Principiante",
+      "idioma": "Español",
+      "ad": {
+        "headline": "Jugos Saludables: ¡Energía y Bienestar Natural!",
+        "subheadline": "Más de 50 recetas fáciles para potenciar tu salud y vitalidad hoy mismo.",
+        "cta": "Empieza tu cambio",
+        "banner_text": "Guía de Jugos Saludables",
+        "instagram_caption": "¡Transforma tu salud con el poder de los jugos naturales! 🥭🥕 Descubre más de 50 recetas deliciosas y fáciles para principiantes que aumentarán tu energía, inmunidad y bienestar. ¡La guía esencial para una vida más sana te espera! ✨",
+        "hashtags": [
+          "#JugosNaturales",
+          "#SaludYBienestar",
+          "#RecetasSaludables",
+          "#VidaSana",
+          "#Energia",
+          "#Inmunidad",
+          "#Detox"
+        ]
+      },
+      "pdfName": "Jugos Saludables 2021_ Más de 50 Recetas de jugos naturales -- Barbara White -- 2021-05-06 -- Independently published -- isbn13 9798749496871 -- d8ac4fe400189a2f72ebe1f0d3c6da23 -- Anna’s Archive.pdf",
+      "pdfUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/pdfs/1783193889703_jugos_saludables_2021__m_s_de_50_recetas_de_jugos_naturales.pdf",
+      "coverUrl": null,
+      "file": "Jugos Saludables 2021_ Más de 50 Recetas de jugos naturales -- Barbara White -- 2021-05-06 -- Independently published -- isbn13 9798749496871 -- d8ac4fe400189a2f72ebe1f0d3c6da23 -- Anna’s Archive.pdf"
     }
   ],
   "emailList": [
@@ -1046,5 +1093,5 @@
     "juan@test.com",
     "octavio123@gamil.com"
   ],
-  "updatedAt": "2026-07-04T19:38:06.417Z"
+  "updatedAt": "2026-07-04T19:38:16.267Z"
 }
