@@ -211,6 +211,54 @@
       "pdfUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/pdfs/1783113082970_el_pr_ncipe_y_el_mendigo.pdf",
       "coverUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/covers/1783113082970_el_pr_ncipe_y_el_mendigo.jpg",
       "file": "El Principe Y El Mendigo (Disney Walt) (z-library.sk, 1lib.sk, z-lib.sk).pdf"
+    },
+    {
+      "id": 1783193062310,
+      "name": "Mulan: Una Historia de Disney",
+      "price": "$0.99",
+      "cat": "ebooks",
+      "desc": "Sumérgete en la legendaria historia de Mulan, la valiente joven china que desafía el destino para salvar a su padre y a su nación. Descubre una aventura épica de honor, valentía y la verdadera fuerza del espíritu.",
+      "author": "Walt Disney Company",
+      "genre": "Fantasía Aventura Infantil",
+      "age": "Todas las edades",
+      "temas": [
+        "Valor",
+        "Identidad",
+        "Honor",
+        "Familia",
+        "Superación"
+      ],
+      "tags": [
+        "Mulan",
+        "Disney",
+        "Heroína",
+        "Leyenda China",
+        "Aventura",
+        "Familiar"
+      ],
+      "nivel": "",
+      "idioma": "Español",
+      "ad": {
+        "headline": "Descubre la leyenda de la valiente Mulan.",
+        "subheadline": "Una historia épica de honor y valentía de Disney para toda la familia.",
+        "cta": "Explora la aventura",
+        "banner_text": "Mulan: Clásico Disney",
+        "instagram_caption": "¡Sumérgete en la magia de Mulan! ✨ Una historia inspiradora de valentía, honor y la fuerza de una guerrera. ¿Estás listo para esta épica aventura de Disney? ⚔️ ¡Perfecta para leer en familia! 👨‍👩‍👧‍👦",
+        "hashtags": [
+          "#Mulan",
+          "#Disney",
+          "#Heroina",
+          "#LeyendaChina",
+          "#CuentoInfantil",
+          "#Aventura",
+          "#Valor",
+          "#Familia"
+        ]
+      },
+      "pdfName": "Mulan (Disney Walt) (z-library.sk, 1lib.sk, z-lib.sk).pdf",
+      "pdfUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/pdfs/1783193062310_mulan__una_historia_de_disney.pdf",
+      "coverUrl": null,
+      "file": "Mulan (Disney Walt) (z-library.sk, 1lib.sk, z-lib.sk).pdf"
     }
   ],
   "emailList": [
@@ -219,5 +267,5 @@
     "juan@test.com",
     "octavio123@gamil.com"
   ],
-  "updatedAt": "2026-07-03T21:44:55.602Z"
+  "updatedAt": "2026-07-04T19:24:29.920Z"
 }
