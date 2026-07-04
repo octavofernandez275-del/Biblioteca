@@ -259,6 +259,54 @@
       "pdfUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/pdfs/1783193062310_mulan__una_historia_de_disney.pdf",
       "coverUrl": null,
       "file": "Mulan (Disney Walt) (z-library.sk, 1lib.sk, z-lib.sk).pdf"
+    },
+    {
+      "id": 1783193179132,
+      "name": "Un Mundo Feliz",
+      "price": "$0.99",
+      "cat": "ebooks",
+      "desc": "En este prólogo, Aldous Huxley reflexiona sobre su icónica novela, explicando por qué ha decidido no revisarla a pesar de sus imperfecciones, prefiriendo preservar su visión original.",
+      "author": "Aldous Huxley",
+      "genre": "Ciencia Ficción Distópica",
+      "age": "Adultos",
+      "temas": [
+        "Distopía",
+        "Sociedad futurista",
+        "Control social",
+        "Libertad individual",
+        "Crítica social"
+      ],
+      "tags": [
+        "Distopía",
+        "Clásico",
+        "Huxley",
+        "Futuro",
+        "Sociedad",
+        "Filosofía"
+      ],
+      "nivel": "",
+      "idioma": "Español",
+      "ad": {
+        "headline": "El futuro que Huxley imaginó",
+        "subheadline": "Una crítica atemporal a la sociedad, la ciencia y la libertad.",
+        "cta": "Explorar ahora",
+        "banner_text": "Clásico Distópico Imprescindible",
+        "instagram_caption": "Sumérgete en la visión profética de Aldous Huxley. 🤯 Un Mundo Feliz sigue siendo escalofriantemente relevante hoy. ¿Estás listo para cuestionar la realidad?\n\n#UnMundoFeliz #AldousHuxley #Distopía",
+        "hashtags": [
+          "#UnMundoFeliz",
+          "#AldousHuxley",
+          "#Distopía",
+          "#Clásicos",
+          "#CienciaFicción",
+          "#LibrosRecomendados",
+          "#CríticaSocial",
+          "#Leer"
+        ]
+      },
+      "pdfName": "Aldous HGuxley Un mundo Feliz_copia.pdf",
+      "pdfUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/pdfs/1783193179132_un_mundo_feliz.pdf",
+      "coverUrl": null,
+      "file": "Aldous HGuxley Un mundo Feliz_copia.pdf"
     }
   ],
   "emailList": [
@@ -267,5 +315,5 @@
     "juan@test.com",
     "octavio123@gamil.com"
   ],
-  "updatedAt": "2026-07-04T19:24:29.920Z"
+  "updatedAt": "2026-07-04T19:26:23.923Z"
 }
