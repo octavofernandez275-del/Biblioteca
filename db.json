@@ -787,7 +787,7 @@
       "desc": "Sumérgete en el universo de Isaac Asimov con esta precuela épica que desvela los orígenes de la Fundación. Sigue a Hari Seldon mientras desarrolla la psicohistoria y a personajes clave como el emperador Cleón I y la enigmática Eto Demerzel en el ocaso del Imperio Galáctico.",
       "author": "Isaac Asimov",
       "genre": "Ciencia Ficción",
-      "age": "Adultos",
+      "age": "",
       "temas": [
         "Psicohistoria",
         "Imperios Galácticos",
@@ -928,5 +928,5 @@
     "juan@test.com",
     "octavio123@gamil.com"
   ],
-  "updatedAt": "2026-07-04T19:34:57.490Z"
+  "updatedAt": "2026-07-04T19:37:17.863Z"
 }
