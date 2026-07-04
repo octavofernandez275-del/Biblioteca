@@ -1262,6 +1262,32 @@
       "pdfUrl": null,
       "coverUrl": null,
       "file": "El arte de la cocina francesa, vol_1 -- Julia Child -- 1, 1, 2016 -- DEBATE -- 89b12b14c6dcd846566508e0a98a2448 -- Anna’s Archive.pdf"
+    },
+    {
+      "id": 1783194423767,
+      "name": "El arte de la cocina francesa, vol 2   Julia Child   2, 1, 2014   DEBATE   c6be79e42949b81162cec8670186eb93   Anna’s Archive",
+      "price": "$0.99",
+      "cat": "ebooks",
+      "desc": "",
+      "author": "",
+      "genre": "",
+      "age": "",
+      "temas": [],
+      "tags": [],
+      "nivel": "",
+      "idioma": "",
+      "ad": {
+        "headline": "",
+        "subheadline": "",
+        "cta": "",
+        "banner_text": "",
+        "instagram_caption": "",
+        "hashtags": []
+      },
+      "pdfName": "El arte de la cocina francesa, vol_2 -- Julia Child -- 2, 1, 2014 -- DEBATE -- c6be79e42949b81162cec8670186eb93 -- Anna’s Archive.pdf",
+      "pdfUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/pdfs/1783194423767_el_arte_de_la_cocina_francesa__vol_2___julia_child___2__1__2014___debate___c6be79e42949b81162cec8670186eb93___anna_s_archive.pdf",
+      "coverUrl": null,
+      "file": "El arte de la cocina francesa, vol_2 -- Julia Child -- 2, 1, 2014 -- DEBATE -- c6be79e42949b81162cec8670186eb93 -- Anna’s Archive.pdf"
     }
   ],
   "emailList": [
@@ -1270,5 +1296,5 @@
     "juan@test.com",
     "octavio123@gamil.com"
   ],
-  "updatedAt": "2026-07-04T19:46:58.430Z"
+  "updatedAt": "2026-07-04T19:47:26.209Z"
 }
