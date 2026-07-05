@@ -375,7 +375,7 @@
       },
       "pdfName": "Blancanieves Y Los Siete Enanitos (Disney Walt) (z-library.sk, 1lib.sk, z-lib.sk).pdf",
       "pdfUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/pdfs/1783193183586_blancanieves_y_los_siete_enanitos__la_magia_cl_sica_de_disney.pdf",
-      "coverUrl": null,
+      "coverUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/covers/1783193183586_blancanieves_y_los_siete_enanitos__la_magia_cl_sica_de_disney.jpg",
       "file": "Blancanieves Y Los Siete Enanitos (Disney Walt) (z-library.sk, 1lib.sk, z-lib.sk).pdf"
     },
     {
@@ -2451,5 +2451,5 @@
     "juan@test.com",
     "octavio123@gamil.com"
   ],
-  "updatedAt": "2026-07-05T19:49:53.572Z"
+  "updatedAt": "2026-07-05T19:49:56.594Z"
 }
