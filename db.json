@@ -2365,6 +2365,32 @@
       "pdfUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/pdfs/1783211221114_la_paradoja_de_la_productividad_en_la_era_del_conocimiento___william_f__heitman___none___mcgraw_hill_interamericana_editores__s_a__de_c__v___isbn13_9786071514905___09654804030451fe9e8887cbb1531f4a___anna_s_archive.pdf",
       "coverUrl": null,
       "file": "LA PARADOJA DE LA PRODUCTIVIDAD EN LA ERA DEL CONOCIMIENTO -- William F_ Heitman -- None -- McGraw-Hill Interamericana Editores, S_A_ de C_ V -- isbn13 9786071514905 -- 09654804030451fe9e8887cbb1531f4a -- Anna’s Archive.pdf"
+    },
+    {
+      "id": 1783211236508,
+      "name": "Lo que saben los mejores MBA  NE  Grandes ideas y propuestas   Navarro, Peter   1, 2021   Profit Editorial   isbn13 9788418464294   5999a13bfa2d725ed0b9768ea18cb322   Anna’s Archive",
+      "price": "$0.99",
+      "cat": "ebooks",
+      "desc": "",
+      "author": "",
+      "genre": "",
+      "age": "",
+      "temas": [],
+      "tags": [],
+      "nivel": "",
+      "idioma": "",
+      "ad": {
+        "headline": "",
+        "subheadline": "",
+        "cta": "",
+        "banner_text": "",
+        "instagram_caption": "",
+        "hashtags": []
+      },
+      "pdfName": "Lo que saben los mejores MBA_ NE_ Grandes ideas y propuestas -- Navarro, Peter -- 1, 2021 -- Profit Editorial -- isbn13 9788418464294 -- 5999a13bfa2d725ed0b9768ea18cb322 -- Anna’s Archive.pdf",
+      "pdfUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/pdfs/1783211236508_lo_que_saben_los_mejores_mba__ne__grandes_ideas_y_propuestas___navarro__peter___1__2021___profit_editorial___isbn13_9788418464294___5999a13bfa2d725ed0b9768ea18cb322___anna_s_archive.pdf",
+      "coverUrl": null,
+      "file": "Lo que saben los mejores MBA_ NE_ Grandes ideas y propuestas -- Navarro, Peter -- 1, 2021 -- Profit Editorial -- isbn13 9788418464294 -- 5999a13bfa2d725ed0b9768ea18cb322 -- Anna’s Archive.pdf"
     }
   ],
   "emailList": [
@@ -2373,5 +2399,5 @@
     "juan@test.com",
     "octavio123@gamil.com"
   ],
-  "updatedAt": "2026-07-05T00:27:14.447Z"
+  "updatedAt": "2026-07-05T00:28:10.420Z"
 }
