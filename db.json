@@ -1676,6 +1676,32 @@
       "pdfUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/pdfs/1783210709921_annas_arch_1af0f7a3ff9f.pdf",
       "coverUrl": null,
       "file": "annas-arch-1af0f7a3ff9f.pdf"
+    },
+    {
+      "id": 1783210788771,
+      "name": "Cuentos de Hans Christian Andersen",
+      "price": "$0.99",
+      "cat": "infantil",
+      "desc": "",
+      "author": "",
+      "genre": "",
+      "age": "",
+      "temas": [],
+      "tags": [],
+      "nivel": "",
+      "idioma": "",
+      "ad": {
+        "headline": "",
+        "subheadline": "",
+        "cta": "",
+        "banner_text": "",
+        "instagram_caption": "",
+        "hashtags": []
+      },
+      "pdfName": "Cuentos de Hans Christian Andersen",
+      "pdfUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/pdfs/1783210788771_cuentos_de_hans_christian_andersen.Cuentos%20de%20Hans%20Christian%20Andersen",
+      "coverUrl": null,
+      "file": "Cuentos de Hans Christian Andersen"
     }
   ],
   "emailList": [
@@ -1684,5 +1710,5 @@
     "juan@test.com",
     "octavio123@gamil.com"
   ],
-  "updatedAt": "2026-07-05T00:18:44.999Z"
+  "updatedAt": "2026-07-05T00:19:58.735Z"
 }
