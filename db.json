@@ -1320,7 +1320,7 @@
     },
     {
       "id": 1783210609026,
-      "name": "36173 el Jardin secreto copia",
+      "name": "el Jardin secreto",
       "price": "$0.99",
       "cat": "ebooks",
       "desc": "",
@@ -1341,7 +1341,7 @@
       },
       "pdfName": "36173_el_Jardin_secreto_copia.pdf",
       "pdfUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/pdfs/1783210609026_36173_el_jardin_secreto_copia.pdf",
-      "coverUrl": null,
+      "coverUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/covers/1783210609026_el_jardin_secreto.jpg",
       "file": "36173_el_Jardin_secreto_copia.pdf"
     },
     {
@@ -2404,5 +2404,5 @@
     "juan@test.com",
     "octavio123@gamil.com"
   ],
-  "updatedAt": "2026-07-05T20:02:07.284Z"
+  "updatedAt": "2026-07-05T20:02:52.922Z"
 }
