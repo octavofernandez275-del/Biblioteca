@@ -183,14 +183,23 @@ El bloque "ad" se genera siempre, tenga o no extractMeta activado, basándote en
         }
 
         const body = await request.json();
-        const { name, genre, desc, author } = body;
+        const { name, genre, desc, author, customPrompt } = body;
 
-        const prompt = `Book cover illustration, professional digital art style, vertical book cover proportions (2:3), no text or letters anywhere in the image, just the illustration/artwork.
+        let prompt;
+        if (customPrompt && customPrompt.trim()) {
+          // El usuario describió la portada original a mano — priorizamos su descripción
+          prompt = `Book cover illustration, professional digital art style, vertical book cover proportions (2:3), no text or letters anywhere in the image, just the illustration/artwork.
+${customPrompt.trim()}
+Context — book title (do not render as text in the image): ${name || 'Untitled'}
+Clean composition, centered, suitable for a small store thumbnail.`;
+        } else {
+          prompt = `Book cover illustration, professional digital art style, vertical book cover proportions (2:3), no text or letters anywhere in the image, just the illustration/artwork.
 Book title: ${name || 'Untitled'}
 Genre/theme: ${genre || 'General'}
 ${desc ? `About: ${desc}` : ''}
 ${author ? `Author: ${author}` : ''}
 Clean composition, attractive colors, centered, suitable for a small store thumbnail.`;
+        }
 
         const result = await env.AI.run('@cf/black-forest-labs/flux-1-schnell', {
           prompt: prompt.slice(0, 2000),
@@ -222,6 +231,97 @@ Clean composition, attractive colors, centered, suitable for a small store thumb
         return new Response(JSON.stringify({ error: 'Error generando carátula', detail: String(e) }), {
           status: 502,
           headers: { ...headers, 'Content-Type': 'application/json' },
+        });
+      }
+    }
+
+    // ── BUSCAR PORTADA REAL EN INTERNET (Google Custom Search) ──
+    if (url.pathname === '/search-cover-images' && request.method === 'POST') {
+      try {
+        if (!env.GOOGLE_CSE_API_KEY || !env.GOOGLE_CSE_CX) {
+          return new Response(JSON.stringify({
+            error: 'Búsqueda de imágenes no configurada',
+            detail: 'Faltan las variables GOOGLE_CSE_API_KEY y/o GOOGLE_CSE_CX en el Worker. Creá una API key y un Programmable Search Engine (con "Búsqueda de imágenes" activada) en Google Cloud, y agregalas como secrets del Worker.'
+          }), {
+            status: 200,
+            headers: { ...headers, 'Content-Type': 'application/json' },
+          });
+        }
+
+        const body = await request.json();
+        const { query } = body;
+        if (!query || !query.trim()) {
+          return new Response(JSON.stringify({ error: 'Falta el campo query' }), {
+            status: 400,
+            headers: { ...headers, 'Content-Type': 'application/json' },
+          });
+        }
+
+        const searchUrl = new URL('https://www.googleapis.com/customsearch/v1');
+        searchUrl.searchParams.set('key', env.GOOGLE_CSE_API_KEY);
+        searchUrl.searchParams.set('cx', env.GOOGLE_CSE_CX);
+        searchUrl.searchParams.set('q', query.trim());
+        searchUrl.searchParams.set('searchType', 'image');
+        searchUrl.searchParams.set('num', '10');
+        searchUrl.searchParams.set('safe', 'active');
+
+        const gRes = await fetch(searchUrl.toString());
+        const gData = await gRes.json();
+
+        if (gData.error) {
+          return new Response(JSON.stringify({ error: 'Error de Google Custom Search', detail: gData.error.message || JSON.stringify(gData.error) }), {
+            status: 200,
+            headers: { ...headers, 'Content-Type': 'application/json' },
+          });
+        }
+
+        const results = (gData.items || []).map(item => ({
+          title: item.title,
+          imageUrl: item.link,
+          thumbnailUrl: item.image?.thumbnailLink || item.link,
+          contextUrl: item.image?.contextLink || '',
+          source: item.displayLink || '',
+        }));
+
+        return new Response(JSON.stringify({ results }), {
+          headers: { ...headers, 'Content-Type': 'application/json' },
+        });
+
+      } catch (e) {
+        return new Response(JSON.stringify({ error: 'Error buscando portada en internet', detail: String(e) }), {
+          status: 502,
+          headers: { ...headers, 'Content-Type': 'application/json' },
+        });
+      }
+    }
+
+    // ── PROXY DE IMAGEN (para descargar una portada elegida sin CORS) ──
+    if (url.pathname === '/image-proxy' && request.method === 'GET') {
+      const imgUrl = url.searchParams.get('url');
+      if (!imgUrl) {
+        return new Response(JSON.stringify({ error: 'Falta parámetro url' }), {
+          status: 400, headers: { ...headers, 'Content-Type': 'application/json' },
+        });
+      }
+      try {
+        const imgRes = await fetch(imgUrl, { headers: { 'User-Agent': 'biblioteca-worker' } });
+        if (!imgRes.ok) {
+          return new Response(JSON.stringify({ error: `Error al obtener imagen: ${imgRes.status}` }), {
+            status: imgRes.status, headers: { ...headers, 'Content-Type': 'application/json' },
+          });
+        }
+        const imgBody = await imgRes.arrayBuffer();
+        return new Response(imgBody, {
+          status: 200,
+          headers: {
+            ...headers,
+            'Content-Type': imgRes.headers.get('Content-Type') || 'image/jpeg',
+            'Cache-Control': 'public, max-age=3600',
+          },
+        });
+      } catch (e) {
+        return new Response(JSON.stringify({ error: 'Error en proxy de imagen', detail: String(e) }), {
+          status: 502, headers: { ...headers, 'Content-Type': 'application/json' },
         });
       }
     }

@@ -1197,7 +1197,10 @@
     .admin-badge { background: rgba(239,68,68,.2); color: #FCA5A5; font-size: 11px; font-weight: 700; padding: 3px 10px; border-radius: 100px; letter-spacing: .08em; text-transform: uppercase; margin-left: 10px; }
     .admin-user-info { display: flex; align-items: center; gap: 12px; }
     .admin-avatar { width: 34px; height: 34px; border-radius: 50%; background: var(--accent); display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 14px; }
-    .admin-layout { display: grid; grid-template-columns: 220px 1fr; min-height: calc(100vh - 64px); }
+    .admin-layout { display: grid; grid-template-columns: 1fr; min-height: calc(100vh - 64px); width: 100%; }
+    @media (min-width: 769px) {
+      .admin-layout { grid-template-columns: 220px 1fr; }
+    }
     .admin-sidebar {
       background: var(--surface);
       border-right: 1px solid rgba(255,255,255,.06);
@@ -1220,7 +1223,7 @@
     }
     .admin-nav-item:hover { background: rgba(255,255,255,.06); color: var(--white); }
     .admin-nav-item.active { background: rgba(91,91,214,.2); color: var(--accent-light); }
-    .admin-content { padding: 40px 32px; overflow-y: auto; }
+    .admin-content { padding: 40px 32px; overflow-y: auto; width: 100%; min-width: 0; }
     .admin-section-title { font-size: 22px; font-weight: 800; margin-bottom: 8px; }
     .admin-section-sub { font-size: 14px; color: var(--muted); margin-bottom: 32px; }
     .admin-stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 16px; margin-bottom: 32px; }
@@ -1782,7 +1785,6 @@
       .hero-inner { grid-template-columns: 1fr; gap: 48px; }
       .hero-visual { order: -1; }
       .app-mockup { width: 320px; }
-      .admin-layout { grid-template-columns: 1fr; }
       .admin-sidebar {
         position: fixed;
         top: 0; left: 0;
@@ -3122,6 +3124,18 @@
                   style="background:rgba(255,255,255,.1);color:#fff;border:1px solid rgba(255,255,255,.2);padding:9px 20px;border-radius:8px;font-size:13px;font-weight:700;cursor:pointer;width:100%;margin-bottom:8px;">
                   Elegir imagen
                 </button>
+                <button type="button" onclick="event.stopPropagation();useCoverFromPDF()"
+                  style="background:rgba(34,197,94,.15);border:1px solid rgba(34,197,94,.35);color:#86EFAC;padding:9px 20px;border-radius:8px;font-size:13px;font-weight:700;cursor:pointer;width:100%;margin-bottom:8px;">
+                  📄 Usar portada del PDF
+                </button>
+                <button type="button" onclick="event.stopPropagation();searchCoverOnline()"
+                  style="background:rgba(251,191,36,.15);border:1px solid rgba(251,191,36,.35);color:#FDE68A;padding:9px 20px;border-radius:8px;font-size:13px;font-weight:700;cursor:pointer;width:100%;margin-bottom:8px;">
+                  🔍 Buscar portada en internet
+                </button>
+                <div id="cover-search-results" style="display:none;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:10px;max-height:260px;overflow-y:auto;padding:4px;"></div>
+                <textarea id="prod-cover-prompt" placeholder="Opcional: describí la portada original (colores, estilo, personajes) para que la IA se acerque más — ej: 'fondo azul oscuro, un zorro naranja de dibujos animados saltando entre estrellas, estilo acuarela infantil'"
+                  onclick="event.stopPropagation()"
+                  style="width:100%;min-height:60px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.15);border-radius:8px;padding:9px 12px;font-size:12px;color:var(--white);margin-bottom:8px;resize:vertical;font-family:inherit;"></textarea>
                 <button type="button" onclick="event.stopPropagation();generateCoverAI()"
                   style="background:rgba(91,91,214,.15);border:1px solid rgba(91,91,214,.35);color:var(--accent-light);padding:9px 20px;border-radius:8px;font-size:13px;font-weight:700;cursor:pointer;width:100%;">
                   🎨 Generar con IA
@@ -4134,6 +4148,24 @@
           }
         } catch(err) { console.warn('PDF text extraction failed:', err); }
 
+        // 1️⃣.5 Usar la portada real del PDF automáticamente (si no hay una ya puesta)
+        if (!pendingCoverB64) {
+          try {
+            const coverDataUrl = await extractPdfCoverImage(pendingPdfB64);
+            if (coverDataUrl) {
+              pendingCoverB64 = coverDataUrl;
+              const blob = await (await fetch(coverDataUrl)).blob();
+              pendingCoverFile = new File([blob], 'cover-original.jpg', { type: 'image/jpeg' });
+              const preview = document.getElementById('cover-preview');
+              preview.src = coverDataUrl;
+              preview.style.display = 'block';
+              document.getElementById('cover-icon').style.display = 'none';
+              document.getElementById('cover-label').textContent = '✅ Portada original del PDF';
+              document.getElementById('cover-drop').style.borderColor = 'var(--green)';
+            }
+          } catch (err) { console.warn('Auto cover extraction failed:', err); }
+        }
+
         // 2️⃣ Clasificar con IA usando el nombre/descripción generados
         const name = document.getElementById('prod-name').value.trim();
         const desc = document.getElementById('prod-desc').value.trim();
@@ -4154,6 +4186,50 @@
         document.getElementById('cover-drop').style.borderColor = 'var(--green)';
       };
       reader.readAsDataURL(file);
+    }
+  }
+
+  // ─── EXTRAER PORTADA REAL DESDE LA PÁGINA 1 DEL PDF ─────
+  // Renderiza la primera página del PDF a un canvas y la convierte en
+  // imagen JPEG, para usar la carátula ORIGINAL del libro en vez de
+  // generar una nueva con IA.
+  async function extractPdfCoverImage(pdfDataUrl, scale) {
+    if (typeof pdfjsLib === 'undefined') return null;
+    pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
+    const data = atob(pdfDataUrl.split(',')[1]);
+    const pdf = await pdfjsLib.getDocument({ data }).promise;
+    const page = await pdf.getPage(1);
+    const viewport = page.getViewport({ scale: scale || 2.5 });
+    const canvas = document.createElement('canvas');
+    canvas.width = viewport.width;
+    canvas.height = viewport.height;
+    const ctx = canvas.getContext('2d');
+    await page.render({ canvasContext: ctx, viewport }).promise;
+    return canvas.toDataURL('image/jpeg', 0.92);
+  }
+
+  // Botón "📄 Usar portada del PDF" en el formulario de producto individual
+  async function useCoverFromPDF() {
+    const label = document.getElementById('cover-label');
+    if (!pendingPdfB64) { showToast('Primero subí el PDF', 'error'); return; }
+    label.textContent = '📄 Extrayendo portada del PDF...';
+    try {
+      const dataUrl = await extractPdfCoverImage(pendingPdfB64);
+      if (!dataUrl) { showToast('⚠️ No se pudo leer el PDF', 'error'); label.textContent = '⚠️ No se pudo extraer la portada'; return; }
+      pendingCoverB64 = dataUrl;
+      const blob = await (await fetch(dataUrl)).blob();
+      pendingCoverFile = new File([blob], 'cover-original.jpg', { type: 'image/jpeg' });
+      const preview = document.getElementById('cover-preview');
+      preview.src = dataUrl;
+      preview.style.display = 'block';
+      document.getElementById('cover-icon').style.display = 'none';
+      label.textContent = '✅ Portada original del PDF';
+      document.getElementById('cover-drop').style.borderColor = 'var(--green)';
+      showToast('📄 Portada original extraída del PDF', 'success');
+    } catch (e) {
+      console.warn('useCoverFromPDF error:', e);
+      label.textContent = '⚠️ Excepción: ' + e.message;
+      showToast('⚠️ Error extrayendo portada del PDF', 'error');
     }
   }
 
@@ -4204,12 +4280,93 @@
   }
 
   // ─── GENERAR CARÁTULA CON IA (Gemini) ────────────
+  // ─── BUSCAR PORTADA REAL EN INTERNET (Google Custom Search) ─────
+  async function searchCoverOnline() {
+    const name = document.getElementById('prod-name').value.trim();
+    if (!name) { showToast('Primero ingresá el nombre del producto', 'error'); return; }
+    const author = document.getElementById('prod-author').value.trim();
+    const resultsBox = document.getElementById('cover-search-results');
+    resultsBox.style.display = 'grid';
+    resultsBox.innerHTML = '<div style="grid-column:1/-1;font-size:12px;color:var(--muted);text-align:center;padding:12px;">🔍 Buscando en internet...</div>';
+    const query = `${name} ${author ? 'libro ' + author : 'libro portada'} book cover`;
+    try {
+      const res = await fetch(`${WORKER_URL}/search-cover-images`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ query })
+      });
+      const data = await res.json();
+      if (data.error || !data.results || !data.results.length) {
+        resultsBox.innerHTML = `<div style="grid-column:1/-1;font-size:12px;color:var(--muted);text-align:center;padding:12px;">⚠️ ${data.error || 'No se encontraron resultados'}${data.detail ? ' — ' + data.detail : ''}</div>`;
+        return;
+      }
+      resultsBox.innerHTML = '';
+      data.results.forEach(r => {
+        const thumb = document.createElement('img');
+        thumb.src = r.thumbnailUrl;
+        thumb.title = r.title + (r.source ? ' — ' + r.source : '');
+        thumb.style.cssText = 'width:100%;aspect-ratio:2/3;object-fit:cover;border-radius:6px;cursor:pointer;border:2px solid transparent;transition:border-color .15s;';
+        thumb.onmouseover = () => thumb.style.borderColor = 'var(--accent)';
+        thumb.onmouseout = () => thumb.style.borderColor = 'transparent';
+        thumb.onclick = () => selectSearchedCover(r.imageUrl, 'prod');
+        resultsBox.appendChild(thumb);
+      });
+    } catch (e) {
+      console.warn('searchCoverOnline error:', e);
+      resultsBox.innerHTML = '<div style="grid-column:1/-1;font-size:12px;color:var(--muted);text-align:center;padding:12px;">⚠️ Error buscando portada en internet</div>';
+    }
+  }
+
+  // Descarga (vía proxy, evita CORS) y aplica la imagen elegida como carátula
+  async function selectSearchedCover(imageUrl, target) {
+    const isEdit = target === 'edit';
+    const label = document.getElementById(isEdit ? 'edit-cover-name' : 'cover-label');
+    if (label) label.textContent = '⬇️ Descargando imagen elegida...';
+    try {
+      const res = await fetch(`${WORKER_URL}/image-proxy?url=${encodeURIComponent(imageUrl)}`);
+      if (!res.ok) throw new Error('No se pudo descargar la imagen (' + res.status + ')');
+      const blob = await res.blob();
+      const dataUrl = await new Promise((resolve, reject) => {
+        const reader = new FileReader();
+        reader.onload = () => resolve(reader.result);
+        reader.onerror = reject;
+        reader.readAsDataURL(blob);
+      });
+      const file = new File([blob], 'cover-web.jpg', { type: blob.type || 'image/jpeg' });
+      if (isEdit) {
+        _editCoverB64 = dataUrl;
+        _editCoverFile = file;
+        const prevImg = document.getElementById('edit-cover-preview');
+        prevImg.src = dataUrl; prevImg.style.display = 'block';
+        document.getElementById('edit-cover-placeholder').style.display = 'none';
+        label.textContent = '✅ Portada elegida de internet';
+        document.getElementById('edit-cover-search-results').style.display = 'none';
+      } else {
+        pendingCoverB64 = dataUrl;
+        pendingCoverFile = file;
+        const preview = document.getElementById('cover-preview');
+        preview.src = dataUrl;
+        preview.style.display = 'block';
+        document.getElementById('cover-icon').style.display = 'none';
+        label.textContent = '✅ Portada elegida de internet';
+        document.getElementById('cover-drop').style.borderColor = 'var(--green)';
+        document.getElementById('cover-search-results').style.display = 'none';
+      }
+      showToast('🔍 Portada de internet aplicada', 'success');
+    } catch (e) {
+      console.warn('selectSearchedCover error:', e);
+      showToast('⚠️ No se pudo descargar esa imagen (probá con otra)', 'error');
+      if (label) label.textContent = '⚠️ Error descargando la imagen';
+    }
+  }
+
   async function generateCoverAI() {
     const name = document.getElementById('prod-name').value.trim();
     if (!name) { showToast('Primero ingresá el nombre del producto', 'error'); return; }
     const genre = document.getElementById('prod-genre').value.trim();
     const desc = document.getElementById('prod-desc').value.trim();
     const author = document.getElementById('prod-author').value.trim();
+    const customPrompt = document.getElementById('prod-cover-prompt').value.trim();
 
     const label = document.getElementById('cover-label');
     label.textContent = '🎨 Generando carátula con IA...';
@@ -4217,7 +4374,7 @@
       const res = await fetch(`${WORKER_URL}/generate-cover`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ name, genre, desc, author })
+        body: JSON.stringify({ name, genre, desc, author, customPrompt })
       });
       const data = await res.json();
       if (data.error || !data.image) {
@@ -4505,22 +4662,37 @@
           console.error(`bulk: fallo subiendo PDF (${file.name}):`, e);
         }
 
-        statusEl.textContent = '🎨 Generando carátula...';
+        statusEl.textContent = '📄 Extrayendo portada del PDF...';
         try {
-          const coverRes = await fetch(`${WORKER_URL}/generate-cover`, {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ name: finalName, genre: p.genre, desc: finalDesc, author: p.author })
-          });
-          const coverData = await coverRes.json();
-          if (coverData.image) {
-            const blob = await (await fetch(coverData.image)).blob();
-            const coverFile = new File([blob], 'cover-ai.png', { type: blob.type || 'image/png' });
+          const buf2 = await file.arrayBuffer();
+          const b64 = 'data:application/pdf;base64,' + btoa(String.fromCharCode(...new Uint8Array(buf2)));
+          const coverDataUrl = await withTimeout(extractPdfCoverImage(b64), 15000);
+          if (coverDataUrl) {
+            const blob = await (await fetch(coverDataUrl)).blob();
+            const coverFile = new File([blob], 'cover-original.jpg', { type: 'image/jpeg' });
             p.coverUrl = await uploadFileToGithub(coverFile, 'cover', `${p.id}_${safeName}`);
           } else {
-            console.error(`bulk: no se generó carátula (${file.name}):`, coverData.error, coverData.detail);
+            throw new Error('extractPdfCoverImage devolvió vacío');
           }
-        } catch (e) { console.error(`bulk: fallo generando/subiendo carátula (${file.name}):`, e); }
+        } catch (e) {
+          console.warn(`bulk: no se pudo extraer portada real (${file.name}), usando IA como respaldo:`, e);
+          statusEl.textContent = '🎨 Generando carátula con IA (respaldo)...';
+          try {
+            const coverRes = await fetch(`${WORKER_URL}/generate-cover`, {
+              method: 'POST',
+              headers: { 'Content-Type': 'application/json' },
+              body: JSON.stringify({ name: finalName, genre: p.genre, desc: finalDesc, author: p.author })
+            });
+            const coverData = await coverRes.json();
+            if (coverData.image) {
+              const blob = await (await fetch(coverData.image)).blob();
+              const coverFile = new File([blob], 'cover-ai.png', { type: blob.type || 'image/png' });
+              p.coverUrl = await uploadFileToGithub(coverFile, 'cover', `${p.id}_${safeName}`);
+            } else {
+              console.error(`bulk: no se generó carátula (${file.name}):`, coverData.error, coverData.detail);
+            }
+          } catch (e2) { console.error(`bulk: fallo generando/subiendo carátula (${file.name}):`, e2); }
+        }
 
         db.products.push(p);
         saveDB();
@@ -4594,7 +4766,7 @@
     }
 
     // Reset form
-    ['prod-name','prod-price','prod-desc','prod-author','prod-genre'].forEach(id => document.getElementById(id).value = '');
+    ['prod-name','prod-price','prod-desc','prod-author','prod-genre','prod-cover-prompt'].forEach(id => document.getElementById(id).value = '');
     document.getElementById('prod-age').value = '';
     document.getElementById('pdf-label').textContent = 'Arrastrá o hacé clic para subir PDF';
     document.getElementById('pdf-drop').style.borderColor = 'rgba(255,255,255,.15)';
@@ -4602,6 +4774,8 @@
     document.getElementById('cover-drop').style.borderColor = 'rgba(255,255,255,.15)';
     document.getElementById('cover-preview').style.display = 'none';
     document.getElementById('cover-icon').style.display = 'block';
+    document.getElementById('cover-search-results').style.display = 'none';
+    document.getElementById('cover-search-results').innerHTML = '';
     document.getElementById('auto-tags-box').style.display = 'none';
     document.getElementById('ad-preview-box').style.display = 'none';
     window._lastAd = null;
@@ -6162,6 +6336,9 @@
     const p = db.products.find(p => p.id === id);
     if (!p) return;
     _editCoverB64 = null; _editPdfB64 = null; _editPdfName = null; _editCoverFile = null; _editPdfFile = null;
+    document.getElementById('edit-cover-prompt').value = '';
+    document.getElementById('edit-cover-search-results').style.display = 'none';
+    document.getElementById('edit-cover-search-results').innerHTML = '';
     document.getElementById('edit-prod-id').value    = p.id;
     document.getElementById('edit-prod-name').value  = p.name || '';
     document.getElementById('edit-prod-price').value = (p.price || '').replace('$','');
@@ -6187,12 +6364,85 @@
     _editCoverB64 = null; _editPdfB64 = null; _editPdfName = null; _editCoverFile = null; _editPdfFile = null;
   }
 
+  async function useCoverFromPDFForEdit() {
+    const nameLabel = document.getElementById('edit-cover-name');
+    nameLabel.textContent = '📄 Extrayendo portada del PDF...';
+    try {
+      let buf;
+      if (_editPdfFile) {
+        // Se acaba de subir un PDF nuevo en este modal
+        buf = await _editPdfFile.arrayBuffer();
+      } else {
+        // Usar el PDF ya guardado del producto
+        const id = Number(document.getElementById('edit-prod-id').value);
+        const p = db.products.find(pr => pr.id === id);
+        const pdfSrc = p && (p.pdfUrl || p.pdfData);
+        if (!pdfSrc) { showToast('Este producto no tiene un PDF cargado todavía', 'error'); nameLabel.textContent = '⚠️ Sin PDF disponible'; return; }
+        const fetchUrl = p.pdfUrl ? `${WORKER_URL}/pdf-proxy?url=${encodeURIComponent(p.pdfUrl)}` : pdfSrc;
+        const r = await fetch(fetchUrl);
+        buf = await r.arrayBuffer();
+      }
+      const b64 = 'data:application/pdf;base64,' + btoa(String.fromCharCode(...new Uint8Array(buf)));
+      const dataUrl = await extractPdfCoverImage(b64);
+      if (!dataUrl) { showToast('⚠️ No se pudo leer el PDF', 'error'); nameLabel.textContent = '⚠️ No se pudo extraer la portada'; return; }
+      _editCoverB64 = dataUrl;
+      const blob = await (await fetch(dataUrl)).blob();
+      _editCoverFile = new File([blob], 'cover-original.jpg', { type: 'image/jpeg' });
+      const prevImg = document.getElementById('edit-cover-preview');
+      prevImg.src = dataUrl; prevImg.style.display = 'block';
+      document.getElementById('edit-cover-placeholder').style.display = 'none';
+      nameLabel.textContent = '✅ Portada original del PDF';
+      showToast('📄 Portada original extraída del PDF', 'success');
+    } catch (e) {
+      console.warn('useCoverFromPDFForEdit error:', e);
+      nameLabel.textContent = '⚠️ Excepción: ' + e.message;
+      showToast('⚠️ Error extrayendo portada del PDF', 'error');
+    }
+  }
+
+  async function searchCoverOnlineForEdit() {
+    const name = document.getElementById('edit-prod-name').value.trim();
+    if (!name) { showToast('El producto necesita un nombre primero', 'error'); return; }
+    const author = document.getElementById('edit-prod-author').value.trim();
+    const resultsBox = document.getElementById('edit-cover-search-results');
+    resultsBox.style.display = 'grid';
+    resultsBox.innerHTML = '<div style="grid-column:1/-1;font-size:12px;color:var(--muted);text-align:center;padding:12px;">🔍 Buscando en internet...</div>';
+    const query = `${name} ${author ? 'libro ' + author : 'libro portada'} book cover`;
+    try {
+      const res = await fetch(`${WORKER_URL}/search-cover-images`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ query })
+      });
+      const data = await res.json();
+      if (data.error || !data.results || !data.results.length) {
+        resultsBox.innerHTML = `<div style="grid-column:1/-1;font-size:12px;color:var(--muted);text-align:center;padding:12px;">⚠️ ${data.error || 'No se encontraron resultados'}${data.detail ? ' — ' + data.detail : ''}</div>`;
+        return;
+      }
+      resultsBox.innerHTML = '';
+      data.results.forEach(r => {
+        const thumb = document.createElement('img');
+        thumb.src = r.thumbnailUrl;
+        thumb.title = r.title + (r.source ? ' — ' + r.source : '');
+        thumb.style.cssText = 'width:100%;aspect-ratio:2/3;object-fit:cover;border-radius:6px;cursor:pointer;border:2px solid transparent;transition:border-color .15s;';
+        thumb.onmouseover = () => thumb.style.borderColor = 'var(--accent)';
+        thumb.onmouseout = () => thumb.style.borderColor = 'transparent';
+        thumb.onclick = () => selectSearchedCover(r.imageUrl, 'edit');
+        resultsBox.appendChild(thumb);
+      });
+    } catch (e) {
+      console.warn('searchCoverOnlineForEdit error:', e);
+      resultsBox.innerHTML = '<div style="grid-column:1/-1;font-size:12px;color:var(--muted);text-align:center;padding:12px;">⚠️ Error buscando portada en internet</div>';
+    }
+  }
+
   async function generateCoverAIForEdit() {
     const name = document.getElementById('edit-prod-name').value.trim();
     if (!name) { showToast('El producto necesita un nombre primero', 'error'); return; }
     const genre = document.getElementById('edit-prod-genre').value.trim();
     const desc = document.getElementById('edit-prod-desc').value.trim();
     const author = document.getElementById('edit-prod-author').value.trim();
+    const customPrompt = document.getElementById('edit-cover-prompt').value.trim();
 
     const nameLabel = document.getElementById('edit-cover-name');
     nameLabel.textContent = '🎨 Generando carátula con IA...';
@@ -6200,7 +6450,7 @@
       const res = await fetch(`${WORKER_URL}/generate-cover`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ name, genre, desc, author })
+        body: JSON.stringify({ name, genre, desc, author, customPrompt })
       });
       const data = await res.json();
       if (data.error || !data.image) {
@@ -6925,8 +7175,13 @@
           <div style="font-size:13px;color:var(--muted);margin-bottom:10px;" id="edit-cover-name">Sin carátula</div>
           <div style="display:flex;gap:8px;flex-wrap:wrap;">
             <button type="button" class="btn btn-ghost" style="padding:8px 16px;font-size:12px;" onclick="document.getElementById('edit-cover-input').click()">Cambiar imagen</button>
+            <button type="button" style="padding:8px 16px;font-size:12px;background:rgba(34,197,94,.15);border:1px solid rgba(34,197,94,.35);color:#86EFAC;border-radius:8px;font-weight:700;cursor:pointer;" onclick="useCoverFromPDFForEdit()">📄 Usar portada del PDF</button>
             <button type="button" style="padding:8px 16px;font-size:12px;background:rgba(91,91,214,.15);border:1px solid rgba(91,91,214,.35);color:var(--accent-light);border-radius:8px;font-weight:700;cursor:pointer;" onclick="generateCoverAIForEdit()">🎨 Generar con IA</button>
+            <button type="button" style="padding:8px 16px;font-size:12px;background:rgba(251,191,36,.15);border:1px solid rgba(251,191,36,.35);color:#FDE68A;border-radius:8px;font-weight:700;cursor:pointer;" onclick="searchCoverOnlineForEdit()">🔍 Buscar en internet</button>
           </div>
+          <div id="edit-cover-search-results" style="display:none;grid-template-columns:repeat(4,1fr);gap:8px;margin-top:10px;max-height:220px;overflow-y:auto;padding:4px;"></div>
+          <textarea id="edit-cover-prompt" placeholder="Opcional: describí la portada original (colores, estilo, personajes) para que la IA se acerque más"
+            style="width:100%;min-height:50px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.15);border-radius:8px;padding:9px 12px;font-size:12px;color:var(--white);margin-top:10px;resize:vertical;font-family:inherit;"></textarea>
           <input type="file" id="edit-cover-input" accept="image/*" style="display:none" onchange="editCoverSelected(this)" />
         </div>
       </div>
