@@ -1653,7 +1653,7 @@
       },
       "pdfName": "Cuentos de Hans Christian Andersen vol3",
       "pdfUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/pdfs/1783210807960_cuentos_de_hans_christian_andersen_vol3.Cuentos%20de%20Hans%20Christian%20Andersen%20vol3",
-      "coverUrl": null,
+      "coverUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/covers/1783210807960_cuentos_de_hans_christian_andersen_vol3.png",
       "file": "Cuentos de Hans Christian Andersen vol3"
     },
     {
@@ -2404,5 +2404,5 @@
     "juan@test.com",
     "octavio123@gamil.com"
   ],
-  "updatedAt": "2026-07-05T21:03:06.500Z"
+  "updatedAt": "2026-07-05T21:03:11.491Z"
 }
