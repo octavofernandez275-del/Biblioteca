@@ -623,7 +623,7 @@
       "desc": "Tras la caída de Leto II, la humanidad se enfrenta a un nuevo y aterrador retorno de las fuerzas dispersas del universo. La Bene Gesserit debe unirse o perecer ante la amenaza de las Honoradas Matres en esta épica continuación de la saga Dune.",
       "author": "Frank Herbert",
       "genre": "Ciencia Ficción",
-      "age": "Adultos",
+      "age": "",
       "temas": [
         "Supervivencia intergaláctica",
         "Órdenes secretas",
@@ -2404,5 +2404,5 @@
     "juan@test.com",
     "octavio123@gamil.com"
   ],
-  "updatedAt": "2026-07-05T19:59:00.375Z"
+  "updatedAt": "2026-07-05T19:59:20.350Z"
 }
