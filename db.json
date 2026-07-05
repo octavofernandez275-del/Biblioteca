@@ -2053,6 +2053,32 @@
       "pdfUrl": null,
       "coverUrl": null,
       "file": "47 PEMEX Plan de Negocios 2017 -- 2021 -- 2021 -- 5ffc27af6b6433cc4e08544c998538a5 -- Anna’s Archive.pdf"
+    },
+    {
+      "id": 1783211047631,
+      "name": "48 CFE Plan de Negocios 2021  2025   Desconocido   48 CFE Plan de Negocios 2021, 2025   e048b2db8f570c3399a45d6e6285e464   Anna’s Archive",
+      "price": "$0.99",
+      "cat": "negocios",
+      "desc": "",
+      "author": "",
+      "genre": "",
+      "age": "",
+      "temas": [],
+      "tags": [],
+      "nivel": "",
+      "idioma": "",
+      "ad": {
+        "headline": "",
+        "subheadline": "",
+        "cta": "",
+        "banner_text": "",
+        "instagram_caption": "",
+        "hashtags": []
+      },
+      "pdfName": "48 CFE Plan de Negocios 2021 -2025 -- Desconocido -- 48 CFE Plan de Negocios 2021, 2025 -- e048b2db8f570c3399a45d6e6285e464 -- Anna’s Archive.pdf",
+      "pdfUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/pdfs/1783211047631_48_cfe_plan_de_negocios_2021__2025___desconocido___48_cfe_plan_de_negocios_2021__2025___e048b2db8f570c3399a45d6e6285e464___anna_s_archive.pdf",
+      "coverUrl": null,
+      "file": "48 CFE Plan de Negocios 2021 -2025 -- Desconocido -- 48 CFE Plan de Negocios 2021, 2025 -- e048b2db8f570c3399a45d6e6285e464 -- Anna’s Archive.pdf"
     }
   ],
   "emailList": [
@@ -2061,5 +2087,5 @@
     "juan@test.com",
     "octavio123@gamil.com"
   ],
-  "updatedAt": "2026-07-05T00:24:05.870Z"
+  "updatedAt": "2026-07-05T00:24:20.237Z"
 }
