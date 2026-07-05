@@ -1520,6 +1520,32 @@
       "pdfUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/pdfs/1783210646020_6___ana__la_de_ingleside.pdf",
       "coverUrl": null,
       "file": "6.- Ana, la de Ingleside.pdf"
+    },
+    {
+      "id": 1783210653247,
+      "name": "7 El Valle del Arco Iris",
+      "price": "$0.99",
+      "cat": "ebooks",
+      "desc": "",
+      "author": "",
+      "genre": "",
+      "age": "",
+      "temas": [],
+      "tags": [],
+      "nivel": "",
+      "idioma": "",
+      "ad": {
+        "headline": "",
+        "subheadline": "",
+        "cta": "",
+        "banner_text": "",
+        "instagram_caption": "",
+        "hashtags": []
+      },
+      "pdfName": "7-El Valle del Arco Iris.pdf",
+      "pdfUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/pdfs/1783210653247_7_el_valle_del_arco_iris.pdf",
+      "coverUrl": null,
+      "file": "7-El Valle del Arco Iris.pdf"
     }
   ],
   "emailList": [
@@ -1528,5 +1554,5 @@
     "juan@test.com",
     "octavio123@gamil.com"
   ],
-  "updatedAt": "2026-07-05T00:17:32.572Z"
+  "updatedAt": "2026-07-05T00:17:39.241Z"
 }
