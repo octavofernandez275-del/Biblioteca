@@ -1549,7 +1549,7 @@
       },
       "pdfName": "Alicia_Completo.pdf",
       "pdfUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/pdfs/1783210690145_alicia_completo.pdf",
-      "coverUrl": "https://covers.openlibrary.org/b/id/5258857-L.jpg",
+      "coverUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/covers/1783210690145_alicia__en_el_pa_s_de_las_maravillas_libro_de_actividades.jpg",
       "file": "Alicia_Completo.pdf"
     },
     {
@@ -2404,5 +2404,5 @@
     "juan@test.com",
     "octavio123@gamil.com"
   ],
-  "updatedAt": "2026-07-05T20:35:09.654Z"
+  "updatedAt": "2026-07-05T20:35:12.753Z"
 }
