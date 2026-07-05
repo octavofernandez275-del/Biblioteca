@@ -1416,6 +1416,32 @@
       "pdfUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/pdfs/1783210609026_36173_el_jardin_secreto_copia.pdf",
       "coverUrl": null,
       "file": "36173_el_Jardin_secreto_copia.pdf"
+    },
+    {
+      "id": 1783210619226,
+      "name": "4.  ana la de Álamos ventosos",
+      "price": "$0.99",
+      "cat": "ebooks",
+      "desc": "",
+      "author": "",
+      "genre": "",
+      "age": "",
+      "temas": [],
+      "tags": [],
+      "nivel": "",
+      "idioma": "",
+      "ad": {
+        "headline": "",
+        "subheadline": "",
+        "cta": "",
+        "banner_text": "",
+        "instagram_caption": "",
+        "hashtags": []
+      },
+      "pdfName": "4.- ana_la_de_Álamos_ventosos.pdf",
+      "pdfUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/pdfs/1783210619226_4___ana_la_de__lamos_ventosos.pdf",
+      "coverUrl": null,
+      "file": "4.- ana_la_de_Álamos_ventosos.pdf"
     }
   ],
   "emailList": [
@@ -1424,5 +1450,5 @@
     "juan@test.com",
     "octavio123@gamil.com"
   ],
-  "updatedAt": "2026-07-05T00:16:58.541Z"
+  "updatedAt": "2026-07-05T00:17:04.898Z"
 }
