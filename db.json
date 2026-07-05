@@ -1310,7 +1310,7 @@
       },
       "pdfName": "1.-ana_de_las_tejas_verdes.pdf",
       "pdfUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/pdfs/1783210588444_1__ana_de_las_tejas_verdes.pdf",
-      "coverUrl": null,
+      "coverUrl": "https://covers.openlibrary.org/b/id/14641084-L.jpg",
       "file": "1.-ana_de_las_tejas_verdes.pdf"
     },
     {
@@ -1336,7 +1336,7 @@
       },
       "pdfName": "2.- ana_la_de_avonlea.pdf",
       "pdfUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/pdfs/1783210595324_2___ana_la_de_avonlea.pdf",
-      "coverUrl": null,
+      "coverUrl": "https://covers.openlibrary.org/b/id/14638062-L.jpg",
       "file": "2.- ana_la_de_avonlea.pdf"
     },
     {
@@ -1362,7 +1362,7 @@
       },
       "pdfName": "3.- ana_la_de_la_isla.pdf",
       "pdfUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/pdfs/1783210601870_3___ana_la_de_la_isla.pdf",
-      "coverUrl": null,
+      "coverUrl": "https://covers.openlibrary.org/b/id/14639028-L.jpg",
       "file": "3.- ana_la_de_la_isla.pdf"
     },
     {
@@ -1414,7 +1414,7 @@
       },
       "pdfName": "4.- ana_la_de_Álamos_ventosos.pdf",
       "pdfUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/pdfs/1783210619226_4___ana_la_de__lamos_ventosos.pdf",
-      "coverUrl": null,
+      "coverUrl": "https://covers.openlibrary.org/b/id/14640411-L.jpg",
       "file": "4.- ana_la_de_Álamos_ventosos.pdf"
     },
     {
@@ -1466,7 +1466,7 @@
       },
       "pdfName": "5-Ana y la Casa de sus Sueños.pdf",
       "pdfUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/pdfs/1783210640093_5_ana_y_la_casa_de_sus_sue_os.pdf",
-      "coverUrl": null,
+      "coverUrl": "https://covers.openlibrary.org/b/id/14640440-L.jpg",
       "file": "5-Ana y la Casa de sus Sueños.pdf"
     },
     {
@@ -1492,7 +1492,7 @@
       },
       "pdfName": "6.- Ana, la de Ingleside.pdf",
       "pdfUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/pdfs/1783210646020_6___ana__la_de_ingleside.pdf",
-      "coverUrl": null,
+      "coverUrl": "https://covers.openlibrary.org/b/id/14640696-L.jpg",
       "file": "6.- Ana, la de Ingleside.pdf"
     },
     {
@@ -1518,7 +1518,7 @@
       },
       "pdfName": "7-El Valle del Arco Iris.pdf",
       "pdfUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/pdfs/1783210653247_7_el_valle_del_arco_iris.pdf",
-      "coverUrl": null,
+      "coverUrl": "https://covers.openlibrary.org/b/id/14641168-L.jpg",
       "file": "7-El Valle del Arco Iris.pdf"
     },
     {
@@ -1544,7 +1544,7 @@
       },
       "pdfName": "8.- rilla-la-de-ingleside.pdf",
       "pdfUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/pdfs/1783210659875_8___rilla_la_de_ingleside.pdf",
-      "coverUrl": null,
+      "coverUrl": "https://covers.openlibrary.org/b/id/14638068-L.jpg",
       "file": "8.- rilla-la-de-ingleside.pdf"
     },
     {
@@ -1596,7 +1596,7 @@
       },
       "pdfName": "Alicia_Completo.pdf",
       "pdfUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/pdfs/1783210690145_alicia_completo.pdf",
-      "coverUrl": null,
+      "coverUrl": "https://covers.openlibrary.org/b/id/5258857-L.jpg",
       "file": "Alicia_Completo.pdf"
     },
     {
@@ -1674,7 +1674,7 @@
       },
       "pdfName": "Cuentos de Hans Christian Andersen",
       "pdfUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/pdfs/1783210788771_cuentos_de_hans_christian_andersen.Cuentos%20de%20Hans%20Christian%20Andersen",
-      "coverUrl": null,
+      "coverUrl": "https://covers.openlibrary.org/b/id/446546-L.jpg",
       "file": "Cuentos de Hans Christian Andersen"
     },
     {
@@ -1851,7 +1851,7 @@
       },
       "pdfName": "J. M.  Barrie Peter Pan_copia.pdf",
       "pdfUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/pdfs/1783210923080_j__m___barrie_peter_pan_copia.pdf",
-      "coverUrl": null,
+      "coverUrl": "https://covers.openlibrary.org/b/id/10527843-L.jpg",
       "file": "J. M.  Barrie Peter Pan_copia.pdf"
     },
     {
@@ -1877,7 +1877,7 @@
       },
       "pdfName": "Libro de la Selva_copia.pdf",
       "pdfUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/pdfs/1783210933197_libro_de_la_selva_copia.pdf",
-      "coverUrl": null,
+      "coverUrl": "https://covers.openlibrary.org/b/id/5421539-L.jpg",
       "file": "Libro de la Selva_copia.pdf"
     },
     {
@@ -2451,5 +2451,5 @@
     "juan@test.com",
     "octavio123@gamil.com"
   ],
-  "updatedAt": "2026-07-05T00:31:14.029Z"
+  "updatedAt": "2026-07-05T00:33:45.613Z"
 }
