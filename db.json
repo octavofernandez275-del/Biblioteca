@@ -2396,6 +2396,32 @@
       "pdfUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/pdfs/1783211412347_pasos_de_gigante___la_informacion_que_necesitas_para___brian_tracy___margarita_pasos___las_vega__nv__2022___grupo_nelson___isbn13_9781404119390___4f214689aa3f4bb68baf2bc154ff0a77___anna_s_archive.pdf",
       "coverUrl": null,
       "file": "Pasos de gigante _ la informacion que necesitas para -- Brian Tracy & Margarita Pasos -- Las Vega, NV, 2022 -- Grupo Nelson -- isbn13 9781404119390 -- 4f214689aa3f4bb68baf2bc154ff0a77 -- Anna’s Archive.pdf"
+    },
+    {
+      "id": 1783285571348,
+      "name": "Las mejores recetas de carne (Listas en 30 minutos) (Spanish   Almudena Sasiain Calle   Recetas listas en 30 minutos, Colonia, Alemania, 2016   NGV   isbn13 9783625006534   1d57dbcc32eef929933768d597ae5635   Anna’s Archive (copia)",
+      "price": "$0.99",
+      "cat": "ebooks",
+      "desc": "",
+      "author": "",
+      "genre": "",
+      "age": "",
+      "temas": [],
+      "tags": [],
+      "nivel": "",
+      "idioma": "",
+      "ad": {
+        "headline": "",
+        "subheadline": "",
+        "cta": "",
+        "banner_text": "",
+        "instagram_caption": "",
+        "hashtags": []
+      },
+      "pdfName": "Las mejores recetas de carne (Listas en 30 minutos) (Spanish -- Almudena Sasiain Calle -- Recetas listas en 30 minutos, Colonia, Alemania, 2016 -- NGV -- isbn13 9783625006534 -- 1d57dbcc32eef929933768d597ae5635 -- Anna’s Archive.pdf",
+      "pdfUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/pdfs/1783193925427_las_mejores_recetas_de_carne__listas_en_30_minutos___spanish___almudena_sasiain_calle___recetas_listas_en_30_minutos__colonia__alemania__2016___ngv___isbn13_9783625006534___1d57dbcc32eef929933768d597ae5635___anna_s_archive.pdf",
+      "coverUrl": null,
+      "file": "Las mejores recetas de carne (Listas en 30 minutos) (Spanish -- Almudena Sasiain Calle -- Recetas listas en 30 minutos, Colonia, Alemania, 2016 -- NGV -- isbn13 9783625006534 -- 1d57dbcc32eef929933768d597ae5635 -- Anna’s Archive.pdf"
     }
   ],
   "emailList": [
@@ -2404,5 +2430,5 @@
     "juan@test.com",
     "octavio123@gamil.com"
   ],
-  "updatedAt": "2026-07-05T21:06:11.202Z"
+  "updatedAt": "2026-07-05T21:06:12.851Z"
 }
