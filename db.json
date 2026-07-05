@@ -1442,6 +1442,32 @@
       "pdfUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/pdfs/1783210619226_4___ana_la_de__lamos_ventosos.pdf",
       "coverUrl": null,
       "file": "4.- ana_la_de_Álamos_ventosos.pdf"
+    },
+    {
+      "id": 1783210626173,
+      "name": "48716 Winnie the Pooh Cuentos de 5 minutos copia",
+      "price": "$0.99",
+      "cat": "infantil",
+      "desc": "",
+      "author": "",
+      "genre": "",
+      "age": "",
+      "temas": [],
+      "tags": [],
+      "nivel": "",
+      "idioma": "",
+      "ad": {
+        "headline": "",
+        "subheadline": "",
+        "cta": "",
+        "banner_text": "",
+        "instagram_caption": "",
+        "hashtags": []
+      },
+      "pdfName": "48716_Winnie_the_Pooh-Cuentos_de_5_minutos_copia.pdf",
+      "pdfUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/pdfs/1783210626173_48716_winnie_the_pooh_cuentos_de_5_minutos_copia.pdf",
+      "coverUrl": null,
+      "file": "48716_Winnie_the_Pooh-Cuentos_de_5_minutos_copia.pdf"
     }
   ],
   "emailList": [
@@ -1450,5 +1476,5 @@
     "juan@test.com",
     "octavio123@gamil.com"
   ],
-  "updatedAt": "2026-07-05T00:17:04.898Z"
+  "updatedAt": "2026-07-05T00:17:19.515Z"
 }
