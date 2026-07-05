@@ -1905,6 +1905,55 @@
       "pdfUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/pdfs/1783210933197_libro_de_la_selva_copia.pdf",
       "coverUrl": null,
       "file": "Libro de la Selva_copia.pdf"
+    },
+    {
+      "id": 1783210975589,
+      "name": "Luna la Conejita Valiente: Un Cuento y Actividades",
+      "price": "$0.99",
+      "cat": "infantil",
+      "desc": "Acompaña a Luna, una conejita miedosa, en su viaje para descubrir el verdadero significado del coraje y la amistad. Este libro interactivo incluye un cuento inspirador y divertidas actividades para colorear, dibujar y aprender.",
+      "author": "",
+      "genre": "Infantil",
+      "age": "6-10 años",
+      "temas": [
+        "Valentía",
+        "Superación del miedo",
+        "Amistad",
+        "Autodescubrimiento",
+        "Educación emocional"
+      ],
+      "tags": [
+        "Cuento infantil",
+        "Libro de actividades",
+        "Valentía",
+        "Miedo",
+        "Amistad",
+        "Conejitos",
+        "Lectura temprana"
+      ],
+      "nivel": "Principiante",
+      "idioma": "Español",
+      "ad": {
+        "headline": "Luna: Descubre la valentía",
+        "subheadline": "Un cuento mágico con actividades para colorear y aprender, ¡para pequeños valientes!",
+        "cta": "Explorar ahora",
+        "banner_text": "Cuento Valiente + Actividades",
+        "instagram_caption": "🐰 ¡Conoce a Luna, la conejita que te enseñará el verdadero significado de la valentía! ✨ Acompaña a tus peques en esta aventura llena de amistad y superación. \n🎨 Además, ¡incluye muchísimas actividades divertidas para colorear y jugar! Ideal para mentes curiosas y corazones valientes.",
+        "hashtags": [
+          "#CuentoInfantil",
+          "#LunaLaConejita",
+          "#Valentia",
+          "#SuperacionDelMiedo",
+          "#LibroDeActividades",
+          "#NiñosFelices",
+          "#AprenderJugando",
+          "#CuentosParaDormir"
+        ]
+      },
+      "pdfName": "Luna_Completo.pdf",
+      "pdfUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/pdfs/1783210975589_luna_la_conejita_valiente__un_cuento_y_actividades.pdf",
+      "coverUrl": null,
+      "file": "Luna_Completo.pdf"
     }
   ],
   "emailList": [
@@ -1913,5 +1962,5 @@
     "juan@test.com",
     "octavio123@gamil.com"
   ],
-  "updatedAt": "2026-07-05T00:22:48.000Z"
+  "updatedAt": "2026-07-05T00:23:02.101Z"
 }
