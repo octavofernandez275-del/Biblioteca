@@ -235,13 +235,13 @@ Clean composition, attractive colors, centered, suitable for a small store thumb
       }
     }
 
-    // ── BUSCAR PORTADA REAL EN INTERNET (Google Custom Search) ──
+    // ── BUSCAR PORTADA REAL EN INTERNET (SearchApi.io — Google Images, sin tarjeta) ──
     if (url.pathname === '/search-cover-images' && request.method === 'POST') {
       try {
-        if (!env.GOOGLE_CSE_API_KEY || !env.GOOGLE_CSE_CX) {
+        if (!env.SEARCHAPI_KEY) {
           return new Response(JSON.stringify({
             error: 'Búsqueda de imágenes no configurada',
-            detail: 'Faltan las variables GOOGLE_CSE_API_KEY y/o GOOGLE_CSE_CX en el Worker. Creá una API key y un Programmable Search Engine (con "Búsqueda de imágenes" activada) en Google Cloud, y agregalas como secrets del Worker.'
+            detail: 'Falta la variable SEARCHAPI_KEY en el Worker. Registrate gratis en searchapi.io (sin tarjeta) y agregá tu API key como secret del Worker.'
           }), {
             status: 200,
             headers: { ...headers, 'Content-Type': 'application/json' },
@@ -257,30 +257,27 @@ Clean composition, attractive colors, centered, suitable for a small store thumb
           });
         }
 
-        const searchUrl = new URL('https://www.googleapis.com/customsearch/v1');
-        searchUrl.searchParams.set('key', env.GOOGLE_CSE_API_KEY);
-        searchUrl.searchParams.set('cx', env.GOOGLE_CSE_CX);
+        const searchUrl = new URL('https://www.searchapi.io/api/v1/search');
+        searchUrl.searchParams.set('engine', 'google_images');
         searchUrl.searchParams.set('q', query.trim());
-        searchUrl.searchParams.set('searchType', 'image');
-        searchUrl.searchParams.set('num', '10');
-        searchUrl.searchParams.set('safe', 'active');
+        searchUrl.searchParams.set('api_key', env.SEARCHAPI_KEY);
 
-        const gRes = await fetch(searchUrl.toString());
-        const gData = await gRes.json();
+        const sRes = await fetch(searchUrl.toString());
+        const sData = await sRes.json();
 
-        if (gData.error) {
-          return new Response(JSON.stringify({ error: 'Error de Google Custom Search', detail: gData.error.message || JSON.stringify(gData.error) }), {
+        if (sData.error) {
+          return new Response(JSON.stringify({ error: 'Error de SearchApi.io', detail: sData.error }), {
             status: 200,
             headers: { ...headers, 'Content-Type': 'application/json' },
           });
         }
 
-        const results = (gData.items || []).map(item => ({
-          title: item.title,
-          imageUrl: item.link,
-          thumbnailUrl: item.image?.thumbnailLink || item.link,
-          contextUrl: item.image?.contextLink || '',
-          source: item.displayLink || '',
+        const results = (sData.images_results || sData.images || []).slice(0, 10).map(item => ({
+          title: item.title || '',
+          imageUrl: item.original?.link || item.original_image || item.image || item.link,
+          thumbnailUrl: item.thumbnail?.link || item.thumbnail || item.original?.link || item.image,
+          contextUrl: item.source?.link || item.link || '',
+          source: item.source?.name || item.source || '',
         }));
 
         return new Response(JSON.stringify({ results }), {
