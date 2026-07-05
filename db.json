@@ -1390,6 +1390,32 @@
       "pdfUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/pdfs/1783210601870_3___ana_la_de_la_isla.pdf",
       "coverUrl": null,
       "file": "3.- ana_la_de_la_isla.pdf"
+    },
+    {
+      "id": 1783210609026,
+      "name": "36173 el Jardin secreto copia",
+      "price": "$0.99",
+      "cat": "ebooks",
+      "desc": "",
+      "author": "",
+      "genre": "",
+      "age": "",
+      "temas": [],
+      "tags": [],
+      "nivel": "",
+      "idioma": "",
+      "ad": {
+        "headline": "",
+        "subheadline": "",
+        "cta": "",
+        "banner_text": "",
+        "instagram_caption": "",
+        "hashtags": []
+      },
+      "pdfName": "36173_el_Jardin_secreto_copia.pdf",
+      "pdfUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/pdfs/1783210609026_36173_el_jardin_secreto_copia.pdf",
+      "coverUrl": null,
+      "file": "36173_el_Jardin_secreto_copia.pdf"
     }
   ],
   "emailList": [
@@ -1398,5 +1424,5 @@
     "juan@test.com",
     "octavio123@gamil.com"
   ],
-  "updatedAt": "2026-07-05T00:16:48.121Z"
+  "updatedAt": "2026-07-05T00:16:58.541Z"
 }
