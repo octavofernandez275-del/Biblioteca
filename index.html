@@ -4919,6 +4919,153 @@
 
     // Novedades
     if (novedadesEl) novedadesEl.innerHTML = novedades.length ? novedades.map(makeCatalogCard).join('') : empty('Próximamente nuevos títulos.');
+    const grid_juvenil = document.getElementById('landing-grid-juvenil');
+    if (grid_juvenil) {
+      const items_juvenil = db.products.filter(p => p.cat === 'juvenil').slice(0,5);
+      grid_juvenil.innerHTML = items_juvenil.length
+        ? items_juvenil.map(p => makeCatalogCard(p)).join('')
+        : '<p style="color:var(--muted);font-size:14px;text-align:center;grid-column:1/-1;padding:40px 0;">Próximamente — cargá productos en esta categoría desde el admin.</p>';
+    }
+    const grid_novela = document.getElementById('landing-grid-novela');
+    if (grid_novela) {
+      const items_novela = db.products.filter(p => p.cat === 'novela').slice(0,5);
+      grid_novela.innerHTML = items_novela.length
+        ? items_novela.map(p => makeCatalogCard(p)).join('')
+        : '<p style="color:var(--muted);font-size:14px;text-align:center;grid-column:1/-1;padding:40px 0;">Próximamente — cargá productos en esta categoría desde el admin.</p>';
+    }
+    const grid_cursos = document.getElementById('landing-grid-cursos');
+    if (grid_cursos) {
+      const items_cursos = db.products.filter(p => p.cat === 'cursos').slice(0,5);
+      grid_cursos.innerHTML = items_cursos.length
+        ? items_cursos.map(p => makeCatalogCard(p)).join('')
+        : '<p style="color:var(--muted);font-size:14px;text-align:center;grid-column:1/-1;padding:40px 0;">Próximamente — cargá productos en esta categoría desde el admin.</p>';
+    }
+    const grid_revista = document.getElementById('landing-grid-revista');
+    if (grid_revista) {
+      const items_revista = db.products.filter(p => p.cat === 'revista').slice(0,5);
+      grid_revista.innerHTML = items_revista.length
+        ? items_revista.map(p => makeCatalogCard(p)).join('')
+        : '<p style="color:var(--muted);font-size:14px;text-align:center;grid-column:1/-1;padding:40px 0;">Próximamente — cargá productos en esta categoría desde el admin.</p>';
+    }
+    const grid_recetas = document.getElementById('landing-grid-recetas');
+    if (grid_recetas) {
+      const items_recetas = db.products.filter(p => p.cat === 'recetas').slice(0,5);
+      grid_recetas.innerHTML = items_recetas.length
+        ? items_recetas.map(p => makeCatalogCard(p)).join('')
+        : '<p style="color:var(--muted);font-size:14px;text-align:center;grid-column:1/-1;padding:40px 0;">Próximamente — cargá productos en esta categoría desde el admin.</p>';
+    }
+    const grid_salud = document.getElementById('landing-grid-salud');
+    if (grid_salud) {
+      const items_salud = db.products.filter(p => p.cat === 'salud').slice(0,5);
+      grid_salud.innerHTML = items_salud.length
+        ? items_salud.map(p => makeCatalogCard(p)).join('')
+        : '<p style="color:var(--muted);font-size:14px;text-align:center;grid-column:1/-1;padding:40px 0;">Próximamente — cargá productos en esta categoría desde el admin.</p>';
+    }
+    const grid_autoayuda = document.getElementById('landing-grid-autoayuda');
+    if (grid_autoayuda) {
+      const items_autoayuda = db.products.filter(p => p.cat === 'autoayuda').slice(0,5);
+      grid_autoayuda.innerHTML = items_autoayuda.length
+        ? items_autoayuda.map(p => makeCatalogCard(p)).join('')
+        : '<p style="color:var(--muted);font-size:14px;text-align:center;grid-column:1/-1;padding:40px 0;">Próximamente — cargá productos en esta categoría desde el admin.</p>';
+    }
+    const grid_historia = document.getElementById('landing-grid-historia');
+    if (grid_historia) {
+      const items_historia = db.products.filter(p => p.cat === 'historia').slice(0,5);
+      grid_historia.innerHTML = items_historia.length
+        ? items_historia.map(p => makeCatalogCard(p)).join('')
+        : '<p style="color:var(--muted);font-size:14px;text-align:center;grid-column:1/-1;padding:40px 0;">Próximamente — cargá productos en esta categoría desde el admin.</p>';
+    }
+    const grid_ciencia = document.getElementById('landing-grid-ciencia');
+    if (grid_ciencia) {
+      const items_ciencia = db.products.filter(p => p.cat === 'ciencia').slice(0,5);
+      grid_ciencia.innerHTML = items_ciencia.length
+        ? items_ciencia.map(p => makeCatalogCard(p)).join('')
+        : '<p style="color:var(--muted);font-size:14px;text-align:center;grid-column:1/-1;padding:40px 0;">Próximamente — cargá productos en esta categoría desde el admin.</p>';
+    }
+    const grid_negocios = document.getElementById('landing-grid-negocios');
+    if (grid_negocios) {
+      const items_negocios = db.products.filter(p => p.cat === 'negocios').slice(0,5);
+      grid_negocios.innerHTML = items_negocios.length
+        ? items_negocios.map(p => makeCatalogCard(p)).join('')
+        : '<p style="color:var(--muted);font-size:14px;text-align:center;grid-column:1/-1;padding:40px 0;">Próximamente — cargá productos en esta categoría desde el admin.</p>';
+    }
+    const grid_religion = document.getElementById('landing-grid-religion');
+    if (grid_religion) {
+      const items_religion = db.products.filter(p => p.cat === 'religion').slice(0,5);
+      grid_religion.innerHTML = items_religion.length
+        ? items_religion.map(p => makeCatalogCard(p)).join('')
+        : '<p style="color:var(--muted);font-size:14px;text-align:center;grid-column:1/-1;padding:40px 0;">Próximamente — cargá productos en esta categoría desde el admin.</p>';
+    }
+    const grid_terror = document.getElementById('landing-grid-terror');
+    if (grid_terror) {
+      const items_terror = db.products.filter(p => p.cat === 'terror').slice(0,5);
+      grid_terror.innerHTML = items_terror.length
+        ? items_terror.map(p => makeCatalogCard(p)).join('')
+        : '<p style="color:var(--muted);font-size:14px;text-align:center;grid-column:1/-1;padding:40px 0;">Próximamente — cargá productos en esta categoría desde el admin.</p>';
+    }
+    const grid_romance = document.getElementById('landing-grid-romance');
+    if (grid_romance) {
+      const items_romance = db.products.filter(p => p.cat === 'romance').slice(0,5);
+      grid_romance.innerHTML = items_romance.length
+        ? items_romance.map(p => makeCatalogCard(p)).join('')
+        : '<p style="color:var(--muted);font-size:14px;text-align:center;grid-column:1/-1;padding:40px 0;">Próximamente — cargá productos en esta categoría desde el admin.</p>';
+    }
+    const grid_viajes = document.getElementById('landing-grid-viajes');
+    if (grid_viajes) {
+      const items_viajes = db.products.filter(p => p.cat === 'viajes').slice(0,5);
+      grid_viajes.innerHTML = items_viajes.length
+        ? items_viajes.map(p => makeCatalogCard(p)).join('')
+        : '<p style="color:var(--muted);font-size:14px;text-align:center;grid-column:1/-1;padding:40px 0;">Próximamente — cargá productos en esta categoría desde el admin.</p>';
+    }
+    const grid_idiomas = document.getElementById('landing-grid-idiomas');
+    if (grid_idiomas) {
+      const items_idiomas = db.products.filter(p => p.cat === 'idiomas').slice(0,5);
+      grid_idiomas.innerHTML = items_idiomas.length
+        ? items_idiomas.map(p => makeCatalogCard(p)).join('')
+        : '<p style="color:var(--muted);font-size:14px;text-align:center;grid-column:1/-1;padding:40px 0;">Próximamente — cargá productos en esta categoría desde el admin.</p>';
+    }
+    const grid_arte = document.getElementById('landing-grid-arte');
+    if (grid_arte) {
+      const items_arte = db.products.filter(p => p.cat === 'arte').slice(0,5);
+      grid_arte.innerHTML = items_arte.length
+        ? items_arte.map(p => makeCatalogCard(p)).join('')
+        : '<p style="color:var(--muted);font-size:14px;text-align:center;grid-column:1/-1;padding:40px 0;">Próximamente — cargá productos en esta categoría desde el admin.</p>';
+    }
+    const grid_deporte = document.getElementById('landing-grid-deporte');
+    if (grid_deporte) {
+      const items_deporte = db.products.filter(p => p.cat === 'deporte').slice(0,5);
+      grid_deporte.innerHTML = items_deporte.length
+        ? items_deporte.map(p => makeCatalogCard(p)).join('')
+        : '<p style="color:var(--muted);font-size:14px;text-align:center;grid-column:1/-1;padding:40px 0;">Próximamente — cargá productos en esta categoría desde el admin.</p>';
+    }
+    const grid_manga = document.getElementById('landing-grid-manga');
+    if (grid_manga) {
+      const items_manga = db.products.filter(p => p.cat === 'manga').slice(0,5);
+      grid_manga.innerHTML = items_manga.length
+        ? items_manga.map(p => makeCatalogCard(p)).join('')
+        : '<p style="color:var(--muted);font-size:14px;text-align:center;grid-column:1/-1;padding:40px 0;">Próximamente — cargá productos en esta categoría desde el admin.</p>';
+    }
+    const grid_poesia = document.getElementById('landing-grid-poesia');
+    if (grid_poesia) {
+      const items_poesia = db.products.filter(p => p.cat === 'poesia').slice(0,5);
+      grid_poesia.innerHTML = items_poesia.length
+        ? items_poesia.map(p => makeCatalogCard(p)).join('')
+        : '<p style="color:var(--muted);font-size:14px;text-align:center;grid-column:1/-1;padding:40px 0;">Próximamente — cargá productos en esta categoría desde el admin.</p>';
+    }
+    const grid_derecho = document.getElementById('landing-grid-derecho');
+    if (grid_derecho) {
+      const items_derecho = db.products.filter(p => p.cat === 'derecho').slice(0,5);
+      grid_derecho.innerHTML = items_derecho.length
+        ? items_derecho.map(p => makeCatalogCard(p)).join('')
+        : '<p style="color:var(--muted);font-size:14px;text-align:center;grid-column:1/-1;padding:40px 0;">Próximamente — cargá productos en esta categoría desde el admin.</p>';
+    }
+    const grid_musica = document.getElementById('landing-grid-musica');
+    if (grid_musica) {
+      const items_musica = db.products.filter(p => p.cat === 'musica').slice(0,5);
+      grid_musica.innerHTML = items_musica.length
+        ? items_musica.map(p => makeCatalogCard(p)).join('')
+        : '<p style="color:var(--muted);font-size:14px;text-align:center;grid-column:1/-1;padding:40px 0;">Próximamente — cargá productos en esta categoría desde el admin.</p>';
+    }
   }
 
 
@@ -6007,153 +6154,6 @@
   }
 
 
-    const grid_juvenil = document.getElementById('landing-grid-juvenil');
-    if (grid_juvenil) {
-      const items_juvenil = db.products.filter(p => p.cat === 'juvenil').slice(0,5);
-      grid_juvenil.innerHTML = items_juvenil.length
-        ? items_juvenil.map(p => renderProductCard(p)).join('')
-        : '<p style="color:var(--muted);font-size:14px;text-align:center;grid-column:1/-1;padding:40px 0;">Próximamente — cargá productos en esta categoría desde el admin.</p>';
-    }
-    const grid_novela = document.getElementById('landing-grid-novela');
-    if (grid_novela) {
-      const items_novela = db.products.filter(p => p.cat === 'novela').slice(0,5);
-      grid_novela.innerHTML = items_novela.length
-        ? items_novela.map(p => renderProductCard(p)).join('')
-        : '<p style="color:var(--muted);font-size:14px;text-align:center;grid-column:1/-1;padding:40px 0;">Próximamente — cargá productos en esta categoría desde el admin.</p>';
-    }
-    const grid_cursos = document.getElementById('landing-grid-cursos');
-    if (grid_cursos) {
-      const items_cursos = db.products.filter(p => p.cat === 'cursos').slice(0,5);
-      grid_cursos.innerHTML = items_cursos.length
-        ? items_cursos.map(p => renderProductCard(p)).join('')
-        : '<p style="color:var(--muted);font-size:14px;text-align:center;grid-column:1/-1;padding:40px 0;">Próximamente — cargá productos en esta categoría desde el admin.</p>';
-    }
-    const grid_revista = document.getElementById('landing-grid-revista');
-    if (grid_revista) {
-      const items_revista = db.products.filter(p => p.cat === 'revista').slice(0,5);
-      grid_revista.innerHTML = items_revista.length
-        ? items_revista.map(p => renderProductCard(p)).join('')
-        : '<p style="color:var(--muted);font-size:14px;text-align:center;grid-column:1/-1;padding:40px 0;">Próximamente — cargá productos en esta categoría desde el admin.</p>';
-    }
-    const grid_recetas = document.getElementById('landing-grid-recetas');
-    if (grid_recetas) {
-      const items_recetas = db.products.filter(p => p.cat === 'recetas').slice(0,5);
-      grid_recetas.innerHTML = items_recetas.length
-        ? items_recetas.map(p => renderProductCard(p)).join('')
-        : '<p style="color:var(--muted);font-size:14px;text-align:center;grid-column:1/-1;padding:40px 0;">Próximamente — cargá productos en esta categoría desde el admin.</p>';
-    }
-    const grid_salud = document.getElementById('landing-grid-salud');
-    if (grid_salud) {
-      const items_salud = db.products.filter(p => p.cat === 'salud').slice(0,5);
-      grid_salud.innerHTML = items_salud.length
-        ? items_salud.map(p => renderProductCard(p)).join('')
-        : '<p style="color:var(--muted);font-size:14px;text-align:center;grid-column:1/-1;padding:40px 0;">Próximamente — cargá productos en esta categoría desde el admin.</p>';
-    }
-    const grid_autoayuda = document.getElementById('landing-grid-autoayuda');
-    if (grid_autoayuda) {
-      const items_autoayuda = db.products.filter(p => p.cat === 'autoayuda').slice(0,5);
-      grid_autoayuda.innerHTML = items_autoayuda.length
-        ? items_autoayuda.map(p => renderProductCard(p)).join('')
-        : '<p style="color:var(--muted);font-size:14px;text-align:center;grid-column:1/-1;padding:40px 0;">Próximamente — cargá productos en esta categoría desde el admin.</p>';
-    }
-    const grid_historia = document.getElementById('landing-grid-historia');
-    if (grid_historia) {
-      const items_historia = db.products.filter(p => p.cat === 'historia').slice(0,5);
-      grid_historia.innerHTML = items_historia.length
-        ? items_historia.map(p => renderProductCard(p)).join('')
-        : '<p style="color:var(--muted);font-size:14px;text-align:center;grid-column:1/-1;padding:40px 0;">Próximamente — cargá productos en esta categoría desde el admin.</p>';
-    }
-    const grid_ciencia = document.getElementById('landing-grid-ciencia');
-    if (grid_ciencia) {
-      const items_ciencia = db.products.filter(p => p.cat === 'ciencia').slice(0,5);
-      grid_ciencia.innerHTML = items_ciencia.length
-        ? items_ciencia.map(p => renderProductCard(p)).join('')
-        : '<p style="color:var(--muted);font-size:14px;text-align:center;grid-column:1/-1;padding:40px 0;">Próximamente — cargá productos en esta categoría desde el admin.</p>';
-    }
-    const grid_negocios = document.getElementById('landing-grid-negocios');
-    if (grid_negocios) {
-      const items_negocios = db.products.filter(p => p.cat === 'negocios').slice(0,5);
-      grid_negocios.innerHTML = items_negocios.length
-        ? items_negocios.map(p => renderProductCard(p)).join('')
-        : '<p style="color:var(--muted);font-size:14px;text-align:center;grid-column:1/-1;padding:40px 0;">Próximamente — cargá productos en esta categoría desde el admin.</p>';
-    }
-    const grid_religion = document.getElementById('landing-grid-religion');
-    if (grid_religion) {
-      const items_religion = db.products.filter(p => p.cat === 'religion').slice(0,5);
-      grid_religion.innerHTML = items_religion.length
-        ? items_religion.map(p => renderProductCard(p)).join('')
-        : '<p style="color:var(--muted);font-size:14px;text-align:center;grid-column:1/-1;padding:40px 0;">Próximamente — cargá productos en esta categoría desde el admin.</p>';
-    }
-    const grid_terror = document.getElementById('landing-grid-terror');
-    if (grid_terror) {
-      const items_terror = db.products.filter(p => p.cat === 'terror').slice(0,5);
-      grid_terror.innerHTML = items_terror.length
-        ? items_terror.map(p => renderProductCard(p)).join('')
-        : '<p style="color:var(--muted);font-size:14px;text-align:center;grid-column:1/-1;padding:40px 0;">Próximamente — cargá productos en esta categoría desde el admin.</p>';
-    }
-    const grid_romance = document.getElementById('landing-grid-romance');
-    if (grid_romance) {
-      const items_romance = db.products.filter(p => p.cat === 'romance').slice(0,5);
-      grid_romance.innerHTML = items_romance.length
-        ? items_romance.map(p => renderProductCard(p)).join('')
-        : '<p style="color:var(--muted);font-size:14px;text-align:center;grid-column:1/-1;padding:40px 0;">Próximamente — cargá productos en esta categoría desde el admin.</p>';
-    }
-    const grid_viajes = document.getElementById('landing-grid-viajes');
-    if (grid_viajes) {
-      const items_viajes = db.products.filter(p => p.cat === 'viajes').slice(0,5);
-      grid_viajes.innerHTML = items_viajes.length
-        ? items_viajes.map(p => renderProductCard(p)).join('')
-        : '<p style="color:var(--muted);font-size:14px;text-align:center;grid-column:1/-1;padding:40px 0;">Próximamente — cargá productos en esta categoría desde el admin.</p>';
-    }
-    const grid_idiomas = document.getElementById('landing-grid-idiomas');
-    if (grid_idiomas) {
-      const items_idiomas = db.products.filter(p => p.cat === 'idiomas').slice(0,5);
-      grid_idiomas.innerHTML = items_idiomas.length
-        ? items_idiomas.map(p => renderProductCard(p)).join('')
-        : '<p style="color:var(--muted);font-size:14px;text-align:center;grid-column:1/-1;padding:40px 0;">Próximamente — cargá productos en esta categoría desde el admin.</p>';
-    }
-    const grid_arte = document.getElementById('landing-grid-arte');
-    if (grid_arte) {
-      const items_arte = db.products.filter(p => p.cat === 'arte').slice(0,5);
-      grid_arte.innerHTML = items_arte.length
-        ? items_arte.map(p => renderProductCard(p)).join('')
-        : '<p style="color:var(--muted);font-size:14px;text-align:center;grid-column:1/-1;padding:40px 0;">Próximamente — cargá productos en esta categoría desde el admin.</p>';
-    }
-    const grid_deporte = document.getElementById('landing-grid-deporte');
-    if (grid_deporte) {
-      const items_deporte = db.products.filter(p => p.cat === 'deporte').slice(0,5);
-      grid_deporte.innerHTML = items_deporte.length
-        ? items_deporte.map(p => renderProductCard(p)).join('')
-        : '<p style="color:var(--muted);font-size:14px;text-align:center;grid-column:1/-1;padding:40px 0;">Próximamente — cargá productos en esta categoría desde el admin.</p>';
-    }
-    const grid_manga = document.getElementById('landing-grid-manga');
-    if (grid_manga) {
-      const items_manga = db.products.filter(p => p.cat === 'manga').slice(0,5);
-      grid_manga.innerHTML = items_manga.length
-        ? items_manga.map(p => renderProductCard(p)).join('')
-        : '<p style="color:var(--muted);font-size:14px;text-align:center;grid-column:1/-1;padding:40px 0;">Próximamente — cargá productos en esta categoría desde el admin.</p>';
-    }
-    const grid_poesia = document.getElementById('landing-grid-poesia');
-    if (grid_poesia) {
-      const items_poesia = db.products.filter(p => p.cat === 'poesia').slice(0,5);
-      grid_poesia.innerHTML = items_poesia.length
-        ? items_poesia.map(p => renderProductCard(p)).join('')
-        : '<p style="color:var(--muted);font-size:14px;text-align:center;grid-column:1/-1;padding:40px 0;">Próximamente — cargá productos en esta categoría desde el admin.</p>';
-    }
-    const grid_derecho = document.getElementById('landing-grid-derecho');
-    if (grid_derecho) {
-      const items_derecho = db.products.filter(p => p.cat === 'derecho').slice(0,5);
-      grid_derecho.innerHTML = items_derecho.length
-        ? items_derecho.map(p => renderProductCard(p)).join('')
-        : '<p style="color:var(--muted);font-size:14px;text-align:center;grid-column:1/-1;padding:40px 0;">Próximamente — cargá productos en esta categoría desde el admin.</p>';
-    }
-    const grid_musica = document.getElementById('landing-grid-musica');
-    if (grid_musica) {
-      const items_musica = db.products.filter(p => p.cat === 'musica').slice(0,5);
-      grid_musica.innerHTML = items_musica.length
-        ? items_musica.map(p => renderProductCard(p)).join('')
-        : '<p style="color:var(--muted);font-size:14px;text-align:center;grid-column:1/-1;padding:40px 0;">Próximamente — cargá productos en esta categoría desde el admin.</p>';
-    }
 
   // ─── EDITAR PRODUCTO ─────────────────────────────
   let _editCoverB64 = null, _editPdfB64 = null, _editPdfName = null, _editCoverFile = null, _editPdfFile = null;
