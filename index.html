@@ -3458,12 +3458,23 @@
 
   // ─── SESSION ─────────────────────────────────────
   function restoreSession() {
-    const s = sessionStorage.getItem('bdi_session');
-    if (s) { currentUser = JSON.parse(s); updateWishUI(); } // solo restaura el usuario, no redirige
-    updateAuthUI();
+    try {
+      const s = sessionStorage.getItem('bdi_session');
+      if (s) { currentUser = JSON.parse(s); updateWishUI(); } // solo restaura el usuario, no redirige
+      updateAuthUI();
+    } catch (e) {
+      console.error('restoreSession: no se pudo acceder a sessionStorage:', e);
+    }
   }
-  function setSession(user) { currentUser = user; sessionStorage.setItem('bdi_session', JSON.stringify(user)); updateWishUI(); updateAuthUI(); }
-  function clearSession() { currentUser = null; sessionStorage.removeItem('bdi_session'); }
+  function setSession(user) {
+    currentUser = user;
+    try { sessionStorage.setItem('bdi_session', JSON.stringify(user)); } catch (e) { console.error('setSession: no se pudo guardar en sessionStorage:', e); }
+    updateWishUI(); updateAuthUI();
+  }
+  function clearSession() {
+    currentUser = null;
+    try { sessionStorage.removeItem('bdi_session'); } catch (e) { console.error('clearSession: no se pudo limpiar sessionStorage:', e); }
+  }
 
   // ─── VIEWS ───────────────────────────────────────
   function showUserView() {
