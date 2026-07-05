@@ -2157,6 +2157,32 @@
       "pdfUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/pdfs/1783211079730_como_crear_y_gestionar_tu_proyecto_craft_guia_de_negocios___monica_rodriguez_limia___2020___f91823955dfcf898d464ff37ec797f45___anna_s_archive.pdf",
       "coverUrl": null,
       "file": "COMO CREAR Y GESTIONAR TU PROYECTO CRAFT GUIA DE NEGOCIOS -- MONICA RODRIGUEZ LIMIA -- 2020 -- f91823955dfcf898d464ff37ec797f45 -- Anna’s Archive.pdf"
+    },
+    {
+      "id": 1783211094995,
+      "name": "Dominio de Los Acordes Para Guitarra Jazz   Joseph Alexander   Place of publication not identified, 2016   WWW Fundamental Changes com   isbn13 9781911267393   b86e6e4c8a5296d469c57c194650be13   Anna’s Archive",
+      "price": "$0.99",
+      "cat": "ebooks",
+      "desc": "",
+      "author": "",
+      "genre": "",
+      "age": "",
+      "temas": [],
+      "tags": [],
+      "nivel": "",
+      "idioma": "",
+      "ad": {
+        "headline": "",
+        "subheadline": "",
+        "cta": "",
+        "banner_text": "",
+        "instagram_caption": "",
+        "hashtags": []
+      },
+      "pdfName": "Dominio de Los Acordes Para Guitarra Jazz -- Joseph Alexander -- Place of publication not identified, 2016 -- WWW_Fundamental-Changes_com -- isbn13 9781911267393 -- b86e6e4c8a5296d469c57c194650be13 -- Anna’s Archive.pdf",
+      "pdfUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/pdfs/1783211094995_dominio_de_los_acordes_para_guitarra_jazz___joseph_alexander___place_of_publication_not_identified__2016___www_fundamental_changes_com___isbn13_9781911267393___b86e6e4c8a5296d469c57c194650be13___anna_s_archive.pdf",
+      "coverUrl": null,
+      "file": "Dominio de Los Acordes Para Guitarra Jazz -- Joseph Alexander -- Place of publication not identified, 2016 -- WWW_Fundamental-Changes_com -- isbn13 9781911267393 -- b86e6e4c8a5296d469c57c194650be13 -- Anna’s Archive.pdf"
     }
   ],
   "emailList": [
@@ -2165,5 +2191,5 @@
     "juan@test.com",
     "octavio123@gamil.com"
   ],
-  "updatedAt": "2026-07-05T00:24:53.853Z"
+  "updatedAt": "2026-07-05T00:25:09.251Z"
 }
