@@ -1702,6 +1702,32 @@
       "pdfUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/pdfs/1783210788771_cuentos_de_hans_christian_andersen.Cuentos%20de%20Hans%20Christian%20Andersen",
       "coverUrl": null,
       "file": "Cuentos de Hans Christian Andersen"
+    },
+    {
+      "id": 1783210807960,
+      "name": "Cuentos de Hans Christian Andersen vol3",
+      "price": "$0.99",
+      "cat": "infantil",
+      "desc": "",
+      "author": "",
+      "genre": "",
+      "age": "",
+      "temas": [],
+      "tags": [],
+      "nivel": "",
+      "idioma": "",
+      "ad": {
+        "headline": "",
+        "subheadline": "",
+        "cta": "",
+        "banner_text": "",
+        "instagram_caption": "",
+        "hashtags": []
+      },
+      "pdfName": "Cuentos de Hans Christian Andersen vol3",
+      "pdfUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/pdfs/1783210807960_cuentos_de_hans_christian_andersen_vol3.Cuentos%20de%20Hans%20Christian%20Andersen%20vol3",
+      "coverUrl": null,
+      "file": "Cuentos de Hans Christian Andersen vol3"
     }
   ],
   "emailList": [
@@ -1710,5 +1736,5 @@
     "juan@test.com",
     "octavio123@gamil.com"
   ],
-  "updatedAt": "2026-07-05T00:19:58.735Z"
+  "updatedAt": "2026-07-05T00:20:52.202Z"
 }
