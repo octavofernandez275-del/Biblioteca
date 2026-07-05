@@ -1575,7 +1575,7 @@
       },
       "pdfName": "ANIMALES EN PROFESIONES.pdf",
       "pdfUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/pdfs/1783210696696_animales_en_profesiones.pdf",
-      "coverUrl": null,
+      "coverUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/covers/1783210696696_animales_en_profesiones.png",
       "file": "ANIMALES EN PROFESIONES.pdf"
     },
     {
@@ -2404,5 +2404,5 @@
     "juan@test.com",
     "octavio123@gamil.com"
   ],
-  "updatedAt": "2026-07-05T20:48:37.291Z"
+  "updatedAt": "2026-07-05T20:48:40.279Z"
 }
