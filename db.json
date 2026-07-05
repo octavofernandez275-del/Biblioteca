@@ -1419,7 +1419,7 @@
       },
       "pdfName": "5-Ana y la Casa de sus Sueños.pdf",
       "pdfUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/pdfs/1783210640093_5_ana_y_la_casa_de_sus_sue_os.pdf",
-      "coverUrl": "https://covers.openlibrary.org/b/id/14640440-L.jpg",
+      "coverUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/covers/1783210640093_5_ana_y_la_casa_de_sus_sue_os.jpg",
       "file": "5-Ana y la Casa de sus Sueños.pdf"
     },
     {
@@ -2404,5 +2404,5 @@
     "juan@test.com",
     "octavio123@gamil.com"
   ],
-  "updatedAt": "2026-07-05T20:28:04.827Z"
+  "updatedAt": "2026-07-05T20:28:06.516Z"
 }
