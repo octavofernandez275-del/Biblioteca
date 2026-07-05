@@ -1598,6 +1598,32 @@
       "pdfUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/pdfs/1783210667318_alfred___agatha_5__el_gran_truco_de_houdini__las_aventuras___campoy__ana_1979___alonso___lex_alonso_leal___las_aventuras_de_alfred___agatha___5____isbn13_9788468308470___9bba287226acb9e50f992e4b4b7cd356___anna_s_archive.pdf",
       "coverUrl": null,
       "file": "Alfred & Agatha 5_ El Gran Truco De Houdini (las Aventuras -- Campoy, Ana 1979-, Alonso, Álex Alonso Leal -- Las aventuras de Alfred & Agatha -- 5, -- isbn13 9788468308470 -- 9bba287226acb9e50f992e4b4b7cd356 -- Anna’s Archive.pdf"
+    },
+    {
+      "id": 1783210690145,
+      "name": "Alicia Completo",
+      "price": "$0.99",
+      "cat": "ebooks",
+      "desc": "",
+      "author": "",
+      "genre": "",
+      "age": "",
+      "temas": [],
+      "tags": [],
+      "nivel": "",
+      "idioma": "",
+      "ad": {
+        "headline": "",
+        "subheadline": "",
+        "cta": "",
+        "banner_text": "",
+        "instagram_caption": "",
+        "hashtags": []
+      },
+      "pdfName": "Alicia_Completo.pdf",
+      "pdfUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/pdfs/1783210690145_alicia_completo.pdf",
+      "coverUrl": null,
+      "file": "Alicia_Completo.pdf"
     }
   ],
   "emailList": [
@@ -1606,5 +1632,5 @@
     "juan@test.com",
     "octavio123@gamil.com"
   ],
-  "updatedAt": "2026-07-05T00:18:09.602Z"
+  "updatedAt": "2026-07-05T00:18:15.872Z"
 }
