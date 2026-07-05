@@ -386,7 +386,7 @@
       "desc": "Las Honoradas Matres y la Bene Gesserit se enfrentan en una guerra galáctica por el dominio del universo. Mientras un ghola de Miles Teg es adiestrado y nuevos gusanos de arena emergen, el destino de la Casa Capitular y el legado de Dune están en juego.",
       "author": "Frank Herbert",
       "genre": "Ciencia ficción",
-      "age": "Adultos",
+      "age": "",
       "temas": [
         "Guerra intergaláctica",
         "Poder y control",
@@ -2451,5 +2451,5 @@
     "juan@test.com",
     "octavio123@gamil.com"
   ],
-  "updatedAt": "2026-07-05T19:49:56.594Z"
+  "updatedAt": "2026-07-05T19:54:43.527Z"
 }
