@@ -4288,12 +4288,12 @@
     const resultsBox = document.getElementById('cover-search-results');
     resultsBox.style.display = 'grid';
     resultsBox.innerHTML = '<div style="grid-column:1/-1;font-size:12px;color:var(--muted);text-align:center;padding:12px;">🔍 Buscando en internet...</div>';
-    const query = `${name} ${author ? 'libro ' + author : 'libro portada'} book cover`;
+    const query = name;
     try {
       const res = await fetch(`${WORKER_URL}/search-cover-images`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ query })
+        body: JSON.stringify({ query, author })
       });
       const data = await res.json();
       if (data.error || !data.results || !data.results.length) {
@@ -6407,12 +6407,12 @@
     const resultsBox = document.getElementById('edit-cover-search-results');
     resultsBox.style.display = 'grid';
     resultsBox.innerHTML = '<div style="grid-column:1/-1;font-size:12px;color:var(--muted);text-align:center;padding:12px;">🔍 Buscando en internet...</div>';
-    const query = `${name} ${author ? 'libro ' + author : 'libro portada'} book cover`;
+    const query = name;
     try {
       const res = await fetch(`${WORKER_URL}/search-cover-images`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ query })
+        body: JSON.stringify({ query, author })
       });
       const data = await res.json();
       if (data.error || !data.results || !data.results.length) {

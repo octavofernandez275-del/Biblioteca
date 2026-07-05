@@ -235,52 +235,96 @@ Clean composition, attractive colors, centered, suitable for a small store thumb
       }
     }
 
-    // ── BUSCAR PORTADA REAL EN INTERNET (SearchApi.io — Google Images, sin tarjeta) ──
+    // ── BUSCAR PORTADA REAL DEL LIBRO ─────────────────────────
+    // Orden de prioridad: 1) Google Books (catálogo comercial amplio, gratis, sin tarjeta)
+    // 2) Open Library (gratis, sin API key, buen respaldo)
+    // 3) Scrappa.co (buscador general de imágenes, respaldo final para libros raros/independientes)
     if (url.pathname === '/search-cover-images' && request.method === 'POST') {
       try {
-        if (!env.SEARCHAPI_KEY) {
-          return new Response(JSON.stringify({
-            error: 'Búsqueda de imágenes no configurada',
-            detail: 'Falta la variable SEARCHAPI_KEY en el Worker. Registrate gratis en searchapi.io (sin tarjeta) y agregá tu API key como secret del Worker.'
-          }), {
-            status: 200,
-            headers: { ...headers, 'Content-Type': 'application/json' },
-          });
-        }
-
         const body = await request.json();
-        const { query } = body;
+        const { query, author } = body;
         if (!query || !query.trim()) {
           return new Response(JSON.stringify({ error: 'Falta el campo query' }), {
             status: 400,
             headers: { ...headers, 'Content-Type': 'application/json' },
           });
         }
+        const title = query.trim();
+        let results = [];
 
-        const searchUrl = new URL('https://www.searchapi.io/api/v1/search');
-        searchUrl.searchParams.set('engine', 'google_images');
-        searchUrl.searchParams.set('q', query.trim());
-        searchUrl.searchParams.set('api_key', env.SEARCHAPI_KEY);
+        // 1) Google Books API (gratis, no requiere tarjeta; key opcional pero recomendada)
+        try {
+          const gbUrl = new URL('https://www.googleapis.com/books/v1/volumes');
+          let q = `intitle:${title}`;
+          if (author) q += `+inauthor:${author}`;
+          gbUrl.searchParams.set('q', q);
+          gbUrl.searchParams.set('maxResults', '10');
+          if (env.GOOGLE_BOOKS_API_KEY) gbUrl.searchParams.set('key', env.GOOGLE_BOOKS_API_KEY);
 
-        const sRes = await fetch(searchUrl.toString());
-        const sData = await sRes.json();
+          const gbRes = await fetch(gbUrl.toString());
+          const gbData = await gbRes.json();
+          if (gbRes.ok && gbData.items) {
+            results.push(...gbData.items
+              .filter(it => it.volumeInfo?.imageLinks)
+              .map(it => {
+                const img = it.volumeInfo.imageLinks;
+                const best = (img.extraLarge || img.large || img.medium || img.thumbnail || img.smallThumbnail || '').replace('http://', 'https://');
+                return {
+                  title: it.volumeInfo.title || '',
+                  imageUrl: best,
+                  thumbnailUrl: (img.thumbnail || img.smallThumbnail || best).replace('http://', 'https://'),
+                  contextUrl: it.volumeInfo.infoLink || '',
+                  source: 'Google Books',
+                };
+              }));
+          }
+        } catch (e) { console.warn('Google Books falló:', e); }
 
-        if (sData.error) {
-          return new Response(JSON.stringify({ error: 'Error de SearchApi.io', detail: sData.error }), {
-            status: 200,
-            headers: { ...headers, 'Content-Type': 'application/json' },
-          });
+        // 2) Open Library (gratis, sin key)
+        try {
+          const olUrl = new URL('https://openlibrary.org/search.json');
+          olUrl.searchParams.set('title', title);
+          if (author) olUrl.searchParams.set('author', author);
+          olUrl.searchParams.set('limit', '10');
+
+          const olRes = await fetch(olUrl.toString());
+          const olData = await olRes.json();
+          if (olRes.ok && olData.docs) {
+            results.push(...olData.docs
+              .filter(d => d.cover_i)
+              .map(d => ({
+                title: d.title || '',
+                imageUrl: `https://covers.openlibrary.org/b/id/${d.cover_i}-L.jpg`,
+                thumbnailUrl: `https://covers.openlibrary.org/b/id/${d.cover_i}-M.jpg`,
+                contextUrl: d.key ? `https://openlibrary.org${d.key}` : '',
+                source: 'Open Library',
+              })));
+          }
+        } catch (e) { console.warn('Open Library falló:', e); }
+
+        // 3) Respaldo: Scrappa.co (buscador general de imágenes), solo si no hubo resultados oficiales
+        if (results.length === 0 && env.SCRAPPA_API_KEY) {
+          try {
+            const scUrl = new URL('https://scrappa.co/api/google-images');
+            scUrl.searchParams.set('api_key', env.SCRAPPA_API_KEY);
+            scUrl.searchParams.set('q', `${title} ${author || ''} libro portada book cover`.trim());
+
+            const scRes = await fetch(scUrl.toString());
+            const scData = await scRes.json();
+            if (scRes.ok && !scData.error) {
+              const raw = scData.images || scData.results || scData.data || [];
+              results.push(...raw.slice(0, 10).map(item => ({
+                title: item.title || '',
+                imageUrl: item.imageUrl || item.image_url || item.original || item.url || item.link,
+                thumbnailUrl: item.thumbnailUrl || item.thumbnail_url || item.thumbnail || item.imageUrl || item.image_url,
+                contextUrl: item.link || item.source_url || '',
+                source: item.source || item.domain || 'Internet',
+              })).filter(r => r.imageUrl));
+            }
+          } catch (e) { console.warn('Scrappa (respaldo) falló:', e); }
         }
 
-        const results = (sData.images_results || sData.images || []).slice(0, 10).map(item => ({
-          title: item.title || '',
-          imageUrl: item.original?.link || item.original_image || item.image || item.link,
-          thumbnailUrl: item.thumbnail?.link || item.thumbnail || item.original?.link || item.image,
-          contextUrl: item.source?.link || item.link || '',
-          source: item.source?.name || item.source || '',
-        }));
-
-        return new Response(JSON.stringify({ results }), {
+        return new Response(JSON.stringify({ results: results.slice(0, 12) }), {
           headers: { ...headers, 'Content-Type': 'application/json' },
         });
 
