@@ -2235,6 +2235,32 @@
       "pdfUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/pdfs/1783211124456_el_libro_de_los_negocios___thomas_cantone___2022___thomas_cantone___0b2f44d2fc429821f9b76a9d0e38668a___anna_s_archive.pdf",
       "coverUrl": null,
       "file": "El Libro de los Negocios -- Thomas Cantone -- 2022 -- Thomas Cantone -- 0b2f44d2fc429821f9b76a9d0e38668a -- Anna’s Archive.pdf"
+    },
+    {
+      "id": 1783211129432,
+      "name": "Hackea tu Mente  52 ideas para aplicar en tu vida y expandir   Roberto Camhi   2022   a08d6c202759d13db7b12051fe942c9e   Anna’s Archive",
+      "price": "$0.99",
+      "cat": "ebooks",
+      "desc": "",
+      "author": "",
+      "genre": "",
+      "age": "",
+      "temas": [],
+      "tags": [],
+      "nivel": "",
+      "idioma": "",
+      "ad": {
+        "headline": "",
+        "subheadline": "",
+        "cta": "",
+        "banner_text": "",
+        "instagram_caption": "",
+        "hashtags": []
+      },
+      "pdfName": "Hackea tu Mente_ 52 ideas para aplicar en tu vida y expandir -- Roberto Camhi -- 2022 -- a08d6c202759d13db7b12051fe942c9e -- Anna’s Archive.pdf",
+      "pdfUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/pdfs/1783211129432_hackea_tu_mente__52_ideas_para_aplicar_en_tu_vida_y_expandir___roberto_camhi___2022___a08d6c202759d13db7b12051fe942c9e___anna_s_archive.pdf",
+      "coverUrl": null,
+      "file": "Hackea tu Mente_ 52 ideas para aplicar en tu vida y expandir -- Roberto Camhi -- 2022 -- a08d6c202759d13db7b12051fe942c9e -- Anna’s Archive.pdf"
     }
   ],
   "emailList": [
@@ -2243,5 +2269,5 @@
     "juan@test.com",
     "octavio123@gamil.com"
   ],
-  "updatedAt": "2026-07-05T00:25:28.660Z"
+  "updatedAt": "2026-07-05T00:25:36.819Z"
 }
