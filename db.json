@@ -1879,6 +1879,32 @@
       "pdfUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/pdfs/1783210923080_j__m___barrie_peter_pan_copia.pdf",
       "coverUrl": null,
       "file": "J. M.  Barrie Peter Pan_copia.pdf"
+    },
+    {
+      "id": 1783210933197,
+      "name": "Libro de la Selva copia",
+      "price": "$0.99",
+      "cat": "ebooks",
+      "desc": "",
+      "author": "",
+      "genre": "",
+      "age": "",
+      "temas": [],
+      "tags": [],
+      "nivel": "",
+      "idioma": "",
+      "ad": {
+        "headline": "",
+        "subheadline": "",
+        "cta": "",
+        "banner_text": "",
+        "instagram_caption": "",
+        "hashtags": []
+      },
+      "pdfName": "Libro de la Selva_copia.pdf",
+      "pdfUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/pdfs/1783210933197_libro_de_la_selva_copia.pdf",
+      "coverUrl": null,
+      "file": "Libro de la Selva_copia.pdf"
     }
   ],
   "emailList": [
@@ -1887,5 +1913,5 @@
     "juan@test.com",
     "octavio123@gamil.com"
   ],
-  "updatedAt": "2026-07-05T00:22:11.053Z"
+  "updatedAt": "2026-07-05T00:22:48.000Z"
 }
