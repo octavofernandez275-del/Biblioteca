@@ -2183,6 +2183,32 @@
       "pdfUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/pdfs/1783211094995_dominio_de_los_acordes_para_guitarra_jazz___joseph_alexander___place_of_publication_not_identified__2016___www_fundamental_changes_com___isbn13_9781911267393___b86e6e4c8a5296d469c57c194650be13___anna_s_archive.pdf",
       "coverUrl": null,
       "file": "Dominio de Los Acordes Para Guitarra Jazz -- Joseph Alexander -- Place of publication not identified, 2016 -- WWW_Fundamental-Changes_com -- isbn13 9781911267393 -- b86e6e4c8a5296d469c57c194650be13 -- Anna’s Archive.pdf"
+    },
+    {
+      "id": 1783211110454,
+      "name": "El inversor afortunado  Cómo tener suerte en las inversiones   Torres Blánquez, Carlos   Gestión del ...cimiento (Empresa Activa), Barcelona, 2016   isbn13 9788492921393   47b09ee60fa18cbfbffe20b31fb938c8   Anna’s Archive",
+      "price": "$0.99",
+      "cat": "negocios",
+      "desc": "",
+      "author": "",
+      "genre": "",
+      "age": "",
+      "temas": [],
+      "tags": [],
+      "nivel": "",
+      "idioma": "",
+      "ad": {
+        "headline": "",
+        "subheadline": "",
+        "cta": "",
+        "banner_text": "",
+        "instagram_caption": "",
+        "hashtags": []
+      },
+      "pdfName": "El inversor afortunado_ Cómo tener suerte en las inversiones -- Torres Blánquez, Carlos -- Gestión del ...cimiento (Empresa Activa), Barcelona, 2016 -- isbn13 9788492921393 -- 47b09ee60fa18cbfbffe20b31fb938c8 -- Anna’s Archive.pdf",
+      "pdfUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/pdfs/1783211110454_el_inversor_afortunado__c_mo_tener_suerte_en_las_inversiones___torres_bl_nquez__carlos___gesti_n_del____cimiento__empresa_activa___barcelona__2016___isbn13_9788492921393___47b09ee60fa18cbfbffe20b31fb938c8___anna_s_archive.pdf",
+      "coverUrl": null,
+      "file": "El inversor afortunado_ Cómo tener suerte en las inversiones -- Torres Blánquez, Carlos -- Gestión del ...cimiento (Empresa Activa), Barcelona, 2016 -- isbn13 9788492921393 -- 47b09ee60fa18cbfbffe20b31fb938c8 -- Anna’s Archive.pdf"
     }
   ],
   "emailList": [
@@ -2191,5 +2217,5 @@
     "juan@test.com",
     "octavio123@gamil.com"
   ],
-  "updatedAt": "2026-07-05T00:25:09.251Z"
+  "updatedAt": "2026-07-05T00:25:23.860Z"
 }
