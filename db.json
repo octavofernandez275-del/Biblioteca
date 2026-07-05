@@ -1624,6 +1624,32 @@
       "pdfUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/pdfs/1783210690145_alicia_completo.pdf",
       "coverUrl": null,
       "file": "Alicia_Completo.pdf"
+    },
+    {
+      "id": 1783210696696,
+      "name": "ANIMALES EN PROFESIONES",
+      "price": "$0.99",
+      "cat": "ebooks",
+      "desc": "",
+      "author": "",
+      "genre": "",
+      "age": "",
+      "temas": [],
+      "tags": [],
+      "nivel": "",
+      "idioma": "",
+      "ad": {
+        "headline": "",
+        "subheadline": "",
+        "cta": "",
+        "banner_text": "",
+        "instagram_caption": "",
+        "hashtags": []
+      },
+      "pdfName": "ANIMALES EN PROFESIONES.pdf",
+      "pdfUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/pdfs/1783210696696_animales_en_profesiones.pdf",
+      "coverUrl": null,
+      "file": "ANIMALES EN PROFESIONES.pdf"
     }
   ],
   "emailList": [
@@ -1632,5 +1658,5 @@
     "juan@test.com",
     "octavio123@gamil.com"
   ],
-  "updatedAt": "2026-07-05T00:18:15.872Z"
+  "updatedAt": "2026-07-05T00:18:29.080Z"
 }
