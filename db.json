@@ -575,7 +575,7 @@
       "desc": "Doce años después de la guerra santa, Paul Atreides enfrenta una compleja red de conspiraciones en Arrakis, un mundo desierto y cuna de conflictos universales. Perturbado por el culto a su persona, Paul debe lidiar con poderosos intereses económicos, políticos y religiosos que amenazan su legado y el destino del universo.",
       "author": "Frank Herbert",
       "genre": "Ciencia Ficción",
-      "age": "Adultos",
+      "age": "",
       "temas": [
         "Conspiración",
         "Política intergaláctica",
@@ -612,7 +612,7 @@
       },
       "pdfName": "El mesías de Dune (Las crónicas de Dune 2) (Spanish Edition) -- Frank Herbert.pdf",
       "pdfUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/pdfs/1783193383604_el_mes_as_de_dune__las_cr_nicas_de_dune_2_.pdf",
-      "coverUrl": null,
+      "coverUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/covers/1783193383604_el_mes_as_de_dune__las_cr_nicas_de_dune_2_.jpg",
       "file": "El mesías de Dune (Las crónicas de Dune 2) (Spanish Edition) -- Frank Herbert.pdf"
     },
     {
@@ -2404,5 +2404,5 @@
     "juan@test.com",
     "octavio123@gamil.com"
   ],
-  "updatedAt": "2026-07-05T19:58:39.414Z"
+  "updatedAt": "2026-07-05T19:59:00.375Z"
 }
