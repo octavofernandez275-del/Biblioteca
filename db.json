@@ -2287,6 +2287,32 @@
       "pdfUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/pdfs/1783211138303_inversi_n_sin_planificaci_n__la_calidad_de_la_inversi_n____lvaro_espinoza__ricardo_fort___primera_ed_____lima__peru___2017___grupo_de_an_lisis___isbn13_9786124374012___3eed0544775ede6e7b900a9e1a6ed7b8___anna_s_archive.pdf",
       "coverUrl": null,
       "file": "Inversión sin planificación_ La calidad de la inversión -- Álvaro Espinoza; Ricardo Fort -- Primera ed..., Lima, Perú, 2017 -- Grupo de Análisis -- isbn13 9786124374012 -- 3eed0544775ede6e7b900a9e1a6ed7b8 -- Anna’s Archive.pdf"
+    },
+    {
+      "id": 1783211189054,
+      "name": "InvertArte   El arte de dominar tus finanzas e inversiones   Leonardo Rocco   Bookwire GmbH, Ciudad de México, 2019   Ediciones Granica, S A    isbn13 9789506418670   33cc5d22640de3295563fd96a7266bf1   Anna’s Archive",
+      "price": "$0.99",
+      "cat": "negocios",
+      "desc": "",
+      "author": "",
+      "genre": "",
+      "age": "",
+      "temas": [],
+      "tags": [],
+      "nivel": "",
+      "idioma": "",
+      "ad": {
+        "headline": "",
+        "subheadline": "",
+        "cta": "",
+        "banner_text": "",
+        "instagram_caption": "",
+        "hashtags": []
+      },
+      "pdfName": "InvertArte _ El arte de dominar tus finanzas e inversiones -- Leonardo Rocco -- Bookwire GmbH, Ciudad de México, 2019 -- Ediciones Granica, S_A_ -- isbn13 9789506418670 -- 33cc5d22640de3295563fd96a7266bf1 -- Anna’s Archive.pdf",
+      "pdfUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/pdfs/1783211189054_invertarte___el_arte_de_dominar_tus_finanzas_e_inversiones___leonardo_rocco___bookwire_gmbh__ciudad_de_m_xico__2019___ediciones_granica__s_a____isbn13_9789506418670___33cc5d22640de3295563fd96a7266bf1___anna_s_archive.pdf",
+      "coverUrl": null,
+      "file": "InvertArte _ El arte de dominar tus finanzas e inversiones -- Leonardo Rocco -- Bookwire GmbH, Ciudad de México, 2019 -- Ediciones Granica, S_A_ -- isbn13 9789506418670 -- 33cc5d22640de3295563fd96a7266bf1 -- Anna’s Archive.pdf"
     }
   ],
   "emailList": [
@@ -2295,5 +2321,5 @@
     "juan@test.com",
     "octavio123@gamil.com"
   ],
-  "updatedAt": "2026-07-05T00:26:27.690Z"
+  "updatedAt": "2026-07-05T00:26:50.471Z"
 }
