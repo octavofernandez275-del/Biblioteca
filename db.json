@@ -1393,7 +1393,7 @@
       },
       "pdfName": "48716_Winnie_the_Pooh-Cuentos_de_5_minutos_copia.pdf",
       "pdfUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/pdfs/1783210626173_48716_winnie_the_pooh_cuentos_de_5_minutos_copia.pdf",
-      "coverUrl": null,
+      "coverUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/covers/1783210626173_winnie_the_pooh.jpg",
       "file": "48716_Winnie_the_Pooh-Cuentos_de_5_minutos_copia.pdf"
     },
     {
@@ -2404,5 +2404,5 @@
     "juan@test.com",
     "octavio123@gamil.com"
   ],
-  "updatedAt": "2026-07-05T20:13:15.769Z"
+  "updatedAt": "2026-07-05T20:13:18.800Z"
 }
