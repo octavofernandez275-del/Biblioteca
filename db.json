@@ -339,7 +339,7 @@
       "desc": "Sumérgete en el cuento clásico de Blancanieves, una joven princesa perseguida por su malvada madrastra, que encuentra refugio y amistad en el bosque junto a siete adorables enanitos. Una historia atemporal de magia, bondad y el triunfo del amor verdadero.",
       "author": "Walt Disney Company",
       "genre": "Cuentos de hadas",
-      "age": "Infantil",
+      "age": "",
       "temas": [
         "Magia",
         "Amistad",
@@ -2451,5 +2451,5 @@
     "juan@test.com",
     "octavio123@gamil.com"
   ],
-  "updatedAt": "2026-07-05T19:48:42.759Z"
+  "updatedAt": "2026-07-05T19:49:53.572Z"
 }
