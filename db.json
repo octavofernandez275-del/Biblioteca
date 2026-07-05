@@ -1780,6 +1780,32 @@
       "pdfUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/pdfs/1783210859171_cuentos_hermanos_grimm_edincr_copia.pdf",
       "coverUrl": null,
       "file": "cuentos_hermanos_grimm_edincr_copia.pdf"
+    },
+    {
+      "id": 1783210868780,
+      "name": "el principito copia",
+      "price": "$0.99",
+      "cat": "ebooks",
+      "desc": "",
+      "author": "",
+      "genre": "",
+      "age": "",
+      "temas": [],
+      "tags": [],
+      "nivel": "",
+      "idioma": "",
+      "ad": {
+        "headline": "",
+        "subheadline": "",
+        "cta": "",
+        "banner_text": "",
+        "instagram_caption": "",
+        "hashtags": []
+      },
+      "pdfName": "el_principito_copia.pdf",
+      "pdfUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/pdfs/1783210868780_el_principito_copia.pdf",
+      "coverUrl": null,
+      "file": "el_principito_copia.pdf"
     }
   ],
   "emailList": [
@@ -1788,5 +1814,5 @@
     "juan@test.com",
     "octavio123@gamil.com"
   ],
-  "updatedAt": "2026-07-05T00:21:07.811Z"
+  "updatedAt": "2026-07-05T00:21:28.782Z"
 }
