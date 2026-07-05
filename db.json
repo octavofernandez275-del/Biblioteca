@@ -2391,6 +2391,32 @@
       "pdfUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/pdfs/1783211236508_lo_que_saben_los_mejores_mba__ne__grandes_ideas_y_propuestas___navarro__peter___1__2021___profit_editorial___isbn13_9788418464294___5999a13bfa2d725ed0b9768ea18cb322___anna_s_archive.pdf",
       "coverUrl": null,
       "file": "Lo que saben los mejores MBA_ NE_ Grandes ideas y propuestas -- Navarro, Peter -- 1, 2021 -- Profit Editorial -- isbn13 9788418464294 -- 5999a13bfa2d725ed0b9768ea18cb322 -- Anna’s Archive.pdf"
+    },
+    {
+      "id": 1783211291157,
+      "name": "MALAS INVERSIONES  DESDE CERO 1 (THRILLER, ACCIÓN, MISTERIO   MariaL Pardos   2024   5cc1b8cd594c2364e66892e454fc5377   Anna’s Archive",
+      "price": "$0.99",
+      "cat": "terror",
+      "desc": "",
+      "author": "",
+      "genre": "",
+      "age": "",
+      "temas": [],
+      "tags": [],
+      "nivel": "",
+      "idioma": "",
+      "ad": {
+        "headline": "",
+        "subheadline": "",
+        "cta": "",
+        "banner_text": "",
+        "instagram_caption": "",
+        "hashtags": []
+      },
+      "pdfName": "MALAS INVERSIONES_ DESDE CERO 1 (THRILLER, ACCIÓN, MISTERIO -- MariaL Pardos -- 2024 -- 5cc1b8cd594c2364e66892e454fc5377 -- Anna’s Archive.pdf",
+      "pdfUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/pdfs/1783211291157_malas_inversiones__desde_cero_1__thriller__acci_n__misterio___marial_pardos___2024___5cc1b8cd594c2364e66892e454fc5377___anna_s_archive.pdf",
+      "coverUrl": null,
+      "file": "MALAS INVERSIONES_ DESDE CERO 1 (THRILLER, ACCIÓN, MISTERIO -- MariaL Pardos -- 2024 -- 5cc1b8cd594c2364e66892e454fc5377 -- Anna’s Archive.pdf"
     }
   ],
   "emailList": [
@@ -2399,5 +2425,5 @@
     "juan@test.com",
     "octavio123@gamil.com"
   ],
-  "updatedAt": "2026-07-05T00:28:10.420Z"
+  "updatedAt": "2026-07-05T00:28:18.425Z"
 }
