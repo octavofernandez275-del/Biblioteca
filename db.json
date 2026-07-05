@@ -481,7 +481,7 @@
       "desc": "Sumérgete en el vasto y peligroso mundo de Arrakis, donde Paul Atreides debe enfrentar su destino entre imperios, intrigas y el poder místico de la especia. Una epopeya de supervivencia, política y transformación que desafía los límites de la imaginación.",
       "author": "Frank Herbert",
       "genre": "Ciencia Ficción",
-      "age": "Adultos",
+      "age": "",
       "temas": [
         "Ciencia ficción",
         "Política",
@@ -2451,5 +2451,5 @@
     "juan@test.com",
     "octavio123@gamil.com"
   ],
-  "updatedAt": "2026-07-05T19:54:46.561Z"
+  "updatedAt": "2026-07-05T19:55:57.502Z"
 }
