@@ -2443,6 +2443,32 @@
       "pdfUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/pdfs/1783211308846_padre_rico__padre_pobre___qu__les_ense_an_los_ricos_a_sus___kiyosaki__robert_t___1947___lechter__sharo___n_lvarez_del___2021___miami__fl__aguilar___isbn13_9781603961813___3e8a08bd569a1c03849c6e991e92f704___anna_s_archive.pdf",
       "coverUrl": null,
       "file": "Padre rico, padre pobre _ qué les enseñan los ricos a sus -- Kiyosaki, Robert T_, 1947-; Lechter, Sharo...nÁlvarez del -- 2021 -- Miami, FL_ Aguilar -- isbn13 9781603961813 -- 3e8a08bd569a1c03849c6e991e92f704 -- Anna’s Archive.pdf"
+    },
+    {
+      "id": 1783211412347,
+      "name": "Pasos de gigante   la informacion que necesitas para   Brian Tracy & Margarita Pasos   Las Vega, NV, 2022   Grupo Nelson   isbn13 9781404119390   4f214689aa3f4bb68baf2bc154ff0a77   Anna’s Archive",
+      "price": "$0.99",
+      "cat": "ebooks",
+      "desc": "",
+      "author": "",
+      "genre": "",
+      "age": "",
+      "temas": [],
+      "tags": [],
+      "nivel": "",
+      "idioma": "",
+      "ad": {
+        "headline": "",
+        "subheadline": "",
+        "cta": "",
+        "banner_text": "",
+        "instagram_caption": "",
+        "hashtags": []
+      },
+      "pdfName": "Pasos de gigante _ la informacion que necesitas para -- Brian Tracy & Margarita Pasos -- Las Vega, NV, 2022 -- Grupo Nelson -- isbn13 9781404119390 -- 4f214689aa3f4bb68baf2bc154ff0a77 -- Anna’s Archive.pdf",
+      "pdfUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/pdfs/1783211412347_pasos_de_gigante___la_informacion_que_necesitas_para___brian_tracy___margarita_pasos___las_vega__nv__2022___grupo_nelson___isbn13_9781404119390___4f214689aa3f4bb68baf2bc154ff0a77___anna_s_archive.pdf",
+      "coverUrl": null,
+      "file": "Pasos de gigante _ la informacion que necesitas para -- Brian Tracy & Margarita Pasos -- Las Vega, NV, 2022 -- Grupo Nelson -- isbn13 9781404119390 -- 4f214689aa3f4bb68baf2bc154ff0a77 -- Anna’s Archive.pdf"
     }
   ],
   "emailList": [
@@ -2451,5 +2477,5 @@
     "juan@test.com",
     "octavio123@gamil.com"
   ],
-  "updatedAt": "2026-07-05T00:30:40.701Z"
+  "updatedAt": "2026-07-05T00:31:05.323Z"
 }
