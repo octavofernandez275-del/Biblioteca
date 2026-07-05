@@ -1364,6 +1364,32 @@
       "pdfUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/pdfs/1783210595324_2___ana_la_de_avonlea.pdf",
       "coverUrl": null,
       "file": "2.- ana_la_de_avonlea.pdf"
+    },
+    {
+      "id": 1783210601870,
+      "name": "3.  ana la de la isla",
+      "price": "$0.99",
+      "cat": "ebooks",
+      "desc": "",
+      "author": "",
+      "genre": "",
+      "age": "",
+      "temas": [],
+      "tags": [],
+      "nivel": "",
+      "idioma": "",
+      "ad": {
+        "headline": "",
+        "subheadline": "",
+        "cta": "",
+        "banner_text": "",
+        "instagram_caption": "",
+        "hashtags": []
+      },
+      "pdfName": "3.- ana_la_de_la_isla.pdf",
+      "pdfUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/pdfs/1783210601870_3___ana_la_de_la_isla.pdf",
+      "coverUrl": null,
+      "file": "3.- ana_la_de_la_isla.pdf"
     }
   ],
   "emailList": [
@@ -1372,5 +1398,5 @@
     "juan@test.com",
     "octavio123@gamil.com"
   ],
-  "updatedAt": "2026-07-05T00:16:41.171Z"
+  "updatedAt": "2026-07-05T00:16:48.121Z"
 }
