@@ -1471,7 +1471,7 @@
       },
       "pdfName": "7-El Valle del Arco Iris.pdf",
       "pdfUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/pdfs/1783210653247_7_el_valle_del_arco_iris.pdf",
-      "coverUrl": "https://covers.openlibrary.org/b/id/14641168-L.jpg",
+      "coverUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/covers/1783210653247_7_el_valle_del_arco_iris.jpg",
       "file": "7-El Valle del Arco Iris.pdf"
     },
     {
@@ -2404,5 +2404,5 @@
     "juan@test.com",
     "octavio123@gamil.com"
   ],
-  "updatedAt": "2026-07-05T20:28:06.516Z"
+  "updatedAt": "2026-07-05T20:28:43.979Z"
 }
