@@ -292,7 +292,7 @@
       "desc": "En este prólogo, Aldous Huxley reflexiona sobre su icónica novela, explicando por qué ha decidido no revisarla a pesar de sus imperfecciones, prefiriendo preservar su visión original.",
       "author": "Aldous Huxley",
       "genre": "Ficción Distópica",
-      "age": "Adultos",
+      "age": "",
       "temas": [
         "Distopía",
         "Crítica social",
@@ -2451,5 +2451,5 @@
     "juan@test.com",
     "octavio123@gamil.com"
   ],
-  "updatedAt": "2026-07-05T15:43:45.330Z"
+  "updatedAt": "2026-07-05T19:48:39.731Z"
 }
