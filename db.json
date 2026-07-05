@@ -1315,7 +1315,7 @@
       },
       "pdfName": "3.- ana_la_de_la_isla.pdf",
       "pdfUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/pdfs/1783210601870_3___ana_la_de_la_isla.pdf",
-      "coverUrl": "https://covers.openlibrary.org/b/id/14639028-L.jpg",
+      "coverUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/covers/1783210601870_3___ana_la_de_la_isla.jpg",
       "file": "3.- ana_la_de_la_isla.pdf"
     },
     {
@@ -2404,5 +2404,5 @@
     "juan@test.com",
     "octavio123@gamil.com"
   ],
-  "updatedAt": "2026-07-05T20:02:05.665Z"
+  "updatedAt": "2026-07-05T20:02:07.284Z"
 }
