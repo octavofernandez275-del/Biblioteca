@@ -1528,13 +1528,13 @@
     },
     {
       "id": 1783210690145,
-      "name": "Alicia Completo",
+      "name": "Alicia  en el país de las maravillas libro de actividades",
       "price": "$0.99",
-      "cat": "ebooks",
+      "cat": "infantil",
       "desc": "",
       "author": "",
       "genre": "",
-      "age": "",
+      "age": "6-10",
       "temas": [],
       "tags": [],
       "nivel": "",
@@ -2404,5 +2404,5 @@
     "juan@test.com",
     "octavio123@gamil.com"
   ],
-  "updatedAt": "2026-07-05T20:32:35.275Z"
+  "updatedAt": "2026-07-05T20:35:09.654Z"
 }
