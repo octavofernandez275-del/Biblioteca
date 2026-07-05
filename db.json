@@ -2417,6 +2417,32 @@
       "pdfUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/pdfs/1783211291157_malas_inversiones__desde_cero_1__thriller__acci_n__misterio___marial_pardos___2024___5cc1b8cd594c2364e66892e454fc5377___anna_s_archive.pdf",
       "coverUrl": null,
       "file": "MALAS INVERSIONES_ DESDE CERO 1 (THRILLER, ACCIÓN, MISTERIO -- MariaL Pardos -- 2024 -- 5cc1b8cd594c2364e66892e454fc5377 -- Anna’s Archive.pdf"
+    },
+    {
+      "id": 1783211299079,
+      "name": "Negocios o placer   Rachel Lynn Solomon   1, 2024   Titania   isbn13 9788419936578   c02a401fef40b477d51872800b32fe33   Anna’s Archive",
+      "price": "$0.99",
+      "cat": "negocios",
+      "desc": "",
+      "author": "",
+      "genre": "",
+      "age": "",
+      "temas": [],
+      "tags": [],
+      "nivel": "",
+      "idioma": "",
+      "ad": {
+        "headline": "",
+        "subheadline": "",
+        "cta": "",
+        "banner_text": "",
+        "instagram_caption": "",
+        "hashtags": []
+      },
+      "pdfName": "Negocios o placer -- Rachel Lynn Solomon -- 1, 2024 -- Titania -- isbn13 9788419936578 -- c02a401fef40b477d51872800b32fe33 -- Anna’s Archive.pdf",
+      "pdfUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/pdfs/1783211299079_negocios_o_placer___rachel_lynn_solomon___1__2024___titania___isbn13_9788419936578___c02a401fef40b477d51872800b32fe33___anna_s_archive.pdf",
+      "coverUrl": null,
+      "file": "Negocios o placer -- Rachel Lynn Solomon -- 1, 2024 -- Titania -- isbn13 9788419936578 -- c02a401fef40b477d51872800b32fe33 -- Anna’s Archive.pdf"
     }
   ],
   "emailList": [
@@ -2425,5 +2451,5 @@
     "juan@test.com",
     "octavio123@gamil.com"
   ],
-  "updatedAt": "2026-07-05T00:28:18.425Z"
+  "updatedAt": "2026-07-05T00:28:27.275Z"
 }
