@@ -244,7 +244,7 @@
       "desc": "Sumérgete en la legendaria historia de Mulan, la valiente joven china que desafía el destino para salvar a su padre y a su nación. Descubre una aventura épica de honor, valentía y la verdadera fuerza del espíritu.",
       "author": "Walt Disney Company",
       "genre": "Fantasía Aventura Infantil",
-      "age": "Todas las edades",
+      "age": "",
       "temas": [
         "Valor",
         "Identidad",
@@ -2451,5 +2451,5 @@
     "juan@test.com",
     "octavio123@gamil.com"
   ],
-  "updatedAt": "2026-07-05T00:33:45.613Z"
+  "updatedAt": "2026-07-05T03:02:45.726Z"
 }
