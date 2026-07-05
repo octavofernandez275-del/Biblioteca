@@ -2105,6 +2105,32 @@
       "pdfUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/pdfs/1783211060747_723_frases_para_crecer_negocios___sam_lirakh___2021___e33281fe8cb346fdda9e31879be06155___anna_s_archive.pdf",
       "coverUrl": null,
       "file": "723 FRASES PARA CRECER NEGOCIOS -- Sam Lirakh -- 2021 -- e33281fe8cb346fdda9e31879be06155 -- Anna’s Archive.pdf"
+    },
+    {
+      "id": 1783211066631,
+      "name": "Abundantia  Estoicismo para inversores   Sabiduría clásica   Inversor Directivo   Penguin Random House...po Editorial, S A U , [N p ], 2024   2024   isbn13 9788466678704   60c210dd000a8600b7398e5eba95e661   Anna’s Archive",
+      "price": "$0.99",
+      "cat": "ebooks",
+      "desc": "",
+      "author": "",
+      "genre": "",
+      "age": "",
+      "temas": [],
+      "tags": [],
+      "nivel": "",
+      "idioma": "",
+      "ad": {
+        "headline": "",
+        "subheadline": "",
+        "cta": "",
+        "banner_text": "",
+        "instagram_caption": "",
+        "hashtags": []
+      },
+      "pdfName": "Abundantia_ Estoicismo para inversores _ Sabiduría clásica -- Inversor Directivo -- Penguin Random House...po Editorial, S_A_U_, [N_p_], 2024 -- 2024 -- isbn13 9788466678704 -- 60c210dd000a8600b7398e5eba95e661 -- Anna’s Archive.pdf",
+      "pdfUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/pdfs/1783211066631_abundantia__estoicismo_para_inversores___sabidur_a_cl_sica___inversor_directivo___penguin_random_house___po_editorial__s_a_u____n_p____2024___2024___isbn13_9788466678704___60c210dd000a8600b7398e5eba95e661___anna_s_archive.pdf",
+      "coverUrl": null,
+      "file": "Abundantia_ Estoicismo para inversores _ Sabiduría clásica -- Inversor Directivo -- Penguin Random House...po Editorial, S_A_U_, [N_p_], 2024 -- 2024 -- isbn13 9788466678704 -- 60c210dd000a8600b7398e5eba95e661 -- Anna’s Archive.pdf"
     }
   ],
   "emailList": [
@@ -2113,5 +2139,5 @@
     "juan@test.com",
     "octavio123@gamil.com"
   ],
-  "updatedAt": "2026-07-05T00:24:25.926Z"
+  "updatedAt": "2026-07-05T00:24:38.757Z"
 }
