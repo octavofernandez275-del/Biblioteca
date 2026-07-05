@@ -2261,6 +2261,32 @@
       "pdfUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/pdfs/1783211129432_hackea_tu_mente__52_ideas_para_aplicar_en_tu_vida_y_expandir___roberto_camhi___2022___a08d6c202759d13db7b12051fe942c9e___anna_s_archive.pdf",
       "coverUrl": null,
       "file": "Hackea tu Mente_ 52 ideas para aplicar en tu vida y expandir -- Roberto Camhi -- 2022 -- a08d6c202759d13db7b12051fe942c9e -- Anna’s Archive.pdf"
+    },
+    {
+      "id": 1783211138303,
+      "name": "Inversión sin planificación  La calidad de la inversión   Álvaro Espinoza; Ricardo Fort   Primera ed..., Lima, Perú, 2017   Grupo de Análisis   isbn13 9786124374012   3eed0544775ede6e7b900a9e1a6ed7b8   Anna’s Archive",
+      "price": "$0.99",
+      "cat": "ebooks",
+      "desc": "",
+      "author": "",
+      "genre": "",
+      "age": "",
+      "temas": [],
+      "tags": [],
+      "nivel": "",
+      "idioma": "",
+      "ad": {
+        "headline": "",
+        "subheadline": "",
+        "cta": "",
+        "banner_text": "",
+        "instagram_caption": "",
+        "hashtags": []
+      },
+      "pdfName": "Inversión sin planificación_ La calidad de la inversión -- Álvaro Espinoza; Ricardo Fort -- Primera ed..., Lima, Perú, 2017 -- Grupo de Análisis -- isbn13 9786124374012 -- 3eed0544775ede6e7b900a9e1a6ed7b8 -- Anna’s Archive.pdf",
+      "pdfUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/pdfs/1783211138303_inversi_n_sin_planificaci_n__la_calidad_de_la_inversi_n____lvaro_espinoza__ricardo_fort___primera_ed_____lima__peru___2017___grupo_de_an_lisis___isbn13_9786124374012___3eed0544775ede6e7b900a9e1a6ed7b8___anna_s_archive.pdf",
+      "coverUrl": null,
+      "file": "Inversión sin planificación_ La calidad de la inversión -- Álvaro Espinoza; Ricardo Fort -- Primera ed..., Lima, Perú, 2017 -- Grupo de Análisis -- isbn13 9786124374012 -- 3eed0544775ede6e7b900a9e1a6ed7b8 -- Anna’s Archive.pdf"
     }
   ],
   "emailList": [
@@ -2269,5 +2295,5 @@
     "juan@test.com",
     "octavio123@gamil.com"
   ],
-  "updatedAt": "2026-07-05T00:25:36.819Z"
+  "updatedAt": "2026-07-05T00:26:27.690Z"
 }
