@@ -1338,6 +1338,32 @@
       "pdfUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/pdfs/1783210588444_1__ana_de_las_tejas_verdes.pdf",
       "coverUrl": null,
       "file": "1.-ana_de_las_tejas_verdes.pdf"
+    },
+    {
+      "id": 1783210595324,
+      "name": "2.  ana la de avonlea",
+      "price": "$0.99",
+      "cat": "ebooks",
+      "desc": "",
+      "author": "",
+      "genre": "",
+      "age": "",
+      "temas": [],
+      "tags": [],
+      "nivel": "",
+      "idioma": "",
+      "ad": {
+        "headline": "",
+        "subheadline": "",
+        "cta": "",
+        "banner_text": "",
+        "instagram_caption": "",
+        "hashtags": []
+      },
+      "pdfName": "2.- ana_la_de_avonlea.pdf",
+      "pdfUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/pdfs/1783210595324_2___ana_la_de_avonlea.pdf",
+      "coverUrl": null,
+      "file": "2.- ana_la_de_avonlea.pdf"
     }
   ],
   "emailList": [
@@ -1346,5 +1372,5 @@
     "juan@test.com",
     "octavio123@gamil.com"
   ],
-  "updatedAt": "2026-07-05T00:16:34.047Z"
+  "updatedAt": "2026-07-05T00:16:41.171Z"
 }
