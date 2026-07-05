@@ -669,7 +669,7 @@
       "desc": "En un futuro distante, el vasto Imperio Galáctico se tambalea al borde del colapso. El psicohistoriador Hari Seldon predice milenios de barbarie y emprende un ambicioso plan para mitigar el inevitable declive de la civilización.",
       "author": "Isaac Asimov",
       "genre": "Ciencia Ficción",
-      "age": "Adultos",
+      "age": "",
       "temas": [
         "Ciencia Ficción",
         "Imperio Galáctico",
@@ -2404,5 +2404,5 @@
     "juan@test.com",
     "octavio123@gamil.com"
   ],
-  "updatedAt": "2026-07-05T19:59:23.365Z"
+  "updatedAt": "2026-07-05T20:00:09.592Z"
 }
