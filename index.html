@@ -4359,9 +4359,50 @@
 
   // ─── ADD PRODUCT (IMPROVED) ──────────────────────
   // ─── SUBIDA MÚLTIPLE DE PDFs ──────────────────────
+  function mapGenreToCategory(genre, name) {
+    const text = `${genre || ''} ${name || ''}`.toLowerCase();
+    const rules = [
+      ['infantil', /infantil|niñ|cuento|disney|fábula/],
+      ['juvenil', /juvenil|adolescen|young adult/],
+      ['manga', /manga|cómic|comic|anime/],
+      ['terror', /terror|horror|suspenso|thriller/],
+      ['romance', /romance|románti/],
+      ['novela', /novela|ficción|ficcion|literatura(?! infantil)/],
+      ['poesia', /poesía|poesia|poema/],
+      ['historia', /historia|biografía|biografia/],
+      ['ciencia', /ciencia|tecnología|tecnologia|programación|programacion|informática|informatica/],
+      ['negocios', /negocio|finanza|economía|economia|marketing|empresa/],
+      ['autoayuda', /autoayuda|motivaci|desarrollo personal|superación/],
+      ['salud', /salud|bienestar|fitness(?! deporte)|nutrición|nutricion/],
+      ['deporte', /deporte|fitness|ejercicio/],
+      ['recetas', /receta|cocina|gastronomía|gastronomia/],
+      ['religion', /religión|religion|espiritual|fe cristiana|biblia/],
+      ['viajes', /viaje|turismo|cultura(?! general)/],
+      ['idiomas', /idioma|inglés|ingles|gramática|gramatica|lingüística|linguistica/],
+      ['arte', /arte|diseño|diseno|pintura|dibujo/],
+      ['musica', /música|musica|artes escénicas|artes escenicas/],
+      ['derecho', /derecho|política|politica|legal|jurídic|juridic/],
+      ['cursos', /curso|tutorial|manual|guía práctica|guia practica/],
+    ];
+    for (const [cat, regex] of rules) {
+      if (regex.test(text)) return cat;
+    }
+    return 'ebooks';
+  }
+
+  function withTimeout(promise, ms) {
+    return Promise.race([
+      promise,
+      new Promise((_, reject) => setTimeout(() => reject(new Error(`Tiempo de espera agotado (${ms}ms)`)), ms))
+    ]);
+  }
+
   async function handleBulkPdfUpload(input) {
     const files = Array.from(input.files || []);
     if (!files.length) return;
+    if (files.length > 25) {
+      showToast('⚠️ Elegiste muchos archivos a la vez — probá con tandas de 10-15 para evitar que el selector se trabe', 'error');
+    }
     const progress = document.getElementById('bulk-upload-progress');
     progress.style.display = 'block';
     progress.innerHTML = '';
@@ -4385,21 +4426,28 @@
         const rawName = file.name.replace(/\.pdf$/i, '').replace(/[_\-]+/g, ' ').trim();
 
         // Extraer texto de las primeras páginas para dar contexto a la IA
+        // (con timeout para que un PDF corrupto/pesado no trabe toda la cola)
         let extractedText = '';
         try {
-          const buf = await file.arrayBuffer();
-          if (typeof pdfjsLib !== 'undefined') {
-            pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
-            const pdf = await pdfjsLib.getDocument({ data: buf }).promise;
-            const maxPages = Math.min(pdf.numPages, 3);
-            for (let pg = 1; pg <= maxPages; pg++) {
-              const page = await pdf.getPage(pg);
-              const content = await page.getTextContent();
-              extractedText += content.items.map(it => it.str).join(' ') + ' ';
-              if (extractedText.length > 3000) break;
+          extractedText = await withTimeout((async () => {
+            const buf = await file.arrayBuffer();
+            let text = '';
+            if (typeof pdfjsLib !== 'undefined') {
+              pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
+              const pdf = await pdfjsLib.getDocument({ data: buf }).promise;
+              const maxPages = Math.min(pdf.numPages, 3);
+              for (let pg = 1; pg <= maxPages; pg++) {
+                const page = await pdf.getPage(pg);
+                const content = await page.getTextContent();
+                text += content.items.map(it => it.str).join(' ') + ' ';
+                if (text.length > 3000) break;
+              }
             }
-          }
-        } catch (e) { console.warn('bulk: extracción de texto falló para', file.name, e); }
+            return text;
+          })(), 15000);
+        } catch(err) {
+          console.warn(`bulk: extracción de texto falló/expiró para ${file.name}:`, err);
+        }
 
         statusEl.textContent = '🤖 Clasificando con IA...';
         const clasifRes = await fetch(`${WORKER_URL}/classify`, {
@@ -4417,7 +4465,7 @@
           id: Date.now() + i,
           name: finalName,
           price: '$0.99',
-          cat: 'ebooks',
+          cat: mapGenreToCategory(clasif.genero, finalName),
           desc: finalDesc,
           author: clasif.autor_sugerido || '',
           genre: clasif.genero || '',
@@ -5702,7 +5750,7 @@
           const data = await res.json();
           if (data.error) { console.error(`batchReclassifyAll: fallo en "${p.name}":`, data.error, data.detail); failed++; }
           else {
-            if (data.genero) p.genre = data.genero;
+            if (data.genero) { p.genre = data.genero; p.cat = mapGenreToCategory(data.genero, p.name); }
             if (data.temas?.length) p.temas = data.temas;
             if (data.tags?.length) p.tags = data.tags;
             if (data.nivel) p.nivel = data.nivel;
