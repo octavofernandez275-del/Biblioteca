@@ -1650,6 +1650,32 @@
       "pdfUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/pdfs/1783210696696_animales_en_profesiones.pdf",
       "coverUrl": null,
       "file": "ANIMALES EN PROFESIONES.pdf"
+    },
+    {
+      "id": 1783210709921,
+      "name": "annas arch 1af0f7a3ff9f",
+      "price": "$0.99",
+      "cat": "ebooks",
+      "desc": "",
+      "author": "",
+      "genre": "",
+      "age": "",
+      "temas": [],
+      "tags": [],
+      "nivel": "",
+      "idioma": "",
+      "ad": {
+        "headline": "",
+        "subheadline": "",
+        "cta": "",
+        "banner_text": "",
+        "instagram_caption": "",
+        "hashtags": []
+      },
+      "pdfName": "annas-arch-1af0f7a3ff9f.pdf",
+      "pdfUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/pdfs/1783210709921_annas_arch_1af0f7a3ff9f.pdf",
+      "coverUrl": null,
+      "file": "annas-arch-1af0f7a3ff9f.pdf"
     }
   ],
   "emailList": [
@@ -1658,5 +1684,5 @@
     "juan@test.com",
     "octavio123@gamil.com"
   ],
-  "updatedAt": "2026-07-05T00:18:29.080Z"
+  "updatedAt": "2026-07-05T00:18:44.999Z"
 }
