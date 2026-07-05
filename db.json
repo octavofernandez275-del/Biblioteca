@@ -2001,6 +2001,32 @@
       "pdfUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/pdfs/1783210991326_max_el_perrito_paciente__un_cuento_completo_con_actividades.pdf",
       "coverUrl": null,
       "file": "Max_Completo.pdf"
+    },
+    {
+      "id": 1783210997756,
+      "name": "pinocho copia",
+      "price": "$0.99",
+      "cat": "ebooks",
+      "desc": "",
+      "author": "",
+      "genre": "",
+      "age": "",
+      "temas": [],
+      "tags": [],
+      "nivel": "",
+      "idioma": "",
+      "ad": {
+        "headline": "",
+        "subheadline": "",
+        "cta": "",
+        "banner_text": "",
+        "instagram_caption": "",
+        "hashtags": []
+      },
+      "pdfName": "pinocho_copia.pdf",
+      "pdfUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/pdfs/1783210997756_pinocho_copia.pdf",
+      "coverUrl": null,
+      "file": "pinocho_copia.pdf"
     }
   ],
   "emailList": [
@@ -2009,5 +2035,5 @@
     "juan@test.com",
     "octavio123@gamil.com"
   ],
-  "updatedAt": "2026-07-05T00:23:16.855Z"
+  "updatedAt": "2026-07-05T00:23:26.623Z"
 }
