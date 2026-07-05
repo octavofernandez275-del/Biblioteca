@@ -2339,6 +2339,32 @@
       "pdfUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/pdfs/1783211210929_invertir_en_dividendos__gu_a_para_invertir_en_bolsa_y_lograr___antonio_robinhood___2021___crear_y_corregir_ediciones__crearycorregir_com____dba8ea3d7bbb910dc97aed05c113870c___anna_s_archive.pdf",
       "coverUrl": null,
       "file": "INVERTIR EN DIVIDENDOS_ GUÍA PARA INVERTIR EN BOLSA Y LOGRAR -- Antonio Robinhood -- 2021 -- Crear y Corregir Ediciones (crearycorregir_com) -- dba8ea3d7bbb910dc97aed05c113870c -- Anna’s Archive.pdf"
+    },
+    {
+      "id": 1783211221114,
+      "name": "LA PARADOJA DE LA PRODUCTIVIDAD EN LA ERA DEL CONOCIMIENTO   William F  Heitman   None   McGraw Hill Interamericana Editores, S A  de C  V   isbn13 9786071514905   09654804030451fe9e8887cbb1531f4a   Anna’s Archive",
+      "price": "$0.99",
+      "cat": "ebooks",
+      "desc": "",
+      "author": "",
+      "genre": "",
+      "age": "",
+      "temas": [],
+      "tags": [],
+      "nivel": "",
+      "idioma": "",
+      "ad": {
+        "headline": "",
+        "subheadline": "",
+        "cta": "",
+        "banner_text": "",
+        "instagram_caption": "",
+        "hashtags": []
+      },
+      "pdfName": "LA PARADOJA DE LA PRODUCTIVIDAD EN LA ERA DEL CONOCIMIENTO -- William F_ Heitman -- None -- McGraw-Hill Interamericana Editores, S_A_ de C_ V -- isbn13 9786071514905 -- 09654804030451fe9e8887cbb1531f4a -- Anna’s Archive.pdf",
+      "pdfUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/pdfs/1783211221114_la_paradoja_de_la_productividad_en_la_era_del_conocimiento___william_f__heitman___none___mcgraw_hill_interamericana_editores__s_a__de_c__v___isbn13_9786071514905___09654804030451fe9e8887cbb1531f4a___anna_s_archive.pdf",
+      "coverUrl": null,
+      "file": "LA PARADOJA DE LA PRODUCTIVIDAD EN LA ERA DEL CONOCIMIENTO -- William F_ Heitman -- None -- McGraw-Hill Interamericana Editores, S_A_ de C_ V -- isbn13 9786071514905 -- 09654804030451fe9e8887cbb1531f4a -- Anna’s Archive.pdf"
     }
   ],
   "emailList": [
@@ -2347,5 +2373,5 @@
     "juan@test.com",
     "octavio123@gamil.com"
   ],
-  "updatedAt": "2026-07-05T00:27:00.200Z"
+  "updatedAt": "2026-07-05T00:27:14.447Z"
 }
