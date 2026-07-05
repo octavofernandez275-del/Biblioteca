@@ -2131,6 +2131,32 @@
       "pdfUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/pdfs/1783211066631_abundantia__estoicismo_para_inversores___sabidur_a_cl_sica___inversor_directivo___penguin_random_house___po_editorial__s_a_u____n_p____2024___2024___isbn13_9788466678704___60c210dd000a8600b7398e5eba95e661___anna_s_archive.pdf",
       "coverUrl": null,
       "file": "Abundantia_ Estoicismo para inversores _ Sabiduría clásica -- Inversor Directivo -- Penguin Random House...po Editorial, S_A_U_, [N_p_], 2024 -- 2024 -- isbn13 9788466678704 -- 60c210dd000a8600b7398e5eba95e661 -- Anna’s Archive.pdf"
+    },
+    {
+      "id": 1783211079730,
+      "name": "COMO CREAR Y GESTIONAR TU PROYECTO CRAFT GUIA DE NEGOCIOS   MONICA RODRIGUEZ LIMIA   2020   f91823955dfcf898d464ff37ec797f45   Anna’s Archive",
+      "price": "$0.99",
+      "cat": "negocios",
+      "desc": "",
+      "author": "",
+      "genre": "",
+      "age": "",
+      "temas": [],
+      "tags": [],
+      "nivel": "",
+      "idioma": "",
+      "ad": {
+        "headline": "",
+        "subheadline": "",
+        "cta": "",
+        "banner_text": "",
+        "instagram_caption": "",
+        "hashtags": []
+      },
+      "pdfName": "COMO CREAR Y GESTIONAR TU PROYECTO CRAFT GUIA DE NEGOCIOS -- MONICA RODRIGUEZ LIMIA -- 2020 -- f91823955dfcf898d464ff37ec797f45 -- Anna’s Archive.pdf",
+      "pdfUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/pdfs/1783211079730_como_crear_y_gestionar_tu_proyecto_craft_guia_de_negocios___monica_rodriguez_limia___2020___f91823955dfcf898d464ff37ec797f45___anna_s_archive.pdf",
+      "coverUrl": null,
+      "file": "COMO CREAR Y GESTIONAR TU PROYECTO CRAFT GUIA DE NEGOCIOS -- MONICA RODRIGUEZ LIMIA -- 2020 -- f91823955dfcf898d464ff37ec797f45 -- Anna’s Archive.pdf"
     }
   ],
   "emailList": [
@@ -2139,5 +2165,5 @@
     "juan@test.com",
     "octavio123@gamil.com"
   ],
-  "updatedAt": "2026-07-05T00:24:38.757Z"
+  "updatedAt": "2026-07-05T00:24:53.853Z"
 }
