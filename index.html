@@ -4222,6 +4222,7 @@
       const data = await res.json();
       if (data.error || !data.image) {
         console.error('generateCoverAI error:', data.error, data.detail);
+        alert('🐞 Error generando carátula:\n' + (data.error || 'sin mensaje') + '\n' + (data.detail || ''));
         label.textContent = '⚠️ No se pudo generar la carátula';
         showToast('⚠️ No se pudo generar la carátula con IA', 'error');
         return;
@@ -4238,6 +4239,7 @@
       showToast('🎨 Carátula generada con IA', 'success');
     } catch (e) {
       console.error('generateCoverAI exception:', e);
+      alert('🐞 Excepción generando carátula:\n' + e.message);
       label.textContent = '⚠️ Error generando carátula';
       showToast('⚠️ Error generando carátula con IA', 'error');
     }
@@ -6205,6 +6207,7 @@
       const data = await res.json();
       if (data.error || !data.image) {
         console.error('generateCoverAIForEdit error:', data.error, data.detail);
+        alert('🐞 Error generando carátula:\n' + (data.error || 'sin mensaje') + '\n' + (data.detail || ''));
         nameLabel.textContent = '⚠️ No se pudo generar la carátula';
         showToast('⚠️ No se pudo generar la carátula con IA', 'error');
         return;
@@ -6219,6 +6222,7 @@
       showToast('🎨 Carátula generada con IA', 'success');
     } catch (e) {
       console.error('generateCoverAIForEdit exception:', e);
+      alert('🐞 Excepción generando carátula:\n' + e.message);
       nameLabel.textContent = '⚠️ Error generando carátula';
       showToast('⚠️ Error generando carátula con IA', 'error');
     }
