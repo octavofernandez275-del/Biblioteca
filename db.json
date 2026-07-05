@@ -1312,6 +1312,32 @@
       "pdfUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/pdfs/1783194423767_el_arte_de_la_cocina_francesa__vol_2___julia_child___2__1__2014___debate___c6be79e42949b81162cec8670186eb93___anna_s_archive.pdf",
       "coverUrl": null,
       "file": "El arte de la cocina francesa, vol_2 -- Julia Child -- 2, 1, 2014 -- DEBATE -- c6be79e42949b81162cec8670186eb93 -- Anna’s Archive.pdf"
+    },
+    {
+      "id": 1783210588444,
+      "name": "1. ana de las tejas verdes",
+      "price": "$0.99",
+      "cat": "ebooks",
+      "desc": "",
+      "author": "",
+      "genre": "",
+      "age": "",
+      "temas": [],
+      "tags": [],
+      "nivel": "",
+      "idioma": "",
+      "ad": {
+        "headline": "",
+        "subheadline": "",
+        "cta": "",
+        "banner_text": "",
+        "instagram_caption": "",
+        "hashtags": []
+      },
+      "pdfName": "1.-ana_de_las_tejas_verdes.pdf",
+      "pdfUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/pdfs/1783210588444_1__ana_de_las_tejas_verdes.pdf",
+      "coverUrl": null,
+      "file": "1.-ana_de_las_tejas_verdes.pdf"
     }
   ],
   "emailList": [
@@ -1320,5 +1346,5 @@
     "juan@test.com",
     "octavio123@gamil.com"
   ],
-  "updatedAt": "2026-07-04T23:12:54.322Z"
+  "updatedAt": "2026-07-05T00:16:34.047Z"
 }
