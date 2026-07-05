@@ -1494,6 +1494,32 @@
       "pdfUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/pdfs/1783210640093_5_ana_y_la_casa_de_sus_sue_os.pdf",
       "coverUrl": null,
       "file": "5-Ana y la Casa de sus Sueños.pdf"
+    },
+    {
+      "id": 1783210646020,
+      "name": "6.  Ana, la de Ingleside",
+      "price": "$0.99",
+      "cat": "idiomas",
+      "desc": "",
+      "author": "",
+      "genre": "",
+      "age": "",
+      "temas": [],
+      "tags": [],
+      "nivel": "",
+      "idioma": "",
+      "ad": {
+        "headline": "",
+        "subheadline": "",
+        "cta": "",
+        "banner_text": "",
+        "instagram_caption": "",
+        "hashtags": []
+      },
+      "pdfName": "6.- Ana, la de Ingleside.pdf",
+      "pdfUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/pdfs/1783210646020_6___ana__la_de_ingleside.pdf",
+      "coverUrl": null,
+      "file": "6.- Ana, la de Ingleside.pdf"
     }
   ],
   "emailList": [
@@ -1502,5 +1528,5 @@
     "juan@test.com",
     "octavio123@gamil.com"
   ],
-  "updatedAt": "2026-07-05T00:17:25.657Z"
+  "updatedAt": "2026-07-05T00:17:32.572Z"
 }
