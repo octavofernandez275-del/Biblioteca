@@ -1497,7 +1497,7 @@
       },
       "pdfName": "8.- rilla-la-de-ingleside.pdf",
       "pdfUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/pdfs/1783210659875_8___rilla_la_de_ingleside.pdf",
-      "coverUrl": "https://covers.openlibrary.org/b/id/14638068-L.jpg",
+      "coverUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/covers/1783210659875_8___rilla_la_de_ingleside.jpg",
       "file": "8.- rilla-la-de-ingleside.pdf"
     },
     {
@@ -2404,5 +2404,5 @@
     "juan@test.com",
     "octavio123@gamil.com"
   ],
-  "updatedAt": "2026-07-05T20:28:43.979Z"
+  "updatedAt": "2026-07-05T20:32:35.275Z"
 }
