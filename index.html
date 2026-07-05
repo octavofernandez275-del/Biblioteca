@@ -3344,6 +3344,11 @@
 <div id="toast">Mensaje</div>
 
 <script>
+  // ─── DEBUG TEMPORAL: muestra errores en pantalla (quitar cuando ya no haga falta) ───
+  window.addEventListener('error', function(e) {
+    alert('🐞 ERROR:\n' + e.message + '\nArchivo: línea ' + e.lineno + ', columna ' + e.colno);
+  });
+
   // ─── WORKER CONFIG ───────────────────────────────
   const WORKER_URL = 'https://biblioteca-db.octavofernandez275.workers.dev';
   let ghConfig = { user: 'octavofernandez275-del', repo: 'Biblioteca', token: 'via-worker' };
