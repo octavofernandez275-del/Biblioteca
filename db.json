@@ -2313,6 +2313,32 @@
       "pdfUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/pdfs/1783211189054_invertarte___el_arte_de_dominar_tus_finanzas_e_inversiones___leonardo_rocco___bookwire_gmbh__ciudad_de_m_xico__2019___ediciones_granica__s_a____isbn13_9789506418670___33cc5d22640de3295563fd96a7266bf1___anna_s_archive.pdf",
       "coverUrl": null,
       "file": "InvertArte _ El arte de dominar tus finanzas e inversiones -- Leonardo Rocco -- Bookwire GmbH, Ciudad de México, 2019 -- Ediciones Granica, S_A_ -- isbn13 9789506418670 -- 33cc5d22640de3295563fd96a7266bf1 -- Anna’s Archive.pdf"
+    },
+    {
+      "id": 1783211210929,
+      "name": "INVERTIR EN DIVIDENDOS  GUÍA PARA INVERTIR EN BOLSA Y LOGRAR   Antonio Robinhood   2021   Crear y Corregir Ediciones (crearycorregir com)   dba8ea3d7bbb910dc97aed05c113870c   Anna’s Archive",
+      "price": "$0.99",
+      "cat": "ebooks",
+      "desc": "",
+      "author": "",
+      "genre": "",
+      "age": "",
+      "temas": [],
+      "tags": [],
+      "nivel": "",
+      "idioma": "",
+      "ad": {
+        "headline": "",
+        "subheadline": "",
+        "cta": "",
+        "banner_text": "",
+        "instagram_caption": "",
+        "hashtags": []
+      },
+      "pdfName": "INVERTIR EN DIVIDENDOS_ GUÍA PARA INVERTIR EN BOLSA Y LOGRAR -- Antonio Robinhood -- 2021 -- Crear y Corregir Ediciones (crearycorregir_com) -- dba8ea3d7bbb910dc97aed05c113870c -- Anna’s Archive.pdf",
+      "pdfUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/pdfs/1783211210929_invertir_en_dividendos__gu_a_para_invertir_en_bolsa_y_lograr___antonio_robinhood___2021___crear_y_corregir_ediciones__crearycorregir_com____dba8ea3d7bbb910dc97aed05c113870c___anna_s_archive.pdf",
+      "coverUrl": null,
+      "file": "INVERTIR EN DIVIDENDOS_ GUÍA PARA INVERTIR EN BOLSA Y LOGRAR -- Antonio Robinhood -- 2021 -- Crear y Corregir Ediciones (crearycorregir_com) -- dba8ea3d7bbb910dc97aed05c113870c -- Anna’s Archive.pdf"
     }
   ],
   "emailList": [
@@ -2321,5 +2347,5 @@
     "juan@test.com",
     "octavio123@gamil.com"
   ],
-  "updatedAt": "2026-07-05T00:26:50.471Z"
+  "updatedAt": "2026-07-05T00:27:00.200Z"
 }
