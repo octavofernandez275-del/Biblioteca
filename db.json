@@ -1367,7 +1367,7 @@
       },
       "pdfName": "4.- ana_la_de_Álamos_ventosos.pdf",
       "pdfUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/pdfs/1783210619226_4___ana_la_de__lamos_ventosos.pdf",
-      "coverUrl": "https://covers.openlibrary.org/b/id/14640411-L.jpg",
+      "coverUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/covers/1783210619226_4___ana_la_de__lamos_ventosos.jpg",
       "file": "4.- ana_la_de_Álamos_ventosos.pdf"
     },
     {
@@ -2404,5 +2404,5 @@
     "juan@test.com",
     "octavio123@gamil.com"
   ],
-  "updatedAt": "2026-07-05T20:27:32.672Z"
+  "updatedAt": "2026-07-05T20:27:35.723Z"
 }
