@@ -1754,6 +1754,32 @@
       "pdfUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/pdfs/1783210852899_cuentos_hans_christian_andersen_vol2.pdf",
       "coverUrl": null,
       "file": "cuentos_hans_christian_andersen_vol2.pdf"
+    },
+    {
+      "id": 1783210859171,
+      "name": "cuentos hermanos grimm edincr copia",
+      "price": "$0.99",
+      "cat": "infantil",
+      "desc": "",
+      "author": "",
+      "genre": "",
+      "age": "",
+      "temas": [],
+      "tags": [],
+      "nivel": "",
+      "idioma": "",
+      "ad": {
+        "headline": "",
+        "subheadline": "",
+        "cta": "",
+        "banner_text": "",
+        "instagram_caption": "",
+        "hashtags": []
+      },
+      "pdfName": "cuentos_hermanos_grimm_edincr_copia.pdf",
+      "pdfUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/pdfs/1783210859171_cuentos_hermanos_grimm_edincr_copia.pdf",
+      "coverUrl": null,
+      "file": "cuentos_hermanos_grimm_edincr_copia.pdf"
     }
   ],
   "emailList": [
@@ -1762,5 +1788,5 @@
     "juan@test.com",
     "octavio123@gamil.com"
   ],
-  "updatedAt": "2026-07-05T00:20:58.626Z"
+  "updatedAt": "2026-07-05T00:21:07.811Z"
 }
