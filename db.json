@@ -328,7 +328,7 @@
       },
       "pdfName": "Aldous HGuxley Un mundo Feliz_copia.pdf",
       "pdfUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/pdfs/1783193179132_un_mundo_feliz.pdf",
-      "coverUrl": "https://covers.openlibrary.org/b/id/8231823-L.jpg",
+      "coverUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/covers/1783193179132_un_mundo_feliz.jpg",
       "file": "Aldous HGuxley Un mundo Feliz_copia.pdf"
     },
     {
@@ -2451,5 +2451,5 @@
     "juan@test.com",
     "octavio123@gamil.com"
   ],
-  "updatedAt": "2026-07-05T19:48:39.731Z"
+  "updatedAt": "2026-07-05T19:48:42.759Z"
 }
