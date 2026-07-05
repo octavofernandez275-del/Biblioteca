@@ -658,7 +658,7 @@
       },
       "pdfName": "Herejes de Dune -- Frank Herbert -- Dune 5, 1984 -- b0bf9e1ae14aa2dacbe0f2ddb6b14e3d -- Anna’s Archive.pdf",
       "pdfUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/pdfs/1783193398935_herejes_de_dune.pdf",
-      "coverUrl": "https://covers.openlibrary.org/b/id/284530-L.jpg",
+      "coverUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/covers/1783193398935_herejes_de_dune.jpg",
       "file": "Herejes de Dune -- Frank Herbert -- Dune 5, 1984 -- b0bf9e1ae14aa2dacbe0f2ddb6b14e3d -- Anna’s Archive.pdf"
     },
     {
@@ -2404,5 +2404,5 @@
     "juan@test.com",
     "octavio123@gamil.com"
   ],
-  "updatedAt": "2026-07-05T19:59:20.350Z"
+  "updatedAt": "2026-07-05T19:59:23.365Z"
 }
