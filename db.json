@@ -1024,7 +1024,7 @@
       "desc": "Descubre el poder de los jugos naturales con esta guía esencial para principiantes. Con más de 50 recetas, aprenderás a aumentar tu energía, fortalecer la inmunidad y mejorar tu bienestar general de forma deliciosa.",
       "author": "Barbara White",
       "genre": "Salud y Bienestar",
-      "age": "Adultos",
+      "age": "",
       "temas": [
         "Jugos naturales",
         "Recetas saludables",
@@ -2404,5 +2404,5 @@
     "juan@test.com",
     "octavio123@gamil.com"
   ],
-  "updatedAt": "2026-07-05T21:05:52.965Z"
+  "updatedAt": "2026-07-05T21:06:04.799Z"
 }
