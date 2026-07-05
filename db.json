@@ -1679,7 +1679,7 @@
       },
       "pdfName": "cuentos_hans_christian_andersen_vol2.pdf",
       "pdfUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/pdfs/1783210852899_cuentos_hans_christian_andersen_vol2.pdf",
-      "coverUrl": null,
+      "coverUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/covers/1783210852899_cuentos_hans_christian_andersen_vol2.jpg",
       "file": "cuentos_hans_christian_andersen_vol2.pdf"
     },
     {
@@ -2404,5 +2404,5 @@
     "juan@test.com",
     "octavio123@gamil.com"
   ],
-  "updatedAt": "2026-07-05T21:03:51.343Z"
+  "updatedAt": "2026-07-05T21:03:54.387Z"
 }
