@@ -423,7 +423,7 @@
       },
       "pdfName": "Casa Capitular Dune -- Herbert, Frank -- Dune 6, 1985 -- ePubLibre -- 7da42b72daf340d1624a0afcf8d5c88b -- Anna’s Archive.pdf",
       "pdfUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/pdfs/1783193184176_casa_capitular_dune.pdf",
-      "coverUrl": "https://covers.openlibrary.org/b/id/5536140-L.jpg",
+      "coverUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/covers/1783193184176_casa_capitular_dune.jpg",
       "file": "Casa Capitular Dune -- Herbert, Frank -- Dune 6, 1985 -- ePubLibre -- 7da42b72daf340d1624a0afcf8d5c88b -- Anna’s Archive.pdf"
     },
     {
@@ -2451,5 +2451,5 @@
     "juan@test.com",
     "octavio123@gamil.com"
   ],
-  "updatedAt": "2026-07-05T19:54:43.527Z"
+  "updatedAt": "2026-07-05T19:54:46.561Z"
 }
