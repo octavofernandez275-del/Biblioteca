@@ -1954,6 +1954,53 @@
       "pdfUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/pdfs/1783210975589_luna_la_conejita_valiente__un_cuento_y_actividades.pdf",
       "coverUrl": null,
       "file": "Luna_Completo.pdf"
+    },
+    {
+      "id": 1783210991326,
+      "name": "Max el Perrito Paciente: Un Cuento Completo con Actividades",
+      "price": "$0.99",
+      "cat": "infantil",
+      "desc": "Acompaña a Max, un perrito juguetón pero impaciente, en su aventura para aprender el valor de esperar y la importancia de la paciencia. Este libro no solo cuenta una emotiva historia, sino que incluye divertidas actividades para reforzar el aprendizaje y la creatividad.",
+      "author": "",
+      "genre": "Cuento infantil",
+      "age": "4-8 años",
+      "temas": [
+        "Paciencia",
+        "Crecimiento personal",
+        "Emociones",
+        "Naturaleza",
+        "Amistad"
+      ],
+      "tags": [
+        "Cuento",
+        "Infantil",
+        "Actividades",
+        "Paciencia",
+        "Valores",
+        "Educación emocional"
+      ],
+      "nivel": "",
+      "idioma": "Español",
+      "ad": {
+        "headline": "Descubre la paciencia con Max.",
+        "subheadline": "Una historia entrañable y actividades interactivas para los más pequeños.",
+        "cta": "¡Lee y juega!",
+        "banner_text": "Cuento Interactivo: ¡Aprende con Max!",
+        "instagram_caption": "¿Listo para una aventura que enseña grandes lecciones? 🐶✨ Max, el perrito más curioso, aprenderá el valor de la paciencia con este libro completo. ¡Además, incluye actividades súper divertidas para los peques! 🖍️🌿",
+        "hashtags": [
+          "#MaxElPerritoPaciente",
+          "#CuentoInfantil",
+          "#AprendeJugando",
+          "#Paciencia",
+          "#LibrosParaNiños",
+          "#EducacionEmocional",
+          "#CuentosConValores"
+        ]
+      },
+      "pdfName": "Max_Completo.pdf",
+      "pdfUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/pdfs/1783210991326_max_el_perrito_paciente__un_cuento_completo_con_actividades.pdf",
+      "coverUrl": null,
+      "file": "Max_Completo.pdf"
     }
   ],
   "emailList": [
@@ -1962,5 +2009,5 @@
     "juan@test.com",
     "octavio123@gamil.com"
   ],
-  "updatedAt": "2026-07-05T00:23:02.101Z"
+  "updatedAt": "2026-07-05T00:23:16.855Z"
 }
