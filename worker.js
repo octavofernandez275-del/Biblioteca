@@ -172,9 +172,12 @@ El bloque "ad" se genera siempre, tenga o no extractMeta activado, basándote en
     // ── GENERAR CARÁTULA con Gemini (imagen) ────────────────────
     if (url.pathname === '/generate-cover' && request.method === 'POST') {
       try {
-        if (!env.GEMINI_API_KEY) {
-          return new Response(JSON.stringify({ error: 'GEMINI_API_KEY no configurada' }), {
-            status: 500,
+        if (!env.AI) {
+          return new Response(JSON.stringify({
+            error: 'Workers AI no está habilitado en este Worker',
+            detail: 'Andá a Cloudflare Dashboard → tu Worker → Settings → Bindings → Add → "Workers AI" → nombre "AI", y volvé a desplegar.'
+          }), {
+            status: 200,
             headers: { ...headers, 'Content-Type': 'application/json' },
           });
         }
@@ -182,47 +185,36 @@ El bloque "ad" se genera siempre, tenga o no extractMeta activado, basándote en
         const body = await request.json();
         const { name, genre, desc, author } = body;
 
-        const prompt = `Genera una imagen de portada de libro/ebook profesional, estilo ilustración digital atractiva para tienda online, formato vertical (proporción 2:3, tipo portada de libro).
-Título del libro: ${name || 'Sin título'}
-Género/tema: ${genre || 'General'}
-${desc ? `Sobre qué trata: ${desc}` : ''}
-${author ? `Autor: ${author}` : ''}
-No incluyas texto, títulos ni letras en la imagen — solo la ilustración/arte de portada. Estilo limpio, colores atractivos, composición centrada, apta para mostrarse como miniatura pequeña en una tienda digital.`;
+        const prompt = `Book cover illustration, professional digital art style, vertical book cover proportions (2:3), no text or letters anywhere in the image, just the illustration/artwork.
+Book title: ${name || 'Untitled'}
+Genre/theme: ${genre || 'General'}
+${desc ? `About: ${desc}` : ''}
+${author ? `Author: ${author}` : ''}
+Clean composition, attractive colors, centered, suitable for a small store thumbnail.`;
 
-        const geminiRes = await fetch(
-          'https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-image:generateContent',
-          {
-            method: 'POST',
-            headers: {
-              'Content-Type': 'application/json',
-              'x-goog-api-key': env.GEMINI_API_KEY,
-            },
-            body: JSON.stringify({
-              contents: [{ parts: [{ text: prompt }] }],
-              generationConfig: { responseModalities: ['TEXT', 'IMAGE'] }
-            }),
-          }
-        );
+        const result = await env.AI.run('@cf/black-forest-labs/flux-1-schnell', {
+          prompt: prompt.slice(0, 2000),
+        });
 
-        const geminiData = await geminiRes.json();
-        const parts = geminiData.candidates?.[0]?.content?.parts || [];
-        const imagePart = parts.find(p => p.inlineData || p.inline_data);
-        const inline = imagePart?.inlineData || imagePart?.inline_data;
+        // El binding puede devolver { image: base64 } o un ReadableStream según el modelo/versión
+        let base64;
+        if (result?.image) {
+          base64 = result.image;
+        } else if (result instanceof ReadableStream || result?.getReader) {
+          const buf = await new Response(result).arrayBuffer();
+          base64 = btoa(String.fromCharCode(...new Uint8Array(buf)));
+        } else if (result instanceof Uint8Array || result?.byteLength !== undefined) {
+          base64 = btoa(String.fromCharCode(...new Uint8Array(result)));
+        }
 
-        if (!inline?.data) {
-          const motivo =
-            geminiData.error?.message ||
-            geminiData.promptFeedback?.blockReason ||
-            geminiData.candidates?.[0]?.finishReason ||
-            'Gemini no devolvió ninguna imagen';
-          return new Response(JSON.stringify({ error: 'No se pudo generar la carátula', detail: motivo }), {
+        if (!base64) {
+          return new Response(JSON.stringify({ error: 'Workers AI no devolvió ninguna imagen', detail: JSON.stringify(result).slice(0,300) }), {
             status: 200,
             headers: { ...headers, 'Content-Type': 'application/json' },
           });
         }
 
-        const mimeType = inline.mimeType || inline.mime_type || 'image/png';
-        return new Response(JSON.stringify({ image: `data:${mimeType};base64,${inline.data}` }), {
+        return new Response(JSON.stringify({ image: `data:image/png;base64,${base64}` }), {
           headers: { ...headers, 'Content-Type': 'application/json' },
         });
 
