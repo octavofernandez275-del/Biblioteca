@@ -76,25 +76,25 @@
       "id": 1782260842909,
       "name": "Aladin",
       "price": "$1.50",
-      "cat": "infantil",
+      "cat": "ebooks",
       "desc": "La mágica historia de Aladdin, un joven humilde que descubre una lámpara maravillosa con un genio. Con la ayuda de sus amigos, deberá enfrentarse al malvado Jafar y conquistar el corazón de la Princesa Jasmine.",
       "author": "Walt Disney Company",
-      "genre": "Fantasía infantil",
+      "genre": "Fantasía y Aventura",
       "age": "6-10",
       "temas": [
         "Magia",
         "Aventura",
         "Amistad",
-        "Princesas",
-        "Bien contra el mal"
+        "Amor",
+        "Bien contra mal"
       ],
       "tags": [
         "Aladdin",
         "Genio",
-        "Princesa",
+        "Princesa Jasmine",
+        "Magia",
         "Aventura",
-        "Disney",
-        "Cuentos"
+        "Disney"
       ],
       "nivel": "Principiante",
       "idioma": "Español",
@@ -103,19 +103,20 @@
       "coverUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/covers/1782260842909_aladin.jpg",
       "file": "Aladdin (Disney Walt) (z-library.sk, 1lib.sk, z-lib.sk).pdf",
       "ad": {
-        "headline": "Descubre la magia de Aladdin",
-        "subheadline": "Una aventura inolvidable con el Genio y la Princesa Jasmine.",
-        "cta": "¡Lee la historia!",
-        "banner_text": "Clásico Disney para niños",
-        "instagram_caption": "✨ ¡Vuela en la alfombra mágica con Aladdin! ✨\nEsta historia atemporal de magia y aventura te espera.\n¡Enfrenta a Jafar y vive un cuento de hadas con el Genio! 🧞‍♂️💖",
+        "headline": "Magia, Genios y Aventura Épica",
+        "subheadline": "Sumérgete en la clásica historia de Aladdin, Jasmine y el Genio. ¡Un viaje inolvidable!",
+        "cta": "Leer ahora",
+        "banner_text": "Aventura Disney Clásica",
+        "instagram_caption": "¡Prepárate para la magia! ✨ Sumérgete en la eterna historia de Aladdin, un joven con un corazón noble, un genio sorprendente y la valiente princesa Jasmine. Una aventura llena de encanto y valentía que te hará soñar. 🧞‍♂️💖 #Aladdin #DisneyMagic #CuentosClasicos",
         "hashtags": [
-          "#Aladdin",
-          "#Disney",
-          "#CuentosInfantiles",
-          "#Magia",
-          "#Aventura",
-          "#Genio",
-          "#PrincesaJasmine"
+          "Aladdin",
+          "Disney",
+          "Fantasia",
+          "Aventura",
+          "Genio",
+          "PrincesaJasmine",
+          "CuentoClasico",
+          "Magia"
         ]
       }
     },
@@ -2430,5 +2431,5 @@
     "juan@test.com",
     "octavio123@gamil.com"
   ],
-  "updatedAt": "2026-07-05T21:07:48.737Z"
+  "updatedAt": "2026-07-06T19:40:43.494Z"
 }
