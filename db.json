@@ -1819,7 +1819,7 @@
       },
       "pdfName": "cuentos_hermanos_grimm_edincr_copia.pdf",
       "pdfUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/pdfs/1783210859171_cuentos_hermanos_grimm_edincr_copia.pdf",
-      "coverUrl": null,
+      "coverUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/covers/1783210859171_cuentos_hermanos_grimm_edincr.jpg",
       "file": "cuentos_hermanos_grimm_edincr_copia.pdf"
     },
     {
@@ -2545,5 +2545,5 @@
     "juan@test.com",
     "octavio123@gamil.com"
   ],
-  "updatedAt": "2026-07-06T19:56:16.544Z"
+  "updatedAt": "2026-07-06T19:56:19.819Z"
 }
