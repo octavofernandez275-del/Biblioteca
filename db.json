@@ -1498,22 +1498,42 @@
       "id": 1783210646020,
       "name": "6.  Ana, la de Ingleside",
       "price": "$0.99",
-      "cat": "idiomas",
-      "desc": "",
-      "author": "",
-      "genre": "",
+      "cat": "novela",
+      "desc": "Acompaña a Ana Shirley en una nueva etapa de su vida, donde la maternidad y la vida en Ingleside le presentan desafíos y alegrías inesperadas. Una emotiva continuación de la saga de Green Gables que deleitará a los amantes de los clásicos.",
+      "author": "L.M. Montgomery",
+      "genre": "Ficción Clásica",
       "age": "",
-      "temas": [],
-      "tags": [],
+      "temas": [
+        "Maternidad",
+        "Vida familiar",
+        "Crecimiento personal",
+        "Hogar",
+        "Clásicos"
+      ],
+      "tags": [
+        "Ana Shirley",
+        "Familia",
+        "Maternidad",
+        "Crecimiento",
+        "Clásico",
+        "Ingleside"
+      ],
       "nivel": "",
-      "idioma": "",
+      "idioma": "Español",
       "ad": {
-        "headline": "",
-        "subheadline": "",
-        "cta": "",
-        "banner_text": "",
-        "instagram_caption": "",
-        "hashtags": []
+        "headline": "El regreso a Ingleside con Ana",
+        "subheadline": "Descubre los desafíos y alegrías de la maternidad junto a tu personaje favorito.",
+        "cta": "Leer ahora",
+        "banner_text": "Saga Green Gables",
+        "instagram_caption": "¡Vuelve a sumergirte en el entrañable mundo de Ana Shirley! 🌸 En 'Ana, la de Ingleside', acompaña a nuestra querida protagonista en su faceta de madre y esposa, explorando la belleza y los retos de la vida familiar. Un clásico que te tocará el corazón. ✨",
+        "hashtags": [
+          "#AnaLaDeIngleside",
+          "#AnneOfGreenGables",
+          "#LMMontgomery",
+          "#LiteraturaClásica",
+          "#FicciónJuvenil",
+          "#MaternidadLiteraria"
+        ]
       },
       "pdfName": "6.- Ana, la de Ingleside.pdf",
       "pdfUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/pdfs/1783210646020_6___ana__la_de_ingleside.pdf",
@@ -2502,5 +2522,5 @@
     "juan@test.com",
     "octavio123@gamil.com"
   ],
-  "updatedAt": "2026-07-06T19:43:37.500Z"
+  "updatedAt": "2026-07-06T19:43:47.592Z"
 }
