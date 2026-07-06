@@ -457,42 +457,42 @@
       "id": 1783193218093,
       "name": "1984",
       "price": "$0.99",
-      "cat": "ebooks",
+      "cat": "novela",
       "desc": "Sumérgete en un mundo opresivo donde el Gran Hermano te vigila constantemente. Winston Smith lucha por su libertad en una sociedad distópica controlada por un régimen totalitario.",
       "author": "George Orwell",
-      "genre": "Distopía",
+      "genre": "Ficción Distópica",
       "age": "Adultos",
       "temas": [
-        "Vigilancia",
         "Totalitarismo",
+        "Vigilancia",
         "Libertad",
-        "Resistencia",
-        "Control social"
+        "Control social",
+        "Rebelión"
       ],
       "tags": [
-        "Clásico",
         "Distopía",
+        "Clásico",
         "Política",
-        "Sociedad",
-        "Ficción",
-        "Rebelión"
+        "Vigilancia",
+        "Thriller",
+        "Sociedad"
       ],
       "nivel": "",
       "idioma": "Español",
       "ad": {
-        "headline": "El Gran Hermano te observa",
-        "subheadline": "Descubre la distopía que te hará cuestionar toda la realidad.",
-        "cta": "Descubrir ahora",
-        "banner_text": "1984: Un Clásico Ineludible",
-        "instagram_caption": "Adéntrate en el icónico mundo de 1984 👁️. Una obra maestra distópica que te hará cuestionar la libertad y la vigilancia. ¿Te atreves a desafiar al Gran Hermano? 👇 #LibroRecomendado",
+        "headline": "El Gran Hermano te vigila",
+        "subheadline": "Un clásico atemporal sobre los peligros del control totalitario.",
+        "cta": "Sumérgete ahora",
+        "banner_text": "Clásico Distópico Imprescindible",
+        "instagram_caption": "¿Te atreves a enfrentar al Gran Hermano? 👁️‍🗨️ Sumérgete en '1984', una distopía escalofriante donde la libertad es un lujo. La lucha de Winston Smith te hará cuestionar tu propia realidad. ¡Un clásico que sigue vigente!",
         "hashtags": [
           "#1984",
-          "#Distopía",
+          "#Distopia",
+          "#GranHermano",
           "#GeorgeOrwell",
-          "#ClásicoLiterario",
-          "#Vigilancia",
+          "#Clasicos",
           "#Libertad",
-          "#Literatura"
+          "#Vigilancia"
         ]
       },
       "pdfName": "1984.pdf",
@@ -551,42 +551,43 @@
       "id": 1783193350362,
       "name": "Dios Emperador de Dune",
       "price": "$0.99",
-      "cat": "ebooks",
+      "cat": "novela",
       "desc": "La cuarta entrega de la épica saga Dune explora la figura mesiánica de Leto Atreides II y los dilemas éticos de la humanidad frente a sus mitos y héroes. Una obra de culto que aborda ecología, poder y psicología de los mitos en un mundo fascinante.",
       "author": "Frank Herbert",
-      "genre": "Ciencia Ficción",
+      "genre": "Ciencia Ficción Épica",
       "age": "Adultos",
       "temas": [
-        "Poder",
-        "Mitos",
-        "Ecología",
+        "Mesianismo",
         "Filosofía",
-        "Ética"
+        "Ecología",
+        "Poder",
+        "Psicología de los Mitos"
       ],
       "tags": [
-        "Ciencia ficción",
-        "Dune",
-        "Clásico",
-        "Saga",
+        "Ciencia Ficción",
+        "Saga Dune",
         "Filosofía",
-        "Distopía"
+        "Poder",
+        "Mesianismo",
+        "Ecología"
       ],
-      "nivel": "",
+      "nivel": "Avanzado",
       "idioma": "Español",
       "ad": {
-        "headline": "Dune: El Dilema del Dios Emperador",
-        "subheadline": "Explora el destino de la humanidad frente al poder absoluto de un mesías.",
-        "cta": "Sumérgete ahora",
-        "banner_text": "Clásico de Ciencia Ficción",
-        "instagram_caption": "Adéntrate en 'Dios Emperador de Dune' de Frank Herbert. 🏜️\nLa épica continuación que desafía la humanidad, el poder y los mitos.\nUna obra maestra que te hará reflexionar. ¡No te la pierdas! ✨",
+        "headline": "El poder supremo, la carga más pesada.",
+        "subheadline": "Sumérgete en el poder, los mitos y el destino de la humanidad.",
+        "cta": "Descubre el Imperio",
+        "banner_text": "Dune: La Épica Continúa",
+        "instagram_caption": "¡Prepárate para la épica continuación de la saga Dune! 🌌\n'Dios Emperador de Dune' te sumerge en los dilemas de poder, ecología y mitos.\nUna obra maestra de Frank Herbert que desafiará tu mente. ¿Te atreves? ✨\n#Dune #CienciaFiccion #FrankHerbert #LibroDeCulto",
         "hashtags": [
-          "#Dune",
-          "#DiosEmperador",
+          "#DiosEmperadorDeDune",
           "#FrankHerbert",
           "#CienciaFiccion",
           "#SagaDune",
-          "#LibrosRecomendados",
-          "#ObraDeCulto"
+          "#LibroDeCulto",
+          "#Ecologia",
+          "#Filosofia",
+          "#Mesianismo"
         ]
       },
       "pdfName": "Dios Emperador de Dune -- Frank Herbert .pdf",
@@ -2457,5 +2458,5 @@
     "juan@test.com",
     "octavio123@gamil.com"
   ],
-  "updatedAt": "2026-07-06T19:41:23.663Z"
+  "updatedAt": "2026-07-06T19:41:43.551Z"
 }
