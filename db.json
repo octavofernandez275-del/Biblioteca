@@ -124,56 +124,72 @@
       "id": 1782951404132,
       "name": "Aladin: 2 el regreso de Yafar",
       "price": "$0.80",
-      "cat": "infantil",
+      "cat": "ebooks",
       "desc": "En esta emocionante secuela, el malvado hechicero Jafar regresa para vengarse de Aladdin y la princesa Jasmine, amenazando la paz de Agrabah. Una aventura llena de magia, desafíos y el coraje de nuestros héroes.",
       "author": "Walt Disney Company",
-      "genre": "Literatura infantil",
+      "genre": "Fantasía Aventura",
       "age": "6-10",
       "temas": [
-        "Aventura",
-        "Fantasía",
-        "Magia",
-        "Disney",
-        "Historias infantiles"
+        "magia",
+        "aventura",
+        "villanos",
+        "valentía",
+        "secuela"
       ],
       "tags": [
         "Aladdin",
+        "Jafar",
         "Disney",
         "Aventura",
-        "Cuentos infantiles",
         "Magia",
-        "Yafar"
+        "Cuentos"
       ],
       "nivel": "",
       "idioma": "Español",
       "pdfName": "Aladdin 2 (Disney Walt) (z-library.sk, 1lib.sk, z-lib.sk).pdf",
       "pdfUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/pdfs/1782951404132_aladin__2_el_regreso_de_yafar.pdf",
       "coverUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/covers/1782951404132_aladin__2_el_regreso_de_yafar.webp",
-      "file": "Aladdin 2 (Disney Walt) (z-library.sk, 1lib.sk, z-lib.sk).pdf"
+      "file": "Aladdin 2 (Disney Walt) (z-library.sk, 1lib.sk, z-lib.sk).pdf",
+      "ad": {
+        "headline": "Jafar ha vuelto. ¿Podrá Agrabah ser salvada?",
+        "subheadline": "Una secuela mágica llena de valentía, venganza y desafíos épicos.",
+        "cta": "Descubre la aventura",
+        "banner_text": "Aladdin 2: El Regreso de Jafar",
+        "instagram_caption": "¡La magia regresa a Agrabah! ✨ Jafar ha vuelto y la aventura espera.\n¿Podrán Aladdin y Jasmine enfrentar este nuevo desafío?\nNo te pierdas esta emocionante secuela. 📖",
+        "hashtags": [
+          "#Aladdin2",
+          "#RegresoDeJafar",
+          "#Disney",
+          "#AventuraMagica",
+          "#LibrosInfantiles",
+          "#Fantasia",
+          "#Secuela"
+        ]
+      }
     },
     {
       "id": 1783029262599,
       "name": "La Cenicienta",
       "price": "$0.80",
       "cat": "infantil",
-      "desc": "",
+      "desc": "Revive el clásico cuento de una joven soñadora y su hada madrina. Descubre cómo la bondad y la magia pueden transformar el destino, llevando a Cenicienta de la adversidad a un final de cuento de hadas.",
       "author": "Adaptación de Walt Disney",
-      "genre": "Literatura Infantil",
+      "genre": "Cuento de Hadas",
       "age": "",
       "temas": [
         "Magia",
-        "Princesas",
-        "Sueños",
         "Transformación",
-        "Bien y mal"
+        "Perseverancia",
+        "Sueños",
+        "Bien contra el mal"
       ],
       "tags": [
-        "Princesas",
-        "Magia",
         "Clásico",
+        "Princesas",
         "Disney",
         "Fantasía",
-        "Sueños"
+        "Cuento moral",
+        "Familia"
       ],
       "nivel": "",
       "idioma": "Español",
@@ -182,54 +198,64 @@
       "coverUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/covers/1783029262599_la_cenicienta.jpg",
       "file": "La Cenicienta (Disney Walt) (z-library.sk, 1lib.sk, z-lib.sk).pdf",
       "ad": {
-        "headline": "",
-        "subheadline": "",
-        "cta": "",
-        "banner_text": "",
-        "instagram_caption": "",
-        "hashtags": []
+        "headline": "La Magia Eterna de Cenicienta",
+        "subheadline": "Un cuento clásico que sigue encantando a generaciones.",
+        "cta": "Descubrir la Magia",
+        "banner_text": "Clásico Infantil Disney",
+        "instagram_caption": "Sumérgete en el mágico mundo de Cenicienta 👑✨ Un cuento eterno de sueños, valentía y transformaciones. ¡Perfecto para leer en familia! 💖 Descubre su encanto.",
+        "hashtags": [
+          "#LaCenicienta",
+          "#CuentoDeHadas",
+          "#Disney",
+          "#LiteraturaInfantil",
+          "#Princesas",
+          "#Magia",
+          "#CuentosClasicos",
+          "#Familia"
+        ]
       }
     },
     {
       "id": 1783113082970,
       "name": "El príncipe y el mendigo",
       "price": "$0.99",
-      "cat": "infantil",
-      "desc": "",
+      "cat": "novela",
+      "desc": "En un giro del destino, un príncipe y un mendigo idénticos intercambian sus vidas, enfrentándose a los desafíos y prejuicios de un mundo que no es el suyo. Una historia atemporal sobre identidad, justicia y la verdadera naturaleza del poder.",
       "author": "Walt Disney Company",
-      "genre": "Ficción Infantil",
+      "genre": "Ficción Clásica",
       "age": "6-10",
       "temas": [
-        "Identidad",
-        "Justicia Social",
         "Aventura",
+        "Identidad",
+        "Justicia social",
         "Realeza",
-        "Desigualdad"
+        "Amistad"
       ],
       "tags": [
         "Clásico",
         "Aventura",
+        "Juvenil",
         "Identidad",
         "Realeza",
-        "Justicia",
-        "Mark Twain"
+        "Moral"
       ],
       "nivel": "",
       "idioma": "Español",
       "ad": {
-        "headline": "Cambio de roles, destino inesperado.",
-        "subheadline": "Una historia atemporal sobre identidad, injusticia y el poder del azar.",
-        "cta": "Descubre la aventura",
-        "banner_text": "Clásico Intemporal de Aventura",
-        "instagram_caption": "✨ ¡Sumérgete en un clásico inolvidable!\n👑 \"El Príncipe y el Mendigo\" te llevará a una aventura donde la identidad lo es todo.\n📚 ¿Listo para un viaje lleno de intriga y justicia social?",
+        "headline": "Un clásico atemporal de identidad y aventura.",
+        "subheadline": "Descubre cómo dos vidas idénticas desafían el destino y las apariencias.",
+        "cta": "Iniciar lectura",
+        "banner_text": "Clásico que desafía las apariencias",
+        "instagram_caption": "¿Imaginas cambiar tu vida por completo? 👑✨ En 'El Príncipe y el Mendigo', dos jóvenes idénticos lo hacen, revelando verdades inesperadas sobre el poder y la justicia. ¡Una aventura clásica que te hará reflexionar! Disponible para leer ahora.",
         "hashtags": [
           "#ElPrincipeYElMendigo",
-          "#Clasico",
+          "#ClásicoLiterario",
           "#Aventura",
           "#MarkTwain",
+          "#LibrosParaTodos",
           "#Identidad",
-          "#JusticiaSocial",
-          "#LecturaRecomendada"
+          "#Justicia",
+          "#Realeza"
         ]
       },
       "pdfName": "El Principe Y El Mendigo (Disney Walt) (z-library.sk, 1lib.sk, z-lib.sk).pdf",
@@ -241,43 +267,43 @@
       "id": 1783193062310,
       "name": "Mulan: Una Historia de Disney",
       "price": "$0.99",
-      "cat": "ebooks",
+      "cat": "infantil",
       "desc": "Sumérgete en la legendaria historia de Mulan, la valiente joven china que desafía el destino para salvar a su padre y a su nación. Descubre una aventura épica de honor, valentía y la verdadera fuerza del espíritu.",
       "author": "Walt Disney Company",
-      "genre": "Fantasía Aventura Infantil",
+      "genre": "Ficción Infantil",
       "age": "",
       "temas": [
-        "Valor",
-        "Identidad",
         "Honor",
-        "Familia",
-        "Superación"
+        "Valentía",
+        "Sacrificio",
+        "Identidad",
+        "Cultura china"
       ],
       "tags": [
         "Mulan",
         "Disney",
-        "Heroína",
-        "Leyenda China",
         "Aventura",
-        "Familiar"
+        "Leyenda china",
+        "Familiar",
+        "Heroína"
       ],
       "nivel": "",
       "idioma": "Español",
       "ad": {
-        "headline": "Descubre la leyenda de la valiente Mulan.",
-        "subheadline": "Una historia épica de honor y valentía de Disney para toda la familia.",
-        "cta": "Explora la aventura",
-        "banner_text": "Mulan: Clásico Disney",
-        "instagram_caption": "¡Sumérgete en la magia de Mulan! ✨ Una historia inspiradora de valentía, honor y la fuerza de una guerrera. ¿Estás listo para esta épica aventura de Disney? ⚔️ ¡Perfecta para leer en familia! 👨‍👩‍👧‍👦",
+        "headline": "Mulan: Honor, Valentía y Aventura Épica",
+        "subheadline": "Descubre la heroína que desafió el destino por su nación.",
+        "cta": "Leer ahora",
+        "banner_text": "La Leyenda de Mulan",
+        "instagram_caption": "¡Sumérgete en la épica historia de Mulan! 🌸 Una joven valiente que desafió el destino para salvar a su familia y a su nación. Descubre el verdadero significado del honor y la fuerza interior. 💪 Una aventura inolvidable te espera. ✨",
         "hashtags": [
           "#Mulan",
           "#Disney",
-          "#Heroina",
           "#LeyendaChina",
-          "#CuentoInfantil",
-          "#Aventura",
-          "#Valor",
-          "#Familia"
+          "#AventuraÉpica",
+          "#HonorYValor",
+          "#FuerzaInterior",
+          "#CuentosClasicos",
+          "#Heroína"
         ]
       },
       "pdfName": "Mulan (Disney Walt) (z-library.sk, 1lib.sk, z-lib.sk).pdf",
@@ -292,39 +318,39 @@
       "cat": "ebooks",
       "desc": "En este prólogo, Aldous Huxley reflexiona sobre su icónica novela, explicando por qué ha decidido no revisarla a pesar de sus imperfecciones, prefiriendo preservar su visión original.",
       "author": "Aldous Huxley",
-      "genre": "Ficción Distópica",
+      "genre": "Ensayo",
       "age": "",
       "temas": [
+        "Crítica literaria",
         "Distopía",
-        "Crítica social",
-        "Literatura clásica",
-        "Sociedad futurista",
-        "Reflexión del autor"
+        "Filosofía",
+        "Intención de autor",
+        "Visión de futuro"
       ],
       "tags": [
-        "Distopía",
-        "Clásico",
-        "Ciencia ficción",
-        "Crítica social",
         "Aldous Huxley",
-        "Filosofía"
+        "Un Mundo Feliz",
+        "Prólogo",
+        "Análisis literario",
+        "Distopía",
+        "Clásico"
       ],
       "nivel": "",
       "idioma": "Español",
       "ad": {
         "headline": "Huxley: La Mente Maestra",
-        "subheadline": "El prólogo esencial que desvela la visión original de 'Un Mundo Feliz'.",
-        "cta": "Descubrir ahora",
-        "banner_text": "Reflexiones del Creador Distópico",
-        "instagram_caption": "Sumérgete en la mente de Aldous Huxley. 🧠 En este prólogo esencial, el autor de 'Un Mundo Feliz' reflexiona sobre su obra maestra y la importancia de preservar su visión original. Un viaje intelectual imprescindible para entender una de las distopías más influyentes de la literatura. 👇",
+        "subheadline": "Descubre las razones de una visión distópica inalterable. Reflexiones del autor.",
+        "cta": "Lee su visión original",
+        "banner_text": "Prólogo Exclusivo: Un Mundo Feliz",
+        "instagram_caption": "Sumérgete en la mente de Aldous Huxley con este fascinante prólogo a 'Un Mundo Feliz'. 📖 Descubre por qué el autor decidió mantener intacta su obra maestra, reflexionando sobre sus imperfecciones y su visión original. Un viaje intelectual imprescindible. ✨",
         "hashtags": [
-          "#UnMundoFeliz",
           "#AldousHuxley",
+          "#UnMundoFeliz",
           "#Distopía",
-          "#ClásicosLiterarios",
-          "#CienciaFicción",
-          "#CríticaSocial",
-          "#LibrosRecomendados"
+          "#Prólogo",
+          "#ClásicoLiterario",
+          "#Reflexión",
+          "#Literatura"
         ]
       },
       "pdfName": "Aldous HGuxley Un mundo Feliz_copia.pdf",
@@ -2431,5 +2457,5 @@
     "juan@test.com",
     "octavio123@gamil.com"
   ],
-  "updatedAt": "2026-07-06T19:40:43.494Z"
+  "updatedAt": "2026-07-06T19:41:23.663Z"
 }
