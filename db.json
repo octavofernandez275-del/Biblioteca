@@ -1858,36 +1858,37 @@
       "genre": "Novela Gráfica",
       "age": "Jóvenes y Adultos",
       "temas": [
-        "Ilustración",
-        "Creatividad",
-        "Multimedia",
         "Humor gráfico",
-        "Narrativa visual"
+        "Narrativa multimedia",
+        "Creatividad",
+        "Fusión de artes",
+        "Escritura"
       ],
       "tags": [
-        "Garabatos",
-        "Ilustración digital",
-        "Novela ilustrada",
-        "Arte",
-        "Animación",
-        "Ficción"
+        "Novela gráfica",
+        "Humor",
+        "Multimedia",
+        "Creatividad",
+        "Sergi Cámara",
+        "Arte"
       ],
       "nivel": "",
       "idioma": "Español",
       "ad": {
-        "headline": "Sumérgete en la Creatividad de Sergi Cámara",
-        "subheadline": "Una novela gráfica ilustrada que fusiona humor, arte y multimedia.",
+        "headline": "Gery Garabatos: ¡Humor, Arte y Narrativa!",
+        "subheadline": "Una experiencia única que fusiona dibujo, texto y contenido multimedia.",
         "cta": "Explorar ahora",
-        "banner_text": "Novela Gráfica Interactiva",
-        "instagram_caption": "🎨✨ Descubre 'Gery Garabatos: El Capo De Todos Los Capos' de Sergi Cámara. Una obra maestra visual que combina ilustración, humor gráfico y elementos multimedia. ¡Prepárate para una experiencia de lectura única y emocionante! \n🔗 Enlace en la biografía.",
+        "banner_text": "Novela Gráfica Multimedia",
+        "instagram_caption": "Descubre Gery Garabatos: El Capo De Todos Los Capos ✨.\nLa innovadora novela ilustrada de Sergi Cámara que une humor, arte y multimedia. Prepárate para una experiencia única.\n¡No te la pierdas! 📚🎨🎬",
         "hashtags": [
           "#GeryGarabatos",
-          "#SergiCamara",
-          "#NovelaGrafica",
-          "#Ilustracion",
-          "#Multimedia",
+          "#NovelaIlustrada",
           "#HumorGrafico",
-          "#Creatividad"
+          "#SergiCamara",
+          "#ArteDigital",
+          "#LecturaRecomendada",
+          "#Multimedia",
+          "#Ficcion"
         ]
       },
       "pdfName": "Gery garabatos _ Gery Doodles_ El Capo De Todos Los Capos -- Càmara, Sergi, author -- Gery Garabatos -- 2, La escritura desatada, Escritura -- isbn13 9788415579311 -- ae63ee79b305960b50fd77ef40d5c0fb -- Anna’s Archive.pdf",
@@ -2544,5 +2545,5 @@
     "juan@test.com",
     "octavio123@gamil.com"
   ],
-  "updatedAt": "2026-07-06T19:44:03.850Z"
+  "updatedAt": "2026-07-06T19:44:14.561Z"
 }
