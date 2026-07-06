@@ -1071,42 +1071,42 @@
       "id": 1783193889703,
       "name": "Jugos Saludables 2021: Más de 50 Recetas de Jugos Naturales",
       "price": "$0.99",
-      "cat": "ebooks",
+      "cat": "salud",
       "desc": "Descubre el poder de los jugos naturales con esta guía esencial para principiantes. Con más de 50 recetas, aprenderás a aumentar tu energía, fortalecer la inmunidad y mejorar tu bienestar general de forma deliciosa.",
       "author": "Barbara White",
       "genre": "Salud y Bienestar",
       "age": "",
       "temas": [
-        "Jugos naturales",
-        "Recetas saludables",
         "Nutrición",
-        "Bienestar",
-        "Inmunidad"
+        "Dietas Saludables",
+        "Recetas de Bebidas",
+        "Bienestar General",
+        "Remedios Naturales"
       ],
       "tags": [
-        "Jugos",
-        "Recetas",
-        "Saludable",
+        "Jugos Naturales",
+        "Recetas Saludables",
         "Bienestar",
-        "Principiantes",
-        "Nutrición"
+        "Nutrición",
+        "Detox",
+        "Energía"
       ],
       "nivel": "Principiante",
       "idioma": "Español",
       "ad": {
-        "headline": "Jugos Saludables: ¡Energía y Bienestar Natural!",
-        "subheadline": "Más de 50 recetas fáciles para potenciar tu salud y vitalidad hoy mismo.",
-        "cta": "Empieza tu cambio",
-        "banner_text": "Guía de Jugos Saludables",
-        "instagram_caption": "¡Transforma tu salud con el poder de los jugos naturales! 🥭🥕 Descubre más de 50 recetas deliciosas y fáciles para principiantes que aumentarán tu energía, inmunidad y bienestar. ¡La guía esencial para una vida más sana te espera! ✨",
+        "headline": "Vitalidad en Cada Vaso",
+        "subheadline": "Más de 50 recetas para energía, inmunidad y bienestar total.",
+        "cta": "Explora las Recetas",
+        "banner_text": "Jugos Saludables: Guía para Principiantes",
+        "instagram_caption": "¡Transforma tu salud con el poder de los jugos naturales! 🥤✨\nDescubre más de 50 recetas fáciles para principiantes. Aumenta tu energía, fortalece tu inmunidad y mejora tu bienestar general. ¡Un camino delicioso hacia una vida más sana! 💚",
         "hashtags": [
-          "#JugosNaturales",
-          "#SaludYBienestar",
-          "#RecetasSaludables",
+          "#JugosSaludables",
+          "#RecetasNaturales",
+          "#Bienestar",
+          "#Nutricion",
+          "#Detox",
           "#VidaSana",
-          "#Energia",
-          "#Inmunidad",
-          "#Detox"
+          "#EnergiaNatural"
         ]
       },
       "pdfName": "Jugos Saludables 2021_ Más de 50 Recetas de jugos naturales -- Barbara White -- 2021-05-06 -- Independently published -- isbn13 9798749496871 -- d8ac4fe400189a2f72ebe1f0d3c6da23 -- Anna’s Archive.pdf",
@@ -1118,42 +1118,43 @@
       "id": 1783193911323,
       "name": "Larousse Gastronomique en Español",
       "price": "$0.99",
-      "cat": "ebooks",
+      "cat": "recetas",
       "desc": "La edición española de la enciclopedia Larousse Gastronomique, asesorada por Joël Robuchon y prologada por Andoni Luis Aduriz, es una obra esencial para entender la evolución y los códigos de la cocina. Ofrece descripciones detalladas que contextualizan la elaboración de cada plato y producto.",
       "author": "Larousse, Joël Robuchon, Andoni Luis Aduriz",
-      "genre": "Gastronomía y Cocina",
+      "genre": "Gastronomía",
       "age": "Adultos",
       "temas": [
-        "Historia de la Cocina",
-        "Técnicas Culinarias",
-        "Recetas Internacionales",
-        "Productos Gastronómicos",
-        "Cultura Alimentaria"
+        "Cocina internacional",
+        "Técnicas culinarias",
+        "Historia de la gastronomía",
+        "Ingredientes y productos",
+        "Cultura gastronómica"
       ],
       "tags": [
+        "Gastronomía",
+        "Cocina",
         "Enciclopedia",
-        "Cocina Francesa",
         "Recetas",
-        "Culinaria",
-        "Referencia",
-        "Robuchon"
+        "Técnicas culinarias",
+        "Cultura gastronómica"
       ],
       "nivel": "Avanzado",
       "idioma": "Español",
       "ad": {
-        "headline": "La Biblia de la Gastronomía",
-        "subheadline": "Domina técnicas, historia y recetas con esta edición definitiva.",
-        "cta": "Descubrir Gastronomía",
-        "banner_text": "Larousse Gastronomique Esencial",
-        "instagram_caption": "¡Sumérgete en el universo de la gastronomía 👨‍🍳📖 con el Larousse Gastronomique! Aprende de los grandes, desde técnicas esenciales hasta la historia culinaria más fascinante. ✨ Edición en español con la maestría de Joël Robuchon y Andoni Luis Aduriz. ¡Tu cocina no será la misma! #LarousseGastronomique #CocinaDeAutor",
+        "headline": "La Enciclopedia Definitiva de la Gastronomía",
+        "subheadline": "Descubre la historia, técnicas y secretos de cada plato y producto.",
+        "cta": "Explora el Sabor",
+        "banner_text": "Larousse Gastronomique: Edición Española",
+        "instagram_caption": "Sumérgete en el arte culinario con Larousse Gastronomique 🥘✨.\nLa edición española, asesorada por Joël Robuchon y prologada por Andoni Luis Aduriz, es tu guía esencial.\nDescubre la historia, técnicas y secretos de cada plato. ¡Una joya para todo amante de la cocina! 📚👨‍🍳",
         "hashtags": [
           "#LarousseGastronomique",
+          "#CocinaEspañola",
           "#Gastronomia",
-          "#CocinaFrancesa",
-          "#RecetasProfesionales",
+          "#ArteCulinario",
+          "#Recetas",
+          "#ChefLife",
           "#LibroDeCocina",
-          "#CulturaCulinaria",
-          "#Chefs"
+          "#Sabores"
         ]
       },
       "pdfName": "larousse-gastronomique-en-espanol_copia.pdf",
@@ -1165,22 +1166,42 @@
       "id": 1783193925427,
       "name": "Las mejores recetas de carne (Listas en 30 minutos) (Spanish   Almudena Sasiain Calle   Recetas listas en 30 minutos, Colonia, Alemania, 2016   NGV   isbn13 9783625006534   1d57dbcc32eef929933768d597ae5635   Anna’s Archive",
       "price": "$0.99",
-      "cat": "ebooks",
-      "desc": "",
-      "author": "",
-      "genre": "",
+      "cat": "recetas",
+      "desc": "Descubre una variada colección de recetas de carne, todas diseñadas para estar listas en solo 30 minutos. Ideal para quienes buscan sabor y eficiencia en la cocina diaria, sin sacrificar la calidad.",
+      "author": "Almudena Sasiain Calle",
+      "genre": "Cocina",
       "age": "",
-      "temas": [],
-      "tags": [],
+      "temas": [
+        "Recetas de carne",
+        "Cocina rápida",
+        "Gastronomía",
+        "Platos express",
+        "Comida casera"
+      ],
+      "tags": [
+        "Cocina",
+        "Recetas",
+        "Carne",
+        "30 minutos",
+        "Comida rápida",
+        "Gastronomía"
+      ],
       "nivel": "",
-      "idioma": "",
+      "idioma": "Español",
       "ad": {
-        "headline": "",
-        "subheadline": "",
-        "cta": "",
-        "banner_text": "",
-        "instagram_caption": "",
-        "hashtags": []
+        "headline": "Prepara Carne Deliciosa en Solo 30 Minutos",
+        "subheadline": "Sabores increíbles para tu día a día. ¡Cocina rápido y disfruta más!",
+        "cta": "Explorar Recetas",
+        "banner_text": "Recetas de Carne Listas en 30 Minutos",
+        "instagram_caption": "¡Transforma tu cocina con estas recetas de carne listas en solo 30 minutos! 🥩✨ Prepara platos deliciosos sin complicaciones y disfruta más tiempo. ¡Sabor y rapidez garantizados! 🚀 #CocinaFacil #RecetasDeCarne",
+        "hashtags": [
+          "#RecetasDeCarne",
+          "#CocinaEn30Minutos",
+          "#ComidaRapida",
+          "#Gastronomia",
+          "#RecetasFaciles",
+          "#PlatosDeliciosos"
+        ]
       },
       "pdfName": "Las mejores recetas de carne (Listas en 30 minutos) (Spanish -- Almudena Sasiain Calle -- Recetas listas en 30 minutos, Colonia, Alemania, 2016 -- NGV -- isbn13 9783625006534 -- 1d57dbcc32eef929933768d597ae5635 -- Anna’s Archive.pdf",
       "pdfUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/pdfs/1783193925427_las_mejores_recetas_de_carne__listas_en_30_minutos___spanish___almudena_sasiain_calle___recetas_listas_en_30_minutos__colonia__alemania__2016___ngv___isbn13_9783625006534___1d57dbcc32eef929933768d597ae5635___anna_s_archive.pdf",
@@ -2481,5 +2502,5 @@
     "juan@test.com",
     "octavio123@gamil.com"
   ],
-  "updatedAt": "2026-07-06T19:43:04.886Z"
+  "updatedAt": "2026-07-06T19:43:32.815Z"
 }
