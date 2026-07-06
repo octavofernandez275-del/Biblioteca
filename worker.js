@@ -84,6 +84,7 @@ export default {
   "idioma": "string",
   "nivel": "string (Principiante, Intermedio, Avanzado, o vacío)",
   "tags": ["array", "de", "3-6", "etiquetas", "cortas"],
+  "precio_sugerido": 4.99,
   "ad": {
     "headline": "string — frase promocional corta y atractiva (máx 8 palabras)",
     "subheadline": "string — complemento del titular (máx 12 palabras)",
@@ -98,7 +99,8 @@ Producto: ${name || ''}
 Descripción: ${desc || ''}
 Nombre del archivo: ${pdfName || 'no disponible'}
 extractMeta: ${extractMeta ? 'true — genera titulo_sugerido y descripcion_sugerida' : 'false — deja titulo_sugerido y descripcion_sugerida vacíos'}
-El bloque "ad" se genera siempre, tenga o no extractMeta activado, basándote en el nombre/descripción disponibles.`;
+El bloque "ad" se genera siempre, tenga o no extractMeta activado, basándote en el nombre/descripción disponibles.
+Para "precio_sugerido": es un ebook digital en español que se vende por descarga en una tienda propia (no plataforma grande tipo Amazon). Considerá género, profundidad/extensión aparente del contenido, y si el público es infantil (más barato, ej 0.99-2.99), general/ficción (ej 2.99-6.99) o técnico/profesional/negocios (más caro, ej 5.99-14.99). Devolvé siempre un número, sin símbolo de moneda.`;
 
         const geminiRes = await fetch(
           'https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent',
@@ -130,7 +132,7 @@ El bloque "ad" se genera siempre, tenga o no extractMeta activado, basándote en
             error: 'Gemini no devolvió clasificación',
             detail: motivo,
             titulo_sugerido: '', descripcion_sugerida: '', genero: '',
-            temas: [], autor_sugerido: '', edad: '', idioma: '', nivel: '', tags: [],
+            temas: [], autor_sugerido: '', edad: '', idioma: '', nivel: '', tags: [], precio_sugerido: null,
             ad: { headline: '', subheadline: '', cta: '', banner_text: '', instagram_caption: '', hashtags: [] }
           }), {
             status: 200,
@@ -149,7 +151,7 @@ El bloque "ad" se genera siempre, tenga o no extractMeta activado, basándote en
             error: 'Respuesta de Gemini no era JSON válido',
             detail: clean.slice(0, 300),
             titulo_sugerido: '', descripcion_sugerida: '', genero: '',
-            temas: [], autor_sugerido: '', edad: '', idioma: '', nivel: '', tags: [],
+            temas: [], autor_sugerido: '', edad: '', idioma: '', nivel: '', tags: [], precio_sugerido: null,
             ad: { headline: '', subheadline: '', cta: '', banner_text: '', instagram_caption: '', hashtags: [] }
           }), {
             status: 200,

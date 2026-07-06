@@ -4472,6 +4472,12 @@
       if (parsed.autor_sugerido && !document.getElementById('prod-author').value) {
         document.getElementById('prod-author').value = parsed.autor_sugerido;
       }
+      if (parsed.precio_sugerido && !document.getElementById('prod-price').value) {
+        const priceEl = document.getElementById('prod-price');
+        priceEl.value = Number(parsed.precio_sugerido).toFixed(2);
+        priceEl.style.borderColor = 'var(--accent)';
+        setTimeout(() => priceEl.style.borderColor = '', 2000);
+      }
 
       // Render tags
       const allTags = [
@@ -4633,11 +4639,12 @@
 
         const finalName = clasif.titulo_sugerido || rawName;
         const finalDesc = clasif.descripcion_sugerida || '';
+        const suggestedPrice = clasif.precio_sugerido ? Number(clasif.precio_sugerido).toFixed(2) : '0.99';
 
         const p = {
           id: Date.now() + i,
           name: finalName,
-          price: '$0.99',
+          price: '$' + suggestedPrice,
           cat: mapGenreToCategory(clasif.genero, finalName),
           desc: finalDesc,
           author: clasif.autor_sugerido || '',
@@ -6095,6 +6102,9 @@
             if (data.ad) p.ad = data.ad;
             if (!p.desc && data.descripcion_sugerida) p.desc = data.descripcion_sugerida;
             if (!p.author && data.autor_sugerido) p.author = data.autor_sugerido;
+            if (data.precio_sugerido && (!p.price || p.price === '$0.00' || p.price === '$0' || p.price === '')) {
+              p.price = '$' + Number(data.precio_sugerido).toFixed(2);
+            }
             done++;
           }
         } else { failed++; }
