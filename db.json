@@ -836,7 +836,7 @@
       "id": 1783193676358,
       "name": "La Máquina del Tiempo",
       "price": "$0.99",
-      "cat": "ebooks",
+      "cat": "novela",
       "desc": "Únete al Viajero del Tiempo en un intrigante viaje conceptual que desafía la geometría y la percepción de la realidad. Esta obra maestra te hará cuestionar las bases de la existencia mientras exploras un futuro enigmático.",
       "author": "H.G. Wells",
       "genre": "Ciencia Ficción",
@@ -844,34 +844,33 @@
       "temas": [
         "Viajes en el tiempo",
         "Filosofía",
-        "Sociedad futura",
-        "Paradojas científicas",
-        "Existencia humana"
+        "Futuro distópico",
+        "Percepción de la realidad"
       ],
       "tags": [
-        "Clásico",
         "Ciencia ficción",
-        "Distopía",
+        "Clásico",
+        "H.G. Wells",
+        "Viajes en el tiempo",
         "Aventura",
-        "Futuro",
-        "Pensamiento crítico"
+        "Filosofía"
       ],
       "nivel": "",
       "idioma": "Español",
       "ad": {
-        "headline": "Viaja al futuro. Cuestiona el presente.",
-        "subheadline": "Descubre el clásico que definió los viajes en el tiempo para siempre.",
-        "cta": "Explorar ahora",
-        "banner_text": "Clásico de Ciencia Ficción Imprescindible",
-        "instagram_caption": "Prepárate para un viaje que desafía la imaginación y la lógica. 🚀 H.G. Wells te lleva a las profundidades del tiempo, ¿estás listo para lo que encontrarás? ✨ #LaMaquinaDelTiempo",
+        "headline": "Explora el futuro. Desafía la realidad.",
+        "subheadline": "Un viaje conceptual que te hará cuestionar las bases de la existencia.",
+        "cta": "Descubre el futuro",
+        "banner_text": "Clásico de Ciencia Ficción",
+        "instagram_caption": "✨ Prepárate para un viaje alucinante con 'La Máquina del Tiempo' de H.G. Wells. 🕰️ Explora un futuro enigmático y desafía tu percepción de la realidad. ¿Estás listo para cuestionar todo? 🚀",
         "hashtags": [
           "#LaMaquinaDelTiempo",
-          "#HG Wells",
           "#CienciaFiccion",
-          "#ClasicosLiterarios",
+          "#HGWells",
           "#ViajesEnElTiempo",
-          "#LecturaRecomendada",
-          "#Distopía"
+          "#Clasicos",
+          "#Futuro",
+          "#LecturaRecomendada"
         ]
       },
       "pdfName": "Herbert George Wells La Máquina del Tiempo_copia.pdf",
@@ -883,43 +882,43 @@
       "id": 1783193692761,
       "name": "Fahrenheit 451",
       "price": "$0.99",
-      "cat": "ebooks",
+      "cat": "novela",
       "desc": "En una sociedad futurista, Guy Montag es un bombero cuyo trabajo es quemar libros, considerados la fuente de todo sufrimiento. Esta novela distópica de Ray Bradbury es una advertencia profética sobre la censura, el conformismo y el poder destructivo de un Estado que controla el pensamiento.",
       "author": "Ray Bradbury",
-      "genre": "Ciencia ficción distópica",
+      "genre": "Novela Distópica",
       "age": "Adultos",
       "temas": [
         "Censura",
-        "Control social",
-        "Libertad de pensamiento",
-        "Tecnología y sociedad",
-        "Distopía"
+        "Conformismo social",
+        "Control estatal",
+        "Poder del conocimiento",
+        "Rebelión"
       ],
       "tags": [
         "Distopía",
-        "Bradbury",
-        "Censura",
-        "Futuro",
+        "Ciencia ficción",
         "Clásico",
-        "Rebelión"
+        "Censura",
+        "Libros",
+        "Sociedad"
       ],
       "nivel": "",
       "idioma": "Español",
       "ad": {
-        "headline": "El futuro donde los libros arden.",
-        "subheadline": "Descubre una profética distopía sobre la censura y la libertad de pensamiento.",
-        "cta": "Lee la verdad",
-        "banner_text": "Clásico distópico imperdible",
-        "instagram_caption": "En un mundo donde quemar libros es ley, ¿te atreverías a leer? 🔥 Fahrenheit 451 de Ray Bradbury es una obra maestra que te hará cuestionar todo. Una visión profética sobre la censura y el control social. ¡Imprescindible!\n",
+        "headline": "El futuro donde los bomberos queman libros",
+        "subheadline": "Una advertencia profética sobre la censura y el poder del conocimiento.",
+        "cta": "Descubre el clásico",
+        "banner_text": "Fahrenheit 451: Desafía la censura",
+        "instagram_caption": "En un mundo donde leer es un crimen, ¿qué precio tiene la verdad? 🔥📚 Sumérgete en la distopía magistral de Ray Bradbury. Una historia que nos obliga a reflexionar sobre el poder de las ideas y la libertad.",
         "hashtags": [
           "#Fahrenheit451",
           "#RayBradbury",
           "#Distopía",
-          "#CienciaFiccion",
-          "#LibrosProhibidos",
+          "#CienciaFicción",
           "#Censura",
-          "#LeerEsResistir",
-          "#ClásicoLiterario"
+          "#Libros",
+          "#ClásicoLiterario",
+          "#LecturaRecomendada"
         ]
       },
       "pdfName": "Fahrenheit_451_clean.pdf",
@@ -931,41 +930,41 @@
       "id": 1783193804224,
       "name": "Colección Clásica de Comida Italiana",
       "price": "$0.99",
-      "cat": "ebooks",
+      "cat": "recetas",
       "desc": "Sumérgete en el sabor auténtico de Italia con esta colección esencial de recetas clásicas. Descubre los secretos culinarios que han deleitado paladares por generaciones.",
-      "author": "",
-      "genre": "Gastronomía",
+      "author": "Unknown",
+      "genre": "Gastronomía y Cocina",
       "age": "Todas las edades",
       "temas": [
         "Cocina italiana",
         "Recetas clásicas",
-        "Preparación de alimentos",
-        "Cultura culinaria",
-        "Platos tradicionales"
+        "Tradición culinaria",
+        "Historia de la gastronomía",
+        "Platos auténticos"
       ],
       "tags": [
-        "Cocina italiana",
-        "Recetario",
+        "Cocina",
+        "Recetas",
+        "Italia",
         "Gastronomía",
-        "Platos clásicos",
-        "Cocinar",
-        "PDF"
+        "Clásicos",
+        "Comida"
       ],
       "nivel": "Principiante",
       "idioma": "Español",
       "ad": {
-        "headline": "Sabor auténtico de Italia en tu mesa",
-        "subheadline": "Descubre recetas clásicas y transforma tus comidas diarias con pasión.",
-        "cta": "Empezar a cocinar",
-        "banner_text": "Recetas Italianas Clásicas",
-        "instagram_caption": "🇮🇹 ¡Amantes de la cocina italiana, esto es para ustedes! 🍝\nSumérgete en la tradición culinaria con nuestra colección de recetas clásicas. Prepara platos auténticos que deleitarán a todos. ¡Mangia che ti fa bene!\n👉 Disponible ahora.",
+        "headline": "Italia en tu Cocina",
+        "subheadline": "Las recetas clásicas que han deleitado paladares por generaciones.",
+        "cta": "Cocina ahora",
+        "banner_text": "Recetas Clásicas Italianas",
+        "instagram_caption": "🇮🇹 ¿Listo para un viaje culinario a Italia? 🍝 Descubre los secretos mejor guardados de la cocina clásica italiana. ¡Sabores que enamoran! #CocinaItaliana",
         "hashtags": [
           "#CocinaItaliana",
           "#RecetasClasicas",
+          "#SaborDeItalia",
           "#Gastronomia",
-          "#ComidaCasera",
-          "#ItaliaEnTuMesa",
-          "#LibroDeCocina"
+          "#LibroDeCocina",
+          "#HechoEnCasa"
         ]
       },
       "pdfName": "Colección clásica de comida italiana -- Unknown -- Lincolnwood, IL, Illinois, 2006 -- Lincolnwood, IL _ Publications International, Ltd_ -- isbn13 9781412723855 -- d6996972d07e6984317532bf6f73d604 -- Anna’s Archive.pdf",
@@ -977,22 +976,43 @@
       "id": 1783193870060,
       "name": "Happy Foods  Más de 100 recetas para estar siempre de buen   Wang Diggs, Karen   Alimentación, 1a ed, Barcelona, 2017   Amat editorial   isbn13 9788497359269   0f9be158d2a1a4abb8f154f23d2f8646   Anna’s Archive",
       "price": "$0.99",
-      "cat": "ebooks",
-      "desc": "",
-      "author": "",
-      "genre": "",
+      "cat": "recetas",
+      "desc": "Descubre un mundo de sabores que nutren tu cuerpo y elevan tu espíritu. Este libro te ofrece más de 100 recetas fáciles para transformar tu alimentación y sentirte genial cada día.",
+      "author": "Karen Wang Diggs",
+      "genre": "Alimentación y Cocina",
       "age": "",
-      "temas": [],
-      "tags": [],
+      "temas": [
+        "Cocina saludable",
+        "Recetas fáciles",
+        "Bienestar",
+        "Nutrición",
+        "Felicidad"
+      ],
+      "tags": [
+        "Recetas",
+        "Cocina",
+        "Saludable",
+        "Felicidad",
+        "Bienestar",
+        "Nutrición"
+      ],
       "nivel": "",
-      "idioma": "",
+      "idioma": "Español",
       "ad": {
-        "headline": "",
-        "subheadline": "",
-        "cta": "",
-        "banner_text": "",
-        "instagram_caption": "",
-        "hashtags": []
+        "headline": "Cocina tu felicidad",
+        "subheadline": "Más de 100 recetas para nutrir cuerpo, mente y alma.",
+        "cta": "Empieza a cocinar",
+        "banner_text": "Recetas que inspiran",
+        "instagram_caption": "¡Transforma tu cocina en un santuario de bienestar! 🍳 Descubre más de 100 recetas deliciosas de Happy Foods que te llenarán de energía y alegría. ¡Come bien, siéntete feliz! ✨",
+        "hashtags": [
+          "#HappyFoods",
+          "#CocinaSaludable",
+          "#RecetasFelices",
+          "#Bienestar",
+          "#ComidaSana",
+          "#VidaSaludable",
+          "#Nutricion"
+        ]
       },
       "pdfName": "Happy Foods_ Más de 100 recetas para estar siempre de buen -- Wang Diggs, Karen -- Alimentación, 1a ed, Barcelona, 2017 -- Amat editorial -- isbn13 9788497359269 -- 0f9be158d2a1a4abb8f154f23d2f8646 -- Anna’s Archive.pdf",
       "pdfUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/pdfs/1783193870060_happy_foods__m_s_de_100_recetas_para_estar_siempre_de_buen___wang_diggs__karen___alimentaci_n__1a_ed__barcelona__2017___amat_editorial___isbn13_9788497359269___0f9be158d2a1a4abb8f154f23d2f8646___anna_s_archive.pdf",
@@ -1003,41 +1023,43 @@
       "id": 1783193877106,
       "name": "Delicias Enlatadas: Recetas Sabrosas y Fáciles de Preparar",
       "price": "$0.99",
-      "cat": "ebooks",
+      "cat": "recetas",
       "desc": "Descubre el arte de cocinar con Delicias Enlatadas, un recetario imprescindible para quienes buscan sabor y facilidad en la cocina. Toni Monné y Juan Linares te guiarán para transformar ingredientes enlatados en platos sorprendentes y rápidos, ideales para cualquier ocasión.",
       "author": "Toni Monné, Juan Linares",
-      "genre": "Cocina",
+      "genre": "Cocina y Gastronomía",
       "age": "",
       "temas": [
-        "Recetas fáciles",
-        "Cocina rápida",
-        "Alimentos enlatados",
-        "Gastronomía práctica",
-        "Culinaria creativa"
+        "Cocina fácil",
+        "Recetas rápidas",
+        "Ingredientes enlatados",
+        "Culinaria práctica",
+        "Ahorro de tiempo"
       ],
       "tags": [
-        "cocina",
-        "recetas",
-        "fácil",
-        "enlatados",
-        "rápido",
-        "delicioso"
+        "Cocina",
+        "Recetas",
+        "Enlatados",
+        "Fácil",
+        "Rápido",
+        "Gastronomía"
       ],
       "nivel": "Principiante",
       "idioma": "Español",
       "ad": {
-        "headline": "Delicias Enlatadas: Cocina Fácil y Sabrosa",
-        "subheadline": "Transforma tus conservas en platos gourmet con recetas rápidas e infalibles.",
-        "cta": "Descubrir Recetas",
-        "banner_text": "Nuevas Recetas con Latas",
-        "instagram_caption": "¡Reinventa tu cocina con 'Delicias Enlatadas'! 🥫✨ Descubre recetas sabrosas y súper fáciles que convertirán tus conservas en platos estrella. ¡Cocinar nunca fue tan rápido y delicioso! 👩‍🍳👨‍🍳",
+        "headline": "Delicias Enlatadas: Sabor y Facilidad en tu Cocina",
+        "subheadline": "Transforma ingredientes comunes en platos sorprendentes y rápidos para cualquier ocasión.",
+        "cta": "Descubre el sabor",
+        "banner_text": "Recetas Fácil con Enlatados",
+        "instagram_caption": "¿Cocinar rápido y delicioso? ¡Sí es posible! 🥫✨\nCon \"Delicias Enlatadas\", Toni Monné y Juan Linares te guían para transformar tus ingredientes enlatados en platos que sorprenderán. 🍽️\n¡Sabor y facilidad en tu mesa!",
         "hashtags": [
           "#DeliciasEnlatadas",
           "#CocinaFacil",
           "#RecetasRapidas",
-          "#ComidaCasera",
-          "#EnlatadosGourmet",
-          "#LibroDeCocina"
+          "#ComidaEnlatada",
+          "#ToniMonne",
+          "#JuanLinares",
+          "#Gastronomia",
+          "#AhorroDeTiempo"
         ]
       },
       "pdfName": "Delicias enlatadas_ Recetas sabrosas y fáciles de preparar -- Toni Monné; Juan Linares -- Tapas' world,... ra edición_ octubre 2018, Barcelona, 2018 -- isbn13 9788497354486 -- f64bce84d82d3349207a217341f21428 -- Anna’s Archive.pdf",
@@ -2459,5 +2481,5 @@
     "juan@test.com",
     "octavio123@gamil.com"
   ],
-  "updatedAt": "2026-07-06T19:42:26.230Z"
+  "updatedAt": "2026-07-06T19:43:04.886Z"
 }
