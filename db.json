@@ -1824,7 +1824,7 @@
     },
     {
       "id": 1783210868780,
-      "name": "el principito copia",
+      "name": "el principito",
       "price": "$0.99",
       "cat": "ebooks",
       "desc": "",
@@ -2545,5 +2545,5 @@
     "juan@test.com",
     "octavio123@gamil.com"
   ],
-  "updatedAt": "2026-07-06T19:56:19.819Z"
+  "updatedAt": "2026-07-06T19:56:55.532Z"
 }
