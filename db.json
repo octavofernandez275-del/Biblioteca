@@ -1779,21 +1779,43 @@
       "name": "cuentos hermanos grimm edincr copia",
       "price": "$0.99",
       "cat": "infantil",
-      "desc": "",
-      "author": "",
-      "genre": "",
+      "desc": "Revive la magia de los cuentos clásicos que han encantado a generaciones. Sumérgete en un mundo de fantasía, aventuras y lecciones atemporales perfectas para toda la familia.",
+      "author": "Hermanos Grimm",
+      "genre": "Cuentos Clásicos",
       "age": "",
-      "temas": [],
-      "tags": [],
+      "temas": [
+        "Fantasía",
+        "Aventura",
+        "Moralidad",
+        "Folclore",
+        "Tradición oral"
+      ],
+      "tags": [
+        "Cuentos",
+        "Grimm",
+        "Clásicos",
+        "Infantil",
+        "Fantasía",
+        "Hadas"
+      ],
       "nivel": "",
-      "idioma": "",
+      "idioma": "Español",
       "ad": {
-        "headline": "",
-        "subheadline": "",
-        "cta": "",
-        "banner_text": "",
-        "instagram_caption": "",
-        "hashtags": []
+        "headline": "La magia atemporal de los Grimm",
+        "subheadline": "Historias que han encantado generaciones, perfectas para toda la familia.",
+        "cta": "Descubrir la magia",
+        "banner_text": "Cuentos de Grimm: Clásico Indispensable",
+        "instagram_caption": "✨ ¿Listo para un viaje a la fantasía? 🏰 Los Cuentos de los Hermanos Grimm esperan por ti. Redescubre la magia, las aventuras y las lecciones que han marcado a millones. ¡Un tesoro para todas las edades! 💖",
+        "hashtags": [
+          "#CuentosGrimm",
+          "#HermanosGrimm",
+          "#LiteraturaInfantil",
+          "#CuentosDeHadas",
+          "#Clásicos",
+          "#Fantasia",
+          "#LecturaFamiliar",
+          "#Ebook"
+        ]
       },
       "pdfName": "cuentos_hermanos_grimm_edincr_copia.pdf",
       "pdfUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/pdfs/1783210859171_cuentos_hermanos_grimm_edincr_copia.pdf",
@@ -2522,5 +2544,5 @@
     "juan@test.com",
     "octavio123@gamil.com"
   ],
-  "updatedAt": "2026-07-06T19:43:52.298Z"
+  "updatedAt": "2026-07-06T19:44:03.850Z"
 }
