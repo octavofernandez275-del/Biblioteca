@@ -171,6 +171,104 @@ Para "precio_sugerido": es un ebook digital en español que se vende por descarg
       }
     }
 
+    // ── GENERAR PUBLICIDAD COMPLETA (guion de video + publicación estática) ──
+    if (url.pathname === '/generate-promo' && request.method === 'POST') {
+      try {
+        if (!env.GEMINI_API_KEY) {
+          return new Response(JSON.stringify({ error: 'GEMINI_API_KEY no configurada' }), {
+            status: 500,
+            headers: { ...headers, 'Content-Type': 'application/json' },
+          });
+        }
+
+        const body = await request.json();
+        const { name, author, genre, desc, age } = body;
+        if (!name) {
+          return new Response(JSON.stringify({ error: 'Falta el nombre del producto' }), {
+            status: 400, headers: { ...headers, 'Content-Type': 'application/json' },
+          });
+        }
+
+        const prompt = `Sos un creador de contenido especializado en promocionar libros en redes sociales (estilo BookTok en español). Te paso los datos de un libro que se vende como ebook en PDF, y tenés que generar contenido promocional en TEXTO PLANO (nada de JSON, nada de markdown con asteriscos ni backticks), en español, listo para copiar y pegar. Seguí EXACTAMENTE esta estructura y formato:
+
+🎬 GUION PARA REELS/TIKTOK (30-40 seg)
+
+[Toma 1 - 0-3seg]
+Texto en pantalla: (una frase gancho corta y directa sobre el libro)
+
+[Toma 2 - 3-15seg]
+(2-4 líneas describiendo la premisa/gancho del libro de forma atractiva, sin spoilers grandes)
+
+[Toma 3 - 15-25seg]
+(1-3 líneas con un dato curioso, contexto del autor, o por qué vale la pena — si no hay datos reales conocidos del autor/obra, usar algo genérico y honesto sobre el género/tema, no inventar datos falsos específicos)
+
+[Toma 4 - 25-35seg]
+Texto en pantalla: "📖 Disponible en PDF — link en bio"
+(1-2 líneas de cierre, ej comparación con algo similar conocido del género, si aplica)
+
+[Cierre]
+(una frase corta invitando a guardar/compartir)
+
+---
+
+📱 PUBLICACIÓN ESTÁTICA (Instagram/Facebook)
+
+Caption:
+(título del libro con emoji relacionado al tema)
+
+(3-5 líneas de descripción atractiva tipo publicidad, con buen gancho)
+
+📥 Disponible en PDF — link en bio
+
+(8-10 hashtags relevantes en español e inglés mezclados, sin espacios, relacionados al género/tema del libro y a BookTok)
+
+---
+DATOS DEL LIBRO:
+Título: ${name}
+Autor: ${author || 'No especificado'}
+Género/tema: ${genre || 'No especificado'}
+Descripción: ${desc || 'No disponible'}
+Público: ${age || 'No especificado'}
+
+Generá el contenido siguiendo EXACTAMENTE la estructura de arriba, en español, sin inventar datos biográficos o históricos específicos que no te haya dado (fechas exactas, premios, cifras de ventas, etc.) — si querés agregar contexto usá afirmaciones generales sobre el género o el tipo de historia, no datos puntuales no verificables.`;
+
+        const geminiRes = await fetch(
+          'https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent',
+          {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+              'x-goog-api-key': env.GEMINI_API_KEY,
+            },
+            body: JSON.stringify({ contents: [{ parts: [{ text: prompt }] }] }),
+          }
+        );
+        const geminiData = await geminiRes.json();
+        const rawText = geminiData.candidates?.[0]?.content?.parts?.[0]?.text;
+
+        if (!rawText) {
+          const motivo =
+            geminiData.error?.message ||
+            geminiData.promptFeedback?.blockReason ||
+            geminiData.candidates?.[0]?.finishReason ||
+            'Gemini no devolvió contenido';
+          return new Response(JSON.stringify({ error: 'Gemini no devolvió la publicidad', detail: motivo }), {
+            status: 200, headers: { ...headers, 'Content-Type': 'application/json' },
+          });
+        }
+
+        return new Response(JSON.stringify({ promo: rawText.trim() }), {
+          headers: { ...headers, 'Content-Type': 'application/json' },
+        });
+
+      } catch (e) {
+        return new Response(JSON.stringify({ error: 'Error generando publicidad', detail: String(e) }), {
+          status: 502,
+          headers: { ...headers, 'Content-Type': 'application/json' },
+        });
+      }
+    }
+
     // ── GENERAR CARÁTULA con Gemini (imagen) ────────────────────
     if (url.pathname === '/generate-cover' && request.method === 'POST') {
       try {

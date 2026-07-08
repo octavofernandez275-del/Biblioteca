@@ -3166,6 +3166,8 @@
         <div style="display:flex;gap:10px;flex-wrap:wrap;margin-bottom:16px;">
           <button class="btn btn-ghost" style="font-size:13px;padding:9px 18px;" onclick="batchGenerateCovers()">🖼️ Generar portadas faltantes</button>
           <button class="btn btn-ghost" style="font-size:13px;padding:9px 18px;" onclick="batchGenerateDescriptions()">✍️ Generar descripciones faltantes</button>
+          <button class="btn btn-ghost" style="font-size:13px;padding:9px 18px;" onclick="batchAutoPrice()">💲 Poner precios automáticos</button>
+          <button class="btn btn-ghost" style="font-size:12px;padding:9px 14px;opacity:.75;" onclick="batchAutoPrice(true)" title="Recalcula el precio incluso de productos que ya tienen uno cargado">💲 Recalcular TODOS los precios</button>
           <button class="btn btn-ghost" style="font-size:13px;padding:9px 18px;" onclick="batchReclassifyAll()">🔄 Reclasificar toda la biblioteca</button>
         </div>
         <div id="batch-progress" style="display:none;background:rgba(91,91,214,.1);border:1px solid rgba(91,91,214,.3);border-radius:12px;padding:14px 16px;margin-bottom:16px;font-size:13px;color:var(--accent-light);"></div>
@@ -4519,7 +4521,53 @@
       ${ad.cta ? `<div style="margin-bottom:8px;">Botón: <span style="background:rgba(245,158,11,.2);padding:2px 10px;border-radius:100px;font-weight:600;">${ad.cta}</span></div>` : ''}
       ${ad.instagram_caption ? `<div style="white-space:pre-wrap;background:rgba(255,255,255,.04);border-radius:8px;padding:10px;margin-bottom:8px;">${ad.instagram_caption}${ad.hashtags?.length ? '\n\n' + ad.hashtags.map(h => h.startsWith('#') ? h : '#'+h).join(' ') : ''}</div>` : ''}
       <button type="button" class="btn-outline-accent" style="font-size:12px;padding:6px 14px;" onclick="copyAdCaption()">📋 Copiar texto para Instagram</button>
+      <button type="button" class="btn-outline-accent" style="font-size:12px;padding:6px 14px;margin-left:8px;" onclick="generateFullPromo()">🎬 Generar publicidad completa (video + post)</button>
+      <div id="full-promo-box" style="display:none;margin-top:12px;">
+        <textarea id="full-promo-text" readonly style="width:100%;min-height:280px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.12);border-radius:8px;padding:12px;font-size:12px;color:var(--white);white-space:pre-wrap;font-family:monospace;"></textarea>
+        <button type="button" class="btn-outline-accent" style="font-size:12px;padding:6px 14px;margin-top:8px;" onclick="copyFullPromo()">📋 Copiar todo</button>
+      </div>
     `;
+  }
+
+  async function generateFullPromo() {
+    const name = document.getElementById('prod-name').value.trim();
+    if (!name) { showToast('Primero ingresá el nombre del producto', 'error'); return; }
+    const author = document.getElementById('prod-author').value.trim();
+    const genre = document.getElementById('prod-genre').value.trim();
+    const desc = document.getElementById('prod-desc').value.trim();
+    const ageEl = document.getElementById('prod-age');
+    const age = ageEl ? ageEl.value : '';
+
+    const box = document.getElementById('full-promo-box');
+    const textEl = document.getElementById('full-promo-text');
+    box.style.display = 'block';
+    textEl.value = '🎬 Generando guion de video y publicación... esto puede tardar unos segundos';
+    try {
+      const res = await fetch(`${WORKER_URL}/generate-promo`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ name, author, genre, desc, age })
+      });
+      const data = await res.json();
+      if (data.error) {
+        textEl.value = `⚠️ ${data.error}${data.detail ? ' — ' + data.detail : ''}`;
+        showToast('No se pudo generar la publicidad', 'error');
+        return;
+      }
+      textEl.value = data.promo || '';
+      showToast('🎬 Publicidad generada', 'success');
+    } catch (e) {
+      console.warn('generateFullPromo error:', e);
+      textEl.value = '⚠️ Error generando la publicidad. Probá de nuevo.';
+      showToast('⚠️ Error generando publicidad', 'error');
+    }
+  }
+
+  function copyFullPromo() {
+    const textEl = document.getElementById('full-promo-text');
+    if (!textEl || !textEl.value) return;
+    navigator.clipboard.writeText(textEl.value).then(() => showToast('Publicidad copiada al portapapeles ✅', 'success'))
+      .catch(() => showToast('No se pudo copiar', 'error'));
   }
 
   function copyAdCaption() {
@@ -4527,6 +4575,47 @@
     if (!ad) return;
     const text = (ad.instagram_caption || '') + (ad.hashtags?.length ? '\n\n' + ad.hashtags.map(h => h.startsWith('#') ? h : '#'+h).join(' ') : '');
     navigator.clipboard.writeText(text).then(() => showToast('Texto copiado al portapapeles ✅', 'success'))
+      .catch(() => showToast('No se pudo copiar', 'error'));
+  }
+
+  async function generateFullPromoForEdit() {
+    const name = document.getElementById('edit-prod-name').value.trim();
+    if (!name) { showToast('El producto necesita un nombre primero', 'error'); return; }
+    const author = document.getElementById('edit-prod-author').value.trim();
+    const genre = document.getElementById('edit-prod-genre').value.trim();
+    const desc = document.getElementById('edit-prod-desc').value.trim();
+    const ageEl = document.getElementById('edit-prod-age');
+    const age = ageEl ? ageEl.value : '';
+
+    const box = document.getElementById('edit-full-promo-box');
+    const textEl = document.getElementById('edit-full-promo-text');
+    box.style.display = 'block';
+    textEl.value = '🎬 Generando guion de video y publicación... esto puede tardar unos segundos';
+    try {
+      const res = await fetch(`${WORKER_URL}/generate-promo`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ name, author, genre, desc, age })
+      });
+      const data = await res.json();
+      if (data.error) {
+        textEl.value = `⚠️ ${data.error}${data.detail ? ' — ' + data.detail : ''}`;
+        showToast('No se pudo generar la publicidad', 'error');
+        return;
+      }
+      textEl.value = data.promo || '';
+      showToast('🎬 Publicidad generada', 'success');
+    } catch (e) {
+      console.warn('generateFullPromoForEdit error:', e);
+      textEl.value = '⚠️ Error generando la publicidad. Probá de nuevo.';
+      showToast('⚠️ Error generando publicidad', 'error');
+    }
+  }
+
+  function copyFullPromoForEdit() {
+    const textEl = document.getElementById('edit-full-promo-text');
+    if (!textEl || !textEl.value) return;
+    navigator.clipboard.writeText(textEl.value).then(() => showToast('Publicidad copiada al portapapeles ✅', 'success'))
       .catch(() => showToast('No se pudo copiar', 'error'));
   }
 
@@ -6047,6 +6136,46 @@
     if (prog) { prog.textContent = `✅ Portadas encontradas para ${done} de ${missing.length} productos.`; setTimeout(() => { prog.style.display = 'none'; }, 5000); }
   }
 
+  // ─── PONER PRECIOS AUTOMÁTICOS A TODO EL CATÁLOGO ─────
+  async function batchAutoPrice(overwriteAll) {
+    const target = overwriteAll
+      ? db.products
+      : db.products.filter(p => !p.price || p.price.trim() === '' || p.price === '$0.00' || p.price === '$0' || p.price === '$');
+
+    if (!target.length) {
+      showToast('Todos los productos ya tienen precio ✅', 'success');
+      return;
+    }
+
+    const msg = overwriteAll
+      ? `Esto va a RECALCULAR el precio de los ${target.length} productos del catálogo (incluso los que ya tienen precio puesto), usando IA. ¿Continuar?`
+      : `Esto va a sugerir un precio con IA para los ${target.length} productos que no tienen precio cargado (no toca los que ya tienen uno). ¿Continuar?`;
+    if (!confirm(msg)) return;
+
+    const prog = document.getElementById('batch-progress');
+    if (prog) prog.style.display = 'block';
+    let done = 0, failed = 0;
+    for (let i = 0; i < target.length; i++) {
+      const p = target[i];
+      if (prog) prog.textContent = `💲 Calculando precio ${i + 1}/${target.length}: ${p.name}`;
+      try {
+        const res = await fetch(`${WORKER_URL}/classify`, {
+          method: 'POST', headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ name: p.name, desc: p.desc || '', pdfName: p.pdfName || '', extractMeta: false })
+        });
+        if (res.ok) {
+          const data = await res.json();
+          if (data.error) { console.error(`batchAutoPrice: fallo en "${p.name}":`, data.error, data.detail); failed++; }
+          else if (data.precio_sugerido) { p.price = '$' + Number(data.precio_sugerido).toFixed(2); done++; }
+          else failed++;
+        } else failed++;
+      } catch (e) { console.error(`batchAutoPrice: excepción en "${p.name}":`, e); failed++; }
+      await new Promise(r => setTimeout(r, 600));
+    }
+    saveDB(); populateAdmin(); renderLandingGrids();
+    if (prog) { prog.textContent = `✅ Precios asignados a ${done} de ${target.length} productos.${failed ? ' (' + failed + ' fallaron)' : ''}`; setTimeout(() => { prog.style.display = 'none'; }, 5000); }
+  }
+
   async function batchGenerateDescriptions() {
     const missing = db.products.filter(p => !p.desc || p.desc.trim().length < 10);
     if (!missing.length) { showToast('Todos los productos ya tienen descripción ✅', 'success'); return; }
@@ -6349,6 +6478,8 @@
     document.getElementById('edit-cover-prompt').value = '';
     document.getElementById('edit-cover-search-results').style.display = 'none';
     document.getElementById('edit-cover-search-results').innerHTML = '';
+    document.getElementById('edit-full-promo-box').style.display = 'none';
+    document.getElementById('edit-full-promo-text').value = '';
     document.getElementById('edit-prod-id').value    = p.id;
     document.getElementById('edit-prod-name').value  = p.name || '';
     document.getElementById('edit-prod-price').value = (p.price || '').replace('$','');
@@ -7194,6 +7325,14 @@
             style="width:100%;min-height:50px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.15);border-radius:8px;padding:9px 12px;font-size:12px;color:var(--white);margin-top:10px;resize:vertical;font-family:inherit;"></textarea>
           <input type="file" id="edit-cover-input" accept="image/*" style="display:none" onchange="editCoverSelected(this)" />
         </div>
+      </div>
+    </div>
+    <div style="background:rgba(245,158,11,.08);border:1px solid rgba(245,158,11,.25);border-radius:14px;padding:18px;margin-bottom:14px;">
+      <div style="font-size:12px;font-weight:700;color:#FDE68A;text-transform:uppercase;letter-spacing:.08em;margin-bottom:12px;">📢 Publicidad</div>
+      <button type="button" class="btn-outline-accent" style="font-size:12px;padding:6px 14px;" onclick="generateFullPromoForEdit()">🎬 Generar publicidad completa (video + post)</button>
+      <div id="edit-full-promo-box" style="display:none;margin-top:12px;">
+        <textarea id="edit-full-promo-text" readonly style="width:100%;min-height:280px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.12);border-radius:8px;padding:12px;font-size:12px;color:var(--white);white-space:pre-wrap;font-family:monospace;"></textarea>
+        <button type="button" class="btn-outline-accent" style="font-size:12px;padding:6px 14px;margin-top:8px;" onclick="copyFullPromoForEdit()">📋 Copiar todo</button>
       </div>
     </div>
     <div style="background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:14px;padding:18px;margin-bottom:24px;">
