@@ -2821,6 +2821,53 @@
       "pdfUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/pdfs/1783513859045_atrapada_en_el_tiempo__forastera__2_.pdf",
       "coverUrl": null,
       "file": "Atrapada en el tiempo (Forastera 2) -- Diana Gabaldon -- 1992 .pdf"
+    },
+    {
+      "id": 1783513881696,
+      "name": "Cuenta a las abejas que me fui",
+      "price": "$5.99",
+      "cat": "novela",
+      "desc": "La novena y esperada entrega de la saga Forastera, donde Claire y Jamie Fraser continúan navegando entre los peligros de la guerra y un amor atemporal. Una aventura épica que te transportará a través de la historia y los continentes.",
+      "author": "Diana Gabaldon",
+      "genre": "Novela histórica",
+      "age": "Adultos",
+      "temas": [
+        "Romance épico",
+        "Viajes en el tiempo",
+        "Historia de Escocia",
+        "Guerra de Independencia",
+        "Aventura"
+      ],
+      "tags": [
+        "Outlander",
+        "Diana Gabaldon",
+        "Ficción histórica",
+        "Romance",
+        "Escocia",
+        "Siglo XVIII"
+      ],
+      "nivel": "",
+      "idioma": "Español",
+      "ad": {
+        "headline": "¡Vuelve la épica saga de Claire y Jamie!",
+        "subheadline": "Sumérgete en un amor inmortal que desafía el tiempo y la guerra.",
+        "cta": "Comenzar el viaje",
+        "banner_text": "Nuevo - Forastera 9 de Diana Gabaldon",
+        "instagram_caption": "¡La espera terminó! 🤩 La novena entrega de la aclamada saga Forastera de Diana Gabaldon ya está aquí.\nPrepárate para otra aventura inolvidable con Claire y Jamie. ❤️\nSumérgete en el romance, la historia y los viajes en el tiempo.\n¡No te quedes sin tu copia!",
+        "hashtags": [
+          "#DianaGabaldon",
+          "#Forastera",
+          "#Outlander",
+          "#NovelaHistorica",
+          "#RomanceEpico",
+          "#ViajesEnElTiempo",
+          "#LibrosEnEspañol"
+        ]
+      },
+      "pdfName": "Cuenta a las abejas que me fui -- Diana Gabaldon -- Forastera 9, 2022 -- lineasdesaparecidas -- df3a202a077722bcbf1e352f70e475bc -- Anna’s Archive.pdf",
+      "pdfUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/pdfs/1783513881696_cuenta_a_las_abejas_que_me_fui.pdf",
+      "coverUrl": null,
+      "file": "Cuenta a las abejas que me fui -- Diana Gabaldon -- Forastera 9, 2022 -- lineasdesaparecidas -- df3a202a077722bcbf1e352f70e475bc -- Anna’s Archive.pdf"
     }
   ],
   "emailList": [
@@ -2829,5 +2876,5 @@
     "juan@test.com",
     "octavio123@gamil.com"
   ],
-  "updatedAt": "2026-07-08T12:31:10.468Z"
+  "updatedAt": "2026-07-08T12:31:37.398Z"
 }
