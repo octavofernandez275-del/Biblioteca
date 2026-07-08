@@ -3341,6 +3341,52 @@
       "pdfUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/pdfs/1783514228600_ana_karenina.pdf",
       "coverUrl": null,
       "file": "Ana-Karenina_copia.pdf"
+    },
+    {
+      "id": 1783514247059,
+      "name": "Romeo y Julieta: La Eterna Tragedia de Shakespeare",
+      "price": "$2.99",
+      "cat": "ebooks",
+      "desc": "Sumérgete en la icónica historia de amor prohibido entre Romeo y Julieta, dos jóvenes cuyas vidas se entrelazan trágicamente por el odio ancestral de sus familias. Descubre la pasión, el destino y el drama inmortal en esta célebre obra de William Shakespeare, traducida por Marcelino Menéndez Pelayo.",
+      "author": "William Shakespeare",
+      "genre": "Drama Clásico",
+      "age": "Adolescentes y Adultos",
+      "temas": [
+        "Amor prohibido",
+        "Tragedia",
+        "Conflictos familiares",
+        "Destino",
+        "Juventud"
+      ],
+      "tags": [
+        "Clásico",
+        "Tragedia",
+        "Romance",
+        "Literatura Universal",
+        "Teatro",
+        "Shakespeare"
+      ],
+      "nivel": "",
+      "idioma": "Español",
+      "ad": {
+        "headline": "Amor Prohibido. Destino Trágico. ¡Un Clásico Inmortal!",
+        "subheadline": "Redescubre la pasión y el drama de Romeo y Julieta en esta edición especial.",
+        "cta": "Leer ahora",
+        "banner_text": "Clásico Literario Imprescindible",
+        "instagram_caption": "Sumérgete en la eterna tragedia de Romeo y Julieta. 💔 Un amor que desafió el odio de dos familias, sellado por un destino cruel. ¿Te atreves a revivir este clásico de Shakespeare? ✨ #RomeoYJulieta #ClásicoLiterario",
+        "hashtags": [
+          "RomeoYJulieta",
+          "Shakespeare",
+          "Drama",
+          "AmorTrágico",
+          "LiteraturaClásica",
+          "Ebook"
+        ]
+      },
+      "pdfName": "William Shakespeare Romeo y Julieta_copia.pdf",
+      "pdfUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/pdfs/1783514247059_romeo_y_julieta__la_eterna_tragedia_de_shakespeare.pdf",
+      "coverUrl": null,
+      "file": "William Shakespeare Romeo y Julieta_copia.pdf"
     }
   ],
   "emailList": [
@@ -3349,5 +3395,5 @@
     "juan@test.com",
     "octavio123@gamil.com"
   ],
-  "updatedAt": "2026-07-08T12:37:30.813Z"
+  "updatedAt": "2026-07-08T12:37:33.812Z"
 }
