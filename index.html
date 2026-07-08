@@ -16,6 +16,7 @@
   <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
   <script src="https://www.paypal.com/sdk/js?client-id=AVq2isgw7GINeKgZIswrFuVu8Hu1ir-ByxmP226Cw3MoUj96kgaRGHDSM13ti2fC4j5gnoa73OZ_IAnO&currency=USD"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -3001,7 +3002,7 @@
             <div style="font-size:14px;font-weight:700;margin-bottom:6px;">Elegir varios PDFs</div>
             <div style="font-size:12px;color:var(--muted);">Podés seleccionar tantos archivos como quieras de una vez</div>
           </div>
-          <input type="file" id="bulk-pdf-input" accept=".pdf" multiple style="display:none" onchange="handleBulkPdfUpload(this)" />
+          <input type="file" id="bulk-pdf-input" accept=".pdf,.epub,application/epub+zip" multiple style="display:none" onchange="handleBulkPdfUpload(this)" />
           <div id="bulk-upload-progress" style="display:none;margin-top:18px;"></div>
         </div>
 
@@ -3113,7 +3114,7 @@
                   Elegir archivo PDF
                 </button>
               </div>
-              <input type="file" id="prod-pdf" accept=".pdf" style="display:none" onchange="handleFileSelect(this,'pdf')" />
+              <input type="file" id="prod-pdf" accept=".pdf,.epub,application/epub+zip" style="display:none" onchange="handleFileSelect(this,'pdf')" />
 
               <!-- COVER UPLOAD -->
               <div style="background:rgba(255,255,255,.03);border:2px dashed rgba(255,255,255,.15);border-radius:14px;padding:20px;text-align:center;transition:all .2s;cursor:pointer;"
@@ -4127,7 +4128,8 @@
     const file = input.files[0];
     if (!file) return;
     const reader = new FileReader();
-    if (type === 'pdf') {
+    const isEpub = type === 'pdf' && /\.epub$/i.test(file.name);
+    if (type === 'pdf' && !isEpub) {
       pendingPdfFile = file;
       reader.onload = async e => {
         pendingPdfB64 = e.target.result;
@@ -4183,6 +4185,48 @@
         }
       };
       reader.readAsDataURL(file);
+    } else if (type === 'pdf' && isEpub) {
+      pendingPdfFile = file;
+      reader.onload = async e => {
+        pendingPdfB64 = e.target.result;
+        pendingPdfName = file.name;
+        document.getElementById('pdf-label').textContent = '✅ ' + file.name + ' (EPUB)';
+        document.getElementById('pdf-drop').style.borderColor = 'var(--green)';
+
+        // 1️⃣ Extraer texto del EPUB para generar título y descripción
+        try {
+          const text = await extractEpubText(pendingPdfB64);
+          if (text && text.trim().length > 50) {
+            await autoGenerateMeta(text.slice(0, 3000), file.name);
+          }
+        } catch (err) { console.warn('EPUB text extraction failed:', err); }
+
+        // 1️⃣.5 Usar la portada real del EPUB automáticamente (si no hay una ya puesta)
+        if (!pendingCoverB64) {
+          try {
+            const coverDataUrl = await extractEpubCoverImage(pendingPdfB64);
+            if (coverDataUrl) {
+              pendingCoverB64 = coverDataUrl;
+              const blob = await (await fetch(coverDataUrl)).blob();
+              pendingCoverFile = new File([blob], 'cover-original.jpg', { type: blob.type || 'image/jpeg' });
+              const preview = document.getElementById('cover-preview');
+              preview.src = coverDataUrl;
+              preview.style.display = 'block';
+              document.getElementById('cover-icon').style.display = 'none';
+              document.getElementById('cover-label').textContent = '✅ Portada original del EPUB';
+              document.getElementById('cover-drop').style.borderColor = 'var(--green)';
+            }
+          } catch (err) { console.warn('EPUB auto cover extraction failed:', err); }
+        }
+
+        // 2️⃣ Clasificar con IA
+        const name = document.getElementById('prod-name').value.trim();
+        const desc = document.getElementById('prod-desc').value.trim();
+        if (name || desc) {
+          aiClassify(name, desc, file.name);
+        }
+      };
+      reader.readAsDataURL(file);
     } else if (type === 'cover') {
       pendingCoverFile = file;
       reader.onload = e => {
@@ -4195,6 +4239,107 @@
         document.getElementById('cover-drop').style.borderColor = 'var(--green)';
       };
       reader.readAsDataURL(file);
+    }
+  }
+
+  // ─── EXTRACCIÓN DE TEXTO Y PORTADA DESDE EPUB (usando JSZip) ─────
+  async function _loadEpubZip(epubDataUrl) {
+    if (typeof JSZip === 'undefined') return null;
+    const base64 = epubDataUrl.split(',')[1];
+    const binary = atob(base64);
+    const bytes = new Uint8Array(binary.length);
+    for (let i = 0; i < binary.length; i++) bytes[i] = binary.charCodeAt(i);
+    return await JSZip.loadAsync(bytes);
+  }
+
+  async function _getEpubOpfInfo(zip) {
+    const containerXml = await zip.file('META-INF/container.xml').async('string');
+    const opfPathMatch = containerXml.match(/full-path="([^"]+)"/);
+    const opfPath = opfPathMatch ? opfPathMatch[1] : null;
+    if (!opfPath) return null;
+    const opfXml = await zip.file(opfPath).async('string');
+    const opfDir = opfPath.includes('/') ? opfPath.slice(0, opfPath.lastIndexOf('/') + 1) : '';
+    return { opfXml, opfDir };
+  }
+
+  async function extractEpubText(epubDataUrl) {
+    try {
+      const zip = await _loadEpubZip(epubDataUrl);
+      if (!zip) return null;
+      const info = await _getEpubOpfInfo(zip);
+      if (!info) return null;
+      const { opfXml, opfDir } = info;
+
+      // Mapear id -> href desde el manifest
+      const manifest = {};
+      const itemRegex = /<item\s+[^>]*id="([^"]+)"[^>]*href="([^"]+)"[^>]*\/?>/g;
+      let m;
+      while ((m = itemRegex.exec(opfXml)) !== null) manifest[m[1]] = m[2];
+
+      // Obtener el orden del spine (primeros 3 capítulos)
+      const spineIds = [...opfXml.matchAll(/<itemref\s+idref="([^"]+)"/g)].map(x => x[1]).slice(0, 3);
+
+      let fullText = '';
+      for (const id of spineIds) {
+        const href = manifest[id];
+        if (!href) continue;
+        const filePath = opfDir + href;
+        const fileEntry = zip.file(filePath);
+        if (!fileEntry) continue;
+        const html = await fileEntry.async('string');
+        const plain = html.replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ').trim();
+        fullText += plain + '\n';
+        if (fullText.length > 4000) break;
+      }
+      return fullText;
+    } catch (e) {
+      console.warn('extractEpubText error:', e);
+      return null;
+    }
+  }
+
+  async function extractEpubCoverImage(epubDataUrl) {
+    try {
+      const zip = await _loadEpubZip(epubDataUrl);
+      if (!zip) return null;
+      const info = await _getEpubOpfInfo(zip);
+      if (!info) return null;
+      const { opfXml, opfDir } = info;
+
+      // 1) Buscar item con properties="cover-image" (EPUB3)
+      let coverHref = null;
+      let coverMatch = opfXml.match(/<item\s+[^>]*properties="[^"]*cover-image[^"]*"[^>]*href="([^"]+)"/);
+      if (!coverMatch) coverMatch = opfXml.match(/<item\s+[^>]*href="([^"]+)"[^>]*properties="[^"]*cover-image[^"]*"/);
+      if (coverMatch) coverHref = coverMatch[1];
+
+      // 2) Si no, buscar meta name="cover" -> content="id" y resolver ese id en el manifest (EPUB2)
+      if (!coverHref) {
+        const metaMatch = opfXml.match(/<meta\s+name="cover"\s+content="([^"]+)"/);
+        if (metaMatch) {
+          const coverId = metaMatch[1];
+          const idMatch = opfXml.match(new RegExp(`<item\\s+[^>]*id="${coverId}"[^>]*href="([^"]+)"`));
+          if (idMatch) coverHref = idMatch[1];
+        }
+      }
+
+      // 3) Último recurso: cualquier imagen cuyo id/href contenga "cover"
+      if (!coverHref) {
+        const guessMatch = opfXml.match(/<item\s+[^>]*(?:id="[^"]*cover[^"]*"|href="[^"]*cover[^"]*")[^>]*href="([^"]+)"/i);
+        if (guessMatch) coverHref = guessMatch[1];
+      }
+
+      if (!coverHref) return null;
+      const filePath = opfDir + coverHref;
+      const fileEntry = zip.file(filePath);
+      if (!fileEntry) return null;
+
+      const base64Img = await fileEntry.async('base64');
+      const ext = coverHref.split('.').pop().toLowerCase();
+      const mime = ext === 'png' ? 'image/png' : ext === 'gif' ? 'image/gif' : ext === 'webp' ? 'image/webp' : 'image/jpeg';
+      return `data:${mime};base64,${base64Img}`;
+    } catch (e) {
+      console.warn('extractEpubCoverImage error:', e);
+      return null;
     }
   }
 
@@ -4220,25 +4365,26 @@
   // Botón "📄 Usar portada del PDF" en el formulario de producto individual
   async function useCoverFromPDF() {
     const label = document.getElementById('cover-label');
-    if (!pendingPdfB64) { showToast('Primero subí el PDF', 'error'); return; }
-    label.textContent = '📄 Extrayendo portada del PDF...';
+    if (!pendingPdfB64) { showToast('Primero subí el PDF o EPUB', 'error'); return; }
+    const isEpub = /\.epub$/i.test(pendingPdfName || '');
+    label.textContent = isEpub ? '📄 Extrayendo portada del EPUB...' : '📄 Extrayendo portada del PDF...';
     try {
-      const dataUrl = await extractPdfCoverImage(pendingPdfB64);
-      if (!dataUrl) { showToast('⚠️ No se pudo leer el PDF', 'error'); label.textContent = '⚠️ No se pudo extraer la portada'; return; }
+      const dataUrl = isEpub ? await extractEpubCoverImage(pendingPdfB64) : await extractPdfCoverImage(pendingPdfB64);
+      if (!dataUrl) { showToast('⚠️ No se pudo leer el archivo', 'error'); label.textContent = '⚠️ No se pudo extraer la portada'; return; }
       pendingCoverB64 = dataUrl;
       const blob = await (await fetch(dataUrl)).blob();
-      pendingCoverFile = new File([blob], 'cover-original.jpg', { type: 'image/jpeg' });
+      pendingCoverFile = new File([blob], 'cover-original.jpg', { type: blob.type || 'image/jpeg' });
       const preview = document.getElementById('cover-preview');
       preview.src = dataUrl;
       preview.style.display = 'block';
       document.getElementById('cover-icon').style.display = 'none';
-      label.textContent = '✅ Portada original del PDF';
+      label.textContent = isEpub ? '✅ Portada original del EPUB' : '✅ Portada original del PDF';
       document.getElementById('cover-drop').style.borderColor = 'var(--green)';
-      showToast('📄 Portada original extraída del PDF', 'success');
+      showToast('📄 Portada original extraída', 'success');
     } catch (e) {
       console.warn('useCoverFromPDF error:', e);
       label.textContent = '⚠️ Excepción: ' + e.message;
-      showToast('⚠️ Error extrayendo portada del PDF', 'error');
+      showToast('⚠️ Error extrayendo portada', 'error');
     }
   }
 
@@ -4697,14 +4843,19 @@
       const file = files[i];
       const statusEl = document.getElementById(`bulk-status-${i}`);
       try {
-        statusEl.textContent = '📖 Leyendo PDF...';
-        const rawName = file.name.replace(/\.pdf$/i, '').replace(/[_\-]+/g, ' ').trim();
+        statusEl.textContent = '📖 Leyendo archivo...';
+        const isEpub = /\.epub$/i.test(file.name);
+        const rawName = file.name.replace(/\.(pdf|epub)$/i, '').replace(/[_\-]+/g, ' ').trim();
 
-        // Extraer texto de las primeras páginas para dar contexto a la IA
-        // (con timeout para que un PDF corrupto/pesado no trabe toda la cola)
+        // Extraer texto para dar contexto a la IA (con timeout para no trabar la cola)
         let extractedText = '';
         try {
           extractedText = await withTimeout((async () => {
+            if (isEpub) {
+              const buf = await file.arrayBuffer();
+              const b64 = 'data:application/epub+zip;base64,' + btoa(String.fromCharCode(...new Uint8Array(buf)));
+              return (await extractEpubText(b64)) || '';
+            }
             const buf = await file.arrayBuffer();
             let text = '';
             if (typeof pdfjsLib !== 'undefined') {
@@ -4765,17 +4916,23 @@
           console.error(`bulk: fallo subiendo PDF (${file.name}):`, e);
         }
 
-        statusEl.textContent = '📄 Extrayendo portada del PDF...';
+        statusEl.textContent = isEpub ? '📄 Extrayendo portada del EPUB...' : '📄 Extrayendo portada del PDF...';
         try {
           const buf2 = await file.arrayBuffer();
-          const b64 = 'data:application/pdf;base64,' + btoa(String.fromCharCode(...new Uint8Array(buf2)));
-          const coverDataUrl = await withTimeout(extractPdfCoverImage(b64), 15000);
+          let coverDataUrl;
+          if (isEpub) {
+            const b64 = 'data:application/epub+zip;base64,' + btoa(String.fromCharCode(...new Uint8Array(buf2)));
+            coverDataUrl = await withTimeout(extractEpubCoverImage(b64), 15000);
+          } else {
+            const b64 = 'data:application/pdf;base64,' + btoa(String.fromCharCode(...new Uint8Array(buf2)));
+            coverDataUrl = await withTimeout(extractPdfCoverImage(b64), 15000);
+          }
           if (coverDataUrl) {
             const blob = await (await fetch(coverDataUrl)).blob();
-            const coverFile = new File([blob], 'cover-original.jpg', { type: 'image/jpeg' });
+            const coverFile = new File([blob], 'cover-original.jpg', { type: blob.type || 'image/jpeg' });
             p.coverUrl = await uploadFileToGithub(coverFile, 'cover', `${p.id}_${safeName}`);
           } else {
-            throw new Error('extractPdfCoverImage devolvió vacío');
+            throw new Error('extracción de portada devolvió vacío');
           }
         } catch (e) {
           console.warn(`bulk: no se pudo extraer portada real (${file.name}), usando IA como respaldo:`, e);
@@ -4805,8 +4962,8 @@
         console.error(`bulk: error procesando ${file.name}:`, e);
         statusEl.innerHTML = '<span style="color:var(--red);">❌ Error — revisá la consola</span>';
       }
-      // pequeña pausa entre archivos para no saturar la API de Gemini
-      await new Promise(r => setTimeout(r, 800));
+      // pausa entre archivos para no saturar Gemini/Workers AI (evita que la IA "se desconecte")
+      await new Promise(r => setTimeout(r, 1500));
     }
 
     populateAdmin();
@@ -6514,37 +6671,40 @@
 
   async function useCoverFromPDFForEdit() {
     const nameLabel = document.getElementById('edit-cover-name');
-    nameLabel.textContent = '📄 Extrayendo portada del PDF...';
+    nameLabel.textContent = '📄 Extrayendo portada del archivo...';
     try {
-      let buf;
+      let buf, fileNameForType;
       if (_editPdfFile) {
-        // Se acaba de subir un PDF nuevo en este modal
+        // Se acaba de subir un archivo nuevo en este modal
         buf = await _editPdfFile.arrayBuffer();
+        fileNameForType = _editPdfFile.name;
       } else {
-        // Usar el PDF ya guardado del producto
+        // Usar el archivo ya guardado del producto
         const id = Number(document.getElementById('edit-prod-id').value);
         const p = db.products.find(pr => pr.id === id);
         const pdfSrc = p && (p.pdfUrl || p.pdfData);
-        if (!pdfSrc) { showToast('Este producto no tiene un PDF cargado todavía', 'error'); nameLabel.textContent = '⚠️ Sin PDF disponible'; return; }
+        if (!pdfSrc) { showToast('Este producto no tiene un archivo cargado todavía', 'error'); nameLabel.textContent = '⚠️ Sin archivo disponible'; return; }
         const fetchUrl = p.pdfUrl ? `${WORKER_URL}/pdf-proxy?url=${encodeURIComponent(p.pdfUrl)}` : pdfSrc;
         const r = await fetch(fetchUrl);
         buf = await r.arrayBuffer();
+        fileNameForType = p.pdfName || p.pdfUrl || '';
       }
-      const b64 = 'data:application/pdf;base64,' + btoa(String.fromCharCode(...new Uint8Array(buf)));
-      const dataUrl = await extractPdfCoverImage(b64);
-      if (!dataUrl) { showToast('⚠️ No se pudo leer el PDF', 'error'); nameLabel.textContent = '⚠️ No se pudo extraer la portada'; return; }
+      const isEpub = /\.epub$/i.test(fileNameForType || '');
+      const b64 = (isEpub ? 'data:application/epub+zip;base64,' : 'data:application/pdf;base64,') + btoa(String.fromCharCode(...new Uint8Array(buf)));
+      const dataUrl = isEpub ? await extractEpubCoverImage(b64) : await extractPdfCoverImage(b64);
+      if (!dataUrl) { showToast('⚠️ No se pudo leer el archivo', 'error'); nameLabel.textContent = '⚠️ No se pudo extraer la portada'; return; }
       _editCoverB64 = dataUrl;
       const blob = await (await fetch(dataUrl)).blob();
-      _editCoverFile = new File([blob], 'cover-original.jpg', { type: 'image/jpeg' });
+      _editCoverFile = new File([blob], 'cover-original.jpg', { type: blob.type || 'image/jpeg' });
       const prevImg = document.getElementById('edit-cover-preview');
       prevImg.src = dataUrl; prevImg.style.display = 'block';
       document.getElementById('edit-cover-placeholder').style.display = 'none';
-      nameLabel.textContent = '✅ Portada original del PDF';
-      showToast('📄 Portada original extraída del PDF', 'success');
+      nameLabel.textContent = '✅ Portada original extraída';
+      showToast('📄 Portada original extraída', 'success');
     } catch (e) {
       console.warn('useCoverFromPDFForEdit error:', e);
       nameLabel.textContent = '⚠️ Excepción: ' + e.message;
-      showToast('⚠️ Error extrayendo portada del PDF', 'error');
+      showToast('⚠️ Error extrayendo portada', 'error');
     }
   }
 
@@ -7347,7 +7507,7 @@
       <div style="display:flex;align-items:center;gap:16px;flex-wrap:wrap;">
         <div id="edit-pdf-status" style="font-size:13px;color:var(--muted);">Sin PDF</div>
         <button type="button" class="btn btn-ghost" style="padding:8px 16px;font-size:12px;" onclick="document.getElementById('edit-pdf-input').click()">Cambiar PDF</button>
-        <input type="file" id="edit-pdf-input" accept=".pdf" style="display:none" onchange="editPdfSelected(this)" />
+        <input type="file" id="edit-pdf-input" accept=".pdf,.epub,application/epub+zip" style="display:none" onchange="editPdfSelected(this)" />
       </div>
     </div>
     <div style="display:flex;gap:12px;justify-content:flex-end;">

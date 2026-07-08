@@ -301,9 +301,30 @@ ${author ? `Author: ${author}` : ''}
 Clean composition, attractive colors, centered, suitable for a small store thumbnail.`;
         }
 
-        const result = await env.AI.run('@cf/black-forest-labs/flux-1-schnell', {
-          prompt: prompt.slice(0, 2000),
-        });
+        // Reintentos con backoff — Workers AI a veces falla de forma transitoria
+        // (rate limiting, timeouts breves), especialmente al generar varias seguidas.
+        let result, lastErr;
+        const maxAttempts = 3;
+        for (let attempt = 1; attempt <= maxAttempts; attempt++) {
+          try {
+            result = await env.AI.run('@cf/black-forest-labs/flux-1-schnell', {
+              prompt: prompt.slice(0, 2000),
+            });
+            lastErr = null;
+            break;
+          } catch (aiErr) {
+            lastErr = aiErr;
+            if (attempt < maxAttempts) {
+              await new Promise(r => setTimeout(r, attempt * 1200)); // 1.2s, luego 2.4s
+            }
+          }
+        }
+        if (lastErr) {
+          return new Response(JSON.stringify({ error: 'Workers AI falló tras varios intentos', detail: String(lastErr) }), {
+            status: 200,
+            headers: { ...headers, 'Content-Type': 'application/json' },
+          });
+        }
 
         // El binding puede devolver { image: base64 } o un ReadableStream según el modelo/versión
         let base64;
