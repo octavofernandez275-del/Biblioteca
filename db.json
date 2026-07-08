@@ -3617,6 +3617,32 @@
       "pdfUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/pdfs/1783514324330_edgar_allan_poe___enterrado_vivo.pdf",
       "coverUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/covers/1783514324330_edgar_allan_poe___enterrado_vivo.jpg",
       "file": "Edgar Allan Poe - Enterrado Vivo.pdf"
+    },
+    {
+      "id": 1783514338083,
+      "name": "Edgar Allan Poe   La Carta Robada",
+      "price": "$0.99",
+      "cat": "ebooks",
+      "desc": "",
+      "author": "",
+      "genre": "",
+      "age": "",
+      "temas": [],
+      "tags": [],
+      "nivel": "",
+      "idioma": "",
+      "ad": {
+        "headline": "",
+        "subheadline": "",
+        "cta": "",
+        "banner_text": "",
+        "instagram_caption": "",
+        "hashtags": []
+      },
+      "pdfName": "Edgar Allan Poe - La Carta Robada.pdf",
+      "pdfUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/pdfs/1783514338083_edgar_allan_poe___la_carta_robada.pdf",
+      "coverUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/covers/1783514338083_edgar_allan_poe___la_carta_robada.jpg",
+      "file": "Edgar Allan Poe - La Carta Robada.pdf"
     }
   ],
   "emailList": [
@@ -3625,5 +3651,5 @@
     "juan@test.com",
     "octavio123@gamil.com"
   ],
-  "updatedAt": "2026-07-08T12:38:51.119Z"
+  "updatedAt": "2026-07-08T12:39:04.568Z"
 }
