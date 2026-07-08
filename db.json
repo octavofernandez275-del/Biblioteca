@@ -3104,6 +3104,54 @@
       "pdfUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/pdfs/1783514025860_viajera_forastera_3.pdf",
       "coverUrl": null,
       "file": "VIAJERA FORASTERA 3.pdf"
+    },
+    {
+      "id": 1783514043829,
+      "name": "Viento y ceniza",
+      "price": "$5.99",
+      "cat": "novela",
+      "desc": "Corre 1772 y la Revolución Americana arde. Jamie y Claire, una pareja unida por el tiempo, se enfrentan a un futuro incierto donde un disparo cambiará el mundo. ¿Podrán evitar la destrucción o el destino los alcanzará?",
+      "author": "Diana Gabaldon",
+      "genre": "Novela histórica",
+      "age": "Adultos",
+      "temas": [
+        "Revolución Americana",
+        "Viajes en el tiempo",
+        "Romance épico",
+        "Supervivencia",
+        "Conflicto histórico"
+      ],
+      "tags": [
+        "Outlander",
+        "Guerra de Independencia",
+        "Amor",
+        "Escocia",
+        "Historia",
+        "Tiempo"
+      ],
+      "nivel": "",
+      "idioma": "Español",
+      "ad": {
+        "headline": "El destino del amor en la Revolución.",
+        "subheadline": "Jamie y Claire desafían el tiempo ante un futuro incierto.",
+        "cta": "Descubre el desenlace",
+        "banner_text": "Outlander #6: Pasión y Guerra",
+        "instagram_caption": "🔥 En el corazón de la Revolución Americana, el amor de Jamie y Claire arde contra el tiempo. El destino de una nación y su propia historia están en juego. ¿Podrán cambiar el futuro? ¡Sumérgete en Viento y Ceniza! #Outlander #DianaGabaldon #NovelaHistórica",
+        "hashtags": [
+          "#Outlander",
+          "#VientoYCeniza",
+          "#DianaGabaldon",
+          "#NovelaHistorica",
+          "#ViajesEnElTiempo",
+          "#RevolucionAmericana",
+          "#RomanceEpico",
+          "#LibrosEnEspañol"
+        ]
+      },
+      "pdfName": "Viento y ceniza -- Gabaldon, Diana -- Forastera #6, 2004 -- ePubLibre -- 1ce8ff7073616462fbb0f4ea9ce3d510 -- Anna’s Archive.pdf",
+      "pdfUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/pdfs/1783514043829_viento_y_ceniza.pdf",
+      "coverUrl": null,
+      "file": "Viento y ceniza -- Gabaldon, Diana -- Forastera #6, 2004 -- ePubLibre -- 1ce8ff7073616462fbb0f4ea9ce3d510 -- Anna’s Archive.pdf"
     }
   ],
   "emailList": [
@@ -3112,5 +3160,5 @@
     "juan@test.com",
     "octavio123@gamil.com"
   ],
-  "updatedAt": "2026-07-08T12:33:53.925Z"
+  "updatedAt": "2026-07-08T12:34:19.435Z"
 }
