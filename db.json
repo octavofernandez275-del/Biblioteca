@@ -2584,6 +2584,53 @@
       "pdfUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/pdfs/1783513662331_el_profesor.pdf",
       "coverUrl": null,
       "file": "El profesor -- Charlotte Brontë -- 907270d5e25b4e30f8d00cd48ed805da -- Anna’s Archive.pdf"
+    },
+    {
+      "id": 1783513675247,
+      "name": "Jane Eyre",
+      "price": "$4.99",
+      "cat": "novela",
+      "desc": "Adéntrate en la conmovedora historia de Jane Eyre, una huérfana con un espíritu indomable que desafía las adversidades de su infancia. Este clásico victoriano narra su lucha por la independencia, la justicia y el amor en un mundo lleno de prejuicios.",
+      "author": "Charlotte Brontë",
+      "genre": "Novela Clásica",
+      "age": "Adultos",
+      "temas": [
+        "Independencia femenina",
+        "Injusticia social",
+        "Romance gótico",
+        "Crecimiento personal",
+        "Moralidad victoriana"
+      ],
+      "tags": [
+        "Literatura victoriana",
+        "Clásicos",
+        "Romance",
+        "Drama",
+        "Feminismo",
+        "Inglaterra"
+      ],
+      "nivel": "",
+      "idioma": "Español",
+      "ad": {
+        "headline": "Descubre el alma indomable de Jane Eyre",
+        "subheadline": "Un clásico eterno de pasión, lucha y determinación. ¡La novela que marcó una era!",
+        "cta": "Empezar a leer",
+        "banner_text": "Clásico Imprescindible: Jane Eyre",
+        "instagram_caption": "📚 Sumérgete en la inolvidable historia de Jane Eyre, un relato atemporal de valentía y espíritu indomable. Un clásico victoriano que te conmoverá hasta lo más profundo. ✨ ¿Te atreves a conocer su destino?\n#JaneEyre #ClásicoLiterario #CharlotteBrontë",
+        "hashtags": [
+          "JaneEyre",
+          "CharlotteBrontë",
+          "NovelaClásica",
+          "LiteraturaVictoriana",
+          "RomanceGotico",
+          "LibroRecomendado",
+          "Ficción"
+        ]
+      },
+      "pdfName": "Jane Eyre_copia.pdf",
+      "pdfUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/pdfs/1783513675247_jane_eyre.pdf",
+      "coverUrl": null,
+      "file": "Jane Eyre_copia.pdf"
     }
   ],
   "emailList": [
@@ -2592,5 +2639,5 @@
     "juan@test.com",
     "octavio123@gamil.com"
   ],
-  "updatedAt": "2026-07-08T12:27:48.581Z"
+  "updatedAt": "2026-07-08T12:28:01.310Z"
 }
