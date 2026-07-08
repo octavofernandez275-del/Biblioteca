@@ -2725,6 +2725,54 @@
       "pdfUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/pdfs/1783513712554_villette.pdf",
       "coverUrl": null,
       "file": "Villette (Spanish Edition) -- Brontë, Charlotte -- 2011 -- Alba Editorial -- 3c7df4297926cd40c6a1c6745efeabd1 -- Anna’s Archive.pdf"
+    },
+    {
+      "id": 1783513839334,
+      "name": "Forastera 1: Un Amor a Través del Tiempo",
+      "price": "$5.99",
+      "cat": "romance",
+      "desc": "Tras la Segunda Guerra Mundial, Claire Randall es misteriosamente transportada desde 1945 a la Escocia de 1734, donde deberá sobrevivir entre clanes beligerantes y forjar un nuevo destino. Descubre el inicio de una épica aventura de amor, historia y viajes en el tiempo que cautivará tu corazón.",
+      "author": "Diana Gabaldon",
+      "genre": "Romance Histórico con Viajes en el Tiempo",
+      "age": "Adultos",
+      "temas": [
+        "Viajes en el tiempo",
+        "Escocia del siglo XVIII",
+        "Romance épico",
+        "Aventura histórica",
+        "Supervivencia"
+      ],
+      "tags": [
+        "Diana Gabaldon",
+        "Outlander",
+        "Escocia",
+        "Histórica",
+        "Romance",
+        "Aventura",
+        "Viajes en el tiempo"
+      ],
+      "nivel": "",
+      "idioma": "Español",
+      "ad": {
+        "headline": "Viaja a la Escocia del Siglo XVIII",
+        "subheadline": "Amor, peligro y un destino inesperado te esperan con Claire Randall.",
+        "cta": "Comienza la aventura",
+        "banner_text": "Épica de Viajes en el Tiempo y Romance",
+        "instagram_caption": "¡Prepara tu corazón para un viaje inolvidable! 🏴󠁧󠁢󠁳󠁣󠁴󠁿✨ 'Forastera' te transportará a la Escocia de 1734, donde la pasión, la intriga y un amor que desafía el tiempo te esperan. ¿Te atreves a descubrir el destino de Claire? 💖",
+        "hashtags": [
+          "#Forastera",
+          "#Outlander",
+          "#DianaGabaldon",
+          "#RomanceHistórico",
+          "#ViajesEnElTiempo",
+          "#Escocia",
+          "#LibrosRecomendados"
+        ]
+      },
+      "pdfName": "(Forastera 01) Forastera(c_1) -- Diana Gabaldon -- Forastera 1;Letras de bolsillo (Ediciones Salamandra) 15, -- Salamandra Publicacions Y Edicions -- isbn13 9788478886906 -- fa127260e1b98b46cced5b8e16c6a9e7 -- Anna’s Archive.pdf",
+      "pdfUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/pdfs/1783513839334_forastera_1__un_amor_a_trav_s_del_tiempo.pdf",
+      "coverUrl": null,
+      "file": "(Forastera 01) Forastera(c_1) -- Diana Gabaldon -- Forastera 1;Letras de bolsillo (Ediciones Salamandra) 15, -- Salamandra Publicacions Y Edicions -- isbn13 9788478886906 -- fa127260e1b98b46cced5b8e16c6a9e7 -- Anna’s Archive.pdf"
     }
   ],
   "emailList": [
@@ -2733,5 +2781,5 @@
     "juan@test.com",
     "octavio123@gamil.com"
   ],
-  "updatedAt": "2026-07-08T12:28:42.137Z"
+  "updatedAt": "2026-07-08T12:30:47.360Z"
 }
