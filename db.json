@@ -3513,6 +3513,32 @@
       "pdfUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/pdfs/1783514299150_edgar_allan_poe___el_corazon_delator.pdf",
       "coverUrl": null,
       "file": "Edgar Allan Poe - El Corazon Delator.pdf"
+    },
+    {
+      "id": 1783514304968,
+      "name": "Edgar Allan Poe   El Escarabajo de Oro",
+      "price": "$0.99",
+      "cat": "ebooks",
+      "desc": "",
+      "author": "",
+      "genre": "",
+      "age": "",
+      "temas": [],
+      "tags": [],
+      "nivel": "",
+      "idioma": "",
+      "ad": {
+        "headline": "",
+        "subheadline": "",
+        "cta": "",
+        "banner_text": "",
+        "instagram_caption": "",
+        "hashtags": []
+      },
+      "pdfName": "Edgar Allan Poe - El Escarabajo de Oro.pdf",
+      "pdfUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/pdfs/1783514304968_edgar_allan_poe___el_escarabajo_de_oro.pdf",
+      "coverUrl": null,
+      "file": "Edgar Allan Poe - El Escarabajo de Oro.pdf"
     }
   ],
   "emailList": [
@@ -3521,5 +3547,5 @@
     "juan@test.com",
     "octavio123@gamil.com"
   ],
-  "updatedAt": "2026-07-08T12:38:23.982Z"
+  "updatedAt": "2026-07-08T12:38:29.335Z"
 }
