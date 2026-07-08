@@ -3294,6 +3294,53 @@
       "pdfUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/pdfs/1783514196312_orgullo_y_prejuicio.pdf",
       "coverUrl": null,
       "file": "orgullo_y_prejuicio_copia.pdf"
+    },
+    {
+      "id": 1783514228600,
+      "name": "Ana Karenina",
+      "price": "$3.99",
+      "cat": "novela",
+      "desc": "En el vibrante San Petersburgo, la honorable Ana Karenina se debate entre el amor prohibido y las expectativas sociales, mientras su vida y la de quienes la rodean se entrelazan en una compleja red de pasión, celos y búsqueda de la felicidad. Una obra maestra que explora las profundidades del alma humana y las contradicciones de la sociedad aristocrática rusa.",
+      "author": "León Tolstói",
+      "genre": "Novela",
+      "age": "Adultos",
+      "temas": [
+        "Adulterio",
+        "Sociedad rusa del siglo XIX",
+        "Amor y pasión",
+        "Moralidad y honor",
+        "Familia"
+      ],
+      "tags": [
+        "clásico",
+        "Rusia",
+        "romance trágico",
+        "literatura universal",
+        "drama social",
+        "psicología"
+      ],
+      "nivel": "",
+      "idioma": "Español",
+      "ad": {
+        "headline": "Amor prohibido, sociedad implacable",
+        "subheadline": "Un clásico inmortal que explora la pasión, el honor y la tragedia humana.",
+        "cta": "Descubre el drama",
+        "banner_text": "Clásico Universal: Ana Karenina",
+        "instagram_caption": "Sumérgete en el drama atemporal de Ana Karenina. 💔 Una novela que explora el amor, la pasión y las implacables convenciones sociales en la Rusia del siglo XIX. ¿Te atreves a sentirlo todo? ✨ #AnaKarenina #Tolstoi",
+        "hashtags": [
+          "AnaKarenina",
+          "LeonTolstoi",
+          "NovelaClasica",
+          "LiteraturaRusa",
+          "RomanceTragico",
+          "DramaSocial",
+          "LibroDigital"
+        ]
+      },
+      "pdfName": "Ana-Karenina_copia.pdf",
+      "pdfUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/pdfs/1783514228600_ana_karenina.pdf",
+      "coverUrl": null,
+      "file": "Ana-Karenina_copia.pdf"
     }
   ],
   "emailList": [
@@ -3302,5 +3349,5 @@
     "juan@test.com",
     "octavio123@gamil.com"
   ],
-  "updatedAt": "2026-07-08T12:36:42.812Z"
+  "updatedAt": "2026-07-08T12:37:30.813Z"
 }
