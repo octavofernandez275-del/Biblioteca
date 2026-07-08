@@ -3891,6 +3891,32 @@
       "pdfUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/pdfs/1783534444532_38_recetas_con_chocolate_para_diabeticos_y_dietas_henry_c_medero.pdf",
       "coverUrl": null,
       "file": "38_recetas_con_chocolate_para_diabeticos_y_dietas_Henry_C_Medero.pdf"
+    },
+    {
+      "id": 1783534451614,
+      "name": "A por todas Jeff Kinney",
+      "price": "$0.99",
+      "cat": "ebooks",
+      "desc": "",
+      "author": "",
+      "genre": "",
+      "age": "",
+      "temas": [],
+      "tags": [],
+      "nivel": "",
+      "idioma": "",
+      "ad": {
+        "headline": "",
+        "subheadline": "",
+        "cta": "",
+        "banner_text": "",
+        "instagram_caption": "",
+        "hashtags": []
+      },
+      "pdfName": "A_por_todas_Jeff_Kinney.pdf",
+      "pdfUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/pdfs/1783534451614_a_por_todas_jeff_kinney.pdf",
+      "coverUrl": null,
+      "file": "A_por_todas_Jeff_Kinney.pdf"
     }
   ],
   "emailList": [
@@ -3899,5 +3925,5 @@
     "juan@test.com",
     "octavio123@gamil.com"
   ],
-  "updatedAt": "2026-07-08T18:14:11.042Z"
+  "updatedAt": "2026-07-08T18:14:36.469Z"
 }
