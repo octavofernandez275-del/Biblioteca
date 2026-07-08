@@ -2868,6 +2868,52 @@
       "pdfUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/pdfs/1783513881696_cuenta_a_las_abejas_que_me_fui.pdf",
       "coverUrl": null,
       "file": "Cuenta a las abejas que me fui -- Diana Gabaldon -- Forastera 9, 2022 -- lineasdesaparecidas -- df3a202a077722bcbf1e352f70e475bc -- Anna’s Archive.pdf"
+    },
+    {
+      "id": 1783513907025,
+      "name": "Ecos del pasado",
+      "price": "$5.99",
+      "cat": "novela",
+      "desc": "En medio de la Revolución Americana, Jamie Fraser se enfrenta a un destino incierto mientras en el siglo XX, Brianna y Roger buscan desesperadamente pistas sobre el futuro de Claire. Esta épica novela teje viajes en el tiempo, amor y guerra en una inolvidable aventura, la séptima entrega de la aclamada saga Forastera.",
+      "author": "Diana Gabaldon",
+      "genre": "Novela histórica",
+      "age": "Adultos",
+      "temas": [
+        "Revolución Americana",
+        "Viajes en el tiempo",
+        "Romance épico",
+        "Conflicto familiar",
+        "Guerra"
+      ],
+      "tags": [
+        "Outlander",
+        "Escocia",
+        "Historia",
+        "Guerra",
+        "Romance",
+        "Aventura"
+      ],
+      "nivel": "",
+      "idioma": "Español",
+      "ad": {
+        "headline": "Un viaje épico entre el pasado y la guerra.",
+        "subheadline": "La saga Forastera continúa con intriga, amor y viajes en el tiempo.",
+        "cta": "Descubrir ahora",
+        "banner_text": "Saga Outlander: Aventura Histórica",
+        "instagram_caption": "✨ ¡La épica de Outlander sigue! ✨ Sumérgete en \"Ecos del pasado\", la séptima entrega de Diana Gabaldon.\nAmor, guerra y viajes en el tiempo te esperan en la Revolución Americana. ¡No te lo pierdas! 📚⏳",
+        "hashtags": [
+          "#EcosDelPasado",
+          "#Outlander",
+          "#DianaGabaldon",
+          "#NovelaHistorica",
+          "#ViajesEnElTiempo",
+          "#RomanceEpico"
+        ]
+      },
+      "pdfName": "Ecos del pasado -- Diana Gabaldon -- Forastera #7, 2008 -- ePubLibre -- 2f626aca893943d4461838995f0aac18 -- Anna’s Archive.pdf",
+      "pdfUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/pdfs/1783513907025_ecos_del_pasado.pdf",
+      "coverUrl": null,
+      "file": "Ecos del pasado -- Diana Gabaldon -- Forastera #7, 2008 -- ePubLibre -- 2f626aca893943d4461838995f0aac18 -- Anna’s Archive.pdf"
     }
   ],
   "emailList": [
@@ -2876,5 +2922,5 @@
     "juan@test.com",
     "octavio123@gamil.com"
   ],
-  "updatedAt": "2026-07-08T12:31:37.398Z"
+  "updatedAt": "2026-07-08T12:32:01.020Z"
 }
