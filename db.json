@@ -3009,6 +3009,53 @@
       "pdfUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/pdfs/1783513959171_la_cruz_ardiente.pdf",
       "coverUrl": null,
       "file": "La cruz ardiente -- Gabaldon, Diana -- Forastera #5, 2000 -- ePubLibre -- ef704ef39155a8f524863a871b2d4481 -- Anna’s Archive-1.pdf"
+    },
+    {
+      "id": 1783513985301,
+      "name": "Tambores de otoño",
+      "price": "$5.99",
+      "cat": "novela",
+      "desc": "Tras huir de Escocia, Claire y Jamie emprenden un peligroso viaje a la América de 1766, buscando un nuevo hogar en Carolina del Norte y huyendo de la inminente Revolución. Mientras tanto, en 1968, Brianna Randall descubre un secreto familiar que la impulsa a un viaje al pasado que podría alterar la historia y su propio destino.",
+      "author": "Diana Gabaldon",
+      "genre": "Novela Histórica",
+      "age": "Adultos",
+      "temas": [
+        "Viajes en el tiempo",
+        "Historia de Estados Unidos",
+        "Romance épico",
+        "Supervivencia",
+        "Aventura"
+      ],
+      "tags": [
+        "Outlander",
+        "Saga Forastera",
+        "Diana Gabaldon",
+        "Viajes en el tiempo",
+        "América colonial",
+        "Romance"
+      ],
+      "nivel": "",
+      "idioma": "Español",
+      "ad": {
+        "headline": "Aventura épica entre Escocia y América",
+        "subheadline": "Viajes en el tiempo, amor prohibido y la Revolución te esperan.",
+        "cta": "Viaja en el Tiempo",
+        "banner_text": "Épica de Viajes en el Tiempo",
+        "instagram_caption": "Prepárate para la aventura de tu vida con #TamboresDeOtoño 🥁🍂. Claire y Jamie desafían el destino en la América colonial, mientras Brianna desentraña secretos que la llevan a viajar en el tiempo. ¡La saga Outlander continúa! ✨",
+        "hashtags": [
+          "#TamboresDeOtoño",
+          "#Outlander",
+          "#DianaGabaldon",
+          "#NovelaHistorica",
+          "#ViajesEnElTiempo",
+          "#RomanceEpico",
+          "#SagaForastera"
+        ]
+      },
+      "pdfName": "Tambores de otoño -- Gabaldon, Diana -- Forastera 4, 1996;1995 -- ePubLibre -- cfcb062f56953c1db96ea3209b276053 -- Anna’s Archive.pdf",
+      "pdfUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/pdfs/1783513985301_tambores_de_oto_o.pdf",
+      "coverUrl": null,
+      "file": "Tambores de otoño -- Gabaldon, Diana -- Forastera 4, 1996;1995 -- ePubLibre -- cfcb062f56953c1db96ea3209b276053 -- Anna’s Archive.pdf"
     }
   ],
   "emailList": [
@@ -3017,5 +3064,5 @@
     "juan@test.com",
     "octavio123@gamil.com"
   ],
-  "updatedAt": "2026-07-08T12:32:52.632Z"
+  "updatedAt": "2026-07-08T12:33:17.447Z"
 }
