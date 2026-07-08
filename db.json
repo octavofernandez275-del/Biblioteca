@@ -3387,6 +3387,54 @@
       "pdfUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/pdfs/1783514247059_romeo_y_julieta__la_eterna_tragedia_de_shakespeare.pdf",
       "coverUrl": null,
       "file": "William Shakespeare Romeo y Julieta_copia.pdf"
+    },
+    {
+      "id": 1783514257209,
+      "name": "Drácula",
+      "price": "$4.99",
+      "cat": "terror",
+      "desc": "Revive la inmortal leyenda del conde Drácula en esta cuidada edición de Reino de Cordelia. Con las impactantes ilustraciones de Fernando Vicente y un prólogo de Luis Alberto de Cuenca, sumérgete en el clásico gótico que definió el terror vampírico.",
+      "author": "Bram Stoker",
+      "genre": "Novela gótica de terror",
+      "age": "Adultos",
+      "temas": [
+        "Vampiros",
+        "Literatura gótica",
+        "Terror clásico",
+        "Misterio",
+        "Inmortalidad"
+      ],
+      "tags": [
+        "Drácula",
+        "Bram Stoker",
+        "Terror",
+        "Gótico",
+        "Clásico",
+        "Vampiros",
+        "Literatura"
+      ],
+      "nivel": "",
+      "idioma": "Español",
+      "ad": {
+        "headline": "Drácula: El Clásico Gótico Inmortal.",
+        "subheadline": "Edición imprescindible con ilustraciones de Fernando Vicente. Sumérgete en el terror.",
+        "cta": "Leer ahora",
+        "banner_text": "Clásico del Terror: Drácula.",
+        "instagram_caption": "¡Adéntrate en la oscuridad con Drácula! 🧛‍♂️ Esta edición de Reino de Cordelia te espera con las icónicas ilustraciones de Fernando Vicente y un prólogo de Luis Alberto de Cuenca. Prepárate para una experiencia gótica inolvidable. #Dracula #TerrorClásico",
+        "hashtags": [
+          "Dracula",
+          "BramStoker",
+          "NovelaGótica",
+          "Vampiros",
+          "TerrorLiterario",
+          "ClasicoImprescindible",
+          "ReinoDeCordelia"
+        ]
+      },
+      "pdfName": "dracula_copia.pdf",
+      "pdfUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/pdfs/1783514257209_dr_cula.pdf",
+      "coverUrl": null,
+      "file": "dracula_copia.pdf"
     }
   ],
   "emailList": [
@@ -3395,5 +3443,5 @@
     "juan@test.com",
     "octavio123@gamil.com"
   ],
-  "updatedAt": "2026-07-08T12:37:33.812Z"
+  "updatedAt": "2026-07-08T12:37:44.476Z"
 }
