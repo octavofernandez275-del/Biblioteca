@@ -3943,6 +3943,32 @@
       "pdfUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/pdfs/1783534476860_adelgaza_sin_dietas_eve_cameron.pdf",
       "coverUrl": null,
       "file": "Adelgaza_sin_dietas_Eve_Cameron.pdf"
+    },
+    {
+      "id": 1783534488560,
+      "name": "Adios a las dietas Sandra Navo",
+      "price": "$0.99",
+      "cat": "ebooks",
+      "desc": "",
+      "author": "",
+      "genre": "",
+      "age": "",
+      "temas": [],
+      "tags": [],
+      "nivel": "",
+      "idioma": "",
+      "ad": {
+        "headline": "",
+        "subheadline": "",
+        "cta": "",
+        "banner_text": "",
+        "instagram_caption": "",
+        "hashtags": []
+      },
+      "pdfName": "Adios_a_las_dietas_Sandra_Navo.pdf",
+      "pdfUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/pdfs/1783534488560_adios_a_las_dietas_sandra_navo.pdf",
+      "coverUrl": null,
+      "file": "Adios_a_las_dietas_Sandra_Navo.pdf"
     }
   ],
   "emailList": [
@@ -3951,5 +3977,5 @@
     "juan@test.com",
     "octavio123@gamil.com"
   ],
-  "updatedAt": "2026-07-08T18:14:47.331Z"
+  "updatedAt": "2026-07-08T18:14:59.899Z"
 }
