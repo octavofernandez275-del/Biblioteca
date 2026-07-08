@@ -3200,6 +3200,53 @@
       "pdfUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/pdfs/1783514056161_cien_a_os_de_soledad.pdf",
       "coverUrl": null,
       "file": "01-Gabriel Garcia Marquez - Cien Años de Soledad.pdf"
+    },
+    {
+      "id": 1783514176781,
+      "name": "Sentido y Sensibilidad",
+      "price": "$4.99",
+      "cat": "novela",
+      "desc": "La obra maestra de Jane Austen, 'Sentido y Sensibilidad', narra las vidas de las hermanas Dashwood, Elinor y Marianne, explorando las diferencias entre la razón y la pasión frente a las convenciones sociales del siglo XIX. Una profunda reflexión sobre el amor, la familia y las expectativas en la sociedad georgiana.",
+      "author": "Jane Austen",
+      "genre": "Novela",
+      "age": "Adultos",
+      "temas": [
+        "Amor",
+        "Sociedad",
+        "Familia",
+        "Clases sociales",
+        "Emociones vs. Razón"
+      ],
+      "tags": [
+        "Clásico",
+        "Romance",
+        "Literatura británica",
+        "Siglo XIX",
+        "Drama",
+        "Ficción histórica"
+      ],
+      "nivel": "",
+      "idioma": "Español",
+      "ad": {
+        "headline": "Amor y pasión en la Inglaterra georgiana",
+        "subheadline": "Sumérgete en el eterno dilema entre el corazón y la razón.",
+        "cta": "Descubrir esta obra",
+        "banner_text": "Clásico atemporal de Jane Austen",
+        "instagram_caption": "Déjate llevar por 'Sentido y Sensibilidad' de Jane Austen 💖. Una novela que te transportará al vibrante siglo XIX, explorando el amor, las costumbres y el alma humana. ¿Eres más Elinor o Marianne? ✨\n#SentidoySensibilidad #JaneAusten #ClasicosDeLaLiteratura #LecturaRecomendada",
+        "hashtags": [
+          "SentidoySensibilidad",
+          "JaneAusten",
+          "ClasicosDeLaLiteratura",
+          "NovelaRomantica",
+          "LiteraturaClasica",
+          "Ebook",
+          "AmorYSociedad"
+        ]
+      },
+      "pdfName": "Jane Austen - Sentido y Sensibilidad.pdf",
+      "pdfUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/pdfs/1783514176781_sentido_y_sensibilidad.pdf",
+      "coverUrl": null,
+      "file": "Jane Austen - Sentido y Sensibilidad.pdf"
     }
   ],
   "emailList": [
@@ -3208,5 +3255,5 @@
     "juan@test.com",
     "octavio123@gamil.com"
   ],
-  "updatedAt": "2026-07-08T12:34:22.058Z"
+  "updatedAt": "2026-07-08T12:36:23.075Z"
 }
