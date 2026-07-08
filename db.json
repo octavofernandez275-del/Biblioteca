@@ -3721,6 +3721,54 @@
       "pdfUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/pdfs/1783514362372_la_caida_de_la_casa_usher_de_poe_copia.pdf",
       "coverUrl": null,
       "file": "la_caida_de_la_casa_usher_de_poe_copia.pdf"
+    },
+    {
+      "id": 1783534401228,
+      "name": "10 Dietas Saludables para Eliminar Kilos y Perder Grasa",
+      "price": "$5.99",
+      "cat": "salud",
+      "desc": "Descubre 10 dietas saludables y prácticas diseñadas para ayudarte a eliminar kilos y perder grasa de manera efectiva. Este volumen de referencia ofrece una guía práctica para tomar decisiones informadas sobre tu alimentación y bienestar.",
+      "author": "Mariano Orzola",
+      "genre": "Salud y Bienestar",
+      "age": "Adultos",
+      "temas": [
+        "Dietas saludables",
+        "Pérdida de peso",
+        "Eliminación de grasa",
+        "Nutrición",
+        "Bienestar"
+      ],
+      "tags": [
+        "Dietas",
+        "Salud",
+        "Adelgazar",
+        "Grasa",
+        "Bienestar",
+        "Alimentación"
+      ],
+      "nivel": "Principiante",
+      "idioma": "Español",
+      "ad": {
+        "headline": "Adelgaza y Transfórmate con 10 Dietas Saludables",
+        "subheadline": "Guía práctica para eliminar kilos y perder grasa de forma efectiva.",
+        "cta": "¡Empieza tu cambio!",
+        "banner_text": "Tu Guía para Perder Grasa y Mejorar tu Salud",
+        "instagram_caption": "¡Transforma tu cuerpo y tu salud con nuestra guía de 10 dietas saludables! 💪 Aprende a eliminar esos kilos extra y a perder grasa de forma efectiva. ¡Empieza hoy tu camino hacia una vida más saludable! ✨ #DietaSaludable #PerderPeso #VidaSana",
+        "hashtags": [
+          "#DietaSaludable",
+          "#PerderPeso",
+          "#Adelgazar",
+          "#VidaSana",
+          "#Bienestar",
+          "#Nutricion",
+          "#Saludable",
+          "#OrzolaPress"
+        ]
+      },
+      "pdfName": "10_dietas_saludables_para_eliminar_kilos_y_perder_grasa_Mariano_1783515312349.pdf",
+      "pdfUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/pdfs/1783534401228_10_dietas_saludables_para_eliminar_kilos_y_perder_grasa.pdf",
+      "coverUrl": null,
+      "file": "10_dietas_saludables_para_eliminar_kilos_y_perder_grasa_Mariano_1783515312349.pdf"
     }
   ],
   "emailList": [
@@ -3729,5 +3777,5 @@
     "juan@test.com",
     "octavio123@gamil.com"
   ],
-  "updatedAt": "2026-07-08T12:45:12.277Z"
+  "updatedAt": "2026-07-08T18:13:26.685Z"
 }
