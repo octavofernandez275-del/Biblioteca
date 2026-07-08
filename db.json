@@ -3969,6 +3969,32 @@
       "pdfUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/pdfs/1783534488560_adios_a_las_dietas_sandra_navo.pdf",
       "coverUrl": null,
       "file": "Adios_a_las_dietas_Sandra_Navo.pdf"
+    },
+    {
+      "id": 1783534500232,
+      "name": "Al diablo con las dietas Caroline Dooner",
+      "price": "$0.99",
+      "cat": "ebooks",
+      "desc": "",
+      "author": "",
+      "genre": "",
+      "age": "",
+      "temas": [],
+      "tags": [],
+      "nivel": "",
+      "idioma": "",
+      "ad": {
+        "headline": "",
+        "subheadline": "",
+        "cta": "",
+        "banner_text": "",
+        "instagram_caption": "",
+        "hashtags": []
+      },
+      "pdfName": "Al_diablo_con_las_dietas_Caroline_Dooner.pdf",
+      "pdfUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/pdfs/1783534500232_al_diablo_con_las_dietas_caroline_dooner.pdf",
+      "coverUrl": null,
+      "file": "Al_diablo_con_las_dietas_Caroline_Dooner.pdf"
     }
   ],
   "emailList": [
@@ -3977,5 +4003,5 @@
     "juan@test.com",
     "octavio123@gamil.com"
   ],
-  "updatedAt": "2026-07-08T18:14:59.899Z"
+  "updatedAt": "2026-07-08T18:15:09.237Z"
 }
