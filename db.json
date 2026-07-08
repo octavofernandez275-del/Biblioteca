@@ -3769,6 +3769,54 @@
       "pdfUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/pdfs/1783534401228_10_dietas_saludables_para_eliminar_kilos_y_perder_grasa.pdf",
       "coverUrl": null,
       "file": "10_dietas_saludables_para_eliminar_kilos_y_perder_grasa_Mariano_1783515312349.pdf"
+    },
+    {
+      "id": 1783534418713,
+      "name": "2001: Una odisea espacial",
+      "price": "$4.99",
+      "cat": "novela",
+      "desc": "Embárcate en un sobrecogedor viaje interestelar que busca la evidencia de vida más allá de la Tierra y explora la esencia de la humanidad. Una novela épica que amalgama pasado, presente y futuro, invitando a una profunda reflexión sobre el tiempo, la vida y el lugar del hombre en el cosmos.",
+      "author": "Arthur C. Clarke",
+      "genre": "Ciencia Ficción",
+      "age": "Adultos",
+      "temas": [
+        "Exploración espacial",
+        "Inteligencia artificial",
+        "Evolución humana",
+        "Existencialismo",
+        "Vida extraterrestre"
+      ],
+      "tags": [
+        "Ciencia ficción",
+        "Espacio",
+        "Odisea",
+        "Misterio",
+        "Kubrick",
+        "Evolución"
+      ],
+      "nivel": "",
+      "idioma": "Español",
+      "ad": {
+        "headline": "Un viaje épico a los confines del cosmos.",
+        "subheadline": "Descubre los secretos de la humanidad y el universo en esta obra maestra.",
+        "cta": "Explorar el Cosmos",
+        "banner_text": "Clásico Sci-Fi Imprescindible",
+        "instagram_caption": "🌌 ¡Embárcate en una odisea que desafiará tu mente!\nExplora los misterios del universo y la esencia humana. ✨\nArthur C. Clarke te espera con una novela que cambió la ciencia ficción.\n¿Listo para el viaje definitivo?",
+        "hashtags": [
+          "#2001OdiseaEspacial",
+          "#ArthurCClarke",
+          "#CienciaFiccion",
+          "#SpaceOpera",
+          "#Kubrick",
+          "#LecturaRecomendada",
+          "#NovelaEpica",
+          "#Existencialismo"
+        ]
+      },
+      "pdfName": "2001_Una_odisea_espacial_Arthur_C_Clarke_1783515359362.pdf",
+      "pdfUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/pdfs/1783534418713_2001__una_odisea_espacial.pdf",
+      "coverUrl": null,
+      "file": "2001_Una_odisea_espacial_Arthur_C_Clarke_1783515359362.pdf"
     }
   ],
   "emailList": [
@@ -3777,5 +3825,5 @@
     "juan@test.com",
     "octavio123@gamil.com"
   ],
-  "updatedAt": "2026-07-08T18:13:26.685Z"
+  "updatedAt": "2026-07-08T18:13:46.704Z"
 }
