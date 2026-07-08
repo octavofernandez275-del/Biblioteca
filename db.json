@@ -3152,6 +3152,54 @@
       "pdfUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/pdfs/1783514043829_viento_y_ceniza.pdf",
       "coverUrl": null,
       "file": "Viento y ceniza -- Gabaldon, Diana -- Forastera #6, 2004 -- ePubLibre -- 1ce8ff7073616462fbb0f4ea9ce3d510 -- Anna’s Archive.pdf"
+    },
+    {
+      "id": 1783514056161,
+      "name": "Cien Años de Soledad",
+      "price": "$4.99",
+      "cat": "novela",
+      "desc": "Descubre el realismo mágico en Macondo con la saga multigeneracional de la familia Buendía. Una obra maestra que entrelaza la historia, la fantasía y la soledad en un relato inolvidable.",
+      "author": "Gabriel García Márquez",
+      "genre": "Novela de Realismo Mágico",
+      "age": "Adultos",
+      "temas": [
+        "Saga familiar",
+        "Realismo mágico",
+        "Soledad",
+        "Historia latinoamericana",
+        "Mito y leyenda"
+      ],
+      "tags": [
+        "Gabo",
+        "Clásico",
+        "Literatura latinoamericana",
+        "Macondo",
+        "Ficción",
+        "Patrimonio"
+      ],
+      "nivel": "Intermedio",
+      "idioma": "Español",
+      "ad": {
+        "headline": "Un siglo de magia y soledad",
+        "subheadline": "Sumérgete en el mítico Macondo y la saga de los Buendía.",
+        "cta": "Comenzar viaje",
+        "banner_text": "Clásico Indispensable: Realismo Mágico",
+        "instagram_caption": "Adéntrate en el universo mágico de Macondo. 📚✨ 'Cien Años de Soledad' te espera para vivir la inolvidable saga de la familia Buendía. Un clásico eterno que fusiona historia, mito y emoción. ¡No te lo pierdas!",
+        "hashtags": [
+          "CienAñosDeSoledad",
+          "GabrielGarciaMarquez",
+          "RealismoMagico",
+          "Macondo",
+          "LiteraturaClasica",
+          "Novela",
+          "Gabo",
+          "Lectura"
+        ]
+      },
+      "pdfName": "01-Gabriel Garcia Marquez - Cien Años de Soledad.pdf",
+      "pdfUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/pdfs/1783514056161_cien_a_os_de_soledad.pdf",
+      "coverUrl": null,
+      "file": "01-Gabriel Garcia Marquez - Cien Años de Soledad.pdf"
     }
   ],
   "emailList": [
@@ -3160,5 +3208,5 @@
     "juan@test.com",
     "octavio123@gamil.com"
   ],
-  "updatedAt": "2026-07-08T12:34:19.435Z"
+  "updatedAt": "2026-07-08T12:34:22.058Z"
 }
