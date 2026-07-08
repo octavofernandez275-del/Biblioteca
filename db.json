@@ -3817,6 +3817,54 @@
       "pdfUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/pdfs/1783534418713_2001__una_odisea_espacial.pdf",
       "coverUrl": null,
       "file": "2001_Una_odisea_espacial_Arthur_C_Clarke_1783515359362.pdf"
+    },
+    {
+      "id": 1783534437394,
+      "name": "30 Dietas que Debes Probar Antes de Morir",
+      "price": "$5.99",
+      "cat": "salud",
+      "desc": "Esta guía práctica y de referencia, inspirada en la colección 'Instante de Bienestar', te invita a explorar 30 enfoques nutricionales diversos. Descubre un volumen esencial para quienes buscan mejorar su salud y bienestar a través de la alimentación.",
+      "author": "Mariano Orzola",
+      "genre": "Salud y Nutrición",
+      "age": "Adultos",
+      "temas": [
+        "Nutrición",
+        "Dietas Saludables",
+        "Bienestar Personal",
+        "Guía de Salud",
+        "Alimentación"
+      ],
+      "tags": [
+        "Dietas",
+        "Salud",
+        "Nutrición",
+        "Bienestar",
+        "Alimentación Saludable",
+        "Guía Práctica"
+      ],
+      "nivel": "",
+      "idioma": "Español",
+      "ad": {
+        "headline": "Descubre 30 Dietas para Transformar tu Vida",
+        "subheadline": "Una guía esencial para explorar nuevos caminos hacia tu bienestar y salud.",
+        "cta": "Explorar Ahora",
+        "banner_text": "Guía Completa de Dietas Saludables",
+        "instagram_caption": "¿Listo para un cambio? ✨ Sumérgete en '30 Dietas que Debes Probar Antes de Morir' y redefine tu bienestar.\nDescubre enfoques nutricionales, consejos prácticos y el camino hacia una vida más saludable.\n¡Tu transformación empieza hoy! 💪",
+        "hashtags": [
+          "#30Dietas",
+          "#Salud",
+          "#Nutricion",
+          "#Bienestar",
+          "#DietaSaludable",
+          "#VidaSana",
+          "#MarianoOrzola",
+          "#EbookSalud"
+        ]
+      },
+      "pdfName": "30_dietas_que_debes_probar_antes_de_morir_Mariano_Orzola.pdf",
+      "pdfUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/pdfs/1783534437394_30_dietas_que_debes_probar_antes_de_morir.pdf",
+      "coverUrl": null,
+      "file": "30_dietas_que_debes_probar_antes_de_morir_Mariano_Orzola.pdf"
     }
   ],
   "emailList": [
@@ -3825,5 +3873,5 @@
     "juan@test.com",
     "octavio123@gamil.com"
   ],
-  "updatedAt": "2026-07-08T18:13:46.704Z"
+  "updatedAt": "2026-07-08T18:14:03.465Z"
 }
