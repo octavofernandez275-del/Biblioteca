@@ -3643,6 +3643,32 @@
       "pdfUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/pdfs/1783514338083_edgar_allan_poe___la_carta_robada.pdf",
       "coverUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/covers/1783514338083_edgar_allan_poe___la_carta_robada.jpg",
       "file": "Edgar Allan Poe - La Carta Robada.pdf"
+    },
+    {
+      "id": 1783514344762,
+      "name": "Edgar Allan Poe   La Mascara de la Muerte Roja",
+      "price": "$0.99",
+      "cat": "ebooks",
+      "desc": "",
+      "author": "",
+      "genre": "",
+      "age": "",
+      "temas": [],
+      "tags": [],
+      "nivel": "",
+      "idioma": "",
+      "ad": {
+        "headline": "",
+        "subheadline": "",
+        "cta": "",
+        "banner_text": "",
+        "instagram_caption": "",
+        "hashtags": []
+      },
+      "pdfName": "Edgar Allan Poe - La Mascara de la Muerte Roja.pdf",
+      "pdfUrl": null,
+      "coverUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/covers/1783514344762_edgar_allan_poe___la_mascara_de_la_muerte_roja.jpg",
+      "file": "Edgar Allan Poe - La Mascara de la Muerte Roja.pdf"
     }
   ],
   "emailList": [
@@ -3651,5 +3677,5 @@
     "juan@test.com",
     "octavio123@gamil.com"
   ],
-  "updatedAt": "2026-07-08T12:39:04.568Z"
+  "updatedAt": "2026-07-08T12:39:10.993Z"
 }
