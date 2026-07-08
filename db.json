@@ -4021,6 +4021,32 @@
       "pdfUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/pdfs/1783534509786_animales_fantasticos_y_donde_encontrarlos_j_k_rowling.pdf",
       "coverUrl": null,
       "file": "Animales_fantasticos_y_donde_encontrarlos_J_K_Rowling.pdf"
+    },
+    {
+      "id": 1783534524458,
+      "name": "Arianne George R R Martin 1",
+      "price": "$0.99",
+      "cat": "ebooks",
+      "desc": "",
+      "author": "",
+      "genre": "",
+      "age": "",
+      "temas": [],
+      "tags": [],
+      "nivel": "",
+      "idioma": "",
+      "ad": {
+        "headline": "",
+        "subheadline": "",
+        "cta": "",
+        "banner_text": "",
+        "instagram_caption": "",
+        "hashtags": []
+      },
+      "pdfName": "Arianne_George_R_R_Martin-1.pdf",
+      "pdfUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/pdfs/1783534524458_arianne_george_r_r_martin_1.pdf",
+      "coverUrl": null,
+      "file": "Arianne_George_R_R_Martin-1.pdf"
     }
   ],
   "emailList": [
@@ -4029,5 +4055,5 @@
     "juan@test.com",
     "octavio123@gamil.com"
   ],
-  "updatedAt": "2026-07-08T18:15:23.718Z"
+  "updatedAt": "2026-07-08T18:15:30.767Z"
 }
