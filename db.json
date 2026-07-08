@@ -2914,6 +2914,53 @@
       "pdfUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/pdfs/1783513907025_ecos_del_pasado.pdf",
       "coverUrl": null,
       "file": "Ecos del pasado -- Diana Gabaldon -- Forastera #7, 2008 -- ePubLibre -- 2f626aca893943d4461838995f0aac18 -- Anna’s Archive.pdf"
+    },
+    {
+      "id": 1783513934422,
+      "name": "Escrito con la sangre de mi corazón",
+      "price": "$5.99",
+      "cat": "romance",
+      "desc": "En el turbulento 1778, Claire Fraser se debate entre dos épocas y dos amores cuando su marido Jamie regresa del pasado, desafiando su vida junto a Lord John Grey. Mientras tanto, en el siglo XX, sus descendientes enfrentan sus propios peligros y misterios, tejiendo una compleja red de destino y lealtad a través del tiempo.",
+      "author": "Diana Gabaldon",
+      "genre": "Novela Histórica Romántica",
+      "age": "Adultos",
+      "temas": [
+        "Viajes en el tiempo",
+        "Amor épico",
+        "Guerra de Independencia",
+        "Secretos familiares",
+        "Lealtad y destino"
+      ],
+      "tags": [
+        "Outlander",
+        "Diana Gabaldon",
+        "Romance histórico",
+        "Fantasía",
+        "Saga familiar",
+        "Guerra de Independencia"
+      ],
+      "nivel": "",
+      "idioma": "Español",
+      "ad": {
+        "headline": "Amor, Guerra y un Viaje en el Tiempo",
+        "subheadline": "La épica saga de Claire y Jamie continúa con más secretos y peligros.",
+        "cta": "Sumérgete en la Saga",
+        "banner_text": "Outlander: Una Historia Inolvidable",
+        "instagram_caption": "El tiempo no espera a nadie, ¡pero el amor sí! 🕰️💖 En 'Escrito con la sangre de mi corazón', los Fraser enfrentan el pasado, el presente y peligros que desafían toda lógica. ¿Estás listo para esta épica aventura? ¡Consíguelo ahora! ✨",
+        "hashtags": [
+          "#Outlander",
+          "#DianaGabaldon",
+          "#RomanceHistorico",
+          "#ViajesEnElTiempo",
+          "#SagaLiteraria",
+          "#LecturaRecomendada",
+          "#FicciónHistórica"
+        ]
+      },
+      "pdfName": "Escrito con la sangre de mi corazón -- Diana Gabaldon -- Forastera #8, 2013 -- ePubLibre -- 2f23f2ff4cd0c3d8c4086f7636dd89a2 -- Anna’s Archive.pdf",
+      "pdfUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/pdfs/1783513934422_escrito_con_la_sangre_de_mi_coraz_n.pdf",
+      "coverUrl": null,
+      "file": "Escrito con la sangre de mi corazón -- Diana Gabaldon -- Forastera #8, 2013 -- ePubLibre -- 2f23f2ff4cd0c3d8c4086f7636dd89a2 -- Anna’s Archive.pdf"
     }
   ],
   "emailList": [
@@ -2922,5 +2969,5 @@
     "juan@test.com",
     "octavio123@gamil.com"
   ],
-  "updatedAt": "2026-07-08T12:32:01.020Z"
+  "updatedAt": "2026-07-08T12:32:29.042Z"
 }
