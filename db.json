@@ -3669,6 +3669,32 @@
       "pdfUrl": null,
       "coverUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/covers/1783514344762_edgar_allan_poe___la_mascara_de_la_muerte_roja.jpg",
       "file": "Edgar Allan Poe - La Mascara de la Muerte Roja.pdf"
+    },
+    {
+      "id": 1783514351465,
+      "name": "Edgar Allan Poe Cuentos copia",
+      "price": "$0.99",
+      "cat": "infantil",
+      "desc": "",
+      "author": "",
+      "genre": "",
+      "age": "",
+      "temas": [],
+      "tags": [],
+      "nivel": "",
+      "idioma": "",
+      "ad": {
+        "headline": "",
+        "subheadline": "",
+        "cta": "",
+        "banner_text": "",
+        "instagram_caption": "",
+        "hashtags": []
+      },
+      "pdfName": "Edgar Allan Poe Cuentos_copia.pdf",
+      "pdfUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/pdfs/1783514351465_edgar_allan_poe_cuentos_copia.pdf",
+      "coverUrl": null,
+      "file": "Edgar Allan Poe Cuentos_copia.pdf"
     }
   ],
   "emailList": [
@@ -3677,5 +3703,5 @@
     "juan@test.com",
     "octavio123@gamil.com"
   ],
-  "updatedAt": "2026-07-08T12:39:10.993Z"
+  "updatedAt": "2026-07-08T12:39:21.804Z"
 }
