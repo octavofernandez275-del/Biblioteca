@@ -2773,6 +2773,54 @@
       "pdfUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/pdfs/1783513839334_forastera_1__un_amor_a_trav_s_del_tiempo.pdf",
       "coverUrl": null,
       "file": "(Forastera 01) Forastera(c_1) -- Diana Gabaldon -- Forastera 1;Letras de bolsillo (Ediciones Salamandra) 15, -- Salamandra Publicacions Y Edicions -- isbn13 9788478886906 -- fa127260e1b98b46cced5b8e16c6a9e7 -- Anna’s Archive.pdf"
+    },
+    {
+      "id": 1783513859045,
+      "name": "Atrapada en el tiempo (Forastera #2)",
+      "price": "$4.99",
+      "cat": "romance",
+      "desc": "Veinte años después de su primer viaje a la Escocia del siglo XVIII, Claire Randall regresa con su hija Brianna a las misteriosas montañas donde todo comenzó. En una búsqueda desesperada por el pasado y un amor inolvidable, Claire revelará un fascinante secreto que cambiará sus vidas para siempre.",
+      "author": "Diana Gabaldon",
+      "genre": "Romance Histórico",
+      "age": "Adultos",
+      "temas": [
+        "Viajes en el tiempo",
+        "Amor prohibido",
+        "Escocia del siglo XVIII",
+        "Secretos familiares",
+        "Destino"
+      ],
+      "tags": [
+        "Viajes en el tiempo",
+        "Romance",
+        "Escocia",
+        "Ficción histórica",
+        "Sagas",
+        "Misterio"
+      ],
+      "nivel": "",
+      "idioma": "Español",
+      "ad": {
+        "headline": "Un amor que desafía al tiempo.",
+        "subheadline": "Regresa a la Escocia del siglo XVIII en esta emocionante aventura romántica.",
+        "cta": "Empezar a leer",
+        "banner_text": "Romance Histórico y Viajes en el Tiempo",
+        "instagram_caption": "¡El pasado llama de nuevo! 🕰️ Claire regresa a la misteriosa Escocia del siglo XVIII, buscando respuestas y un amor inolvidable. Prepárate para un viaje en el tiempo lleno de pasión y secretos en #AtrapadaEnElTiempo, la segunda parte de la saga #Forastera de Diana Gabaldon. ¡No te la pierdas! ✨",
+        "hashtags": [
+          "AtrapadaEnElTiempo",
+          "Forastera",
+          "DianaGabaldon",
+          "RomanceHistorico",
+          "ViajesEnElTiempo",
+          "Escocia",
+          "LecturaRecomendada",
+          "SagaLiteraria"
+        ]
+      },
+      "pdfName": "Atrapada en el tiempo (Forastera 2) -- Diana Gabaldon -- 1992 .pdf",
+      "pdfUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/pdfs/1783513859045_atrapada_en_el_tiempo__forastera__2_.pdf",
+      "coverUrl": null,
+      "file": "Atrapada en el tiempo (Forastera 2) -- Diana Gabaldon -- 1992 .pdf"
     }
   ],
   "emailList": [
@@ -2781,5 +2829,5 @@
     "juan@test.com",
     "octavio123@gamil.com"
   ],
-  "updatedAt": "2026-07-08T12:30:47.360Z"
+  "updatedAt": "2026-07-08T12:31:10.468Z"
 }
