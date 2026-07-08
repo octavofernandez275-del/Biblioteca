@@ -3461,6 +3461,32 @@
       "pdfUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/pdfs/1783514285186_edgar_allan_poe___berenice.pdf",
       "coverUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/covers/1783514285186_edgar_allan_poe___berenice.jpg",
       "file": "Edgar Allan Poe - Berenice.pdf"
+    },
+    {
+      "id": 1783514292057,
+      "name": "Edgar Allan Poe   El Barril de Amontillado",
+      "price": "$0.99",
+      "cat": "ebooks",
+      "desc": "",
+      "author": "",
+      "genre": "",
+      "age": "",
+      "temas": [],
+      "tags": [],
+      "nivel": "",
+      "idioma": "",
+      "ad": {
+        "headline": "",
+        "subheadline": "",
+        "cta": "",
+        "banner_text": "",
+        "instagram_caption": "",
+        "hashtags": []
+      },
+      "pdfName": "Edgar Allan Poe - El Barril de Amontillado.pdf",
+      "pdfUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/pdfs/1783514292057_edgar_allan_poe___el_barril_de_amontillado.pdf",
+      "coverUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/covers/1783514292057_edgar_allan_poe___el_barril_de_amontillado.jpg",
+      "file": "Edgar Allan Poe - El Barril de Amontillado.pdf"
     }
   ],
   "emailList": [
@@ -3469,5 +3495,5 @@
     "juan@test.com",
     "octavio123@gamil.com"
   ],
-  "updatedAt": "2026-07-08T12:38:11.513Z"
+  "updatedAt": "2026-07-08T12:38:18.620Z"
 }
