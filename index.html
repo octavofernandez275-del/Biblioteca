@@ -3173,6 +3173,7 @@
         <div class="admin-section-sub">Vista previa de todos los productos con carátulas</div>
         <div style="display:flex;gap:10px;flex-wrap:wrap;margin-bottom:16px;">
           <button class="btn btn-ghost" style="font-size:13px;padding:9px 18px;" onclick="batchGenerateCovers()">🖼️ Generar portadas faltantes</button>
+          <button class="btn btn-ghost" style="font-size:13px;padding:9px 18px;" onclick="batchGenerateBanners()">📢 Generar banners de todo el catálogo</button>
           <button class="btn btn-ghost" style="font-size:13px;padding:9px 18px;" onclick="batchGenerateDescriptions()">✍️ Generar descripciones faltantes</button>
           <button class="btn btn-ghost" style="font-size:13px;padding:9px 18px;" onclick="batchAutoPrice()">💲 Poner precios automáticos</button>
           <button class="btn btn-ghost" style="font-size:12px;padding:9px 14px;opacity:.75;" onclick="batchAutoPrice(true)" title="Recalcula el precio incluso de productos que ya tienen uno cargado">💲 Recalcular TODOS los precios</button>
@@ -4675,11 +4676,143 @@
       ${ad.instagram_caption ? `<div style="white-space:pre-wrap;background:rgba(255,255,255,.04);border-radius:8px;padding:10px;margin-bottom:8px;">${ad.instagram_caption}${ad.hashtags?.length ? '\n\n' + ad.hashtags.map(h => h.startsWith('#') ? h : '#'+h).join(' ') : ''}</div>` : ''}
       <button type="button" class="btn-outline-accent" style="font-size:12px;padding:6px 14px;" onclick="copyAdCaption()">📋 Copiar texto para Instagram</button>
       <button type="button" class="btn-outline-accent" style="font-size:12px;padding:6px 14px;margin-left:8px;" onclick="generateFullPromo()">🎬 Generar publicidad completa (video + post)</button>
+      <button type="button" class="btn-outline-accent" style="font-size:12px;padding:6px 14px;margin-left:8px;" onclick="generateBannerForProd()">🖼️ Generar banner (con la carátula real)</button>
+      <div id="prod-banner-box" style="display:none;margin-top:12px;">
+        <img id="prod-banner-img" style="max-width:260px;width:100%;border-radius:12px;border:1px solid rgba(255,255,255,.12);display:block;margin-bottom:8px;" />
+        <button type="button" class="btn-outline-accent" style="font-size:12px;padding:6px 14px;" onclick="downloadProdBanner()">⬇️ Descargar banner</button>
+      </div>
       <div id="full-promo-box" style="display:none;margin-top:12px;">
         <textarea id="full-promo-text" readonly style="width:100%;min-height:280px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.12);border-radius:8px;padding:12px;font-size:12px;color:var(--white);white-space:pre-wrap;font-family:monospace;"></textarea>
         <button type="button" class="btn-outline-accent" style="font-size:12px;padding:6px 14px;margin-top:8px;" onclick="copyFullPromo()">📋 Copiar todo</button>
       </div>
     `;
+  }
+
+  // ─── GENERADOR DE BANNER PARA INSTAGRAM/FACEBOOK (usa la carátula real) ─────
+  async function _loadImageForBanner(src) {
+    if (!src) return null;
+    try {
+      let finalSrc = src;
+      if (/^https?:\/\//i.test(src)) {
+        const res = await fetch(`${WORKER_URL}/image-proxy?url=${encodeURIComponent(src)}`);
+        const blob = await res.blob();
+        finalSrc = URL.createObjectURL(blob);
+      }
+      return await new Promise((resolve, reject) => {
+        const im = new Image();
+        im.onload = () => resolve(im);
+        im.onerror = reject;
+        im.src = finalSrc;
+      });
+    } catch (e) { console.warn('_loadImageForBanner error:', e); return null; }
+  }
+
+  // Genera un banner vertical 1080x1350, respetando la carátula original tal cual es
+  // (no la modifica ni la regenera con IA, solo la compone con texto encima).
+  async function generateSocialBanner(coverSrc, name, price) {
+    const W = 1080, H = 1350;
+    const canvas = document.createElement('canvas');
+    canvas.width = W; canvas.height = H;
+    const ctx = canvas.getContext('2d');
+
+    ctx.fillStyle = '#0A0A0A';
+    ctx.fillRect(0, 0, W, H);
+
+    const img = await _loadImageForBanner(coverSrc);
+    const coverAreaH = Math.round(H * 0.68);
+
+    if (img) {
+      const scale = Math.max(W / img.width, coverAreaH / img.height);
+      const sw = W / scale, sh = coverAreaH / scale;
+      const sx = (img.width - sw) / 2, sy = (img.height - sh) / 2;
+      ctx.drawImage(img, sx, sy, sw, sh, 0, 0, W, coverAreaH);
+    } else {
+      ctx.fillStyle = '#1a1a2e';
+      ctx.fillRect(0, 0, W, coverAreaH);
+    }
+
+    // degradado de transición hacia la franja de texto
+    const grad = ctx.createLinearGradient(0, coverAreaH - 220, 0, coverAreaH);
+    grad.addColorStop(0, 'rgba(10,10,10,0)');
+    grad.addColorStop(1, 'rgba(10,10,10,1)');
+    ctx.fillStyle = grad;
+    ctx.fillRect(0, coverAreaH - 220, W, 220);
+
+    // franja inferior
+    ctx.fillStyle = '#0A0A0A';
+    ctx.fillRect(0, coverAreaH, W, H - coverAreaH);
+    ctx.fillStyle = '#5B5BD6';
+    ctx.fillRect(0, coverAreaH, W, 6);
+
+    // título (máx 3 líneas)
+    ctx.fillStyle = '#FFFFFF';
+    ctx.font = '700 54px Arial, sans-serif';
+    ctx.textBaseline = 'top';
+    const paddingX = 60;
+    const maxWidth = W - paddingX * 2;
+    const words = (name || '').split(' ');
+    let line = '', lines = [];
+    for (const w of words) {
+      const test = line ? line + ' ' + w : w;
+      if (ctx.measureText(test).width > maxWidth && line) { lines.push(line); line = w; }
+      else line = test;
+    }
+    if (line) lines.push(line);
+    lines = lines.slice(0, 3);
+    let ty = coverAreaH + 40;
+    lines.forEach(l => { ctx.fillText(l, paddingX, ty); ty += 62; });
+
+    // precio
+    ctx.fillStyle = '#8B8BE8';
+    ctx.font = '700 44px Arial, sans-serif';
+    ctx.fillText(price || '', paddingX, ty + 14);
+
+    // CTA + marca
+    ctx.fillStyle = '#B8B8C8';
+    ctx.font = '600 30px Arial, sans-serif';
+    ctx.fillText('📥 Disponible en PDF — link en bio', paddingX, H - 90);
+    ctx.font = '700 26px Arial, sans-serif';
+    ctx.fillStyle = '#5B5BD6';
+    ctx.fillText('BibliotecaDigital', paddingX, H - 46);
+
+    return canvas.toDataURL('image/png');
+  }
+
+  function _downloadDataUrl(dataUrl, filename) {
+    const a = document.createElement('a');
+    a.href = dataUrl;
+    a.download = filename;
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+  }
+
+  // Banner para el formulario de producto nuevo
+  async function generateBannerForProd() {
+    const name = document.getElementById('prod-name').value.trim();
+    if (!name) { showToast('Primero ingresá el nombre del producto', 'error'); return; }
+    const price = document.getElementById('prod-price').value.trim();
+    const coverSrc = pendingCoverB64;
+    if (!coverSrc) { showToast('Primero cargá o generá una carátula', 'error'); return; }
+    const box = document.getElementById('prod-banner-box');
+    const img = document.getElementById('prod-banner-img');
+    box.style.display = 'block';
+    img.src = '';
+    img.alt = 'Generando banner...';
+    try {
+      const dataUrl = await generateSocialBanner(coverSrc, name, price ? '$' + price : '');
+      img.src = dataUrl;
+      img.dataset.filename = `banner_${name.toLowerCase().replace(/[^a-z0-9]+/g,'_')}.png`;
+      showToast('🖼️ Banner generado', 'success');
+    } catch (e) {
+      console.warn('generateBannerForProd error:', e);
+      showToast('⚠️ No se pudo generar el banner', 'error');
+    }
+  }
+  function downloadProdBanner() {
+    const img = document.getElementById('prod-banner-img');
+    if (!img.src) return;
+    _downloadDataUrl(img.src, img.dataset.filename || 'banner.png');
   }
 
   async function generateFullPromo() {
@@ -4729,6 +4862,33 @@
     const text = (ad.instagram_caption || '') + (ad.hashtags?.length ? '\n\n' + ad.hashtags.map(h => h.startsWith('#') ? h : '#'+h).join(' ') : '');
     navigator.clipboard.writeText(text).then(() => showToast('Texto copiado al portapapeles ✅', 'success'))
       .catch(() => showToast('No se pudo copiar', 'error'));
+  }
+
+  async function generateBannerForEdit() {
+    const name = document.getElementById('edit-prod-name').value.trim();
+    if (!name) { showToast('El producto necesita un nombre primero', 'error'); return; }
+    const price = document.getElementById('edit-prod-price').value.trim();
+    const preview = document.getElementById('edit-cover-preview');
+    const coverSrc = _editCoverB64 || (preview && preview.style.display !== 'none' ? preview.src : null);
+    if (!coverSrc) { showToast('Este producto no tiene carátula todavía', 'error'); return; }
+    const box = document.getElementById('edit-banner-box');
+    const img = document.getElementById('edit-banner-img');
+    box.style.display = 'block';
+    img.src = '';
+    try {
+      const dataUrl = await generateSocialBanner(coverSrc, name, price ? '$' + price : '');
+      img.src = dataUrl;
+      img.dataset.filename = `banner_${name.toLowerCase().replace(/[^a-z0-9]+/g,'_')}.png`;
+      showToast('🖼️ Banner generado', 'success');
+    } catch (e) {
+      console.warn('generateBannerForEdit error:', e);
+      showToast('⚠️ No se pudo generar el banner', 'error');
+    }
+  }
+  function downloadEditBanner() {
+    const img = document.getElementById('edit-banner-img');
+    if (!img.src) return;
+    _downloadDataUrl(img.src, img.dataset.filename || 'banner.png');
   }
 
   async function generateFullPromoForEdit() {
@@ -5036,6 +5196,8 @@
     document.getElementById('cover-icon').style.display = 'block';
     document.getElementById('cover-search-results').style.display = 'none';
     document.getElementById('cover-search-results').innerHTML = '';
+    document.getElementById('prod-banner-box').style.display = 'none';
+    document.getElementById('prod-banner-img').src = '';
     document.getElementById('auto-tags-box').style.display = 'none';
     document.getElementById('ad-preview-box').style.display = 'none';
     window._lastAd = null;
@@ -6266,6 +6428,49 @@
         }).join('')}
       </div>`;
   }
+  // ─── GENERAR BANNERS DE TODO EL CATÁLOGO (ZIP) ─────
+  async function batchGenerateBanners() {
+    const withCover = db.products.filter(p => p.coverUrl || p.coverData);
+    if (!withCover.length) { showToast('Ningún producto tiene carátula todavía', 'error'); return; }
+    if (!confirm(`Se van a generar ${withCover.length} banners (1080x1350) usando la carátula real de cada producto, y se van a descargar como un archivo ZIP. ¿Continuar?`)) return;
+    if (typeof JSZip === 'undefined') { showToast('⚠️ Falta la librería JSZip para armar el ZIP', 'error'); return; }
+
+    const prog = document.getElementById('batch-progress');
+    if (prog) prog.style.display = 'block';
+    const zip = new JSZip();
+    let done = 0, failed = 0;
+    for (let i = 0; i < withCover.length; i++) {
+      const p = withCover[i];
+      if (prog) prog.textContent = `📢 Generando banner ${i + 1}/${withCover.length}: ${p.name}`;
+      try {
+        const dataUrl = await generateSocialBanner(p.coverUrl || p.coverData, p.name, p.price || '');
+        const base64 = dataUrl.split(',')[1];
+        const safeName = (p.name || 'producto').toLowerCase().replace(/[^a-z0-9]+/g, '_').slice(0, 60);
+        zip.file(`banner_${p.id}_${safeName}.png`, base64, { base64: true });
+        done++;
+      } catch (e) {
+        console.warn(`batchGenerateBanners: falló para "${p.name}":`, e);
+        failed++;
+      }
+    }
+    if (prog) prog.textContent = `📦 Empaquetando ${done} banners en ZIP...`;
+    try {
+      const blob = await zip.generateAsync({ type: 'blob' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = `banners_biblioteca_${new Date().toISOString().slice(0,10)}.zip`;
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+      URL.revokeObjectURL(url);
+    } catch (e) {
+      console.error('batchGenerateBanners: error armando el ZIP:', e);
+      showToast('⚠️ Error armando el ZIP', 'error');
+    }
+    if (prog) { prog.textContent = `✅ ${done} banners generados${failed ? ' (' + failed + ' fallaron)' : ''}. Descarga iniciada.`; setTimeout(() => { prog.style.display = 'none'; }, 6000); }
+  }
+
   async function batchGenerateCovers() {
     const missing = db.products.filter(p => !p.coverUrl && !p.coverData);
     if (!missing.length) { showToast('Todos los productos ya tienen portada ✅', 'success'); return; }
@@ -6642,6 +6847,8 @@
     document.getElementById('edit-cover-prompt').value = '';
     document.getElementById('edit-cover-search-results').style.display = 'none';
     document.getElementById('edit-cover-search-results').innerHTML = '';
+    document.getElementById('edit-banner-box').style.display = 'none';
+    document.getElementById('edit-banner-img').src = '';
     document.getElementById('edit-full-promo-box').style.display = 'none';
     document.getElementById('edit-full-promo-text').value = '';
     document.getElementById('edit-prod-id').value    = p.id;
@@ -7496,6 +7703,11 @@
     </div>
     <div style="background:rgba(245,158,11,.08);border:1px solid rgba(245,158,11,.25);border-radius:14px;padding:18px;margin-bottom:14px;">
       <div style="font-size:12px;font-weight:700;color:#FDE68A;text-transform:uppercase;letter-spacing:.08em;margin-bottom:12px;">📢 Publicidad</div>
+      <button type="button" class="btn-outline-accent" style="font-size:12px;padding:6px 14px;margin-left:8px;" onclick="generateBannerForEdit()">🖼️ Generar banner (con la carátula real)</button>
+      <div id="edit-banner-box" style="display:none;margin-top:12px;">
+        <img id="edit-banner-img" style="max-width:260px;width:100%;border-radius:12px;border:1px solid rgba(255,255,255,.12);display:block;margin-bottom:8px;" />
+        <button type="button" class="btn-outline-accent" style="font-size:12px;padding:6px 14px;" onclick="downloadEditBanner()">⬇️ Descargar banner</button>
+      </div>
       <button type="button" class="btn-outline-accent" style="font-size:12px;padding:6px 14px;" onclick="generateFullPromoForEdit()">🎬 Generar publicidad completa (video + post)</button>
       <div id="edit-full-promo-box" style="display:none;margin-top:12px;">
         <textarea id="edit-full-promo-text" readonly style="width:100%;min-height:280px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.12);border-radius:8px;padding:12px;font-size:12px;color:var(--white);white-space:pre-wrap;font-family:monospace;"></textarea>
