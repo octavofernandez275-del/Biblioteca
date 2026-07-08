@@ -3247,6 +3247,53 @@
       "pdfUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/pdfs/1783514176781_sentido_y_sensibilidad.pdf",
       "coverUrl": null,
       "file": "Jane Austen - Sentido y Sensibilidad.pdf"
+    },
+    {
+      "id": 1783514196312,
+      "name": "Orgullo y Prejuicio",
+      "price": "$3.99",
+      "cat": "novela",
+      "desc": "Explora las complejidades sociales y los enredos amorosos en la Inglaterra del siglo XIX con la icónica historia de Elizabeth Bennet y Mr. Darcy, donde el orgullo y el prejuicio desafían las expectativas.",
+      "author": "Jane Austen",
+      "genre": "Novela clásica",
+      "age": "Adultos y Jóvenes",
+      "temas": [
+        "Romance",
+        "Clase social",
+        "Matrimonio",
+        "Prejuicios",
+        "Familia"
+      ],
+      "tags": [
+        "Clásicos",
+        "Romance histórico",
+        "Literatura inglesa",
+        "Sociedad del siglo XIX",
+        "Drama",
+        "Amor"
+      ],
+      "nivel": "",
+      "idioma": "Español",
+      "ad": {
+        "headline": "Amor, Orgullo y Prejuicio: Un Clásico Eterno.",
+        "subheadline": "Revive la icónica historia de Elizabeth Bennet y Mr. Darcy. Un romance inolvidable.",
+        "cta": "Leer ahora",
+        "banner_text": "El Romance Clásico Imprescindible",
+        "instagram_caption": "✨ Sumérgete en el ingenio y el encanto de #OrgulloYPrejuicio. ✨\nDescubre la inolvidable historia de Elizabeth Bennet y Mr. Darcy en esta obra maestra atemporal de Jane Austen.\nUn viaje por el amor, la sociedad y los prejuicios que te cautivará. ¡Hazte con tu copia hoy!",
+        "hashtags": [
+          "#OrgulloYPrejuicio",
+          "#JaneAusten",
+          "#ClasicoLiterario",
+          "#RomanceHistorico",
+          "#LiteraturaInglesa",
+          "#FiccionClasica",
+          "#EbookRecomendado"
+        ]
+      },
+      "pdfName": "orgullo_y_prejuicio_copia.pdf",
+      "pdfUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/pdfs/1783514196312_orgullo_y_prejuicio.pdf",
+      "coverUrl": null,
+      "file": "orgullo_y_prejuicio_copia.pdf"
     }
   ],
   "emailList": [
@@ -3255,5 +3302,5 @@
     "juan@test.com",
     "octavio123@gamil.com"
   ],
-  "updatedAt": "2026-07-08T12:36:23.075Z"
+  "updatedAt": "2026-07-08T12:36:42.812Z"
 }
