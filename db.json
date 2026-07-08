@@ -2678,6 +2678,53 @@
       "pdfUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/pdfs/1783513691922_shirley__amor__clase_y_rebeld_a_en_la_inglaterra_victoriana.pdf",
       "coverUrl": null,
       "file": "Shirley -- Charlotte Brontë [Brontë, Charlotte] -- 1849 -- bef2f12c8ede73272d248aabaac52952 -- Anna’s Archive.pdf"
+    },
+    {
+      "id": 1783513712554,
+      "name": "Villette",
+      "price": "$4.99",
+      "cat": "novela",
+      "desc": "Sumérgete en la conmovedora historia de Lucy Snowe, una joven institutriz inglesa que busca su destino en la misteriosa ciudad de Villette. Una obra maestra de Charlotte Brontë que explora la soledad, el amor y la lucha femenina en la sociedad victoriana.",
+      "author": "Charlotte Brontë",
+      "genre": "Ficción Clásica",
+      "age": "Adultos",
+      "temas": [
+        "Independencia femenina",
+        "Soledad",
+        "Amor prohibido",
+        "Sociedad victoriana",
+        "Psicología"
+      ],
+      "tags": [
+        "Clásico victoriano",
+        "Novela psicológica",
+        "Romance",
+        "Literatura inglesa",
+        "Independencia femenina",
+        "Siglo XIX"
+      ],
+      "nivel": "Intermedio",
+      "idioma": "Español",
+      "ad": {
+        "headline": "Villette: Un Clásico Victoriano Inolvidable",
+        "subheadline": "Descubre el conmovedor viaje de Lucy Snowe en busca de su destino.",
+        "cta": "Sumérgete",
+        "banner_text": "Clásico de Charlotte Brontë en Español",
+        "instagram_caption": "¿Listo para sumergirte en un clásico atemporal? 📖✨ Villette de Charlotte Brontë te espera.\nUna historia de amor, independencia y misterio ambientada en la fascinante sociedad victoriana. ¡No te la pierdas!\nDescarga tu edición en español y déjate atrapar.",
+        "hashtags": [
+          "#Villette",
+          "#CharlotteBrontë",
+          "#NovelaClásica",
+          "#LiteraturaInglesa",
+          "#FicciónVictoriana",
+          "#RomanceLiterario",
+          "#LecturaRecomendada"
+        ]
+      },
+      "pdfName": "Villette (Spanish Edition) -- Brontë, Charlotte -- 2011 -- Alba Editorial -- 3c7df4297926cd40c6a1c6745efeabd1 -- Anna’s Archive.pdf",
+      "pdfUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/pdfs/1783513712554_villette.pdf",
+      "coverUrl": null,
+      "file": "Villette (Spanish Edition) -- Brontë, Charlotte -- 2011 -- Alba Editorial -- 3c7df4297926cd40c6a1c6745efeabd1 -- Anna’s Archive.pdf"
     }
   ],
   "emailList": [
@@ -2686,5 +2733,5 @@
     "juan@test.com",
     "octavio123@gamil.com"
   ],
-  "updatedAt": "2026-07-08T12:28:20.016Z"
+  "updatedAt": "2026-07-08T12:28:42.137Z"
 }
