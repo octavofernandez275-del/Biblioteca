@@ -2961,6 +2961,54 @@
       "pdfUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/pdfs/1783513934422_escrito_con_la_sangre_de_mi_coraz_n.pdf",
       "coverUrl": null,
       "file": "Escrito con la sangre de mi corazón -- Diana Gabaldon -- Forastera #8, 2013 -- ePubLibre -- 2f23f2ff4cd0c3d8c4086f7636dd89a2 -- Anna’s Archive.pdf"
+    },
+    {
+      "id": 1783513959171,
+      "name": "La cruz ardiente",
+      "price": "$5.99",
+      "cat": "novela",
+      "desc": "Claire, una enfermera del siglo XX, se encuentra nuevamente en el dilema de influir en el destino de su amado Jamie mientras los peligros de la América colonial la acechan. Atrapada entre dos mundos y con el conocimiento del futuro, debe adaptarse a una época que no es la suya.",
+      "author": "Diana Gabaldon",
+      "genre": "Ficción histórica y Viajes en el tiempo",
+      "age": "Adultos",
+      "temas": [
+        "Dilemas morales",
+        "Amor y destino",
+        "Guerra de independencia",
+        "Viajes en el tiempo",
+        "Adaptación cultural"
+      ],
+      "tags": [
+        "Forastera",
+        "Outlander",
+        "Escocia",
+        "América Colonial",
+        "Romance histórico",
+        "Aventura"
+      ],
+      "nivel": "",
+      "idioma": "Español",
+      "ad": {
+        "headline": "Viajes en el tiempo y pasiones prohibidas.",
+        "subheadline": "Claire, dividida entre salvar a su amor o alterar el destino de América.",
+        "cta": "Descubre su dilema",
+        "banner_text": "Épica histórica y Viajes en el Tiempo",
+        "instagram_caption": "Sumérgete en el quinto libro de la aclamada saga Forastera. ⏳ Claire Randall enfrenta decisiones imposibles entre el amor y la historia. ¿Podrá una mujer del futuro forjar su propio destino en el pasado? 🔥 ¡Una aventura que no querrás perderte!",
+        "hashtags": [
+          "#LaCruzArdiente",
+          "#Forastera5",
+          "#ViajesEnElTiempo",
+          "#RomanceHistorico",
+          "#DianaGabaldon",
+          "#AmorYDestino",
+          "#AmericaColonial",
+          "#EbookRecomendado"
+        ]
+      },
+      "pdfName": "La cruz ardiente -- Gabaldon, Diana -- Forastera #5, 2000 -- ePubLibre -- ef704ef39155a8f524863a871b2d4481 -- Anna’s Archive-1.pdf",
+      "pdfUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/pdfs/1783513959171_la_cruz_ardiente.pdf",
+      "coverUrl": null,
+      "file": "La cruz ardiente -- Gabaldon, Diana -- Forastera #5, 2000 -- ePubLibre -- ef704ef39155a8f524863a871b2d4481 -- Anna’s Archive-1.pdf"
     }
   ],
   "emailList": [
@@ -2969,5 +3017,5 @@
     "juan@test.com",
     "octavio123@gamil.com"
   ],
-  "updatedAt": "2026-07-08T12:32:29.042Z"
+  "updatedAt": "2026-07-08T12:32:52.632Z"
 }
