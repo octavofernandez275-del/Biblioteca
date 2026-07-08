@@ -3591,6 +3591,32 @@
       "pdfUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/pdfs/1783514317063_edgar_allan_poe___el_retrato_oval.pdf",
       "coverUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/covers/1783514317063_edgar_allan_poe___el_retrato_oval.jpg",
       "file": "Edgar Allan Poe - El Retrato Oval.pdf"
+    },
+    {
+      "id": 1783514324330,
+      "name": "Edgar Allan Poe   Enterrado Vivo",
+      "price": "$0.99",
+      "cat": "ebooks",
+      "desc": "",
+      "author": "",
+      "genre": "",
+      "age": "",
+      "temas": [],
+      "tags": [],
+      "nivel": "",
+      "idioma": "",
+      "ad": {
+        "headline": "",
+        "subheadline": "",
+        "cta": "",
+        "banner_text": "",
+        "instagram_caption": "",
+        "hashtags": []
+      },
+      "pdfName": "Edgar Allan Poe - Enterrado Vivo.pdf",
+      "pdfUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/pdfs/1783514324330_edgar_allan_poe___enterrado_vivo.pdf",
+      "coverUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/covers/1783514324330_edgar_allan_poe___enterrado_vivo.jpg",
+      "file": "Edgar Allan Poe - Enterrado Vivo.pdf"
     }
   ],
   "emailList": [
@@ -3599,5 +3625,5 @@
     "juan@test.com",
     "octavio123@gamil.com"
   ],
-  "updatedAt": "2026-07-08T12:38:43.820Z"
+  "updatedAt": "2026-07-08T12:38:51.119Z"
 }
