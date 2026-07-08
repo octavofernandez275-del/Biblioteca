@@ -2631,6 +2631,53 @@
       "pdfUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/pdfs/1783513675247_jane_eyre.pdf",
       "coverUrl": null,
       "file": "Jane Eyre_copia.pdf"
+    },
+    {
+      "id": 1783513691922,
+      "name": "Shirley: Amor, Clase y Rebeldía en la Inglaterra Victoriana",
+      "price": "$4.99",
+      "cat": "novela",
+      "desc": "En la Inglaterra del siglo XIX, asolada por conflictos sociales y económicos, Shirley explora las vidas entrelazadas de Caroline Helstone y la enérgica Shirley Keeldar. Una novela maestra de Charlotte Brontë que desafía las convenciones sobre el amor, la amistad y el papel de la mujer en una sociedad en transformación.",
+      "author": "Charlotte Brontë",
+      "genre": "Novela Clásica",
+      "age": "Adultos",
+      "temas": [
+        "Amor y amistad",
+        "Clases sociales",
+        "Revolución Industrial",
+        "Emancipación femenina",
+        "Costumbres victorianas"
+      ],
+      "tags": [
+        "Ficción Clásica",
+        "Época Victoriana",
+        "Charlotte Brontë",
+        "Drama Social",
+        "Literatura Inglesa",
+        "Mujeres Protagonistas"
+      ],
+      "nivel": "",
+      "idioma": "Español",
+      "ad": {
+        "headline": "Pasión, Amistad y Rebeldía Victoriana",
+        "subheadline": "Descubre un clásico atemporal de Charlotte Brontë sobre amor y sociedad.",
+        "cta": "Explorar ahora",
+        "banner_text": "Clásico Inmortal de Brontë",
+        "instagram_caption": "Sumérgete en la Inglaterra del siglo XIX con 'Shirley' de Charlotte Brontë. 📚 Una historia cautivadora de amor, amistad y desafíos sociales en plena Revolución Industrial. ¿Listo para un clásico inolvidable? ✨",
+        "hashtags": [
+          "Shirley",
+          "CharlotteBronte",
+          "ClasicosLiteratura",
+          "NovelaHistorica",
+          "EpocaVictoriana",
+          "LecturaRecomendada",
+          "FiccionClasica"
+        ]
+      },
+      "pdfName": "Shirley -- Charlotte Brontë [Brontë, Charlotte] -- 1849 -- bef2f12c8ede73272d248aabaac52952 -- Anna’s Archive.pdf",
+      "pdfUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/pdfs/1783513691922_shirley__amor__clase_y_rebeld_a_en_la_inglaterra_victoriana.pdf",
+      "coverUrl": null,
+      "file": "Shirley -- Charlotte Brontë [Brontë, Charlotte] -- 1849 -- bef2f12c8ede73272d248aabaac52952 -- Anna’s Archive.pdf"
     }
   ],
   "emailList": [
@@ -2639,5 +2686,5 @@
     "juan@test.com",
     "octavio123@gamil.com"
   ],
-  "updatedAt": "2026-07-08T12:28:01.310Z"
+  "updatedAt": "2026-07-08T12:28:20.016Z"
 }
