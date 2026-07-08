@@ -3666,7 +3666,7 @@
         "hashtags": []
       },
       "pdfName": "Edgar Allan Poe - La Mascara de la Muerte Roja.pdf",
-      "pdfUrl": null,
+      "pdfUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/pdfs/1783514344762_edgar_allan_poe___la_mascara_de_la_muerte_roja.pdf",
       "coverUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/covers/1783514344762_edgar_allan_poe___la_mascara_de_la_muerte_roja.jpg",
       "file": "Edgar Allan Poe - La Mascara de la Muerte Roja.pdf"
     },
@@ -3729,5 +3729,5 @@
     "juan@test.com",
     "octavio123@gamil.com"
   ],
-  "updatedAt": "2026-07-08T12:44:45.638Z"
+  "updatedAt": "2026-07-08T12:44:48.369Z"
 }
