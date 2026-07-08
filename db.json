@@ -3693,7 +3693,7 @@
       },
       "pdfName": "Edgar Allan Poe Cuentos_copia.pdf",
       "pdfUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/pdfs/1783514351465_edgar_allan_poe_cuentos_copia.pdf",
-      "coverUrl": null,
+      "coverUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/covers/1783514351465_edgar_allan_poe_cuentos_copia.jpg",
       "file": "Edgar Allan Poe Cuentos_copia.pdf"
     },
     {
@@ -3729,5 +3729,5 @@
     "juan@test.com",
     "octavio123@gamil.com"
   ],
-  "updatedAt": "2026-07-08T12:45:09.013Z"
+  "updatedAt": "2026-07-08T12:45:12.277Z"
 }
