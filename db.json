@@ -2537,6 +2537,53 @@
       "pdfUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/pdfs/1783193925427_las_mejores_recetas_de_carne__listas_en_30_minutos___spanish___almudena_sasiain_calle___recetas_listas_en_30_minutos__colonia__alemania__2016___ngv___isbn13_9783625006534___1d57dbcc32eef929933768d597ae5635___anna_s_archive.pdf",
       "coverUrl": null,
       "file": "Las mejores recetas de carne (Listas en 30 minutos) (Spanish -- Almudena Sasiain Calle -- Recetas listas en 30 minutos, Colonia, Alemania, 2016 -- NGV -- isbn13 9783625006534 -- 1d57dbcc32eef929933768d597ae5635 -- Anna’s Archive.pdf"
+    },
+    {
+      "id": 1783513662331,
+      "name": "El profesor",
+      "price": "$4.99",
+      "cat": "novela",
+      "desc": "Descubre la primera novela de Charlotte Brontë, una historia cautivadora que explora la educación, el amor y los desafíos sociales en la Inglaterra victoriana. Un clásico atemporal que profundiza en las complejidades de las relaciones humanas y la búsqueda de identidad.",
+      "author": "Charlotte Brontë",
+      "genre": "Novela Clásica",
+      "age": "Adultos",
+      "temas": [
+        "Educación",
+        "Roles de género",
+        "Sociedad victoriana",
+        "Romance",
+        "Clases sociales"
+      ],
+      "tags": [
+        "Brontë",
+        "Clásico",
+        "Victoriano",
+        "Romance",
+        "Novela",
+        "Educación"
+      ],
+      "nivel": "Intermedio",
+      "idioma": "Español",
+      "ad": {
+        "headline": "Descubre el debut de Charlotte Brontë",
+        "subheadline": "Un viaje cautivador por la educación y el amor victoriano.",
+        "cta": "Empezar a leer",
+        "banner_text": "Clásico Victoriano Imprescindible",
+        "instagram_caption": "Sumérgete en 'El profesor', la fascinante ópera prima de Charlotte Brontë. 📚 Explora el amor, la educación y los desafíos de la sociedad victoriana. ✨ ¿Listo para un clásico eterno?",
+        "hashtags": [
+          "#CharlotteBronte",
+          "#ElProfesor",
+          "#NovelaClasica",
+          "#LiteraturaInglesa",
+          "#RomanceHistorico",
+          "#FiccionVictoriana",
+          "#LibrosRecomendados"
+        ]
+      },
+      "pdfName": "El profesor -- Charlotte Brontë -- 907270d5e25b4e30f8d00cd48ed805da -- Anna’s Archive.pdf",
+      "pdfUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/pdfs/1783513662331_el_profesor.pdf",
+      "coverUrl": null,
+      "file": "El profesor -- Charlotte Brontë -- 907270d5e25b4e30f8d00cd48ed805da -- Anna’s Archive.pdf"
     }
   ],
   "emailList": [
@@ -2545,5 +2592,5 @@
     "juan@test.com",
     "octavio123@gamil.com"
   ],
-  "updatedAt": "2026-07-06T19:56:58.667Z"
+  "updatedAt": "2026-07-08T12:27:48.581Z"
 }
