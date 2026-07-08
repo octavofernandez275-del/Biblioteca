@@ -86,7 +86,7 @@
       --font-display: 'Manrope', sans-serif;
     }
 
-    html { scroll-behavior: smooth; }
+    html { scroll-behavior: smooth; width: 100%; }
     section, #hero { scroll-margin-top: 76px; }
 
     body {
@@ -99,6 +99,8 @@
       color: var(--white);
       line-height: 1.6;
       overflow-x: hidden;
+      width: 100%;
+      min-width: 320px;
     }
 
     /* ── UTILITIES ── */
@@ -518,12 +520,14 @@
     /* ── PRODUCT GRID (mismo sistema que el catálogo) ── */
     .products-grid {
       display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 24px;
+      grid-template-columns: 1fr;
+      gap: 12px;
       margin-bottom: 48px;
+      width: 100%;
     }
-    @media (max-width: 1280px) { .products-grid { grid-template-columns: repeat(3, 1fr); } }
-    @media (max-width: 700px)  { .products-grid { grid-template-columns: repeat(2, 1fr); gap: 12px; } }
+    @media (min-width: 701px)  { .products-grid { grid-template-columns: repeat(2, 1fr); gap: 24px; } }
+    @media (min-width: 1001px) { .products-grid { grid-template-columns: repeat(3, 1fr); } }
+    @media (min-width: 1281px) { .products-grid { grid-template-columns: repeat(4, 1fr); } }
     .product-card {
       background: rgba(255,255,255,.03);
       backdrop-filter: blur(12px);
@@ -1106,6 +1110,7 @@
     .modal-overlay {
       position: fixed;
       inset: 0;
+      width: 100%;
       background: rgba(0,0,0,.8);
       backdrop-filter: blur(12px);
       z-index: 2000;
@@ -1407,12 +1412,14 @@
     /* ── CATALOG GRID ── */
     #catalog-modal-grid {
       display: grid;
-      grid-template-columns: repeat(5, 1fr);
-      gap: 24px;
+      grid-template-columns: 1fr;
+      gap: 14px;
+      width: 100%;
     }
-    @media (max-width: 1280px) { #catalog-modal-grid { grid-template-columns: repeat(4, 1fr); } }
-    @media (max-width: 980px)  { #catalog-modal-grid { grid-template-columns: repeat(3, 1fr); } }
-    @media (max-width: 620px)  { #catalog-modal-grid { grid-template-columns: repeat(2, 1fr); gap: 14px; } }
+    @media (min-width: 621px)  { #catalog-modal-grid { grid-template-columns: repeat(2, 1fr); gap: 24px; } }
+    @media (min-width: 981px)  { #catalog-modal-grid { grid-template-columns: repeat(3, 1fr); } }
+    @media (min-width: 1281px) { #catalog-modal-grid { grid-template-columns: repeat(4, 1fr); } }
+    @media (min-width: 1600px) { #catalog-modal-grid { grid-template-columns: repeat(5, 1fr); } }
 
     /* ── CATALOG PAGINATION ── */
     .catalog-pagination {
