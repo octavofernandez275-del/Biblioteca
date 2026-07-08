@@ -3995,6 +3995,32 @@
       "pdfUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/pdfs/1783534500232_al_diablo_con_las_dietas_caroline_dooner.pdf",
       "coverUrl": null,
       "file": "Al_diablo_con_las_dietas_Caroline_Dooner.pdf"
+    },
+    {
+      "id": 1783534509786,
+      "name": "Animales fantasticos y donde encontrarlos J K Rowling",
+      "price": "$0.99",
+      "cat": "ebooks",
+      "desc": "",
+      "author": "",
+      "genre": "",
+      "age": "",
+      "temas": [],
+      "tags": [],
+      "nivel": "",
+      "idioma": "",
+      "ad": {
+        "headline": "",
+        "subheadline": "",
+        "cta": "",
+        "banner_text": "",
+        "instagram_caption": "",
+        "hashtags": []
+      },
+      "pdfName": "Animales_fantasticos_y_donde_encontrarlos_J_K_Rowling.pdf",
+      "pdfUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/pdfs/1783534509786_animales_fantasticos_y_donde_encontrarlos_j_k_rowling.pdf",
+      "coverUrl": null,
+      "file": "Animales_fantasticos_y_donde_encontrarlos_J_K_Rowling.pdf"
     }
   ],
   "emailList": [
@@ -4003,5 +4029,5 @@
     "juan@test.com",
     "octavio123@gamil.com"
   ],
-  "updatedAt": "2026-07-08T18:15:09.237Z"
+  "updatedAt": "2026-07-08T18:15:23.718Z"
 }
