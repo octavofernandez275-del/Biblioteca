@@ -3056,6 +3056,54 @@
       "pdfUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/pdfs/1783513985301_tambores_de_oto_o.pdf",
       "coverUrl": null,
       "file": "Tambores de otoño -- Gabaldon, Diana -- Forastera 4, 1996;1995 -- ePubLibre -- cfcb062f56953c1db96ea3209b276053 -- Anna’s Archive.pdf"
+    },
+    {
+      "id": 1783514025860,
+      "name": "VIAJERA FORASTERA 3",
+      "price": "$4.99",
+      "cat": "novela",
+      "desc": "Claire Randall emprende un nuevo viaje en el tiempo en busca de James Fraser. Juntos, se verán inmersos en una peligrosa travesía hacia las costas del Caribe, donde deberán enfrentar piratas y los misterios del vudú para forjar una nueva vida.",
+      "author": "Diana Gabaldón",
+      "genre": "Ficción Histórica",
+      "age": "Adultos",
+      "temas": [
+        "Viajes en el tiempo",
+        "Romance épico",
+        "Aventura",
+        "Piratas",
+        "Vudú"
+      ],
+      "tags": [
+        "Ficción histórica",
+        "Romance",
+        "Aventura",
+        "Viajes en el tiempo",
+        "Caribe",
+        "Diana Gabaldón"
+      ],
+      "nivel": "",
+      "idioma": "Español",
+      "ad": {
+        "headline": "Un amor que desafía tiempo y mares.",
+        "subheadline": "De Escocia al Caribe: amor, piratas y misterios del vudú.",
+        "cta": "Inicia la aventura",
+        "banner_text": "Viajera Forastera 3: Saga Épica",
+        "instagram_caption": "El amor de Claire y Jamie desafía el tiempo y los océanos en Viajera Forastera 3. 🌊 De las tierras escocesas a los misterios del Caribe, ¿podrán forjarse una nueva vida entre piratas y vudú? ¡Sumérgete en esta aventura épica! ✨",
+        "hashtags": [
+          "#ViajeraForastera",
+          "#DianaGabaldon",
+          "#FiccionHistorica",
+          "#RomanceEpico",
+          "#ViajesEnElTiempo",
+          "#Aventura",
+          "#Caribe",
+          "#Ebook"
+        ]
+      },
+      "pdfName": "VIAJERA FORASTERA 3.pdf",
+      "pdfUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/pdfs/1783514025860_viajera_forastera_3.pdf",
+      "coverUrl": null,
+      "file": "VIAJERA FORASTERA 3.pdf"
     }
   ],
   "emailList": [
@@ -3064,5 +3112,5 @@
     "juan@test.com",
     "octavio123@gamil.com"
   ],
-  "updatedAt": "2026-07-08T12:33:17.447Z"
+  "updatedAt": "2026-07-08T12:33:53.925Z"
 }
