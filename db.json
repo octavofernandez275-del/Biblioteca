@@ -5061,6 +5061,32 @@
       "pdfUrl": null,
       "coverUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/covers/1783623591421_el_hombre_invisible_h_g_wells.jpg",
       "file": "El_hombre_invisible_H_G_Wells.epub"
+    },
+    {
+      "id": 1783623669970,
+      "name": "El hombre invisible Ilustrado H G Wells",
+      "price": "$0.99",
+      "cat": "ebooks",
+      "desc": "",
+      "author": "",
+      "genre": "",
+      "age": "",
+      "temas": [],
+      "tags": [],
+      "nivel": "",
+      "idioma": "",
+      "ad": {
+        "headline": "",
+        "subheadline": "",
+        "cta": "",
+        "banner_text": "",
+        "instagram_caption": "",
+        "hashtags": []
+      },
+      "pdfName": "El_hombre_invisible_Ilustrado_H_G_Wells.epub",
+      "pdfUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/pdfs/1783623669970_el_hombre_invisible_ilustrado_h_g_wells.epub",
+      "coverUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/covers/1783623669970_el_hombre_invisible_ilustrado_h_g_wells.jpg",
+      "file": "El_hombre_invisible_Ilustrado_H_G_Wells.epub"
     }
   ],
   "emailList": [
@@ -5069,5 +5095,5 @@
     "juan@test.com",
     "octavio123@gamil.com"
   ],
-  "updatedAt": "2026-07-09T18:59:57.716Z"
+  "updatedAt": "2026-07-09T19:01:22.001Z"
 }
