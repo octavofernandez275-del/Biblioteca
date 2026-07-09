@@ -4749,6 +4749,32 @@
       "pdfUrl": null,
       "coverUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/covers/1783623502252_doctor_sueno_stephen_king.jpg",
       "file": "Doctor_sueno_Stephen_King.epub"
+    },
+    {
+      "id": 1783623510941,
+      "name": "Dos o tres Gracias Aldous Huxley",
+      "price": "$0.99",
+      "cat": "ebooks",
+      "desc": "",
+      "author": "",
+      "genre": "",
+      "age": "",
+      "temas": [],
+      "tags": [],
+      "nivel": "",
+      "idioma": "",
+      "ad": {
+        "headline": "",
+        "subheadline": "",
+        "cta": "",
+        "banner_text": "",
+        "instagram_caption": "",
+        "hashtags": []
+      },
+      "pdfName": "Dos_o_tres_Gracias_Aldous_Huxley.epub",
+      "pdfUrl": null,
+      "coverUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/covers/1783623510941_dos_o_tres_gracias_aldous_huxley.jpg",
+      "file": "Dos_o_tres_Gracias_Aldous_Huxley.epub"
     }
   ],
   "emailList": [
@@ -4757,5 +4783,5 @@
     "juan@test.com",
     "octavio123@gamil.com"
   ],
-  "updatedAt": "2026-07-09T18:58:30.363Z"
+  "updatedAt": "2026-07-09T18:58:39.173Z"
 }
