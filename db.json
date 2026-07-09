@@ -5711,6 +5711,32 @@
       "pdfUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/pdfs/1783625698628_fases_de_gravedad_dan_simmons.epub",
       "coverUrl": null,
       "file": "Fases_de_gravedad_Dan_Simmons.epub"
+    },
+    {
+      "id": 1783625704646,
+      "name": "Festin de cuervos ed ilustrada George R R Martin",
+      "price": "$0.99",
+      "cat": "ebooks",
+      "desc": "",
+      "author": "",
+      "genre": "",
+      "age": "",
+      "temas": [],
+      "tags": [],
+      "nivel": "",
+      "idioma": "",
+      "ad": {
+        "headline": "",
+        "subheadline": "",
+        "cta": "",
+        "banner_text": "",
+        "instagram_caption": "",
+        "hashtags": []
+      },
+      "pdfName": "Festin_de_cuervos_ed_ilustrada_George_R_R_Martin.epub",
+      "pdfUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/pdfs/1783625704646_festin_de_cuervos_ed_ilustrada_george_r_r_martin.epub",
+      "coverUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/covers/1783625704646_festin_de_cuervos_ed_ilustrada_george_r_r_martin.jpg",
+      "file": "Festin_de_cuervos_ed_ilustrada_George_R_R_Martin.epub"
     }
   ],
   "emailList": [
@@ -5719,5 +5745,5 @@
     "juan@test.com",
     "octavio123@gamil.com"
   ],
-  "updatedAt": "2026-07-09T19:35:03.081Z"
+  "updatedAt": "2026-07-09T19:35:23.075Z"
 }
