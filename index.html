@@ -4163,7 +4163,7 @@
         // 1️⃣.5 Usar la portada real del PDF automáticamente (si no hay una ya puesta)
         if (!pendingCoverB64) {
           try {
-            const coverDataUrl = await extractPdfCoverImage(pendingPdfB64);
+            const coverDataUrl = await extractPdfCoverImage(pendingPdfFile);
             if (coverDataUrl) {
               pendingCoverB64 = coverDataUrl;
               const blob = await (await fetch(coverDataUrl)).blob();
@@ -4188,15 +4188,14 @@
       reader.readAsDataURL(file);
     } else if (type === 'pdf' && isEpub) {
       pendingPdfFile = file;
-      reader.onload = async e => {
-        pendingPdfB64 = e.target.result;
-        pendingPdfName = file.name;
-        document.getElementById('pdf-label').textContent = '✅ ' + file.name + ' (EPUB)';
-        document.getElementById('pdf-drop').style.borderColor = 'var(--green)';
+      pendingPdfName = file.name;
+      document.getElementById('pdf-label').textContent = '✅ ' + file.name + ' (EPUB)';
+      document.getElementById('pdf-drop').style.borderColor = 'var(--green)';
 
+      (async () => {
         // 1️⃣ Extraer texto del EPUB para generar título y descripción
         try {
-          const text = await extractEpubText(pendingPdfB64);
+          const text = await extractEpubText(pendingPdfFile);
           if (text && text.trim().length > 50) {
             await autoGenerateMeta(text.slice(0, 3000), file.name);
           }
@@ -4205,7 +4204,7 @@
         // 1️⃣.5 Usar la portada real del EPUB automáticamente (si no hay una ya puesta)
         if (!pendingCoverB64) {
           try {
-            const coverDataUrl = await extractEpubCoverImage(pendingPdfB64);
+            const coverDataUrl = await extractEpubCoverImage(pendingPdfFile);
             if (coverDataUrl) {
               pendingCoverB64 = coverDataUrl;
               const blob = await (await fetch(coverDataUrl)).blob();
@@ -4226,8 +4225,7 @@
         if (name || desc) {
           aiClassify(name, desc, file.name);
         }
-      };
-      reader.readAsDataURL(file);
+      })();
     } else if (type === 'cover') {
       pendingCoverFile = file;
       reader.onload = e => {
@@ -4244,13 +4242,21 @@
   }
 
   // ─── EXTRACCIÓN DE TEXTO Y PORTADA DESDE EPUB (usando JSZip) ─────
-  async function _loadEpubZip(epubDataUrl) {
+  async function _loadEpubZip(epubSource) {
     if (typeof JSZip === 'undefined') return null;
-    const base64 = epubDataUrl.split(',')[1];
-    const binary = atob(base64);
-    const bytes = new Uint8Array(binary.length);
-    for (let i = 0; i < binary.length; i++) bytes[i] = binary.charCodeAt(i);
-    return await JSZip.loadAsync(bytes);
+    let buf;
+    if (epubSource instanceof Blob) {
+      // Camino eficiente: archivo real, sin pasar por base64 (evita reventar la memoria en celulares)
+      buf = await epubSource.arrayBuffer();
+    } else if (typeof epubSource === 'string') {
+      // Fallback: si solo tenemos el data URL en base64, usamos fetch() nativo del navegador
+      // en vez de un loop manual (atob + charCodeAt), que es mucho más pesado en memoria.
+      const res = await fetch(epubSource);
+      buf = await res.arrayBuffer();
+    } else {
+      return null;
+    }
+    return await JSZip.loadAsync(buf);
   }
 
   async function _getEpubOpfInfo(zip) {
@@ -4348,10 +4354,18 @@
   // Renderiza la primera página del PDF a un canvas y la convierte en
   // imagen JPEG, para usar la carátula ORIGINAL del libro en vez de
   // generar una nueva con IA.
-  async function extractPdfCoverImage(pdfDataUrl, scale) {
+  async function extractPdfCoverImage(pdfSource, scale) {
     if (typeof pdfjsLib === 'undefined') return null;
     pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
-    const data = atob(pdfDataUrl.split(',')[1]);
+    let data;
+    if (pdfSource instanceof Blob) {
+      data = await pdfSource.arrayBuffer();
+    } else if (typeof pdfSource === 'string') {
+      const res = await fetch(pdfSource);
+      data = await res.arrayBuffer();
+    } else {
+      return null;
+    }
     const pdf = await pdfjsLib.getDocument({ data }).promise;
     const page = await pdf.getPage(1);
     const viewport = page.getViewport({ scale: scale || 2.5 });
@@ -4366,11 +4380,11 @@
   // Botón "📄 Usar portada del PDF" en el formulario de producto individual
   async function useCoverFromPDF() {
     const label = document.getElementById('cover-label');
-    if (!pendingPdfB64) { showToast('Primero subí el PDF o EPUB', 'error'); return; }
+    if (!pendingPdfFile) { showToast('Primero subí el PDF o EPUB', 'error'); return; }
     const isEpub = /\.epub$/i.test(pendingPdfName || '');
     label.textContent = isEpub ? '📄 Extrayendo portada del EPUB...' : '📄 Extrayendo portada del PDF...';
     try {
-      const dataUrl = isEpub ? await extractEpubCoverImage(pendingPdfB64) : await extractPdfCoverImage(pendingPdfB64);
+      const dataUrl = isEpub ? await extractEpubCoverImage(pendingPdfFile) : await extractPdfCoverImage(pendingPdfFile);
       if (!dataUrl) { showToast('⚠️ No se pudo leer el archivo', 'error'); label.textContent = '⚠️ No se pudo extraer la portada'; return; }
       pendingCoverB64 = dataUrl;
       const blob = await (await fetch(dataUrl)).blob();
@@ -5012,9 +5026,7 @@
         try {
           extractedText = await withTimeout((async () => {
             if (isEpub) {
-              const buf = await file.arrayBuffer();
-              const b64 = 'data:application/epub+zip;base64,' + btoa(String.fromCharCode(...new Uint8Array(buf)));
-              return (await extractEpubText(b64)) || '';
+              return (await extractEpubText(file)) || '';
             }
             const buf = await file.arrayBuffer();
             let text = '';
@@ -5078,15 +5090,9 @@
 
         statusEl.textContent = isEpub ? '📄 Extrayendo portada del EPUB...' : '📄 Extrayendo portada del PDF...';
         try {
-          const buf2 = await file.arrayBuffer();
-          let coverDataUrl;
-          if (isEpub) {
-            const b64 = 'data:application/epub+zip;base64,' + btoa(String.fromCharCode(...new Uint8Array(buf2)));
-            coverDataUrl = await withTimeout(extractEpubCoverImage(b64), 15000);
-          } else {
-            const b64 = 'data:application/pdf;base64,' + btoa(String.fromCharCode(...new Uint8Array(buf2)));
-            coverDataUrl = await withTimeout(extractPdfCoverImage(b64), 15000);
-          }
+          const coverDataUrl = isEpub
+            ? await withTimeout(extractEpubCoverImage(file), 15000)
+            : await withTimeout(extractPdfCoverImage(file), 15000);
           if (coverDataUrl) {
             const blob = await (await fetch(coverDataUrl)).blob();
             const coverFile = new File([blob], 'cover-original.jpg', { type: blob.type || 'image/jpeg' });
@@ -6897,8 +6903,8 @@
         fileNameForType = p.pdfName || p.pdfUrl || '';
       }
       const isEpub = /\.epub$/i.test(fileNameForType || '');
-      const b64 = (isEpub ? 'data:application/epub+zip;base64,' : 'data:application/pdf;base64,') + btoa(String.fromCharCode(...new Uint8Array(buf)));
-      const dataUrl = isEpub ? await extractEpubCoverImage(b64) : await extractPdfCoverImage(b64);
+      const blobSrc = new Blob([buf]);
+      const dataUrl = isEpub ? await extractEpubCoverImage(blobSrc) : await extractPdfCoverImage(blobSrc);
       if (!dataUrl) { showToast('⚠️ No se pudo leer el archivo', 'error'); nameLabel.textContent = '⚠️ No se pudo extraer la portada'; return; }
       _editCoverB64 = dataUrl;
       const blob = await (await fetch(dataUrl)).blob();
@@ -7006,9 +7012,8 @@
   function editPdfSelected(input) {
     const file = input.files[0]; if (!file) return;
     _editPdfFile = file;
-    const reader = new FileReader();
-    reader.onload = e => { _editPdfB64 = e.target.result; _editPdfName = file.name; document.getElementById('edit-pdf-status').innerHTML = `<span style="color:var(--green);font-weight:700;">✅ ${file.name} (nuevo)</span>`; };
-    reader.readAsDataURL(file);
+    _editPdfName = file.name;
+    document.getElementById('edit-pdf-status').innerHTML = `<span style="color:var(--green);font-weight:700;">✅ ${file.name} (nuevo)</span>`;
   }
 
   function saveEditProduct() {
