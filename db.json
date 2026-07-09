@@ -6491,6 +6491,32 @@
       "pdfUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/pdfs/1783626711802_ilion_dan_simmons.epub",
       "coverUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/covers/1783626711802_ilion_dan_simmons.jpg",
       "file": "Ilion_Dan_Simmons.epub"
+    },
+    {
+      "id": 1783626719496,
+      "name": "It eso Stephen King",
+      "price": "$0.99",
+      "cat": "ebooks",
+      "desc": "",
+      "author": "",
+      "genre": "",
+      "age": "",
+      "temas": [],
+      "tags": [],
+      "nivel": "",
+      "idioma": "",
+      "ad": {
+        "headline": "",
+        "subheadline": "",
+        "cta": "",
+        "banner_text": "",
+        "instagram_caption": "",
+        "hashtags": []
+      },
+      "pdfName": "It_eso_Stephen_King.epub",
+      "pdfUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/pdfs/1783626719496_it_eso_stephen_king.epub",
+      "coverUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/covers/1783626719496_it_eso_stephen_king.jpg",
+      "file": "It_eso_Stephen_King.epub"
     }
   ],
   "emailList": [
@@ -6499,5 +6525,5 @@
     "juan@test.com",
     "octavio123@gamil.com"
   ],
-  "updatedAt": "2026-07-09T19:51:58.875Z"
+  "updatedAt": "2026-07-09T19:52:06.637Z"
 }
