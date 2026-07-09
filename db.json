@@ -5789,6 +5789,32 @@
       "pdfUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/pdfs/1783625951885_festin_de_dragones_george_r_r_martin.epub",
       "coverUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/covers/1783625951885_festin_de_dragones_george_r_r_martin.jpg",
       "file": "Festin_de_dragones_George_R_R_Martin.epub"
+    },
+    {
+      "id": 1783625964389,
+      "name": "Fogonazos Aldous Huxley",
+      "price": "$0.99",
+      "cat": "ebooks",
+      "desc": "",
+      "author": "",
+      "genre": "",
+      "age": "",
+      "temas": [],
+      "tags": [],
+      "nivel": "",
+      "idioma": "",
+      "ad": {
+        "headline": "",
+        "subheadline": "",
+        "cta": "",
+        "banner_text": "",
+        "instagram_caption": "",
+        "hashtags": []
+      },
+      "pdfName": "Fogonazos_Aldous_Huxley.epub",
+      "pdfUrl": null,
+      "coverUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/covers/1783625964389_fogonazos_aldous_huxley.jpg",
+      "file": "Fogonazos_Aldous_Huxley.epub"
     }
   ],
   "emailList": [
@@ -5797,5 +5823,5 @@
     "juan@test.com",
     "octavio123@gamil.com"
   ],
-  "updatedAt": "2026-07-09T19:39:23.780Z"
+  "updatedAt": "2026-07-09T19:39:31.721Z"
 }
