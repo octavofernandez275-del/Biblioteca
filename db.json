@@ -6803,6 +6803,32 @@
       "pdfUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/pdfs/1783626915742_la_ley_de_rodrick_jeff_kinney.epub",
       "coverUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/covers/1783626915742_la_ley_de_rodrick_jeff_kinney.jpg",
       "file": "La_ley_de_Rodrick_Jeff_Kinney.epub"
+    },
+    {
+      "id": 1783626928881,
+      "name": "La mano izquierda de la oscuridad Ursula K Le Guin",
+      "price": "$0.99",
+      "cat": "ebooks",
+      "desc": "",
+      "author": "",
+      "genre": "",
+      "age": "",
+      "temas": [],
+      "tags": [],
+      "nivel": "",
+      "idioma": "",
+      "ad": {
+        "headline": "",
+        "subheadline": "",
+        "cta": "",
+        "banner_text": "",
+        "instagram_caption": "",
+        "hashtags": []
+      },
+      "pdfName": "La_mano_izquierda_de_la_oscuridad_Ursula_K_Le_Guin.epub",
+      "pdfUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/pdfs/1783626928881_la_mano_izquierda_de_la_oscuridad_ursula_k_le_guin.epub",
+      "coverUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/covers/1783626928881_la_mano_izquierda_de_la_oscuridad_ursula_k_le_guin.jpg",
+      "file": "La_mano_izquierda_de_la_oscuridad_Ursula_K_Le_Guin.epub"
     }
   ],
   "emailList": [
@@ -6811,5 +6837,5 @@
     "juan@test.com",
     "octavio123@gamil.com"
   ],
-  "updatedAt": "2026-07-09T19:55:28.265Z"
+  "updatedAt": "2026-07-09T19:55:35.451Z"
 }
