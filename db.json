@@ -4827,6 +4827,32 @@
       "pdfUrl": null,
       "coverUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/covers/1783623528050_dracula_insolito_anne_rice.jpg",
       "file": "Dracula_insolito_Anne_Rice.epub"
+    },
+    {
+      "id": 1783623535053,
+      "name": "Dwyn el marciano Peter Kapra",
+      "price": "$0.99",
+      "cat": "ebooks",
+      "desc": "",
+      "author": "",
+      "genre": "",
+      "age": "",
+      "temas": [],
+      "tags": [],
+      "nivel": "",
+      "idioma": "",
+      "ad": {
+        "headline": "",
+        "subheadline": "",
+        "cta": "",
+        "banner_text": "",
+        "instagram_caption": "",
+        "hashtags": []
+      },
+      "pdfName": "Dwyn_el_marciano_Peter_Kapra.epub",
+      "pdfUrl": null,
+      "coverUrl": null,
+      "file": "Dwyn_el_marciano_Peter_Kapra.epub"
     }
   ],
   "emailList": [
@@ -4835,5 +4861,5 @@
     "juan@test.com",
     "octavio123@gamil.com"
   ],
-  "updatedAt": "2026-07-09T18:58:54.449Z"
+  "updatedAt": "2026-07-09T18:58:59.548Z"
 }
