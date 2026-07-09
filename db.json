@@ -4824,7 +4824,7 @@
         "hashtags": []
       },
       "pdfName": "Dracula_insolito_Anne_Rice.epub",
-      "pdfUrl": null,
+      "pdfUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/pdfs/1783623528050_dracula_insolito_anne_rice.epub",
       "coverUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/covers/1783623528050_dracula_insolito_anne_rice.jpg",
       "file": "Dracula_insolito_Anne_Rice.epub"
     },
@@ -5277,5 +5277,5 @@
     "juan@test.com",
     "octavio123@gamil.com"
   ],
-  "updatedAt": "2026-07-09T19:18:58.354Z"
+  "updatedAt": "2026-07-09T19:19:03.321Z"
 }
