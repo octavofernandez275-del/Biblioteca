@@ -6699,6 +6699,32 @@
       "pdfUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/pdfs/1783626881992_la_espada_del_destino_andrzej_sapkowski.epub",
       "coverUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/covers/1783626881992_la_espada_del_destino_andrzej_sapkowski.jpg",
       "file": "La_espada_del_destino_Andrzej_Sapkowski.epub"
+    },
+    {
+      "id": 1783626894668,
+      "name": "La filosofia perenne Aldous Huxley",
+      "price": "$0.99",
+      "cat": "ebooks",
+      "desc": "",
+      "author": "",
+      "genre": "",
+      "age": "",
+      "temas": [],
+      "tags": [],
+      "nivel": "",
+      "idioma": "",
+      "ad": {
+        "headline": "",
+        "subheadline": "",
+        "cta": "",
+        "banner_text": "",
+        "instagram_caption": "",
+        "hashtags": []
+      },
+      "pdfName": "La_filosofia_perenne_Aldous_Huxley.epub",
+      "pdfUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/pdfs/1783626894668_la_filosofia_perenne_aldous_huxley.epub",
+      "coverUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/covers/1783626894668_la_filosofia_perenne_aldous_huxley.jpg",
+      "file": "La_filosofia_perenne_Aldous_Huxley.epub"
     }
   ],
   "emailList": [
@@ -6707,5 +6733,5 @@
     "juan@test.com",
     "octavio123@gamil.com"
   ],
-  "updatedAt": "2026-07-09T19:54:54.050Z"
+  "updatedAt": "2026-07-09T19:55:01.985Z"
 }
