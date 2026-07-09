@@ -6777,6 +6777,32 @@
       "pdfUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/pdfs/1783626908464_la_isla_aldous_huxley.epub",
       "coverUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/covers/1783626908464_la_isla_aldous_huxley.jpg",
       "file": "La_isla_Aldous_Huxley.epub"
+    },
+    {
+      "id": 1783626915742,
+      "name": "La ley de Rodrick Jeff Kinney",
+      "price": "$0.99",
+      "cat": "ebooks",
+      "desc": "",
+      "author": "",
+      "genre": "",
+      "age": "",
+      "temas": [],
+      "tags": [],
+      "nivel": "",
+      "idioma": "",
+      "ad": {
+        "headline": "",
+        "subheadline": "",
+        "cta": "",
+        "banner_text": "",
+        "instagram_caption": "",
+        "hashtags": []
+      },
+      "pdfName": "La_ley_de_Rodrick_Jeff_Kinney.epub",
+      "pdfUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/pdfs/1783626915742_la_ley_de_rodrick_jeff_kinney.epub",
+      "coverUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/covers/1783626915742_la_ley_de_rodrick_jeff_kinney.jpg",
+      "file": "La_ley_de_Rodrick_Jeff_Kinney.epub"
     }
   ],
   "emailList": [
@@ -6785,5 +6811,5 @@
     "juan@test.com",
     "octavio123@gamil.com"
   ],
-  "updatedAt": "2026-07-09T19:55:14.939Z"
+  "updatedAt": "2026-07-09T19:55:28.265Z"
 }
