@@ -6673,6 +6673,32 @@
       "pdfUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/pdfs/1783626864085_la_cruda_realidad_jeff_kinney.epub",
       "coverUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/covers/1783626864085_la_cruda_realidad_jeff_kinney.jpg",
       "file": "La_cruda_realidad_Jeff_Kinney.epub"
+    },
+    {
+      "id": 1783626881992,
+      "name": "La espada del destino Andrzej Sapkowski",
+      "price": "$0.99",
+      "cat": "ebooks",
+      "desc": "",
+      "author": "",
+      "genre": "",
+      "age": "",
+      "temas": [],
+      "tags": [],
+      "nivel": "",
+      "idioma": "",
+      "ad": {
+        "headline": "",
+        "subheadline": "",
+        "cta": "",
+        "banner_text": "",
+        "instagram_caption": "",
+        "hashtags": []
+      },
+      "pdfName": "La_espada_del_destino_Andrzej_Sapkowski.epub",
+      "pdfUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/pdfs/1783626881992_la_espada_del_destino_andrzej_sapkowski.epub",
+      "coverUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/covers/1783626881992_la_espada_del_destino_andrzej_sapkowski.jpg",
+      "file": "La_espada_del_destino_Andrzej_Sapkowski.epub"
     }
   ],
   "emailList": [
@@ -6681,5 +6707,5 @@
     "juan@test.com",
     "octavio123@gamil.com"
   ],
-  "updatedAt": "2026-07-09T19:54:41.344Z"
+  "updatedAt": "2026-07-09T19:54:54.050Z"
 }
