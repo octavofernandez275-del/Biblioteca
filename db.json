@@ -6205,6 +6205,32 @@
       "pdfUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/pdfs/1783626578875_harry_potter_y_el_caliz_de_fuego_j_k_rowling.epub",
       "coverUrl": null,
       "file": "Harry_Potter_y_el_caliz_de_fuego_J_K_Rowling.epub"
+    },
+    {
+      "id": 1783626591015,
+      "name": "Harry Potter y el misterio del principe J K Rowling",
+      "price": "$0.99",
+      "cat": "ebooks",
+      "desc": "",
+      "author": "",
+      "genre": "",
+      "age": "",
+      "temas": [],
+      "tags": [],
+      "nivel": "",
+      "idioma": "",
+      "ad": {
+        "headline": "",
+        "subheadline": "",
+        "cta": "",
+        "banner_text": "",
+        "instagram_caption": "",
+        "hashtags": []
+      },
+      "pdfName": "Harry_Potter_y_el_misterio_del_principe_J_K_Rowling.epub",
+      "pdfUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/pdfs/1783626591015_harry_potter_y_el_misterio_del_principe_j_k_rowling.epub",
+      "coverUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/covers/1783626591015_harry_potter_y_el_misterio_del_principe_j_k_rowling.jpg",
+      "file": "Harry_Potter_y_el_misterio_del_principe_J_K_Rowling.epub"
     }
   ],
   "emailList": [
@@ -6213,5 +6239,5 @@
     "juan@test.com",
     "octavio123@gamil.com"
   ],
-  "updatedAt": "2026-07-09T19:49:50.313Z"
+  "updatedAt": "2026-07-09T19:50:05.725Z"
 }
