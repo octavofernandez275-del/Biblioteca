@@ -6439,6 +6439,32 @@
       "pdfUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/pdfs/1783626686766_huerfanos_de_la_helice_dan_simmons.epub",
       "coverUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/covers/1783626686766_huerfanos_de_la_helice_dan_simmons.jpg",
       "file": "Huerfanos_de_la_Helice_Dan_Simmons.epub"
+    },
+    {
+      "id": 1783626700379,
+      "name": "Hyperion Dan Simmons",
+      "price": "$0.99",
+      "cat": "ebooks",
+      "desc": "",
+      "author": "",
+      "genre": "",
+      "age": "",
+      "temas": [],
+      "tags": [],
+      "nivel": "",
+      "idioma": "",
+      "ad": {
+        "headline": "",
+        "subheadline": "",
+        "cta": "",
+        "banner_text": "",
+        "instagram_caption": "",
+        "hashtags": []
+      },
+      "pdfName": "Hyperion_Dan_Simmons.epub",
+      "pdfUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/pdfs/1783626700379_hyperion_dan_simmons.epub",
+      "coverUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/covers/1783626700379_hyperion_dan_simmons.jpg",
+      "file": "Hyperion_Dan_Simmons.epub"
     }
   ],
   "emailList": [
@@ -6447,5 +6473,5 @@
     "juan@test.com",
     "octavio123@gamil.com"
   ],
-  "updatedAt": "2026-07-09T19:51:39.799Z"
+  "updatedAt": "2026-07-09T19:51:51.233Z"
 }
