@@ -4589,8 +4589,8 @@
         "instagram_caption": "",
         "hashtags": []
       },
-      "pdfName": "Dando_la_nota_Jeff_Kinney.epub",
-      "pdfUrl": null,
+      "pdfName": "Dando_la_nota_1.pdf",
+      "pdfUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/pdfs/1783623384939_dando_la_nota_jeff_kinney.pdf",
       "coverUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/covers/1783623384939_dando_la_nota_jeff_kinney.jpg",
       "file": "Dando_la_nota_Jeff_Kinney.epub"
     },
@@ -5277,5 +5277,5 @@
     "juan@test.com",
     "octavio123@gamil.com"
   ],
-  "updatedAt": "2026-07-09T19:06:15.268Z"
+  "updatedAt": "2026-07-09T19:06:18.188Z"
 }
