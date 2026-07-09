@@ -4853,6 +4853,32 @@
       "pdfUrl": null,
       "coverUrl": null,
       "file": "Dwyn_el_marciano_Peter_Kapra.epub"
+    },
+    {
+      "id": 1783623540117,
+      "name": "El arte de ver Aldous Huxley",
+      "price": "$0.99",
+      "cat": "arte",
+      "desc": "",
+      "author": "",
+      "genre": "",
+      "age": "",
+      "temas": [],
+      "tags": [],
+      "nivel": "",
+      "idioma": "",
+      "ad": {
+        "headline": "",
+        "subheadline": "",
+        "cta": "",
+        "banner_text": "",
+        "instagram_caption": "",
+        "hashtags": []
+      },
+      "pdfName": "El_arte_de_ver_Aldous_Huxley.epub",
+      "pdfUrl": null,
+      "coverUrl": null,
+      "file": "El_arte_de_ver_Aldous_Huxley.epub"
     }
   ],
   "emailList": [
@@ -4861,5 +4887,5 @@
     "juan@test.com",
     "octavio123@gamil.com"
   ],
-  "updatedAt": "2026-07-09T18:58:59.548Z"
+  "updatedAt": "2026-07-09T18:59:04.201Z"
 }
