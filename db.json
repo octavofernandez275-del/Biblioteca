@@ -5006,7 +5006,7 @@
         "hashtags": []
       },
       "pdfName": "El_genio_y_la_diosa_Aldous_Huxley.epub",
-      "pdfUrl": null,
+      "pdfUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/pdfs/1783623570953_el_genio_y_la_diosa_aldous_huxley.epub",
       "coverUrl": null,
       "file": "El_genio_y_la_diosa_Aldous_Huxley.epub"
     },
@@ -5277,5 +5277,5 @@
     "juan@test.com",
     "octavio123@gamil.com"
   ],
-  "updatedAt": "2026-07-09T19:24:14.043Z"
+  "updatedAt": "2026-07-09T19:24:17.029Z"
 }
