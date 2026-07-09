@@ -5503,6 +5503,32 @@
       "pdfUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/pdfs/1783625437155_el_terror_dan_simmons.epub",
       "coverUrl": null,
       "file": "El_Terror_Dan_Simmons.epub"
+    },
+    {
+      "id": 1783625457428,
+      "name": "El tiempo debe detenerse Aldous Huxley",
+      "price": "$0.99",
+      "cat": "ebooks",
+      "desc": "",
+      "author": "",
+      "genre": "",
+      "age": "",
+      "temas": [],
+      "tags": [],
+      "nivel": "",
+      "idioma": "",
+      "ad": {
+        "headline": "",
+        "subheadline": "",
+        "cta": "",
+        "banner_text": "",
+        "instagram_caption": "",
+        "hashtags": []
+      },
+      "pdfName": "El_tiempo_debe_detenerse_Aldous_Huxley.epub",
+      "pdfUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/pdfs/1783625457428_el_tiempo_debe_detenerse_aldous_huxley.epub",
+      "coverUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/covers/1783625457428_el_tiempo_debe_detenerse_aldous_huxley.jpg",
+      "file": "El_tiempo_debe_detenerse_Aldous_Huxley.epub"
     }
   ],
   "emailList": [
@@ -5511,5 +5537,5 @@
     "juan@test.com",
     "octavio123@gamil.com"
   ],
-  "updatedAt": "2026-07-09T19:30:55.977Z"
+  "updatedAt": "2026-07-09T19:31:03.763Z"
 }
