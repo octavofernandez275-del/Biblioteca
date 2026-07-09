@@ -6101,6 +6101,32 @@
       "pdfUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/pdfs/1783626359478_habitos_atomicos_james_clear.epub",
       "coverUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/covers/1783626359478_habitos_atomicos_james_clear.jpg",
       "file": "Habitos_atomicos_James_Clear.epub"
+    },
+    {
+      "id": 1783626367871,
+      "name": "Harry Potter La coleccion completa J K Rowling",
+      "price": "$0.99",
+      "cat": "ebooks",
+      "desc": "",
+      "author": "",
+      "genre": "",
+      "age": "",
+      "temas": [],
+      "tags": [],
+      "nivel": "",
+      "idioma": "",
+      "ad": {
+        "headline": "",
+        "subheadline": "",
+        "cta": "",
+        "banner_text": "",
+        "instagram_caption": "",
+        "hashtags": []
+      },
+      "pdfName": "Harry_Potter_La_coleccion_completa_J_K_Rowling.epub",
+      "pdfUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/pdfs/1783626367871_harry_potter_la_coleccion_completa_j_k_rowling.epub",
+      "coverUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/covers/1783626367871_harry_potter_la_coleccion_completa_j_k_rowling.jpg",
+      "file": "Harry_Potter_La_coleccion_completa_J_K_Rowling.epub"
     }
   ],
   "emailList": [
@@ -6109,5 +6135,5 @@
     "juan@test.com",
     "octavio123@gamil.com"
   ],
-  "updatedAt": "2026-07-09T19:46:07.083Z"
+  "updatedAt": "2026-07-09T19:46:37.348Z"
 }
