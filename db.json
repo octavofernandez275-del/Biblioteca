@@ -6855,6 +6855,32 @@
       "pdfUrl": null,
       "coverUrl": null,
       "file": "La_practica_de_la_inteligencia_emocional_Daniel_Goleman.epub"
+    },
+    {
+      "id": 1783626941014,
+      "name": "La sangre de los elfos Andrzej Sapkowski",
+      "price": "$0.99",
+      "cat": "ebooks",
+      "desc": "",
+      "author": "",
+      "genre": "",
+      "age": "",
+      "temas": [],
+      "tags": [],
+      "nivel": "",
+      "idioma": "",
+      "ad": {
+        "headline": "",
+        "subheadline": "",
+        "cta": "",
+        "banner_text": "",
+        "instagram_caption": "",
+        "hashtags": []
+      },
+      "pdfName": "La_sangre_de_los_elfos_Andrzej_Sapkowski.epub",
+      "pdfUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/pdfs/1783626941014_la_sangre_de_los_elfos_andrzej_sapkowski.epub",
+      "coverUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/covers/1783626941014_la_sangre_de_los_elfos_andrzej_sapkowski.jpg",
+      "file": "La_sangre_de_los_elfos_Andrzej_Sapkowski.epub"
     }
   ],
   "emailList": [
@@ -6863,5 +6889,5 @@
     "juan@test.com",
     "octavio123@gamil.com"
   ],
-  "updatedAt": "2026-07-09T19:55:40.456Z"
+  "updatedAt": "2026-07-09T19:55:47.681Z"
 }
