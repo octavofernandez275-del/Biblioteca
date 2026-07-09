@@ -5919,6 +5919,32 @@
       "pdfUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/pdfs/1783626237040_endymion_dan_simmons.epub",
       "coverUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/covers/1783626237040_endymion_dan_simmons.jpg",
       "file": "Endymion_Dan_Simmons.epub"
+    },
+    {
+      "id": 1783626245750,
+      "name": "Esas hojas caidas Aldous Huxley",
+      "price": "$0.99",
+      "cat": "ebooks",
+      "desc": "",
+      "author": "",
+      "genre": "",
+      "age": "",
+      "temas": [],
+      "tags": [],
+      "nivel": "",
+      "idioma": "",
+      "ad": {
+        "headline": "",
+        "subheadline": "",
+        "cta": "",
+        "banner_text": "",
+        "instagram_caption": "",
+        "hashtags": []
+      },
+      "pdfName": "Esas_hojas_caidas_Aldous_Huxley.epub",
+      "pdfUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/pdfs/1783626245750_esas_hojas_caidas_aldous_huxley.epub",
+      "coverUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/covers/1783626245750_esas_hojas_caidas_aldous_huxley.jpg",
+      "file": "Esas_hojas_caidas_Aldous_Huxley.epub"
     }
   ],
   "emailList": [
@@ -5927,5 +5953,5 @@
     "juan@test.com",
     "octavio123@gamil.com"
   ],
-  "updatedAt": "2026-07-09T19:44:04.453Z"
+  "updatedAt": "2026-07-09T19:44:13.159Z"
 }
