@@ -6751,6 +6751,32 @@
       "pdfUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/pdfs/1783626902544_la_guia_del_ayuno_intermitente_y_la_dieta_cetogenica_fitness_revolucionario.epub",
       "coverUrl": null,
       "file": "La_guia_del_ayuno_intermitente_y_la_dieta_cetogenica_Fitness_Revolucionario.epub"
+    },
+    {
+      "id": 1783626908464,
+      "name": "La isla Aldous Huxley",
+      "price": "$0.99",
+      "cat": "ebooks",
+      "desc": "",
+      "author": "",
+      "genre": "",
+      "age": "",
+      "temas": [],
+      "tags": [],
+      "nivel": "",
+      "idioma": "",
+      "ad": {
+        "headline": "",
+        "subheadline": "",
+        "cta": "",
+        "banner_text": "",
+        "instagram_caption": "",
+        "hashtags": []
+      },
+      "pdfName": "La_isla_Aldous_Huxley.epub",
+      "pdfUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/pdfs/1783626908464_la_isla_aldous_huxley.epub",
+      "coverUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/covers/1783626908464_la_isla_aldous_huxley.jpg",
+      "file": "La_isla_Aldous_Huxley.epub"
     }
   ],
   "emailList": [
@@ -6759,5 +6785,5 @@
     "juan@test.com",
     "octavio123@gamil.com"
   ],
-  "updatedAt": "2026-07-09T19:55:07.838Z"
+  "updatedAt": "2026-07-09T19:55:14.939Z"
 }
