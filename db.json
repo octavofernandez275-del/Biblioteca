@@ -5373,6 +5373,32 @@
       "pdfUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/pdfs/1783625388005_el_poder_del_keto_ayuno_joseph_mercola.epub",
       "coverUrl": null,
       "file": "El_poder_del_Keto_ayuno_Joseph_Mercola.epub"
+    },
+    {
+      "id": 1783625396239,
+      "name": "El problema de los Tres Cuerpos Liu Cixin",
+      "price": "$0.99",
+      "cat": "ebooks",
+      "desc": "",
+      "author": "",
+      "genre": "",
+      "age": "",
+      "temas": [],
+      "tags": [],
+      "nivel": "",
+      "idioma": "",
+      "ad": {
+        "headline": "",
+        "subheadline": "",
+        "cta": "",
+        "banner_text": "",
+        "instagram_caption": "",
+        "hashtags": []
+      },
+      "pdfName": "El_problema_de_los_Tres_Cuerpos_Liu_Cixin.epub",
+      "pdfUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/pdfs/1783625396239_el_problema_de_los_tres_cuerpos_liu_cixin.epub",
+      "coverUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/covers/1783625396239_el_problema_de_los_tres_cuerpos_liu_cixin.jpg",
+      "file": "El_problema_de_los_Tres_Cuerpos_Liu_Cixin.epub"
     }
   ],
   "emailList": [
@@ -5381,5 +5407,5 @@
     "juan@test.com",
     "octavio123@gamil.com"
   ],
-  "updatedAt": "2026-07-09T19:29:54.951Z"
+  "updatedAt": "2026-07-09T19:30:03.304Z"
 }
