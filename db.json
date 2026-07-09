@@ -5867,6 +5867,32 @@
       "pdfUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/pdfs/1783626223034_eminencia_gris_aldous_huxley.epub",
       "coverUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/covers/1783626223034_eminencia_gris_aldous_huxley.jpg",
       "file": "Eminencia_gris_Aldous_Huxley.epub"
+    },
+    {
+      "id": 1783626231111,
+      "name": "En el infierno marciano Angel Torres Quesada A Thorkent",
+      "price": "$0.99",
+      "cat": "ebooks",
+      "desc": "",
+      "author": "",
+      "genre": "",
+      "age": "",
+      "temas": [],
+      "tags": [],
+      "nivel": "",
+      "idioma": "",
+      "ad": {
+        "headline": "",
+        "subheadline": "",
+        "cta": "",
+        "banner_text": "",
+        "instagram_caption": "",
+        "hashtags": []
+      },
+      "pdfName": "En_el_infierno_marciano_Angel_Torres_Quesada_A_Thorkent.epub",
+      "pdfUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/pdfs/1783626231111_en_el_infierno_marciano_angel_torres_quesada_a_thorkent.epub",
+      "coverUrl": null,
+      "file": "En_el_infierno_marciano_Angel_Torres_Quesada_A_Thorkent.epub"
     }
   ],
   "emailList": [
@@ -5875,5 +5901,5 @@
     "juan@test.com",
     "octavio123@gamil.com"
   ],
-  "updatedAt": "2026-07-09T19:43:49.768Z"
+  "updatedAt": "2026-07-09T19:43:56.495Z"
 }
