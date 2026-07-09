@@ -4073,6 +4073,32 @@
       "pdfUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/pdfs/1783623051421_arrasa_con_todo_jeff_kinney.EPUB",
       "coverUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/covers/1783623051421_arrasa_con_todo_jeff_kinney.jpg",
       "file": "Arrasa-con-todo-Jeff-Kinney.EPUB"
+    },
+    {
+      "id": 1783623130330,
+      "name": "Arte amor y todo lo demas Aldous Huxley",
+      "price": "$0.99",
+      "cat": "arte",
+      "desc": "",
+      "author": "",
+      "genre": "",
+      "age": "",
+      "temas": [],
+      "tags": [],
+      "nivel": "",
+      "idioma": "",
+      "ad": {
+        "headline": "",
+        "subheadline": "",
+        "cta": "",
+        "banner_text": "",
+        "instagram_caption": "",
+        "hashtags": []
+      },
+      "pdfName": "Arte_amor_y_todo_lo_demas_Aldous_Huxley.epub",
+      "pdfUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/pdfs/1783623130330_arte_amor_y_todo_lo_demas_aldous_huxley.epub",
+      "coverUrl": null,
+      "file": "Arte_amor_y_todo_lo_demas_Aldous_Huxley.epub"
     }
   ],
   "emailList": [
@@ -4081,5 +4107,5 @@
     "juan@test.com",
     "octavio123@gamil.com"
   ],
-  "updatedAt": "2026-07-09T18:51:05.836Z"
+  "updatedAt": "2026-07-09T18:52:15.811Z"
 }
