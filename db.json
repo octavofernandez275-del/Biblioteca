@@ -4798,7 +4798,7 @@
         "hashtags": []
       },
       "pdfName": "Dracula_Bram_Stoker.epub",
-      "pdfUrl": null,
+      "pdfUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/pdfs/1783623519759_dracula_bram_stoker.epub",
       "coverUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/covers/1783623519759_dracula_bram_stoker.jpg",
       "file": "Dracula_Bram_Stoker.epub"
     },
@@ -5277,5 +5277,5 @@
     "juan@test.com",
     "octavio123@gamil.com"
   ],
-  "updatedAt": "2026-07-09T19:13:49.460Z"
+  "updatedAt": "2026-07-09T19:13:55.480Z"
 }
