@@ -5243,6 +5243,32 @@
       "pdfUrl": null,
       "coverUrl": null,
       "file": "El_nino_marciano_David_Gerrold.epub"
+    },
+    {
+      "id": 1783623727668,
+      "name": "El nombre del viento Patrick Rothfuss",
+      "price": "$0.99",
+      "cat": "ebooks",
+      "desc": "",
+      "author": "",
+      "genre": "",
+      "age": "",
+      "temas": [],
+      "tags": [],
+      "nivel": "",
+      "idioma": "",
+      "ad": {
+        "headline": "",
+        "subheadline": "",
+        "cta": "",
+        "banner_text": "",
+        "instagram_caption": "",
+        "hashtags": []
+      },
+      "pdfName": "El_nombre_del_viento_Patrick_Rothfuss.epub",
+      "pdfUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/pdfs/1783623727668_el_nombre_del_viento_patrick_rothfuss.epub",
+      "coverUrl": null,
+      "file": "El_nombre_del_viento_Patrick_Rothfuss.epub"
     }
   ],
   "emailList": [
@@ -5251,5 +5277,5 @@
     "juan@test.com",
     "octavio123@gamil.com"
   ],
-  "updatedAt": "2026-07-09T19:02:07.073Z"
+  "updatedAt": "2026-07-09T19:02:14.961Z"
 }
