@@ -5347,6 +5347,32 @@
       "pdfUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/pdfs/1783625382015_el_poder_del_ahora_eckhart_tolle.epub",
       "coverUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/covers/1783625382015_el_poder_del_ahora_eckhart_tolle.jpg",
       "file": "El_poder_del_ahora_Eckhart_Tolle.epub"
+    },
+    {
+      "id": 1783625388005,
+      "name": "El poder del Keto ayuno Joseph Mercola",
+      "price": "$0.99",
+      "cat": "ebooks",
+      "desc": "",
+      "author": "",
+      "genre": "",
+      "age": "",
+      "temas": [],
+      "tags": [],
+      "nivel": "",
+      "idioma": "",
+      "ad": {
+        "headline": "",
+        "subheadline": "",
+        "cta": "",
+        "banner_text": "",
+        "instagram_caption": "",
+        "hashtags": []
+      },
+      "pdfName": "El_poder_del_Keto_ayuno_Joseph_Mercola.epub",
+      "pdfUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/pdfs/1783625388005_el_poder_del_keto_ayuno_joseph_mercola.epub",
+      "coverUrl": null,
+      "file": "El_poder_del_Keto_ayuno_Joseph_Mercola.epub"
     }
   ],
   "emailList": [
@@ -5355,5 +5381,5 @@
     "juan@test.com",
     "octavio123@gamil.com"
   ],
-  "updatedAt": "2026-07-09T19:29:47.509Z"
+  "updatedAt": "2026-07-09T19:29:54.951Z"
 }
