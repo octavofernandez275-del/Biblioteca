@@ -5058,7 +5058,7 @@
         "hashtags": []
       },
       "pdfName": "El_hombre_invisible_H_G_Wells.epub",
-      "pdfUrl": null,
+      "pdfUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/pdfs/1783623591421_el_hombre_invisible_h_g_wells.epub",
       "coverUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/covers/1783623591421_el_hombre_invisible_h_g_wells.jpg",
       "file": "El_hombre_invisible_H_G_Wells.epub"
     },
@@ -5277,5 +5277,5 @@
     "juan@test.com",
     "octavio123@gamil.com"
   ],
-  "updatedAt": "2026-07-09T19:25:34.871Z"
+  "updatedAt": "2026-07-09T19:25:43.762Z"
 }
