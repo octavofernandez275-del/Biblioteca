@@ -5165,6 +5165,32 @@
       "pdfUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/pdfs/1783623694388_el_joven_arquimedes_aldous_huxley.epub",
       "coverUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/covers/1783623694388_el_joven_arquimedes_aldous_huxley.jpg",
       "file": "El_joven_Arquimedes_Aldous_Huxley.epub"
+    },
+    {
+      "id": 1783623702085,
+      "name": "El mito de las dietas Tim Spector",
+      "price": "$0.99",
+      "cat": "ebooks",
+      "desc": "",
+      "author": "",
+      "genre": "",
+      "age": "",
+      "temas": [],
+      "tags": [],
+      "nivel": "",
+      "idioma": "",
+      "ad": {
+        "headline": "",
+        "subheadline": "",
+        "cta": "",
+        "banner_text": "",
+        "instagram_caption": "",
+        "hashtags": []
+      },
+      "pdfName": "El_mito_de_las_dietas_Tim_Spector.epub",
+      "pdfUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/pdfs/1783623702085_el_mito_de_las_dietas_tim_spector.epub",
+      "coverUrl": null,
+      "file": "El_mito_de_las_dietas_Tim_Spector.epub"
     }
   ],
   "emailList": [
@@ -5173,5 +5199,5 @@
     "juan@test.com",
     "octavio123@gamil.com"
   ],
-  "updatedAt": "2026-07-09T19:01:41.344Z"
+  "updatedAt": "2026-07-09T19:01:47.143Z"
 }
