@@ -4746,7 +4746,7 @@
         "hashtags": []
       },
       "pdfName": "Doctor_sueno_Stephen_King.epub",
-      "pdfUrl": null,
+      "pdfUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/pdfs/1783623502252_doctor_sueno_stephen_king.epub",
       "coverUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/covers/1783623502252_doctor_sueno_stephen_king.jpg",
       "file": "Doctor_sueno_Stephen_King.epub"
     },
@@ -5277,5 +5277,5 @@
     "juan@test.com",
     "octavio123@gamil.com"
   ],
-  "updatedAt": "2026-07-09T19:12:50.418Z"
+  "updatedAt": "2026-07-09T19:12:55.399Z"
 }
