@@ -4697,6 +4697,32 @@
       "pdfUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/pdfs/1783623469438_desenganchate_de_las_dietas_nicolas_mier_y_teran.epub",
       "coverUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/covers/1783623469438_desenganchate_de_las_dietas_nicolas_mier_y_teran.jpg",
       "file": "Desenganchate_de_las_dietas_Nicolas_Mier_y_Teran.epub"
+    },
+    {
+      "id": 1783623480699,
+      "name": "Dias de perros Jeff Kinney",
+      "price": "$0.99",
+      "cat": "ebooks",
+      "desc": "",
+      "author": "",
+      "genre": "",
+      "age": "",
+      "temas": [],
+      "tags": [],
+      "nivel": "",
+      "idioma": "",
+      "ad": {
+        "headline": "",
+        "subheadline": "",
+        "cta": "",
+        "banner_text": "",
+        "instagram_caption": "",
+        "hashtags": []
+      },
+      "pdfName": "Dias_de_perros_Jeff_Kinney.epub",
+      "pdfUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/pdfs/1783623480699_dias_de_perros_jeff_kinney.epub",
+      "coverUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/covers/1783623480699_dias_de_perros_jeff_kinney.jpg",
+      "file": "Dias_de_perros_Jeff_Kinney.epub"
     }
   ],
   "emailList": [
@@ -4705,5 +4731,5 @@
     "juan@test.com",
     "octavio123@gamil.com"
   ],
-  "updatedAt": "2026-07-09T18:57:59.544Z"
+  "updatedAt": "2026-07-09T18:58:21.678Z"
 }
