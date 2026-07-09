@@ -4333,6 +4333,32 @@
       "pdfUrl": null,
       "coverUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/covers/1783623199670_bautismo_de_fuego_andrzej_sapkowski.jpg",
       "file": "Bautismo_de_fuego_Andrzej_Sapkowski.epub"
+    },
+    {
+      "id": 1783623207860,
+      "name": "Blade Runner Suenan los androides con ovejas electricas Philip K",
+      "price": "$0.99",
+      "cat": "ebooks",
+      "desc": "",
+      "author": "",
+      "genre": "",
+      "age": "",
+      "temas": [],
+      "tags": [],
+      "nivel": "",
+      "idioma": "",
+      "ad": {
+        "headline": "",
+        "subheadline": "",
+        "cta": "",
+        "banner_text": "",
+        "instagram_caption": "",
+        "hashtags": []
+      },
+      "pdfName": "Blade_Runner_Suenan_los_androides_con_ovejas_electricas_Philip_K.epub",
+      "pdfUrl": null,
+      "coverUrl": null,
+      "file": "Blade_Runner_Suenan_los_androides_con_ovejas_electricas_Philip_K.epub"
     }
   ],
   "emailList": [
@@ -4341,5 +4367,5 @@
     "juan@test.com",
     "octavio123@gamil.com"
   ],
-  "updatedAt": "2026-07-09T18:53:27.252Z"
+  "updatedAt": "2026-07-09T18:53:32.012Z"
 }
