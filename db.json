@@ -5841,6 +5841,32 @@
       "pdfUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/pdfs/1783625980758_frio_como_el_acero_dan_simmons.epub",
       "coverUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/covers/1783625980758_frio_como_el_acero_dan_simmons.jpg",
       "file": "Frio_como_el_acero_Dan_Simmons.epub"
+    },
+    {
+      "id": 1783626223034,
+      "name": "Eminencia gris Aldous Huxley",
+      "price": "$0.99",
+      "cat": "ebooks",
+      "desc": "",
+      "author": "",
+      "genre": "",
+      "age": "",
+      "temas": [],
+      "tags": [],
+      "nivel": "",
+      "idioma": "",
+      "ad": {
+        "headline": "",
+        "subheadline": "",
+        "cta": "",
+        "banner_text": "",
+        "instagram_caption": "",
+        "hashtags": []
+      },
+      "pdfName": "Eminencia_gris_Aldous_Huxley.epub",
+      "pdfUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/pdfs/1783626223034_eminencia_gris_aldous_huxley.epub",
+      "coverUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/covers/1783626223034_eminencia_gris_aldous_huxley.jpg",
+      "file": "Eminencia_gris_Aldous_Huxley.epub"
     }
   ],
   "emailList": [
@@ -5849,5 +5875,5 @@
     "juan@test.com",
     "octavio123@gamil.com"
   ],
-  "updatedAt": "2026-07-09T19:42:09.110Z"
+  "updatedAt": "2026-07-09T19:43:49.768Z"
 }
