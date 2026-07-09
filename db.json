@@ -4980,7 +4980,7 @@
         "hashtags": []
       },
       "pdfName": "El_fin_de_la_infancia_Arthur_C_Clarke.epub",
-      "pdfUrl": null,
+      "pdfUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/pdfs/1783623563945_el_fin_de_la_infancia_arthur_c_clarke.epub",
       "coverUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/covers/1783623563945_el_fin_de_la_infancia_arthur_c_clarke.jpg",
       "file": "El_fin_de_la_infancia_Arthur_C_Clarke.epub"
     },
@@ -5277,5 +5277,5 @@
     "juan@test.com",
     "octavio123@gamil.com"
   ],
-  "updatedAt": "2026-07-09T19:23:38.873Z"
+  "updatedAt": "2026-07-09T19:23:41.903Z"
 }
