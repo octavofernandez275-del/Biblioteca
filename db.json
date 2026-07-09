@@ -4567,6 +4567,32 @@
       "pdfUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/pdfs/1783623378221_contrapunto_aldous_huxley.epub",
       "coverUrl": null,
       "file": "Contrapunto_Aldous_Huxley.epub"
+    },
+    {
+      "id": 1783623384939,
+      "name": "Dando la nota Jeff Kinney",
+      "price": "$0.99",
+      "cat": "ebooks",
+      "desc": "",
+      "author": "",
+      "genre": "",
+      "age": "",
+      "temas": [],
+      "tags": [],
+      "nivel": "",
+      "idioma": "",
+      "ad": {
+        "headline": "",
+        "subheadline": "",
+        "cta": "",
+        "banner_text": "",
+        "instagram_caption": "",
+        "hashtags": []
+      },
+      "pdfName": "Dando_la_nota_Jeff_Kinney.epub",
+      "pdfUrl": null,
+      "coverUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/covers/1783623384939_dando_la_nota_jeff_kinney.jpg",
+      "file": "Dando_la_nota_Jeff_Kinney.epub"
     }
   ],
   "emailList": [
@@ -4575,5 +4601,5 @@
     "juan@test.com",
     "octavio123@gamil.com"
   ],
-  "updatedAt": "2026-07-09T18:56:23.940Z"
+  "updatedAt": "2026-07-09T18:57:03.764Z"
 }
