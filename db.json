@@ -4229,6 +4229,32 @@
       "pdfUrl": null,
       "coverUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/covers/1783623168089_ayuno_intermitente_isabel_castillo.jpg",
       "file": "Ayuno_intermitente_Isabel_Castillo.epub"
+    },
+    {
+      "id": 1783623174852,
+      "name": "Ayuno intermitente para mujeres mayores de 50 anos Lane Gordon",
+      "price": "$0.99",
+      "cat": "ebooks",
+      "desc": "",
+      "author": "",
+      "genre": "",
+      "age": "",
+      "temas": [],
+      "tags": [],
+      "nivel": "",
+      "idioma": "",
+      "ad": {
+        "headline": "",
+        "subheadline": "",
+        "cta": "",
+        "banner_text": "",
+        "instagram_caption": "",
+        "hashtags": []
+      },
+      "pdfName": "Ayuno_intermitente_para_mujeres_mayores_de_50_anos_Lane_Gordon.epub",
+      "pdfUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/pdfs/1783623174852_ayuno_intermitente_para_mujeres_mayores_de_50_anos_lane_gordon.epub",
+      "coverUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/covers/1783623174852_ayuno_intermitente_para_mujeres_mayores_de_50_anos_lane_gordon.jpg",
+      "file": "Ayuno_intermitente_para_mujeres_mayores_de_50_anos_Lane_Gordon.epub"
     }
   ],
   "emailList": [
@@ -4237,5 +4263,5 @@
     "juan@test.com",
     "octavio123@gamil.com"
   ],
-  "updatedAt": "2026-07-09T18:52:54.182Z"
+  "updatedAt": "2026-07-09T18:53:03.386Z"
 }
