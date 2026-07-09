@@ -4515,6 +4515,32 @@
       "pdfUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/pdfs/1783623366011_ciego_en_gaza_aldous_huxley.epub",
       "coverUrl": null,
       "file": "Ciego_en_Gaza_Aldous_Huxley.epub"
+    },
+    {
+      "id": 1783623372049,
+      "name": "Como adelgazar sin dietas y no volver a engordar Cristina Galiano",
+      "price": "$0.99",
+      "cat": "ebooks",
+      "desc": "",
+      "author": "",
+      "genre": "",
+      "age": "",
+      "temas": [],
+      "tags": [],
+      "nivel": "",
+      "idioma": "",
+      "ad": {
+        "headline": "",
+        "subheadline": "",
+        "cta": "",
+        "banner_text": "",
+        "instagram_caption": "",
+        "hashtags": []
+      },
+      "pdfName": "Como_adelgazar_sin_dietas_y_no_volver_a_engordar_Cristina_Galiano.epub",
+      "pdfUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/pdfs/1783623372049_como_adelgazar_sin_dietas_y_no_volver_a_engordar_cristina_galiano.epub",
+      "coverUrl": null,
+      "file": "Como_adelgazar_sin_dietas_y_no_volver_a_engordar_Cristina_Galiano.epub"
     }
   ],
   "emailList": [
@@ -4523,5 +4549,5 @@
     "juan@test.com",
     "octavio123@gamil.com"
   ],
-  "updatedAt": "2026-07-09T18:56:11.409Z"
+  "updatedAt": "2026-07-09T18:56:17.644Z"
 }
