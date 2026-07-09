@@ -4983,6 +4983,32 @@
       "pdfUrl": null,
       "coverUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/covers/1783623563945_el_fin_de_la_infancia_arthur_c_clarke.jpg",
       "file": "El_fin_de_la_infancia_Arthur_C_Clarke.epub"
+    },
+    {
+      "id": 1783623570953,
+      "name": "El genio y la diosa Aldous Huxley",
+      "price": "$0.99",
+      "cat": "ebooks",
+      "desc": "",
+      "author": "",
+      "genre": "",
+      "age": "",
+      "temas": [],
+      "tags": [],
+      "nivel": "",
+      "idioma": "",
+      "ad": {
+        "headline": "",
+        "subheadline": "",
+        "cta": "",
+        "banner_text": "",
+        "instagram_caption": "",
+        "hashtags": []
+      },
+      "pdfName": "El_genio_y_la_diosa_Aldous_Huxley.epub",
+      "pdfUrl": null,
+      "coverUrl": null,
+      "file": "El_genio_y_la_diosa_Aldous_Huxley.epub"
     }
   ],
   "emailList": [
@@ -4991,5 +5017,5 @@
     "juan@test.com",
     "octavio123@gamil.com"
   ],
-  "updatedAt": "2026-07-09T18:59:30.413Z"
+  "updatedAt": "2026-07-09T18:59:34.813Z"
 }
