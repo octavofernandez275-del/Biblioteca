@@ -5425,6 +5425,32 @@
       "pdfUrl": null,
       "coverUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/covers/1783625403854_el_resplandor_stephen_king.jpg",
       "file": "El_resplandor_Stephen_King.epub"
+    },
+    {
+      "id": 1783625410995,
+      "name": "El robot y yo Nelson Allen",
+      "price": "$0.99",
+      "cat": "ebooks",
+      "desc": "",
+      "author": "",
+      "genre": "",
+      "age": "",
+      "temas": [],
+      "tags": [],
+      "nivel": "",
+      "idioma": "",
+      "ad": {
+        "headline": "",
+        "subheadline": "",
+        "cta": "",
+        "banner_text": "",
+        "instagram_caption": "",
+        "hashtags": []
+      },
+      "pdfName": "El_robot_y_yo_Nelson_Allen.epub",
+      "pdfUrl": null,
+      "coverUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/covers/1783625410995_el_robot_y_yo_nelson_allen.jpg",
+      "file": "El_robot_y_yo_Nelson_Allen.epub"
     }
   ],
   "emailList": [
@@ -5433,5 +5459,5 @@
     "juan@test.com",
     "octavio123@gamil.com"
   ],
-  "updatedAt": "2026-07-09T19:30:09.760Z"
+  "updatedAt": "2026-07-09T19:30:19.026Z"
 }
