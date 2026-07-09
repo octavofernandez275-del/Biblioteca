@@ -4931,6 +4931,32 @@
       "pdfUrl": null,
       "coverUrl": null,
       "file": "El_bisturi_de_Darwin_Dan_Simmons.epub"
+    },
+    {
+      "id": 1783623558480,
+      "name": "El festin de las mascaras Adobe James",
+      "price": "$0.99",
+      "cat": "ebooks",
+      "desc": "",
+      "author": "",
+      "genre": "",
+      "age": "",
+      "temas": [],
+      "tags": [],
+      "nivel": "",
+      "idioma": "",
+      "ad": {
+        "headline": "",
+        "subheadline": "",
+        "cta": "",
+        "banner_text": "",
+        "instagram_caption": "",
+        "hashtags": []
+      },
+      "pdfName": "El_festin_de_las_mascaras_Adobe_James.epub",
+      "pdfUrl": null,
+      "coverUrl": null,
+      "file": "El_festin_de_las_mascaras_Adobe_James.epub"
     }
   ],
   "emailList": [
@@ -4939,5 +4965,5 @@
     "juan@test.com",
     "octavio123@gamil.com"
   ],
-  "updatedAt": "2026-07-09T18:59:17.895Z"
+  "updatedAt": "2026-07-09T18:59:23.343Z"
 }
