@@ -5217,6 +5217,32 @@
       "pdfUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/pdfs/1783623707846_el_mundo_de_hielo_y_fuego_elio_garcia.epub",
       "coverUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/covers/1783623707846_el_mundo_de_hielo_y_fuego_elio_garcia.jpg",
       "file": "El_mundo_de_Hielo_y_Fuego_Elio_Garcia.epub"
+    },
+    {
+      "id": 1783623722859,
+      "name": "El nino marciano David Gerrold",
+      "price": "$0.99",
+      "cat": "ebooks",
+      "desc": "",
+      "author": "",
+      "genre": "",
+      "age": "",
+      "temas": [],
+      "tags": [],
+      "nivel": "",
+      "idioma": "",
+      "ad": {
+        "headline": "",
+        "subheadline": "",
+        "cta": "",
+        "banner_text": "",
+        "instagram_caption": "",
+        "hashtags": []
+      },
+      "pdfName": "El_nino_marciano_David_Gerrold.epub",
+      "pdfUrl": null,
+      "coverUrl": null,
+      "file": "El_nino_marciano_David_Gerrold.epub"
     }
   ],
   "emailList": [
@@ -5225,5 +5251,5 @@
     "juan@test.com",
     "octavio123@gamil.com"
   ],
-  "updatedAt": "2026-07-09T19:02:02.285Z"
+  "updatedAt": "2026-07-09T19:02:07.073Z"
 }
