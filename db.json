@@ -5087,6 +5087,84 @@
       "pdfUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/pdfs/1783623669970_el_hombre_invisible_ilustrado_h_g_wells.epub",
       "coverUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/covers/1783623669970_el_hombre_invisible_ilustrado_h_g_wells.jpg",
       "file": "El_hombre_invisible_Ilustrado_H_G_Wells.epub"
+    },
+    {
+      "id": 1783623682669,
+      "name": "El hombre mas rico de Babilonia George S Clason",
+      "price": "$0.99",
+      "cat": "ebooks",
+      "desc": "",
+      "author": "",
+      "genre": "",
+      "age": "",
+      "temas": [],
+      "tags": [],
+      "nivel": "",
+      "idioma": "",
+      "ad": {
+        "headline": "",
+        "subheadline": "",
+        "cta": "",
+        "banner_text": "",
+        "instagram_caption": "",
+        "hashtags": []
+      },
+      "pdfName": "El_hombre_mas_rico_de_Babilonia_George_S_Clason.epub",
+      "pdfUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/pdfs/1783623682669_el_hombre_mas_rico_de_babilonia_george_s_clason.epub",
+      "coverUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/covers/1783623682669_el_hombre_mas_rico_de_babilonia_george_s_clason.jpg",
+      "file": "El_hombre_mas_rico_de_Babilonia_George_S_Clason.epub"
+    },
+    {
+      "id": 1783623689297,
+      "name": "El hombre vacio Dan Simmons",
+      "price": "$0.99",
+      "cat": "ebooks",
+      "desc": "",
+      "author": "",
+      "genre": "",
+      "age": "",
+      "temas": [],
+      "tags": [],
+      "nivel": "",
+      "idioma": "",
+      "ad": {
+        "headline": "",
+        "subheadline": "",
+        "cta": "",
+        "banner_text": "",
+        "instagram_caption": "",
+        "hashtags": []
+      },
+      "pdfName": "El_hombre_vacio_Dan_Simmons.epub",
+      "pdfUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/pdfs/1783623689297_el_hombre_vacio_dan_simmons.epub",
+      "coverUrl": null,
+      "file": "El_hombre_vacio_Dan_Simmons.epub"
+    },
+    {
+      "id": 1783623694388,
+      "name": "El joven Arquimedes Aldous Huxley",
+      "price": "$0.99",
+      "cat": "ebooks",
+      "desc": "",
+      "author": "",
+      "genre": "",
+      "age": "",
+      "temas": [],
+      "tags": [],
+      "nivel": "",
+      "idioma": "",
+      "ad": {
+        "headline": "",
+        "subheadline": "",
+        "cta": "",
+        "banner_text": "",
+        "instagram_caption": "",
+        "hashtags": []
+      },
+      "pdfName": "El_joven_Arquimedes_Aldous_Huxley.epub",
+      "pdfUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/pdfs/1783623694388_el_joven_arquimedes_aldous_huxley.epub",
+      "coverUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/covers/1783623694388_el_joven_arquimedes_aldous_huxley.jpg",
+      "file": "El_joven_Arquimedes_Aldous_Huxley.epub"
     }
   ],
   "emailList": [
@@ -5095,5 +5173,5 @@
     "juan@test.com",
     "octavio123@gamil.com"
   ],
-  "updatedAt": "2026-07-09T19:01:22.001Z"
+  "updatedAt": "2026-07-09T19:01:41.344Z"
 }
