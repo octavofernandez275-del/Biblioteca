@@ -4671,6 +4671,32 @@
       "pdfUrl": null,
       "coverUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/covers/1783623462901_descifrando_el_codigo_keto_steven_r_gundry.jpg",
       "file": "Descifrando_el_codigo_keto_Steven_R_Gundry.epub"
+    },
+    {
+      "id": 1783623469438,
+      "name": "Desenganchate de las dietas Nicolas Mier y Teran",
+      "price": "$0.99",
+      "cat": "ebooks",
+      "desc": "",
+      "author": "",
+      "genre": "",
+      "age": "",
+      "temas": [],
+      "tags": [],
+      "nivel": "",
+      "idioma": "",
+      "ad": {
+        "headline": "",
+        "subheadline": "",
+        "cta": "",
+        "banner_text": "",
+        "instagram_caption": "",
+        "hashtags": []
+      },
+      "pdfName": "Desenganchate_de_las_dietas_Nicolas_Mier_y_Teran.epub",
+      "pdfUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/pdfs/1783623469438_desenganchate_de_las_dietas_nicolas_mier_y_teran.epub",
+      "coverUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/covers/1783623469438_desenganchate_de_las_dietas_nicolas_mier_y_teran.jpg",
+      "file": "Desenganchate_de_las_dietas_Nicolas_Mier_y_Teran.epub"
     }
   ],
   "emailList": [
@@ -4679,5 +4705,5 @@
     "juan@test.com",
     "octavio123@gamil.com"
   ],
-  "updatedAt": "2026-07-09T18:57:48.728Z"
+  "updatedAt": "2026-07-09T18:57:59.544Z"
 }
