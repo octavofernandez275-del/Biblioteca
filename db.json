@@ -6595,6 +6595,32 @@
       "pdfUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/pdfs/1783626829037_la_cancion_de_kali_dan_simmons.epub",
       "coverUrl": null,
       "file": "La_cancion_de_Kali_Dan_Simmons.epub"
+    },
+    {
+      "id": 1783626835045,
+      "name": "La casa de hojas Mark Z Danielewski",
+      "price": "$0.99",
+      "cat": "ebooks",
+      "desc": "",
+      "author": "",
+      "genre": "",
+      "age": "",
+      "temas": [],
+      "tags": [],
+      "nivel": "",
+      "idioma": "",
+      "ad": {
+        "headline": "",
+        "subheadline": "",
+        "cta": "",
+        "banner_text": "",
+        "instagram_caption": "",
+        "hashtags": []
+      },
+      "pdfName": "La_casa_de_hojas_Mark_Z_Danielewski.epub",
+      "pdfUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/pdfs/1783626835045_la_casa_de_hojas_mark_z_danielewski.epub",
+      "coverUrl": null,
+      "file": "La_casa_de_hojas_Mark_Z_Danielewski.epub"
     }
   ],
   "emailList": [
@@ -6603,5 +6629,5 @@
     "juan@test.com",
     "octavio123@gamil.com"
   ],
-  "updatedAt": "2026-07-09T19:53:54.294Z"
+  "updatedAt": "2026-07-09T19:54:06.907Z"
 }
