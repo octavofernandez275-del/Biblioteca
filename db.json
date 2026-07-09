@@ -6881,6 +6881,32 @@
       "pdfUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/pdfs/1783626941014_la_sangre_de_los_elfos_andrzej_sapkowski.epub",
       "coverUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/covers/1783626941014_la_sangre_de_los_elfos_andrzej_sapkowski.jpg",
       "file": "La_sangre_de_los_elfos_Andrzej_Sapkowski.epub"
+    },
+    {
+      "id": 1783626948324,
+      "name": "La semana laboral de 4 horas Timothy Ferriss",
+      "price": "$0.99",
+      "cat": "ebooks",
+      "desc": "",
+      "author": "",
+      "genre": "",
+      "age": "",
+      "temas": [],
+      "tags": [],
+      "nivel": "",
+      "idioma": "",
+      "ad": {
+        "headline": "",
+        "subheadline": "",
+        "cta": "",
+        "banner_text": "",
+        "instagram_caption": "",
+        "hashtags": []
+      },
+      "pdfName": "La_semana_laboral_de_4_horas_Timothy_Ferriss.epub",
+      "pdfUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/pdfs/1783626948324_la_semana_laboral_de_4_horas_timothy_ferriss.epub",
+      "coverUrl": null,
+      "file": "La_semana_laboral_de_4_horas_Timothy_Ferriss.epub"
     }
   ],
   "emailList": [
@@ -6889,5 +6915,5 @@
     "juan@test.com",
     "octavio123@gamil.com"
   ],
-  "updatedAt": "2026-07-09T19:55:47.681Z"
+  "updatedAt": "2026-07-09T19:55:52.599Z"
 }
