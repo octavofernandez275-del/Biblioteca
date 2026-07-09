@@ -4281,6 +4281,32 @@
       "pdfUrl": null,
       "coverUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/covers/1783623184029_ayuno_intermitente_paul_knoblauch.jpg",
       "file": "Ayuno_intermitente_Paul_Knoblauch.epub"
+    },
+    {
+      "id": 1783623191038,
+      "name": "Ayuno intermitente saludable Carla Zaplana",
+      "price": "$0.99",
+      "cat": "salud",
+      "desc": "",
+      "author": "",
+      "genre": "",
+      "age": "",
+      "temas": [],
+      "tags": [],
+      "nivel": "",
+      "idioma": "",
+      "ad": {
+        "headline": "",
+        "subheadline": "",
+        "cta": "",
+        "banner_text": "",
+        "instagram_caption": "",
+        "hashtags": []
+      },
+      "pdfName": "Ayuno_intermitente_saludable_Carla_Zaplana.epub",
+      "pdfUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/pdfs/1783623191038_ayuno_intermitente_saludable_carla_zaplana.epub",
+      "coverUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/covers/1783623191038_ayuno_intermitente_saludable_carla_zaplana.jpg",
+      "file": "Ayuno_intermitente_saludable_Carla_Zaplana.epub"
     }
   ],
   "emailList": [
@@ -4289,5 +4315,5 @@
     "juan@test.com",
     "octavio123@gamil.com"
   ],
-  "updatedAt": "2026-07-09T18:53:10.375Z"
+  "updatedAt": "2026-07-09T18:53:19.076Z"
 }
