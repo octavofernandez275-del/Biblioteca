@@ -4125,6 +4125,32 @@
       "pdfUrl": null,
       "coverUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/covers/1783623136382_ayuno_intermitente_beatriz_torres.jpg",
       "file": "Ayuno_intermitente_Beatriz_Torres.epub"
+    },
+    {
+      "id": 1783623144322,
+      "name": "Ayuno intermitente Carlos Aguado Hipola",
+      "price": "$0.99",
+      "cat": "ebooks",
+      "desc": "",
+      "author": "",
+      "genre": "",
+      "age": "",
+      "temas": [],
+      "tags": [],
+      "nivel": "",
+      "idioma": "",
+      "ad": {
+        "headline": "",
+        "subheadline": "",
+        "cta": "",
+        "banner_text": "",
+        "instagram_caption": "",
+        "hashtags": []
+      },
+      "pdfName": "Ayuno_intermitente_Carlos_Aguado_Hipola.epub",
+      "pdfUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/pdfs/1783623144322_ayuno_intermitente_carlos_aguado_hipola.epub",
+      "coverUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/covers/1783623144322_ayuno_intermitente_carlos_aguado_hipola.jpg",
+      "file": "Ayuno_intermitente_Carlos_Aguado_Hipola.epub"
     }
   ],
   "emailList": [
@@ -4133,5 +4159,5 @@
     "juan@test.com",
     "octavio123@gamil.com"
   ],
-  "updatedAt": "2026-07-09T18:52:23.010Z"
+  "updatedAt": "2026-07-09T18:52:30.635Z"
 }
