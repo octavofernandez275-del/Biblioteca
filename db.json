@@ -6517,6 +6517,32 @@
       "pdfUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/pdfs/1783626719496_it_eso_stephen_king.epub",
       "coverUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/covers/1783626719496_it_eso_stephen_king.jpg",
       "file": "It_eso_Stephen_King.epub"
+    },
+    {
+      "id": 1783626807452,
+      "name": "Juego de tronos George R R Martin",
+      "price": "$0.99",
+      "cat": "ebooks",
+      "desc": "",
+      "author": "",
+      "genre": "",
+      "age": "",
+      "temas": [],
+      "tags": [],
+      "nivel": "",
+      "idioma": "",
+      "ad": {
+        "headline": "",
+        "subheadline": "",
+        "cta": "",
+        "banner_text": "",
+        "instagram_caption": "",
+        "hashtags": []
+      },
+      "pdfName": "Juego_de_tronos_George_R_R_Martin.epub",
+      "pdfUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/pdfs/1783626807452_juego_de_tronos_george_r_r_martin.epub",
+      "coverUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/covers/1783626807452_juego_de_tronos_george_r_r_martin.jpg",
+      "file": "Juego_de_tronos_George_R_R_Martin.epub"
     }
   ],
   "emailList": [
@@ -6525,5 +6551,5 @@
     "juan@test.com",
     "octavio123@gamil.com"
   ],
-  "updatedAt": "2026-07-09T19:52:06.637Z"
+  "updatedAt": "2026-07-09T19:53:40.440Z"
 }
