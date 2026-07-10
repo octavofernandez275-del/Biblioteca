@@ -169,6 +169,87 @@ El bloque "ad" se genera siempre, tenga o no extractMeta activado, basándote en
       }
     }
 
+    // ── GENERAR PUBLICIDAD COMPLETA (guion de video + texto de post) con Gemini ──
+    if (url.pathname === '/generate-promo' && request.method === 'POST') {
+      try {
+        if (!env.GEMINI_API_KEY) {
+          return new Response(JSON.stringify({ error: 'GEMINI_API_KEY no configurada' }), {
+            status: 500,
+            headers: { ...headers, 'Content-Type': 'application/json' },
+          });
+        }
+
+        const body = await request.json();
+        const { name, author, genre, desc, age, price, arsPrice } = body;
+
+        const priceLine = price
+          ? `Precio en USD: $${price}${arsPrice ? ` · Precio PROMOCIONAL en pesos para Argentina: AR$ ${arsPrice} (oferta por tiempo limitado, válida solo en Argentina)` : ''}`
+          : 'Precio: no especificado (no lo menciones en el texto)';
+
+        const prompt = `Sos un copywriter experto en marketing digital y ventas por redes sociales, especialista en textos persuasivos que generan deseo, urgencia y conexión emocional real con el lector — el tipo de texto que "enamora" y empuja a comprar ya, no un texto informativo genérico ni una simple ficha de producto.
+
+Escribí la publicidad completa de este ebook/libro digital, en español rioplatense (Argentina, con "vos"), con estas dos partes bien separadas y tituladas exactamente así:
+
+🎬 GUION PARA VIDEO/REEL (15-30 segundos)
+Un gancho inicial fuerte para los primeros 3 segundos, un desarrollo breve que genere intriga o emoción, y un cierre con llamado a la acción claro.
+
+📱 TEXTO PARA PUBLICACIÓN (Instagram/Facebook)
+Un copy persuasivo de 5-8 líneas, con emojis, que genere deseo real de comprar usando gatillos mentales (urgencia, escasez, beneficio emocional). Tiene que dejar bien claro que el precio en pesos es una PROMOCIÓN exclusiva para Argentina por tiempo limitado, transmitiendo sensación de oportunidad única. Cerrá con una llamada a la acción concreta (ej: "Link en bio 🔗") y 5-8 hashtags en español relevantes al tema del libro.
+
+Datos del producto:
+Título: ${name || ''}
+Autor: ${author || 'no especificado'}
+Género: ${genre || 'no especificado'}
+Descripción: ${desc || 'no especificada'}
+Edad/público: ${age || 'no especificado'}
+${priceLine}
+
+Reglas:
+- No inventes datos que no te di (si autor/género/edad están vacíos, no los menciones).
+- Tono cercano, entusiasta y genuino, nunca genérico ni robótico.
+- Devolvé SOLO el texto final con las dos secciones tal como se pide, sin explicaciones tuyas ni backticks.`;
+
+        const geminiRes = await fetch(
+          'https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent',
+          {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+              'x-goog-api-key': env.GEMINI_API_KEY,
+            },
+            body: JSON.stringify({
+              contents: [{ parts: [{ text: prompt }] }]
+            }),
+          }
+        );
+
+        const geminiData = await geminiRes.json();
+        const rawText = geminiData.candidates?.[0]?.content?.parts?.[0]?.text;
+
+        if (!rawText) {
+          const motivo =
+            geminiData.error?.message ||
+            geminiData.promptFeedback?.blockReason ||
+            geminiData.candidates?.[0]?.finishReason ||
+            'Gemini no devolvió contenido';
+          return new Response(JSON.stringify({ error: 'Gemini no devolvió la publicidad', detail: motivo, promo: '' }), {
+            status: 200,
+            headers: { ...headers, 'Content-Type': 'application/json' },
+          });
+        }
+
+        return new Response(JSON.stringify({ promo: rawText.trim() }), {
+          headers: { ...headers, 'Content-Type': 'application/json' },
+        });
+
+      } catch (e) {
+        return new Response(JSON.stringify({ error: 'Error generando publicidad', detail: String(e) }), {
+          status: 502,
+          headers: { ...headers, 'Content-Type': 'application/json' },
+        });
+      }
+    }
+
     // ── GENERAR CARÁTULA con Gemini (imagen) ────────────────────
     if (url.pathname === '/generate-cover' && request.method === 'POST') {
       try {

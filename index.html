@@ -87,7 +87,7 @@
       --font-display: 'Manrope', sans-serif;
     }
 
-    html { scroll-behavior: smooth; width: 100%; }
+    html { scroll-behavior: smooth; width: 100%; max-width: 100%; overflow-x: hidden; }
     section, #hero { scroll-margin-top: 76px; }
 
     body {
@@ -101,8 +101,13 @@
       line-height: 1.6;
       overflow-x: hidden;
       width: 100%;
+      max-width: 100%;
       min-width: 320px;
     }
+
+    /* Red de seguridad: ningún elemento multimedia puede ser más ancho que su contenedor
+       y así arrastrar/estirar el resto de la interfaz en el celular. */
+    img, canvas, svg, video, iframe { max-width: 100%; }
 
     /* ── UTILITIES ── */
     .container { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
@@ -1331,6 +1336,7 @@
       position: fixed;
       right: 0; top: 0; bottom: 0;
       width: 360px;
+      max-width: 100vw;
       background: var(--surface);
       border-left: 1px solid rgba(255,255,255,.1);
       z-index: 1500;
@@ -4835,6 +4841,45 @@
   }
 
   // ─── GENERADOR DE BANNER PARA INSTAGRAM/FACEBOOK (usa la carátula real) ─────
+
+  // Paleta por categoría (misma que usan las product-cards) para tematizar cada banner
+  const BANNER_CAT_COLORS = {
+    infantil:'#22C55E', ebooks:'#3B82F6', pack:'#F59E0B', juvenil:'#A855F7',
+    novela:'#EC4899', cursos:'#F97316', revista:'#06B6D4', recetas:'#84CC16',
+    salud:'#14B8A6', autoayuda:'#8B5CF6', historia:'#B45309', ciencia:'#6366F1',
+    negocios:'#475569', religion:'#EAB308', terror:'#DC2626', romance:'#FB7185',
+    viajes:'#38BDF8', idiomas:'#2DD4BF', arte:'#D946EF', deporte:'#65A30D',
+    manga:'#F87171', poesia:'#C084FC', derecho:'#1E3A8A', musica:'#FB923C'
+  };
+  function _hexToRgb(hex) {
+    const m = hex.replace('#','').match(/.{1,2}/g) || ['91','91','214'];
+    return m.map(x => parseInt(x, 16));
+  }
+  function _roundRectPath(ctx, x, y, w, h, r) {
+    ctx.beginPath();
+    ctx.moveTo(x + r, y);
+    ctx.arcTo(x + w, y, x + w, y + h, r);
+    ctx.arcTo(x + w, y + h, x, y + h, r);
+    ctx.arcTo(x, y + h, x, y, r);
+    ctx.arcTo(x, y, x + w, y, r);
+    ctx.closePath();
+  }
+
+  // Cotización de referencia para mostrar un equivalente en pesos argentinos.
+  // Pedido del negocio: nunca mostrar un precio en ARS que supere los $15.000.
+  const BANNER_AR_RATE = 1500;
+  const BANNER_AR_CAP = 15000;
+  function usdToArsCapped(priceInput) {
+    const usd = parseFloat(String(priceInput || '').replace(/[^0-9.]/g, '')) || 0;
+    if (!usd) return 0;
+    let ars = Math.min(usd * BANNER_AR_RATE, BANNER_AR_CAP - 10);
+    ars = Math.floor(ars / 100) * 100 + 90; // precio "prolijo" terminado en 90
+    return Math.min(ars, BANNER_AR_CAP - 10);
+  }
+  function formatArs(ars) {
+    return 'AR$ ' + ars.toLocaleString('es-AR');
+  }
+
   async function _loadImageForBanner(src) {
     if (!src) return null;
     try {
@@ -4854,45 +4899,94 @@
   }
 
   // Genera un banner vertical 1080x1350, respetando la carátula original tal cual es
-  // (no la modifica ni la regenera con IA, solo la compone con texto encima).
-  async function generateSocialBanner(coverSrc, name, price) {
+  // (no la modifica ni la regenera con IA, solo la compone con texto y diseño encima).
+  // `cat` es opcional: si se pasa, tematiza el banner con el color de esa categoría.
+  async function generateSocialBanner(coverSrc, name, price, cat) {
     const W = 1080, H = 1350;
     const canvas = document.createElement('canvas');
     canvas.width = W; canvas.height = H;
     const ctx = canvas.getContext('2d');
 
-    ctx.fillStyle = '#0A0A0A';
+    const accent = BANNER_CAT_COLORS[cat] || '#5B5BD6';
+    const [ar, ag, ab] = _hexToRgb(accent);
+
+    // ── fondo: degradado oscuro con tinte de la categoría + glow radial ──
+    const bgGrad = ctx.createLinearGradient(0, 0, 0, H);
+    bgGrad.addColorStop(0, `rgba(${ar},${ag},${ab},0.38)`);
+    bgGrad.addColorStop(0.32, '#0B0B10');
+    bgGrad.addColorStop(1, '#000000');
+    ctx.fillStyle = bgGrad;
     ctx.fillRect(0, 0, W, H);
 
-    const img = await _loadImageForBanner(coverSrc);
-    const coverAreaH = Math.round(H * 0.68);
+    const glow = ctx.createRadialGradient(W / 2, 480, 60, W / 2, 480, 650);
+    glow.addColorStop(0, `rgba(${ar},${ag},${ab},0.35)`);
+    glow.addColorStop(1, 'rgba(0,0,0,0)');
+    ctx.fillStyle = glow;
+    ctx.fillRect(0, 0, W, H);
 
+    // ── carátula: enmarcada, con leve inclinación, sombra y borde de color ──
+    const coverW = 620, coverH = 760;
+    const coverX = (W - coverW) / 2, coverY = 100;
+    const img = await _loadImageForBanner(coverSrc);
+
+    ctx.save();
+    ctx.translate(coverX + coverW / 2, coverY + coverH / 2);
+    ctx.rotate(-1.5 * Math.PI / 180);
+    ctx.translate(-(coverX + coverW / 2), -(coverY + coverH / 2));
+
+    ctx.save();
+    ctx.shadowColor = 'rgba(0,0,0,0.55)';
+    ctx.shadowBlur = 55;
+    ctx.shadowOffsetY = 28;
+    ctx.fillStyle = '#000';
+    _roundRectPath(ctx, coverX, coverY, coverW, coverH, 26);
+    ctx.fill();
+    ctx.restore();
+
+    ctx.save();
+    _roundRectPath(ctx, coverX, coverY, coverW, coverH, 26);
+    ctx.clip();
     if (img) {
-      const scale = Math.max(W / img.width, coverAreaH / img.height);
-      const sw = W / scale, sh = coverAreaH / scale;
+      const scale = Math.max(coverW / img.width, coverH / img.height);
+      const sw = coverW / scale, sh = coverH / scale;
       const sx = (img.width - sw) / 2, sy = (img.height - sh) / 2;
-      ctx.drawImage(img, sx, sy, sw, sh, 0, 0, W, coverAreaH);
+      ctx.drawImage(img, sx, sy, sw, sh, coverX, coverY, coverW, coverH);
     } else {
       ctx.fillStyle = '#1a1a2e';
-      ctx.fillRect(0, 0, W, coverAreaH);
+      ctx.fillRect(coverX, coverY, coverW, coverH);
+    }
+    ctx.restore();
+
+    ctx.strokeStyle = accent;
+    ctx.lineWidth = 5;
+    _roundRectPath(ctx, coverX, coverY, coverW, coverH, 26);
+    ctx.stroke();
+    ctx.restore();
+
+    // ── cinta de categoría ──
+    if (cat) {
+      ctx.font = '800 26px Arial, sans-serif';
+      const label = cat.toUpperCase();
+      const padX = 22, bh = 50;
+      const tw = ctx.measureText(label).width;
+      const bx = 50, by = 46;
+      ctx.fillStyle = accent;
+      _roundRectPath(ctx, bx, by, tw + padX * 2, bh, bh / 2);
+      ctx.fill();
+      ctx.fillStyle = '#0A0A0A';
+      ctx.textBaseline = 'middle';
+      ctx.fillText(label, bx + padX, by + bh / 2 + 2);
+      ctx.textBaseline = 'top';
     }
 
-    // degradado de transición hacia la franja de texto
-    const grad = ctx.createLinearGradient(0, coverAreaH - 220, 0, coverAreaH);
-    grad.addColorStop(0, 'rgba(10,10,10,0)');
-    grad.addColorStop(1, 'rgba(10,10,10,1)');
-    ctx.fillStyle = grad;
-    ctx.fillRect(0, coverAreaH - 220, W, 220);
+    // ── barra de acento debajo de la carátula ──
+    const panelY = coverY + coverH + 36;
+    ctx.fillStyle = accent;
+    ctx.fillRect(60, panelY, 90, 6);
 
-    // franja inferior
-    ctx.fillStyle = '#0A0A0A';
-    ctx.fillRect(0, coverAreaH, W, H - coverAreaH);
-    ctx.fillStyle = '#5B5BD6';
-    ctx.fillRect(0, coverAreaH, W, 6);
-
-    // título (máx 3 líneas)
+    // ── título (máx 2 líneas, más grande y con más peso) ──
     ctx.fillStyle = '#FFFFFF';
-    ctx.font = '700 54px Arial, sans-serif';
+    ctx.font = '800 56px Arial, sans-serif';
     ctx.textBaseline = 'top';
     const paddingX = 60;
     const maxWidth = W - paddingX * 2;
@@ -4904,21 +4998,43 @@
       else line = test;
     }
     if (line) lines.push(line);
-    lines = lines.slice(0, 3);
-    let ty = coverAreaH + 40;
-    lines.forEach(l => { ctx.fillText(l, paddingX, ty); ty += 62; });
+    lines = lines.slice(0, 2);
+    let ty = panelY + 30;
+    lines.forEach(l => { ctx.fillText(l, paddingX, ty); ty += 64; });
 
-    // precio
-    ctx.fillStyle = '#8B8BE8';
-    ctx.font = '700 44px Arial, sans-serif';
-    ctx.fillText(price || '', paddingX, ty + 14);
+    // ── precio: USD grande en color de acento + equivalente en ARS (tope $15.000) ──
+    ty += 14;
+    ctx.fillStyle = accent;
+    ctx.font = '800 50px Arial, sans-serif';
+    ctx.fillText(price || '', paddingX, ty);
+    const usdWidth = ctx.measureText(price || '').width;
 
-    // CTA + marca
+    const arsValue = usdToArsCapped(price);
+    if (arsValue) {
+      const arsLabel = '🇦🇷 PROMO ' + formatArs(arsValue);
+      ctx.font = '700 28px Arial, sans-serif';
+      const arsW = ctx.measureText(arsLabel).width;
+      const bpadX = 18, bh2 = 46;
+      const bx = paddingX + usdWidth + 22, by2 = ty + 3;
+      ctx.fillStyle = 'rgba(255,255,255,0.08)';
+      _roundRectPath(ctx, bx, by2, arsW + bpadX * 2, bh2, bh2 / 2);
+      ctx.fill();
+      ctx.strokeStyle = 'rgba(255,255,255,0.2)';
+      ctx.lineWidth = 1.5;
+      _roundRectPath(ctx, bx, by2, arsW + bpadX * 2, bh2, bh2 / 2);
+      ctx.stroke();
+      ctx.fillStyle = '#FFFFFF';
+      ctx.textBaseline = 'middle';
+      ctx.fillText(arsLabel, bx + bpadX, by2 + bh2 / 2 + 2);
+      ctx.textBaseline = 'top';
+    }
+
+    // ── CTA + marca ──
     ctx.fillStyle = '#B8B8C8';
     ctx.font = '600 30px Arial, sans-serif';
     ctx.fillText('📥 Disponible en PDF — link en bio', paddingX, H - 90);
     ctx.font = '700 26px Arial, sans-serif';
-    ctx.fillStyle = '#5B5BD6';
+    ctx.fillStyle = accent;
     ctx.fillText('BibliotecaDigital', paddingX, H - 46);
 
     return canvas.toDataURL('image/png');
@@ -4938,6 +5054,7 @@
     const name = document.getElementById('prod-name').value.trim();
     if (!name) { showToast('Primero ingresá el nombre del producto', 'error'); return; }
     const price = document.getElementById('prod-price').value.trim();
+    const cat = document.getElementById('prod-cat') ? document.getElementById('prod-cat').value : '';
     const coverSrc = pendingCoverB64;
     if (!coverSrc) { showToast('Primero cargá o generá una carátula', 'error'); return; }
     const box = document.getElementById('prod-banner-box');
@@ -4946,7 +5063,7 @@
     img.src = '';
     img.alt = 'Generando banner...';
     try {
-      const dataUrl = await generateSocialBanner(coverSrc, name, price ? '$' + price : '');
+      const dataUrl = await generateSocialBanner(coverSrc, name, price ? '$' + price : '', cat);
       img.src = dataUrl;
       img.dataset.filename = `banner_${name.toLowerCase().replace(/[^a-z0-9]+/g,'_')}.png`;
       showToast('🖼️ Banner generado', 'success');
@@ -4969,6 +5086,8 @@
     const desc = document.getElementById('prod-desc').value.trim();
     const ageEl = document.getElementById('prod-age');
     const age = ageEl ? ageEl.value : '';
+    const price = document.getElementById('prod-price').value.trim();
+    const arsPrice = price ? usdToArsCapped('$' + price) : 0;
 
     const box = document.getElementById('full-promo-box');
     const textEl = document.getElementById('full-promo-text');
@@ -4978,7 +5097,7 @@
       const res = await fetch(`${WORKER_URL}/generate-promo`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ name, author, genre, desc, age })
+        body: JSON.stringify({ name, author, genre, desc, age, price, arsPrice })
       });
       const data = await res.json();
       if (data.error) {
@@ -5014,6 +5133,7 @@
     const name = document.getElementById('edit-prod-name').value.trim();
     if (!name) { showToast('El producto necesita un nombre primero', 'error'); return; }
     const price = document.getElementById('edit-prod-price').value.trim();
+    const cat = document.getElementById('edit-prod-cat') ? document.getElementById('edit-prod-cat').value : '';
     const preview = document.getElementById('edit-cover-preview');
     const coverSrc = _editCoverB64 || (preview && preview.style.display !== 'none' ? preview.src : null);
     if (!coverSrc) { showToast('Este producto no tiene carátula todavía', 'error'); return; }
@@ -5022,7 +5142,7 @@
     box.style.display = 'block';
     img.src = '';
     try {
-      const dataUrl = await generateSocialBanner(coverSrc, name, price ? '$' + price : '');
+      const dataUrl = await generateSocialBanner(coverSrc, name, price ? '$' + price : '', cat);
       img.src = dataUrl;
       img.dataset.filename = `banner_${name.toLowerCase().replace(/[^a-z0-9]+/g,'_')}.png`;
       showToast('🖼️ Banner generado', 'success');
@@ -5045,6 +5165,8 @@
     const desc = document.getElementById('edit-prod-desc').value.trim();
     const ageEl = document.getElementById('edit-prod-age');
     const age = ageEl ? ageEl.value : '';
+    const price = document.getElementById('edit-prod-price').value.trim();
+    const arsPrice = price ? usdToArsCapped('$' + price) : 0;
 
     const box = document.getElementById('edit-full-promo-box');
     const textEl = document.getElementById('edit-full-promo-text');
@@ -5054,7 +5176,7 @@
       const res = await fetch(`${WORKER_URL}/generate-promo`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ name, author, genre, desc, age })
+        body: JSON.stringify({ name, author, genre, desc, age, price, arsPrice })
       });
       const data = await res.json();
       if (data.error) {
@@ -6620,7 +6742,7 @@
       const p = withCover[i];
       if (prog) prog.textContent = `📢 Generando banner ${i + 1}/${withCover.length}: ${p.name}`;
       try {
-        const dataUrl = await generateSocialBanner(p.coverUrl || p.coverData, p.name, p.price || '');
+        const dataUrl = await generateSocialBanner(p.coverUrl || p.coverData, p.name, p.price || '', p.cat || '');
         const base64 = dataUrl.split(',')[1];
         const safeName = (p.name || 'producto').toLowerCase().replace(/[^a-z0-9]+/g, '_').slice(0, 60);
         zip.file(`banner_${p.id}_${safeName}.png`, base64, { base64: true });
