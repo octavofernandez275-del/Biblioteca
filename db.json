@@ -8277,6 +8277,32 @@
       "pdfUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/pdfs/1783682709555_piense_y_hagase_rico_napoleon_hill.epub",
       "coverUrl": null,
       "file": "Piense_y_hagase_rico_Napoleon_Hill.epub"
+    },
+    {
+      "id": 1783682717917,
+      "name": "Por los aires Ambrose Bierce",
+      "price": "$0.99",
+      "cat": "ebooks",
+      "desc": "",
+      "author": "",
+      "genre": "",
+      "age": "",
+      "temas": [],
+      "tags": [],
+      "nivel": "",
+      "idioma": "",
+      "ad": {
+        "headline": "",
+        "subheadline": "",
+        "cta": "",
+        "banner_text": "",
+        "instagram_caption": "",
+        "hashtags": []
+      },
+      "pdfName": "Por_los_aires_Ambrose_Bierce.epub",
+      "pdfUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/pdfs/1783682717917_por_los_aires_ambrose_bierce.epub",
+      "coverUrl": null,
+      "file": "Por_los_aires_Ambrose_Bierce.epub"
     }
   ],
   "emailList": [
@@ -8285,5 +8311,5 @@
     "juan@test.com",
     "octavio123@gamil.com"
   ],
-  "updatedAt": "2026-07-10T11:25:17.160Z"
+  "updatedAt": "2026-07-10T11:25:23.073Z"
 }
