@@ -11561,32 +11561,6 @@
       "file": "Vol. 16 - CSM - Cap. 134 al 143_compressed.pdf"
     },
     {
-      "id": 1783708154303,
-      "name": "User guide",
-      "price": "$0.99",
-      "cat": "ebooks",
-      "desc": "",
-      "author": "",
-      "genre": "",
-      "age": "",
-      "temas": [],
-      "tags": [],
-      "nivel": "",
-      "idioma": "",
-      "ad": {
-        "headline": "",
-        "subheadline": "",
-        "cta": "",
-        "banner_text": "",
-        "instagram_caption": "",
-        "hashtags": []
-      },
-      "pdfName": "User guide.pdf",
-      "pdfUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/pdfs/1783708154303_user_guide.pdf",
-      "coverUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/covers/1783708154303_user_guide.jpg",
-      "file": "User guide.pdf"
-    },
-    {
       "id": 1783708162715,
       "name": "Vol. 17   CSM   Cap. 144 al 153 compressed compressed compressed compressed compressed compressed",
       "price": "$0.99",
@@ -11619,5 +11593,5 @@
     "juan@test.com",
     "octavio123@gamil.com"
   ],
-  "updatedAt": "2026-07-10T18:29:44.742Z"
+  "updatedAt": "2026-07-10T18:32:08.853Z"
 }
