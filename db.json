@@ -11955,6 +11955,32 @@
       "pdfUrl": null,
       "coverUrl": null,
       "file": "Ansatsu Kyoushitsu (2).PDF"
+    },
+    {
+      "id": 1783721666078,
+      "name": "Ansatsu Kyoushitsu (19)",
+      "price": "$0.99",
+      "cat": "ebooks",
+      "desc": "",
+      "author": "",
+      "genre": "",
+      "age": "",
+      "temas": [],
+      "tags": [],
+      "nivel": "",
+      "idioma": "",
+      "ad": {
+        "headline": "",
+        "subheadline": "",
+        "cta": "",
+        "banner_text": "",
+        "instagram_caption": "",
+        "hashtags": []
+      },
+      "pdfName": "Ansatsu Kyoushitsu (19).PDF",
+      "pdfUrl": null,
+      "coverUrl": null,
+      "file": "Ansatsu Kyoushitsu (19).PDF"
     }
   ],
   "emailList": [
@@ -11963,5 +11989,5 @@
     "juan@test.com",
     "octavio123@gamil.com"
   ],
-  "updatedAt": "2026-07-10T22:14:23.897Z"
+  "updatedAt": "2026-07-10T22:17:06.584Z"
 }
