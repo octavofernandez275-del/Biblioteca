@@ -7999,6 +7999,54 @@
       "pdfUrl": null,
       "coverUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/covers/1783682616441_muere_el_cisne_despues_del_verano_aldous_huxley.jpg",
       "file": "Muere_el_cisne_despues_del_verano_Aldous_Huxley.epub"
+    },
+    {
+      "id": 1783682630872,
+      "name": "Muriendo en Bangkok",
+      "price": "$4.99",
+      "cat": "terror",
+      "desc": "Muriendo en Bangkok nos cuenta la historia del Dr. Merrick, que regresa a esa ciudad luego de 20 años, buscando a una mujer vampiro llamada Mara, que tiene el poder de hechizar a los hombres a través de la lujuria y llevarlos más allá de los límites del placer. Es una historia de terror y erotismo, ganadora de los premios Bram Stoker y Locus de 1994 a la mejor novela corta.",
+      "author": "Dan Simmons",
+      "genre": "Terror erótico",
+      "age": "Adultos",
+      "temas": [
+        "Vampiros",
+        "Lujuria",
+        "Obsesión",
+        "Bangkok",
+        "Suspense"
+      ],
+      "tags": [
+        "Terror",
+        "Erotismo",
+        "Vampiros",
+        "Novela Corta",
+        "Premios Bram Stoker",
+        "Sobrenatural"
+      ],
+      "nivel": "",
+      "idioma": "Español",
+      "ad": {
+        "headline": "El terror y la lujuria te esperan en Bangkok",
+        "subheadline": "Una vampira hechizante. Un deseo prohibido. ¿Te atreves a buscarla?",
+        "cta": "Descubre el placer oscuro",
+        "banner_text": "Terror Erótico Premiado",
+        "instagram_caption": "Prepárate para una inmersión en el lado más oscuro de Bangkok 🌃. Dan Simmons te arrastra a una búsqueda obsesiva de una vampira que encarna el terror y la lujuria.\nGanadora de los premios Bram Stoker y Locus. ¿Hasta dónde irías por el placer prohibido? 🩸 Una novela corta que no te dejará dormir.",
+        "hashtags": [
+          "MuriendoEnBangkok",
+          "DanSimmons",
+          "TerrorErotico",
+          "Vampiros",
+          "NovelaCorta",
+          "HorrorPsicologico",
+          "LibrosRecomendados",
+          "Suspense"
+        ]
+      },
+      "pdfName": "Muriendo_en_Bangkok_Dan_Simmons.epub",
+      "pdfUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/pdfs/1783682630872_muriendo_en_bangkok.epub",
+      "coverUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/covers/1783682630872_muriendo_en_bangkok.jpg",
+      "file": "Muriendo_en_Bangkok_Dan_Simmons.epub"
     }
   ],
   "emailList": [
@@ -8007,5 +8055,5 @@
     "juan@test.com",
     "octavio123@gamil.com"
   ],
-  "updatedAt": "2026-07-10T11:23:42.655Z"
+  "updatedAt": "2026-07-10T11:24:05.299Z"
 }
