@@ -7168,6 +7168,52 @@
       "pdfUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/pdfs/1783682226686_literatura_y_ciencia__la_perspectiva_de_aldous_huxley.epub",
       "coverUrl": null,
       "file": "Literatura_y_ciencia_Aldous_Huxley.epub"
+    },
+    {
+      "id": 1783682240376,
+      "name": "Lo que dice la ciencia sobre dietas, alimentación y salud",
+      "price": "$8.99",
+      "cat": "ciencia",
+      "desc": "Descubre las verdades científicas detrás de la nutrición y la salud con 70 preguntas y respuestas clave. Un recurso esencial para entusiastas y profesionales que buscan entender a fondo cómo la alimentación impacta nuestro bienestar.",
+      "author": "L. Jiménez",
+      "genre": "Salud y Nutrición",
+      "age": "Adultos",
+      "temas": [
+        "Nutrición basada en la evidencia",
+        "Dietas saludables",
+        "Bienestar",
+        "Ciencia de los alimentos",
+        "Mitos nutricionales"
+      ],
+      "tags": [
+        "Nutrición",
+        "Dietas",
+        "Salud",
+        "Ciencia",
+        "Alimentación",
+        "Bienestar"
+      ],
+      "nivel": "Intermedio",
+      "idioma": "Español",
+      "ad": {
+        "headline": "Ciencia y Nutrición: Verdades Reveladas",
+        "subheadline": "70 preguntas clave para entender tu alimentación y mejorar tu salud.",
+        "cta": "Descubre la ciencia",
+        "banner_text": "Guía definitiva de Nutrición Científica",
+        "instagram_caption": "¿Cansado de la desinformación sobre dietas? 🍏 Descubre la verdad con el libro de L. Jiménez.\n70 preguntas y respuestas que te guiarán en el mundo de la nutrición y la salud. ¡Es hora de comer con inteligencia! 💪",
+        "hashtags": [
+          "#NutricionCientifica",
+          "#DietasSaludables",
+          "#SaludYBienestar",
+          "#AlimentacionConsciente",
+          "#VidaSana",
+          "#MitosNutricionales"
+        ]
+      },
+      "pdfName": "Lo_que_dice_la_ciencia_sobre_dietas_alimentacion_y_salud_L_Jimenez.epub",
+      "pdfUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/pdfs/1783682240376_lo_que_dice_la_ciencia_sobre_dietas__alimentaci_n_y_salud.epub",
+      "coverUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/covers/1783682240376_lo_que_dice_la_ciencia_sobre_dietas__alimentaci_n_y_salud.jpg",
+      "file": "Lo_que_dice_la_ciencia_sobre_dietas_alimentacion_y_salud_L_Jimenez.epub"
     }
   ],
   "emailList": [
@@ -7176,5 +7222,5 @@
     "juan@test.com",
     "octavio123@gamil.com"
   ],
-  "updatedAt": "2026-07-10T11:17:10.799Z"
+  "updatedAt": "2026-07-10T11:17:30.469Z"
 }
