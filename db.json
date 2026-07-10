@@ -11007,6 +11007,32 @@
       "pdfUrl": null,
       "coverUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/covers/1783688014173_vol__11___cap__89_al_97.jpg",
       "file": "Vol. 11 - Cap. 89 al 97.pdf"
+    },
+    {
+      "id": 1783688829068,
+      "name": "Vol. 06   Cap. 44 al 52",
+      "price": "$0.99",
+      "cat": "ebooks",
+      "desc": "",
+      "author": "",
+      "genre": "",
+      "age": "",
+      "temas": [],
+      "tags": [],
+      "nivel": "",
+      "idioma": "",
+      "ad": {
+        "headline": "",
+        "subheadline": "",
+        "cta": "",
+        "banner_text": "",
+        "instagram_caption": "",
+        "hashtags": []
+      },
+      "pdfName": "Vol. 06 - Cap. 44 al 52.pdf",
+      "pdfUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/pdfs/1783688829068_vol__06___cap__44_al_52.pdf",
+      "coverUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/covers/1783688829068_vol__06___cap__44_al_52.jpg",
+      "file": "Vol. 06 - Cap. 44 al 52.pdf"
     }
   ],
   "emailList": [
@@ -11015,5 +11041,5 @@
     "juan@test.com",
     "octavio123@gamil.com"
   ],
-  "updatedAt": "2026-07-10T13:06:54.604Z"
+  "updatedAt": "2026-07-10T13:07:44.147Z"
 }
