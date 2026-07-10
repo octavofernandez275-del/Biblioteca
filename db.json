@@ -7592,6 +7592,53 @@
       "pdfUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/pdfs/1783682380489_los_vampiros_de_la_mente.epub",
       "coverUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/covers/1783682380489_los_vampiros_de_la_mente.jpg",
       "file": "Los_vampiros_de_la_mente_Dan_Simmons.epub"
+    },
+    {
+      "id": 1783682396403,
+      "name": "Diario de Greg 8: Mala Suerte",
+      "price": "$2.99",
+      "cat": "juvenil",
+      "desc": "Greg Heffley atraviesa una mala racha: su mejor amigo lo ignora y es el menos popular de la escuela. ¿Logrará Greg revertir su suerte y alcanzar la fama escolar?",
+      "author": "Jeff Kinney",
+      "genre": "Ficción Juvenil",
+      "age": "8-12 años",
+      "temas": [
+        "Vida escolar",
+        "Amistad",
+        "Popularidad",
+        "Humor",
+        "Superación"
+      ],
+      "tags": [
+        "Diario de Greg",
+        "Greg Heffley",
+        "Aventuras escolares",
+        "Libro infantil",
+        "Comedia",
+        "Amistad"
+      ],
+      "nivel": "",
+      "idioma": "Español",
+      "ad": {
+        "headline": "La racha de mala suerte de Greg Heffley",
+        "subheadline": "¿Podrá Greg cambiar su destino y convertirse en el chico más popular?",
+        "cta": "¡Descubre la aventura!",
+        "banner_text": "Diario de Greg 8: ¡Nueva entrega!",
+        "instagram_caption": "¡Prepárate para reír con Greg Heffley! 🤣\nEn 'Mala Suerte', Greg lo tiene todo en contra: amigos, popularidad... ¡incluso Manny tiene más éxito!\n¿Logrará cambiar su destino y ser el rey de la escuela? ¡No te pierdas esta hilarante aventura! ✨",
+        "hashtags": [
+          "#DiarioDeGreg",
+          "#MalaSuerte",
+          "#JeffKinney",
+          "#LibroJuvenil",
+          "#HumorEscolar",
+          "#AventurasDeGreg",
+          "#LibrosEnEspañol"
+        ]
+      },
+      "pdfName": "Mala_suerte_Jeff_Kinney.epub",
+      "pdfUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/pdfs/1783682396403_diario_de_greg_8__mala_suerte.epub",
+      "coverUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/covers/1783682396403_diario_de_greg_8__mala_suerte.jpg",
+      "file": "Mala_suerte_Jeff_Kinney.epub"
     }
   ],
   "emailList": [
@@ -7600,5 +7647,5 @@
     "juan@test.com",
     "octavio123@gamil.com"
   ],
-  "updatedAt": "2026-07-10T11:19:47.565Z"
+  "updatedAt": "2026-07-10T11:20:13.952Z"
 }
