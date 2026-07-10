@@ -7122,6 +7122,52 @@
       "pdfUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/pdfs/1783682211712_las_puertas_de_la_percepci_n__cielo_e_infierno.epub",
       "coverUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/covers/1783682211712_las_puertas_de_la_percepci_n__cielo_e_infierno.jpg",
       "file": "Las_puertas_de_la_percepcion_Cielo_e_infierno_Aldous_Huxley.epub"
+    },
+    {
+      "id": 1783682226686,
+      "name": "Literatura y Ciencia: La Perspectiva de Aldous Huxley",
+      "price": "$4.99",
+      "cat": "novela",
+      "desc": "Explora la profunda intersección entre la literatura y la ciencia a través de la perspicaz mirada de Aldous Huxley. Este ensayo fundamental examina cómo ambos campos configuran nuestra comprensión del mundo y la experiencia humana.",
+      "author": "Aldous Huxley",
+      "genre": "Ensayo",
+      "age": "Adultos",
+      "temas": [
+        "Literatura",
+        "Ciencia",
+        "Filosofía",
+        "Conocimiento",
+        "Crítica Cultural"
+      ],
+      "tags": [
+        "Aldous Huxley",
+        "Ensayo",
+        "Ciencia",
+        "Literatura",
+        "Filosofía",
+        "Pensamiento"
+      ],
+      "nivel": "Intermedio",
+      "idioma": "Español",
+      "ad": {
+        "headline": "Huxley Conecta Ciencia y Literatura",
+        "subheadline": "Un análisis magistral de dos mundos que moldean nuestra realidad.",
+        "cta": "Leer ahora",
+        "banner_text": "Ensayo Clásico de Aldous Huxley",
+        "instagram_caption": "¿Te has preguntado cómo se unen la literatura y la ciencia? 🤯 Aldous Huxley nos lo revela en este ensayo esencial. ¡Un viaje intelectual que expandirá tu mente! ✨ #LecturaRecomendada",
+        "hashtags": [
+          "#AldousHuxley",
+          "#LiteraturaYCiencia",
+          "#Ensayo",
+          "#Filosofia",
+          "#Conocimiento",
+          "#Ebook"
+        ]
+      },
+      "pdfName": "Literatura_y_ciencia_Aldous_Huxley.epub",
+      "pdfUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/pdfs/1783682226686_literatura_y_ciencia__la_perspectiva_de_aldous_huxley.epub",
+      "coverUrl": null,
+      "file": "Literatura_y_ciencia_Aldous_Huxley.epub"
     }
   ],
   "emailList": [
@@ -7130,5 +7176,5 @@
     "juan@test.com",
     "octavio123@gamil.com"
   ],
-  "updatedAt": "2026-07-10T11:16:58.600Z"
+  "updatedAt": "2026-07-10T11:17:10.799Z"
 }
