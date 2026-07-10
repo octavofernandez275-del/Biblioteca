@@ -8099,6 +8099,54 @@
       "pdfUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/pdfs/1783682653125_neuromante_william_gibson.epub",
       "coverUrl": null,
       "file": "Neuromante_William_Gibson.epub"
+    },
+    {
+      "id": 1783682667015,
+      "name": "No más dietas: Aprende a manejar tu insulina",
+      "price": "$5.99",
+      "cat": "salud",
+      "desc": "Descubre cómo funciona tu cuerpo cuando comemos y cómo obtiene energía de los diferentes alimentos. Este libro te guiará para entender tu metabolismo y optimizar tu salud sin restricciones.",
+      "author": "Juanjo García Cabrera",
+      "genre": "Salud y Bienestar",
+      "age": "Adultos",
+      "temas": [
+        "Nutrición",
+        "Insulina",
+        "Metabolismo",
+        "Alimentación saludable",
+        "Bienestar"
+      ],
+      "tags": [
+        "Dieta",
+        "Salud",
+        "Bienestar",
+        "Insulina",
+        "Nutrición",
+        "Hábitos"
+      ],
+      "nivel": "Principiante",
+      "idioma": "Español",
+      "ad": {
+        "headline": "Domina tu insulina, transforma tu salud",
+        "subheadline": "Entiende tu cuerpo y come inteligentemente sin dietas restrictivas ni complejas.",
+        "cta": "Empezar a leer",
+        "banner_text": "¡Adiós dietas! Controla tu insulina.",
+        "instagram_caption": "¡Adiós a las dietas frustrantes! 👋 Descubre cómo tu cuerpo procesa la insulina y cómo puedes usar ese conocimiento para transformar tu energía y tu salud. ✨ Aprende a comer inteligentemente con Juanjo García Cabrera. #NoMasDietas",
+        "hashtags": [
+          "#NoMasDietas",
+          "#Salud",
+          "#Nutricion",
+          "#Insulina",
+          "#Bienestar",
+          "#VidaSana",
+          "#Metabolismo",
+          "#ComidaSaludable"
+        ]
+      },
+      "pdfName": "No_mas_dietas_aprende_a_manejar_tu_insulina_Juanjo_Garcia_Cabrera.epub",
+      "pdfUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/pdfs/1783682667015_no_m_s_dietas__aprende_a_manejar_tu_insulina.epub",
+      "coverUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/covers/1783682667015_no_m_s_dietas__aprende_a_manejar_tu_insulina.jpg",
+      "file": "No_mas_dietas_aprende_a_manejar_tu_insulina_Juanjo_Garcia_Cabrera.epub"
     }
   ],
   "emailList": [
@@ -8107,5 +8155,5 @@
     "juan@test.com",
     "octavio123@gamil.com"
   ],
-  "updatedAt": "2026-07-10T11:24:18.819Z"
+  "updatedAt": "2026-07-10T11:24:33.057Z"
 }
