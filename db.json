@@ -7830,6 +7830,54 @@
       "pdfUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/pdfs/1783682562078_mi_primer_smoking.epub",
       "coverUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/covers/1783682562078_mi_primer_smoking.jpg",
       "file": "Mi_primer_smoking_Aldous_Huxley.epub"
+    },
+    {
+      "id": 1783682578070,
+      "name": "Mi robot, mi chica y yo",
+      "price": "$4.99",
+      "cat": "novela",
+      "desc": "Una intrigante historia de ciencia ficción donde un robot irrumpe en la vida de un joven y su chica, transformando su destino para siempre.",
+      "author": "Clark Carrados",
+      "genre": "Ciencia Ficción",
+      "age": "Adultos",
+      "temas": [
+        "Robots",
+        "Relaciones humanas",
+        "Inteligencia artificial",
+        "Aventura",
+        "Futurismo"
+      ],
+      "tags": [
+        "Ciencia ficción",
+        "Robots",
+        "Romance",
+        "Aventura",
+        "Futurista",
+        "Literatura popular"
+      ],
+      "nivel": "",
+      "idioma": "Español",
+      "ad": {
+        "headline": "Un robot, una chica, un amor inesperado",
+        "subheadline": "Sumérgete en una aventura futurista llena de romance y misterio.",
+        "cta": "Descubrir",
+        "banner_text": "Nueva Ciencia Ficción de Carrados",
+        "instagram_caption": "¿Qué pasa cuando el futuro, la tecnología y el amor colisionan? 🤖❤️\nDescubre 'Mi robot, mi chica y yo', la intrigante novela de Clark Carrados que te atrapará.\nUna aventura futurista que no querrás perderte. ¡Disponible ahora!",
+        "hashtags": [
+          "#CienciaFiccion",
+          "#Robots",
+          "#AmorFuturista",
+          "#ClarkCarrados",
+          "#Ebook",
+          "#NovedadLiteraria",
+          "#AventuraSF",
+          "#LeerAhora"
+        ]
+      },
+      "pdfName": "Mi_robot_mi_chica_y_yo_Clark_Carrados.epub",
+      "pdfUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/pdfs/1783682578070_mi_robot__mi_chica_y_yo.epub",
+      "coverUrl": null,
+      "file": "Mi_robot_mi_chica_y_yo_Clark_Carrados.epub"
     }
   ],
   "emailList": [
@@ -7838,5 +7886,5 @@
     "juan@test.com",
     "octavio123@gamil.com"
   ],
-  "updatedAt": "2026-07-10T11:22:49.708Z"
+  "updatedAt": "2026-07-10T11:23:02.312Z"
 }
