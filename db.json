@@ -10617,6 +10617,32 @@
       "pdfUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/pdfs/1783687562393_cap__227___csm___sabor_a_gambas_y_sangre__1_.pdf",
       "coverUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/covers/1783687562393_cap__227___csm___sabor_a_gambas_y_sangre__1_.jpg",
       "file": "Cap. 227 - CSM - Sabor a gambas y sangre (1).pdf"
+    },
+    {
+      "id": 1783687587075,
+      "name": "Cap. 228   CSM   Paloma",
+      "price": "$0.99",
+      "cat": "ebooks",
+      "desc": "",
+      "author": "",
+      "genre": "",
+      "age": "",
+      "temas": [],
+      "tags": [],
+      "nivel": "",
+      "idioma": "",
+      "ad": {
+        "headline": "",
+        "subheadline": "",
+        "cta": "",
+        "banner_text": "",
+        "instagram_caption": "",
+        "hashtags": []
+      },
+      "pdfName": "Cap. 228 - CSM - Paloma.pdf",
+      "pdfUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/pdfs/1783687587075_cap__228___csm___paloma.pdf",
+      "coverUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/covers/1783687587075_cap__228___csm___paloma.jpg",
+      "file": "Cap. 228 - CSM - Paloma.pdf"
     }
   ],
   "emailList": [
@@ -10625,5 +10651,5 @@
     "juan@test.com",
     "octavio123@gamil.com"
   ],
-  "updatedAt": "2026-07-10T12:46:26.013Z"
+  "updatedAt": "2026-07-10T12:46:42.146Z"
 }
