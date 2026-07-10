@@ -7878,6 +7878,54 @@
       "pdfUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/pdfs/1783682578070_mi_robot__mi_chica_y_yo.epub",
       "coverUrl": null,
       "file": "Mi_robot_mi_chica_y_yo_Clark_Carrados.epub"
+    },
+    {
+      "id": 1783682589590,
+      "name": "Mi Tío Spencer",
+      "price": "$4.99",
+      "cat": "novela",
+      "desc": "Adéntrate en una obra maestra de Aldous Huxley que explora las complejidades de la vida familiar y la sociedad con una perspicacia inigualable. Una narrativa que invita a la reflexión profunda sobre la condición humana.",
+      "author": "Aldous Huxley",
+      "genre": "Novela",
+      "age": "Adultos",
+      "temas": [
+        "Crítica social",
+        "Relaciones familiares",
+        "Filosofía",
+        "Naturaleza humana",
+        "Sátira"
+      ],
+      "tags": [
+        "Clásico",
+        "Ficción",
+        "Huxley",
+        "Literatura",
+        "Reflexión",
+        "Sátira social"
+      ],
+      "nivel": "",
+      "idioma": "Español",
+      "ad": {
+        "headline": "El genio de Huxley te espera.",
+        "subheadline": "Descubre una crítica social brillante a través de un personaje inolvidable.",
+        "cta": "Leer ahora",
+        "banner_text": "Clásico Moderno de Huxley",
+        "instagram_caption": "Sumérgete en la mente brillante de Aldous Huxley con 'Mi Tío Spencer'. 🧐 Una joya literaria que te hará reflexionar sobre la sociedad y el individuo con ingenio y maestría. ¡Perfecto para mentes curiosas! ✨",
+        "hashtags": [
+          "AldousHuxley",
+          "MiTioSpencer",
+          "NovelaClasica",
+          "Literatura",
+          "Reflexion",
+          "Ebook",
+          "LibrosRecomendados",
+          "Ficcion"
+        ]
+      },
+      "pdfName": "Mi_tio_Spencer_Aldous_Huxley.epub",
+      "pdfUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/pdfs/1783682589590_mi_t_o_spencer.epub",
+      "coverUrl": null,
+      "file": "Mi_tio_Spencer_Aldous_Huxley.epub"
     }
   ],
   "emailList": [
@@ -7886,5 +7934,5 @@
     "juan@test.com",
     "octavio123@gamil.com"
   ],
-  "updatedAt": "2026-07-10T11:23:02.312Z"
+  "updatedAt": "2026-07-10T11:23:20.454Z"
 }
