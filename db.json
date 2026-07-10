@@ -7310,6 +7310,52 @@
       "pdfUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/pdfs/1783682274752_los_cuentos_de_beedle_el_bardo.epub",
       "coverUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/covers/1783682274752_los_cuentos_de_beedle_el_bardo.jpg",
       "file": "Los_cuentos_de_Beedle_el_Bardo_J_K_Rowling.epub"
+    },
+    {
+      "id": 1783682292777,
+      "name": "Los Cuervos de Pearblossom",
+      "price": "$2.49",
+      "cat": "infantil",
+      "desc": "Descubre la ingeniosa fábula infantil de Aldous Huxley donde el señor y la señora Cuervo, con ayuda del compadre Búho, idean un plan sorprendente para proteger sus huevos del astuto señor Serpiente. Una historia encantadora sobre inteligencia y la búsqueda creativa de soluciones.",
+      "author": "Aldous Huxley",
+      "genre": "Fábula Infantil",
+      "age": "6-10 años",
+      "temas": [
+        "Ingenio",
+        "Resolución de problemas",
+        "Naturaleza",
+        "Amistad",
+        "Protección"
+      ],
+      "tags": [
+        "Aldous Huxley",
+        "Fábula",
+        "Cuento infantil",
+        "Animales",
+        "Ingenio",
+        "Valores"
+      ],
+      "nivel": "",
+      "idioma": "Español",
+      "ad": {
+        "headline": "La fábula ingeniosa de Aldous Huxley",
+        "subheadline": "Descubre cómo los cuervos protegen sus huevos con astucia y amistad.",
+        "cta": "Descubrir ahora",
+        "banner_text": "Clásico Infantil de Huxley",
+        "instagram_caption": "📚✨ ¿Conoces el único cuento infantil de Aldous Huxley? Sumérgete en la adorable y astuta aventura de los cuervos de Pearblossom. Una fábula llena de ingenio y valores para los más pequeños. ¡No te la pierdas! 👇",
+        "hashtags": [
+          "#AldousHuxley",
+          "#CuentoInfantil",
+          "#Fábula",
+          "#LibrosParaNiños",
+          "#AventuraLiteraria",
+          "#IngenioLiterario"
+        ]
+      },
+      "pdfName": "Los_cuervos_de_Pearblossom_Aldous_Huxley.epub",
+      "pdfUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/pdfs/1783682292777_los_cuervos_de_pearblossom.epub",
+      "coverUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/covers/1783682292777_los_cuervos_de_pearblossom.jpg",
+      "file": "Los_cuervos_de_Pearblossom_Aldous_Huxley.epub"
     }
   ],
   "emailList": [
@@ -7318,5 +7364,5 @@
     "juan@test.com",
     "octavio123@gamil.com"
   ],
-  "updatedAt": "2026-07-10T11:18:02.380Z"
+  "updatedAt": "2026-07-10T11:18:23.777Z"
 }
