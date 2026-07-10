@@ -11510,7 +11510,7 @@
     },
     {
       "id": 1783706484549,
-      "name": "Vol. 15   CSM   Cap. 123 al 133 compressed compressed compressed",
+      "name": "Vol. 15   CSM   Cap. 123 al 133",
       "price": "$0.99",
       "cat": "ebooks",
       "desc": "",
@@ -11619,5 +11619,5 @@
     "juan@test.com",
     "octavio123@gamil.com"
   ],
-  "updatedAt": "2026-07-10T18:38:03.876Z"
+  "updatedAt": "2026-07-10T18:38:57.605Z"
 }
