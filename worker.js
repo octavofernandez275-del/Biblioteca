@@ -374,6 +374,55 @@ Clean composition, attractive colors, centered, suitable for a small store thumb
       }
     }
 
+    // ── BORRAR archivo del repositorio (para liberar espacio tras migrar a Releases) ──
+    if (url.pathname === '/delete-file' && request.method === 'POST') {
+      try {
+        if (!env.GITHUB_TOKEN) {
+          return new Response(JSON.stringify({ error: 'GITHUB_TOKEN no configurado' }), {
+            status: 500, headers: { ...headers, 'Content-Type': 'application/json' },
+          });
+        }
+        const body = await request.json();
+        const { path } = body;
+        if (!path) {
+          return new Response(JSON.stringify({ error: 'Falta el parámetro path' }), {
+            status: 400, headers: { ...headers, 'Content-Type': 'application/json' },
+          });
+        }
+        const ghHeaders = {
+          Authorization: `token ${env.GITHUB_TOKEN}`,
+          Accept: 'application/vnd.github+json',
+          'User-Agent': 'biblioteca-worker',
+        };
+        const getRes = await fetch(`https://api.github.com/repos/${GH_USER}/${GH_REPO}/contents/${path}`, { headers: ghHeaders });
+        if (!getRes.ok) {
+          // Si ya no existe, lo consideramos éxito (nada que borrar)
+          return new Response(JSON.stringify({ ok: true, note: 'El archivo ya no existía' }), {
+            headers: { ...headers, 'Content-Type': 'application/json' },
+          });
+        }
+        const fileData = await getRes.json();
+        const delRes = await fetch(`https://api.github.com/repos/${GH_USER}/${GH_REPO}/contents/${path}`, {
+          method: 'DELETE',
+          headers: { ...ghHeaders, 'Content-Type': 'application/json' },
+          body: JSON.stringify({ message: `Migrar ${path} a Releases (liberar espacio)`, sha: fileData.sha }),
+        });
+        if (!delRes.ok) {
+          const errData = await delRes.json().catch(() => ({}));
+          return new Response(JSON.stringify({ error: 'No se pudo borrar el archivo', detail: errData.message || '' }), {
+            status: 200, headers: { ...headers, 'Content-Type': 'application/json' },
+          });
+        }
+        return new Response(JSON.stringify({ ok: true }), {
+          headers: { ...headers, 'Content-Type': 'application/json' },
+        });
+      } catch (e) {
+        return new Response(JSON.stringify({ error: 'Error borrando archivo', detail: String(e) }), {
+          status: 502, headers: { ...headers, 'Content-Type': 'application/json' },
+        });
+      }
+    }
+
     // ── UPLOAD archivo a GitHub ─────────────────────────────────
     if (url.pathname === '/upload' && request.method === 'POST') {
       try {

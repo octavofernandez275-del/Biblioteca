@@ -3178,6 +3178,7 @@
           <button class="btn btn-ghost" style="font-size:13px;padding:9px 18px;" onclick="batchAutoPrice()">💲 Poner precios automáticos</button>
           <button class="btn btn-ghost" style="font-size:12px;padding:9px 14px;opacity:.75;" onclick="batchAutoPrice(true)" title="Recalcula el precio incluso de productos que ya tienen uno cargado">💲 Recalcular TODOS los precios</button>
           <button class="btn btn-ghost" style="font-size:13px;padding:9px 18px;" onclick="batchReclassifyAll()">🔄 Reclasificar toda la biblioteca</button>
+          <button class="btn btn-ghost" style="font-size:13px;padding:9px 18px;background:rgba(239,68,68,.1);border-color:rgba(239,68,68,.3);color:#FCA5A5;" onclick="migrateFilesToReleases()">📦 Migrar archivos y liberar espacio del repo</button>
         </div>
         <div id="batch-progress" style="display:none;background:rgba(91,91,214,.1);border:1px solid rgba(91,91,214,.3);border-radius:12px;padding:14px 16px;margin-bottom:16px;font-size:13px;color:var(--accent-light);"></div>
         <div style="display:flex;gap:12px;flex-wrap:wrap;margin-bottom:24px;" id="catalog-filters"></div>
@@ -5746,11 +5747,11 @@
     document.getElementById('gh-upload-btn').disabled = false;
   }
 
-  // Umbral de tamaño: por encima de esto GitHub suele fallar/tardar demasiado (límite real ~50-100MB)
-  const GITHUB_SIZE_LIMIT = 40 * 1024 * 1024; // 40 MB
+  // A partir de ahora, TODO PDF/carátula va a GitHub Releases (no a la carpeta del repo),
+  // así el repositorio nunca vuelve a superar el límite de 1GB de GitHub Pages.
+  const GITHUB_SIZE_LIMIT = 0;
 
   // ─── Helper genérico: sube un File y devuelve la URL pública ───
-  // Archivos chicos -> GitHub (como siempre). Archivos grandes -> Cloudflare R2 automáticamente.
   async function uploadFileToGithub(file, type, baseName) {
     const ext = file.name.split('.').pop();
 
@@ -6602,6 +6603,67 @@
     }
     saveDB(); populateAdmin(); renderLandingGrids();
     if (prog) { prog.textContent = `✅ Descripciones generadas para ${done} de ${missing.length} productos.`; setTimeout(() => { prog.style.display = 'none'; }, 5000); }
+  }
+
+  async function migrateFilesToReleases() {
+    const targets = [];
+    for (const p of db.products) {
+      if (p.pdfUrl && p.pdfUrl.includes('raw.githubusercontent.com')) targets.push({ p, field: 'pdfUrl', type: 'pdf' });
+      if (p.coverUrl && p.coverUrl.includes('raw.githubusercontent.com')) targets.push({ p, field: 'coverUrl', type: 'cover' });
+    }
+    if (!targets.length) { showToast('No hay archivos para migrar — ya están todos en Releases', 'success'); return; }
+
+    const confirmMsg = `Esto va a mover ${targets.length} archivo(s) del repositorio a GitHub Releases, para liberar espacio y que el sitio vuelva a publicarse. Puede tardar varios minutos. ¿Continuar?`;
+    if (!confirm(confirmMsg)) return;
+
+    const prog = document.getElementById('batch-progress');
+    if (prog) prog.style.display = 'block';
+    let done = 0, failed = 0;
+
+    for (let i = 0; i < targets.length; i++) {
+      const { p, field, type } = targets[i];
+      const oldUrl = p[field];
+      if (prog) prog.textContent = `📦 Migrando ${i + 1}/${targets.length}: ${p.name} (${field})`;
+      try {
+        // Extraer la ruta dentro del repo desde la URL raw (pdfs/xxx.pdf o covers/xxx.jpg)
+        const match = oldUrl.match(/\/main\/(.+)$/);
+        if (!match) { failed++; continue; }
+        const repoPath = decodeURIComponent(match[1]);
+        const fileName = repoPath.split('/').pop();
+
+        // 1) Descargar el archivo actual
+        const fileRes = await fetch(oldUrl);
+        if (!fileRes.ok) { failed++; continue; }
+        const blob = await fileRes.blob();
+        const file = new File([blob], fileName, { type: blob.type || 'application/octet-stream' });
+
+        // 2) Subirlo como Release asset
+        const ext = fileName.split('.').pop();
+        const baseName = fileName.replace(`.${ext}`, '');
+        const newUrl = await uploadFileToR2(file, type, baseName, ext);
+
+        // 3) Actualizar el producto con la nueva URL
+        p[field] = newUrl;
+        saveDB();
+
+        // 4) Borrar el archivo viejo del repositorio
+        await fetch(`${WORKER_URL}/delete-file`, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ path: repoPath })
+        });
+
+        done++;
+      } catch (e) {
+        console.error(`migrateFilesToReleases: fallo con ${p.name} (${field}):`, e);
+        failed++;
+      }
+      await new Promise(r => setTimeout(r, 500));
+    }
+
+    saveDB(); populateAdmin(); renderLandingGrids();
+    if (prog) { prog.textContent = `✅ Migración terminada — ${done} migrados, ${failed} fallidos de ${targets.length}.`; setTimeout(() => { prog.style.display = 'none'; }, 8000); }
+    showToast(`✅ Migración completa: ${done}/${targets.length}`, 'success');
   }
 
   async function batchReclassifyAll() {
