@@ -7450,6 +7450,53 @@
       "pdfUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/pdfs/1783682331853_los_esc_ndalos_de_crome.epub",
       "coverUrl": null,
       "file": "Los_escandalos_de_Crome_Aldous_Huxley.epub"
+    },
+    {
+      "id": 1783682343789,
+      "name": "Los fuegos del Edén",
+      "price": "$4.99",
+      "cat": "terror",
+      "desc": "Adéntrate en una historia donde el Edén se transforma en un escenario de misterio y horror. Descubre los profundos secretos que Dan Simmons teje en esta fascinante y escalofriante novela.",
+      "author": "Dan Simmons",
+      "genre": "Horror",
+      "age": "Adultos",
+      "temas": [
+        "Horror",
+        "Misterio",
+        "Sobrenatural",
+        "El bien y el mal",
+        "Suspense"
+      ],
+      "tags": [
+        "Horror sobrenatural",
+        "Thriller psicológico",
+        "Ficción oscura",
+        "Misterio",
+        "Dan Simmons",
+        "Novela"
+      ],
+      "nivel": "",
+      "idioma": "Español",
+      "ad": {
+        "headline": "El Edén arde de horror",
+        "subheadline": "Dan Simmons te invita a un viaje escalofriante al corazón de la oscuridad.",
+        "cta": "Comprar ahora",
+        "banner_text": "Horror Sobrenatural: Dan Simmons",
+        "instagram_caption": "🔥 ¿Y si el paraíso esconde el horror más profundo? Adéntrate en 'Los fuegos del Edén' de Dan Simmons y descubre un thriller que te helará la sangre. ¿Te atreves? 💀",
+        "hashtags": [
+          "#LosFuegosDelEden",
+          "#DanSimmons",
+          "#HorrorLiterario",
+          "#NovelaDeHorror",
+          "#Suspense",
+          "#LecturaRecomendada",
+          "#EbookEspaña"
+        ]
+      },
+      "pdfName": "Los_fuegos_del_Eden_Dan_Simmons.epub",
+      "pdfUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/pdfs/1783682343789_los_fuegos_del_ed_n.epub",
+      "coverUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/covers/1783682343789_los_fuegos_del_ed_n.jpg",
+      "file": "Los_fuegos_del_Eden_Dan_Simmons.epub"
     }
   ],
   "emailList": [
@@ -7458,5 +7505,5 @@
     "juan@test.com",
     "octavio123@gamil.com"
   ],
-  "updatedAt": "2026-07-10T11:18:56.385Z"
+  "updatedAt": "2026-07-10T11:19:13.325Z"
 }
