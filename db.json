@@ -10669,6 +10669,32 @@
       "pdfUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/pdfs/1783687603181_cap__229___csm___el_chotacabras_jotaka_y_asa.pdf",
       "coverUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/covers/1783687603181_cap__229___csm___el_chotacabras_jotaka_y_asa.jpg",
       "file": "Cap. 229 - CSM - El chotacabras Jotaka y Asa.pdf"
+    },
+    {
+      "id": 1783687622937,
+      "name": "Cap. 230   CSM   Sexo y selección natural",
+      "price": "$0.99",
+      "cat": "ebooks",
+      "desc": "",
+      "author": "",
+      "genre": "",
+      "age": "",
+      "temas": [],
+      "tags": [],
+      "nivel": "",
+      "idioma": "",
+      "ad": {
+        "headline": "",
+        "subheadline": "",
+        "cta": "",
+        "banner_text": "",
+        "instagram_caption": "",
+        "hashtags": []
+      },
+      "pdfName": "Cap. 230 - CSM - Sexo y selección natural.pdf",
+      "pdfUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/pdfs/1783687622937_cap__230___csm___sexo_y_selecci_n_natural.pdf",
+      "coverUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/covers/1783687622937_cap__230___csm___sexo_y_selecci_n_natural.jpg",
+      "file": "Cap. 230 - CSM - Sexo y selección natural.pdf"
     }
   ],
   "emailList": [
@@ -10677,5 +10703,5 @@
     "juan@test.com",
     "octavio123@gamil.com"
   ],
-  "updatedAt": "2026-07-10T12:47:01.224Z"
+  "updatedAt": "2026-07-10T12:47:18.113Z"
 }
