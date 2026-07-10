@@ -10981,6 +10981,52 @@
       "pdfUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/pdfs/1783692568321_vol__09___cap__72_al_79_compressed.pdf",
       "coverUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/covers/1783692568321_vol__09___cap__72_al_79_compressed.jpg",
       "file": "Vol. 09 - Cap. 72 al 79-compressed.pdf"
+    },
+    {
+      "id": 1783697737812,
+      "name": "Volumen 8: Capítulos 62 al 70",
+      "price": "$4.99",
+      "cat": "novela",
+      "desc": "Este volumen digital presenta los emocionantes capítulos 62 a 70, continuando la narrativa o el contenido temático de la serie. Ideal para quienes siguen la colección y buscan avanzar en la historia o aprendizaje.",
+      "author": "",
+      "genre": "Ficción",
+      "age": "Adultos",
+      "temas": [
+        "Narrativa serial",
+        "Continuación de historia",
+        "Desarrollo de trama",
+        "Eventos clave",
+        "Evolución de personajes"
+      ],
+      "tags": [
+        "Serie",
+        "Capítulos",
+        "Volumen",
+        "Ebook",
+        "Continuación",
+        "Digital"
+      ],
+      "nivel": "",
+      "idioma": "Español",
+      "ad": {
+        "headline": "Sumérgete en la continuidad de tu saga favorita",
+        "subheadline": "No te pierdas los emocionantes eventos de los capítulos 62 al 70.",
+        "cta": "Continuar la lectura",
+        "banner_text": "Nueva entrega: Vol. 8",
+        "instagram_caption": "¡La espera terminó! 🤩 El Volumen 8, con los emocionantes capítulos 62 al 70, ya está disponible.\nSumérgete en la continuación de la historia que te tiene atrapado. ¿Qué giros te esperan?\n#Volumen8 #NuevosCapítulos #Ebook",
+        "hashtags": [
+          "#Volumen8",
+          "#Capitulos62al70",
+          "#SerieDigital",
+          "#EbookFicción",
+          "#LecturaDigital",
+          "#ContinuarLaHistoria"
+        ]
+      },
+      "pdfName": "Vol. 08 - Cap. 62 al 70_compressed.pdf",
+      "pdfUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/pdfs/1783697737812_volumen_8__cap_tulos_62_al_70.pdf",
+      "coverUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/covers/1783697737812_volumen_8__cap_tulos_62_al_70.jpg",
+      "file": "Vol. 08 - Cap. 62 al 70_compressed.pdf"
     }
   ],
   "emailList": [
@@ -10989,5 +11035,5 @@
     "juan@test.com",
     "octavio123@gamil.com"
   ],
-  "updatedAt": "2026-07-10T15:18:49.247Z"
+  "updatedAt": "2026-07-10T15:36:05.813Z"
 }
