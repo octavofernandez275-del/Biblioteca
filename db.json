@@ -11174,6 +11174,53 @@
       "pdfUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/pdfs/1783701474891_csm__volumen_14__cap_tulos_113_122_.pdf",
       "coverUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/covers/1783701474891_csm__volumen_14__cap_tulos_113_122_.jpg",
       "file": "Vol. 14 - CSM - Cap. 113 al 122.pdf"
+    },
+    {
+      "id": 1783701575001,
+      "name": "Vínculos Esenciales en Michigan",
+      "price": "$3.99",
+      "cat": "ebooks",
+      "desc": "Este capítulo explora las intrincadas conexiones y dinámicas sociales que han moldeado la región de Michigan. Descubre los lazos que unen a sus comunidades y su rica historia.",
+      "author": "",
+      "genre": "Estudio Regional",
+      "age": "Adultos",
+      "temas": [
+        "Relaciones sociales",
+        "Comunidad",
+        "Historia regional",
+        "Dinámicas culturales",
+        "Geografía humana"
+      ],
+      "tags": [
+        "Michigan",
+        "Vínculos",
+        "Sociedad",
+        "Historia",
+        "Regiones",
+        "Conexiones"
+      ],
+      "nivel": "Intermedio",
+      "idioma": "Español",
+      "ad": {
+        "headline": "Michigan: Descubre los lazos que tejen su historia",
+        "subheadline": "Explora las conexiones esenciales y las dinámicas sociales de este vibrante estado.",
+        "cta": "Explorar capítulo",
+        "banner_text": "Análisis Profundo: Michigan",
+        "instagram_caption": "¿Curioso sobre los hilos invisibles que tejen la sociedad de Michigan? 🧐 Este capítulo te sumerge en las dinámicas y vínculos esenciales que definen la región. ¡Una lectura fascinante para entender su esencia! ✨",
+        "hashtags": [
+          "#Michigan",
+          "#VínculosSociales",
+          "#HistoriaRegional",
+          "#ComunidadMichigan",
+          "#EstudioSocial",
+          "#DescubreMichigan",
+          "#NuevosCapítulos"
+        ]
+      },
+      "pdfName": "Cap. 220 - CSM - Vínculos y Michigan.pdf",
+      "pdfUrl": null,
+      "coverUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/covers/1783701575001_v_nculos_esenciales_en_michigan.jpg",
+      "file": "Cap. 220 - CSM - Vínculos y Michigan.pdf"
     }
   ],
   "emailList": [
@@ -11182,5 +11229,5 @@
     "juan@test.com",
     "octavio123@gamil.com"
   ],
-  "updatedAt": "2026-07-10T16:38:23.150Z"
+  "updatedAt": "2026-07-10T16:40:01.641Z"
 }
