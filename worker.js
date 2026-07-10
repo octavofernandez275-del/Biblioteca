@@ -84,7 +84,6 @@ export default {
   "idioma": "string",
   "nivel": "string (Principiante, Intermedio, Avanzado, o vacío)",
   "tags": ["array", "de", "3-6", "etiquetas", "cortas"],
-  "precio_sugerido": 4.99,
   "ad": {
     "headline": "string — frase promocional corta y atractiva (máx 8 palabras)",
     "subheadline": "string — complemento del titular (máx 12 palabras)",
@@ -99,8 +98,7 @@ Producto: ${name || ''}
 Descripción: ${desc || ''}
 Nombre del archivo: ${pdfName || 'no disponible'}
 extractMeta: ${extractMeta ? 'true — genera titulo_sugerido y descripcion_sugerida' : 'false — deja titulo_sugerido y descripcion_sugerida vacíos'}
-El bloque "ad" se genera siempre, tenga o no extractMeta activado, basándote en el nombre/descripción disponibles.
-Para "precio_sugerido": es un ebook digital en español que se vende por descarga en una tienda propia (no plataforma grande tipo Amazon). Considerá género, profundidad/extensión aparente del contenido, y si el público es infantil (más barato, ej 0.99-2.99), general/ficción (ej 2.99-6.99) o técnico/profesional/negocios (más caro, ej 5.99-14.99). Devolvé siempre un número, sin símbolo de moneda.`;
+El bloque "ad" se genera siempre, tenga o no extractMeta activado, basándote en el nombre/descripción disponibles.`;
 
         const geminiRes = await fetch(
           'https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent',
@@ -132,7 +130,7 @@ Para "precio_sugerido": es un ebook digital en español que se vende por descarg
             error: 'Gemini no devolvió clasificación',
             detail: motivo,
             titulo_sugerido: '', descripcion_sugerida: '', genero: '',
-            temas: [], autor_sugerido: '', edad: '', idioma: '', nivel: '', tags: [], precio_sugerido: null,
+            temas: [], autor_sugerido: '', edad: '', idioma: '', nivel: '', tags: [],
             ad: { headline: '', subheadline: '', cta: '', banner_text: '', instagram_caption: '', hashtags: [] }
           }), {
             status: 200,
@@ -151,7 +149,7 @@ Para "precio_sugerido": es un ebook digital en español que se vende por descarg
             error: 'Respuesta de Gemini no era JSON válido',
             detail: clean.slice(0, 300),
             titulo_sugerido: '', descripcion_sugerida: '', genero: '',
-            temas: [], autor_sugerido: '', edad: '', idioma: '', nivel: '', tags: [], precio_sugerido: null,
+            temas: [], autor_sugerido: '', edad: '', idioma: '', nivel: '', tags: [],
             ad: { headline: '', subheadline: '', cta: '', banner_text: '', instagram_caption: '', hashtags: [] }
           }), {
             status: 200,
@@ -165,104 +163,6 @@ Para "precio_sugerido": es un ebook digital en español que se vende por descarg
 
       } catch (e) {
         return new Response(JSON.stringify({ error: 'Error clasificando', detail: String(e) }), {
-          status: 502,
-          headers: { ...headers, 'Content-Type': 'application/json' },
-        });
-      }
-    }
-
-    // ── GENERAR PUBLICIDAD COMPLETA (guion de video + publicación estática) ──
-    if (url.pathname === '/generate-promo' && request.method === 'POST') {
-      try {
-        if (!env.GEMINI_API_KEY) {
-          return new Response(JSON.stringify({ error: 'GEMINI_API_KEY no configurada' }), {
-            status: 500,
-            headers: { ...headers, 'Content-Type': 'application/json' },
-          });
-        }
-
-        const body = await request.json();
-        const { name, author, genre, desc, age } = body;
-        if (!name) {
-          return new Response(JSON.stringify({ error: 'Falta el nombre del producto' }), {
-            status: 400, headers: { ...headers, 'Content-Type': 'application/json' },
-          });
-        }
-
-        const prompt = `Sos un creador de contenido especializado en promocionar libros en redes sociales (estilo BookTok en español). Te paso los datos de un libro que se vende como ebook en PDF, y tenés que generar contenido promocional en TEXTO PLANO (nada de JSON, nada de markdown con asteriscos ni backticks), en español, listo para copiar y pegar. Seguí EXACTAMENTE esta estructura y formato:
-
-🎬 GUION PARA REELS/TIKTOK (30-40 seg)
-
-[Toma 1 - 0-3seg]
-Texto en pantalla: (una frase gancho corta y directa sobre el libro)
-
-[Toma 2 - 3-15seg]
-(2-4 líneas describiendo la premisa/gancho del libro de forma atractiva, sin spoilers grandes)
-
-[Toma 3 - 15-25seg]
-(1-3 líneas con un dato curioso, contexto del autor, o por qué vale la pena — si no hay datos reales conocidos del autor/obra, usar algo genérico y honesto sobre el género/tema, no inventar datos falsos específicos)
-
-[Toma 4 - 25-35seg]
-Texto en pantalla: "📖 Disponible en PDF — link en bio"
-(1-2 líneas de cierre, ej comparación con algo similar conocido del género, si aplica)
-
-[Cierre]
-(una frase corta invitando a guardar/compartir)
-
----
-
-📱 PUBLICACIÓN ESTÁTICA (Instagram/Facebook)
-
-Caption:
-(título del libro con emoji relacionado al tema)
-
-(3-5 líneas de descripción atractiva tipo publicidad, con buen gancho)
-
-📥 Disponible en PDF — link en bio
-
-(8-10 hashtags relevantes en español e inglés mezclados, sin espacios, relacionados al género/tema del libro y a BookTok)
-
----
-DATOS DEL LIBRO:
-Título: ${name}
-Autor: ${author || 'No especificado'}
-Género/tema: ${genre || 'No especificado'}
-Descripción: ${desc || 'No disponible'}
-Público: ${age || 'No especificado'}
-
-Generá el contenido siguiendo EXACTAMENTE la estructura de arriba, en español, sin inventar datos biográficos o históricos específicos que no te haya dado (fechas exactas, premios, cifras de ventas, etc.) — si querés agregar contexto usá afirmaciones generales sobre el género o el tipo de historia, no datos puntuales no verificables.`;
-
-        const geminiRes = await fetch(
-          'https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent',
-          {
-            method: 'POST',
-            headers: {
-              'Content-Type': 'application/json',
-              'x-goog-api-key': env.GEMINI_API_KEY,
-            },
-            body: JSON.stringify({ contents: [{ parts: [{ text: prompt }] }] }),
-          }
-        );
-        const geminiData = await geminiRes.json();
-        const rawText = geminiData.candidates?.[0]?.content?.parts?.[0]?.text;
-
-        if (!rawText) {
-          const motivo =
-            geminiData.error?.message ||
-            geminiData.promptFeedback?.blockReason ||
-            geminiData.candidates?.[0]?.finishReason ||
-            'Gemini no devolvió contenido';
-          return new Response(JSON.stringify({ error: 'Gemini no devolvió la publicidad', detail: motivo }), {
-            status: 200, headers: { ...headers, 'Content-Type': 'application/json' },
-          });
-        }
-
-        return new Response(JSON.stringify({ promo: rawText.trim() }), {
-          headers: { ...headers, 'Content-Type': 'application/json' },
-        });
-
-      } catch (e) {
-        return new Response(JSON.stringify({ error: 'Error generando publicidad', detail: String(e) }), {
           status: 502,
           headers: { ...headers, 'Content-Type': 'application/json' },
         });
@@ -283,48 +183,18 @@ Generá el contenido siguiendo EXACTAMENTE la estructura de arriba, en español,
         }
 
         const body = await request.json();
-        const { name, genre, desc, author, customPrompt } = body;
+        const { name, genre, desc, author } = body;
 
-        let prompt;
-        if (customPrompt && customPrompt.trim()) {
-          // El usuario describió la portada original a mano — priorizamos su descripción
-          prompt = `Book cover illustration, professional digital art style, vertical book cover proportions (2:3), no text or letters anywhere in the image, just the illustration/artwork.
-${customPrompt.trim()}
-Context — book title (do not render as text in the image): ${name || 'Untitled'}
-Clean composition, centered, suitable for a small store thumbnail.`;
-        } else {
-          prompt = `Book cover illustration, professional digital art style, vertical book cover proportions (2:3), no text or letters anywhere in the image, just the illustration/artwork.
+        const prompt = `Book cover illustration, professional digital art style, vertical book cover proportions (2:3), no text or letters anywhere in the image, just the illustration/artwork.
 Book title: ${name || 'Untitled'}
 Genre/theme: ${genre || 'General'}
 ${desc ? `About: ${desc}` : ''}
 ${author ? `Author: ${author}` : ''}
 Clean composition, attractive colors, centered, suitable for a small store thumbnail.`;
-        }
 
-        // Reintentos con backoff — Workers AI a veces falla de forma transitoria
-        // (rate limiting, timeouts breves), especialmente al generar varias seguidas.
-        let result, lastErr;
-        const maxAttempts = 3;
-        for (let attempt = 1; attempt <= maxAttempts; attempt++) {
-          try {
-            result = await env.AI.run('@cf/black-forest-labs/flux-1-schnell', {
-              prompt: prompt.slice(0, 2000),
-            });
-            lastErr = null;
-            break;
-          } catch (aiErr) {
-            lastErr = aiErr;
-            if (attempt < maxAttempts) {
-              await new Promise(r => setTimeout(r, attempt * 1200)); // 1.2s, luego 2.4s
-            }
-          }
-        }
-        if (lastErr) {
-          return new Response(JSON.stringify({ error: 'Workers AI falló tras varios intentos', detail: String(lastErr) }), {
-            status: 200,
-            headers: { ...headers, 'Content-Type': 'application/json' },
-          });
-        }
+        const result = await env.AI.run('@cf/black-forest-labs/flux-1-schnell', {
+          prompt: prompt.slice(0, 2000),
+        });
 
         // El binding puede devolver { image: base64 } o un ReadableStream según el modelo/versión
         let base64;
@@ -356,133 +226,149 @@ Clean composition, attractive colors, centered, suitable for a small store thumb
       }
     }
 
-    // ── BUSCAR PORTADA REAL DEL LIBRO ─────────────────────────
-    // Orden de prioridad: 1) Google Books (catálogo comercial amplio, gratis, sin tarjeta)
-    // 2) Open Library (gratis, sin API key, buen respaldo)
-    // 3) Scrappa.co (buscador general de imágenes, respaldo final para libros raros/independientes)
-    if (url.pathname === '/search-cover-images' && request.method === 'POST') {
+    // ── MERCADO PAGO: crear preferencia de pago (Checkout Pro) ──
+    if (url.pathname === '/mp-create-preference' && request.method === 'POST') {
       try {
-        const body = await request.json();
-        const { query, author } = body;
-        if (!query || !query.trim()) {
-          return new Response(JSON.stringify({ error: 'Falta el campo query' }), {
-            status: 400,
-            headers: { ...headers, 'Content-Type': 'application/json' },
+        if (!env.MP_ACCESS_TOKEN) {
+          return new Response(JSON.stringify({ error: 'MP_ACCESS_TOKEN no configurado' }), {
+            status: 200, headers: { ...headers, 'Content-Type': 'application/json' },
           });
         }
-        const title = query.trim();
-        let results = [];
-
-        // 1) Google Books API (gratis, no requiere tarjeta; key opcional pero recomendada)
-        try {
-          const gbUrl = new URL('https://www.googleapis.com/books/v1/volumes');
-          let q = `intitle:${title}`;
-          if (author) q += `+inauthor:${author}`;
-          gbUrl.searchParams.set('q', q);
-          gbUrl.searchParams.set('maxResults', '10');
-          if (env.GOOGLE_BOOKS_API_KEY) gbUrl.searchParams.set('key', env.GOOGLE_BOOKS_API_KEY);
-
-          const gbRes = await fetch(gbUrl.toString());
-          const gbData = await gbRes.json();
-          if (gbRes.ok && gbData.items) {
-            results.push(...gbData.items
-              .filter(it => it.volumeInfo?.imageLinks)
-              .map(it => {
-                const img = it.volumeInfo.imageLinks;
-                const best = (img.extraLarge || img.large || img.medium || img.thumbnail || img.smallThumbnail || '').replace('http://', 'https://');
-                return {
-                  title: it.volumeInfo.title || '',
-                  imageUrl: best,
-                  thumbnailUrl: (img.thumbnail || img.smallThumbnail || best).replace('http://', 'https://'),
-                  contextUrl: it.volumeInfo.infoLink || '',
-                  source: 'Google Books',
-                };
-              }));
-          }
-        } catch (e) { console.warn('Google Books falló:', e); }
-
-        // 2) Open Library (gratis, sin key)
-        try {
-          const olUrl = new URL('https://openlibrary.org/search.json');
-          olUrl.searchParams.set('title', title);
-          if (author) olUrl.searchParams.set('author', author);
-          olUrl.searchParams.set('limit', '10');
-
-          const olRes = await fetch(olUrl.toString());
-          const olData = await olRes.json();
-          if (olRes.ok && olData.docs) {
-            results.push(...olData.docs
-              .filter(d => d.cover_i)
-              .map(d => ({
-                title: d.title || '',
-                imageUrl: `https://covers.openlibrary.org/b/id/${d.cover_i}-L.jpg`,
-                thumbnailUrl: `https://covers.openlibrary.org/b/id/${d.cover_i}-M.jpg`,
-                contextUrl: d.key ? `https://openlibrary.org${d.key}` : '',
-                source: 'Open Library',
-              })));
-          }
-        } catch (e) { console.warn('Open Library falló:', e); }
-
-        // 3) Respaldo: Scrappa.co (buscador general de imágenes), solo si no hubo resultados oficiales
-        if (results.length === 0 && env.SCRAPPA_API_KEY) {
-          try {
-            const scUrl = new URL('https://scrappa.co/api/google-images');
-            scUrl.searchParams.set('api_key', env.SCRAPPA_API_KEY);
-            scUrl.searchParams.set('q', `${title} ${author || ''} libro portada book cover`.trim());
-
-            const scRes = await fetch(scUrl.toString());
-            const scData = await scRes.json();
-            if (scRes.ok && !scData.error) {
-              const raw = scData.images || scData.results || scData.data || [];
-              results.push(...raw.slice(0, 10).map(item => ({
-                title: item.title || '',
-                imageUrl: item.imageUrl || item.image_url || item.original || item.url || item.link,
-                thumbnailUrl: item.thumbnailUrl || item.thumbnail_url || item.thumbnail || item.imageUrl || item.image_url,
-                contextUrl: item.link || item.source_url || '',
-                source: item.source || item.domain || 'Internet',
-              })).filter(r => r.imageUrl));
-            }
-          } catch (e) { console.warn('Scrappa (respaldo) falló:', e); }
+        const body = await request.json();
+        const { name, amount, siteUrl } = body;
+        if (!name || !amount) {
+          return new Response(JSON.stringify({ error: 'Faltan datos (name/amount)' }), {
+            status: 200, headers: { ...headers, 'Content-Type': 'application/json' },
+          });
         }
 
-        return new Response(JSON.stringify({ results: results.slice(0, 12) }), {
+        const base = (siteUrl || '').replace(/\/$/, '');
+        const preference = {
+          items: [{
+            title: String(name).slice(0, 250),
+            quantity: 1,
+            unit_price: Number(amount),
+            currency_id: 'ARS',
+          }],
+          back_urls: {
+            success: `${base}?mp_status=success&mp_product=${encodeURIComponent(name)}&mp_amount=${amount}`,
+            failure: `${base}?mp_status=failure`,
+            pending: `${base}?mp_status=pending`,
+          },
+          auto_return: 'approved',
+        };
+
+        const mpRes = await fetch('https://api.mercadopago.com/checkout/preferences', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            Authorization: `Bearer ${env.MP_ACCESS_TOKEN}`,
+          },
+          body: JSON.stringify(preference),
+        });
+        const mpData = await mpRes.json();
+
+        if (!mpRes.ok || !mpData.init_point) {
+          return new Response(JSON.stringify({ error: 'Mercado Pago rechazó la preferencia', detail: mpData.message || JSON.stringify(mpData).slice(0,300) }), {
+            status: 200, headers: { ...headers, 'Content-Type': 'application/json' },
+          });
+        }
+
+        return new Response(JSON.stringify({ init_point: mpData.init_point, preference_id: mpData.id }), {
           headers: { ...headers, 'Content-Type': 'application/json' },
         });
-
       } catch (e) {
-        return new Response(JSON.stringify({ error: 'Error buscando portada en internet', detail: String(e) }), {
-          status: 502,
-          headers: { ...headers, 'Content-Type': 'application/json' },
+        return new Response(JSON.stringify({ error: 'Error creando preferencia de Mercado Pago', detail: String(e) }), {
+          status: 502, headers: { ...headers, 'Content-Type': 'application/json' },
         });
       }
     }
 
-    // ── PROXY DE IMAGEN (para descargar una portada elegida sin CORS) ──
-    if (url.pathname === '/image-proxy' && request.method === 'GET') {
-      const imgUrl = url.searchParams.get('url');
-      if (!imgUrl) {
-        return new Response(JSON.stringify({ error: 'Falta parámetro url' }), {
-          status: 400, headers: { ...headers, 'Content-Type': 'application/json' },
-        });
-      }
+    // ── GITHUB RELEASES: subir archivo GRANDE (PDF/EPUB que no entran en la API de Contents) ──
+    // GitHub Releases acepta archivos de hasta 2GB por asset, usando el mismo GITHUB_TOKEN.
+    if (url.pathname === '/upload-large' && request.method === 'POST') {
       try {
-        const imgRes = await fetch(imgUrl, { headers: { 'User-Agent': 'biblioteca-worker' } });
-        if (!imgRes.ok) {
-          return new Response(JSON.stringify({ error: `Error al obtener imagen: ${imgRes.status}` }), {
-            status: imgRes.status, headers: { ...headers, 'Content-Type': 'application/json' },
+        if (!env.GITHUB_TOKEN) {
+          return new Response(JSON.stringify({ error: 'GITHUB_TOKEN no configurado' }), {
+            status: 500, headers: { ...headers, 'Content-Type': 'application/json' },
           });
         }
-        const imgBody = await imgRes.arrayBuffer();
-        return new Response(imgBody, {
-          status: 200,
-          headers: {
-            ...headers,
-            'Content-Type': imgRes.headers.get('Content-Type') || 'image/jpeg',
-            'Cache-Control': 'public, max-age=3600',
-          },
+        const fileName = url.searchParams.get('name');
+        if (!fileName) {
+          return new Response(JSON.stringify({ error: 'Falta el parámetro name' }), {
+            status: 400, headers: { ...headers, 'Content-Type': 'application/json' },
+          });
+        }
+
+        const RELEASE_TAG = 'archivos-grandes';
+        const ghHeaders = {
+          Authorization: `token ${env.GITHUB_TOKEN}`,
+          Accept: 'application/vnd.github+json',
+          'User-Agent': 'biblioteca-worker',
+        };
+
+        // 1) Buscar el release "buzón" de archivos grandes, o crearlo si no existe
+        let release;
+        const getRelRes = await fetch(
+          `https://api.github.com/repos/${GH_USER}/${GH_REPO}/releases/tags/${RELEASE_TAG}`,
+          { headers: ghHeaders }
+        );
+        if (getRelRes.ok) {
+          release = await getRelRes.json();
+        } else {
+          const createRelRes = await fetch(
+            `https://api.github.com/repos/${GH_USER}/${GH_REPO}/releases`,
+            {
+              method: 'POST',
+              headers: { ...ghHeaders, 'Content-Type': 'application/json' },
+              body: JSON.stringify({
+                tag_name: RELEASE_TAG,
+                name: 'Archivos grandes (PDFs/EPUBs)',
+                body: 'Este release se usa como almacenamiento de archivos grandes que no entran en la API normal de GitHub. No borrar.',
+                draft: false,
+                prerelease: false,
+              }),
+            }
+          );
+          if (!createRelRes.ok) {
+            const errData = await createRelRes.json().catch(() => ({}));
+            return new Response(JSON.stringify({ error: 'No se pudo crear el release de almacenamiento', detail: errData.message || '' }), {
+              status: 200, headers: { ...headers, 'Content-Type': 'application/json' },
+            });
+          }
+          release = await createRelRes.json();
+        }
+
+        // 2) Si ya existe un asset con ese nombre exacto, lo borramos antes de resubir (para poder reemplazar archivos)
+        const existingAsset = (release.assets || []).find(a => a.name === fileName);
+        if (existingAsset) {
+          await fetch(`https://api.github.com/repos/${GH_USER}/${GH_REPO}/releases/assets/${existingAsset.id}`, {
+            method: 'DELETE', headers: ghHeaders,
+          });
+        }
+
+        // 3) Subir el archivo como asset del release (host distinto: uploads.github.com)
+        const contentType = request.headers.get('Content-Type') || 'application/octet-stream';
+        const uploadUrl = `https://uploads.github.com/repos/${GH_USER}/${GH_REPO}/releases/${release.id}/assets?name=${encodeURIComponent(fileName)}`;
+        const uploadRes = await fetch(uploadUrl, {
+          method: 'POST',
+          headers: { ...ghHeaders, 'Content-Type': contentType },
+          body: request.body,
+        });
+
+        if (!uploadRes.ok) {
+          const errData = await uploadRes.json().catch(() => ({}));
+          return new Response(JSON.stringify({ error: 'GitHub rechazó la subida del archivo grande', detail: errData.message || '' }), {
+            status: 200, headers: { ...headers, 'Content-Type': 'application/json' },
+          });
+        }
+        const assetData = await uploadRes.json();
+
+        return new Response(JSON.stringify({ url: assetData.browser_download_url }), {
+          headers: { ...headers, 'Content-Type': 'application/json' },
         });
       } catch (e) {
-        return new Response(JSON.stringify({ error: 'Error en proxy de imagen', detail: String(e) }), {
+        return new Response(JSON.stringify({ error: 'Error subiendo archivo grande', detail: String(e) }), {
           status: 502, headers: { ...headers, 'Content-Type': 'application/json' },
         });
       }
