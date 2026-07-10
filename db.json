@@ -8225,6 +8225,32 @@
       "pdfUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/pdfs/1783682688283_olympo_dan_simmons.epub",
       "coverUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/covers/1783682688283_olympo_dan_simmons.jpg",
       "file": "Olympo_Dan_Simmons.epub"
+    },
+    {
+      "id": 1783682696746,
+      "name": "Percy Jackson y los Dioses del Olimpo La serie completa Rick Riordan",
+      "price": "$0.99",
+      "cat": "ebooks",
+      "desc": "",
+      "author": "",
+      "genre": "",
+      "age": "",
+      "temas": [],
+      "tags": [],
+      "nivel": "",
+      "idioma": "",
+      "ad": {
+        "headline": "",
+        "subheadline": "",
+        "cta": "",
+        "banner_text": "",
+        "instagram_caption": "",
+        "hashtags": []
+      },
+      "pdfName": "Percy_Jackson_y_los_Dioses_del_Olimpo_La_serie_completa_Rick_Riordan.epub",
+      "pdfUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/pdfs/1783682696746_percy_jackson_y_los_dioses_del_olimpo_la_serie_completa_rick_riordan.epub",
+      "coverUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/covers/1783682696746_percy_jackson_y_los_dioses_del_olimpo_la_serie_completa_rick_riordan.jpg",
+      "file": "Percy_Jackson_y_los_Dioses_del_Olimpo_La_serie_completa_Rick_Riordan.epub"
     }
   ],
   "emailList": [
@@ -8233,5 +8259,5 @@
     "juan@test.com",
     "octavio123@gamil.com"
   ],
-  "updatedAt": "2026-07-10T11:24:56.069Z"
+  "updatedAt": "2026-07-10T11:25:08.918Z"
 }
