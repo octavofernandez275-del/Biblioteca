@@ -8196,7 +8196,7 @@
         "hashtags": []
       },
       "pdfName": "Nueva_visita_a_un_mundo_feliz_Aldous_Huxley.epub",
-      "pdfUrl": null,
+      "pdfUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/pdfs/1783682680934_nueva_visita_a_un_mundo_feliz_aldous_huxley.epub",
       "coverUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/covers/1783682680934_nueva_visita_a_un_mundo_feliz_aldous_huxley.jpg",
       "file": "Nueva_visita_a_un_mundo_feliz_Aldous_Huxley.epub"
     },
@@ -8441,5 +8441,5 @@
     "juan@test.com",
     "octavio123@gamil.com"
   ],
-  "updatedAt": "2026-07-10T11:30:56.689Z"
+  "updatedAt": "2026-07-10T11:31:02.340Z"
 }
