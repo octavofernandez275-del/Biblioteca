@@ -8849,6 +8849,32 @@
       "pdfUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/pdfs/1783684637002_captain_tsubasa__oliver_y_benji____tomo_07.pdf",
       "coverUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/covers/1783684637002_captain_tsubasa__oliver_y_benji____tomo_07.jpg",
       "file": "Captain Tsubasa (Oliver y Benji) - Tomo 07.pdf"
+    },
+    {
+      "id": 1783684655972,
+      "name": "Captain Tsubasa (Oliver y Benji)   Tomo 08 20260514 225503",
+      "price": "$0.99",
+      "cat": "ebooks",
+      "desc": "",
+      "author": "",
+      "genre": "",
+      "age": "",
+      "temas": [],
+      "tags": [],
+      "nivel": "",
+      "idioma": "",
+      "ad": {
+        "headline": "",
+        "subheadline": "",
+        "cta": "",
+        "banner_text": "",
+        "instagram_caption": "",
+        "hashtags": []
+      },
+      "pdfName": "Captain Tsubasa (Oliver y Benji) - Tomo 08_20260514_225503.pdf",
+      "pdfUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/pdfs/1783684655972_captain_tsubasa__oliver_y_benji____tomo_08_20260514_225503.pdf",
+      "coverUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/covers/1783684655972_captain_tsubasa__oliver_y_benji____tomo_08_20260514_225503.jpg",
+      "file": "Captain Tsubasa (Oliver y Benji) - Tomo 08_20260514_225503.pdf"
     }
   ],
   "emailList": [
@@ -8857,5 +8883,5 @@
     "juan@test.com",
     "octavio123@gamil.com"
   ],
-  "updatedAt": "2026-07-10T11:57:34.052Z"
+  "updatedAt": "2026-07-10T11:57:57.155Z"
 }
