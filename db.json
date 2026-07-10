@@ -12157,6 +12157,32 @@
       "pdfUrl": null,
       "coverUrl": null,
       "file": "Ansatsu Kyoushitsu (1).PDF"
+    },
+    {
+      "id": 1783723773970,
+      "name": "Vol. 19   CSM   Cap. 165 al 175",
+      "price": "$0.99",
+      "cat": "ebooks",
+      "desc": "",
+      "author": "",
+      "genre": "",
+      "age": "",
+      "temas": [],
+      "tags": [],
+      "nivel": "",
+      "idioma": "",
+      "ad": {
+        "headline": "",
+        "subheadline": "",
+        "cta": "",
+        "banner_text": "",
+        "instagram_caption": "",
+        "hashtags": []
+      },
+      "pdfName": "Vol. 19 - CSM - Cap. 165 al 175.pdf",
+      "pdfUrl": null,
+      "coverUrl": null,
+      "file": "Vol. 19 - CSM - Cap. 165 al 175.pdf"
     }
   ],
   "emailList": [
@@ -12165,5 +12191,5 @@
     "juan@test.com",
     "octavio123@gamil.com"
   ],
-  "updatedAt": "2026-07-10T22:30:13.401Z"
+  "updatedAt": "2026-07-10T22:50:57.535Z"
 }
