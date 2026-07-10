@@ -11027,6 +11027,32 @@
       "pdfUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/pdfs/1783697737812_volumen_8__cap_tulos_62_al_70.pdf",
       "coverUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/covers/1783697737812_volumen_8__cap_tulos_62_al_70.jpg",
       "file": "Vol. 08 - Cap. 62 al 70_compressed.pdf"
+    },
+    {
+      "id": 1783698446474,
+      "name": "Vol. 11   Cap. 89 al 97 compressed",
+      "price": "$0.99",
+      "cat": "ebooks",
+      "desc": "",
+      "author": "",
+      "genre": "",
+      "age": "",
+      "temas": [],
+      "tags": [],
+      "nivel": "",
+      "idioma": "",
+      "ad": {
+        "headline": "",
+        "subheadline": "",
+        "cta": "",
+        "banner_text": "",
+        "instagram_caption": "",
+        "hashtags": []
+      },
+      "pdfName": "Vol. 11 - Cap. 89 al 97_compressed.pdf",
+      "pdfUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/pdfs/1783698446474_vol__11___cap__89_al_97_compressed.pdf",
+      "coverUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/covers/1783698446474_vol__11___cap__89_al_97_compressed.jpg",
+      "file": "Vol. 11 - Cap. 89 al 97_compressed.pdf"
     }
   ],
   "emailList": [
@@ -11035,5 +11061,5 @@
     "juan@test.com",
     "octavio123@gamil.com"
   ],
-  "updatedAt": "2026-07-10T15:36:05.813Z"
+  "updatedAt": "2026-07-10T15:47:58.998Z"
 }
