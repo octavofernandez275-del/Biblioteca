@@ -11559,53 +11559,6 @@
       "pdfUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/pdfs/1783706947211_vol__16___csm___cap__134_al_143_compressed.pdf",
       "coverUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/covers/1783706947211_vol__16___csm___cap__134_al_143_compressed.jpg",
       "file": "Vol. 16 - CSM - Cap. 134 al 143_compressed.pdf"
-    },
-    {
-      "id": 1783707273817,
-      "name": "Chainsaw Man - Volumen 17: Capítulos 144-153",
-      "price": "$4.99",
-      "cat": "manga",
-      "desc": "Sumérgete en la acción y el terror de Chainsaw Man con este volumen que recopila los emocionantes capítulos 144 al 153. Acompaña a Denji en sus nuevas y sangrientas aventuras mientras lucha contra demonios y descubre oscuros secretos.",
-      "author": "Tatsuki Fujimoto",
-      "genre": "Manga de Acción",
-      "age": "Adolescentes y Adultos",
-      "temas": [
-        "Demonios",
-        "Lucha sobrenatural",
-        "Aventuras",
-        "Fantasía oscura",
-        "Shonen"
-      ],
-      "tags": [
-        "Manga",
-        "Chainsaw Man",
-        "Acción",
-        "Fantasía",
-        "Demonios",
-        "Shonen"
-      ],
-      "nivel": "",
-      "idioma": "Español",
-      "ad": {
-        "headline": "Acción Sobrenatural: ¡Chainsaw Man Vol. 17!",
-        "subheadline": "Sumérgete en la brutal lucha de Denji contra demonios, capítulos 144-153.",
-        "cta": "Descubre el caos",
-        "banner_text": "Nuevo Volumen de Chainsaw Man",
-        "instagram_caption": "🔥 ¡Ya disponible el Vol. 17 de Chainsaw Man! 🔥\nPrepárate para la acción más intensa y los giros más inesperados. Denji te espera en los capítulos 144-153.\n¡No te quedes fuera de esta sangrienta aventura! 😈",
-        "hashtags": [
-          "ChainsawMan",
-          "Manga",
-          "Accion",
-          "FantasíaOscura",
-          "Denji",
-          "Fujimoto",
-          "Volumen17"
-        ]
-      },
-      "pdfName": "Vol. 17 - CSM - Cap. 144 al 153_compressed.pdf",
-      "pdfUrl": null,
-      "coverUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/covers/1783707273817_chainsaw_man___volumen_17__cap_tulos_144_153.jpg",
-      "file": "Vol. 17 - CSM - Cap. 144 al 153_compressed.pdf"
     }
   ],
   "emailList": [
@@ -11614,5 +11567,5 @@
     "juan@test.com",
     "octavio123@gamil.com"
   ],
-  "updatedAt": "2026-07-10T18:15:24.733Z"
+  "updatedAt": "2026-07-10T18:15:40.590Z"
 }
