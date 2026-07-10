@@ -7214,6 +7214,54 @@
       "pdfUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/pdfs/1783682240376_lo_que_dice_la_ciencia_sobre_dietas__alimentaci_n_y_salud.epub",
       "coverUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/covers/1783682240376_lo_que_dice_la_ciencia_sobre_dietas__alimentaci_n_y_salud.jpg",
       "file": "Lo_que_dice_la_ciencia_sobre_dietas_alimentacion_y_salud_L_Jimenez.epub"
+    },
+    {
+      "id": 1783682258768,
+      "name": "Los Cantos de Hyperion de Dan Simmons",
+      "price": "$5.99",
+      "cat": "novela",
+      "desc": "En el mundo llamado Hyperion, siete peregrinos se embarcan en una misión para encontrar al enigmático Alcaudón y las misteriosas Tumbas de Tiempo, en vísperas de una posible guerra galáctica. Sus historias personales se entrelazan en una épica de ciencia ficción que combina el misterio, la aventura y una profunda exploración de la sociedad humana, inspirada en los Cuentos de Canterbury y John Keats.",
+      "author": "Dan Simmons",
+      "genre": "Ciencia Ficción",
+      "age": "Adultos",
+      "temas": [
+        "Aventura espacial",
+        "Misterio galáctico",
+        "Inteligencia artificial",
+        "Exploración de civilizaciones",
+        "Destino y profecía"
+      ],
+      "tags": [
+        "Ciencia Ficción",
+        "Épica",
+        "Aventura espacial",
+        "Intriga",
+        "Futuro",
+        "Saga"
+      ],
+      "nivel": "",
+      "idioma": "Español",
+      "ad": {
+        "headline": "La épica de ciencia ficción definitiva",
+        "subheadline": "Siete peregrinos, un secreto cósmico y la batalla por el futuro.",
+        "cta": "Explorar Hyperion",
+        "banner_text": "Épica de Ciencia Ficción Imprescindible",
+        "instagram_caption": "🌌 Adéntrate en Hyperion, donde el misterio y la aventura espacial te esperan.\nSiete destinos entrelazados en una búsqueda épica. ¿Te atreves a conocer al Alcaudón?\nUna obra maestra que redefine la ciencia ficción. ¡Descúbrela ahora! ✨",
+        "hashtags": [
+          "CienciaFiccion",
+          "Hyperion",
+          "DanSimmons",
+          "AventuraEspacial",
+          "NovelaEpica",
+          "LecturaRecomendada",
+          "ScifiBooks",
+          "LibrosDigitales"
+        ]
+      },
+      "pdfName": "Los_cantos_de_Hyperion_Dan_Simmons.epub",
+      "pdfUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/pdfs/1783682258768_los_cantos_de_hyperion_de_dan_simmons.epub",
+      "coverUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/covers/1783682258768_los_cantos_de_hyperion_de_dan_simmons.jpg",
+      "file": "Los_cantos_de_Hyperion_Dan_Simmons.epub"
     }
   ],
   "emailList": [
@@ -7222,5 +7270,5 @@
     "juan@test.com",
     "octavio123@gamil.com"
   ],
-  "updatedAt": "2026-07-10T11:17:30.469Z"
+  "updatedAt": "2026-07-10T11:17:45.904Z"
 }
