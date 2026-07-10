@@ -7497,6 +7497,54 @@
       "pdfUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/pdfs/1783682343789_los_fuegos_del_ed_n.epub",
       "coverUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/covers/1783682343789_los_fuegos_del_ed_n.jpg",
       "file": "Los_fuegos_del_Eden_Dan_Simmons.epub"
+    },
+    {
+      "id": 1783682365135,
+      "name": "Los Juegos del Hambre",
+      "price": "$5.99",
+      "cat": "novela",
+      "desc": "En un futuro distópico, doce jóvenes deben luchar a muerte en un brutal reality show televisivo. Cuando Katniss Everdeen se ofrece voluntaria en lugar de su hermana, su instinto de supervivencia la llevará a desafiar las reglas.",
+      "author": "Suzanne Collins",
+      "genre": "Ficción Distópica",
+      "age": "Adolescentes y Jóvenes Adultos",
+      "temas": [
+        "Supervivencia",
+        "Distopía",
+        "Rebelión",
+        "Desigualdad Social",
+        "Sacrificio"
+      ],
+      "tags": [
+        "Juegos del Hambre",
+        "Katniss",
+        "Distopía",
+        "Supervivencia",
+        "Ciencia Ficción",
+        "Aventura"
+      ],
+      "nivel": "",
+      "idioma": "Español",
+      "ad": {
+        "headline": "La supervivencia es tu única regla. ¿Quién ganará?",
+        "subheadline": "Únete a Katniss en su lucha por la libertad y la vida.",
+        "cta": "Vive la aventura",
+        "banner_text": "Bestseller YA Distópico",
+        "instagram_caption": "🔥 ¡La adrenalina te espera en Los Juegos del Hambre! 🏹 Lucha, sobrevive y desafía al sistema en esta icónica saga distópica. ¿Te atreves a entrar en la arena? #LosJuegosDelHambre",
+        "hashtags": [
+          "#LosJuegosDelHambre",
+          "#SuzanneCollins",
+          "#DistopíaYA",
+          "#CienciaFicción",
+          "#Supervivencia",
+          "#KatnissEverdeen",
+          "#LibroDigital",
+          "#LecturaRecomendada"
+        ]
+      },
+      "pdfName": "Los_juegos_del_hambre_Suzanne_Collins.epub",
+      "pdfUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/pdfs/1783682365135_los_juegos_del_hambre.epub",
+      "coverUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/covers/1783682365135_los_juegos_del_hambre.jpg",
+      "file": "Los_juegos_del_hambre_Suzanne_Collins.epub"
     }
   ],
   "emailList": [
@@ -7505,5 +7553,5 @@
     "juan@test.com",
     "octavio123@gamil.com"
   ],
-  "updatedAt": "2026-07-10T11:19:13.325Z"
+  "updatedAt": "2026-07-10T11:19:32.127Z"
 }
