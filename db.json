@@ -11126,6 +11126,54 @@
       "pdfUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/pdfs/1783700116131_vol__13___csm___cap__104_al_112_compressed.pdf",
       "coverUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/covers/1783700116131_vol__13___csm___cap__104_al_112_compressed.jpg",
       "file": "Vol. 13 - CSM - Cap. 104 al 112_compressed.pdf"
+    },
+    {
+      "id": 1783701474891,
+      "name": "CSM: Volumen 14 (Capítulos 113-122)",
+      "price": "$4.99",
+      "cat": "manga",
+      "desc": "Sumérgete en el decimocuarto volumen de la aclamada serie CSM, que reúne los emocionantes capítulos del 113 al 122. Descubre los nuevos desafíos y desarrollos de tus personajes favoritos en esta imperdible entrega digital.",
+      "author": "",
+      "genre": "Ficción / Manga/Cómic",
+      "age": "Adolescentes y Jóvenes Adultos",
+      "temas": [
+        "Continuación de serie",
+        "Aventura épica",
+        "Desarrollo de personajes",
+        "Giros inesperados",
+        "Drama y acción"
+      ],
+      "tags": [
+        "Serie digital",
+        "CSM",
+        "Volumen 14",
+        "Capítulos manga",
+        "Ebook",
+        "Ficción"
+      ],
+      "nivel": "",
+      "idioma": "Español",
+      "ad": {
+        "headline": "CSM: ¡La aventura continúa en el Volumen 14!",
+        "subheadline": "No te pierdas los impactantes capítulos 113-122 de tu serie favorita.",
+        "cta": "Continuar la aventura",
+        "banner_text": "Nuevo volumen CSM disponible",
+        "instagram_caption": "¡La espera terminó! 🤩 El Volumen 14 de CSM con los capítulos 113 al 122 ya está aquí.\nPrepárate para más acción y giros inesperados. ¿Qué sorpresas te esperan?\n¡No te quedes atrás y descarga tu copia digital hoy mismo! ✨",
+        "hashtags": [
+          "#CSM",
+          "#MangaDigital",
+          "#Ficcion",
+          "#Volumen14",
+          "#NuevosCapitulos",
+          "#Ebook",
+          "#LecturaDigital",
+          "#Aventura"
+        ]
+      },
+      "pdfName": "Vol. 14 - CSM - Cap. 113 al 122.pdf",
+      "pdfUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/pdfs/1783701474891_csm__volumen_14__cap_tulos_113_122_.pdf",
+      "coverUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/covers/1783701474891_csm__volumen_14__cap_tulos_113_122_.jpg",
+      "file": "Vol. 14 - CSM - Cap. 113 al 122.pdf"
     }
   ],
   "emailList": [
@@ -11134,5 +11182,5 @@
     "juan@test.com",
     "octavio123@gamil.com"
   ],
-  "updatedAt": "2026-07-10T16:15:51.428Z"
+  "updatedAt": "2026-07-10T16:38:23.150Z"
 }
