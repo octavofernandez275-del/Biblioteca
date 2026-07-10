@@ -10773,6 +10773,32 @@
       "pdfUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/pdfs/1783687679426_vol__01___cap__01_al_07.pdf",
       "coverUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/covers/1783687679426_vol__01___cap__01_al_07.jpg",
       "file": "Vol. 01 - Cap. 01 al 07.pdf"
+    },
+    {
+      "id": 1783687705179,
+      "name": "Vol. 02   Cap. 08 al 16",
+      "price": "$0.99",
+      "cat": "ebooks",
+      "desc": "",
+      "author": "",
+      "genre": "",
+      "age": "",
+      "temas": [],
+      "tags": [],
+      "nivel": "",
+      "idioma": "",
+      "ad": {
+        "headline": "",
+        "subheadline": "",
+        "cta": "",
+        "banner_text": "",
+        "instagram_caption": "",
+        "hashtags": []
+      },
+      "pdfName": "Vol. 02 - Cap. 08 al 16.pdf",
+      "pdfUrl": null,
+      "coverUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/covers/1783687705179_vol__02___cap__08_al_16.jpg",
+      "file": "Vol. 02 - Cap. 08 al 16.pdf"
     }
   ],
   "emailList": [
@@ -10781,5 +10807,5 @@
     "juan@test.com",
     "octavio123@gamil.com"
   ],
-  "updatedAt": "2026-07-10T12:48:23.916Z"
+  "updatedAt": "2026-07-10T12:48:57.498Z"
 }
