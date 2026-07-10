@@ -8251,6 +8251,32 @@
       "pdfUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/pdfs/1783682696746_percy_jackson_y_los_dioses_del_olimpo_la_serie_completa_rick_riordan.epub",
       "coverUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/covers/1783682696746_percy_jackson_y_los_dioses_del_olimpo_la_serie_completa_rick_riordan.jpg",
       "file": "Percy_Jackson_y_los_Dioses_del_Olimpo_La_serie_completa_Rick_Riordan.epub"
+    },
+    {
+      "id": 1783682709555,
+      "name": "Piense y hagase rico Napoleon Hill",
+      "price": "$0.99",
+      "cat": "ebooks",
+      "desc": "",
+      "author": "",
+      "genre": "",
+      "age": "",
+      "temas": [],
+      "tags": [],
+      "nivel": "",
+      "idioma": "",
+      "ad": {
+        "headline": "",
+        "subheadline": "",
+        "cta": "",
+        "banner_text": "",
+        "instagram_caption": "",
+        "hashtags": []
+      },
+      "pdfName": "Piense_y_hagase_rico_Napoleon_Hill.epub",
+      "pdfUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/pdfs/1783682709555_piense_y_hagase_rico_napoleon_hill.epub",
+      "coverUrl": null,
+      "file": "Piense_y_hagase_rico_Napoleon_Hill.epub"
     }
   ],
   "emailList": [
@@ -8259,5 +8285,5 @@
     "juan@test.com",
     "octavio123@gamil.com"
   ],
-  "updatedAt": "2026-07-10T11:25:08.918Z"
+  "updatedAt": "2026-07-10T11:25:17.160Z"
 }
