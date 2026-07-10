@@ -9837,6 +9837,32 @@
       "pdfUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/pdfs/1783686354097_captain_tsubasa__oliver_y_benji____tomo_26.pdf",
       "coverUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/covers/1783686354097_captain_tsubasa__oliver_y_benji____tomo_26.jpg",
       "file": "Captain Tsubasa (Oliver y Benji) - Tomo 26.pdf"
+    },
+    {
+      "id": 1783686374486,
+      "name": "Captain Tsubasa (Oliver y Benji)   Tomo 27 20260514 225516",
+      "price": "$0.99",
+      "cat": "ebooks",
+      "desc": "",
+      "author": "",
+      "genre": "",
+      "age": "",
+      "temas": [],
+      "tags": [],
+      "nivel": "",
+      "idioma": "",
+      "ad": {
+        "headline": "",
+        "subheadline": "",
+        "cta": "",
+        "banner_text": "",
+        "instagram_caption": "",
+        "hashtags": []
+      },
+      "pdfName": "Captain Tsubasa (Oliver y Benji) - Tomo 27_20260514_225516.pdf",
+      "pdfUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/pdfs/1783686374486_captain_tsubasa__oliver_y_benji____tomo_27_20260514_225516.pdf",
+      "coverUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/covers/1783686374486_captain_tsubasa__oliver_y_benji____tomo_27_20260514_225516.jpg",
+      "file": "Captain Tsubasa (Oliver y Benji) - Tomo 27_20260514_225516.pdf"
     }
   ],
   "emailList": [
@@ -9845,5 +9871,5 @@
     "juan@test.com",
     "octavio123@gamil.com"
   ],
-  "updatedAt": "2026-07-10T12:26:12.674Z"
+  "updatedAt": "2026-07-10T12:26:32.039Z"
 }
