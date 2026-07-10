@@ -11533,6 +11533,32 @@
       "pdfUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/pdfs/1783706484549_vol__15___csm___cap__123_al_133_compressed_compressed_compressed.pdf",
       "coverUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/covers/1783706484549_vol__15___csm___cap__123_al_133_compressed_compressed_compressed.jpg",
       "file": "Vol. 15 - CSM - Cap. 123 al 133_compressed_compressed_compressed.pdf"
+    },
+    {
+      "id": 1783706947211,
+      "name": "Vol. 16   CSM   Cap. 134 al 143 compressed",
+      "price": "$0.99",
+      "cat": "ebooks",
+      "desc": "",
+      "author": "",
+      "genre": "",
+      "age": "",
+      "temas": [],
+      "tags": [],
+      "nivel": "",
+      "idioma": "",
+      "ad": {
+        "headline": "",
+        "subheadline": "",
+        "cta": "",
+        "banner_text": "",
+        "instagram_caption": "",
+        "hashtags": []
+      },
+      "pdfName": "Vol. 16 - CSM - Cap. 134 al 143_compressed.pdf",
+      "pdfUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/pdfs/1783706947211_vol__16___csm___cap__134_al_143_compressed.pdf",
+      "coverUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/covers/1783706947211_vol__16___csm___cap__134_al_143_compressed.jpg",
+      "file": "Vol. 16 - CSM - Cap. 134 al 143_compressed.pdf"
     }
   ],
   "emailList": [
@@ -11541,5 +11567,5 @@
     "juan@test.com",
     "octavio123@gamil.com"
   ],
-  "updatedAt": "2026-07-10T18:01:58.740Z"
+  "updatedAt": "2026-07-10T18:09:44.814Z"
 }
