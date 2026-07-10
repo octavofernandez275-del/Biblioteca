@@ -11074,6 +11074,32 @@
       "pdfUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/pdfs/1783699516979_volumen_11__cap_tulos_89_al_97.pdf",
       "coverUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/covers/1783699516979_volumen_11__cap_tulos_89_al_97.jpg",
       "file": "Vol. 11 - Cap. 89 al 97_compressed.pdf"
+    },
+    {
+      "id": 1783699803024,
+      "name": "Vol. 12   CSM   Cap. 98 al 103 compressed compressed",
+      "price": "$0.99",
+      "cat": "ebooks",
+      "desc": "",
+      "author": "",
+      "genre": "",
+      "age": "",
+      "temas": [],
+      "tags": [],
+      "nivel": "",
+      "idioma": "",
+      "ad": {
+        "headline": "",
+        "subheadline": "",
+        "cta": "",
+        "banner_text": "",
+        "instagram_caption": "",
+        "hashtags": []
+      },
+      "pdfName": "Vol. 12 - CSM - Cap. 98 al 103_compressed_compressed.pdf",
+      "pdfUrl": null,
+      "coverUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/covers/1783699803024_vol__12___csm___cap__98_al_103_compressed_compressed.jpg",
+      "file": "Vol. 12 - CSM - Cap. 98 al 103_compressed_compressed.pdf"
     }
   ],
   "emailList": [
@@ -11082,5 +11108,5 @@
     "juan@test.com",
     "octavio123@gamil.com"
   ],
-  "updatedAt": "2026-07-10T16:10:28.507Z"
+  "updatedAt": "2026-07-10T16:10:38.867Z"
 }
