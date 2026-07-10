@@ -10905,32 +10905,6 @@
       "file": "Vol. 07 - Cap. 53 al 61.pdf"
     },
     {
-      "id": 1783688014173,
-      "name": "Vol. 11   Cap. 89 al 97",
-      "price": "$0.99",
-      "cat": "ebooks",
-      "desc": "",
-      "author": "",
-      "genre": "",
-      "age": "",
-      "temas": [],
-      "tags": [],
-      "nivel": "",
-      "idioma": "",
-      "ad": {
-        "headline": "",
-        "subheadline": "",
-        "cta": "",
-        "banner_text": "",
-        "instagram_caption": "",
-        "hashtags": []
-      },
-      "pdfName": "Vol. 11 - Cap. 89 al 97.pdf",
-      "pdfUrl": null,
-      "coverUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/covers/1783688014173_vol__11___cap__89_al_97.jpg",
-      "file": "Vol. 11 - Cap. 89 al 97.pdf"
-    },
-    {
       "id": 1783688829068,
       "name": "Vol. 06   Cap. 44 al 52",
       "price": "$0.99",
@@ -10963,5 +10937,5 @@
     "juan@test.com",
     "octavio123@gamil.com"
   ],
-  "updatedAt": "2026-07-10T13:08:45.976Z"
+  "updatedAt": "2026-07-10T13:08:50.622Z"
 }
