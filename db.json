@@ -10955,6 +10955,32 @@
       "pdfUrl": null,
       "coverUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/covers/1783687906334_vol__08___cap__62_al_70.jpg",
       "file": "Vol. 08 - Cap. 62 al 70.pdf"
+    },
+    {
+      "id": 1783687940839,
+      "name": "Vol. 09   Cap. 72 al 79",
+      "price": "$0.99",
+      "cat": "ebooks",
+      "desc": "",
+      "author": "",
+      "genre": "",
+      "age": "",
+      "temas": [],
+      "tags": [],
+      "nivel": "",
+      "idioma": "",
+      "ad": {
+        "headline": "",
+        "subheadline": "",
+        "cta": "",
+        "banner_text": "",
+        "instagram_caption": "",
+        "hashtags": []
+      },
+      "pdfName": "Vol. 09 - Cap. 72 al 79.pdf",
+      "pdfUrl": null,
+      "coverUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/covers/1783687940839_vol__09___cap__72_al_79.jpg",
+      "file": "Vol. 09 - Cap. 72 al 79.pdf"
     }
   ],
   "emailList": [
@@ -10963,5 +10989,5 @@
     "juan@test.com",
     "octavio123@gamil.com"
   ],
-  "updatedAt": "2026-07-10T12:52:19.438Z"
+  "updatedAt": "2026-07-10T12:52:53.827Z"
 }
