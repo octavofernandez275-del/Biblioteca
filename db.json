@@ -11829,6 +11829,54 @@
       "pdfUrl": null,
       "coverUrl": null,
       "file": "Ansatsu Kyoushitsu (15).PDF"
+    },
+    {
+      "id": 1783721553487,
+      "name": "Assassination Classroom - Volumen 16",
+      "price": "$4.99",
+      "cat": "manga",
+      "desc": "La misión de asesinar al profesor alienígena Koro-sensei se intensifica. ¿Podrán los estudiantes de la clase 3-E salvar la Tierra antes de que sea demasiado tarde?",
+      "author": "Yusei Matsui",
+      "genre": "Manga Shonen",
+      "age": "Adolescentes",
+      "temas": [
+        "Acción",
+        "Comedia",
+        "Ciencia Ficción",
+        "Escuela",
+        "Aventura"
+      ],
+      "tags": [
+        "Manga",
+        "Shonen",
+        "Acción",
+        "Comedia",
+        "KoroSensei",
+        "Escolares"
+      ],
+      "nivel": "",
+      "idioma": "Español",
+      "ad": {
+        "headline": "La misión más letal continúa",
+        "subheadline": "Únete a la clase 3-E en su desafío final contra Koro-sensei.",
+        "cta": "Lee el volumen 16",
+        "banner_text": "Ansatsu Kyoushitsu: Volumen 16",
+        "instagram_caption": "¡La tensión sube en Ansatsu Kyoushitsu! 😱 ¿Podrán los estudiantes de la clase 3-E finalmente derrotar a Koro-sensei y salvar el planeta? 🌍 No te pierdas el volumen 16 de esta emocionante saga llena de acción, comedia y giros inesperados. ¡Prepárate para reír, emocionarte y vivir una aventura única! ✨",
+        "hashtags": [
+          "#AnsatsuKyoushitsu",
+          "#AssassinationClassroom",
+          "#Manga",
+          "#Shonen",
+          "#Anime",
+          "#Volumen16",
+          "#KoroSensei",
+          "#AccionComedia"
+        ]
+      },
+      "pdfName": "Ansatsu Kyoushitsu (16).PDF",
+      "pdfUrl": null,
+      "coverUrl": null,
+      "file": "Ansatsu Kyoushitsu (16).PDF"
     }
   ],
   "emailList": [
@@ -11837,5 +11885,5 @@
     "juan@test.com",
     "octavio123@gamil.com"
   ],
-  "updatedAt": "2026-07-10T22:12:24.648Z"
+  "updatedAt": "2026-07-10T22:12:47.541Z"
 }
