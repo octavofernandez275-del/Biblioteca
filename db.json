@@ -8355,6 +8355,32 @@
       "pdfUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/pdfs/1783682731831_que_debo_saber_para_no_buscar_mas_dietas_mercedes_fernandez_h.epub",
       "coverUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/covers/1783682731831_que_debo_saber_para_no_buscar_mas_dietas_mercedes_fernandez_h.jpg",
       "file": "Que_debo_saber_para_no_buscar_mas_dietas_Mercedes_Fernandez_H.epub"
+    },
+    {
+      "id": 1783682738820,
+      "name": "Quidditch a traves de los tiempos J K Rowling",
+      "price": "$0.99",
+      "cat": "ebooks",
+      "desc": "",
+      "author": "",
+      "genre": "",
+      "age": "",
+      "temas": [],
+      "tags": [],
+      "nivel": "",
+      "idioma": "",
+      "ad": {
+        "headline": "",
+        "subheadline": "",
+        "cta": "",
+        "banner_text": "",
+        "instagram_caption": "",
+        "hashtags": []
+      },
+      "pdfName": "Quidditch_a_traves_de_los_tiempos_J_K_Rowling.epub",
+      "pdfUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/pdfs/1783682738820_quidditch_a_traves_de_los_tiempos_j_k_rowling.epub",
+      "coverUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/covers/1783682738820_quidditch_a_traves_de_los_tiempos_j_k_rowling.jpg",
+      "file": "Quidditch_a_traves_de_los_tiempos_J_K_Rowling.epub"
     }
   ],
   "emailList": [
@@ -8363,5 +8389,5 @@
     "juan@test.com",
     "octavio123@gamil.com"
   ],
-  "updatedAt": "2026-07-10T11:25:41.199Z"
+  "updatedAt": "2026-07-10T11:25:49.069Z"
 }
