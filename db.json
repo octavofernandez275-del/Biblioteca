@@ -10435,6 +10435,32 @@
       "pdfUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/pdfs/1783687407604_cap__220___csm___v_nculos_y_michigan.pdf",
       "coverUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/covers/1783687407604_cap__220___csm___v_nculos_y_michigan.jpg",
       "file": "Cap. 220 - CSM - Vínculos y Michigan.pdf"
+    },
+    {
+      "id": 1783687431673,
+      "name": "Cap. 221   CSM  Batalla segura",
+      "price": "$0.99",
+      "cat": "ebooks",
+      "desc": "",
+      "author": "",
+      "genre": "",
+      "age": "",
+      "temas": [],
+      "tags": [],
+      "nivel": "",
+      "idioma": "",
+      "ad": {
+        "headline": "",
+        "subheadline": "",
+        "cta": "",
+        "banner_text": "",
+        "instagram_caption": "",
+        "hashtags": []
+      },
+      "pdfName": "Cap. 221 - CSM -Batalla segura .pdf",
+      "pdfUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/pdfs/1783687431673_cap__221___csm__batalla_segura.pdf",
+      "coverUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/covers/1783687431673_cap__221___csm__batalla_segura.jpg",
+      "file": "Cap. 221 - CSM -Batalla segura .pdf"
     }
   ],
   "emailList": [
@@ -10443,5 +10469,5 @@
     "juan@test.com",
     "octavio123@gamil.com"
   ],
-  "updatedAt": "2026-07-10T12:43:49.883Z"
+  "updatedAt": "2026-07-10T12:44:11.960Z"
 }
