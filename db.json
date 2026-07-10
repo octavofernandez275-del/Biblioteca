@@ -10879,32 +10879,6 @@
       "file": "Vol. 05 - Cap. 35 al 43.pdf"
     },
     {
-      "id": 1783687830661,
-      "name": "Vol. 06   Cap. 44 al 52",
-      "price": "$0.99",
-      "cat": "ebooks",
-      "desc": "",
-      "author": "",
-      "genre": "",
-      "age": "",
-      "temas": [],
-      "tags": [],
-      "nivel": "",
-      "idioma": "",
-      "ad": {
-        "headline": "",
-        "subheadline": "",
-        "cta": "",
-        "banner_text": "",
-        "instagram_caption": "",
-        "hashtags": []
-      },
-      "pdfName": "Vol. 06 - Cap. 44 al 52.pdf",
-      "pdfUrl": null,
-      "coverUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/covers/1783687830661_vol__06___cap__44_al_52.jpg",
-      "file": "Vol. 06 - Cap. 44 al 52.pdf"
-    },
-    {
       "id": 1783687866711,
       "name": "Vol. 07   Cap. 53 al 61",
       "price": "$0.99",
@@ -11041,5 +11015,5 @@
     "juan@test.com",
     "octavio123@gamil.com"
   ],
-  "updatedAt": "2026-07-10T13:05:51.061Z"
+  "updatedAt": "2026-07-10T13:06:54.604Z"
 }
