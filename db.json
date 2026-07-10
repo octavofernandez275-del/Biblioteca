@@ -7687,6 +7687,54 @@
       "pdfUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/pdfs/1783682422379_marte_azul.epub",
       "coverUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/covers/1783682422379_marte_azul.jpg",
       "file": "Marte_azul_Kim_Stanley_Robinson.epub"
+    },
+    {
+      "id": 1783682444184,
+      "name": "Marte Rojo: El Alba de la Terraformación",
+      "price": "$5.99",
+      "cat": "novela",
+      "desc": "En el año 2026, cien colonos viajan a Marte con una misión épica: terraformar el planeta rojo. Pero mientras luchan por adaptar el entorno, rivalidades internas amenazan con impedir que el planeta cambie para siempre.",
+      "author": "Kim Stanley Robinson",
+      "genre": "Ciencia Ficción",
+      "age": "Adultos",
+      "temas": [
+        "Colonización espacial",
+        "Terraformación",
+        "Supervivencia",
+        "Conflictos humanos",
+        "Futuro de la humanidad"
+      ],
+      "tags": [
+        "Ciencia Ficción",
+        "Marte",
+        "Colonias",
+        "Terraformación",
+        "Futurista",
+        "Épico"
+      ],
+      "nivel": "",
+      "idioma": "Español",
+      "ad": {
+        "headline": "Coloniza Marte, Transforma un Mundo",
+        "subheadline": "Cien valientes, una misión épica: el futuro del planeta rojo está en juego.",
+        "cta": "Explora la aventura",
+        "banner_text": "Ciencia Ficción Épica: Marte",
+        "instagram_caption": "🚀 Prepárate para una aventura épica en el planeta rojo. En el 2026, cien colonos inician la terraformación de Marte, pero los desafíos no serán solo planetarios. ¿Podrán transformar un mundo sin destruirse entre ellos? ¡Descubre el inicio de la Trilogía Marciana! #MarteRojo",
+        "hashtags": [
+          "#MarteRojo",
+          "#CienciaFiccion",
+          "#Terraformacion",
+          "#ColonizacionEspacial",
+          "#KimStanleyRobinson",
+          "#LibrosSciFi",
+          "#Futuro",
+          "#AventuraEspacial"
+        ]
+      },
+      "pdfName": "Marte_rojo_Kim_Stanley_Robinson.epub",
+      "pdfUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/pdfs/1783682444184_marte_rojo__el_alba_de_la_terraformaci_n.epub",
+      "coverUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/covers/1783682444184_marte_rojo__el_alba_de_la_terraformaci_n.jpg",
+      "file": "Marte_rojo_Kim_Stanley_Robinson.epub"
     }
   ],
   "emailList": [
@@ -7695,5 +7743,5 @@
     "juan@test.com",
     "octavio123@gamil.com"
   ],
-  "updatedAt": "2026-07-10T11:20:36.509Z"
+  "updatedAt": "2026-07-10T11:20:58.240Z"
 }
