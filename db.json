@@ -7403,6 +7403,53 @@
       "pdfUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/pdfs/1783682314545_los_demonios_de_loudun.epub",
       "coverUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/covers/1783682314545_los_demonios_de_loudun.jpg",
       "file": "Los_demonios_de_Loudun_Aldous_Huxley.epub"
+    },
+    {
+      "id": 1783682331853,
+      "name": "Los escándalos de Crome",
+      "price": "$4.99",
+      "cat": "novela",
+      "desc": "Adéntrate en la mordaz sátira social de Aldous Huxley, donde la hipocresía y las excentricidades de la alta sociedad británica son expuestas con ingenio y humor. Una joya de la literatura clásica que te hará reflexionar.",
+      "author": "Aldous Huxley",
+      "genre": "Novela Satírica",
+      "age": "Adultos",
+      "temas": [
+        "Sátira social",
+        "Literatura clásica",
+        "Sociedad británica",
+        "Humor inteligente",
+        "Crítica cultural"
+      ],
+      "tags": [
+        "Huxley",
+        "Sátira",
+        "Clásico",
+        "Novela",
+        "Crítica social",
+        "Ficción"
+      ],
+      "nivel": "Intermedio",
+      "idioma": "Español",
+      "ad": {
+        "headline": "La sátira maestra de Huxley te espera.",
+        "subheadline": "Descubre un agudo retrato de la sociedad británica con ingenio y mordacidad.",
+        "cta": "Descubrir ahora",
+        "banner_text": "Clásico de Sátira Británica",
+        "instagram_caption": "Prepárate para reír y reflexionar con 'Los escándalos de Crome' de Aldous Huxley 🧐. Su afilada sátira de la alta sociedad británica es más relevante que nunca. ¡Un clásico imprescindible que no puedes dejar de leer! 📚 #AldousHuxley #SátiraSocial #LiteraturaClásica #CromeYellow",
+        "hashtags": [
+          "#AldousHuxley",
+          "#LosEscandalosDeCrome",
+          "#NovelaSatirica",
+          "#LiteraturaClasica",
+          "#CriticaSocial",
+          "#LibroDigital",
+          "#HumorLiterario"
+        ]
+      },
+      "pdfName": "Los_escandalos_de_Crome_Aldous_Huxley.epub",
+      "pdfUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/pdfs/1783682331853_los_esc_ndalos_de_crome.epub",
+      "coverUrl": null,
+      "file": "Los_escandalos_de_Crome_Aldous_Huxley.epub"
     }
   ],
   "emailList": [
@@ -7411,5 +7458,5 @@
     "juan@test.com",
     "octavio123@gamil.com"
   ],
-  "updatedAt": "2026-07-10T11:18:41.683Z"
+  "updatedAt": "2026-07-10T11:18:56.385Z"
 }
