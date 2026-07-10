@@ -2994,15 +2994,22 @@
 
         <!-- SUBIDA MÚLTIPLE DE PDFs -->
         <div style="background:var(--surface);border:1px solid rgba(91,91,214,.3);border-radius:16px;padding:28px;margin-bottom:28px;">
-          <h3 style="font-size:16px;font-weight:700;margin-bottom:6px;">📚 Subida múltiple de PDFs</h3>
-          <p style="font-size:13px;color:var(--muted);margin-bottom:18px;">Elegí varios PDFs a la vez. Por cada uno, la IA genera título, descripción, categoría y carátula automáticamente, y se sube todo a GitHub sin que tengas que repetir el proceso.</p>
-          <div style="background:rgba(255,255,255,.03);border:2px dashed rgba(91,91,214,.35);border-radius:14px;padding:24px;text-align:center;cursor:pointer;"
+          <h3 style="font-size:16px;font-weight:700;margin-bottom:6px;">📚 Subida múltiple de archivos</h3>
+          <p style="font-size:13px;color:var(--muted);margin-bottom:18px;">Elegí varios archivos (PDF, EPUB, CBR, CBZ) o una carpeta entera a la vez. Por cada uno, la IA genera título, descripción, categoría y carátula automáticamente, y se sube todo a GitHub sin que tengas que repetir el proceso.</p>
+          <div style="background:rgba(255,255,255,.03);border:2px dashed rgba(91,91,214,.35);border-radius:14px;padding:24px;text-align:center;cursor:pointer;margin-bottom:10px;"
             onclick="document.getElementById('bulk-pdf-input').click()">
             <div style="font-size:36px;margin-bottom:10px">📚</div>
-            <div style="font-size:14px;font-weight:700;margin-bottom:6px;">Elegir varios PDFs</div>
-            <div style="font-size:12px;color:var(--muted);">Podés seleccionar tantos archivos como quieras de una vez</div>
+            <div style="font-size:14px;font-weight:700;margin-bottom:6px;">Elegir varios archivos</div>
+            <div style="font-size:12px;color:var(--muted);">PDF, EPUB, CBR o CBZ — podés seleccionar tantos como quieras de una vez</div>
           </div>
-          <input type="file" id="bulk-pdf-input" accept=".pdf,.epub,application/epub+zip" multiple style="display:none" onchange="handleBulkPdfUpload(this)" />
+          <div style="background:rgba(255,255,255,.03);border:2px dashed rgba(91,91,214,.35);border-radius:14px;padding:24px;text-align:center;cursor:pointer;"
+            onclick="document.getElementById('bulk-folder-input').click()">
+            <div style="font-size:36px;margin-bottom:10px">📁</div>
+            <div style="font-size:14px;font-weight:700;margin-bottom:6px;">Elegir una carpeta completa</div>
+            <div style="font-size:12px;color:var(--muted);">Subí todos los archivos de una carpeta (y subcarpetas) de una sola vez</div>
+          </div>
+          <input type="file" id="bulk-pdf-input" accept=".pdf,.epub,.cbr,.cbz,application/epub+zip" multiple style="display:none" onchange="handleBulkPdfUpload(this)" />
+          <input type="file" id="bulk-folder-input" webkitdirectory directory multiple style="display:none" onchange="handleBulkPdfUpload(this)" />
           <div id="bulk-upload-progress" style="display:none;margin-top:18px;"></div>
         </div>
 
@@ -3114,7 +3121,7 @@
                   Elegir archivo PDF
                 </button>
               </div>
-              <input type="file" id="prod-pdf" accept=".pdf,.epub,application/epub+zip" style="display:none" onchange="handleFileSelect(this,'pdf')" />
+              <input type="file" id="prod-pdf" accept=".pdf,.epub,.cbr,.cbz,application/epub+zip" style="display:none" onchange="handleFileSelect(this,'pdf')" />
 
               <!-- COVER UPLOAD -->
               <div style="background:rgba(255,255,255,.03);border:2px dashed rgba(255,255,255,.15);border-radius:14px;padding:20px;text-align:center;transition:all .2s;cursor:pointer;"
@@ -4131,7 +4138,8 @@
     if (!file) return;
     const reader = new FileReader();
     const isEpub = type === 'pdf' && /\.epub$/i.test(file.name);
-    if (type === 'pdf' && !isEpub) {
+    const isComic = type === 'pdf' && /\.(cbr|cbz)$/i.test(file.name);
+    if (type === 'pdf' && !isEpub && !isComic) {
       pendingPdfFile = file;
       reader.onload = async e => {
         pendingPdfB64 = e.target.result;
@@ -4221,6 +4229,45 @@
         }
 
         // 2️⃣ Clasificar con IA
+        const name = document.getElementById('prod-name').value.trim();
+        const desc = document.getElementById('prod-desc').value.trim();
+        if (name || desc) {
+          aiClassify(name, desc, file.name);
+        }
+      })();
+    } else if (type === 'pdf' && isComic) {
+      pendingPdfFile = file;
+      pendingPdfName = file.name;
+      document.getElementById('pdf-label').textContent = '✅ ' + file.name + ' (cómic)';
+      document.getElementById('pdf-drop').style.borderColor = 'var(--green)';
+
+      (async () => {
+        // Los cómics no tienen texto para extraer — usamos el nombre del archivo como base del título
+        const rawName = file.name.replace(/\.(cbr|cbz)$/i, '').replace(/[_\-]+/g, ' ').trim();
+        const nameEl = document.getElementById('prod-name');
+        if (!nameEl.value.trim()) nameEl.value = rawName;
+
+        // Usar la primera página del cómic como portada automáticamente (si no hay una ya puesta)
+        if (!pendingCoverB64) {
+          try {
+            const coverDataUrl = await extractComicCoverImage(pendingPdfFile, file.name);
+            if (coverDataUrl) {
+              pendingCoverB64 = coverDataUrl;
+              const blob = await (await fetch(coverDataUrl)).blob();
+              pendingCoverFile = new File([blob], 'cover-original.jpg', { type: blob.type || 'image/jpeg' });
+              const preview = document.getElementById('cover-preview');
+              preview.src = coverDataUrl;
+              preview.style.display = 'block';
+              document.getElementById('cover-icon').style.display = 'none';
+              document.getElementById('cover-label').textContent = '✅ Primera página del cómic como portada';
+              document.getElementById('cover-drop').style.borderColor = 'var(--green)';
+            } else {
+              showToast('⚠️ No se pudo leer el cómic (¿CBR con compresión rara o CDN de unrar caída?)', 'error');
+            }
+          } catch (err) { console.warn('Comic auto cover extraction failed:', err); }
+        }
+
+        // Clasificar con IA usando el nombre (y descripción si ya hay una)
         const name = document.getElementById('prod-name').value.trim();
         const desc = document.getElementById('prod-desc').value.trim();
         if (name || desc) {
@@ -4351,6 +4398,87 @@
     }
   }
 
+  // ─── EXTRACCIÓN DE PORTADA DESDE CÓMICS (CBZ / CBR) ─────
+  // CBZ es un ZIP con imágenes -> usamos JSZip (ya cargado).
+  // CBR es un RAR con imágenes -> usamos node-unrar-js (WASM), cargado bajo demanda.
+  function _sortComicPages(names) {
+    return names.sort((a, b) => a.localeCompare(b, undefined, { numeric: true, sensitivity: 'base' }));
+  }
+  function _mimeForImageExt(ext) {
+    ext = (ext || '').toLowerCase();
+    if (ext === 'png') return 'image/png';
+    if (ext === 'gif') return 'image/gif';
+    if (ext === 'webp') return 'image/webp';
+    return 'image/jpeg';
+  }
+
+  async function extractCbzCoverImage(cbzSource) {
+    try {
+      let buf;
+      if (cbzSource instanceof Blob) buf = await cbzSource.arrayBuffer();
+      else if (typeof cbzSource === 'string') buf = await (await fetch(cbzSource)).arrayBuffer();
+      else return null;
+
+      const zip = await JSZip.loadAsync(buf);
+      const names = _sortComicPages(Object.keys(zip.files).filter(n => !zip.files[n].dir && /\.(jpe?g|png|gif|webp)$/i.test(n)));
+      if (!names.length) return null;
+      const first = names[0];
+      const base64Img = await zip.files[first].async('base64');
+      return `data:${_mimeForImageExt(first.split('.').pop())};base64,${base64Img}`;
+    } catch (e) {
+      console.warn('extractCbzCoverImage error:', e);
+      return null;
+    }
+  }
+
+  let _unrarModulePromise = null;
+  function _loadUnrarModule() {
+    if (!_unrarModulePromise) {
+      _unrarModulePromise = import('https://esm.unpkg.com/node-unrar-js@2.0.2/esm/js/unrar.js');
+    }
+    return _unrarModulePromise;
+  }
+
+  async function extractCbrCoverImage(cbrSource) {
+    try {
+      let buf;
+      if (cbrSource instanceof Blob) buf = await cbrSource.arrayBuffer();
+      else if (typeof cbrSource === 'string') buf = await (await fetch(cbrSource)).arrayBuffer();
+      else return null;
+
+      const unrar = await _loadUnrarModule();
+      const wasmBinary = await (await fetch('https://esm.unpkg.com/node-unrar-js@2.0.2/esm/js/unrar.wasm')).arrayBuffer();
+      const extractor = await unrar.createExtractorFromData({ data: buf, wasmBinary });
+
+      const list = extractor.getFileList();
+      const headers = [...list.fileHeaders].filter(h => !h.flags.directory && /\.(jpe?g|png|gif|webp)$/i.test(h.name));
+      if (!headers.length) return null;
+      const sortedNames = _sortComicPages(headers.map(h => h.name));
+      const firstName = sortedNames[0];
+
+      const extracted = extractor.extract({ files: [firstName] });
+      const outFiles = [...extracted.files];
+      if (!outFiles.length || !outFiles[0].extraction) return null;
+
+      const bytes = outFiles[0].extraction;
+      let binary = '';
+      for (let i = 0; i < bytes.length; i++) binary += String.fromCharCode(bytes[i]);
+      const base64Img = btoa(binary);
+      return `data:${_mimeForImageExt(firstName.split('.').pop())};base64,${base64Img}`;
+    } catch (e) {
+      console.warn('extractCbrCoverImage error (¿archivo CBR corrupto o de la CDN caída?):', e);
+      return null;
+    }
+  }
+
+  // Dispatcher genérico: detecta la extensión y llama a la función correcta
+  async function extractComicCoverImage(source, fileName) {
+    const name = fileName || (source instanceof File ? source.name : '') || '';
+    if (/\.cbz$/i.test(name)) return await extractCbzCoverImage(source);
+    if (/\.cbr$/i.test(name)) return await extractCbrCoverImage(source);
+    return null;
+  }
+
   // ─── EXTRAER PORTADA REAL DESDE LA PÁGINA 1 DEL PDF ─────
   // Renderiza la primera página del PDF a un canvas y la convierte en
   // imagen JPEG, para usar la carátula ORIGINAL del libro en vez de
@@ -4381,11 +4509,14 @@
   // Botón "📄 Usar portada del PDF" en el formulario de producto individual
   async function useCoverFromPDF() {
     const label = document.getElementById('cover-label');
-    if (!pendingPdfFile) { showToast('Primero subí el PDF o EPUB', 'error'); return; }
+    if (!pendingPdfFile) { showToast('Primero subí el PDF, EPUB, CBR o CBZ', 'error'); return; }
     const isEpub = /\.epub$/i.test(pendingPdfName || '');
-    label.textContent = isEpub ? '📄 Extrayendo portada del EPUB...' : '📄 Extrayendo portada del PDF...';
+    const isComic = /\.(cbr|cbz)$/i.test(pendingPdfName || '');
+    label.textContent = isComic ? '📄 Extrayendo portada del cómic...' : (isEpub ? '📄 Extrayendo portada del EPUB...' : '📄 Extrayendo portada del PDF...');
     try {
-      const dataUrl = isEpub ? await extractEpubCoverImage(pendingPdfFile) : await extractPdfCoverImage(pendingPdfFile);
+      const dataUrl = isComic
+        ? await extractComicCoverImage(pendingPdfFile, pendingPdfName)
+        : isEpub ? await extractEpubCoverImage(pendingPdfFile) : await extractPdfCoverImage(pendingPdfFile);
       if (!dataUrl) { showToast('⚠️ No se pudo leer el archivo', 'error'); label.textContent = '⚠️ No se pudo extraer la portada'; return; }
       pendingCoverB64 = dataUrl;
       const blob = await (await fetch(dataUrl)).blob();
@@ -4394,7 +4525,7 @@
       preview.src = dataUrl;
       preview.style.display = 'block';
       document.getElementById('cover-icon').style.display = 'none';
-      label.textContent = isEpub ? '✅ Portada original del EPUB' : '✅ Portada original del PDF';
+      label.textContent = isComic ? '✅ Primera página del cómic como portada' : (isEpub ? '✅ Portada original del EPUB' : '✅ Portada original del PDF');
       document.getElementById('cover-drop').style.borderColor = 'var(--green)';
       showToast('📄 Portada original extraída', 'success');
     } catch (e) {
@@ -4994,8 +5125,15 @@
   }
 
   async function handleBulkPdfUpload(input) {
-    const files = Array.from(input.files || []);
-    if (!files.length) return;
+    const allFiles = Array.from(input.files || []);
+    const files = allFiles.filter(f => /\.(pdf|epub|cbr|cbz)$/i.test(f.name));
+    if (!files.length) {
+      if (allFiles.length) showToast('⚠️ No se encontró ningún PDF/EPUB/CBR/CBZ en lo que elegiste', 'error');
+      return;
+    }
+    if (allFiles.length !== files.length) {
+      showToast(`Se ignoraron ${allFiles.length - files.length} archivo(s) que no eran PDF/EPUB/CBR/CBZ`, 'success');
+    }
     if (files.length > 25) {
       showToast('⚠️ Elegiste muchos archivos a la vez — probá con tandas de 10-15 para evitar que el selector se trabe', 'error');
     }
@@ -5020,10 +5158,13 @@
       try {
         statusEl.textContent = '📖 Leyendo archivo...';
         const isEpub = /\.epub$/i.test(file.name);
-        const rawName = file.name.replace(/\.(pdf|epub)$/i, '').replace(/[_\-]+/g, ' ').trim();
+        const isComic = /\.(cbr|cbz)$/i.test(file.name);
+        const rawName = file.name.replace(/\.(pdf|epub|cbr|cbz)$/i, '').replace(/[_\-]+/g, ' ').trim();
 
         // Extraer texto para dar contexto a la IA (con timeout para no trabar la cola)
+        // Los cómics (CBR/CBZ) no tienen texto extraíble — se usa solo el nombre del archivo.
         let extractedText = '';
+        if (!isComic) {
         try {
           extractedText = await withTimeout((async () => {
             if (isEpub) {
@@ -5047,6 +5188,7 @@
         } catch(err) {
           console.warn(`bulk: extracción de texto falló/expiró para ${file.name}:`, err);
         }
+        } // fin if (!isComic)
 
         statusEl.textContent = '🤖 Clasificando con IA...';
         const clasifRes = await fetch(`${WORKER_URL}/classify`, {
@@ -5089,11 +5231,13 @@
           console.error(`bulk: fallo subiendo PDF (${file.name}):`, e);
         }
 
-        statusEl.textContent = isEpub ? '📄 Extrayendo portada del EPUB...' : '📄 Extrayendo portada del PDF...';
+        statusEl.textContent = isComic ? '📄 Extrayendo portada del cómic...' : (isEpub ? '📄 Extrayendo portada del EPUB...' : '📄 Extrayendo portada del PDF...');
         try {
-          const coverDataUrl = isEpub
-            ? await withTimeout(extractEpubCoverImage(file), 15000)
-            : await withTimeout(extractPdfCoverImage(file), 15000);
+          const coverDataUrl = isComic
+            ? await withTimeout(extractComicCoverImage(file, file.name), 20000)
+            : isEpub
+              ? await withTimeout(extractEpubCoverImage(file), 15000)
+              : await withTimeout(extractPdfCoverImage(file), 15000);
           if (coverDataUrl) {
             const blob = await (await fetch(coverDataUrl)).blob();
             const coverFile = new File([blob], 'cover-original.jpg', { type: blob.type || 'image/jpeg' });
@@ -6991,8 +7135,11 @@
         fileNameForType = p.pdfName || p.pdfUrl || '';
       }
       const isEpub = /\.epub$/i.test(fileNameForType || '');
+      const isComic = /\.(cbr|cbz)$/i.test(fileNameForType || '');
       const blobSrc = new Blob([buf]);
-      const dataUrl = isEpub ? await extractEpubCoverImage(blobSrc) : await extractPdfCoverImage(blobSrc);
+      const dataUrl = isComic
+        ? await extractComicCoverImage(blobSrc, fileNameForType)
+        : isEpub ? await extractEpubCoverImage(blobSrc) : await extractPdfCoverImage(blobSrc);
       if (!dataUrl) { showToast('⚠️ No se pudo leer el archivo', 'error'); nameLabel.textContent = '⚠️ No se pudo extraer la portada'; return; }
       _editCoverB64 = dataUrl;
       const blob = await (await fetch(dataUrl)).blob();
@@ -7812,7 +7959,7 @@
       <div style="display:flex;align-items:center;gap:16px;flex-wrap:wrap;">
         <div id="edit-pdf-status" style="font-size:13px;color:var(--muted);">Sin PDF</div>
         <button type="button" class="btn btn-ghost" style="padding:8px 16px;font-size:12px;" onclick="document.getElementById('edit-pdf-input').click()">Cambiar PDF</button>
-        <input type="file" id="edit-pdf-input" accept=".pdf,.epub,application/epub+zip" style="display:none" onchange="editPdfSelected(this)" />
+        <input type="file" id="edit-pdf-input" accept=".pdf,.epub,.cbr,.cbz,application/epub+zip" style="display:none" onchange="editPdfSelected(this)" />
       </div>
     </div>
     <div style="display:flex;gap:12px;justify-content:flex-end;">
