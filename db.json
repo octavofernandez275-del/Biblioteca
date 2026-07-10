@@ -11613,53 +11613,6 @@
       "file": "Vol. 18 - CSM - Cap. 154 al 164_compressed.pdf"
     },
     {
-      "id": 1783721366912,
-      "name": "Ansatsu Kyoushitsu, Volumen 10: ¡El Asesinato Continúa!",
-      "price": "$4.99",
-      "cat": "manga",
-      "desc": "La clase 3-E sigue con su misión de asesinar al imparable Koro-sensei antes de que destruya la Tierra. En este volumen, se enfrentarán a nuevos desafíos y revelaciones sorprendentes que pondrán a prueba su ingenio y habilidades únicas.",
-      "author": "Yūsei Matsui",
-      "genre": "Manga, Shonen",
-      "age": "Adolescentes y jóvenes adultos",
-      "temas": [
-        "Educación",
-        "Ciencia Ficción",
-        "Comedia",
-        "Acción",
-        "Crecimiento personal"
-      ],
-      "tags": [
-        "Manga",
-        "Shonen",
-        "Acción",
-        "Comedia",
-        "Escolar",
-        "Koro-sensei"
-      ],
-      "nivel": "",
-      "idioma": "Español",
-      "ad": {
-        "headline": "¡El Asesinato más divertido!",
-        "subheadline": "La Clase 3-E regresa con desafíos mortales y muchas risas.",
-        "cta": "Descarga ya",
-        "banner_text": "Manga Shonen: Ansatsu Kyoushitsu Vol. 10",
-        "instagram_caption": "¡Koro-sensei no se rinde y la Clase 3-E tampoco! 🐙 Prepárate para más acción, humor y giros inesperados en el Volumen 10 de Ansatsu Kyoushitsu. ¿Podrán finalmente salvar el mundo? ¡Descúbrelo! 👇 #Manga #AnsatsuKyoushitsu #Shonen #Acción",
-        "hashtags": [
-          "AnsatsuKyoushitsu",
-          "Manga",
-          "Shonen",
-          "KoroSensei",
-          "Clase3E",
-          "Volumen10",
-          "EbookManga"
-        ]
-      },
-      "pdfName": "Ansatsu Kyoushitsu (10).PDF",
-      "pdfUrl": null,
-      "coverUrl": null,
-      "file": "Ansatsu Kyoushitsu (10).PDF"
-    },
-    {
       "id": 1783721432543,
       "name": "Ansatsu Kyoushitsu (11)",
       "price": "$0.99",
@@ -12041,5 +11994,5 @@
     "juan@test.com",
     "octavio123@gamil.com"
   ],
-  "updatedAt": "2026-07-10T22:17:37.953Z"
+  "updatedAt": "2026-07-10T22:18:40.014Z"
 }
