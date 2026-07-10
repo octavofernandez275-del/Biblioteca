@@ -11077,9 +11077,9 @@
     },
     {
       "id": 1783699803024,
-      "name": "Vol. 12   CSM   Cap. 98 al 103 compressed compressed",
+      "name": "Vol. 12   CSM   Cap. 98 al 103",
       "price": "$0.99",
-      "cat": "ebooks",
+      "cat": "manga",
       "desc": "",
       "author": "",
       "genre": "",
@@ -11108,5 +11108,5 @@
     "juan@test.com",
     "octavio123@gamil.com"
   ],
-  "updatedAt": "2026-07-10T16:10:38.867Z"
+  "updatedAt": "2026-07-10T16:11:32.052Z"
 }
