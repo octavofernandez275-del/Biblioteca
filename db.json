@@ -11731,6 +11731,52 @@
       "pdfUrl": null,
       "coverUrl": null,
       "file": "Ansatsu Kyoushitsu (12).PDF"
+    },
+    {
+      "id": 1783721494265,
+      "name": "Ansatsu Kyoushitsu - Volumen 13",
+      "price": "$3.99",
+      "cat": "manga",
+      "desc": "Únete a los estudiantes de la clase 3-E mientras continúan con su misión imposible: asesinar a su tentaculoso y superpoderoso profesor antes de que destruya la Tierra. ¡Prepárate para giros inesperados y lecciones de vida en cada capítulo de este emocionante manga!",
+      "author": "Yūsei Matsui",
+      "genre": "Manga",
+      "age": "Adolescentes",
+      "temas": [
+        "Acción",
+        "Comedia",
+        "Ciencia ficción",
+        "Vida escolar",
+        "Estrategia"
+      ],
+      "tags": [
+        "Manga",
+        "Shonen",
+        "Acción",
+        "Comedia",
+        "Aventura",
+        "Escolares"
+      ],
+      "nivel": "",
+      "idioma": "Español",
+      "ad": {
+        "headline": "¡La misión continúa en el aula!",
+        "subheadline": "Asesinar al profesor Koro-sensei nunca fue tan divertido y desafiante.",
+        "cta": "Descubrir ahora",
+        "banner_text": "Nuevo volumen de Ansatsu Kyoushitsu",
+        "instagram_caption": "¡La misión de la clase 3-E continúa en el Volumen 13 de Ansatsu Kyoushitsu! 📚💥 ¿Estarán más cerca de derrotar a Koro-sensei o enfrentarán nuevos desafíos? Sumérgete en este emocionante manga lleno de acción, comedia y estrategia. ¡No te lo pierdas!",
+        "hashtags": [
+          "AnsatsuKyoushitsu",
+          "MangaShonen",
+          "KoroSensei",
+          "AcciónComedia",
+          "NovedadManga",
+          "LecturaDigital"
+        ]
+      },
+      "pdfName": "Ansatsu Kyoushitsu (13).PDF",
+      "pdfUrl": null,
+      "coverUrl": null,
+      "file": "Ansatsu Kyoushitsu (13).PDF"
     }
   ],
   "emailList": [
@@ -11739,5 +11785,5 @@
     "juan@test.com",
     "octavio123@gamil.com"
   ],
-  "updatedAt": "2026-07-10T22:11:24.007Z"
+  "updatedAt": "2026-07-10T22:11:49.393Z"
 }
