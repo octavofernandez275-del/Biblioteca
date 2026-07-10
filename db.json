@@ -11377,6 +11377,32 @@
       "pdfUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/pdfs/1783701685374_cap__226___csm___nido_de_langosta.pdf",
       "coverUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/covers/1783701685374_cap__226___csm___nido_de_langosta.jpg",
       "file": "Cap. 226 - CSM - Nido de langosta .pdf"
+    },
+    {
+      "id": 1783701706529,
+      "name": "Cap. 228   CSM   Paloma",
+      "price": "$0.99",
+      "cat": "ebooks",
+      "desc": "",
+      "author": "",
+      "genre": "",
+      "age": "",
+      "temas": [],
+      "tags": [],
+      "nivel": "",
+      "idioma": "",
+      "ad": {
+        "headline": "",
+        "subheadline": "",
+        "cta": "",
+        "banner_text": "",
+        "instagram_caption": "",
+        "hashtags": []
+      },
+      "pdfName": "Cap. 228 - CSM - Paloma.pdf",
+      "pdfUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/pdfs/1783701706529_cap__228___csm___paloma.pdf",
+      "coverUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/covers/1783701706529_cap__228___csm___paloma.jpg",
+      "file": "Cap. 228 - CSM - Paloma.pdf"
     }
   ],
   "emailList": [
@@ -11385,5 +11411,5 @@
     "juan@test.com",
     "octavio123@gamil.com"
   ],
-  "updatedAt": "2026-07-10T16:41:45.467Z"
+  "updatedAt": "2026-07-10T16:42:01.148Z"
 }
