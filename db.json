@@ -11507,6 +11507,32 @@
       "pdfUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/pdfs/1783701775427_cap__232_final___gracias__chainsaw_man.pdf",
       "coverUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/covers/1783701775427_cap__232_final___gracias__chainsaw_man.jpg",
       "file": "Cap. 232 FINAL - Gracias, Chainsaw Man.pdf"
+    },
+    {
+      "id": 1783701799809,
+      "name": "Vol. 01   Cap. 01 al 07",
+      "price": "$0.99",
+      "cat": "ebooks",
+      "desc": "",
+      "author": "",
+      "genre": "",
+      "age": "",
+      "temas": [],
+      "tags": [],
+      "nivel": "",
+      "idioma": "",
+      "ad": {
+        "headline": "",
+        "subheadline": "",
+        "cta": "",
+        "banner_text": "",
+        "instagram_caption": "",
+        "hashtags": []
+      },
+      "pdfName": "Vol. 01 - Cap. 01 al 07.pdf",
+      "pdfUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/pdfs/1783701799809_vol__01___cap__01_al_07.pdf",
+      "coverUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/covers/1783701799809_vol__01___cap__01_al_07.jpg",
+      "file": "Vol. 01 - Cap. 01 al 07.pdf"
     }
   ],
   "emailList": [
@@ -11515,5 +11541,5 @@
     "juan@test.com",
     "octavio123@gamil.com"
   ],
-  "updatedAt": "2026-07-10T16:43:17.220Z"
+  "updatedAt": "2026-07-10T16:43:43.717Z"
 }
