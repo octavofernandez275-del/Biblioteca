@@ -7356,6 +7356,53 @@
       "pdfUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/pdfs/1783682292777_los_cuervos_de_pearblossom.epub",
       "coverUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/covers/1783682292777_los_cuervos_de_pearblossom.jpg",
       "file": "Los_cuervos_de_Pearblossom_Aldous_Huxley.epub"
+    },
+    {
+      "id": 1783682314545,
+      "name": "Los demonios de Loudun",
+      "price": "$4.99",
+      "cat": "novela",
+      "desc": "En la Francia del siglo XVII, el carismático párroco Urbain Grandier es acusado de hechicería tras un brote de posesiones demoníacas en un convento. Aldous Huxley explora el impactante juicio, tortura y la sorprendente transformación espiritual de Grandier en esta obra maestra basada en hechos reales.",
+      "author": "Aldous Huxley",
+      "genre": "Novela histórica",
+      "age": "Adultos",
+      "temas": [
+        "Posesión demoníaca",
+        "Fanatismo religioso",
+        "Brujería",
+        "Martirio y fe",
+        "Corrupción eclesiástica"
+      ],
+      "tags": [
+        "Huxley",
+        "Historia",
+        "Demonios",
+        "Inquisición",
+        "Francia",
+        "Clásico"
+      ],
+      "nivel": "",
+      "idioma": "Español",
+      "ad": {
+        "headline": "Poseídos por la fe, juzgados por la brujería.",
+        "subheadline": "Un párroco carismático, monjas poseídas y un juicio que cambió la historia.",
+        "cta": "Explorar ahora",
+        "banner_text": "Clásico Intenso de Huxley",
+        "instagram_caption": "Adéntrate en el oscuro misterio de Loudun con Aldous Huxley. 🕯️ Un carismático párroco, monjas poseídas y un juicio por brujería que sacudió la Francia del siglo XVII. ¿Fue posesión demoníaca o una conspiración? 🤔 Descubre la intrincada trama y la impactante redención en este clásico imperdible. ¡Disponible ahora!",
+        "hashtags": [
+          "#LosDemoniosDeLoudun",
+          "#AldousHuxley",
+          "#NovelaHistorica",
+          "#Brujeria",
+          "#FanatismoReligioso",
+          "#HistoriaDeFrancia",
+          "#Clasicos"
+        ]
+      },
+      "pdfName": "Los_demonios_de_Loudun_Aldous_Huxley.epub",
+      "pdfUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/pdfs/1783682314545_los_demonios_de_loudun.epub",
+      "coverUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/covers/1783682314545_los_demonios_de_loudun.jpg",
+      "file": "Los_demonios_de_Loudun_Aldous_Huxley.epub"
     }
   ],
   "emailList": [
@@ -7364,5 +7411,5 @@
     "juan@test.com",
     "octavio123@gamil.com"
   ],
-  "updatedAt": "2026-07-10T11:18:23.777Z"
+  "updatedAt": "2026-07-10T11:18:41.683Z"
 }
