@@ -10721,6 +10721,32 @@
       "pdfUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/pdfs/1783687639123_cap__231___csm___adi_s__pochita.pdf",
       "coverUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/covers/1783687639123_cap__231___csm___adi_s__pochita.jpg",
       "file": "Cap. 231 - CSM - Adiós, Pochita.pdf"
+    },
+    {
+      "id": 1783687654144,
+      "name": "Cap. 232 FINAL   Gracias, Chainsaw Man",
+      "price": "$0.99",
+      "cat": "ebooks",
+      "desc": "",
+      "author": "",
+      "genre": "",
+      "age": "",
+      "temas": [],
+      "tags": [],
+      "nivel": "",
+      "idioma": "",
+      "ad": {
+        "headline": "",
+        "subheadline": "",
+        "cta": "",
+        "banner_text": "",
+        "instagram_caption": "",
+        "hashtags": []
+      },
+      "pdfName": "Cap. 232 FINAL - Gracias, Chainsaw Man.pdf",
+      "pdfUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/pdfs/1783687654144_cap__232_final___gracias__chainsaw_man.pdf",
+      "coverUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/covers/1783687654144_cap__232_final___gracias__chainsaw_man.jpg",
+      "file": "Cap. 232 FINAL - Gracias, Chainsaw Man.pdf"
     }
   ],
   "emailList": [
@@ -10729,5 +10755,5 @@
     "juan@test.com",
     "octavio123@gamil.com"
   ],
-  "updatedAt": "2026-07-10T12:47:33.078Z"
+  "updatedAt": "2026-07-10T12:47:58.160Z"
 }
