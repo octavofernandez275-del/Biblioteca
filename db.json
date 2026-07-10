@@ -6852,7 +6852,7 @@
         "hashtags": []
       },
       "pdfName": "La_practica_de_la_inteligencia_emocional_Daniel_Goleman.epub",
-      "pdfUrl": null,
+      "pdfUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/pdfs/1783626936054_la_practica_de_la_inteligencia_emocional_daniel_goleman.epub",
       "coverUrl": null,
       "file": "La_practica_de_la_inteligencia_emocional_Daniel_Goleman.epub"
     },
@@ -6941,5 +6941,5 @@
     "juan@test.com",
     "octavio123@gamil.com"
   ],
-  "updatedAt": "2026-07-10T11:13:36.956Z"
+  "updatedAt": "2026-07-10T11:13:42.535Z"
 }
