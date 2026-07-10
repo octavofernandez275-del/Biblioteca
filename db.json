@@ -7027,6 +7027,54 @@
       "pdfUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/pdfs/1783682179939_la_torre_de_la_golondrina.epub",
       "coverUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/covers/1783682179939_la_torre_de_la_golondrina.jpg",
       "file": "La_torre_de_la_golondrina_Andrzej_Sapkowski.epub"
+    },
+    {
+      "id": 1783682195214,
+      "name": "Las 5 Mejores Dietas para Adelgazar",
+      "price": "$4.99",
+      "cat": "salud",
+      "desc": "Descubre un análisis conciso de las cinco dietas más efectivas para perder peso, con consejos prácticos y fáciles de seguir. Aprende a mejorar tu salud y alcanzar tus objetivos de bienestar con esta guía esencial.",
+      "author": "Susan B Peterson",
+      "genre": "Salud y Bienestar",
+      "age": "Adultos",
+      "temas": [
+        "Pérdida de peso",
+        "Nutrición",
+        "Dietas saludables",
+        "Hábitos alimenticios",
+        "Bienestar"
+      ],
+      "tags": [
+        "Dietas",
+        "Adelgazar",
+        "Nutrición",
+        "Salud",
+        "Bienestar",
+        "Pérdida de peso"
+      ],
+      "nivel": "Principiante",
+      "idioma": "Español",
+      "ad": {
+        "headline": "Adelgaza de Forma Sencilla y Efectiva",
+        "subheadline": "Descubre las 5 dietas top para transformar tu cuerpo y salud.",
+        "cta": "Comienza tu cambio",
+        "banner_text": "Guía de Dietas Esenciales",
+        "instagram_caption": "¿Listo para transformar tu figura? 🤩 Conoce las 5 dietas más efectivas para adelgazar de Susan B Peterson. 🥦💪 Guía práctica para un bienestar duradero. ¡Empieza hoy tu camino hacia una vida más sana!",
+        "hashtags": [
+          "#DietasParaAdelgazar",
+          "#SaludYBienestar",
+          "#PerderPeso",
+          "#Nutricion",
+          "#VidaSana",
+          "#SusanBPeterson",
+          "#EbookSalud",
+          "#AdelgazarFacil"
+        ]
+      },
+      "pdfName": "Las_5_mejores_dietas_para_adelgazar_Susan_B_Peterson.epub",
+      "pdfUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/pdfs/1783682195214_las_5_mejores_dietas_para_adelgazar.epub",
+      "coverUrl": null,
+      "file": "Las_5_mejores_dietas_para_adelgazar_Susan_B_Peterson.epub"
     }
   ],
   "emailList": [
@@ -7035,5 +7083,5 @@
     "juan@test.com",
     "octavio123@gamil.com"
   ],
-  "updatedAt": "2026-07-10T11:16:27.089Z"
+  "updatedAt": "2026-07-10T11:16:40.638Z"
 }
