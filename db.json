@@ -8485,6 +8485,32 @@
       "pdfUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/pdfs/1783683168766_super_keto_james_dinicolantonio.epub",
       "coverUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/covers/1783683168766_super_keto_james_dinicolantonio.jpg",
       "file": "Super_Keto_James_DiNicolantonio.epub"
+    },
+    {
+      "id": 1783683177311,
+      "name": "Tiempo de odio Andrzej Sapkowski",
+      "price": "$0.99",
+      "cat": "ebooks",
+      "desc": "",
+      "author": "",
+      "genre": "",
+      "age": "",
+      "temas": [],
+      "tags": [],
+      "nivel": "",
+      "idioma": "",
+      "ad": {
+        "headline": "",
+        "subheadline": "",
+        "cta": "",
+        "banner_text": "",
+        "instagram_caption": "",
+        "hashtags": []
+      },
+      "pdfName": "Tiempo_de_odio_Andrzej_Sapkowski.epub",
+      "pdfUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/pdfs/1783683177311_tiempo_de_odio_andrzej_sapkowski.epub",
+      "coverUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/covers/1783683177311_tiempo_de_odio_andrzej_sapkowski.jpg",
+      "file": "Tiempo_de_odio_Andrzej_Sapkowski.epub"
     }
   ],
   "emailList": [
@@ -8493,5 +8519,5 @@
     "juan@test.com",
     "octavio123@gamil.com"
   ],
-  "updatedAt": "2026-07-10T11:32:55.969Z"
+  "updatedAt": "2026-07-10T11:33:12.721Z"
 }
