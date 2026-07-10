@@ -8381,6 +8381,32 @@
       "pdfUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/pdfs/1783682738820_quidditch_a_traves_de_los_tiempos_j_k_rowling.epub",
       "coverUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/covers/1783682738820_quidditch_a_traves_de_los_tiempos_j_k_rowling.jpg",
       "file": "Quidditch_a_traves_de_los_tiempos_J_K_Rowling.epub"
+    },
+    {
+      "id": 1783682749669,
+      "name": "Ready Player One Ernest Cline",
+      "price": "$0.99",
+      "cat": "ebooks",
+      "desc": "",
+      "author": "",
+      "genre": "",
+      "age": "",
+      "temas": [],
+      "tags": [],
+      "nivel": "",
+      "idioma": "",
+      "ad": {
+        "headline": "",
+        "subheadline": "",
+        "cta": "",
+        "banner_text": "",
+        "instagram_caption": "",
+        "hashtags": []
+      },
+      "pdfName": "Ready_Player_One_Ernest_Cline.epub",
+      "pdfUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/pdfs/1783682749669_ready_player_one_ernest_cline.epub",
+      "coverUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/covers/1783682749669_ready_player_one_ernest_cline.jpg",
+      "file": "Ready_Player_One_Ernest_Cline.epub"
     }
   ],
   "emailList": [
@@ -8389,5 +8415,5 @@
     "juan@test.com",
     "octavio123@gamil.com"
   ],
-  "updatedAt": "2026-07-10T11:25:49.069Z"
+  "updatedAt": "2026-07-10T11:25:57.400Z"
 }
