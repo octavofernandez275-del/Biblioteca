@@ -5422,7 +5422,7 @@
         "hashtags": []
       },
       "pdfName": "El_resplandor_Stephen_King.epub",
-      "pdfUrl": null,
+      "pdfUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/pdfs/1783625403854_el_resplandor_stephen_king.epub",
       "coverUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/covers/1783625403854_el_resplandor_stephen_king.jpg",
       "file": "El_resplandor_Stephen_King.epub"
     },
@@ -8519,5 +8519,5 @@
     "juan@test.com",
     "octavio123@gamil.com"
   ],
-  "updatedAt": "2026-07-10T11:40:15.725Z"
+  "updatedAt": "2026-07-10T11:40:22.376Z"
 }
