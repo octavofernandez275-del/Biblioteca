@@ -6933,6 +6933,53 @@
       "pdfUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/pdfs/1783626953162_la_soledad_de_charles_dickens_dan_simmons.epub",
       "coverUrl": null,
       "file": "La_soledad_de_Charles_Dickens_Dan_Simmons.epub"
+    },
+    {
+      "id": 1783682164845,
+      "name": "La sonrisa de la Gioconda",
+      "price": "$3.99",
+      "cat": "novela",
+      "desc": "Sumérgete en un complejo drama psicológico que explora las intrincadas relaciones humanas y la hipocresía social. Aldous Huxley disecciona con maestría la naturaleza del amor, la traición y la superficialidad de la alta sociedad.",
+      "author": "Aldous Huxley",
+      "genre": "Ficción Clásica",
+      "age": "Adultos",
+      "temas": [
+        "Drama psicológico",
+        "Crítica social",
+        "Relaciones humanas",
+        "Moralidad",
+        "Amor y traición"
+      ],
+      "tags": [
+        "Aldous Huxley",
+        "Clásico",
+        "Ficción psicológica",
+        "Drama",
+        "Crítica social",
+        "Literatura"
+      ],
+      "nivel": "",
+      "idioma": "Español",
+      "ad": {
+        "headline": "Descubre el fascinante drama de Aldous Huxley",
+        "subheadline": "Una obra maestra que explora las profundidades de la psicología humana y la sociedad.",
+        "cta": "Leer ahora",
+        "banner_text": "Huxley: Drama Psicológico",
+        "instagram_caption": "✨ Sumérgete en el ingenio de Aldous Huxley con \"La sonrisa de la Gioconda\".\nUna obra maestra que desentraña las complejidades de la mente humana y las relaciones sociales.\n¿Estás listo para un drama psicológico que te hará pensar? 🧠📚\n¡Disponible ahora!",
+        "hashtags": [
+          "#AldousHuxley",
+          "#LaSonrisaDeLaGioconda",
+          "#FicciónClásica",
+          "#DramaPsicológico",
+          "#Literatura",
+          "#Ebook",
+          "#LecturaRecomendada"
+        ]
+      },
+      "pdfName": "La_sonrisa_de_la_Gioconda_Aldous_Huxley.epub",
+      "pdfUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/pdfs/1783682164845_la_sonrisa_de_la_gioconda.epub",
+      "coverUrl": null,
+      "file": "La_sonrisa_de_la_Gioconda_Aldous_Huxley.epub"
     }
   ],
   "emailList": [
@@ -6941,5 +6988,5 @@
     "juan@test.com",
     "octavio123@gamil.com"
   ],
-  "updatedAt": "2026-07-10T11:13:42.535Z"
+  "updatedAt": "2026-07-10T11:16:09.630Z"
 }
