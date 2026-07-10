@@ -10955,6 +10955,32 @@
       "pdfUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/pdfs/1783689029189_vol__10___cap__80_al_88.pdf",
       "coverUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/covers/1783689029189_vol__10___cap__80_al_88.jpg",
       "file": "Vol. 10 - Cap. 80 al 88.pdf"
+    },
+    {
+      "id": 1783692568321,
+      "name": "Vol. 09   Cap. 72 al 79 compressed",
+      "price": "$0.99",
+      "cat": "ebooks",
+      "desc": "",
+      "author": "",
+      "genre": "",
+      "age": "",
+      "temas": [],
+      "tags": [],
+      "nivel": "",
+      "idioma": "",
+      "ad": {
+        "headline": "",
+        "subheadline": "",
+        "cta": "",
+        "banner_text": "",
+        "instagram_caption": "",
+        "hashtags": []
+      },
+      "pdfName": "Vol. 09 - Cap. 72 al 79-compressed.pdf",
+      "pdfUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/pdfs/1783692568321_vol__09___cap__72_al_79_compressed.pdf",
+      "coverUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/covers/1783692568321_vol__09___cap__72_al_79_compressed.jpg",
+      "file": "Vol. 09 - Cap. 72 al 79-compressed.pdf"
     }
   ],
   "emailList": [
@@ -10963,5 +10989,5 @@
     "juan@test.com",
     "octavio123@gamil.com"
   ],
-  "updatedAt": "2026-07-10T14:08:31.501Z"
+  "updatedAt": "2026-07-10T14:09:57.320Z"
 }
