@@ -7735,6 +7735,53 @@
       "pdfUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/pdfs/1783682444184_marte_rojo__el_alba_de_la_terraformaci_n.epub",
       "coverUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/covers/1783682444184_marte_rojo__el_alba_de_la_terraformaci_n.jpg",
       "file": "Marte_rojo_Kim_Stanley_Robinson.epub"
+    },
+    {
+      "id": 1783682465505,
+      "name": "Marte Verde",
+      "price": "$4.99",
+      "cat": "novela",
+      "desc": "Una generación después de la fallida revolución, Marte ha sido terraformado, pero la explotación de sus riquezas desata nuevos conflictos. Los sobrevivientes de los Primeros Cien deben aprender a confiar y colaborar para construir un nuevo mundo en medio de la insurrección.",
+      "author": "Kim Stanley Robinson",
+      "genre": "Ciencia Ficción",
+      "age": "Adultos",
+      "temas": [
+        "Colonización espacial",
+        "Terraformación",
+        "Conflictos políticos y sociales",
+        "Supervivencia",
+        "Construcción de nuevas sociedades"
+      ],
+      "tags": [
+        "Ciencia ficción",
+        "Marte",
+        "Colonización",
+        "Terraformación",
+        "Conflicto",
+        "Supervivencia"
+      ],
+      "nivel": "",
+      "idioma": "Español",
+      "ad": {
+        "headline": "Marte Verde: ¿Utopía o campo de batalla?",
+        "subheadline": "La supervivencia de la colonia marciana pende de un hilo en esta epopeya espacial.",
+        "cta": "Explora Marte",
+        "banner_text": "Saga Marciana: Conflicto y Futuro",
+        "instagram_caption": "💥 ¡Marte nunca ha sido tan verde... ni tan peligroso! 🚀 La segunda parte de la Trilogía Marciana te sumerge en un mundo terraformado al borde de la rebelión. ¿Podrán los colonos construir una sociedad justa? 🤔 Descubre la epopeya de Kim Stanley Robinson.\n",
+        "hashtags": [
+          "#MarteVerde",
+          "#CienciaFiccion",
+          "#KimStanleyRobinson",
+          "#TrilogiaMarciana",
+          "#ColonizacionEspacial",
+          "#FuturoDistopico",
+          "#Ebook"
+        ]
+      },
+      "pdfName": "Marte_verde_Kim_Stanley_Robinson.epub",
+      "pdfUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/pdfs/1783682465505_marte_verde.epub",
+      "coverUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/covers/1783682465505_marte_verde.jpg",
+      "file": "Marte_verde_Kim_Stanley_Robinson.epub"
     }
   ],
   "emailList": [
@@ -7743,5 +7790,5 @@
     "juan@test.com",
     "octavio123@gamil.com"
   ],
-  "updatedAt": "2026-07-10T11:20:58.240Z"
+  "updatedAt": "2026-07-10T11:21:12.673Z"
 }
