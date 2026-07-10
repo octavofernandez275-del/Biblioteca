@@ -9707,6 +9707,32 @@
       "pdfUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/pdfs/1783685600415_captain_tsubasa__oliver_y_benji____tomo_24_20260514_225513.pdf",
       "coverUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/covers/1783685600415_captain_tsubasa__oliver_y_benji____tomo_24_20260514_225513.jpg",
       "file": "Captain Tsubasa (Oliver y Benji) - Tomo 24_20260514_225513.pdf"
+    },
+    {
+      "id": 1783685622131,
+      "name": "Captain Tsubasa (Oliver y Benji)   Tomo 24",
+      "price": "$0.99",
+      "cat": "ebooks",
+      "desc": "",
+      "author": "",
+      "genre": "",
+      "age": "",
+      "temas": [],
+      "tags": [],
+      "nivel": "",
+      "idioma": "",
+      "ad": {
+        "headline": "",
+        "subheadline": "",
+        "cta": "",
+        "banner_text": "",
+        "instagram_caption": "",
+        "hashtags": []
+      },
+      "pdfName": "Captain Tsubasa (Oliver y Benji) - Tomo 24.pdf",
+      "pdfUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/pdfs/1783685622131_captain_tsubasa__oliver_y_benji____tomo_24.pdf",
+      "coverUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/covers/1783685622131_captain_tsubasa__oliver_y_benji____tomo_24.jpg",
+      "file": "Captain Tsubasa (Oliver y Benji) - Tomo 24.pdf"
     }
   ],
   "emailList": [
@@ -9715,5 +9741,5 @@
     "juan@test.com",
     "octavio123@gamil.com"
   ],
-  "updatedAt": "2026-07-10T12:13:40.886Z"
+  "updatedAt": "2026-07-10T12:14:08.365Z"
 }
