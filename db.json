@@ -11273,6 +11273,32 @@
       "pdfUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/pdfs/1783701621745_cap__222___csm___denji_man.pdf",
       "coverUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/covers/1783701621745_cap__222___csm___denji_man.jpg",
       "file": "Cap. 222 - CSM - Denji Man.pdf"
+    },
+    {
+      "id": 1783701637235,
+      "name": "Cap. 223   CSM   La armadura mas resistente",
+      "price": "$0.99",
+      "cat": "ebooks",
+      "desc": "",
+      "author": "",
+      "genre": "",
+      "age": "",
+      "temas": [],
+      "tags": [],
+      "nivel": "",
+      "idioma": "",
+      "ad": {
+        "headline": "",
+        "subheadline": "",
+        "cta": "",
+        "banner_text": "",
+        "instagram_caption": "",
+        "hashtags": []
+      },
+      "pdfName": "Cap. 223 - CSM - La armadura mas resistente.pdf",
+      "pdfUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/pdfs/1783701637235_cap__223___csm___la_armadura_mas_resistente.pdf",
+      "coverUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/covers/1783701637235_cap__223___csm___la_armadura_mas_resistente.jpg",
+      "file": "Cap. 223 - CSM - La armadura mas resistente.pdf"
     }
   ],
   "emailList": [
@@ -11281,5 +11307,5 @@
     "juan@test.com",
     "octavio123@gamil.com"
   ],
-  "updatedAt": "2026-07-10T16:40:36.006Z"
+  "updatedAt": "2026-07-10T16:40:54.681Z"
 }
