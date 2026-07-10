@@ -7262,6 +7262,54 @@
       "pdfUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/pdfs/1783682258768_los_cantos_de_hyperion_de_dan_simmons.epub",
       "coverUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/covers/1783682258768_los_cantos_de_hyperion_de_dan_simmons.jpg",
       "file": "Los_cantos_de_Hyperion_Dan_Simmons.epub"
+    },
+    {
+      "id": 1783682274752,
+      "name": "Los Cuentos de Beedle el Bardo",
+      "price": "$4.99",
+      "cat": "infantil",
+      "desc": "Descubre cinco cuentos de hadas mágicos llenos de humor y peligro, comentados por Albus Dumbledore. Un tesoro ilustrado por J. K. Rowling que deleitará a Muggles y magos por igual, revelando secretos de Hogwarts.",
+      "author": "J. K. Rowling",
+      "genre": "Fantasía",
+      "age": "Todas las edades",
+      "temas": [
+        "Fantasía",
+        "Cuentos de Hadas",
+        "Magia",
+        "Universo Harry Potter",
+        "Aventura"
+      ],
+      "tags": [
+        "Fantasía",
+        "Cuentos",
+        "Magia",
+        "Hogwarts",
+        "J.K. Rowling",
+        "Aventura"
+      ],
+      "nivel": "",
+      "idioma": "español",
+      "ad": {
+        "headline": "Descubre los mágicos cuentos de Beedle el Bardo",
+        "subheadline": "Sumérgete en un universo de magia y peligro con J.K. Rowling y Dumbledore.",
+        "cta": "Explora la Magia",
+        "banner_text": "Nueva Aventura Mágica",
+        "instagram_caption": "¡Adéntrate en el mágico mundo de Beedle el Bardo! ✨ Cinco cuentos encantados, con los sabios comentarios de Albus Dumbledore. 🧙‍♂️ Un tesoro ilustrado por J.K. Rowling para Muggles y magos por igual. ¡No te lo pierdas! 📚",
+        "hashtags": [
+          "#BeedleElBardo",
+          "#HarryPotter",
+          "#JKRowling",
+          "#CuentosDeHadas",
+          "#Magia",
+          "#Hogwarts",
+          "#LibroDigital",
+          "#Fantasía"
+        ]
+      },
+      "pdfName": "Los_cuentos_de_Beedle_el_Bardo_J_K_Rowling.epub",
+      "pdfUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/pdfs/1783682274752_los_cuentos_de_beedle_el_bardo.epub",
+      "coverUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/covers/1783682274752_los_cuentos_de_beedle_el_bardo.jpg",
+      "file": "Los_cuentos_de_Beedle_el_Bardo_J_K_Rowling.epub"
     }
   ],
   "emailList": [
@@ -7270,5 +7318,5 @@
     "juan@test.com",
     "octavio123@gamil.com"
   ],
-  "updatedAt": "2026-07-10T11:17:45.904Z"
+  "updatedAt": "2026-07-10T11:18:02.380Z"
 }
