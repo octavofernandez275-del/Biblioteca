@@ -6980,6 +6980,53 @@
       "pdfUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/pdfs/1783682164845_la_sonrisa_de_la_gioconda.epub",
       "coverUrl": null,
       "file": "La_sonrisa_de_la_Gioconda_Aldous_Huxley.epub"
+    },
+    {
+      "id": 1783682179939,
+      "name": "La torre de la golondrina",
+      "price": "$5.99",
+      "cat": "ebooks",
+      "desc": "En este penúltimo volumen de la aclamada saga, Ciri se enfrenta a un asesino implacable mientras Geralt y Yennefer buscan al traidor Vilgefortz. Descubre un mundo de magia, peligro y venganza que ha cautivado a millones y se acerca a su impactante desenlace.",
+      "author": "Andrzej Sapkowski",
+      "genre": "Fantasía Épica",
+      "age": "Jóvenes Adultos y Adultos",
+      "temas": [
+        "Aventura",
+        "Magia",
+        "Venganza",
+        "Búsqueda",
+        "Conspiración"
+      ],
+      "tags": [
+        "Fantasía",
+        "TheWitcher",
+        "Aventura",
+        "Magia",
+        "Saga",
+        "Épica"
+      ],
+      "nivel": "",
+      "idioma": "Español",
+      "ad": {
+        "headline": "Ciri desata su furia. ¿Podrá sobrevivir?",
+        "subheadline": "El penúltimo capítulo de la saga que redefinió la fantasía te espera.",
+        "cta": "Descubrir su destino",
+        "banner_text": "Penúltimo volumen de The Witcher",
+        "instagram_caption": "⚔️ La aventura de Ciri alcanza su punto más oscuro en \"La torre de la golondrina\".\nEl penúltimo volumen de la saga The Witcher te sumergirá en intrigas, magia y batallas épicas.\n¿Estás listo para el clímax? ¡No te lo pierdas! 🔥",
+        "hashtags": [
+          "#LaTorreDeLaGolondrina",
+          "#TheWitcher",
+          "#AndrzejSapkowski",
+          "#FantasíaÉpica",
+          "#Ciri",
+          "#GeraltDeRivia",
+          "#Ebook"
+        ]
+      },
+      "pdfName": "La_torre_de_la_golondrina_Andrzej_Sapkowski.epub",
+      "pdfUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/pdfs/1783682179939_la_torre_de_la_golondrina.epub",
+      "coverUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/covers/1783682179939_la_torre_de_la_golondrina.jpg",
+      "file": "La_torre_de_la_golondrina_Andrzej_Sapkowski.epub"
     }
   ],
   "emailList": [
@@ -6988,5 +7035,5 @@
     "juan@test.com",
     "octavio123@gamil.com"
   ],
-  "updatedAt": "2026-07-10T11:16:09.630Z"
+  "updatedAt": "2026-07-10T11:16:27.089Z"
 }
