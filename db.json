@@ -7782,6 +7782,54 @@
       "pdfUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/pdfs/1783682465505_marte_verde.epub",
       "coverUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/covers/1783682465505_marte_verde.jpg",
       "file": "Marte_verde_Kim_Stanley_Robinson.epub"
+    },
+    {
+      "id": 1783682562078,
+      "name": "Mi primer smoking",
+      "price": "$4.99",
+      "cat": "novela",
+      "desc": "Publicada en 1944, esta novela de Aldous Huxley explora profundas preocupaciones espirituales, filosofías orientales y misticismo. Una obra clave para comprender las ideas políticas y la sociedad contemporánea a través de la visión de un autor magistral.",
+      "author": "Aldous Huxley",
+      "genre": "Novela Filosófica",
+      "age": "Adultos",
+      "temas": [
+        "Filosofía",
+        "Misticismo",
+        "Crítica Social",
+        "Espiritualidad",
+        "Distopía"
+      ],
+      "tags": [
+        "Huxley",
+        "Filosofía",
+        "Distopía",
+        "Clásico",
+        "Literatura",
+        "Reflexión"
+      ],
+      "nivel": "",
+      "idioma": "Español",
+      "ad": {
+        "headline": "Huxley explora el alma: Una obra atemporal.",
+        "subheadline": "Descubre la visión de Huxley sobre la sociedad, la espiritualidad y el misticismo.",
+        "cta": "Explora la novela",
+        "banner_text": "Clásico Distópico y Filosófico",
+        "instagram_caption": "Sumérgete en el universo de Aldous Huxley con 'Mi primer smoking' (también conocido como 'El tiempo debe detenerse'). 🎩✨ Una novela que, doce años después de 'Un mundo feliz', sigue vigente para entender nuestro tiempo. 🧠📖 Exploración espiritual, política y misticismo en una obra maestra.",
+        "hashtags": [
+          "#AldousHuxley",
+          "#MiprimerSmoking",
+          "#NovelaFilosofica",
+          "#Distopia",
+          "#LiteraturaClasica",
+          "#Espiritualidad",
+          "#CriticaSocial",
+          "#Ebook"
+        ]
+      },
+      "pdfName": "Mi_primer_smoking_Aldous_Huxley.epub",
+      "pdfUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/pdfs/1783682562078_mi_primer_smoking.epub",
+      "coverUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/covers/1783682562078_mi_primer_smoking.jpg",
+      "file": "Mi_primer_smoking_Aldous_Huxley.epub"
     }
   ],
   "emailList": [
@@ -7790,5 +7838,5 @@
     "juan@test.com",
     "octavio123@gamil.com"
   ],
-  "updatedAt": "2026-07-10T11:21:12.673Z"
+  "updatedAt": "2026-07-10T11:22:49.708Z"
 }
