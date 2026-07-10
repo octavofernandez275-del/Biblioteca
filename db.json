@@ -11507,6 +11507,53 @@
       "pdfUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/pdfs/1783701775427_cap__232_final___gracias__chainsaw_man.pdf",
       "coverUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/covers/1783701775427_cap__232_final___gracias__chainsaw_man.jpg",
       "file": "Cap. 232 FINAL - Gracias, Chainsaw Man.pdf"
+    },
+    {
+      "id": 1783706132518,
+      "name": "CSM: Volumen 15 - Capítulos 123-133",
+      "price": "$4.99",
+      "cat": "novela",
+      "desc": "Sumérgete en el Volumen 15 de CSM, que abarca los emocionantes capítulos 123 al 133. Continúa la intrincada narrativa y descubre los últimos giros en esta aclamada serie.",
+      "author": "",
+      "genre": "Ficción Serializada",
+      "age": "Adolescentes y Adultos",
+      "temas": [
+        "Aventura",
+        "Fantasía",
+        "Acción",
+        "Narrativa Secuencial",
+        "Misterio"
+      ],
+      "tags": [
+        "Manga",
+        "Ficción",
+        "Capítulos",
+        "Serie",
+        "Aventura",
+        "Digital"
+      ],
+      "nivel": "",
+      "idioma": "Español",
+      "ad": {
+        "headline": "Continúa la Saga: ¡Volumen 15 Te Espera!",
+        "subheadline": "Descubre los emocionantes capítulos 123 al 133 de tu serie favorita.",
+        "cta": "Leer ahora",
+        "banner_text": "Manga Épico: Nuevos Capítulos Disponibles",
+        "instagram_caption": "¡La espera ha terminado! 🚀 Sumérgete en el Volumen 15 de CSM, que trae los explosivos capítulos 123 al 133.\n¿Estás listo para los nuevos giros y revelaciones? 🔥 No te pierdas la acción.\n¡Consigue tu copia digital hoy! 👇",
+        "hashtags": [
+          "#FicciónSerializada",
+          "#MangaDigital",
+          "#NuevosCapítulos",
+          "#Volumen15",
+          "#AventuraÉpica",
+          "#EbookEspañol",
+          "#LecturaDigital"
+        ]
+      },
+      "pdfName": "Vol. 15 - CSM - Cap. 123 al 133_compressed.pdf",
+      "pdfUrl": null,
+      "coverUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/covers/1783706132518_csm__volumen_15___cap_tulos_123_133.jpg",
+      "file": "Vol. 15 - CSM - Cap. 123 al 133_compressed.pdf"
     }
   ],
   "emailList": [
@@ -11515,5 +11562,5 @@
     "juan@test.com",
     "octavio123@gamil.com"
   ],
-  "updatedAt": "2026-07-10T16:47:40.607Z"
+  "updatedAt": "2026-07-10T17:56:28.928Z"
 }
