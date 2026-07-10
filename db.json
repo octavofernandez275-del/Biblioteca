@@ -11684,6 +11684,53 @@
       "pdfUrl": null,
       "coverUrl": null,
       "file": "Ansatsu Kyoushitsu (11).PDF"
+    },
+    {
+      "id": 1783721471124,
+      "name": "Assassination Classroom: Volumen 12",
+      "price": "$3.99",
+      "cat": "manga",
+      "desc": "En este emocionante duodécimo volumen, la clase 3-E se enfrenta a nuevos desafíos y enemigos mientras su fecha límite para asesinar a Koro-sensei se acerca. ¿Podrán los estudiantes más peculiares de Kunugigaoka cumplir su misión antes de que el mundo sea destruido?",
+      "author": "",
+      "genre": "Manga Shonen",
+      "age": "Adolescentes",
+      "temas": [
+        "Asesinato",
+        "Escuela",
+        "Alienígenas",
+        "Amistad",
+        "Comedia"
+      ],
+      "tags": [
+        "Manga",
+        "Shonen",
+        "Acción",
+        "Comedia",
+        "Ciencia ficción",
+        "Aventura"
+      ],
+      "nivel": "",
+      "idioma": "Español",
+      "ad": {
+        "headline": "La misión de la clase 3-E continúa",
+        "subheadline": "Acción, comedia y giros inesperados en el volumen 12 de esta popular saga.",
+        "cta": "Descubrir ahora",
+        "banner_text": "Manga Shonen: ¡Asesinato y diversión!",
+        "instagram_caption": "💥 ¡La misión final se acerca! 💥 La clase 3-E se enfrenta a sus mayores desafíos en el volumen 12 de #AssassinationClassroom. ¿Lograrán derrotar a Koro-sensei? 🐙✨ Prepárate para risas, acción y mucha estrategia. ¡No te lo pierdas! 👇",
+        "hashtags": [
+          "AnsatsuKyoushitsu",
+          "AssassinationClassroom",
+          "MangaShonen",
+          "KoroSensei",
+          "Clase3E",
+          "NovedadManga",
+          "AnimeEnEspañol"
+        ]
+      },
+      "pdfName": "Ansatsu Kyoushitsu (12).PDF",
+      "pdfUrl": null,
+      "coverUrl": null,
+      "file": "Ansatsu Kyoushitsu (12).PDF"
     }
   ],
   "emailList": [
@@ -11692,5 +11739,5 @@
     "juan@test.com",
     "octavio123@gamil.com"
   ],
-  "updatedAt": "2026-07-10T22:11:02.014Z"
+  "updatedAt": "2026-07-10T22:11:24.007Z"
 }
