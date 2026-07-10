@@ -11053,6 +11053,53 @@
       "pdfUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/pdfs/1783698446474_vol__11___cap__89_al_97_compressed.pdf",
       "coverUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/covers/1783698446474_vol__11___cap__89_al_97_compressed.jpg",
       "file": "Vol. 11 - Cap. 89 al 97_compressed.pdf"
+    },
+    {
+      "id": 1783699516979,
+      "name": "Volumen 11: Capítulos 89 al 97",
+      "price": "$4.99",
+      "cat": "novela",
+      "desc": "Sumérgete en los emocionantes capítulos 89 al 97 del Volumen 11, donde la trama alcanza nuevos clímax y revelaciones. Prepárate para un desarrollo crucial que no te dejará indiferente.",
+      "author": "",
+      "genre": "Ficción seriada",
+      "age": "Adolescentes y Adultos",
+      "temas": [
+        "Continuidad narrativa",
+        "Desarrollo de trama",
+        "Puntos de giro",
+        "Suspenso",
+        "Aventura"
+      ],
+      "tags": [
+        "Volumen11",
+        "Capítulos",
+        "Ebook",
+        "Ficción",
+        "Serie digital",
+        "Novedad"
+      ],
+      "nivel": "",
+      "idioma": "Español",
+      "ad": {
+        "headline": "¡La saga continúa! Nuevos capítulos te esperan.",
+        "subheadline": "Descubre los emocionantes capítulos 89 al 97 del Volumen 11. ¡No te lo pierdas!",
+        "cta": "Leer ahora",
+        "banner_text": "Volumen 11: ¡Capítulos 89-97!",
+        "instagram_caption": "💥 ¡La saga continúa! 💥 Prepárate para giros inesperados y emociones a flor de piel. Los capítulos 89 al 97 del Volumen 11 ya están aquí. ¿Listo para el siguiente nivel? ¡Añádelo a tu colección! 👇",
+        "hashtags": [
+          "Volumen11",
+          "Capitulos89al97",
+          "LecturaDigital",
+          "Ficcion",
+          "Ebook",
+          "NuevaEntrega",
+          "Saga"
+        ]
+      },
+      "pdfName": "Vol. 11 - Cap. 89 al 97_compressed.pdf",
+      "pdfUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/pdfs/1783699516979_volumen_11__cap_tulos_89_al_97.pdf",
+      "coverUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/covers/1783699516979_volumen_11__cap_tulos_89_al_97.jpg",
+      "file": "Vol. 11 - Cap. 89 al 97_compressed.pdf"
     }
   ],
   "emailList": [
@@ -11061,5 +11108,5 @@
     "juan@test.com",
     "octavio123@gamil.com"
   ],
-  "updatedAt": "2026-07-10T15:47:58.998Z"
+  "updatedAt": "2026-07-10T16:05:39.696Z"
 }
