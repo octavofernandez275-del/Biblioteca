@@ -7545,6 +7545,53 @@
       "pdfUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/pdfs/1783682365135_los_juegos_del_hambre.epub",
       "coverUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/covers/1783682365135_los_juegos_del_hambre.jpg",
       "file": "Los_juegos_del_hambre_Suzanne_Collins.epub"
+    },
+    {
+      "id": 1783682380489,
+      "name": "Los vampiros de la mente",
+      "price": "$5.99",
+      "cat": "terror",
+      "desc": "Tres criaturas impías con poderes para controlar mentes se reúnen anualmente para un juego macabro, pero esta vez algo ha fallado. Enfrentados a un horror indescriptible, deberán luchar para decidir el destino del mundo y el suyo propio.",
+      "author": "Dan Simmons",
+      "genre": "Horror",
+      "age": "Adultos",
+      "temas": [
+        "Vampiros",
+        "Control mental",
+        "Horror sobrenatural",
+        "Lucha por la supervivencia",
+        "Ocultismo"
+      ],
+      "tags": [
+        "Horror",
+        "Vampiros",
+        "Fantasía oscura",
+        "Terror psicológico",
+        "Suspenso",
+        "Dan Simmons"
+      ],
+      "nivel": "",
+      "idioma": "Español",
+      "ad": {
+        "headline": "Vampiros. Mentes. Horror. ¿Estás preparado?",
+        "subheadline": "Un terror ancestral desata su poder en el siglo XX, controlando almas inocentes.",
+        "cta": "Descubrir el horror",
+        "banner_text": "Terror sobrenatural de Dan Simmons",
+        "instagram_caption": "Prepárate para el verdadero horror 😨. Los vampiros de la mente de Dan Simmons te sumergirán en un mundo donde criaturas impías controlan almas y desatan el caos. ¿Podrán detenerlos antes de que el mundo caiga? 😱 #LecturaImprescindible",
+        "hashtags": [
+          "#Horror",
+          "#Vampiros",
+          "#DanSimmons",
+          "#TerrorPsicológico",
+          "#LibrosDeMiedo",
+          "#ThrillerSobrenatural",
+          "#NovedadEbook"
+        ]
+      },
+      "pdfName": "Los_vampiros_de_la_mente_Dan_Simmons.epub",
+      "pdfUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/pdfs/1783682380489_los_vampiros_de_la_mente.epub",
+      "coverUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/covers/1783682380489_los_vampiros_de_la_mente.jpg",
+      "file": "Los_vampiros_de_la_mente_Dan_Simmons.epub"
     }
   ],
   "emailList": [
@@ -7553,5 +7600,5 @@
     "juan@test.com",
     "octavio123@gamil.com"
   ],
-  "updatedAt": "2026-07-10T11:19:32.127Z"
+  "updatedAt": "2026-07-10T11:19:47.565Z"
 }
