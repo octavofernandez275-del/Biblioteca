@@ -10149,6 +10149,32 @@
       "pdfUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/pdfs/1783686609965_captain_tsubasa__oliver_y_benji____tomo_32.pdf",
       "coverUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/covers/1783686609965_captain_tsubasa__oliver_y_benji____tomo_32.jpg",
       "file": "Captain Tsubasa (Oliver y Benji) - Tomo 32.pdf"
+    },
+    {
+      "id": 1783686633229,
+      "name": "Captain Tsubasa (Oliver y Benji)   Tomo 33 20260514 225522",
+      "price": "$0.99",
+      "cat": "ebooks",
+      "desc": "",
+      "author": "",
+      "genre": "",
+      "age": "",
+      "temas": [],
+      "tags": [],
+      "nivel": "",
+      "idioma": "",
+      "ad": {
+        "headline": "",
+        "subheadline": "",
+        "cta": "",
+        "banner_text": "",
+        "instagram_caption": "",
+        "hashtags": []
+      },
+      "pdfName": "Captain Tsubasa (Oliver y Benji) - Tomo 33_20260514_225522.pdf",
+      "pdfUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/pdfs/1783686633229_captain_tsubasa__oliver_y_benji____tomo_33_20260514_225522.pdf",
+      "coverUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/covers/1783686633229_captain_tsubasa__oliver_y_benji____tomo_33_20260514_225522.jpg",
+      "file": "Captain Tsubasa (Oliver y Benji) - Tomo 33_20260514_225522.pdf"
     }
   ],
   "emailList": [
@@ -10157,5 +10183,5 @@
     "juan@test.com",
     "octavio123@gamil.com"
   ],
-  "updatedAt": "2026-07-10T12:30:31.332Z"
+  "updatedAt": "2026-07-10T12:30:54.210Z"
 }
