@@ -11611,6 +11611,32 @@
       "pdfUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/pdfs/1783708664206_vol__18___csm___cap__154_al_164_compressed.pdf",
       "coverUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/covers/1783708664206_vol__18___csm___cap__154_al_164_compressed.jpg",
       "file": "Vol. 18 - CSM - Cap. 154 al 164_compressed.pdf"
+    },
+    {
+      "id": 1783711081499,
+      "name": "Vol. 20   CSM   Cap. 176 al 186 compressed",
+      "price": "$0.99",
+      "cat": "ebooks",
+      "desc": "",
+      "author": "",
+      "genre": "",
+      "age": "",
+      "temas": [],
+      "tags": [],
+      "nivel": "",
+      "idioma": "",
+      "ad": {
+        "headline": "",
+        "subheadline": "",
+        "cta": "",
+        "banner_text": "",
+        "instagram_caption": "",
+        "hashtags": []
+      },
+      "pdfName": "Vol. 20 - CSM - Cap. 176 al 186__compressed.pdf",
+      "pdfUrl": null,
+      "coverUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/covers/1783711081499_vol__20___csm___cap__176_al_186_compressed.jpg",
+      "file": "Vol. 20 - CSM - Cap. 176 al 186__compressed.pdf"
     }
   ],
   "emailList": [
@@ -11619,5 +11645,5 @@
     "juan@test.com",
     "octavio123@gamil.com"
   ],
-  "updatedAt": "2026-07-10T18:40:45.490Z"
+  "updatedAt": "2026-07-10T19:18:39.090Z"
 }
