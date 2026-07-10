@@ -7639,6 +7639,54 @@
       "pdfUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/pdfs/1783682396403_diario_de_greg_8__mala_suerte.epub",
       "coverUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/covers/1783682396403_diario_de_greg_8__mala_suerte.jpg",
       "file": "Mala_suerte_Jeff_Kinney.epub"
+    },
+    {
+      "id": 1783682422379,
+      "name": "Marte Azul",
+      "price": "$5.99",
+      "cat": "novela",
+      "desc": "Sumérgete en un Marte terraformado y políticamente independiente, donde nuevas generaciones forjan su destino. Descubre la épica conclusión de la aclamada Trilogía Marciana de Kim Stanley Robinson.",
+      "author": "Kim Stanley Robinson",
+      "genre": "Ciencia Ficción",
+      "age": "Adultos",
+      "temas": [
+        "Terraformación",
+        "Colonización espacial",
+        "Política interplanetaria",
+        "Futuro de la humanidad",
+        "Ecología espacial"
+      ],
+      "tags": [
+        "Ciencia ficción",
+        "Marte",
+        "Terraformación",
+        "Colonización",
+        "Futuro",
+        "Trilogía"
+      ],
+      "nivel": "",
+      "idioma": "Español",
+      "ad": {
+        "headline": "Marte Azul: La Conclusión Épica de una Saga",
+        "subheadline": "Un planeta terraformado lucha por su independencia en esta visión futurista.",
+        "cta": "Explorar Ahora",
+        "banner_text": "Terraformación de Marte: Conclusión",
+        "instagram_caption": "¡Marte ha sido terraformado y está listo para la independencia! 🚀 Descubre el emocionante final de la Trilogía Marciana de Kim Stanley Robinson. ¿Estás preparado para el futuro? ✨ #MarteAzul",
+        "hashtags": [
+          "#MarteAzul",
+          "#CienciaFiccion",
+          "#KimStanleyRobinson",
+          "#Terraformacion",
+          "#ColonizacionEspacial",
+          "#Futuro",
+          "#LecturaDigital",
+          "#Ebook"
+        ]
+      },
+      "pdfName": "Marte_azul_Kim_Stanley_Robinson.epub",
+      "pdfUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/pdfs/1783682422379_marte_azul.epub",
+      "coverUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/covers/1783682422379_marte_azul.jpg",
+      "file": "Marte_azul_Kim_Stanley_Robinson.epub"
     }
   ],
   "emailList": [
@@ -7647,5 +7695,5 @@
     "juan@test.com",
     "octavio123@gamil.com"
   ],
-  "updatedAt": "2026-07-10T11:20:13.952Z"
+  "updatedAt": "2026-07-10T11:20:36.509Z"
 }
