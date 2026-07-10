@@ -7075,6 +7075,53 @@
       "pdfUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/pdfs/1783682195214_las_5_mejores_dietas_para_adelgazar.epub",
       "coverUrl": null,
       "file": "Las_5_mejores_dietas_para_adelgazar_Susan_B_Peterson.epub"
+    },
+    {
+      "id": 1783682211712,
+      "name": "Las Puertas de la Percepción: Cielo e Infierno",
+      "price": "$4.99",
+      "cat": "ebooks",
+      "desc": "Este volumen recoge dos ensayos pioneros de Aldous Huxley de 1954-1956, donde analiza los cambios objetivos provocados por drogas alucinógenas. Explora la relación entre la mente humana y la realidad cósmica, más allá de meras visiones.",
+      "author": "Aldous Huxley",
+      "genre": "Ensayo",
+      "age": "Adultos",
+      "temas": [
+        "Percepción",
+        "Filosofía",
+        "Conciencia",
+        "Psicología",
+        "Existencialismo"
+      ],
+      "tags": [
+        "Aldous Huxley",
+        "Ensayo",
+        "Psicodelia",
+        "Filosofía",
+        "Conciencia",
+        "Percepción"
+      ],
+      "nivel": "Intermedio",
+      "idioma": "Español",
+      "ad": {
+        "headline": "Descubre la Conciencia: El Viaje de Huxley",
+        "subheadline": "Los ensayos pioneros sobre drogas y la naturaleza de la realidad.",
+        "cta": "Explorar Ahora",
+        "banner_text": "Clásico de Filosofía y Percepción",
+        "instagram_caption": "¿Listo para desafiar tu percepción de la realidad? 🤯 Aldous Huxley te invita a un viaje mental sin igual en 'Las Puertas de la Percepción'. Descubre cómo las sustancias alteran nuestra visión del cosmos. Un clásico que te hará pensar. ✨",
+        "hashtags": [
+          "AldousHuxley",
+          "LasPuertasDeLaPercepcion",
+          "Filosofia",
+          "Psicodelia",
+          "Conciencia",
+          "Ensayo",
+          "Libros"
+        ]
+      },
+      "pdfName": "Las_puertas_de_la_percepcion_Cielo_e_infierno_Aldous_Huxley.epub",
+      "pdfUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/pdfs/1783682211712_las_puertas_de_la_percepci_n__cielo_e_infierno.epub",
+      "coverUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/covers/1783682211712_las_puertas_de_la_percepci_n__cielo_e_infierno.jpg",
+      "file": "Las_puertas_de_la_percepcion_Cielo_e_infierno_Aldous_Huxley.epub"
     }
   ],
   "emailList": [
@@ -7083,5 +7130,5 @@
     "juan@test.com",
     "octavio123@gamil.com"
   ],
-  "updatedAt": "2026-07-10T11:16:40.638Z"
+  "updatedAt": "2026-07-10T11:16:58.600Z"
 }
