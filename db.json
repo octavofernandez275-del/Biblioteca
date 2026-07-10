@@ -7926,6 +7926,53 @@
       "pdfUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/pdfs/1783682589590_mi_t_o_spencer.epub",
       "coverUrl": null,
       "file": "Mi_tio_Spencer_Aldous_Huxley.epub"
+    },
+    {
+      "id": 1783682609050,
+      "name": "Mono y Esencia",
+      "price": "$4.99",
+      "cat": "novela",
+      "desc": "Adéntrate en un mundo post-apocalíptico donde una expedición descubre una sociedad primitiva y distópica en California, marcada por la crueldad y la adoración demoníaca. Una obra maestra de Aldous Huxley que explora la supervivencia y la depravación humana tras el fin de la civilización.",
+      "author": "Aldous Huxley",
+      "genre": "Ciencia Ficción Distópica",
+      "age": "Adultos",
+      "temas": [
+        "Post-apocalipsis",
+        "Distopía",
+        "Crítica social",
+        "Fanatismo religioso",
+        "Supervivencia"
+      ],
+      "tags": [
+        "Distopía",
+        "Postapocalíptico",
+        "Huxley",
+        "Crítica social",
+        "Ficción",
+        "Sociedad primitiva"
+      ],
+      "nivel": "Intermedio",
+      "idioma": "Español",
+      "ad": {
+        "headline": "Huxley: Un futuro post-apocalíptico impactante",
+        "subheadline": "Explora una sociedad primitiva de crueldad y fanatismo tras el fin del mundo.",
+        "cta": "Explorar ahora",
+        "banner_text": "Clásico Distópico de Aldous Huxley",
+        "instagram_caption": "¿Listo para adentrarte en un futuro desolador? 💀 Aldous Huxley nos sumerge en una distopía post-apocalíptica donde la humanidad regresa a sus formas más primitivas. Una crítica social magistral que te hará reflexionar. ¡No te lo pierdas! 📖✨",
+        "hashtags": [
+          "#MonoYEsencia",
+          "#AldousHuxley",
+          "#Distopía",
+          "#CienciaFicción",
+          "#PostApocalipsis",
+          "#LecturaRecomendada",
+          "#LibroDigital"
+        ]
+      },
+      "pdfName": "Mono_y_esencia_Aldous_Huxley.epub",
+      "pdfUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/pdfs/1783682609050_mono_y_esencia.epub",
+      "coverUrl": "https://raw.githubusercontent.com/octavofernandez275-del/Biblioteca/main/covers/1783682609050_mono_y_esencia.jpg",
+      "file": "Mono_y_esencia_Aldous_Huxley.epub"
     }
   ],
   "emailList": [
@@ -7934,5 +7981,5 @@
     "juan@test.com",
     "octavio123@gamil.com"
   ],
-  "updatedAt": "2026-07-10T11:23:20.454Z"
+  "updatedAt": "2026-07-10T11:23:35.901Z"
 }
